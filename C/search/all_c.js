@@ -8,7 +8,6 @@ var searchData=
   ['previous_5ffunction',['previous_function',['../structobserver__biobj__t.html#a583848093949f49114990e265c0526ba',1,'observer_biobj_t']]],
   ['problem1',['problem1',['../structcoco__stacked__problem__data__t.html#a334d3d893eca655a79885091720b37f0',1,'coco_stacked_problem_data_t']]],
   ['problem2',['problem2',['../structcoco__stacked__problem__data__t.html#aae7d2027ec9d9e46a56ed806c168566f',1,'coco_stacked_problem_data_t']]],
-  ['problem_5fdata',['problem_data',['../structlogger__biobj__t.html#a5086c8812ba67d3f78a2568c24fe1546',1,'logger_biobj_t']]],
   ['problem_5fid',['problem_id',['../structcoco__problem.html#a2c28928a0b6868b6ef2ec1d72dfb7dd8',1,'coco_problem']]],
   ['problem_5fname',['problem_name',['../structcoco__problem.html#acaea46926965991bd420e6965eacf8e5',1,'coco_problem']]],
   ['problem_5ftype',['problem_type',['../structcoco__problem.html#a333fe8225776412beb2cf06b8155b65e',1,'coco_problem']]],

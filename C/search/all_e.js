@@ -8,6 +8,8 @@ var searchData=
   ['suite_5fbbob2009_5fmax_5fdim',['SUITE_BBOB2009_MAX_DIM',['../suite__bbob__legacy__code_8c.html#a30f5ab8c8eebf32a5ef95bf3d5297c6d',1,'suite_bbob_legacy_code.c']]],
   ['suite_5fbbob_5flegacy_5fcode_2ec',['suite_bbob_legacy_code.c',['../suite__bbob__legacy__code_8c.html',1,'']]],
   ['suite_5fbiobj_2ec',['suite_biobj.c',['../suite__biobj_8c.html',1,'']]],
+  ['suite_5fbiobj_5fbest_5fvalues_5fhyp_2ec',['suite_biobj_best_values_hyp.c',['../suite__biobj__best__values__hyp_8c.html',1,'']]],
+  ['suite_5fbiobj_5ft',['suite_biobj_t',['../structsuite__biobj__t.html',1,'']]],
   ['suite_5fdep_5ffunction',['suite_dep_function',['../structcoco__problem.html#af0e1b2b42e528dec21b8872ef9c74ba2',1,'coco_problem']]],
   ['suite_5fdep_5findex',['suite_dep_index',['../structcoco__problem.html#a8c3e3b9234f009486bc7e056f5383aad',1,'coco_problem']]],
   ['suite_5fdep_5finstance',['suite_dep_instance',['../structcoco__problem.html#a415bf642799c6a11b786209d1b36bb26',1,'coco_problem::suite_dep_instance()'],['../structlogger__biobj__t.html#a415bf642799c6a11b786209d1b36bb26',1,'logger_biobj_t::suite_dep_instance()']]],

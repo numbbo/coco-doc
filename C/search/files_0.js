@@ -8,7 +8,7 @@ var searchData=
   ['coco_5fproblem_2ec',['coco_problem.c',['../coco__problem_8c.html',1,'']]],
   ['coco_5frandom_2ec',['coco_random.c',['../coco__random_8c.html',1,'']]],
   ['coco_5fruntime_5fc_2ec',['coco_runtime_c.c',['../coco__runtime__c_8c.html',1,'']]],
-  ['coco_5fstrdup_2ec',['coco_strdup.c',['../coco__strdup_8c.html',1,'']]],
+  ['coco_5fstring_2ec',['coco_string.c',['../coco__string_8c.html',1,'']]],
   ['coco_5fsuite_2ec',['coco_suite.c',['../coco__suite_8c.html',1,'']]],
   ['coco_5futilities_2ec',['coco_utilities.c',['../coco__utilities_8c.html',1,'']]]
 ];

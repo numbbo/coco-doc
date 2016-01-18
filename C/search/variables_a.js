@@ -1,11 +1,13 @@
 var searchData=
 [
+  ['nadir_5fvalue',['nadir_value',['../structcoco__problem.html#a8bb911a22fd54fce34addcaca9809aab',1,'coco_problem']]],
   ['name',['name',['../structlogger__biobj__indicator__t.html#a5ac083a645d964373f022d03df4849c8',1,'logger_biobj_indicator_t']]],
+  ['new_5finstances',['new_instances',['../structsuite__biobj__t.html#ab275a69f90e725718e3bb863d689463d',1,'suite_biobj_t']]],
   ['next',['next',['../structavl__node.html#a33a3bdb00e797090c3a8f176250e4539',1,'avl_node']]],
+  ['next_5foutput_5fevaluation_5fnum',['next_output_evaluation_num',['../structlogger__biobj__indicator__t.html#ad9383e85aedd531c94c8ddf731e1a585',1,'logger_biobj_indicator_t']]],
   ['next_5ftarget',['next_target',['../structlogger__toy__t.html#a8e7b2573bb7a0e7fe439c1d1cdd58ffb',1,'logger_toy_t']]],
   ['next_5ftarget_5fid',['next_target_id',['../structlogger__biobj__indicator__t.html#ac16c53e9ce5581703e361fc1116614bd',1,'logger_biobj_indicator_t']]],
   ['nondom_5ffile',['nondom_file',['../structlogger__biobj__t.html#a2959d2026519add990a2e208355a900b',1,'logger_biobj_t']]],
-  ['normalization_5ffactor',['normalization_factor',['../structmo__problem__data__t.html#a5a5dbded00205ef38c6752987f2e22a6',1,'mo_problem_data_t']]],
   ['number_5fof_5fconstraints',['number_of_constraints',['../structcoco__problem.html#a1ef156b2d1f34cd6dfb03625754097a1',1,'coco_problem']]],
   ['number_5fof_5fdimensions',['number_of_dimensions',['../structcoco__suite.html#ab41d3942d4dff05f08409650bb8c84b9',1,'coco_suite']]],
   ['number_5fof_5fevaluations',['number_of_evaluations',['../structlogger__bbob__t.html#a264e790ae0e9d9a7fc3c8a3f38e33c2a',1,'logger_bbob_t::number_of_evaluations()'],['../structlogger__biobj__t.html#a7ab1b88adaf2073e4894ca098e0f0c44',1,'logger_biobj_t::number_of_evaluations()'],['../structlogger__toy__t.html#a264e790ae0e9d9a7fc3c8a3f38e33c2a',1,'logger_toy_t::number_of_evaluations()']]],

@@ -11,6 +11,7 @@ var searchData=
   ['coco_5frandom_5fstate_5ft',['coco_random_state_t',['../coco_8h.html#a8074dbded77d5b52956a7fb65c07a105',1,'coco.h']]],
   ['coco_5frecommendation_5ffunction_5ft',['coco_recommendation_function_t',['../coco__internal_8h.html#a72164af1eca5808a6a3d7ce4fef5603e',1,'coco_internal.h']]],
   ['coco_5fstacked_5fproblem_5ffree_5fdata_5ft',['coco_stacked_problem_free_data_t',['../coco__problem_8c.html#a188f9dbb14468e3dd88b532c4ab767bd',1,'coco_problem.c']]],
+  ['coco_5fsuite_5fdata_5ffree_5ffunction_5ft',['coco_suite_data_free_function_t',['../coco__internal_8h.html#a72481f9f0fbde8e939e2aaf8fb67ba91',1,'coco_internal.h']]],
   ['coco_5fsuite_5ft',['coco_suite_t',['../coco_8h.html#af2416b0deaf9c04e05663197c96b53f5',1,'coco.h']]],
   ['coco_5ftransformed_5ffree_5fdata_5ft',['coco_transformed_free_data_t',['../coco__problem_8c.html#ac174ce187ff31f94c47c8d26d7b146b6',1,'coco_problem.c']]]
 ];

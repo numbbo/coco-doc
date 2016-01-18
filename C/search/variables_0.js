@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['additional_5fpenalty',['additional_penalty',['../structlogger__biobj__indicator__t.html#a9e75d63c1878c234736b04dee80123c5',1,'logger_biobj_indicator_t']]],
   ['ak',['ak',['../structf__weierstrass__data__t.html#a621dc35826582d9c15d003942937db74',1,'f_weierstrass_data_t']]],
   ['algorithm_5finfo',['algorithm_info',['../structcoco__observer.html#a82fc169b61f32a318a3eb742bd06ec35',1,'coco_observer']]],
   ['algorithm_5fname',['algorithm_name',['../structcoco__observer.html#ae52905cf9475c54d6bd628282a5b595f',1,'coco_observer']]],

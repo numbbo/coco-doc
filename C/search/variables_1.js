@@ -10,8 +10,6 @@ var searchData=
   ['best_5fparameter',['best_parameter',['../structcoco__problem.html#a734005c92445755d07e1df34e7eaf3a3',1,'coco_problem']]],
   ['best_5fsolution',['best_solution',['../structlogger__bbob__t.html#af8176ad71b4758812f3c561d362cf41b',1,'logger_bbob_t']]],
   ['best_5fvalue',['best_value',['../structcoco__problem.html#a1a07a4305f85eb196c5a389a62eaacdf',1,'coco_problem::best_value()'],['../structlogger__biobj__indicator__t.html#af24c8f42a2d3d6b068416bd8f1f81b47',1,'logger_biobj_indicator_t::best_value()']]],
-  ['best_5fvalues_5fcount',['best_values_count',['../structobserver__biobj__t.html#a7b3d3f1f10f3a75fec11d510bed3addd',1,'observer_biobj_t']]],
-  ['best_5fvalues_5fmatrix',['best_values_matrix',['../structobserver__biobj__t.html#a324bc02e7f7beed34911e7a3d14acb01',1,'observer_biobj_t']]],
   ['beta',['beta',['../structtransform__vars__asymmetric__data__t.html#a9424343761f8c4f4c1afe8f5b6bf471b',1,'transform_vars_asymmetric_data_t']]],
   ['bk',['bk',['../structf__weierstrass__data__t.html#a68276908110f5bc39ee31c348ed0f18d',1,'f_weierstrass_data_t']]],
   ['buffer_5ftree',['buffer_tree',['../structlogger__biobj__t.html#a49fd1c58a5bc4552e703793e83c33e7b',1,'logger_biobj_t']]]

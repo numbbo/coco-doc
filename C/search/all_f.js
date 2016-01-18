@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['the_20coco_2fnumbbo_20experiments_20interface',['The COCO/NumBBO experiments interface',['../index.html',1,'']]],
   ['t_5ftrigger',['t_trigger',['../structlogger__bbob__t.html#a82247a6b89d6a919fb2f3efe191a908f',1,'logger_bbob_t']]],
   ['tail',['tail',['../structavl__tree.html#affd810aaace2458e92f0b1e0223bcbc9',1,'avl_tree']]],
   ['target_5fhit',['target_hit',['../structlogger__biobj__indicator__t.html#aeca82877600abd989b60d663e26402b8',1,'logger_biobj_indicator_t']]],
