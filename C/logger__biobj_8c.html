@@ -93,7 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">logger_biobj.c File Reference</div>  </div>
 </div><!--header-->
@@ -119,7 +120,577 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:adfdc6c477e070967a5f19e90e6818d86"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#adfdc6c477e070967a5f19e90e6818d86">logger_biobj_node_create</a> (const double *x, const double *y, const size_t time_stamp, const size_t dim, const size_t num_obj)</td></tr>
+<tr class="separator:adfdc6c477e070967a5f19e90e6818d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38cdb0e3396eddb6365d634c13725706"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a38cdb0e3396eddb6365d634c13725706">logger_biobj_node_free</a> (<a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item, void *userdata)</td></tr>
+<tr class="separator:a38cdb0e3396eddb6365d634c13725706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae44be65a3d62cc79797112961f34c4ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#ae44be65a3d62cc79797112961f34c4ba">logger_biobj_check_if_within_ROI</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, <a class="el" href="logger__biobj__avl__tree_8c.html#a09799ec4ab35e977b149c025d2e84691">avl_node_t</a> *node)</td></tr>
+<tr class="separator:ae44be65a3d62cc79797112961f34c4ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c34dfbb9b867965a28dff7f01f1e2e4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a2c34dfbb9b867965a28dff7f01f1e2e4">avl_tree_compare_by_last_objective</a> (const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item1, const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item2, void *userdata)</td></tr>
+<tr class="separator:a2c34dfbb9b867965a28dff7f01f1e2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347c23cded64629efdda7ffcfde8a702"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a347c23cded64629efdda7ffcfde8a702">avl_tree_compare_by_time_stamp</a> (const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item1, const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item2, void *userdata)</td></tr>
+<tr class="separator:a347c23cded64629efdda7ffcfde8a702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa525bc3137f9c1ef8de71d04a2a49c0"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aaa525bc3137f9c1ef8de71d04a2a49c0">logger_biobj_tree_output</a> (FILE *file, <a class="el" href="logger__biobj__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a> *tree, const size_t dim, const size_t num_obj, const int log_vars, const int precision_x, const int precision_f)</td></tr>
+<tr class="separator:aaa525bc3137f9c1ef8de71d04a2a49c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ec137bc7171c3a189746f14e7c931ac"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a6ec137bc7171c3a189746f14e7c931ac">logger_biobj_tree_update</a> (<a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *logger, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *node_item)</td></tr>
+<tr class="separator:a6ec137bc7171c3a189746f14e7c931ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2f0a4472ebd0385e56db5fa61c523f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a3c2f0a4472ebd0385e56db5fa61c523f">logger_biobj_indicator</a> (<a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *logger, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const char *indicator_name)</td></tr>
+<tr class="separator:a3c2f0a4472ebd0385e56db5fa61c523f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd97d8cbf89371f66f1fe7dd8ae57f3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aafd97d8cbf89371f66f1fe7dd8ae57f3">logger_biobj_indicator_finalize</a> (<a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a> *indicator, <a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *logger)</td></tr>
+<tr class="separator:aafd97d8cbf89371f66f1fe7dd8ae57f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad16f95bbe83b5a8185012c2688935a5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aad16f95bbe83b5a8185012c2688935a5">logger_biobj_indicator_free</a> (void *stuff)</td></tr>
+<tr class="separator:aad16f95bbe83b5a8185012c2688935a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b9c5c68499684363d46dadb8e03fa8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aa3b9c5c68499684363d46dadb8e03fa8">logger_biobj_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="separator:aa3b9c5c68499684363d46dadb8e03fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83c3e1aceee0c8ebf129752718f08556"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a83c3e1aceee0c8ebf129752718f08556">logger_biobj_finalize</a> (<a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *logger)</td></tr>
+<tr class="separator:a83c3e1aceee0c8ebf129752718f08556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48b77cb7ab3ff1ec74596d2711e5de32"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a48b77cb7ab3ff1ec74596d2711e5de32">logger_biobj_free</a> (void *stuff)</td></tr>
+<tr class="separator:a48b77cb7ab3ff1ec74596d2711e5de32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41469dac8832863a7b013e919cb59f04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a41469dac8832863a7b013e919cb59f04">logger_biobj</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="separator:a41469dac8832863a7b013e919cb59f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a2c34dfbb9b867965a28dff7f01f1e2e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int avl_tree_compare_by_last_objective </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *&#160;</td>
+          <td class="paramname"><em>item1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *&#160;</td>
+          <td class="paramname"><em>item2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>userdata</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines the ordering of AVL tree nodes based on the value of the last objective. </p>
+
+</div>
+</div>
+<a class="anchor" id="a347c23cded64629efdda7ffcfde8a702"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int avl_tree_compare_by_time_stamp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *&#160;</td>
+          <td class="paramname"><em>item1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *&#160;</td>
+          <td class="paramname"><em>item2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>userdata</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines the ordering of AVL tree nodes based on the time stamp. </p>
+
+</div>
+</div>
+<a class="anchor" id="a41469dac8832863a7b013e919cb59f04"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a>* logger_biobj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *&#160;</td>
+          <td class="paramname"><em>observer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initializes the biobjective logger. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae44be65a3d62cc79797112961f34c4ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void logger_biobj_check_if_within_ROI </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="logger__biobj__avl__tree_8c.html#a09799ec4ab35e977b149c025d2e84691">avl_node_t</a> *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Checks if the given node is smaller than the reference point, and stores this information in the node's item-&gt;within_ROI field. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa3b9c5c68499684363d46dadb8e03fa8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void logger_biobj_evaluate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluates the function, increases the number of evaluations and outputs information based on observer options. </p>
+
+</div>
+</div>
+<a class="anchor" id="a83c3e1aceee0c8ebf129752718f08556"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void logger_biobj_finalize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *&#160;</td>
+          <td class="paramname"><em>logger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Outputs the final nondominated solutions. </p>
+
+</div>
+</div>
+<a class="anchor" id="a48b77cb7ab3ff1ec74596d2711e5de32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void logger_biobj_free </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>stuff</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Frees the memory of the given biobjective logger. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3c2f0a4472ebd0385e56db5fa61c523f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a>* logger_biobj_indicator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>indicator_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initializes the indicator with name indicator_name. </p>
+
+</div>
+</div>
+<a class="anchor" id="aafd97d8cbf89371f66f1fe7dd8ae57f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void logger_biobj_indicator_finalize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a> *&#160;</td>
+          <td class="paramname"><em>indicator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *&#160;</td>
+          <td class="paramname"><em>logger</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Outputs the final information about this indicator. </p>
+
+</div>
+</div>
+<a class="anchor" id="aad16f95bbe83b5a8185012c2688935a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void logger_biobj_indicator_free </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>stuff</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Frees the memory of the given indicator. </p>
+
+</div>
+</div>
+<a class="anchor" id="adfdc6c477e070967a5f19e90e6818d86"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a>* logger_biobj_node_create </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>time_stamp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>num_obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Creates and returns the information on the solution in the form of a node's item in the AVL tree. </p>
+
+</div>
+</div>
+<a class="anchor" id="a38cdb0e3396eddb6365d634c13725706"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void logger_biobj_node_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>userdata</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Frees the data of the given <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="aaa525bc3137f9c1ef8de71d04a2a49c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t logger_biobj_tree_output </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="logger__biobj__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a> *&#160;</td>
+          <td class="paramname"><em>tree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>num_obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>log_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>precision_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>precision_f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Outputs the AVL tree to the given file. Returns the number of nodes in the tree. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6ec137bc7171c3a189746f14e7c931ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int logger_biobj_tree_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *&#160;</td>
+          <td class="paramname"><em>node_item</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Checks for domination and updates the archive tree and the values of the indicators if the given node is not weakly dominated by existing nodes in the archive tree. Returns 1 if the update was performed and 0 otherwise. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->

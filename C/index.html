@@ -158,13 +158,29 @@ observer = coco_observer("bbob-biobj", observer_options);
 <li><code>produce_all_data: VALUE</code> determines whether to produce all data required for the workshop. If set to <code>1</code>, it overwrites some other options and is equivalent to setting <code>log_nondominated</code> to <code>all</code>, <code>log_decision_variables</code> to <code>log_dim</code> and <code>compute_indicators</code> to <code>1</code>. If set to <code>0</code>, it does not change the values of the other options. The default value is 0.</li>
 </ul>
 <p>You can also run the benchmark without any observer, which produces no output, by invoking either <code>""</code> or <code>"no_observer"</code> in place of the observer name.</p>
+<h3>Problem evaluation <a class="anchor" id="problem-evaluation"></a></h3>
+<p>In order to evaluate the problem, call the function: </p><pre class="fragment">void coco_evaluate_function(coco_problem_t *problem, const double *x, double *y);
+</pre><p>It will evaluate the problem function in point <code>x</code> and save the result in <code>y</code>.</p>
+<p>In order to evaluate the constraints of the problem, call the function: </p><pre class="fragment">void coco_evaluate_function(coco_problem_t *problem, const double *x, double *y);
+</pre><p>It will evaluate the problem constraints in point <code>x</code> and save the result in <code>y</code>. Note: while this functionality is provided, the framework does not yet include problems with constraints.</p>
 <h3>Problem properties <a class="anchor" id="problem-properties"></a></h3>
-<p>In order to optimize the given problem with your solver, you might need to access some of the problem properties. You can do so using the following functions: </p><pre class="fragment">size_t coco_problem_get_dimension(const coco_problem_t *self);
-const double *coco_problem_get_smallest_values_of_interest(const coco_problem_t *self);
-const double *coco_problem_get_largest_values_of_interest(const coco_problem_t *self);
-size_t coco_problem_get_number_of_objectives(const coco_problem_t *self);
-size_t coco_problem_get_evaluations(coco_problem_t *self);
-</pre><p>See the documentation of the <code><a class="el" href="coco_8h.html">coco.h</a></code> file <a href="coco_8h.html">here</a> for more information on these and other functions use can use to interface the COCO problem and other COCO structures.</p>
+<p>To learn more about the problem, you can access its properties in the following way: </p><pre class="fragment">/* Returns the number of variables i.e. dimension of the problem */
+size_t coco_problem_get_dimension(const coco_problem_t *problem);
+
+/* Returns a vector of size 'dimension' with lower bounds of the region of interest in 
+ * the decision space. */
+const double *coco_problem_get_smallest_values_of_interest(const coco_problem_t *problem);
+
+/* Returns a vector of size 'dimension' with upper bounds of the region of interest in 
+ * the decision space. */
+const double *coco_problem_get_largest_values_of_interest(const coco_problem_t *problem);
+
+/* Returns the number of objectives of the problem */
+size_t coco_problem_get_number_of_objectives(const coco_problem_t *problem);
+
+/* Returns the number of evaluations done on the problem */
+size_t coco_problem_get_evaluations(coco_problem_t *problem);
+</pre><p>See the <code><a class="el" href="coco_8h.html" title="All public COCO functions, constants and variables are defined in this file. ">coco.h</a></code> file for more information on these and other functions you can use to interface COCO problem and other COCO structures.</p>
 <h2>How to write new test functions and combine them into test suites</h2>
 <p>COMING SOON...</p>
 <h2>How to write additional performance indicators and logging functionality</h2>

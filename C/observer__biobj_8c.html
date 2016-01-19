@@ -96,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">observer_biobj.c File Reference</div>  </div>
@@ -128,6 +129,13 @@ Enumerations</h2></td></tr>
 <a class="el" href="observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83a0f06c1c574ca2769a23fe384c2b1a353">ALWAYS</a>
  }</td></tr>
 <tr class="separator:a73c3917f4540c84782b4b0a341cfbe83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5e7c8711d35155ab9df431bcb773943b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#a5e7c8711d35155ab9df431bcb773943b">logger_biobj</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *self, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="separator:a5e7c8711d35155ab9df431bcb773943b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10a8194ffe8dea4b9157582aa137d732"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#a10a8194ffe8dea4b9157582aa137d732">observer_biobj</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *self, const char *options)</td></tr>
+<tr class="separator:a10a8194ffe8dea4b9157582aa137d732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -185,6 +193,85 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a73c3917f4540c84782b4b0a341cfbe83a0f06c1c574ca2769a23fe384c2b1a353"></a>ALWAYS&#160;</td><td class="fielddoc">
 </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a5e7c8711d35155ab9df431bcb773943b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a>* logger_biobj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a10a8194ffe8dea4b9157582aa137d732"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void observer_biobj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>options</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initializes the biobjective observer. Possible options:</p><ul>
+<li>log_nondominated : none (don't log nondominated solutions)</li>
+<li>log_nondominated : final (log only the final nondominated solutions)</li>
+<li>log_nondominated : all (log every solution that is nondominated at creation time; default value)</li>
+<li>log_decision_variables : none (don't output decision variables)</li>
+<li>log_decision_variables : log_dim (output decision variables only for dimensions lower or equal to 5; default value)</li>
+<li>log_decision_variables : all (output all decision variables)</li>
+<li>compute_indicators : 0 / 1 (whether to compute and output performance indicators; default value is 1)</li>
+<li>produce_all_data: 0 / 1 (whether to produce all data; if set to 1, overwrites other options and is equivalent to setting log_nondominated to all, log_decision_variables to log_dim and compute_indicators to 1; if set to 0, it does not change the values of other options; default value is 0) </li>
+</ul>
 
 </div>
 </div>

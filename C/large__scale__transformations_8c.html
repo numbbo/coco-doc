@@ -93,7 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">large_scale_transformations.c File Reference</div>  </div>
 </div><!--header-->
@@ -108,8 +109,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a2f80e1ab2b4c85016cf978078af96039"><td class="memItemLeft" align="right" valign="top">static double **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#a2f80e1ab2b4c85016cf978078af96039">ls_allocate_blockmatrix</a> (const size_t n, const size_t *block_sizes, const size_t nb_blocks)</td></tr>
+<tr class="separator:a2f80e1ab2b4c85016cf978078af96039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3a0d4bae4298df1fbe003f61aa0455"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#acd3a0d4bae4298df1fbe003f61aa0455">ls_free_block_matrix</a> (double **matrix, const size_t n)</td></tr>
+<tr class="separator:acd3a0d4bae4298df1fbe003f61aa0455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae95585942a628bf270934532973ef6c7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#ae95585942a628bf270934532973ef6c7">ls_compute_blockrotation</a> (double **B, long seed, size_t n, size_t *block_sizes, size_t nb_blocks)</td></tr>
+<tr class="separator:ae95585942a628bf270934532973ef6c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be39a890ea70580f5874fa7cc8110a8"><td class="memItemLeft" align="right" valign="top">static double **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#a3be39a890ea70580f5874fa7cc8110a8">ls_copy_block_matrix</a> (const double *const *B, const size_t dimension, const size_t *block_sizes, const size_t nb_blocks)</td></tr>
+<tr class="separator:a3be39a890ea70580f5874fa7cc8110a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41ba51df6a3238bac4a39a0a67c5272f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#a41ba51df6a3238bac4a39a0a67c5272f">f_compare_doubles_for_random_permutation</a> (const void *a, const void *b)</td></tr>
+<tr class="separator:a41ba51df6a3238bac4a39a0a67c5272f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49d69232676bbfa49052f123428fa4ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#a49d69232676bbfa49052f123428fa4ce">ls_compute_random_permutation</a> (size_t *P, long seed, size_t n)</td></tr>
+<tr class="separator:a49d69232676bbfa49052f123428fa4ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38b3e93fac0f8a4f24fb546cefdc58e5"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#a38b3e93fac0f8a4f24fb546cefdc58e5">ls_rand_int</a> (long lower_bound, long upper_bound, <a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *rng)</td></tr>
 <tr class="separator:a38b3e93fac0f8a4f24fb546cefdc58e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecbaaac6234aeffd6c08866e9d212e11"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#aecbaaac6234aeffd6c08866e9d212e11">ls_compute_truncated_uniform_swap_permutation</a> (size_t *P, long seed, size_t n, size_t nb_swaps, size_t swap_range)</td></tr>
+<tr class="separator:aecbaaac6234aeffd6c08866e9d212e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c2b506825ed35366063590e5de272b0"><td class="memItemLeft" align="right" valign="top">size_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#a7c2b506825ed35366063590e5de272b0">coco_duplicate_size_t_vector</a> (const size_t *src, const size_t number_of_elements)</td></tr>
 <tr class="separator:a7c2b506825ed35366063590e5de272b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c5b348c4e501894579c8988d281ecdf"><td class="memItemLeft" align="right" valign="top">size_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#a1c5b348c4e501894579c8988d281ecdf">ls_get_block_sizes</a> (size_t *nb_blocks, size_t dimension)</td></tr>
@@ -118,6 +133,11 @@ Functions</h2></td></tr>
 <tr class="separator:aaebbb824aebdb385b417ab8fd788412e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72572c36ca7cf02a537dd5a70c2e46da"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#a72572c36ca7cf02a537dd5a70c2e46da">ls_get_nb_swaps</a> (size_t dimension)</td></tr>
 <tr class="separator:a72572c36ca7cf02a537dd5a70c2e46da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad7927f69b0da4e9f4ff3992220ba36fe"><td class="memItemLeft" align="right" valign="top">static double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="large__scale__transformations_8c.html#ad7927f69b0da4e9f4ff3992220ba36fe">random_data</a></td></tr>
+<tr class="separator:ad7927f69b0da4e9f4ff3992220ba36fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a7c2b506825ed35366063590e5de272b0"></a>
@@ -142,6 +162,309 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a41ba51df6a3238bac4a39a0a67c5272f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int f_compare_doubles_for_random_permutation </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Comparison function used for sorting. In our case, it serves as a random permutation generator </p>
+
+</div>
+</div>
+<a class="anchor" id="a2f80e1ab2b4c85016cf978078af96039"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double** ls_allocate_blockmatrix </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t *&#160;</td>
+          <td class="paramname"><em>block_sizes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>nb_blocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>ls_allocate_blockmatrix(n, m, bs):</p>
+<p>Allocate a ${n} by ${m} block matrix of nb_blocks block sizes block_sizes structured as an array of pointers to double arrays. each row constains only the block_sizes[i] possibly non-zero elements </p>
+
+</div>
+</div>
+<a class="anchor" id="ae95585942a628bf270934532973ef6c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ls_compute_blockrotation </td>
+          <td>(</td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>block_sizes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nb_blocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>ls_compute_blockrotation(B, seed, DIM):</p>
+<p>Compute a ${DIM}x${DIM} block-diagonal matrix based on ${seed} and block_sizes and stores it in ${B}. B is a 2D vector with DIM lines and each line has blocksize(line) elements (the zeros are not stored) </p>
+
+</div>
+</div>
+<a class="anchor" id="a49d69232676bbfa49052f123428fa4ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ls_compute_random_permutation </td>
+          <td>(</td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aecbaaac6234aeffd6c08866e9d212e11"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ls_compute_truncated_uniform_swap_permutation </td>
+          <td>(</td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nb_swaps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>swap_range</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3be39a890ea70580f5874fa7cc8110a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double** ls_copy_block_matrix </td>
+          <td>(</td>
+          <td class="paramtype">const double *const *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t *&#160;</td>
+          <td class="paramname"><em>block_sizes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>nb_blocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acd3a0d4bae4298df1fbe003f61aa0455"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ls_free_block_matrix </td>
+          <td>(</td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>matrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -232,6 +555,27 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ad7927f69b0da4e9f4ff3992220ba36fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* random_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

@@ -119,6 +119,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ae6581fb15fd445af6457949d2acf57bb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#ae6581fb15fd445af6457949d2acf57bb">coco_random_generate</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
+<tr class="separator:ae6581fb15fd445af6457949d2acf57bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1eec26188c49daa70532b3822bffeae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#af1eec26188c49daa70532b3822bffeae">coco_random_new</a> (uint32_t seed)</td></tr>
 <tr class="separator:af1eec26188c49daa70532b3822bffeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40f389e6e4263a0680b8c8b62e307d39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#a40f389e6e4263a0680b8c8b62e307d39">coco_random_free</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
@@ -180,6 +182,32 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Free all memory associated with the RNG state. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae6581fb15fd445af6457949d2acf57bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void coco_random_generate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>coco_random_generate(state):</p>
+<p>This is a lagged Fibonacci generator that is nice because it is reasonably small and directly generates double values. The chosen lags (607 and 273) lead to a generator with a period in excess of 2^607-1. </p>
 
 </div>
 </div>

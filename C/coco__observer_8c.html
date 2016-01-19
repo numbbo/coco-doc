@@ -93,7 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">coco_observer.c File Reference</div>  </div>
 </div><!--header-->
@@ -106,12 +107,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:abaa35a8199a3c282392ea2932b5c8593"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#abaa35a8199a3c282392ea2932b5c8593">coco_observer_evaluation_to_log</a> (size_t number_of_evaluations, size_t dimension)</td></tr>
+<tr class="separator:abaa35a8199a3c282392ea2932b5c8593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd56dfd726c47b756eef1afe4eb47c5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#abfd56dfd726c47b756eef1afe4eb47c5">coco_observer_allocate</a> (const char *output_folder, const char *algorithm_name, const char *algorithm_info, const int precision_x, const int precision_f)</td></tr>
+<tr class="separator:abfd56dfd726c47b756eef1afe4eb47c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7504f98fc5f7c9765a7baa75ff0e282b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a7504f98fc5f7c9765a7baa75ff0e282b">coco_observer_free</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *self)</td></tr>
 <tr class="separator:a7504f98fc5f7c9765a7baa75ff0e282b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a000c4ab20f8dc9d358efb0d25c80b832"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a000c4ab20f8dc9d358efb0d25c80b832">coco_observer</a> (const char *observer_name, const char *observer_options)</td></tr>
 <tr class="separator:a000c4ab20f8dc9d358efb0d25c80b832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af894effafadb5f75ecd3bb75843f8a3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#af894effafadb5f75ecd3bb75843f8a3e">coco_problem_add_observer</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, <a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer)</td></tr>
 <tr class="separator:af894effafadb5f75ecd3bb75843f8a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af46183d106a2b1f37610f0ba3cc0059a"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#af46183d106a2b1f37610f0ba3cc0059a">coco_observer_always_log</a> [3] = {1, 2, 5}</td></tr>
+<tr class="separator:af46183d106a2b1f37610f0ba3cc0059a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a000c4ab20f8dc9d358efb0d25c80b832"></a>
@@ -149,6 +159,94 @@ Functions</h2></td></tr>
 <li>precision_f : integer value (precision used when outputting f values; default value is 15)</li>
 <li>any option specified by the specific observers </li>
 </ul>
+
+</div>
+</div>
+<a class="anchor" id="abfd56dfd726c47b756eef1afe4eb47c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a>* coco_observer_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>output_folder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>algorithm_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>algorithm_info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>precision_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>precision_f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Allocates memory for a coco_observer_t instance. </p>
+
+</div>
+</div>
+<a class="anchor" id="abaa35a8199a3c282392ea2932b5c8593"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_observer_evaluation_to_log </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>number_of_evaluations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns true if the number_of_evaluations corresponds to a number that should always be logged and false otherwise (computed from coco_observer_always_log). For example, if coco_observer_always_log = {1, 2, 5}, return true for 1, dim*1, dim*2, dim*5, 10*dim*1, 10*dim*2, 10*dim*5, 100*dim*1, 100*dim*2, 100*dim*5, ... </p>
 
 </div>
 </div>
@@ -193,6 +291,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Adds the observer to the problem if the observer is not NULL (invokes initialization of the corresponding logger). </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="af46183d106a2b1f37610f0ba3cc0059a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t coco_observer_always_log[3] = {1, 2, 5}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A set of numbers from which the evaluations that should always be logged are computed. For example, if logger_biobj_always_log[3] = {1, 2, 5}, the logger will always output evaluations 1, dim*1, dim*2, dim*5, 10*dim*1, 10*dim*2, 10*dim*5, 100*dim*1, 100*dim*2, 100*dim*5, ... </p>
 
 </div>
 </div>

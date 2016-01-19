@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['weierstrass_5fsummands',['WEIERSTRASS_SUMMANDS',['../f__weierstrass_8c.html#a66c361efadf8465b9e240e58cfdfc1db',1,'f_weierstrass.c']]],
-  ['within_5froi',['within_ROI',['../structlogger__biobj__avl__item__t.html#a4671185829104d65a7910b5ccf0183c4',1,'logger_biobj_avl_item_t']]],
-  ['written_5flast_5feval',['written_last_eval',['../structlogger__bbob__t.html#a1d232119493fd47022ab84d99a44cd5c',1,'logger_bbob_t']]]
+  ['unlink',['unlink',['../coco__platform_8h.html#acad0be8a645bcb376877ddbab6b00ac0',1,'coco_platform.h']]],
+  ['userdata',['userdata',['../structavl__tree.html#afd0ffb02780e738d4c0a10ab833b7834',1,'avl_tree']]]
 ];

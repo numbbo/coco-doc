@@ -93,7 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">coco_utilities.c File Reference</div>  </div>
 </div><!--header-->
@@ -129,6 +130,12 @@ Functions</h2></td></tr>
 <tr class="separator:aec8d5f1c5bd2ef5e3e2ddae5a729ed1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf33569a91176455319419271dae6be2"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#aaf33569a91176455319419271dae6be2">coco_duplicate_vector</a> (const double *src, const size_t number_of_elements)</td></tr>
 <tr class="separator:aaf33569a91176455319419271dae6be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8f6935478060f3cd8cf5ac442de116b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ac8f6935478060f3cd8cf5ac442de116b">coco_options_read_int</a> (const char *options, const char *name, int *pointer)</td></tr>
+<tr class="separator:ac8f6935478060f3cd8cf5ac442de116b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae35ce9d2acf83672f7d7a16affe193"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a6ae35ce9d2acf83672f7d7a16affe193">coco_options_read_string</a> (const char *options, const char *name, char *pointer)</td></tr>
+<tr class="separator:a6ae35ce9d2acf83672f7d7a16affe193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2e464f77ffb25f27db77e52e61c920d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ad2e464f77ffb25f27db77e52e61c920d">coco_options_read</a> (const char *options, const char *name, const char *format, void *pointer)</td></tr>
+<tr class="separator:ad2e464f77ffb25f27db77e52e61c920d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6062791e739f0088e251b0104a91ce27"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a6062791e739f0088e251b0104a91ce27">coco_round_double</a> (const double a)</td></tr>
 <tr class="separator:a6062791e739f0088e251b0104a91ce27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c8c1709c6a119b90a0b61e2cfcb6ef6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a6c8c1709c6a119b90a0b61e2cfcb6ef6">coco_max_double</a> (const double a, const double b)</td></tr>
@@ -141,8 +148,25 @@ Functions</h2></td></tr>
 <tr class="separator:af079b44546733c5be1cd68e38a2b06fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a592cd868f1b3e76b75d52d67afcbbe71"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a592cd868f1b3e76b75d52d67afcbbe71">coco_allocate_vector</a> (const size_t number_of_elements)</td></tr>
 <tr class="separator:a592cd868f1b3e76b75d52d67afcbbe71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa77a060c3353c2fde7e21bc0980e975"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#afa77a060c3353c2fde7e21bc0980e975">coco_options_read_size_t</a> (const char *options, const char *name, size_t *pointer)</td></tr>
+<tr class="separator:afa77a060c3353c2fde7e21bc0980e975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4627c6e63ca741a5cb29a792f98adf52"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a4627c6e63ca741a5cb29a792f98adf52">coco_options_read_values</a> (const char *options, const char *name, char *pointer)</td></tr>
+<tr class="separator:a4627c6e63ca741a5cb29a792f98adf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc09b1e1f4505eb55d5191a3a204e07"><td class="memItemLeft" align="right" valign="top">static char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a4bc09b1e1f4505eb55d5191a3a204e07">coco_string_split</a> (const char *string, const char delimiter)</td></tr>
+<tr class="separator:a4bc09b1e1f4505eb55d5191a3a204e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3140ec927ce1355fc9fcd4b3f89c672b"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a3140ec927ce1355fc9fcd4b3f89c672b">coco_numbers_count</a> (const size_t *numbers, const char *name)</td></tr>
+<tr class="separator:a3140ec927ce1355fc9fcd4b3f89c672b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8449e3fa222603ad4f82a38fe4368f"><td class="memItemLeft" align="right" valign="top">static size_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#aee8449e3fa222603ad4f82a38fe4368f">coco_string_get_numbers_from_ranges</a> (char *string, const char *name, size_t min, size_t max)</td></tr>
+<tr class="separator:aee8449e3fa222603ad4f82a38fe4368f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6aff95367ea2edbca53cf29de169891"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ad6aff95367ea2edbca53cf29de169891">coco_doubles_almost_equal</a> (const double a, const double b, const double accuracy)</td></tr>
 <tr class="separator:ad6aff95367ea2edbca53cf29de169891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f841d753da5f24f56becae5b8b27206"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a1f841d753da5f24f56becae5b8b27206">coco_remove_from_string</a> (char *string, char *from, char *to)</td></tr>
+<tr class="separator:a1f841d753da5f24f56becae5b8b27206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ade0947aadeb56a32c006a0adbf482106"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a91ec58921a2cd0ccb3d2d3aff43f647a">coco_log_level_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ade0947aadeb56a32c006a0adbf482106">coco_log_level</a> = <a class="el" href="coco_8h.html#a91ec58921a2cd0ccb3d2d3aff43f647aa31c8cf7bf4d921ee5c68a536428645b2">COCO_INFO</a></td></tr>
+<tr class="separator:ade0947aadeb56a32c006a0adbf482106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a592cd868f1b3e76b75d52d67afcbbe71"></a>
@@ -389,6 +413,267 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3140ec927ce1355fc9fcd4b3f89c672b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t coco_numbers_count </td>
+          <td>(</td>
+          <td class="paramtype">const size_t *&#160;</td>
+          <td class="paramname"><em>numbers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad2e464f77ffb25f27db77e52e61c920d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_options_read </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pointer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Parse options in the form "name1 : value1 name2: value2". Formatting requirements:</p><ul>
+<li>name and value need to be separated by a semicolon (spaces are optional)</li>
+<li>value needs to be a single string (no spaces allowed) Returns the number of successful assignments. </li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="ac8f6935478060f3cd8cf5ac442de116b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_options_read_int </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pointer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reads an integer from options using the form "name1 : value1 name2: value2". Formatting requirements:</p><ul>
+<li>name and value need to be separated by a semicolon (spaces are optional)</li>
+<li>the value corresponding to the given name needs to be an integer Returns the number of successful assignments. </li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="afa77a060c3353c2fde7e21bc0980e975"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_options_read_size_t </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>pointer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reads a size_t from options using the form "name1 : value1 name2: value2". Formatting requirements:</p><ul>
+<li>name and value need to be separated by a semicolon (spaces are optional)</li>
+<li>the value corresponding to the given name needs to be a size_t Returns the number of successful assignments. </li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="a6ae35ce9d2acf83672f7d7a16affe193"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_options_read_string </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>pointer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reads a double value from options using the form "name1 : value1 name2: value2". Formatting requirements:</p><ul>
+<li>name and value need to be separated by a semicolon (spaces are optional)</li>
+<li>the value corresponding to the given name needs to be a double Returns the number of successful assignments. Reads a string from options using the form "name1 : value1 name2: value2". Formatting requirements:</li>
+<li>name and value need to be separated by a semicolon (spaces are optional)</li>
+<li>the value corresponding to the given name needs to be a string - either a single word or multiple words in double quotes Returns the number of successful assignments. </li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="a4627c6e63ca741a5cb29a792f98adf52"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_options_read_values </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>pointer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reads (possibly delimited) values from options using the form "name1 : value1,value2,value3 name2: value4", i.e. reads all characters from the corresponding name up to the next whitespace or end of string. Formatting requirements:</p><ul>
+<li>name and value need to be separated by a semicolon (spaces are optional) Returns the number of successful assignments. </li>
+</ul>
+
+</div>
+</div>
 <a class="anchor" id="a0a475b28c43977bb1214df4a30f56858"></a>
 <div class="memitem">
 <div class="memproto">
@@ -456,6 +741,46 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1f841d753da5f24f56becae5b8b27206"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* coco_remove_from_string </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>to</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a6062791e739f0088e251b0104a91ce27"></a>
 <div class="memitem">
 <div class="memproto">
@@ -469,6 +794,110 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee8449e3fa222603ad4f82a38fe4368f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t* coco_string_get_numbers_from_ranges </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reads ranges from a string of positive ranges separated by commas. For example: "-3,5-6,8-". Returns the numbers that are defined by the ranges if min and max are used as their extremes. If the ranges with open beginning/end are not allowed, use 0 as min/max. The returned string has an appended 0 to mark its end. A maximum of COCO_MAX_INSTANCES values is returned. If there is a problem with one of the ranges, the parsing stops and the current result is returned. The memory of the returned object needs to be freed by the caller. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4bc09b1e1f4505eb55d5191a3a204e07"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char** coco_string_split </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>delimiter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Splits a string based on the given delimiter. Returns a pointer to the resulting substrings with NULL as the last one. The memory of the result needs to be freed by the caller. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ade0947aadeb56a32c006a0adbf482106"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="coco_8h.html#a91ec58921a2cd0ccb3d2d3aff43f647a">coco_log_level_type_e</a> coco_log_level = <a class="el" href="coco_8h.html#a91ec58921a2cd0ccb3d2d3aff43f647aa31c8cf7bf4d921ee5c68a536428645b2">COCO_INFO</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize the logging level to COCO_INFO. </p>
 
 </div>
 </div>
