@@ -111,16 +111,17 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab1fa98e5da154b0de9bfe50c15305009"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#ab1fa98e5da154b0de9bfe50c15305009">coco_strdup</a> (const char *string)</td></tr>
-<tr class="separator:ab1fa98e5da154b0de9bfe50c15305009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e8a9697f6ad3d8ff48e54c69e9f5ed3"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#a8e8a9697f6ad3d8ff48e54c69e9f5ed3">coco_strdup</a> (const char *string)</td></tr>
+<tr class="separator:a8e8a9697f6ad3d8ff48e54c69e9f5ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e7d3eb2f53f177bc923d91c819f5229"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#a2e7d3eb2f53f177bc923d91c819f5229">coco_strdupf</a> (const char *str,...)</td></tr>
+<tr class="memdesc:a2e7d3eb2f53f177bc923d91c819f5229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formatted string duplication.  <a href="#a2e7d3eb2f53f177bc923d91c819f5229">More...</a><br /></td></tr>
 <tr class="separator:a2e7d3eb2f53f177bc923d91c819f5229"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7ba16fd729386decb39175da3f90b9e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#ab7ba16fd729386decb39175da3f90b9e">coco_vstrdupf</a> (const char *str, va_list args)</td></tr>
-<tr class="separator:ab7ba16fd729386decb39175da3f90b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0af71fd516350a9ab4e9d8dfc38e26a9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#a0af71fd516350a9ab4e9d8dfc38e26a9">coco_strconcat</a> (const char *s1, const char *s2)</td></tr>
-<tr class="separator:a0af71fd516350a9ab4e9d8dfc38e26a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5079498c226bc1e206caed819e45f643"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#a5079498c226bc1e206caed819e45f643">coco_strfind</a> (const char *base, const char *seq)</td></tr>
-<tr class="separator:a5079498c226bc1e206caed819e45f643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b9a37ce7c2e39cf771fd024b3eceb4"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#a25b9a37ce7c2e39cf771fd024b3eceb4">coco_vstrdupf</a> (const char *str, va_list args)</td></tr>
+<tr class="separator:a25b9a37ce7c2e39cf771fd024b3eceb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1d1b6477557a2a1f10cc29b457c9bc"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#abc1d1b6477557a2a1f10cc29b457c9bc">coco_strconcat</a> (const char *s1, const char *s2)</td></tr>
+<tr class="separator:abc1d1b6477557a2a1f10cc29b457c9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522bf5186f5e432be271eb32c50b553f"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#a522bf5186f5e432be271eb32c50b553f">coco_strfind</a> (const char *base, const char *seq)</td></tr>
+<tr class="separator:a522bf5186f5e432be271eb32c50b553f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="ab1781358544047fb104760fc3e603930"></a>
@@ -136,12 +137,15 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a0af71fd516350a9ab4e9d8dfc38e26a9"></a>
+<a class="anchor" id="abc1d1b6477557a2a1f10cc29b457c9bc"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char * coco_strconcat </td>
+          <td class="memname">static char * coco_strconcat </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>s1</em>, </td>
@@ -158,27 +162,40 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>coco_strconcat(string1, string2):</p>
-<p>Return a concatenate copy of ${string1} + ${string2}. The caller is responsible for free()ing the memory allocated using <a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f">coco_free_memory()</a>. </p>
+<p>Return a concatenate copy of ${string1} + ${string2}. The caller is responsible for free()ing the memory allocated using <a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f" title="Frees the allocated memory. ">coco_free_memory()</a>. </p>
 
 </div>
 </div>
-<a class="anchor" id="ab1fa98e5da154b0de9bfe50c15305009"></a>
+<a class="anchor" id="a8e8a9697f6ad3d8ff48e54c69e9f5ed3"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* coco_strdup </td>
+          <td class="memname">static char * coco_strdup </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>string</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>coco_strdup(string):</p>
-<p>Create a duplicate copy of ${string} and return a pointer to it. The caller is responsible for free()ing the memory allocated using <a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f">coco_free_memory()</a>. </p>
+<p>Create a duplicate copy of ${string} and return a pointer to it. The caller is responsible for free()ing the memory allocated using <a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f" title="Frees the allocated memory. ">coco_free_memory()</a>. </p>
 
 </div>
 </div>
@@ -205,16 +222,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Formatted string duplication. Optional arguments are used like in sprintf. </p>
+
+<p>Formatted string duplication. </p>
+<p>Optional arguments are used like in sprintf. </p>
 
 </div>
 </div>
-<a class="anchor" id="a5079498c226bc1e206caed819e45f643"></a>
+<a class="anchor" id="a522bf5186f5e432be271eb32c50b553f"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">long coco_strfind </td>
+          <td class="memname">static long coco_strfind </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>base</em>, </td>
@@ -231,18 +253,26 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>return first index where ${seq} occurs in ${base}, -1 if it doesn't.</p>
 <p>If there is an equivalent standard C function, this can/should be removed. </p>
 
 </div>
 </div>
-<a class="anchor" id="ab7ba16fd729386decb39175da3f90b9e"></a>
+<a class="anchor" id="a25b9a37ce7c2e39cf771fd024b3eceb4"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char * coco_vstrdupf </td>
+          <td class="memname">static char * coco_vstrdupf </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -259,8 +289,13 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>va_list version of formatted string duplication <a class="el" href="coco__string_8c.html#a2e7d3eb2f53f177bc923d91c819f5229">coco_strdupf()</a> </p>
+<p>va_list version of formatted string duplication <a class="el" href="coco__string_8c.html#a2e7d3eb2f53f177bc923d91c819f5229" title="Formatted string duplication. ">coco_strdupf()</a> </p>
 
 </div>
 </div>

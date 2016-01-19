@@ -145,8 +145,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ac796977aac8d8b6b0ca49c9ea6441550"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ac796977aac8d8b6b0ca49c9ea6441550">coco_file_exists</a> (const char *path)</td></tr>
 <tr class="separator:ac796977aac8d8b6b0ca49c9ea6441550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af079b44546733c5be1cd68e38a2b06fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#af079b44546733c5be1cd68e38a2b06fc">coco_remove_directory</a> (const char *path)</td></tr>
+<tr class="memdesc:af079b44546733c5be1cd68e38a2b06fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the given directory and all its contents.  <a href="#af079b44546733c5be1cd68e38a2b06fc">More...</a><br /></td></tr>
 <tr class="separator:af079b44546733c5be1cd68e38a2b06fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a592cd868f1b3e76b75d52d67afcbbe71"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a592cd868f1b3e76b75d52d67afcbbe71">coco_allocate_vector</a> (const size_t number_of_elements)</td></tr>
+<tr class="memdesc:a592cd868f1b3e76b75d52d67afcbbe71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe memory allocation for a vector of doubles that either succeeds or triggers a coco_error.  <a href="#a592cd868f1b3e76b75d52d67afcbbe71">More...</a><br /></td></tr>
 <tr class="separator:a592cd868f1b3e76b75d52d67afcbbe71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa77a060c3353c2fde7e21bc0980e975"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#afa77a060c3353c2fde7e21bc0980e975">coco_options_read_size_t</a> (const char *options, const char *name, size_t *pointer)</td></tr>
 <tr class="separator:afa77a060c3353c2fde7e21bc0980e975"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,6 +184,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Safe memory allocation for a vector of doubles that either succeeds or triggers a coco_error. </p>
 
 </div>
 </div>
@@ -703,7 +707,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Removes the given directory and all its contents (should work across different platforms/compilers). Returns 0 on successful completion, and -1 on error. </p>
+
+<p>Removes the given directory and all its contents. </p>
+<p>The method should work across different platforms/compilers.  The path to the directory </p><dl class="section return"><dt>Returns</dt><dd>0 on successful completion, and -1 on error. </dd></dl>
 
 </div>
 </div>

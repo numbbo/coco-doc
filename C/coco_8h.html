@@ -95,9 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">coco.h File Reference</div>  </div>
 </div><!--header-->
@@ -149,6 +147,172 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methods regarding COCO suite</div></td></tr>
+<tr class="memitem:a66208fe6278a222edcb15de5cfa8ec3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a66208fe6278a222edcb15de5cfa8ec3b">coco_run_benchmark</a> (const char *suite_name, const char *suite_instance, const char *suite_options, const char *observer_name, const char *observer_options, <a class="el" href="coco_8h.html#a00289796fe5554d1d4cece1e7073e34b">coco_optimizer_t</a> optimizer)</td></tr>
+<tr class="memdesc:a66208fe6278a222edcb15de5cfa8ec3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the benchmark.  <a href="#a66208fe6278a222edcb15de5cfa8ec3b">More...</a><br /></td></tr>
+<tr class="separator:a66208fe6278a222edcb15de5cfa8ec3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78e0456818c46c178c4cde012732acd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ac78e0456818c46c178c4cde012732acd">coco_suite</a> (const char *suite_name, const char *suite_instance, const char *suite_options)</td></tr>
+<tr class="memdesc:ac78e0456818c46c178c4cde012732acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a COCO suite.  <a href="#ac78e0456818c46c178c4cde012732acd">More...</a><br /></td></tr>
+<tr class="separator:ac78e0456818c46c178c4cde012732acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbb63c0ca4af2e1a86b78e58e9f2d352"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#adbb63c0ca4af2e1a86b78e58e9f2d352">coco_suite_free</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite)</td></tr>
+<tr class="memdesc:adbb63c0ca4af2e1a86b78e58e9f2d352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given suite.  <a href="#adbb63c0ca4af2e1a86b78e58e9f2d352">More...</a><br /></td></tr>
+<tr class="separator:adbb63c0ca4af2e1a86b78e58e9f2d352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a422cee3f06f4b2524234102f75306fe7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a422cee3f06f4b2524234102f75306fe7">coco_suite_get_next_problem</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, <a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer)</td></tr>
+<tr class="memdesc:a422cee3f06f4b2524234102f75306fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next (observed) problem of the suite or NULL if there is no next problem left.  <a href="#a422cee3f06f4b2524234102f75306fe7">More...</a><br /></td></tr>
+<tr class="separator:a422cee3f06f4b2524234102f75306fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3146257b90351081d7ccfb97fe89f41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af3146257b90351081d7ccfb97fe89f41">coco_suite_get_problem</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, size_t problem_index)</td></tr>
+<tr class="memdesc:af3146257b90351081d7ccfb97fe89f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the problem of the suite defined by problem_index.  <a href="#af3146257b90351081d7ccfb97fe89f41">More...</a><br /></td></tr>
+<tr class="separator:af3146257b90351081d7ccfb97fe89f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade114812e9775176609c0a28ad73a7f9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ade114812e9775176609c0a28ad73a7f9">coco_suite_get_number_of_problems</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite)</td></tr>
+<tr class="memdesc:ade114812e9775176609c0a28ad73a7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of problems in the given suite.  <a href="#ade114812e9775176609c0a28ad73a7f9">More...</a><br /></td></tr>
+<tr class="separator:ade114812e9775176609c0a28ad73a7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef4adab578dc3303dee388a11de6df7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#adef4adab578dc3303dee388a11de6df7">coco_suite_get_function_from_function_index</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, size_t function_idx)</td></tr>
+<tr class="memdesc:adef4adab578dc3303dee388a11de6df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the function number in the suite in position function_idx (counting from 0).  <a href="#adef4adab578dc3303dee388a11de6df7">More...</a><br /></td></tr>
+<tr class="separator:adef4adab578dc3303dee388a11de6df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af54ec1bf5292d2bb2b3afc89a2612213"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af54ec1bf5292d2bb2b3afc89a2612213">coco_suite_get_dimension_from_dimension_index</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, size_t dimension_idx)</td></tr>
+<tr class="memdesc:af54ec1bf5292d2bb2b3afc89a2612213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension number in the suite in position dimension_idx (counting from 0).  <a href="#af54ec1bf5292d2bb2b3afc89a2612213">More...</a><br /></td></tr>
+<tr class="separator:af54ec1bf5292d2bb2b3afc89a2612213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8c06421ad1e86e7fa119abbe44af19b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ad8c06421ad1e86e7fa119abbe44af19b">coco_suite_get_instance_from_instance_index</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, size_t instance_idx)</td></tr>
+<tr class="memdesc:ad8c06421ad1e86e7fa119abbe44af19b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instance number in the suite in position instance_idx (counting from 0).  <a href="#ad8c06421ad1e86e7fa119abbe44af19b">More...</a><br /></td></tr>
+<tr class="separator:ad8c06421ad1e86e7fa119abbe44af19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Encoding/decoding problem index</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>General schema for encoding/decoding a problem index. Note that the index depends on the number of instances a suite is defined with (it should be called a suite-instance-depending index...). Also, while functions, instances and dimensions start from 1, function_idx, instance_idx and dimension_idx as well as suite_dep_index start from 0!</p>
+<p>Showing an example with 2 dimensions (2, 3), 5 instances (6, 7, 8, 9, 10) and 2 functions (1, 2):</p>
+<pre class="fragment">index | instance | function | dimension
+------+----------+----------+-----------
+    0 |        6 |        1 |         2
+    1 |        7 |        1 |         2
+    2 |        8 |        1 |         2
+    3 |        9 |        1 |         2
+    4 |       10 |        1 |         2
+    5 |        6 |        2 |         2
+    6 |        7 |        2 |         2
+    7 |        8 |        2 |         2
+    8 |        9 |        2 |         2
+    9 |       10 |        2 |         2
+   10 |        6 |        1 |         3
+   11 |        7 |        1 |         3
+   12 |        8 |        1 |         3
+   13 |        9 |        1 |         3
+   14 |       10 |        1 |         3
+   15 |        6 |        2 |         2
+   16 |        7 |        2 |         3
+   17 |        8 |        2 |         3
+   18 |        9 |        2 |         3
+   19 |       10 |        2 |         3
+
+index | instance_idx | function_idx | dimension_idx
+------+--------------+--------------+---------------
+    0 |            0 |            0 |             0
+    1 |            1 |            0 |             0
+    2 |            2 |            0 |             0
+    3 |            3 |            0 |             0
+    4 |            4 |            0 |             0
+    5 |            0 |            1 |             0
+    6 |            1 |            1 |             0
+    7 |            2 |            1 |             0
+    8 |            3 |            1 |             0
+    9 |            4 |            1 |             0
+   10 |            0 |            0 |             1
+   11 |            1 |            0 |             1
+   12 |            2 |            0 |             1
+   13 |            3 |            0 |             1
+   14 |            4 |            0 |             1
+   15 |            0 |            1 |             1
+   16 |            1 |            1 |             1
+   17 |            2 |            1 |             1
+   18 |            3 |            1 |             1
+   19 |            4 |            1 |             1
+</pre> </div></td></tr>
+<tr class="memitem:a5b9a2edcb4fdb3e32e5a56a80e21485d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a5b9a2edcb4fdb3e32e5a56a80e21485d">coco_suite_encode_problem_index</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
+<tr class="memdesc:a5b9a2edcb4fdb3e32e5a56a80e21485d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the index of the problem in the suite that corresponds to the given function, dimension and instance indexes.  <a href="#a5b9a2edcb4fdb3e32e5a56a80e21485d">More...</a><br /></td></tr>
+<tr class="separator:a5b9a2edcb4fdb3e32e5a56a80e21485d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d2c94aec37ff39210514e13e819e099"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a5d2c94aec37ff39210514e13e819e099">coco_suite_decode_problem_index</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, const size_t problem_index, size_t *function_idx, size_t *instance_idx, size_t *dimension_idx)</td></tr>
+<tr class="memdesc:a5d2c94aec37ff39210514e13e819e099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the function, dimension and instance indexes of the problem with problem_index in the given suite.  <a href="#a5d2c94aec37ff39210514e13e819e099">More...</a><br /></td></tr>
+<tr class="separator:a5d2c94aec37ff39210514e13e819e099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methods regarding COCO observer</div></td></tr>
+<tr class="memitem:a361c69537741748f54b41d5b66d00a0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a361c69537741748f54b41d5b66d00a0b">coco_observer</a> (const char *observer_name, const char *options)</td></tr>
+<tr class="memdesc:a361c69537741748f54b41d5b66d00a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a COCO observer.  <a href="#a361c69537741748f54b41d5b66d00a0b">More...</a><br /></td></tr>
+<tr class="separator:a361c69537741748f54b41d5b66d00a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7504f98fc5f7c9765a7baa75ff0e282b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a7504f98fc5f7c9765a7baa75ff0e282b">coco_observer_free</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *self)</td></tr>
+<tr class="memdesc:a7504f98fc5f7c9765a7baa75ff0e282b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given observer.  <a href="#a7504f98fc5f7c9765a7baa75ff0e282b">More...</a><br /></td></tr>
+<tr class="separator:a7504f98fc5f7c9765a7baa75ff0e282b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af894effafadb5f75ecd3bb75843f8a3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af894effafadb5f75ecd3bb75843f8a3e">coco_problem_add_observer</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, <a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer)</td></tr>
+<tr class="memdesc:af894effafadb5f75ecd3bb75843f8a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an observer to the given problem.  <a href="#af894effafadb5f75ecd3bb75843f8a3e">More...</a><br /></td></tr>
+<tr class="separator:af894effafadb5f75ecd3bb75843f8a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methods regarding COCO problem</div></td></tr>
+<tr class="memitem:aabbc02b57084ab069c37e1c27426b95c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#aabbc02b57084ab069c37e1c27426b95c">coco_evaluate_function</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:aabbc02b57084ab069c37e1c27426b95c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the problem function in point x and save the result in y.  <a href="#aabbc02b57084ab069c37e1c27426b95c">More...</a><br /></td></tr>
+<tr class="separator:aabbc02b57084ab069c37e1c27426b95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5cce904e394349ec1be1bcdc35967fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ab5cce904e394349ec1be1bcdc35967fa">coco_evaluate_constraint</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:ab5cce904e394349ec1be1bcdc35967fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the problem constraints in point x and save the result in y.  <a href="#ab5cce904e394349ec1be1bcdc35967fa">More...</a><br /></td></tr>
+<tr class="separator:ab5cce904e394349ec1be1bcdc35967fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fdc0c8438062d54b9212ea1e86c10e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a9fdc0c8438062d54b9212ea1e86c10e0">coco_recommend_solutions</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, size_t number_of_solutions)</td></tr>
+<tr class="memdesc:a9fdc0c8438062d54b9212ea1e86c10e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recommends number_of_solutions points (stored in x) as the current best guesses to the problem.  <a href="#a9fdc0c8438062d54b9212ea1e86c10e0">More...</a><br /></td></tr>
+<tr class="separator:a9fdc0c8438062d54b9212ea1e86c10e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacae3076ddc2814d1b1df2cf307c4b2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#aacae3076ddc2814d1b1df2cf307c4b2c">coco_problem_free</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:aacae3076ddc2814d1b1df2cf307c4b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given problem.  <a href="#aacae3076ddc2814d1b1df2cf307c4b2c">More...</a><br /></td></tr>
+<tr class="separator:aacae3076ddc2814d1b1df2cf307c4b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fbb83591242a6767d3ca5bbe8597321"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a3fbb83591242a6767d3ca5bbe8597321">coco_problem_get_name</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a3fbb83591242a6767d3ca5bbe8597321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the problem.  <a href="#a3fbb83591242a6767d3ca5bbe8597321">More...</a><br /></td></tr>
+<tr class="separator:a3fbb83591242a6767d3ca5bbe8597321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d31b340e2f1290191965d8411608ea4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a7d31b340e2f1290191965d8411608ea4">coco_problem_get_id</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a7d31b340e2f1290191965d8411608ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ID of the problem.  <a href="#a7d31b340e2f1290191965d8411608ea4">More...</a><br /></td></tr>
+<tr class="separator:a7d31b340e2f1290191965d8411608ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dabf3e4f5630d08077530a1341f13ab"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a0dabf3e4f5630d08077530a1341f13ab">coco_problem_get_dimension</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a0dabf3e4f5630d08077530a1341f13ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of variables i.e. the dimension of the problem.  <a href="#a0dabf3e4f5630d08077530a1341f13ab">More...</a><br /></td></tr>
+<tr class="separator:a0dabf3e4f5630d08077530a1341f13ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0d1fcc7f592c283f1e67cde2afeb60a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ab0d1fcc7f592c283f1e67cde2afeb60a">coco_problem_get_number_of_objectives</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:ab0d1fcc7f592c283f1e67cde2afeb60a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of objectives of the problem.  <a href="#ab0d1fcc7f592c283f1e67cde2afeb60a">More...</a><br /></td></tr>
+<tr class="separator:ab0d1fcc7f592c283f1e67cde2afeb60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c7b0889170a105671a14c8383fbb22"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ad5c7b0889170a105671a14c8383fbb22">coco_problem_get_number_of_constraints</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:ad5c7b0889170a105671a14c8383fbb22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of constraints of the problem.  <a href="#ad5c7b0889170a105671a14c8383fbb22">More...</a><br /></td></tr>
+<tr class="separator:ad5c7b0889170a105671a14c8383fbb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fdc6dbf00504ff4082dc4ef6db17c88"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a0fdc6dbf00504ff4082dc4ef6db17c88">coco_problem_get_evaluations</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a0fdc6dbf00504ff4082dc4ef6db17c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of evaluations done on the problem.  <a href="#a0fdc6dbf00504ff4082dc4ef6db17c88">More...</a><br /></td></tr>
+<tr class="separator:a0fdc6dbf00504ff4082dc4ef6db17c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7295173033f50d6409c85cdc2b1d6989"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a7295173033f50d6409c85cdc2b1d6989">coco_problem_get_best_observed_fvalue1</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a7295173033f50d6409c85cdc2b1d6989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the best observed value for the first objective.  <a href="#a7295173033f50d6409c85cdc2b1d6989">More...</a><br /></td></tr>
+<tr class="separator:a7295173033f50d6409c85cdc2b1d6989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3267a901e5846174962a988399ea397"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ab3267a901e5846174962a988399ea397">coco_problem_get_final_target_fvalue1</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:ab3267a901e5846174962a988399ea397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the target value for the first objective.  <a href="#ab3267a901e5846174962a988399ea397">More...</a><br /></td></tr>
+<tr class="separator:ab3267a901e5846174962a988399ea397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea6c067adfa866b0179329fe9b7c458"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a4ea6c067adfa866b0179329fe9b7c458">coco_problem_get_smallest_values_of_interest</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a4ea6c067adfa866b0179329fe9b7c458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector of size 'dimension' with lower bounds of the region of interest in the decision space.  <a href="#a4ea6c067adfa866b0179329fe9b7c458">More...</a><br /></td></tr>
+<tr class="separator:a4ea6c067adfa866b0179329fe9b7c458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c89e039494ae8b4f8e520cba1eb154"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a29c89e039494ae8b4f8e520cba1eb154">coco_problem_get_largest_values_of_interest</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a29c89e039494ae8b4f8e520cba1eb154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector of size 'dimension' with upper bounds of the region of interest in the decision space.  <a href="#a29c89e039494ae8b4f8e520cba1eb154">More...</a><br /></td></tr>
+<tr class="separator:a29c89e039494ae8b4f8e520cba1eb154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d48d5308b3c7159f41e5ac2e38b6dd1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a7d48d5308b3c7159f41e5ac2e38b6dd1">coco_problem_get_suite_dep_index</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a7d48d5308b3c7159f41e5ac2e38b6dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the problem_index of the problem in its current suite.  <a href="#a7d48d5308b3c7159f41e5ac2e38b6dd1">More...</a><br /></td></tr>
+<tr class="separator:a7d48d5308b3c7159f41e5ac2e38b6dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a44845acfadd7c5cccb9900a566b32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ac5a44845acfadd7c5cccb9900a566b32">coco_problem_get_initial_solution</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, double *initial_solution)</td></tr>
+<tr class="memdesc:ac5a44845acfadd7c5cccb9900a566b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an initial solution, i.e. a feasible variable setting, to the problem.  <a href="#ac5a44845acfadd7c5cccb9900a566b32">More...</a><br /></td></tr>
+<tr class="separator:ac5a44845acfadd7c5cccb9900a566b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methods regarding random numbers</div></td></tr>
+<tr class="memitem:af1eec26188c49daa70532b3822bffeae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af1eec26188c49daa70532b3822bffeae">coco_random_new</a> (uint32_t seed)</td></tr>
+<tr class="memdesc:af1eec26188c49daa70532b3822bffeae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a new random number state using the given seed.  <a href="#af1eec26188c49daa70532b3822bffeae">More...</a><br /></td></tr>
+<tr class="separator:af1eec26188c49daa70532b3822bffeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f389e6e4263a0680b8c8b62e307d39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a40f389e6e4263a0680b8c8b62e307d39">coco_random_free</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
+<tr class="memdesc:a40f389e6e4263a0680b8c8b62e307d39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees all memory associated with the random state.  <a href="#a40f389e6e4263a0680b8c8b62e307d39">More...</a><br /></td></tr>
+<tr class="separator:a40f389e6e4263a0680b8c8b62e307d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab24243b4a151ff353436a243331e8a2a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ab24243b4a151ff353436a243331e8a2a">coco_random_uniform</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
+<tr class="memdesc:ab24243b4a151ff353436a243331e8a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns one uniform [0, 1) random value from the random number generator associated with the given state.  <a href="#ab24243b4a151ff353436a243331e8a2a">More...</a><br /></td></tr>
+<tr class="separator:ab24243b4a151ff353436a243331e8a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6344ee786bf0f08e540343bd1e70babf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a6344ee786bf0f08e540343bd1e70babf">coco_random_normal</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
+<tr class="memdesc:a6344ee786bf0f08e540343bd1e70babf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates an approximately normal random number.  <a href="#a6344ee786bf0f08e540343bd1e70babf">More...</a><br /></td></tr>
+<tr class="separator:a6344ee786bf0f08e540343bd1e70babf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methods managing memory</div></td></tr>
+<tr class="memitem:aa1b016a6e67c46c20410b1daa959737b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#aa1b016a6e67c46c20410b1daa959737b">coco_allocate_memory</a> (const size_t size)</td></tr>
+<tr class="memdesc:aa1b016a6e67c46c20410b1daa959737b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe memory allocation that either succeeds or triggers a coco_error.  <a href="#aa1b016a6e67c46c20410b1daa959737b">More...</a><br /></td></tr>
+<tr class="separator:aa1b016a6e67c46c20410b1daa959737b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195f0611b2babbe1a95ce4677c259ee9"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a195f0611b2babbe1a95ce4677c259ee9">coco_allocate_vector</a> (const size_t size)</td></tr>
+<tr class="memdesc:a195f0611b2babbe1a95ce4677c259ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe memory allocation for a vector of doubles that either succeeds or triggers a coco_error.  <a href="#a195f0611b2babbe1a95ce4677c259ee9">More...</a><br /></td></tr>
+<tr class="separator:a195f0611b2babbe1a95ce4677c259ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8542ff7c23ec7a8e64487a50232db26f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f">coco_free_memory</a> (void *data)</td></tr>
+<tr class="memdesc:a8542ff7c23ec7a8e64487a50232db26f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the allocated memory.  <a href="#a8542ff7c23ec7a8e64487a50232db26f">More...</a><br /></td></tr>
+<tr class="separator:a8542ff7c23ec7a8e64487a50232db26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methods regarding COCO messages</div></td></tr>
 <tr class="memitem:a6191daa0f616cacdea2ae3de985d9487"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a6191daa0f616cacdea2ae3de985d9487">coco_error</a> (const char *message,...)</td></tr>
 <tr class="memdesc:a6191daa0f616cacdea2ae3de985d9487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to signal a fatal error.  <a href="#a6191daa0f616cacdea2ae3de985d9487">More...</a><br /></td></tr>
 <tr class="separator:a6191daa0f616cacdea2ae3de985d9487"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,99 +325,27 @@ Functions</h2></td></tr>
 <tr class="memitem:ab7c6d1e119e3b8c647da24f6f609c40f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ab7c6d1e119e3b8c647da24f6f609c40f">coco_debug</a> (const char *message,...)</td></tr>
 <tr class="memdesc:ab7c6d1e119e3b8c647da24f6f609c40f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to output detailed information usually used for debugging.  <a href="#ab7c6d1e119e3b8c647da24f6f609c40f">More...</a><br /></td></tr>
 <tr class="separator:ab7c6d1e119e3b8c647da24f6f609c40f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac78e0456818c46c178c4cde012732acd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ac78e0456818c46c178c4cde012732acd">coco_suite</a> (const char *suite_name, const char *suite_instance, const char *suite_options)</td></tr>
-<tr class="memdesc:ac78e0456818c46c178c4cde012732acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a COCO suite.  <a href="#ac78e0456818c46c178c4cde012732acd">More...</a><br /></td></tr>
-<tr class="separator:ac78e0456818c46c178c4cde012732acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbb63c0ca4af2e1a86b78e58e9f2d352"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#adbb63c0ca4af2e1a86b78e58e9f2d352">coco_suite_free</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite)</td></tr>
-<tr class="separator:adbb63c0ca4af2e1a86b78e58e9f2d352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a422cee3f06f4b2524234102f75306fe7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a422cee3f06f4b2524234102f75306fe7">coco_suite_get_next_problem</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, <a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer)</td></tr>
-<tr class="separator:a422cee3f06f4b2524234102f75306fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3146257b90351081d7ccfb97fe89f41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af3146257b90351081d7ccfb97fe89f41">coco_suite_get_problem</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, size_t problem_index)</td></tr>
-<tr class="separator:af3146257b90351081d7ccfb97fe89f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b9a2edcb4fdb3e32e5a56a80e21485d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a5b9a2edcb4fdb3e32e5a56a80e21485d">coco_suite_encode_problem_index</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
-<tr class="separator:a5b9a2edcb4fdb3e32e5a56a80e21485d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f2a132e18464dc07edd7b28dc48ee3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a5f2a132e18464dc07edd7b28dc48ee3c">coco_suite_decode_problem_index</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, const size_t problem_index, size_t *function, size_t *instance, size_t *dimension)</td></tr>
-<tr class="separator:a5f2a132e18464dc07edd7b28dc48ee3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade114812e9775176609c0a28ad73a7f9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ade114812e9775176609c0a28ad73a7f9">coco_suite_get_number_of_problems</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite)</td></tr>
-<tr class="separator:ade114812e9775176609c0a28ad73a7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adef4adab578dc3303dee388a11de6df7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#adef4adab578dc3303dee388a11de6df7">coco_suite_get_function_from_function_index</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, size_t function_idx)</td></tr>
-<tr class="separator:adef4adab578dc3303dee388a11de6df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af54ec1bf5292d2bb2b3afc89a2612213"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af54ec1bf5292d2bb2b3afc89a2612213">coco_suite_get_dimension_from_dimension_index</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, size_t dimension_idx)</td></tr>
-<tr class="separator:af54ec1bf5292d2bb2b3afc89a2612213"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8c06421ad1e86e7fa119abbe44af19b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ad8c06421ad1e86e7fa119abbe44af19b">coco_suite_get_instance_from_instance_index</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, size_t instance_idx)</td></tr>
-<tr class="separator:ad8c06421ad1e86e7fa119abbe44af19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29bb44cc8ba819c82fc91a0aa74afa85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a29bb44cc8ba819c82fc91a0aa74afa85">coco_evaluate_function</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self, const double *x, double *y)</td></tr>
-<tr class="separator:a29bb44cc8ba819c82fc91a0aa74afa85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cceb1e2d25653a08e2b808f59116cb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a2cceb1e2d25653a08e2b808f59116cb1">coco_evaluate_constraint</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self, const double *x, double *y)</td></tr>
-<tr class="separator:a2cceb1e2d25653a08e2b808f59116cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a64b1efea0507b617aa0ce0e90ed034"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a3a64b1efea0507b617aa0ce0e90ed034">coco_recommend_solutions</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self, const double *x, size_t number_of_solutions)</td></tr>
-<tr class="separator:a3a64b1efea0507b617aa0ce0e90ed034"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f7afab23c98b543e6ecf5618742aec2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a1f7afab23c98b543e6ecf5618742aec2">coco_problem_free</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:a1f7afab23c98b543e6ecf5618742aec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fef47afa277d8db563b1f64f5a68135"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a8fef47afa277d8db563b1f64f5a68135">coco_problem_get_name</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:a8fef47afa277d8db563b1f64f5a68135"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe5a2189bbb1f6c716cb4b6cd0cea0b5"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#abe5a2189bbb1f6c716cb4b6cd0cea0b5">coco_problem_get_id</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:abe5a2189bbb1f6c716cb4b6cd0cea0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a392d959103ae14624e059555f2dd713b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a392d959103ae14624e059555f2dd713b">coco_problem_get_dimension</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:a392d959103ae14624e059555f2dd713b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae9939194bcdd412324ae1e620951398"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#aae9939194bcdd412324ae1e620951398">coco_problem_get_number_of_objectives</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:aae9939194bcdd412324ae1e620951398"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae672f69a751c5dd2eca9469b286a9dc3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ae672f69a751c5dd2eca9469b286a9dc3">coco_problem_get_number_of_constraints</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:ae672f69a751c5dd2eca9469b286a9dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a724be54894215636f7d2031ca46e5eec"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a724be54894215636f7d2031ca46e5eec">coco_problem_get_evaluations</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:a724be54894215636f7d2031ca46e5eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00ac1690e4058caf59268548ca3c22f8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a00ac1690e4058caf59268548ca3c22f8">coco_problem_get_best_observed_fvalue1</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:a00ac1690e4058caf59268548ca3c22f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf130d04e2793a7040b2e287ff91a2ad"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#abf130d04e2793a7040b2e287ff91a2ad">coco_problem_get_final_target_fvalue1</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:abf130d04e2793a7040b2e287ff91a2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34b569da1cb2a2f5e18458f5dde82278"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a34b569da1cb2a2f5e18458f5dde82278">coco_problem_get_smallest_values_of_interest</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:a34b569da1cb2a2f5e18458f5dde82278"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada5a2cd12c077920b29f5dfa0b30522e"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ada5a2cd12c077920b29f5dfa0b30522e">coco_problem_get_largest_values_of_interest</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:ada5a2cd12c077920b29f5dfa0b30522e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a471712ff764fabaa5a7998b2fb22340c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a471712ff764fabaa5a7998b2fb22340c">coco_problem_get_suite_dep_index</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:a471712ff764fabaa5a7998b2fb22340c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a759fd502da00d14668246f60d656e8f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a759fd502da00d14668246f60d656e8f5">coco_problem_get_initial_solution</a> (const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self, double *initial_solution)</td></tr>
-<tr class="separator:a759fd502da00d14668246f60d656e8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66208fe6278a222edcb15de5cfa8ec3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a66208fe6278a222edcb15de5cfa8ec3b">coco_run_benchmark</a> (const char *suite_name, const char *suite_instance, const char *suite_options, const char *observer_name, const char *observer_options, <a class="el" href="coco_8h.html#a00289796fe5554d1d4cece1e7073e34b">coco_optimizer_t</a> optimizer)</td></tr>
-<tr class="separator:a66208fe6278a222edcb15de5cfa8ec3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a361c69537741748f54b41d5b66d00a0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a361c69537741748f54b41d5b66d00a0b">coco_observer</a> (const char *observer_name, const char *options)</td></tr>
-<tr class="separator:a361c69537741748f54b41d5b66d00a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7504f98fc5f7c9765a7baa75ff0e282b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a7504f98fc5f7c9765a7baa75ff0e282b">coco_observer_free</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *self)</td></tr>
-<tr class="separator:a7504f98fc5f7c9765a7baa75ff0e282b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af894effafadb5f75ecd3bb75843f8a3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af894effafadb5f75ecd3bb75843f8a3e">coco_problem_add_observer</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, <a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer)</td></tr>
-<tr class="separator:af894effafadb5f75ecd3bb75843f8a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1eec26188c49daa70532b3822bffeae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af1eec26188c49daa70532b3822bffeae">coco_random_new</a> (uint32_t seed)</td></tr>
-<tr class="separator:af1eec26188c49daa70532b3822bffeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40f389e6e4263a0680b8c8b62e307d39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a40f389e6e4263a0680b8c8b62e307d39">coco_random_free</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
-<tr class="separator:a40f389e6e4263a0680b8c8b62e307d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab24243b4a151ff353436a243331e8a2a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ab24243b4a151ff353436a243331e8a2a">coco_random_uniform</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
-<tr class="separator:ab24243b4a151ff353436a243331e8a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6344ee786bf0f08e540343bd1e70babf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a6344ee786bf0f08e540343bd1e70babf">coco_random_normal</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
-<tr class="separator:a6344ee786bf0f08e540343bd1e70babf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1b016a6e67c46c20410b1daa959737b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#aa1b016a6e67c46c20410b1daa959737b">coco_allocate_memory</a> (const size_t size)</td></tr>
-<tr class="separator:aa1b016a6e67c46c20410b1daa959737b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a195f0611b2babbe1a95ce4677c259ee9"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a195f0611b2babbe1a95ce4677c259ee9">coco_allocate_vector</a> (const size_t size)</td></tr>
-<tr class="separator:a195f0611b2babbe1a95ce4677c259ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8542ff7c23ec7a8e64487a50232db26f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f">coco_free_memory</a> (void *data)</td></tr>
-<tr class="separator:a8542ff7c23ec7a8e64487a50232db26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5434b95f32522a8d6a523ccab214cbe7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a5434b95f32522a8d6a523ccab214cbe7">coco_strdup</a> (const char *string)</td></tr>
-<tr class="separator:a5434b95f32522a8d6a523ccab214cbe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f46a05a139ac4b25393818ce0d883f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ae6f46a05a139ac4b25393818ce0d883f">coco_strdupf</a> (const char *str,...)</td></tr>
-<tr class="separator:ae6f46a05a139ac4b25393818ce0d883f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Other useful methods</div></td></tr>
 <tr class="memitem:af079b44546733c5be1cd68e38a2b06fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af079b44546733c5be1cd68e38a2b06fc">coco_remove_directory</a> (const char *path)</td></tr>
+<tr class="memdesc:af079b44546733c5be1cd68e38a2b06fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the given directory and all its contents.  <a href="#af079b44546733c5be1cd68e38a2b06fc">More...</a><br /></td></tr>
 <tr class="separator:af079b44546733c5be1cd68e38a2b06fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f46a05a139ac4b25393818ce0d883f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ae6f46a05a139ac4b25393818ce0d883f">coco_strdupf</a> (const char *str,...)</td></tr>
+<tr class="memdesc:ae6f46a05a139ac4b25393818ce0d883f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formatted string duplication.  <a href="#ae6f46a05a139ac4b25393818ce0d883f">More...</a><br /></td></tr>
+<tr class="separator:ae6f46a05a139ac4b25393818ce0d883f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a973742d29d384e21661bda90875ccf39"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a973742d29d384e21661bda90875ccf39">coco_pi</a> = 3.14159265358979323846</td></tr>
-<tr class="memdesc:a973742d29d384e21661bda90875ccf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">COCO's own pi constant.  <a href="#a973742d29d384e21661bda90875ccf39">More...</a><br /></td></tr>
+<tr class="memdesc:a973742d29d384e21661bda90875ccf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">COCO's own pi constant. Simplifies the case, when the value of pi changes.  <a href="#a973742d29d384e21661bda90875ccf39">More...</a><br /></td></tr>
 <tr class="separator:a973742d29d384e21661bda90875ccf39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad13e23673e37cc257befd3695c218304"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ad13e23673e37cc257befd3695c218304">coco_two_pi</a> = 2.0 * 3.14159265358979323846</td></tr>
+<tr class="memdesc:ad13e23673e37cc257befd3695c218304"><td class="mdescLeft">&#160;</td><td class="mdescRight">COCO's own pi constant. Simplifies the case, when the value of pi changes.  <a href="#ad13e23673e37cc257befd3695c218304">More...</a><br /></td></tr>
 <tr class="separator:ad13e23673e37cc257befd3695c218304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>All public COCO functions, constants and variables are defined in this file. </p>
-<p>It is the authoritative reference, if any function deviates from the documented behavior it is considered a bug. </p>
+<p>It is the authoritative reference, if any function deviates from the documented behavior it is considered a bug. See the function definitions for their detailed descriptions. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="af9809f13a5476daa46426a69b29bb574"></a>
 <div class="memitem">
@@ -403,6 +495,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Safe memory allocation that either succeeds or triggers a coco_error. </p>
+
 </div>
 </div>
 <a class="anchor" id="a195f0611b2babbe1a95ce4677c259ee9"></a>
@@ -418,6 +512,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Safe memory allocation for a vector of doubles that either succeeds or triggers a coco_error. </p>
 
 </div>
 </div>
@@ -477,7 +573,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2cceb1e2d25653a08e2b808f59116cb1"></a>
+<a class="anchor" id="ab5cce904e394349ec1be1bcdc35967fa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -485,7 +581,7 @@ Variables</h2></td></tr>
           <td class="memname">void coco_evaluate_constraint </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>problem</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -506,12 +602,23 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Evaluate the constraints of the COCO problem represented by ${self} with the parameter settings ${x} and save the result in ${y}.</p>
-<dl class="section note"><dt>Note</dt><dd>${x} and ${y} are expected to be of the correct sizes. </dd></dl>
+
+<p>Evaluates the problem constraints in point x and save the result in y. </p>
+<dl class="section note"><dt>Note</dt><dd>None of the problems implement this function yet! </dd>
+<dd>
+Both x and y must point to correctly sized allocated memory regions.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
+    <tr><td class="paramname">x</td><td>The decision vector. </td></tr>
+    <tr><td class="paramname">y</td><td>The vector of constraints that is the result of the evaluation. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a29bb44cc8ba819c82fc91a0aa74afa85"></a>
+<a class="anchor" id="aabbc02b57084ab069c37e1c27426b95c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -519,7 +626,7 @@ Variables</h2></td></tr>
           <td class="memname">void coco_evaluate_function </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>problem</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -540,8 +647,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Evaluate the COCO problem represented by ${self} with the parameter settings ${x} and save the result in ${y}.</p>
-<dl class="section note"><dt>Note</dt><dd>Both x and y must point to correctly sized allocated memory regions. </dd></dl>
+
+<p>Evaluates the problem function in point x and save the result in y. </p>
+<p>Evaluates the problem function, increases the number of evaluations and updates the best observed value and the best observed evaluation number.</p>
+<dl class="section note"><dt>Note</dt><dd>Both x and y must point to correctly sized allocated memory regions.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
+    <tr><td class="paramname">x</td><td>The decision vector. </td></tr>
+    <tr><td class="paramname">y</td><td>The objective vector that is the result of the evaluation (in single-objective problems only the first vector item is used). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -558,6 +675,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Frees the allocated memory. </p>
 
 </div>
 </div>
@@ -612,18 +731,29 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initializes the observer. If observer_name is no_observer, no observer is used. Possible observer_options:</p><ul>
-<li>result_folder : string (the name of the result_folder is used to create a unique folder; default value is "results")</li>
-<li>algorithm_name : string (to be used in logged output and plots; default value is "ALG")</li>
-<li>algorithm_info : string (to be used in logged output; default value is "")</li>
-<li>log_level : error (only error messages are output)</li>
-<li>log_level : warning (only error and warning messages are output)</li>
-<li>log_level : info (only error, warning and info messages are output; default value)</li>
-<li>log_level : debug (all messages are output)</li>
-<li>precision_x : integer value (precision used when outputting variables; default value is 8)</li>
-<li>precision_f : integer value (precision used when outputting f values; default value is 15)</li>
-<li>any option specified by the specific observers </li>
+
+<p>Constructs a COCO observer. </p>
+<p>Currently, three observers are supported:</p><ul>
+<li>"bbob" is the observer for single-objective (both noisy and noiseless) problems with known optima, which creates *.info, *.dat, *.tdat and *.rdat files and logs the distance to the optimum.</li>
+<li>"bbob-biobj" is the observer for bi-objective problems, which creates *.info and *.dat files for the given indicators, as well as an archive folder with *.dat files containing nondominated solutions.</li>
+<li>"toy" is a simple observer that logs when a target has been hit.</li>
 </ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">observer_name</td><td>A string containing the name of the observer. Currently supported observer names are "bbob", "bbob-biobj", "toy". "no_observer", "" or NULL return NULL. </td></tr>
+    <tr><td class="paramname">observer_options</td><td>A string of pairs "key: value" used to pass the options to the observer. Some observer options are general, while others are specific to some observers. Here we list only the general options, see observer_bbob, observer_biobj and observer_toy for options of the specific observers.<ul>
+<li>"result_folder: NAME" determines the output folder. If the folder with the given name already exists, first NAME_001 will be tried, then NAME_002 and so on. The default value is "results".</li>
+<li>"algorithm_name: NAME", where NAME is a short name of the algorithm that will be used in plots (no spaces are allowed). The default value is "ALG".</li>
+<li>"algorithm_info: STRING" stores the description of the algorithm. If it contains spaces, it must be surrounded by double quotes. The default value is "" (no description).</li>
+<li>"log_level: STRING" denotes the level of information given to the user through the standard output and error stream (this is independent from the logging done in the files). STRING can take on the values error (only error messages are output), warning (only error and warning messages are output), info (only error, warning and info messages are output) and debug (all messages are output). The default value is info.</li>
+<li>"precision_x: VALUE" defines the precision used when outputting variables and corresponds to the number of digits to be printed after the decimal point. The default value is 8.</li>
+<li>precision_f: VALUE defines the precision used when outputting f values and corresponds to the number of digits to be printed after the decimal point. The default value is 15. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The constructed observer object or NULL if observer_name equals NULL, "" or "no_observer". </dd></dl>
 
 </div>
 </div>
@@ -640,7 +770,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Frees memory for the given coco_observer_t instance. </p>
+
+<p>Frees the given observer. </p>
 
 </div>
 </div>
@@ -667,11 +798,21 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds the observer to the problem if the observer is not NULL (invokes initialization of the corresponding logger). </p>
+
+<p>Adds an observer to the given problem. </p>
+<p>Wraps the observer around the problem if the observer is not NULL and invokes initialization of the corresponding logger.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
+    <tr><td class="paramname">observer</td><td>The COCO observer that will wrap the problem. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The observed problem in the form of a new COCO problem instance or the same problem if the observer is NULL. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a1f7afab23c98b543e6ecf5618742aec2"></a>
+<a class="anchor" id="aacae3076ddc2814d1b1df2cf307c4b2c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -679,16 +820,17 @@ Variables</h2></td></tr>
           <td class="memname">void coco_problem_free </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Free the COCO problem represented by ${self}. </p>
+
+<p>Frees the given problem. </p>
 
 </div>
 </div>
-<a class="anchor" id="a00ac1690e4058caf59268548ca3c22f8"></a>
+<a class="anchor" id="a7295173033f50d6409c85cdc2b1d6989"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -696,15 +838,17 @@ Variables</h2></td></tr>
           <td class="memname">double coco_problem_get_best_observed_fvalue1 </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the best observed value for the first objective. </p>
+
 </div>
 </div>
-<a class="anchor" id="a392d959103ae14624e059555f2dd713b"></a>
+<a class="anchor" id="a0dabf3e4f5630d08077530a1341f13ab"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -712,16 +856,17 @@ Variables</h2></td></tr>
           <td class="memname">size_t coco_problem_get_dimension </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return the dimension of a COCO problem. </p>
+
+<p>Returns the number of variables i.e. the dimension of the problem. </p>
 
 </div>
 </div>
-<a class="anchor" id="a724be54894215636f7d2031ca46e5eec"></a>
+<a class="anchor" id="a0fdc6dbf00504ff4082dc4ef6db17c88"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -729,16 +874,17 @@ Variables</h2></td></tr>
           <td class="memname">size_t coco_problem_get_evaluations </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of evaluations done on problem ${self}. Tentative and yet versatile. </p>
+
+<p>Returns the number of evaluations done on the problem. </p>
 
 </div>
 </div>
-<a class="anchor" id="abf130d04e2793a7040b2e287ff91a2ad"></a>
+<a class="anchor" id="ab3267a901e5846174962a988399ea397"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -746,17 +892,18 @@ Variables</h2></td></tr>
           <td class="memname">double coco_problem_get_final_target_fvalue1 </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return target value for first objective. Values below are not relevant in the performance assessment.</p>
-<p>This function breaks the black-box property: the returned value is not meant to be used by the optimization algorithm other than for final termination. </p>
+
+<p>Returns the target value for the first objective. </p>
+<dl class="section note"><dt>Note</dt><dd>This function breaks the black-box property: the returned value is not meant to be used by the optimization algorithm other than for testing termination conditions. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="abe5a2189bbb1f6c716cb4b6cd0cea0b5"></a>
+<a class="anchor" id="a7d31b340e2f1290191965d8411608ea4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -764,19 +911,20 @@ Variables</h2></td></tr>
           <td class="memname">const char* coco_problem_get_id </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return the ID of the COCO problem ${self}. The ID is guaranteed to contain only characters in the set [a-z0-9_-]. It should therefore be safe to use the ID to construct filenames or other identifiers.</p>
+
+<p>Returns the ID of the problem. </p>
+<p>The ID is guaranteed to contain only characters in the set [a-z0-9_-]. It should therefore be safe to use it to construct filenames or other identifiers.</p>
 <p>Each problem ID should be unique within each benchmark suite.</p>
-<dl class="section note"><dt>Note</dt><dd>Do not modify the returned string! If you free the problem, the returned pointer becomes invalid. When in doubt, strdup() the returned value.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="coco_8h.html#a5434b95f32522a8d6a523ccab214cbe7">coco_strdup</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Do not modify the returned string! If you free the problem, the returned pointer becomes invalid. When in doubt, use <a class="el" href="coco__string_8c.html#a8e8a9697f6ad3d8ff48e54c69e9f5ed3">coco_strdup()</a> on the returned value. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a759fd502da00d14668246f60d656e8f5"></a>
+<a class="anchor" id="ac5a44845acfadd7c5cccb9900a566b32"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -784,7 +932,7 @@ Variables</h2></td></tr>
           <td class="memname">void coco_problem_get_initial_solution </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>problem</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -799,13 +947,13 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return an initial solution, i.e. a feasible variable setting, to the problem.</p>
-<p>By default, the center of the problems region of interest is the initial solution.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="coco_8h.html#a34b569da1cb2a2f5e18458f5dde82278">coco_problem_get_smallest_values_of_interest()</a> and <a class="el" href="coco_8h.html#ada5a2cd12c077920b29f5dfa0b30522e">coco_problem_get_largest_values_of_interest()</a> </dd></dl>
+
+<p>Returns an initial solution, i.e. a feasible variable setting, to the problem. </p>
+<p>If a special method for setting an initial solution to the problem does not exist, the center of the problem's region of interest is the initial solution. </p>
 
 </div>
 </div>
-<a class="anchor" id="ada5a2cd12c077920b29f5dfa0b30522e"></a>
+<a class="anchor" id="a29c89e039494ae8b4f8e520cba1eb154"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -813,15 +961,17 @@ Variables</h2></td></tr>
           <td class="memname">const double* coco_problem_get_largest_values_of_interest </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a vector of size 'dimension' with upper bounds of the region of interest in the decision space. </p>
+
 </div>
 </div>
-<a class="anchor" id="a8fef47afa277d8db563b1f64f5a68135"></a>
+<a class="anchor" id="a3fbb83591242a6767d3ca5bbe8597321"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -829,18 +979,18 @@ Variables</h2></td></tr>
           <td class="memname">const char* coco_problem_get_name </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return the name of a COCO problem.</p>
-<dl class="section note"><dt>Note</dt><dd>Do not modify the returned string! If you free the problem, the returned pointer becomes invalid. When in doubt, strdup() the returned value.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="coco_8h.html#a5434b95f32522a8d6a523ccab214cbe7">coco_strdup()</a> </dd></dl>
+
+<p>Returns the name of the problem. </p>
+<dl class="section note"><dt>Note</dt><dd>Do not modify the returned string! If you free the problem, the returned pointer becomes invalid. When in doubt, use <a class="el" href="coco__string_8c.html#a8e8a9697f6ad3d8ff48e54c69e9f5ed3">coco_strdup()</a> on the returned value. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ae672f69a751c5dd2eca9469b286a9dc3"></a>
+<a class="anchor" id="ad5c7b0889170a105671a14c8383fbb22"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -848,16 +998,17 @@ Variables</h2></td></tr>
           <td class="memname">size_t coco_problem_get_number_of_constraints </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return the number of constraints of a COCO problem. </p>
+
+<p>Returns the number of constraints of the problem. </p>
 
 </div>
 </div>
-<a class="anchor" id="aae9939194bcdd412324ae1e620951398"></a>
+<a class="anchor" id="ab0d1fcc7f592c283f1e67cde2afeb60a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -865,16 +1016,17 @@ Variables</h2></td></tr>
           <td class="memname">size_t coco_problem_get_number_of_objectives </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return the number of objectives of a COCO problem. </p>
+
+<p>Returns the number of objectives of the problem. </p>
 
 </div>
 </div>
-<a class="anchor" id="a34b569da1cb2a2f5e18458f5dde82278"></a>
+<a class="anchor" id="a4ea6c067adfa866b0179329fe9b7c458"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -882,16 +1034,17 @@ Variables</h2></td></tr>
           <td class="memname">const double* coco_problem_get_smallest_values_of_interest </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>tentative getters for region of interest </p>
+
+<p>Returns a vector of size 'dimension' with lower bounds of the region of interest in the decision space. </p>
 
 </div>
 </div>
-<a class="anchor" id="a471712ff764fabaa5a7998b2fb22340c"></a>
+<a class="anchor" id="a7d48d5308b3c7159f41e5ac2e38b6dd1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -899,11 +1052,13 @@ Variables</h2></td></tr>
           <td class="memname">size_t coco_problem_get_suite_dep_index </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the problem_index of the problem in its current suite. </p>
 
 </div>
 </div>
@@ -920,7 +1075,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Free all memory associated with the RNG state. </p>
+
+<p>Frees all memory associated with the random state. </p>
 
 </div>
 </div>
@@ -937,7 +1093,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create a new random number stream using ${seed} and return its state. </p>
+
+<p>Creates and returns a new random number state using the given seed. </p>
 
 </div>
 </div>
@@ -954,8 +1111,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Generate an approximately normal random number.</p>
-<p>Instead of using the (expensive) polar method, we may cheat and abuse the central limit theorem. The sum of 12 uniform RVs has mean 6, variance 1 and is approximately normal. Subtract 6 and you get an approximately N(0, 1) random number. </p>
+
+<p>Generates an approximately normal random number. </p>
+<p>Instead of using the (expensive) polar method, we may cheat and abuse the central limit theorem. The sum of 12 uniform random values has mean 6, variance 1 and is approximately normal. Subtract 6 and you get an approximately N(0, 1) random number. </p>
 
 </div>
 </div>
@@ -972,11 +1130,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return one uniform [0, 1) random value from the random number generator associated with ${state}. </p>
+
+<p>Returns one uniform [0, 1) random value from the random number generator associated with the given state. </p>
 
 </div>
 </div>
-<a class="anchor" id="a3a64b1efea0507b617aa0ce0e90ed034"></a>
+<a class="anchor" id="a9fdc0c8438062d54b9212ea1e86c10e0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -984,7 +1143,7 @@ Variables</h2></td></tr>
           <td class="memname">void coco_recommend_solutions </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>problem</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1005,8 +1164,21 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Recommend ${number_of_solutions} parameter settings (stored in ${x}) as the current best guess solutions to the problem ${self}.</p>
-<dl class="section note"><dt>Note</dt><dd>${number_of_solutions} is expected to be larger than 1 only if coco_problem_get_number_of_objectives(self) is larger than 1. </dd></dl>
+
+<p>Recommends number_of_solutions points (stored in x) as the current best guesses to the problem. </p>
+<dl class="section note"><dt>Note</dt><dd>None of the observers implements this function yet! </dd>
+<dd>
+Both x and y must point to correctly sized allocated memory regions. </dd>
+<dd>
+number_of_solutions is expected to be larger than 1 only for multi-objective problems.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
+    <tr><td class="paramname">x</td><td>The array of vector. </td></tr>
+    <tr><td class="paramname">y</td><td>The vector of constraints that is the result of the evaluation. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1023,7 +1195,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Removes the given directory and all its contents (should work across different platforms/compilers). Returns 0 on successful completion, and -1 on error. </p>
+
+<p>Removes the given directory and all its contents. </p>
+<p>The method should work across different platforms/compilers.  The path to the directory </p><dl class="section return"><dt>Returns</dt><dd>0 on successful completion, and -1 on error. </dd></dl>
 
 </div>
 </div>
@@ -1075,25 +1249,19 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a5434b95f32522a8d6a523ccab214cbe7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * coco_strdup </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>string</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Create a duplicate of a string and return a pointer to it. The caller is responsible for releasing the allocated memory using <a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f">coco_free_memory()</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f">coco_free_memory()</a></dd></dl>
-<p>coco_strdup(string):</p>
-<p>Create a duplicate copy of ${string} and return a pointer to it. The caller is responsible for free()ing the memory allocated using <a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f">coco_free_memory()</a>. </p>
+<p>Runs the benchmark. </p>
+<p>Constructs a suite and observer given their options and runs the optimizer on all the problems in the suite.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suite_name</td><td>A string containing the name of the suite. See suite_name in the <a class="el" href="structcoco__suite.html">coco_suite</a> function for possible values. </td></tr>
+    <tr><td class="paramname">suite_instance</td><td>A string used for defining the suite instances. See suite_instance in the <a class="el" href="structcoco__suite.html">coco_suite</a> function for possible values ("" and NULL result in default suite instances). </td></tr>
+    <tr><td class="paramname">suite_options</td><td>A string of pairs "key: value" used to filter the suite. See suite_options in the <a class="el" href="structcoco__suite.html">coco_suite</a> function for possible values ("" and NULL result in a non-filtered suite). </td></tr>
+    <tr><td class="paramname">observer_name</td><td>A string containing the name of the observer. See observer_name in the <a class="el" href="structcoco__observer.html">coco_observer</a> function for possible values ("", "no_observer" and NULL result in not using an observer). </td></tr>
+    <tr><td class="paramname">observer_options</td><td>A string of pairs "key: value" used to pass the options to the observer. See observer_options in the <a class="el" href="structcoco__observer.html">coco_observer</a> function for possible values ("" and NULL result in default observer options). </td></tr>
+    <tr><td class="paramname">optimizer</td><td>An optimization algorithm to be run on each problem in the suite. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1120,7 +1288,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Formatted string duplication. Optional arguments are used like in sprintf. </p>
+
+<p>Formatted string duplication. </p>
+<p>Optional arguments are used like in sprintf. </p>
 
 </div>
 </div>
@@ -1161,16 +1331,29 @@ Variables</h2></td></tr>
 <li>"bbob-largescale" contains 24 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 6 large dimensions (40, 80, 160, 320, 640, 1280)</li>
 <li>"toy" contains 6 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 5 dimensions (2, 3, 5, 10, 20)</li>
 </ul>
+<p>Only the suite_name parameter needs to be non-empty. The suite_instance and suite_options can be "" or NULL. In this case, default values are taken (default instances of a suite are those used in the last year and the suite is not filtered by default).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">suite_name</td><td>A string containing the name of the suite. Currently supported suite names are "bbob", "bbob-biobj", "bbob-largescale" and "toy" </td></tr>
+    <tr><td class="paramname">suite_name</td><td>A string containing the name of the suite. Currently supported suite names are "bbob", "bbob-biobj", "bbob-largescale" and "toy". </td></tr>
+    <tr><td class="paramname">suite_instance</td><td>A string used for defining the suite instances. Two ways are supported:<ul>
+<li>"year: YEAR", where YEAR is the year of the BBOB workshop, includes the instances (to be) used in that year's workshop;</li>
+<li>"instances: VALUES", where VALUES are instance numbers from 1 on written as a comma-separated list or a range m-n. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">suite_options</td><td>A string of pairs "key: value" used to filter the suite (especially useful for parallelizing the experiments). Supported options:<ul>
+<li>"dimensions: LIST", where LIST is the list of dimensions to keep in the suite (range-style syntax is not allowed here),</li>
+<li>"function_idx: VALUES", where VALUES is a list or a range of function indexes (starting from 1) to keep in the suite, and</li>
+<li>"instance_idx: VALUES", where VALUES is a list or a range of instance indexes (starting from 1) to keep in the suite. </li>
+</ul>
+</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The constructed suite object. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a5f2a132e18464dc07edd7b28dc48ee3c"></a>
+<a class="anchor" id="a5d2c94aec37ff39210514e13e819e099"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1211,7 +1394,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Computes the function_idx, dimension_idx and instance_idx of the problem with index problem_index of the given suite. Note that the index depends on the number of instances a suite is defined with! </p>
+
+<p>Computes the function, dimension and instance indexes of the problem with problem_index in the given suite. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suite</td><td>The suite. </td></tr>
+    <tr><td class="paramname">problem_index</td><td>Index of the problem in the suite (starting with 0). </td></tr>
+    <tr><td class="paramname">function_idx</td><td>Pointer to the index of the function, which is set by this function. </td></tr>
+    <tr><td class="paramname">dimension_idx</td><td>Pointer to the index of the dimension, which is set by this function. </td></tr>
+    <tr><td class="paramname">instance_idx</td><td>Pointer to the index of the instance, which is set by this function. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1250,7 +1444,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Computes the problem index from function_idx, dimension_idx and instance_idx of the given suite. Note that the index depends on the number of instances a suite is defined with! </p>
+
+<p>Computes the index of the problem in the suite that corresponds to the given function, dimension and instance indexes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suite</td><td>The suite. </td></tr>
+    <tr><td class="paramname">function_idx</td><td>Index of the function (starting with 0). </td></tr>
+    <tr><td class="paramname">dimension_idx</td><td>Index of the dimension (starting with 0). </td></tr>
+    <tr><td class="paramname">instance_idx</td><td>Index of the insatnce (starting with 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The problem index in the suite computed from function_idx, dimension_idx and instance_idx. </dd></dl>
 
 </div>
 </div>
@@ -1267,6 +1472,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Frees the given suite. </p>
 
 </div>
 </div>
@@ -1294,6 +1501,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the dimension number in the suite in position dimension_idx (counting from 0). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suite</td><td>The given suite. </td></tr>
+    <tr><td class="paramname">dimension_idx</td><td>The index of the dimension in question (starting from 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The dimension number in position dimension_idx in the suite. If the dimension has been filtered out through suite_options in the <a class="el" href="structcoco__suite.html">coco_suite</a> function, the result is 0. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="adef4adab578dc3303dee388a11de6df7"></a>
@@ -1319,6 +1536,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the function number in the suite in position function_idx (counting from 0). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suite</td><td>The given suite. </td></tr>
+    <tr><td class="paramname">function_idx</td><td>The index of the function in question (starting from 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The function number in position function_idx in the suite. If the function has been filtered out through suite_options in the <a class="el" href="structcoco__suite.html">coco_suite</a> function, the result is 0. </dd></dl>
 
 </div>
 </div>
@@ -1346,6 +1573,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the instance number in the suite in position instance_idx (counting from 0). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suite</td><td>The given suite. </td></tr>
+    <tr><td class="paramname">instance_idx</td><td>The index of the instance in question (starting from 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The instance number in position instance_idx in the suite. If the instance has been filtered out through suite_options in the <a class="el" href="structcoco__suite.html">coco_suite</a> function, the result is 0. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a422cee3f06f4b2524234102f75306fe7"></a>
@@ -1371,7 +1608,17 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns next problem of the suite by iterating first through available instances, then functions and lastly dimensions. The problem is wrapped with the observer's logger. If there is no next problem, returns NULL. </p>
+
+<p>Returns the next (observed) problem of the suite or NULL if there is no next problem left. </p>
+<p>Iterates through the suite first by instances, then by functions and finally by dimensions. The instances/functions/dimensions that have been filtered out using the suite_options of the <a class="el" href="structcoco__suite.html">coco_suite</a> function are skipped. The returned problem is wrapped with the observer. If the observer is NULL, the returned problem is unobserved.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suite</td><td>The given suite. </td></tr>
+    <tr><td class="paramname">observer</td><td>The observer used to wrap the problem. If NULL, the problem is returned unobserved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The next problem of the suite or NULL if there is no next problem left. </dd></dl>
 
 </div>
 </div>
@@ -1388,6 +1635,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the number of problems in the given suite. </p>
+<p>The number of problems in the suite is computed as a product of the number of instances, number of functions and number of dimensions and therefore doesn't account for any filtering done through the suite_options parameter of the <a class="el" href="structcoco__suite.html">coco_suite</a> function.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suite</td><td>The given suite. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of problems in the suite. </dd></dl>
 
 </div>
 </div>
@@ -1414,6 +1671,17 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the problem of the suite defined by problem_index. </p>
+<p>Note that the problem_index depends on the number of instances a suite is defined with.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suite</td><td>The given suite. </td></tr>
+    <tr><td class="paramname">problem_index</td><td>The index of the problem to be returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The problem of the suite defined by problem_index. </dd></dl>
 
 </div>
 </div>
@@ -1464,8 +1732,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>COCO's own pi constant. </p>
-<p>Simplifies the case, when the value of pi changes. </p>
+<p>COCO's own pi constant. Simplifies the case, when the value of pi changes. </p>
 
 </div>
 </div>
@@ -1486,6 +1753,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>COCO's own pi constant. Simplifies the case, when the value of pi changes. </p>
 
 </div>
 </div>

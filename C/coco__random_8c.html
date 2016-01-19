@@ -122,12 +122,16 @@ Functions</h2></td></tr>
 <tr class="memitem:ae6581fb15fd445af6457949d2acf57bb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#ae6581fb15fd445af6457949d2acf57bb">coco_random_generate</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
 <tr class="separator:ae6581fb15fd445af6457949d2acf57bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1eec26188c49daa70532b3822bffeae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#af1eec26188c49daa70532b3822bffeae">coco_random_new</a> (uint32_t seed)</td></tr>
+<tr class="memdesc:af1eec26188c49daa70532b3822bffeae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a new random number state using the given seed.  <a href="#af1eec26188c49daa70532b3822bffeae">More...</a><br /></td></tr>
 <tr class="separator:af1eec26188c49daa70532b3822bffeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40f389e6e4263a0680b8c8b62e307d39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#a40f389e6e4263a0680b8c8b62e307d39">coco_random_free</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
+<tr class="memdesc:a40f389e6e4263a0680b8c8b62e307d39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees all memory associated with the random state.  <a href="#a40f389e6e4263a0680b8c8b62e307d39">More...</a><br /></td></tr>
 <tr class="separator:a40f389e6e4263a0680b8c8b62e307d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab24243b4a151ff353436a243331e8a2a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#ab24243b4a151ff353436a243331e8a2a">coco_random_uniform</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
+<tr class="memdesc:ab24243b4a151ff353436a243331e8a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns one uniform [0, 1) random value from the random number generator associated with the given state.  <a href="#ab24243b4a151ff353436a243331e8a2a">More...</a><br /></td></tr>
 <tr class="separator:ab24243b4a151ff353436a243331e8a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6344ee786bf0f08e540343bd1e70babf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#a6344ee786bf0f08e540343bd1e70babf">coco_random_normal</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
+<tr class="memdesc:a6344ee786bf0f08e540343bd1e70babf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates an approximately normal random number.  <a href="#a6344ee786bf0f08e540343bd1e70babf">More...</a><br /></td></tr>
 <tr class="separator:a6344ee786bf0f08e540343bd1e70babf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -181,7 +185,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Free all memory associated with the RNG state. </p>
+
+<p>Frees all memory associated with the random state. </p>
 
 </div>
 </div>
@@ -224,7 +229,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create a new random number stream using ${seed} and return its state. </p>
+
+<p>Creates and returns a new random number state using the given seed. </p>
 
 </div>
 </div>
@@ -241,8 +247,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Generate an approximately normal random number.</p>
-<p>Instead of using the (expensive) polar method, we may cheat and abuse the central limit theorem. The sum of 12 uniform RVs has mean 6, variance 1 and is approximately normal. Subtract 6 and you get an approximately N(0, 1) random number. </p>
+
+<p>Generates an approximately normal random number. </p>
+<p>Instead of using the (expensive) polar method, we may cheat and abuse the central limit theorem. The sum of 12 uniform random values has mean 6, variance 1 and is approximately normal. Subtract 6 and you get an approximately N(0, 1) random number. </p>
 
 </div>
 </div>
@@ -259,7 +266,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return one uniform [0, 1) random value from the random number generator associated with ${state}. </p>
+
+<p>Returns one uniform [0, 1) random value from the random number generator associated with the given state. </p>
 
 </div>
 </div>
