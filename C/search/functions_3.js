@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unlink',['unlink',['../coco__platform_8h.html#acad0be8a645bcb376877ddbab6b00ac0',1,'coco_platform.h']]]
+  ['rmdir',['rmdir',['../coco__platform_8h.html#a570282ae7ba596263ec812b368d99b34',1,'coco_platform.h']]]
 ];

@@ -13,6 +13,7 @@ var searchData=
   ['suite_5fdep_5ffunction',['suite_dep_function',['../structcoco__problem.html#af0e1b2b42e528dec21b8872ef9c74ba2',1,'coco_problem']]],
   ['suite_5fdep_5findex',['suite_dep_index',['../structcoco__problem.html#a8c3e3b9234f009486bc7e056f5383aad',1,'coco_problem']]],
   ['suite_5fdep_5finstance',['suite_dep_instance',['../structcoco__problem.html#a415bf642799c6a11b786209d1b36bb26',1,'coco_problem::suite_dep_instance()'],['../structlogger__biobj__t.html#a415bf642799c6a11b786209d1b36bb26',1,'logger_biobj_t::suite_dep_instance()']]],
+  ['suite_5flargescale_2ec',['suite_largescale.c',['../suite__largescale_8c.html',1,'']]],
   ['suite_5fname',['suite_name',['../structcoco__suite.html#abbe9903a5e3b2d22028479b62dc5e657',1,'coco_suite']]],
   ['suite_5ftoy_2ec',['suite_toy.c',['../suite__toy_8c.html',1,'']]]
 ];

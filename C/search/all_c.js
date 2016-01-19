@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['p1',['P1',['../structls__transform__vars__permblockdiag__t.html#af659eec06c9198dea56b58f6365e87f5',1,'ls_transform_vars_permblockdiag_t']]],
+  ['p2',['P2',['../structls__transform__vars__permblockdiag__t.html#ac2e2d04008c273ebaa484e404f745e56',1,'ls_transform_vars_permblockdiag_t']]],
   ['parent',['parent',['../structavl__node.html#a570afe934c75e76225958789ad6ad6b2',1,'avl_node']]],
   ['peak_5fvalues',['peak_values',['../structf__gallagher__data__t.html#a47566479c2077f39842feeeafc65eb6a',1,'f_gallagher_data_t']]],
   ['precision_5ff',['precision_f',['../structcoco__observer.html#a5feb347ca34531d71c7979566bea2711',1,'coco_observer::precision_f()'],['../structlogger__biobj__t.html#a5feb347ca34531d71c7979566bea2711',1,'logger_biobj_t::precision_f()']]],

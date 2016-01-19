@@ -2,6 +2,7 @@ var searchData=
 [
   ['l_5fcount',['L_COUNT',['../logger__biobj__avl__tree_8c.html#ac7ace3afb75cee5e98d07b6ecc600b81',1,'logger_biobj_avl_tree.c']]],
   ['l_5fdepth',['L_DEPTH',['../logger__biobj__avl__tree_8c.html#a2f1695ff5cc56fbd94640b079ca7006c',1,'logger_biobj_avl_tree.c']]],
+  ['large_5fscale_5ftransformations_2ec',['large_scale_transformations.c',['../large__scale__transformations_8c.html',1,'']]],
   ['largest_5fvalues_5fof_5finterest',['largest_values_of_interest',['../structcoco__problem.html#a821b08daf840db95cd3be6ba31a7a588',1,'coco_problem']]],
   ['last_5ffvalue',['last_fvalue',['../structlogger__bbob__t.html#a8762d55159c42bf407bc438266ae8208',1,'logger_bbob_t']]],
   ['left',['left',['../structavl__node.html#a943f33ef76c05ce090779ce3ca3c6057',1,'avl_node']]],
@@ -20,5 +21,10 @@ var searchData=
   ['logger_5ftoy_2ec',['logger_toy.c',['../logger__toy_8c.html',1,'']]],
   ['logger_5ftoy_5ft',['logger_toy_t',['../structlogger__toy__t.html',1,'']]],
   ['long_5flag',['LONG_LAG',['../coco__random_8c.html#a44ef0e8348cb10b83ad955801739050c',1,'coco_random.c']]],
-  ['low_5fdim',['LOW_DIM',['../observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83a1831df4366837bae93c16adeff7bf8c0',1,'observer_biobj.c']]]
+  ['low_5fdim',['LOW_DIM',['../observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83a1831df4366837bae93c16adeff7bf8c0',1,'observer_biobj.c']]],
+  ['ls_5fget_5fblock_5fsizes',['ls_get_block_sizes',['../large__scale__transformations_8c.html#a1c5b348c4e501894579c8988d281ecdf',1,'large_scale_transformations.c']]],
+  ['ls_5fget_5fnb_5fswaps',['ls_get_nb_swaps',['../large__scale__transformations_8c.html#a72572c36ca7cf02a537dd5a70c2e46da',1,'large_scale_transformations.c']]],
+  ['ls_5fget_5fswap_5frange',['ls_get_swap_range',['../large__scale__transformations_8c.html#aaebbb824aebdb385b417ab8fd788412e',1,'large_scale_transformations.c']]],
+  ['ls_5frand_5fint',['ls_rand_int',['../large__scale__transformations_8c.html#a38b3e93fac0f8a4f24fb546cefdc58e5',1,'large_scale_transformations.c']]],
+  ['ls_5ftransform_5fvars_5fpermblockdiag_5ft',['ls_transform_vars_permblockdiag_t',['../structls__transform__vars__permblockdiag__t.html',1,'']]]
 ];
