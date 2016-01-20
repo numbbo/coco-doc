@@ -748,7 +748,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the next (observed) problem of the suite or NULL if there is no next problem left. </p>
-<p>Iterates through the suite first by instances, then by functions and finally by dimensions. The instances/functions/dimensions that have been filtered out using the suite_options of the <a class="el" href="structcoco__suite.html">coco_suite</a> function are skipped. The returned problem is wrapped with the observer. If the observer is NULL, the returned problem is unobserved.</p>
+<p>Iterates through the suite first by instances, then by functions and finally by dimensions. The instances/functions/dimensions that have been filtered out using the suite_options of the <a class="el" href="structcoco__suite.html">coco_suite</a> function are skipped. Outputs some information regarding the current place in the iteration. The returned problem is wrapped with the observer. If the observer is NULL, the returned problem is unobserved.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">suite</td><td>The given suite. </td></tr>
