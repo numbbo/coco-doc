@@ -99,6 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">transform_vars_scale.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of scaling decision values by a given factor.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
@@ -112,13 +115,18 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0004696c82fffd43694ecd1ea4a14db9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__scale_8c.html#a0004696c82fffd43694ecd1ea4a14db9">transform_vars_scale_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a0004696c82fffd43694ecd1ea4a14db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the transformation.  <a href="#a0004696c82fffd43694ecd1ea4a14db9">More...</a><br /></td></tr>
 <tr class="separator:a0004696c82fffd43694ecd1ea4a14db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30f7236e6ee6393218abf44b3b602e30"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__scale_8c.html#a30f7236e6ee6393218abf44b3b602e30">transform_vars_scale_free</a> (void *thing)</td></tr>
+<tr class="memdesc:a30f7236e6ee6393218abf44b3b602e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the data object.  <a href="#a30f7236e6ee6393218abf44b3b602e30">More...</a><br /></td></tr>
 <tr class="separator:a30f7236e6ee6393218abf44b3b602e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7b71d6c30ff2f00d9b59bcbeee71102"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__scale_8c.html#ac7b71d6c30ff2f00d9b59bcbeee71102">transform_vars_scale</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *inner_problem, const double factor)</td></tr>
+<tr class="memdesc:ac7b71d6c30ff2f00d9b59bcbeee71102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the transformation.  <a href="#ac7b71d6c30ff2f00d9b59bcbeee71102">More...</a><br /></td></tr>
 <tr class="separator:ac7b71d6c30ff2f00d9b59bcbeee71102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of scaling decision values by a given factor. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ac7b71d6c30ff2f00d9b59bcbeee71102"></a>
 <div class="memitem">
 <div class="memproto">
@@ -150,7 +158,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Scale all variables by factor before evaluation. </p>
+
+<p>Creates the transformation. </p>
 
 </div>
 </div>
@@ -192,6 +201,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Evaluates the transformation. </p>
+
 </div>
 </div>
 <a class="anchor" id="a30f7236e6ee6393218abf44b3b602e30"></a>
@@ -215,6 +226,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Frees the data object. </p>
 
 </div>
 </div>

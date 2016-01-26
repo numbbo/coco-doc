@@ -99,6 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">transform_vars_asymmetric.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of performing an asymmetric transformation on decision values.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
@@ -113,13 +116,17 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a31092c5100697d66d31dc52fd74a5384"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__asymmetric_8c.html#a31092c5100697d66d31dc52fd74a5384">transform_vars_asymmetric_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a31092c5100697d66d31dc52fd74a5384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the transformation.  <a href="#a31092c5100697d66d31dc52fd74a5384">More...</a><br /></td></tr>
 <tr class="separator:a31092c5100697d66d31dc52fd74a5384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5fedd4b18e02af672bed05a91e9c9a8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__asymmetric_8c.html#ae5fedd4b18e02af672bed05a91e9c9a8">transform_vars_asymmetric_free</a> (void *thing)</td></tr>
 <tr class="separator:ae5fedd4b18e02af672bed05a91e9c9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d2b898984da0abed86acd836790c0da"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__asymmetric_8c.html#a9d2b898984da0abed86acd836790c0da">transform_vars_asymmetric</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *inner_problem, const double beta)</td></tr>
+<tr class="memdesc:a9d2b898984da0abed86acd836790c0da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the transformation.  <a href="#a9d2b898984da0abed86acd836790c0da">More...</a><br /></td></tr>
 <tr class="separator:a9d2b898984da0abed86acd836790c0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of performing an asymmetric transformation on decision values. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a9d2b898984da0abed86acd836790c0da"></a>
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +158,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Perform monotone oscillation transformation on input variables. </p>
+
+<p>Creates the transformation. </p>
 
 </div>
 </div>
@@ -192,6 +200,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Evaluates the transformation. </p>
 
 </div>
 </div>

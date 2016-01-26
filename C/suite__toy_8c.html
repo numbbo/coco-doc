@@ -98,6 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">suite_toy.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of a toy suite containing 6 noiseless "basic" single-objective functions in 5 dimensions.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="f__bueche__rastrigin_8c.html">f_bueche_rastrigin.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="f__ellipsoid_8c.html">f_ellipsoid.c</a>&quot;</code><br />
@@ -111,11 +114,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a5b47fb18f2f9cd8f1c74cc08e29b920a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__toy_8c.html#a5b47fb18f2f9cd8f1c74cc08e29b920a">coco_suite_allocate</a> (const char *suite_name, const size_t number_of_functions, const size_t number_of_dimensions, const size_t *dimensions, const char *default_instances)</td></tr>
 <tr class="separator:a5b47fb18f2f9cd8f1c74cc08e29b920a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade83c251e66932c4ea4a53204e3af950"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__toy_8c.html#ade83c251e66932c4ea4a53204e3af950">suite_toy_allocate</a> (void)</td></tr>
+<tr class="memdesc:ade83c251e66932c4ea4a53204e3af950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dimensions and default instances for the toy suite.  <a href="#ade83c251e66932c4ea4a53204e3af950">More...</a><br /></td></tr>
 <tr class="separator:ade83c251e66932c4ea4a53204e3af950"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a189d7606dafdebba6e647b44567407f9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__toy_8c.html#a189d7606dafdebba6e647b44567407f9">suite_toy_get_problem</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
+<tr class="memdesc:a189d7606dafdebba6e647b44567407f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the problem from the toy suite that corresponds to the given parameters.  <a href="#a189d7606dafdebba6e647b44567407f9">More...</a><br /></td></tr>
 <tr class="separator:a189d7606dafdebba6e647b44567407f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of a toy suite containing 6 noiseless "basic" single-objective functions in 5 dimensions. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a5b47fb18f2f9cd8f1c74cc08e29b920a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -190,6 +197,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the dimensions and default instances for the toy suite. </p>
+
 </div>
 </div>
 <a class="anchor" id="a189d7606dafdebba6e647b44567407f9"></a>
@@ -235,6 +244,18 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the problem from the toy suite that corresponds to the given parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suite</td><td>The COCO suite. </td></tr>
+    <tr><td class="paramname">function_idx</td><td>Index of the function (starting from 0). </td></tr>
+    <tr><td class="paramname">dimension_idx</td><td>Index of the dimension (starting from 0). </td></tr>
+    <tr><td class="paramname">instance_idx</td><td>Index of the instance (starting from 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The problem that corresponds to the given parameters. </dd></dl>
 
 </div>
 </div>

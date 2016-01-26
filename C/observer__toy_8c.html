@@ -99,12 +99,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">observer_toy.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the toy observer.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__utilities_8c.html">coco_utilities.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structobserver__toy__t.html">observer_toy_t</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structobserver__toy__data__t.html">observer_toy_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The toy observer data type.  <a href="structobserver__toy__data__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -112,11 +116,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a3dddf7883a4de349d2a755b609a7d34c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__toy_8c.html#a3dddf7883a4de349d2a755b609a7d34c">logger_toy</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
 <tr class="separator:a3dddf7883a4de349d2a755b609a7d34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae9097f030e7c581ee74f60d2fd7a57f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__toy_8c.html#aae9097f030e7c581ee74f60d2fd7a57f">observer_toy_free</a> (void *stuff)</td></tr>
+<tr class="memdesc:aae9097f030e7c581ee74f60d2fd7a57f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees memory of the toy observer data structure.  <a href="#aae9097f030e7c581ee74f60d2fd7a57f">More...</a><br /></td></tr>
 <tr class="separator:aae9097f030e7c581ee74f60d2fd7a57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a499693ce35801e431f986b0c11009a59"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__toy_8c.html#a499693ce35801e431f986b0c11009a59">observer_toy</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer, const char *options)</td></tr>
+<tr class="memdesc:a499693ce35801e431f986b0c11009a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the toy observer.  <a href="#a499693ce35801e431f986b0c11009a59">More...</a><br /></td></tr>
 <tr class="separator:a499693ce35801e431f986b0c11009a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the toy observer. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a3dddf7883a4de349d2a755b609a7d34c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +190,9 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Initializes the toy observer. Possible options:</p><ul>
+
+<p>Initializes the toy observer. </p>
+<p>Possible options:</p><ul>
 <li>file_name : name_of_the_output_file (name of the output file; default value is "first_hitting_times.txt")</li>
 <li>number_of_targets : 1-100 (number of targets; default value is 20) </li>
 </ul>
@@ -210,7 +220,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Frees memory for the given coco_observer_t's data field <a class="el" href="structobserver__toy__t.html">observer_toy_t</a>. </p>
+
+<p>Frees memory of the toy observer data structure. </p>
 
 </div>
 </div>

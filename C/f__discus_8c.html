@@ -98,6 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">f_discus.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the discus function and problem.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
@@ -110,15 +113,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a20a46749e6a0026519e14acb625a3f13"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__discus_8c.html#a20a46749e6a0026519e14acb625a3f13">f_discus_raw</a> (const double *x, const size_t number_of_variables)</td></tr>
+<tr class="memdesc:a20a46749e6a0026519e14acb625a3f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the discus function without connections to any COCO structures.  <a href="#a20a46749e6a0026519e14acb625a3f13">More...</a><br /></td></tr>
 <tr class="separator:a20a46749e6a0026519e14acb625a3f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a0316d8619d483a8293612834b388b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__discus_8c.html#a3a0316d8619d483a8293612834b388b3">f_discus_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a3a0316d8619d483a8293612834b388b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the raw function to evaluate the COCO problem.  <a href="#a3a0316d8619d483a8293612834b388b3">More...</a><br /></td></tr>
 <tr class="separator:a3a0316d8619d483a8293612834b388b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a530c62c1031c47dce9470e76ca24d4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__discus_8c.html#a9a530c62c1031c47dce9470e76ca24d4">f_discus_allocate</a> (const size_t number_of_variables)</td></tr>
+<tr class="memdesc:a9a530c62c1031c47dce9470e76ca24d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic discus problem.  <a href="#a9a530c62c1031c47dce9470e76ca24d4">More...</a><br /></td></tr>
 <tr class="separator:a9a530c62c1031c47dce9470e76ca24d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07f367479b0e9bdfc4c14707ee344704"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__discus_8c.html#a07f367479b0e9bdfc4c14707ee344704">f_discus_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:a07f367479b0e9bdfc4c14707ee344704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB discus problem.  <a href="#a07f367479b0e9bdfc4c14707ee344704">More...</a><br /></td></tr>
 <tr class="separator:a07f367479b0e9bdfc4c14707ee344704"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the discus function and problem. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a9a530c62c1031c47dce9470e76ca24d4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -140,6 +149,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Allocates the basic discus problem. </p>
 
 </div>
 </div>
@@ -199,6 +210,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates the BBOB discus problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="a3a0316d8619d483a8293612834b388b3"></a>
@@ -239,6 +252,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Uses the raw function to evaluate the COCO problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="a20a46749e6a0026519e14acb625a3f13"></a>
@@ -272,6 +287,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implements the discus function without connections to any COCO structures. </p>
 
 </div>
 </div>

@@ -4,7 +4,7 @@ var searchData=
   ['bbob2009_5fcompute_5ffopt',['bbob2009_compute_fopt',['../suite__bbob__legacy__code_8c.html#a1d48c8877bb7ff819b57a115ebc3476d',1,'suite_bbob_legacy_code.c']]],
   ['bbob2009_5fcompute_5frotation',['bbob2009_compute_rotation',['../suite__bbob__legacy__code_8c.html#a2bd83c06428bdb03ac1f2502e726df03',1,'suite_bbob_legacy_code.c']]],
   ['bbob2009_5fcompute_5fxopt',['bbob2009_compute_xopt',['../suite__bbob__legacy__code_8c.html#a50ac6ec7b28945ff6bd766ddd6da3373',1,'suite_bbob_legacy_code.c']]],
-  ['bbob2009_5fcopy_5frotation_5fmatrix',['bbob2009_copy_rotation_matrix',['../suite__bbob__legacy__code_8c.html#a63a7e26050ab475e67608ef4038c16ac',1,'suite_bbob_legacy_code.c']]],
+  ['bbob2009_5fcopy_5frotation_5fmatrix',['bbob2009_copy_rotation_matrix',['../suite__bbob__legacy__code_8c.html#a49791117180d3f714bb88dad158d69d5',1,'suite_bbob_legacy_code.c']]],
   ['bbob2009_5ffmax',['bbob2009_fmax',['../suite__bbob__legacy__code_8c.html#a9176e3ed48baabef3d59abb111e4ce2a',1,'suite_bbob_legacy_code.c']]],
   ['bbob2009_5ffmin',['bbob2009_fmin',['../suite__bbob__legacy__code_8c.html#a2ec6e1c131829dfca561e15a62670578',1,'suite_bbob_legacy_code.c']]],
   ['bbob2009_5ffree_5fmatrix',['bbob2009_free_matrix',['../suite__bbob__legacy__code_8c.html#a134f9391afc473d62fede6a8f5c375e4',1,'suite_bbob_legacy_code.c']]],

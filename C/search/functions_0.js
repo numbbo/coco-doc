@@ -1,28 +1,5 @@
 var searchData=
 [
-  ['avl_5falloc',['avl_alloc',['../logger__biobj__avl__tree_8c.html#abb183820cb0b0e9c8d518676159f8ee9',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fcheck_5fbalance',['avl_check_balance',['../logger__biobj__avl__tree_8c.html#aa9a67c5712738c9361c264af50597f37',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5finsert_5ftop',['avl_insert_top',['../logger__biobj__avl__tree_8c.html#aa5b35d308052462f6e87f289ccecd34e',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fitem_5fdelete',['avl_item_delete',['../logger__biobj__avl__tree_8c.html#a04274b94d1f943e14a8699bcbb2c93f8',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fitem_5finsert',['avl_item_insert',['../logger__biobj__avl__tree_8c.html#a176daf85cde16ba876d1e8c61acfbd0e',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fitem_5fsearch',['avl_item_search',['../logger__biobj__avl__tree_8c.html#ad97aa67efb5e367f9a730674a9772f90',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fitem_5fsearch_5fright',['avl_item_search_right',['../logger__biobj__avl__tree_8c.html#aaeeb476a1deb2798a9668e2e8369f7fc',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fnode_5fclear',['avl_node_clear',['../logger__biobj__avl__tree_8c.html#aaad0cb6a11b1d676cbce1bc640d84526',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fnode_5fdelete',['avl_node_delete',['../logger__biobj__avl__tree_8c.html#a7dbb23e5fd1924c264fc6d9aeb5dd49a',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fnode_5ffree',['avl_node_free',['../logger__biobj__avl__tree_8c.html#a33c5e1daf5838f8cb66f6cdbe216c7ab',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fnode_5finit',['avl_node_init',['../logger__biobj__avl__tree_8c.html#a399de46998d06e3a2f808cc11dc0e82c',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fnode_5finsert',['avl_node_insert',['../logger__biobj__avl__tree_8c.html#a36655ab1e7152161b5e2b160e558ff94',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fnode_5finsert_5fafter',['avl_node_insert_after',['../logger__biobj__avl__tree_8c.html#aff258431d251dee842e0146955e63fb8',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fnode_5finsert_5fbefore',['avl_node_insert_before',['../logger__biobj__avl__tree_8c.html#a77c7e9446e9ff8c5aaf2b54af00a4397',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fnode_5funlink',['avl_node_unlink',['../logger__biobj__avl__tree_8c.html#a57afcb4861a071f55dd09f5f49b93444',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5frebalance',['avl_rebalance',['../logger__biobj__avl__tree_8c.html#aefefcc49b9024ff42d4487f3ff042f80',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fsearch_5frightish',['avl_search_rightish',['../logger__biobj__avl__tree_8c.html#ad9f6d437bdca8204eafca97013da4ab8',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5fsearch_5frightmost_5fequal',['avl_search_rightmost_equal',['../logger__biobj__avl__tree_8c.html#a808a5d026ebdfe2a3aff7e5277fa1f21',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5ftree_5fclear',['avl_tree_clear',['../logger__biobj__avl__tree_8c.html#ae257646d0783844dfb80daaeb7b4710c',1,'logger_biobj_avl_tree.c']]],
   ['avl_5ftree_5fcompare_5fby_5flast_5fobjective',['avl_tree_compare_by_last_objective',['../logger__biobj_8c.html#a2c34dfbb9b867965a28dff7f01f1e2e4',1,'logger_biobj.c']]],
-  ['avl_5ftree_5fcompare_5fby_5ftime_5fstamp',['avl_tree_compare_by_time_stamp',['../logger__biobj_8c.html#a347c23cded64629efdda7ffcfde8a702',1,'logger_biobj.c']]],
-  ['avl_5ftree_5fconstruct',['avl_tree_construct',['../logger__biobj__avl__tree_8c.html#a9d8ea62ee97e3e8340ce3af67b7d67a8',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5ftree_5fdestruct',['avl_tree_destruct',['../logger__biobj__avl__tree_8c.html#a0097444bac3008bccf4b99291dcc51c4',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5ftree_5finit',['avl_tree_init',['../logger__biobj__avl__tree_8c.html#ada35746ba385385b4f8deed5c4605b08',1,'logger_biobj_avl_tree.c']]],
-  ['avl_5ftree_5fpurge',['avl_tree_purge',['../logger__biobj__avl__tree_8c.html#a7f087aae335fc195804ed9760cf927da',1,'logger_biobj_avl_tree.c']]]
+  ['avl_5ftree_5fcompare_5fby_5ftime_5fstamp',['avl_tree_compare_by_time_stamp',['../logger__biobj_8c.html#a347c23cded64629efdda7ffcfde8a702',1,'logger_biobj.c']]]
 ];

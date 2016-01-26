@@ -99,6 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">transform_obj_shift.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of shifting the objective value by the given offset.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
@@ -112,11 +115,15 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ace0d9702626123a2342e81a07e493ef0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__obj__shift_8c.html#ace0d9702626123a2342e81a07e493ef0">transform_obj_shift_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:ace0d9702626123a2342e81a07e493ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the transformation.  <a href="#ace0d9702626123a2342e81a07e493ef0">More...</a><br /></td></tr>
 <tr class="separator:ace0d9702626123a2342e81a07e493ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb30ecc52b398900d68376477834041a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__obj__shift_8c.html#afb30ecc52b398900d68376477834041a">transform_obj_shift</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *inner_problem, const double offset)</td></tr>
+<tr class="memdesc:afb30ecc52b398900d68376477834041a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the transformation.  <a href="#afb30ecc52b398900d68376477834041a">More...</a><br /></td></tr>
 <tr class="separator:afb30ecc52b398900d68376477834041a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of shifting the objective value by the given offset. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="afb30ecc52b398900d68376477834041a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -148,7 +155,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Shift the objective value of the inner problem by offset. </p>
+
+<p>Creates the transformation. </p>
 
 </div>
 </div>
@@ -189,6 +197,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Evaluates the transformation. </p>
 
 </div>
 </div>

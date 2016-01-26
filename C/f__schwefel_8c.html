@@ -98,6 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">f_schwefel.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the Schwefel function and problem.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
@@ -114,15 +117,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afc81bd2242d4fd5914e362f73bcfcb56"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__schwefel_8c.html#afc81bd2242d4fd5914e362f73bcfcb56">f_schwefel_raw</a> (const double *x, const size_t number_of_variables)</td></tr>
+<tr class="memdesc:afc81bd2242d4fd5914e362f73bcfcb56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the Schwefel function without connections to any COCO structures.  <a href="#afc81bd2242d4fd5914e362f73bcfcb56">More...</a><br /></td></tr>
 <tr class="separator:afc81bd2242d4fd5914e362f73bcfcb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20fc753fb342b8451c8b791a7ac43626"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__schwefel_8c.html#a20fc753fb342b8451c8b791a7ac43626">f_schwefel_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a20fc753fb342b8451c8b791a7ac43626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the raw function to evaluate the COCO problem.  <a href="#a20fc753fb342b8451c8b791a7ac43626">More...</a><br /></td></tr>
 <tr class="separator:a20fc753fb342b8451c8b791a7ac43626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8eda2a6aa3f1bd0cc7fb6ec62581501"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__schwefel_8c.html#ac8eda2a6aa3f1bd0cc7fb6ec62581501">f_schwefel_allocate</a> (const size_t number_of_variables)</td></tr>
+<tr class="memdesc:ac8eda2a6aa3f1bd0cc7fb6ec62581501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic Schwefel problem.  <a href="#ac8eda2a6aa3f1bd0cc7fb6ec62581501">More...</a><br /></td></tr>
 <tr class="separator:ac8eda2a6aa3f1bd0cc7fb6ec62581501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28a271fec8945248818a0ac2a06254fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__schwefel_8c.html#a28a271fec8945248818a0ac2a06254fd">f_schwefel_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:a28a271fec8945248818a0ac2a06254fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB Schwefel problem.  <a href="#a28a271fec8945248818a0ac2a06254fd">More...</a><br /></td></tr>
 <tr class="separator:a28a271fec8945248818a0ac2a06254fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the Schwefel function and problem. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ac8eda2a6aa3f1bd0cc7fb6ec62581501"></a>
 <div class="memitem">
 <div class="memproto">
@@ -144,6 +153,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Allocates the basic Schwefel problem. </p>
 
 </div>
 </div>
@@ -203,6 +214,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates the BBOB Schwefel problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="a20fc753fb342b8451c8b791a7ac43626"></a>
@@ -243,6 +256,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Uses the raw function to evaluate the COCO problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="afc81bd2242d4fd5914e362f73bcfcb56"></a>
@@ -276,6 +291,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implements the Schwefel function without connections to any COCO structures. </p>
 
 </div>
 </div>

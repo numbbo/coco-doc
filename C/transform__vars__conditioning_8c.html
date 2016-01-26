@@ -99,6 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">transform_vars_conditioning.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of conditioning decision values.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
@@ -113,13 +116,17 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa71f27262657826bb952d5e0bc7dd8ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__conditioning_8c.html#aa71f27262657826bb952d5e0bc7dd8ac">transform_vars_conditioning_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:aa71f27262657826bb952d5e0bc7dd8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the transformation.  <a href="#aa71f27262657826bb952d5e0bc7dd8ac">More...</a><br /></td></tr>
 <tr class="separator:aa71f27262657826bb952d5e0bc7dd8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a138832548a6f6d2b00b09913db959e4d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__conditioning_8c.html#a138832548a6f6d2b00b09913db959e4d">transform_vars_conditioning_free</a> (void *thing)</td></tr>
 <tr class="separator:a138832548a6f6d2b00b09913db959e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36fc7a709e3214fa5acf9c5ce8a318a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__conditioning_8c.html#a36fc7a709e3214fa5acf9c5ce8a318a5">transform_vars_conditioning</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *inner_problem, const double alpha)</td></tr>
+<tr class="memdesc:a36fc7a709e3214fa5acf9c5ce8a318a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the transformation.  <a href="#a36fc7a709e3214fa5acf9c5ce8a318a5">More...</a><br /></td></tr>
 <tr class="separator:a36fc7a709e3214fa5acf9c5ce8a318a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of conditioning decision values. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a36fc7a709e3214fa5acf9c5ce8a318a5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +158,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Perform monotone oscillation(?) transformation on input variables. </p>
+
+<p>Creates the transformation. </p>
 
 </div>
 </div>
@@ -192,6 +200,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Evaluates the transformation. </p>
 
 </div>
 </div>

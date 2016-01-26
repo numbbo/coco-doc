@@ -98,6 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">transform_obj_oscillate.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of oscillating the objective value.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
@@ -106,11 +109,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a068655f31434e306683c24cb2a74af91"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__obj__oscillate_8c.html#a068655f31434e306683c24cb2a74af91">transform_obj_oscillate_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a068655f31434e306683c24cb2a74af91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the transformation.  <a href="#a068655f31434e306683c24cb2a74af91">More...</a><br /></td></tr>
 <tr class="separator:a068655f31434e306683c24cb2a74af91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99619674d1ffca47844baf8a6820b10a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__obj__oscillate_8c.html#a99619674d1ffca47844baf8a6820b10a">transform_obj_oscillate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *inner_problem)</td></tr>
+<tr class="memdesc:a99619674d1ffca47844baf8a6820b10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the transformation.  <a href="#a99619674d1ffca47844baf8a6820b10a">More...</a><br /></td></tr>
 <tr class="separator:a99619674d1ffca47844baf8a6820b10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of oscillating the objective value. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a99619674d1ffca47844baf8a6820b10a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -132,8 +139,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Oscillate the objective value of the inner problem.</p>
-<p>Caveat: this can change best_parameter and best_value. </p>
+
+<p>Creates the transformation. </p>
 
 </div>
 </div>
@@ -174,6 +181,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Evaluates the transformation. </p>
 
 </div>
 </div>

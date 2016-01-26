@@ -100,6 +100,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">logger_bbob.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the bbob logger.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;limits.h&gt;</code><br />
@@ -114,25 +117,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__bbob__t.html">logger_bbob_t</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__bbob__data__t.html">logger_bbob_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bbob logger data type.  <a href="structlogger__bbob__data__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aba4244ef7caaae0da8664eb4bae659d9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#aba4244ef7caaae0da8664eb4bae659d9">logger_bbob_update_f_trigger</a> (<a class="el" href="structlogger__bbob__t.html">logger_bbob_t</a> *logger, double fvalue)</td></tr>
-<tr class="separator:aba4244ef7caaae0da8664eb4bae659d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35b380d32833ac1f5bb1af6ce59aad78"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a35b380d32833ac1f5bb1af6ce59aad78">logger_bbob_update_t_trigger</a> (<a class="el" href="structlogger__bbob__t.html">logger_bbob_t</a> *logger, size_t number_of_variables)</td></tr>
-<tr class="separator:a35b380d32833ac1f5bb1af6ce59aad78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abee8583dc0e8c348209c83a64fd824ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#abee8583dc0e8c348209c83a64fd824ba">logger_bbob_update_f_trigger</a> (<a class="el" href="structlogger__bbob__data__t.html">logger_bbob_data_t</a> *logger, double fvalue)</td></tr>
+<tr class="separator:abee8583dc0e8c348209c83a64fd824ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2abd23b7d44ae6450f1f097b8cd6b1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a0c2abd23b7d44ae6450f1f097b8cd6b1">logger_bbob_update_t_trigger</a> (<a class="el" href="structlogger__bbob__data__t.html">logger_bbob_data_t</a> *logger, size_t number_of_variables)</td></tr>
+<tr class="separator:a0c2abd23b7d44ae6450f1f097b8cd6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1e6fced9fe8f542ae76c518b07ccfc1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#aa1e6fced9fe8f542ae76c518b07ccfc1">logger_bbob_write_data</a> (FILE *target_file, size_t number_of_evaluations, double fvalue, double best_fvalue, double best_value, const double *x, size_t number_of_variables)</td></tr>
 <tr class="separator:aa1e6fced9fe8f542ae76c518b07ccfc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2fb59dbf4d708d1eab420546378d30f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#ac2fb59dbf4d708d1eab420546378d30f">logger_bbob_error_io</a> (FILE *path, int errnum)</td></tr>
 <tr class="separator:ac2fb59dbf4d708d1eab420546378d30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45b719d37e38be6b89382f77590dd072"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a45b719d37e38be6b89382f77590dd072">logger_bbob_open_dataFile</a> (FILE **target_file, const char *path, const char *dataFile_path, const char *file_extension)</td></tr>
 <tr class="separator:a45b719d37e38be6b89382f77590dd072"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a543cd938d6d73f7f75c6b03999b6dea1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a543cd938d6d73f7f75c6b03999b6dea1">logger_bbob_openIndexFile</a> (<a class="el" href="structlogger__bbob__t.html">logger_bbob_t</a> *logger, const char *folder_path, const char *indexFile_prefix, const char *function_id, const char *dataFile_path)</td></tr>
-<tr class="separator:a543cd938d6d73f7f75c6b03999b6dea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e3c0c85a851cfefdfebdb1c6a2b77bb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a1e3c0c85a851cfefdfebdb1c6a2b77bb">logger_bbob_initialize</a> (<a class="el" href="structlogger__bbob__t.html">logger_bbob_t</a> *logger, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *inner_problem)</td></tr>
-<tr class="separator:a1e3c0c85a851cfefdfebdb1c6a2b77bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eff07ce199172829a42ab762bebdd3a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a1eff07ce199172829a42ab762bebdd3a">logger_bbob_openIndexFile</a> (<a class="el" href="structlogger__bbob__data__t.html">logger_bbob_data_t</a> *logger, const char *folder_path, const char *indexFile_prefix, const char *function_id, const char *dataFile_path)</td></tr>
+<tr class="separator:a1eff07ce199172829a42ab762bebdd3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eef79b720cad041a3f139b1fee8d081"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a7eef79b720cad041a3f139b1fee8d081">logger_bbob_initialize</a> (<a class="el" href="structlogger__bbob__data__t.html">logger_bbob_data_t</a> *logger, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *inner_problem)</td></tr>
+<tr class="separator:a7eef79b720cad041a3f139b1fee8d081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76dce2c94ba8d4abd3531bac8127624e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a76dce2c94ba8d4abd3531bac8127624e">logger_bbob_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
 <tr class="separator:a76dce2c94ba8d4abd3531bac8127624e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93ed3d158e8be11ec610c48d8b1d4c03"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a93ed3d158e8be11ec610c48d8b1d4c03">logger_bbob_free</a> (void *stuff)</td></tr>
@@ -161,7 +165,15 @@ Variables</h2></td></tr>
 <tr class="memitem:a8ec699d0dec0a8b379f8c62c44d6afbf"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a8ec699d0dec0a8b379f8c62c44d6afbf">bbob_file_header_str</a></td></tr>
 <tr class="separator:a8ec699d0dec0a8b379f8c62c44d6afbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the bbob logger. </p>
+<p>Logs the performance of a single-objective optimizer on noisy or noiseless problems. It produces four kinds of files:</p><ul>
+<li>The "info" files ...</li>
+<li>The "dat" files ...</li>
+<li>The "tdat" files ...</li>
+<li>The "rdat" files ... </li>
+</ul>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ad618d945d6388d69094a19dbc742d61a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -298,7 +310,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1e3c0c85a851cfefdfebdb1c6a2b77bb"></a>
+<a class="anchor" id="a7eef79b720cad041a3f139b1fee8d081"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -308,7 +320,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void logger_bbob_initialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structlogger__bbob__t.html">logger_bbob_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structlogger__bbob__data__t.html">logger_bbob_data_t</a> *&#160;</td>
           <td class="paramname"><em>logger</em>, </td>
         </tr>
         <tr>
@@ -380,7 +392,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a543cd938d6d73f7f75c6b03999b6dea1"></a>
+<a class="anchor" id="a1eff07ce199172829a42ab762bebdd3a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -390,7 +402,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void logger_bbob_openIndexFile </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structlogger__bbob__t.html">logger_bbob_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structlogger__bbob__data__t.html">logger_bbob_data_t</a> *&#160;</td>
           <td class="paramname"><em>logger</em>, </td>
         </tr>
         <tr>
@@ -433,7 +445,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aba4244ef7caaae0da8664eb4bae659d9"></a>
+<a class="anchor" id="abee8583dc0e8c348209c83a64fd824ba"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -443,7 +455,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void logger_bbob_update_f_trigger </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structlogger__bbob__t.html">logger_bbob_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structlogger__bbob__data__t.html">logger_bbob_data_t</a> *&#160;</td>
           <td class="paramname"><em>logger</em>, </td>
         </tr>
         <tr>
@@ -467,7 +479,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a35b380d32833ac1f5bb1af6ce59aad78"></a>
+<a class="anchor" id="a0c2abd23b7d44ae6450f1f097b8cd6b1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -477,7 +489,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void logger_bbob_update_t_trigger </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structlogger__bbob__t.html">logger_bbob_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structlogger__bbob__data__t.html">logger_bbob_data_t</a> *&#160;</td>
           <td class="paramname"><em>logger</em>, </td>
         </tr>
         <tr>

@@ -99,6 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">transform_obj_penalize.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of adding a penalty to the objective value for solutions outside of the ROI in the decision space.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
@@ -112,11 +115,15 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7f2beedaea17116ba9dc04668df8af94"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__obj__penalize_8c.html#a7f2beedaea17116ba9dc04668df8af94">transform_obj_penalize_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a7f2beedaea17116ba9dc04668df8af94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the transformation.  <a href="#a7f2beedaea17116ba9dc04668df8af94">More...</a><br /></td></tr>
 <tr class="separator:a7f2beedaea17116ba9dc04668df8af94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b9369d7d5540764b1a02407cb872c73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__obj__penalize_8c.html#a3b9369d7d5540764b1a02407cb872c73">transform_obj_penalize</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *inner_problem, const double factor)</td></tr>
+<tr class="memdesc:a3b9369d7d5540764b1a02407cb872c73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the transformation.  <a href="#a3b9369d7d5540764b1a02407cb872c73">More...</a><br /></td></tr>
 <tr class="separator:a3b9369d7d5540764b1a02407cb872c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of adding a penalty to the objective value for solutions outside of the ROI in the decision space. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a3b9369d7d5540764b1a02407cb872c73"></a>
 <div class="memitem">
 <div class="memproto">
@@ -148,7 +155,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Add a penalty to all evaluations outside of the region of interest of ${inner_problem}. </p>
+
+<p>Creates the transformation. </p>
 
 </div>
 </div>
@@ -189,6 +197,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Evaluates the transformation. </p>
 
 </div>
 </div>

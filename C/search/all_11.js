@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['userdata',['userdata',['../structavl__tree.html#afd0ffb02780e738d4c0a10ab833b7834',1,'avl_tree']]]
+  ['y',['y',['../structlogger__biobj__avl__item__t.html#a7c3123a306a879fdcbf1b923fcccee07',1,'logger_biobj_avl_item_t']]]
 ];

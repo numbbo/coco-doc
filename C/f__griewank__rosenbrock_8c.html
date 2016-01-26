@@ -98,6 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">f_griewank_rosenbrock.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the Griewank-Rosenbrock function and problem.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
@@ -111,15 +114,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8425845e3a7d6fa9f03974cdc26c6388"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__griewank__rosenbrock_8c.html#a8425845e3a7d6fa9f03974cdc26c6388">f_griewank_rosenbrock_raw</a> (const double *x, const size_t number_of_variables)</td></tr>
+<tr class="memdesc:a8425845e3a7d6fa9f03974cdc26c6388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the Griewank-Rosenbrock function without connections to any COCO structures.  <a href="#a8425845e3a7d6fa9f03974cdc26c6388">More...</a><br /></td></tr>
 <tr class="separator:a8425845e3a7d6fa9f03974cdc26c6388"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a083b8141f1fa6c0983a8d2eb5437c99e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__griewank__rosenbrock_8c.html#a083b8141f1fa6c0983a8d2eb5437c99e">f_griewank_rosenbrock_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a083b8141f1fa6c0983a8d2eb5437c99e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the raw function to evaluate the COCO problem.  <a href="#a083b8141f1fa6c0983a8d2eb5437c99e">More...</a><br /></td></tr>
 <tr class="separator:a083b8141f1fa6c0983a8d2eb5437c99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a838db96c0c9c078cfab7424383490394"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__griewank__rosenbrock_8c.html#a838db96c0c9c078cfab7424383490394">f_griewank_rosenbrock_allocate</a> (const size_t number_of_variables)</td></tr>
+<tr class="memdesc:a838db96c0c9c078cfab7424383490394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic Griewank-Rosenbrock problem.  <a href="#a838db96c0c9c078cfab7424383490394">More...</a><br /></td></tr>
 <tr class="separator:a838db96c0c9c078cfab7424383490394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a299ba13250acc0eb015567095759492f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__griewank__rosenbrock_8c.html#a299ba13250acc0eb015567095759492f">f_griewank_rosenbrock_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:a299ba13250acc0eb015567095759492f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB Griewank-Rosenbrock problem.  <a href="#a299ba13250acc0eb015567095759492f">More...</a><br /></td></tr>
 <tr class="separator:a299ba13250acc0eb015567095759492f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the Griewank-Rosenbrock function and problem. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a838db96c0c9c078cfab7424383490394"></a>
 <div class="memitem">
 <div class="memproto">
@@ -141,6 +150,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Allocates the basic Griewank-Rosenbrock problem. </p>
 
 </div>
 </div>
@@ -200,6 +211,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates the BBOB Griewank-Rosenbrock problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="a083b8141f1fa6c0983a8d2eb5437c99e"></a>
@@ -240,6 +253,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Uses the raw function to evaluate the COCO problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="a8425845e3a7d6fa9f03974cdc26c6388"></a>
@@ -273,6 +288,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implements the Griewank-Rosenbrock function without connections to any COCO structures. </p>
 
 </div>
 </div>

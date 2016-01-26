@@ -98,6 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">f_linear_slope.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the linear slope function and problem.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
@@ -109,15 +112,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aaeb04a7f0061fbd21555c81490423a89"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__linear__slope_8c.html#aaeb04a7f0061fbd21555c81490423a89">f_linear_slope_raw</a> (const double *x, const size_t number_of_variables, const double *best_parameter)</td></tr>
+<tr class="memdesc:aaeb04a7f0061fbd21555c81490423a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the linear slope function without connections to any COCO structures.  <a href="#aaeb04a7f0061fbd21555c81490423a89">More...</a><br /></td></tr>
 <tr class="separator:aaeb04a7f0061fbd21555c81490423a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c3c46c8ece9e6ea37c9c7a8e4886e99"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__linear__slope_8c.html#a1c3c46c8ece9e6ea37c9c7a8e4886e99">f_linear_slope_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a1c3c46c8ece9e6ea37c9c7a8e4886e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the raw function to evaluate the COCO problem.  <a href="#a1c3c46c8ece9e6ea37c9c7a8e4886e99">More...</a><br /></td></tr>
 <tr class="separator:a1c3c46c8ece9e6ea37c9c7a8e4886e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3587d4f5345327c5ba6f05286d313232"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__linear__slope_8c.html#a3587d4f5345327c5ba6f05286d313232">f_linear_slope_allocate</a> (const size_t number_of_variables, const double *best_parameter)</td></tr>
+<tr class="memdesc:a3587d4f5345327c5ba6f05286d313232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic linear slope problem.  <a href="#a3587d4f5345327c5ba6f05286d313232">More...</a><br /></td></tr>
 <tr class="separator:a3587d4f5345327c5ba6f05286d313232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad714839c031774c029503b2034c89f58"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__linear__slope_8c.html#ad714839c031774c029503b2034c89f58">f_linear_slope_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:ad714839c031774c029503b2034c89f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB linear slope problem.  <a href="#ad714839c031774c029503b2034c89f58">More...</a><br /></td></tr>
 <tr class="separator:ad714839c031774c029503b2034c89f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the linear slope function and problem. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a3587d4f5345327c5ba6f05286d313232"></a>
 <div class="memitem">
 <div class="memproto">
@@ -149,6 +158,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Allocates the basic linear slope problem. </p>
 
 </div>
 </div>
@@ -208,6 +219,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates the BBOB linear slope problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="a1c3c46c8ece9e6ea37c9c7a8e4886e99"></a>
@@ -248,6 +261,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Uses the raw function to evaluate the COCO problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="aaeb04a7f0061fbd21555c81490423a89"></a>
@@ -287,6 +302,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implements the linear slope function without connections to any COCO structures. </p>
 
 </div>
 </div>

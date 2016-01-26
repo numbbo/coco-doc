@@ -103,7 +103,7 @@ var searchData=
   ['f_5fstep_5fellipsoid_5fevaluate',['f_step_ellipsoid_evaluate',['../f__step__ellipsoid_8c.html#ae520e36d3c0c7033d8054d3a8f3fca0b',1,'f_step_ellipsoid.c']]],
   ['f_5fstep_5fellipsoid_5ffree',['f_step_ellipsoid_free',['../f__step__ellipsoid_8c.html#a564ad81215d8ea29a013f0ea2d89c890',1,'f_step_ellipsoid.c']]],
   ['f_5fstep_5fellipsoid_5fraw',['f_step_ellipsoid_raw',['../f__step__ellipsoid_8c.html#ab105bbc9f0388372379159f43a899ecf',1,'f_step_ellipsoid.c']]],
-  ['f_5ftrigger',['f_trigger',['../structlogger__bbob__t.html#a28d09f8b9f188bf9754eaa9150106b17',1,'logger_bbob_t']]],
+  ['f_5ftrigger',['f_trigger',['../structlogger__bbob__data__t.html#a28d09f8b9f188bf9754eaa9150106b17',1,'logger_bbob_data_t']]],
   ['f_5fweierstrass_2ec',['f_weierstrass.c',['../f__weierstrass_8c.html',1,'']]],
   ['f_5fweierstrass_5fallocate',['f_weierstrass_allocate',['../f__weierstrass_8c.html#a6516fe9db3ced7fb4cce26f2bc86b23a',1,'f_weierstrass.c']]],
   ['f_5fweierstrass_5fbbob_5fproblem_5fallocate',['f_weierstrass_bbob_problem_allocate',['../f__weierstrass_8c.html#a83276efb2c6287a1e53096263b53f2c8',1,'f_weierstrass.c']]],
@@ -112,11 +112,10 @@ var searchData=
   ['f_5fweierstrass_5fraw',['f_weierstrass_raw',['../f__weierstrass_8c.html#a1d1c4a1f14e2c8dd60890a48eb531feb',1,'f_weierstrass.c']]],
   ['f_5fweierstrass_5fsummands',['F_WEIERSTRASS_SUMMANDS',['../f__weierstrass_8c.html#a18749745931e068554050348303e1c0d',1,'f_weierstrass.c']]],
   ['factor',['factor',['../structtransform__obj__penalize__data__t.html#a2d7e5dd7a479c4c7aef6e6133a1441c5',1,'transform_obj_penalize_data_t::factor()'],['../structtransform__vars__scale__data__t.html#a2d7e5dd7a479c4c7aef6e6133a1441c5',1,'transform_vars_scale_data_t::factor()']]],
-  ['fdata_5ffile',['fdata_file',['../structlogger__bbob__t.html#a081c6818a69b1ef9a017016b8d43b7ab',1,'logger_bbob_t']]],
+  ['fdata_5ffile',['fdata_file',['../structlogger__bbob__data__t.html#a081c6818a69b1ef9a017016b8d43b7ab',1,'logger_bbob_data_t']]],
   ['final_5ftarget_5fdelta',['final_target_delta',['../structcoco__problem.html#af8ed81b7e3bd0f65122ba4ba8ab3af85',1,'coco_problem']]],
   ['first_5fnon_5fzero_5fmap',['first_non_zero_map',['../structtransform__vars__permblockdiag__t.html#ab7654d3660dff9599b5275208e76fac1',1,'transform_vars_permblockdiag_t']]],
   ['fopt',['fopt',['../structf__lunacek__bi__rastrigin__data__t.html#aa3709c4fc5a2c8402b7f647959a82caa',1,'f_lunacek_bi_rastrigin_data_t::fopt()'],['../structf__step__ellipsoid__data__t.html#aa3709c4fc5a2c8402b7f647959a82caa',1,'f_step_ellipsoid_data_t::fopt()']]],
-  ['freeitem',['freeitem',['../structavl__tree.html#a3dedf71c6328ed2de9fcb8c01b5bf0cc',1,'avl_tree']]],
-  ['function_5fid',['function_id',['../structlogger__bbob__t.html#a53797c8631ffcb70f78ec01df95683d6',1,'logger_bbob_t']]],
+  ['function_5fid',['function_id',['../structlogger__bbob__data__t.html#a53797c8631ffcb70f78ec01df95683d6',1,'logger_bbob_data_t']]],
   ['functions',['functions',['../structcoco__suite.html#a254f291727a1453c81e55ae1d819e423',1,'coco_suite']]]
 ];

@@ -102,19 +102,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">observer_biobj.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the bbob-biobj observer.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__internal_8h_source.html">coco_internal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__utilities_8c.html">coco_utilities.c</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="mo__generics_8c.html">mo_generics.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mo__utilities_8c.html">mo_utilities.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structobserver__biobj__t.html">observer_biobj_t</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structobserver__biobj__data__t.html">observer_biobj_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bbob-biobj observer data type.  <a href="structobserver__biobj__data__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:adf30f63a6cfdb3873ff069238c48c45d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#adf30f63a6cfdb3873ff069238c48c45d">OBSERVER_BIOBJ_NUMBER_OF_INDICATORS</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:adf30f63a6cfdb3873ff069238c48c45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of implemented indicators.  <a href="#adf30f63a6cfdb3873ff069238c48c45d">More...</a><br /></td></tr>
 <tr class="separator:adf30f63a6cfdb3873ff069238c48c45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -122,12 +127,14 @@ Enumerations</h2></td></tr>
 <tr class="memitem:af7d3edad14e9bc80fda6ec29119888bd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bd">observer_biobj_log_nondom_e</a> { <a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bda5d97229518eadf597f361f33d5748b64">LOG_NONDOM_NONE</a>, 
 <a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bdabf0d04baf535f9b4d4aa4c3f2e0fcaff">LOG_NONDOM_FINAL</a>, 
 <a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bda78c0d9c657bb6249e933950263dd5407">LOG_NONDOM_ALL</a>
- }</td></tr>
+ }<tr class="memdesc:af7d3edad14e9bc80fda6ec29119888bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for denoting the way in which the nondominated solutions are logged.  <a href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bd">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:af7d3edad14e9bc80fda6ec29119888bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73c3917f4540c84782b4b0a341cfbe83"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83">observer_biobj_log_vars_e</a> { <a class="el" href="observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83acb328dd94f94958b9dab19a0ee106f44">LOG_VARS_NEVER</a>, 
 <a class="el" href="observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83ac039a389b3885b232225bab0d51442e0">LOG_VARS_LOW_DIM</a>, 
 <a class="el" href="observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83a41543f40e3daa8e6186d3e122cf1f3a2">LOG_VARS_ALWAYS</a>
- }</td></tr>
+ }<tr class="memdesc:a73c3917f4540c84782b4b0a341cfbe83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for denoting the when the decision variables are logged.  <a href="observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a73c3917f4540c84782b4b0a341cfbe83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -135,14 +142,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a41469dac8832863a7b013e919cb59f04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#a41469dac8832863a7b013e919cb59f04">logger_biobj</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
 <tr class="separator:a41469dac8832863a7b013e919cb59f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acca6899355902a7bfc5406254bff540c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#acca6899355902a7bfc5406254bff540c">observer_biobj</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer, const char *options)</td></tr>
+<tr class="memdesc:acca6899355902a7bfc5406254bff540c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the bi-objective observer.  <a href="#acca6899355902a7bfc5406254bff540c">More...</a><br /></td></tr>
 <tr class="separator:acca6899355902a7bfc5406254bff540c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a167a07fd15995d2d259763f95a2dfdf8"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#a167a07fd15995d2d259763f95a2dfdf8">observer_biobj_indicators</a> [<a class="el" href="observer__biobj_8c.html#adf30f63a6cfdb3873ff069238c48c45d">OBSERVER_BIOBJ_NUMBER_OF_INDICATORS</a>] = { &quot;hyp&quot; }</td></tr>
+<tr class="memdesc:a167a07fd15995d2d259763f95a2dfdf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Names of implemented indicators.  <a href="#a167a07fd15995d2d259763f95a2dfdf8">More...</a><br /></td></tr>
 <tr class="separator:a167a07fd15995d2d259763f95a2dfdf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the bbob-biobj observer. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="adf30f63a6cfdb3873ff069238c48c45d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -152,6 +163,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Number of implemented indicators. </p>
 
 </div>
 </div>
@@ -165,6 +178,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum for denoting the way in which the nondominated solutions are logged. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="af7d3edad14e9bc80fda6ec29119888bda5d97229518eadf597f361f33d5748b64"></a>LOG_NONDOM_NONE&#160;</td><td class="fielddoc">
 </td></tr>
@@ -185,6 +200,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum for denoting the when the decision variables are logged. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a73c3917f4540c84782b4b0a341cfbe83acb328dd94f94958b9dab19a0ee106f44"></a>LOG_VARS_NEVER&#160;</td><td class="fielddoc">
 </td></tr>
@@ -262,7 +279,9 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Initializes the biobjective observer. Possible options:</p><ul>
+
+<p>Initializes the bi-objective observer. </p>
+<p>Possible options:</p><ul>
 <li>log_nondominated : none (don't log nondominated solutions)</li>
 <li>log_nondominated : final (log only the final nondominated solutions)</li>
 <li>log_nondominated : all (log every solution that is nondominated at creation time; default value)</li>
@@ -285,6 +304,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Names of implemented indicators. </p>
 
 </div>
 </div>

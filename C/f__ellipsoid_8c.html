@@ -98,6 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">f_ellipsoid.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the ellipsoid function and problem.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
@@ -112,19 +115,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afddd2cc390a6343729ee4d32ea0efada"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__ellipsoid_8c.html#afddd2cc390a6343729ee4d32ea0efada">f_ellipsoid_raw</a> (const double *x, const size_t number_of_variables)</td></tr>
+<tr class="memdesc:afddd2cc390a6343729ee4d32ea0efada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the ellipsoid function without connections to any COCO structures.  <a href="#afddd2cc390a6343729ee4d32ea0efada">More...</a><br /></td></tr>
 <tr class="separator:afddd2cc390a6343729ee4d32ea0efada"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa964fbbd1e6b5815e218629697667fbf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__ellipsoid_8c.html#aa964fbbd1e6b5815e218629697667fbf">f_ellipsoid_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:aa964fbbd1e6b5815e218629697667fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the raw function to evaluate the COCO problem.  <a href="#aa964fbbd1e6b5815e218629697667fbf">More...</a><br /></td></tr>
 <tr class="separator:aa964fbbd1e6b5815e218629697667fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ca7ba385b2e3b7fb303702d25054e5f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__ellipsoid_8c.html#a7ca7ba385b2e3b7fb303702d25054e5f">f_ellipsoid_allocate</a> (const size_t number_of_variables)</td></tr>
+<tr class="memdesc:a7ca7ba385b2e3b7fb303702d25054e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic ellipsoid problem.  <a href="#a7ca7ba385b2e3b7fb303702d25054e5f">More...</a><br /></td></tr>
 <tr class="separator:a7ca7ba385b2e3b7fb303702d25054e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24ca5552a4aefc1e8ab326e4ee7eb15c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__ellipsoid_8c.html#a24ca5552a4aefc1e8ab326e4ee7eb15c">f_ellipsoid_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:a24ca5552a4aefc1e8ab326e4ee7eb15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB ellipsoid problem.  <a href="#a24ca5552a4aefc1e8ab326e4ee7eb15c">More...</a><br /></td></tr>
 <tr class="separator:a24ca5552a4aefc1e8ab326e4ee7eb15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad98281d1e8b775330741cd73e71c8157"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__ellipsoid_8c.html#ad98281d1e8b775330741cd73e71c8157">f_ellipsoid_rotated_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:ad98281d1e8b775330741cd73e71c8157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB rotated ellipsoid problem.  <a href="#ad98281d1e8b775330741cd73e71c8157">More...</a><br /></td></tr>
 <tr class="separator:ad98281d1e8b775330741cd73e71c8157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62817f424f0ada8ed6a98a4fe72727cf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__ellipsoid_8c.html#a62817f424f0ada8ed6a98a4fe72727cf">f_ellipsoid_permblockdiag_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="separator:a62817f424f0ada8ed6a98a4fe72727cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the ellipsoid function and problem. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a7ca7ba385b2e3b7fb303702d25054e5f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -146,6 +156,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Allocates the basic ellipsoid problem. </p>
 
 </div>
 </div>
@@ -205,6 +217,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates the BBOB ellipsoid problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="aa964fbbd1e6b5815e218629697667fbf"></a>
@@ -244,6 +258,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Uses the raw function to evaluate the COCO problem. </p>
 
 </div>
 </div>
@@ -337,6 +353,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Implements the ellipsoid function without connections to any COCO structures. </p>
+
 </div>
 </div>
 <a class="anchor" id="ad98281d1e8b775330741cd73e71c8157"></a>
@@ -394,6 +412,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates the BBOB rotated ellipsoid problem. </p>
 
 </div>
 </div>

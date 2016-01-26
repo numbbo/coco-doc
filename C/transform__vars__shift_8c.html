@@ -99,6 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">transform_vars_shift.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of shifting all decision values by an offset.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
@@ -112,13 +115,18 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac01d1dc196331d95dcf51b93437aa1cf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__shift_8c.html#ac01d1dc196331d95dcf51b93437aa1cf">transform_vars_shift_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:ac01d1dc196331d95dcf51b93437aa1cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the transformation.  <a href="#ac01d1dc196331d95dcf51b93437aa1cf">More...</a><br /></td></tr>
 <tr class="separator:ac01d1dc196331d95dcf51b93437aa1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04997e5f13a789dfdb2ee595f34db900"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__shift_8c.html#a04997e5f13a789dfdb2ee595f34db900">transform_vars_shift_free</a> (void *thing)</td></tr>
+<tr class="memdesc:a04997e5f13a789dfdb2ee595f34db900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the data object.  <a href="#a04997e5f13a789dfdb2ee595f34db900">More...</a><br /></td></tr>
 <tr class="separator:a04997e5f13a789dfdb2ee595f34db900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a218faad53e82063d2a73fc4ed595bdfc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="transform__vars__shift_8c.html#a218faad53e82063d2a73fc4ed595bdfc">transform_vars_shift</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *inner_problem, const double *offset, const int shift_bounds)</td></tr>
+<tr class="memdesc:a218faad53e82063d2a73fc4ed595bdfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the transformation.  <a href="#a218faad53e82063d2a73fc4ed595bdfc">More...</a><br /></td></tr>
 <tr class="separator:a218faad53e82063d2a73fc4ed595bdfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of shifting all decision values by an offset. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a218faad53e82063d2a73fc4ed595bdfc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -156,6 +164,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates the transformation. </p>
 
 </div>
 </div>
@@ -197,6 +207,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Evaluates the transformation. </p>
+
 </div>
 </div>
 <a class="anchor" id="a04997e5f13a789dfdb2ee595f34db900"></a>
@@ -220,6 +232,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Frees the data object. </p>
 
 </div>
 </div>

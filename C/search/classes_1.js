@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['coco_5fobserver',['coco_observer',['../structcoco__observer.html',1,'']]],
-  ['coco_5fproblem',['coco_problem',['../structcoco__problem.html',1,'']]],
-  ['coco_5fproblem_5fstacked_5fdata_5ft',['coco_problem_stacked_data_t',['../structcoco__problem__stacked__data__t.html',1,'']]],
-  ['coco_5fproblem_5ftransformed_5fdata_5ft',['coco_problem_transformed_data_t',['../structcoco__problem__transformed__data__t.html',1,'']]],
-  ['coco_5frandom_5fstate',['coco_random_state',['../structcoco__random__state.html',1,'']]],
-  ['coco_5fsuite',['coco_suite',['../structcoco__suite.html',1,'']]]
+  ['f_5fattractive_5fsector_5fdata_5ft',['f_attractive_sector_data_t',['../structf__attractive__sector__data__t.html',1,'']]],
+  ['f_5fgallagher_5fdata_5ft',['f_gallagher_data_t',['../structf__gallagher__data__t.html',1,'']]],
+  ['f_5flunacek_5fbi_5frastrigin_5fdata_5ft',['f_lunacek_bi_rastrigin_data_t',['../structf__lunacek__bi__rastrigin__data__t.html',1,'']]],
+  ['f_5fstep_5fellipsoid_5fdata_5ft',['f_step_ellipsoid_data_t',['../structf__step__ellipsoid__data__t.html',1,'']]],
+  ['f_5fweierstrass_5fdata_5ft',['f_weierstrass_data_t',['../structf__weierstrass__data__t.html',1,'']]]
 ];

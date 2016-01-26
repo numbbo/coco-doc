@@ -99,6 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">logger_biobj.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the bbob-biobj logger.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
@@ -108,51 +111,77 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__string_8c.html">coco_string.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="observer__biobj_8c.html">observer_biobj.c</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="logger__biobj__avl__tree_8c.html">logger_biobj_avl_tree.c</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="mo__generics_8c.html">mo_generics.c</a>&quot;</code><br />
+<code>#include &quot;logger_biobj_avl_tree.c&quot;</code><br />
 <code>#include &quot;<a class="el" href="mo__targets_8c.html">mo_targets.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mo__utilities_8c.html">mo_utilities.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The indicator type.  <a href="structlogger__biobj__indicator__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bi-objective logger data type.  <a href="structlogger__biobj__data__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for the node's item in the AVL tree.  <a href="structlogger__biobj__avl__item__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:adfdc6c477e070967a5f19e90e6818d86"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#adfdc6c477e070967a5f19e90e6818d86">logger_biobj_node_create</a> (const double *x, const double *y, const size_t time_stamp, const size_t dim, const size_t num_obj)</td></tr>
+<tr class="memdesc:adfdc6c477e070967a5f19e90e6818d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns the information on the solution in the form of a node's item in the AVL tree.  <a href="#adfdc6c477e070967a5f19e90e6818d86">More...</a><br /></td></tr>
 <tr class="separator:adfdc6c477e070967a5f19e90e6818d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38cdb0e3396eddb6365d634c13725706"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a38cdb0e3396eddb6365d634c13725706">logger_biobj_node_free</a> (<a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item, void *userdata)</td></tr>
+<tr class="memdesc:a38cdb0e3396eddb6365d634c13725706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the data of the given <a class="el" href="structlogger__biobj__avl__item__t.html" title="The type for the node&#39;s item in the AVL tree. ">logger_biobj_avl_item_t</a>.  <a href="#a38cdb0e3396eddb6365d634c13725706">More...</a><br /></td></tr>
 <tr class="separator:a38cdb0e3396eddb6365d634c13725706"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44be65a3d62cc79797112961f34c4ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#ae44be65a3d62cc79797112961f34c4ba">logger_biobj_check_if_within_ROI</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, <a class="el" href="logger__biobj__avl__tree_8c.html#a09799ec4ab35e977b149c025d2e84691">avl_node_t</a> *node)</td></tr>
+<tr class="memitem:ae44be65a3d62cc79797112961f34c4ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#ae44be65a3d62cc79797112961f34c4ba">logger_biobj_check_if_within_ROI</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, avl_node_t *node)</td></tr>
+<tr class="memdesc:ae44be65a3d62cc79797112961f34c4ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given node is smaller than the nadir point, and stores this information in the node's item-&gt;within_ROI field.  <a href="#ae44be65a3d62cc79797112961f34c4ba">More...</a><br /></td></tr>
 <tr class="separator:ae44be65a3d62cc79797112961f34c4ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c34dfbb9b867965a28dff7f01f1e2e4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a2c34dfbb9b867965a28dff7f01f1e2e4">avl_tree_compare_by_last_objective</a> (const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item1, const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item2, void *userdata)</td></tr>
+<tr class="memdesc:a2c34dfbb9b867965a28dff7f01f1e2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the ordering of AVL tree nodes based on the value of the last objective.  <a href="#a2c34dfbb9b867965a28dff7f01f1e2e4">More...</a><br /></td></tr>
 <tr class="separator:a2c34dfbb9b867965a28dff7f01f1e2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a347c23cded64629efdda7ffcfde8a702"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a347c23cded64629efdda7ffcfde8a702">avl_tree_compare_by_time_stamp</a> (const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item1, const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item2, void *userdata)</td></tr>
+<tr class="memdesc:a347c23cded64629efdda7ffcfde8a702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the ordering of AVL tree nodes based on the time stamp.  <a href="#a347c23cded64629efdda7ffcfde8a702">More...</a><br /></td></tr>
 <tr class="separator:a347c23cded64629efdda7ffcfde8a702"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa525bc3137f9c1ef8de71d04a2a49c0"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aaa525bc3137f9c1ef8de71d04a2a49c0">logger_biobj_tree_output</a> (FILE *file, <a class="el" href="logger__biobj__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a> *tree, const size_t dim, const size_t num_obj, const int log_vars, const int precision_x, const int precision_f)</td></tr>
+<tr class="memitem:aaa525bc3137f9c1ef8de71d04a2a49c0"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aaa525bc3137f9c1ef8de71d04a2a49c0">logger_biobj_tree_output</a> (FILE *file, avl_tree_t *tree, const size_t dim, const size_t num_obj, const int log_vars, const int precision_x, const int precision_f)</td></tr>
+<tr class="memdesc:aaa525bc3137f9c1ef8de71d04a2a49c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the AVL tree to the given file. Returns the number of nodes in the tree.  <a href="#aaa525bc3137f9c1ef8de71d04a2a49c0">More...</a><br /></td></tr>
 <tr class="separator:aaa525bc3137f9c1ef8de71d04a2a49c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ec137bc7171c3a189746f14e7c931ac"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a6ec137bc7171c3a189746f14e7c931ac">logger_biobj_tree_update</a> (<a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *logger, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *node_item)</td></tr>
-<tr class="separator:a6ec137bc7171c3a189746f14e7c931ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c2f0a4472ebd0385e56db5fa61c523f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a3c2f0a4472ebd0385e56db5fa61c523f">logger_biobj_indicator</a> (<a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *logger, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const char *indicator_name)</td></tr>
-<tr class="separator:a3c2f0a4472ebd0385e56db5fa61c523f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafd97d8cbf89371f66f1fe7dd8ae57f3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aafd97d8cbf89371f66f1fe7dd8ae57f3">logger_biobj_indicator_finalize</a> (<a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a> *indicator, <a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *logger)</td></tr>
-<tr class="separator:aafd97d8cbf89371f66f1fe7dd8ae57f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadac94b8bb461917c428a3d41d23c6c7"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aadac94b8bb461917c428a3d41d23c6c7">logger_biobj_tree_update</a> (<a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a> *logger, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *node_item)</td></tr>
+<tr class="memdesc:aadac94b8bb461917c428a3d41d23c6c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the archive and buffer trees with the given node.  <a href="#aadac94b8bb461917c428a3d41d23c6c7">More...</a><br /></td></tr>
+<tr class="separator:aadac94b8bb461917c428a3d41d23c6c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0846097d3261bd77d8bde1c3806b9401"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a0846097d3261bd77d8bde1c3806b9401">logger_biobj_indicator</a> (<a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a> *logger, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const char *indicator_name)</td></tr>
+<tr class="memdesc:a0846097d3261bd77d8bde1c3806b9401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the indicator with name indicator_name.  <a href="#a0846097d3261bd77d8bde1c3806b9401">More...</a><br /></td></tr>
+<tr class="separator:a0846097d3261bd77d8bde1c3806b9401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20fea4f45fb5294c23d2bcf346436dc4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a20fea4f45fb5294c23d2bcf346436dc4">logger_biobj_indicator_finalize</a> (<a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a> *indicator, <a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a> *logger)</td></tr>
+<tr class="memdesc:a20fea4f45fb5294c23d2bcf346436dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the final information about this indicator.  <a href="#a20fea4f45fb5294c23d2bcf346436dc4">More...</a><br /></td></tr>
+<tr class="separator:a20fea4f45fb5294c23d2bcf346436dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad16f95bbe83b5a8185012c2688935a5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aad16f95bbe83b5a8185012c2688935a5">logger_biobj_indicator_free</a> (void *stuff)</td></tr>
+<tr class="memdesc:aad16f95bbe83b5a8185012c2688935a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory of the given indicator.  <a href="#aad16f95bbe83b5a8185012c2688935a5">More...</a><br /></td></tr>
 <tr class="separator:aad16f95bbe83b5a8185012c2688935a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3b9c5c68499684363d46dadb8e03fa8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aa3b9c5c68499684363d46dadb8e03fa8">logger_biobj_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:aa3b9c5c68499684363d46dadb8e03fa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the function, increases the number of evaluations and outputs information based on the observer options.  <a href="#aa3b9c5c68499684363d46dadb8e03fa8">More...</a><br /></td></tr>
 <tr class="separator:aa3b9c5c68499684363d46dadb8e03fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83c3e1aceee0c8ebf129752718f08556"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a83c3e1aceee0c8ebf129752718f08556">logger_biobj_finalize</a> (<a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *logger)</td></tr>
-<tr class="separator:a83c3e1aceee0c8ebf129752718f08556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae351ff62fa1da989f16c113ec200c73c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#ae351ff62fa1da989f16c113ec200c73c">logger_biobj_finalize</a> (<a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a> *logger)</td></tr>
+<tr class="memdesc:ae351ff62fa1da989f16c113ec200c73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the final nondominated solutions to the archive file.  <a href="#ae351ff62fa1da989f16c113ec200c73c">More...</a><br /></td></tr>
+<tr class="separator:ae351ff62fa1da989f16c113ec200c73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48b77cb7ab3ff1ec74596d2711e5de32"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a48b77cb7ab3ff1ec74596d2711e5de32">logger_biobj_free</a> (void *stuff)</td></tr>
+<tr class="memdesc:a48b77cb7ab3ff1ec74596d2711e5de32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory of the given biobjective logger.  <a href="#a48b77cb7ab3ff1ec74596d2711e5de32">More...</a><br /></td></tr>
 <tr class="separator:a48b77cb7ab3ff1ec74596d2711e5de32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b5844795e3257a17c7558381f46dca4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a4b5844795e3257a17c7558381f46dca4">logger_biobj</a> (<a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *observer, <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *inner_problem)</td></tr>
+<tr class="memdesc:a4b5844795e3257a17c7558381f46dca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the biobjective logger.  <a href="#a4b5844795e3257a17c7558381f46dca4">More...</a><br /></td></tr>
 <tr class="separator:a4b5844795e3257a17c7558381f46dca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the bbob-biobj logger. </p>
+<p>Logs the values of the implemented indicators and archives nondominated solutions. Produces four kinds of files:</p><ul>
+<li>The "info" files contain high-level information on the performed experiment. One .info file is created for each problem group (and indicator type) and contains information on all the problems in that problem group (and indicator type).</li>
+<li>The "dat" files contain function evaluations, indicator values and target hits for every target hit. One .dat file is created for each problem function and dimension (and indicator type) and contains information for all instances of that problem (and indicator type).</li>
+<li>The "tdat" files contain function evaluation and indicator values for every predefined evaluation number. One .tdat file is created for each problem function and dimension (and indicator type) and contains information for all instances of that problem (and indicator type).</li>
+<li>The "adat" files are archive files that contain function evaluations, 2 objectives and dim variables for every nondominated solution. Whether these files are created, at what point in time the logger writes nondominated solutions to the archive and whether the decision variables are output or not depends on the values of log_nondom_mode and log_nondom_mode. See the bi-objective observer constructor <a class="el" href="observer__biobj_8c.html#acca6899355902a7bfc5406254bff540c" title="Initializes the bi-objective observer. ">observer_biobj()</a> for more information. One .adat file is created for each problem function and dimension and contains information for all instances of that problem.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>Whenever in this file a ROI is mentioned, it means the region of interest in the objective space. </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a2c34dfbb9b867965a28dff7f01f1e2e4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -190,7 +219,9 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Defines the ordering of AVL tree nodes based on the value of the last objective. </p>
+<dl class="section note"><dt>Note</dt><dd>This ordering is used by the archive_tree. </dd></dl>
 
 </div>
 </div>
@@ -231,7 +262,9 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Defines the ordering of AVL tree nodes based on the time stamp. </p>
+<dl class="section note"><dt>Note</dt><dd>This ordering is used by the buffer_tree. </dd></dl>
 
 </div>
 </div>
@@ -266,6 +299,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Initializes the biobjective logger. </p>
 
 </div>
@@ -286,7 +320,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="logger__biobj__avl__tree_8c.html#a09799ec4ab35e977b149c025d2e84691">avl_node_t</a> *&#160;</td>
+          <td class="paramtype">avl_node_t *&#160;</td>
           <td class="paramname"><em>node</em>&#160;</td>
         </tr>
         <tr>
@@ -301,7 +335,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Checks if the given node is smaller than the reference point, and stores this information in the node's item-&gt;within_ROI field. </p>
+
+<p>Checks if the given node is smaller than the nadir point, and stores this information in the node's item-&gt;within_ROI field. </p>
 
 </div>
 </div>
@@ -342,11 +377,12 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Evaluates the function, increases the number of evaluations and outputs information based on observer options. </p>
+
+<p>Evaluates the function, increases the number of evaluations and outputs information based on the observer options. </p>
 
 </div>
 </div>
-<a class="anchor" id="a83c3e1aceee0c8ebf129752718f08556"></a>
+<a class="anchor" id="ae351ff62fa1da989f16c113ec200c73c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -356,7 +392,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void logger_biobj_finalize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a> *&#160;</td>
           <td class="paramname"><em>logger</em></td><td>)</td>
           <td></td>
         </tr>
@@ -367,7 +403,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Outputs the final nondominated solutions. </p>
+
+<p>Outputs the final nondominated solutions to the archive file. </p>
 
 </div>
 </div>
@@ -392,11 +429,12 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Frees the memory of the given biobjective logger. </p>
 
 </div>
 </div>
-<a class="anchor" id="a3c2f0a4472ebd0385e56db5fa61c523f"></a>
+<a class="anchor" id="a0846097d3261bd77d8bde1c3806b9401"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -406,7 +444,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a>* logger_biobj_indicator </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a> *&#160;</td>
           <td class="paramname"><em>logger</em>, </td>
         </tr>
         <tr>
@@ -433,11 +471,13 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Initializes the indicator with name indicator_name. </p>
+<p>Opens files for writing and resets counters. </p>
 
 </div>
 </div>
-<a class="anchor" id="aafd97d8cbf89371f66f1fe7dd8ae57f3"></a>
+<a class="anchor" id="a20fea4f45fb5294c23d2bcf346436dc4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -453,7 +493,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a> *&#160;</td>
           <td class="paramname"><em>logger</em>&#160;</td>
         </tr>
         <tr>
@@ -468,6 +508,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Outputs the final information about this indicator. </p>
 
 </div>
@@ -493,6 +534,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Frees the memory of the given indicator. </p>
 
 </div>
@@ -546,6 +588,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Creates and returns the information on the solution in the form of a node's item in the AVL tree. </p>
 
 </div>
@@ -581,7 +624,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Frees the data of the given <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a>. </p>
+
+<p>Frees the data of the given <a class="el" href="structlogger__biobj__avl__item__t.html" title="The type for the node&#39;s item in the AVL tree. ">logger_biobj_avl_item_t</a>. </p>
 
 </div>
 </div>
@@ -601,7 +645,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="logger__biobj__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em>, </td>
         </tr>
         <tr>
@@ -646,11 +690,12 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>Outputs the AVL tree to the given file. Returns the number of nodes in the tree. </p>
 
 </div>
 </div>
-<a class="anchor" id="a6ec137bc7171c3a189746f14e7c931ac"></a>
+<a class="anchor" id="aadac94b8bb461917c428a3d41d23c6c7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -660,7 +705,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static int logger_biobj_tree_update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structlogger__biobj__t.html">logger_biobj_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a> *&#160;</td>
           <td class="paramname"><em>logger</em>, </td>
         </tr>
         <tr>
@@ -687,7 +732,10 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Checks for domination and updates the archive tree and the values of the indicators if the given node is not weakly dominated by existing nodes in the archive tree. Returns 1 if the update was performed and 0 otherwise. </p>
+
+<p>Updates the archive and buffer trees with the given node. </p>
+<p>Checks for domination and updates the archive tree and the values of the indicators if the given node is not weakly dominated by existing nodes in the archive tree. This is where the main computation of indicator values takes place.</p>
+<dl class="section return"><dt>Returns</dt><dd>1 if the update was performed and 0 otherwise. </dd></dl>
 
 </div>
 </div>

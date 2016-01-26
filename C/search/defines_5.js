@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['observer_5fbiobj_5fnumber_5fof_5findicators',['OBSERVER_BIOBJ_NUMBER_OF_INDICATORS',['../observer__biobj_8c.html#adf30f63a6cfdb3873ff069238c48c45d',1,'observer_biobj.c']]]
+  ['suite_5fbbob2009_5fmax_5fdim',['SUITE_BBOB2009_MAX_DIM',['../suite__bbob__legacy__code_8c.html#a30f5ab8c8eebf32a5ef95bf3d5297c6d',1,'suite_bbob_legacy_code.c']]]
 ];

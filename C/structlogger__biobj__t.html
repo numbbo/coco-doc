@@ -95,48 +95,84 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">logger_biobj_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The data type for the bi-objective logger.  
+ <a href="structlogger__biobj__t.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aac38dfd8c8462cf1d7506d549ec58460"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a08398c0842945727913d459f29bb3e57">coco_observer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#aac38dfd8c8462cf1d7506d549ec58460">observer</a></td></tr>
+<tr class="memdesc:aac38dfd8c8462cf1d7506d549ec58460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the general observer to access its fields.  <a href="#aac38dfd8c8462cf1d7506d549ec58460">More...</a><br /></td></tr>
 <tr class="separator:aac38dfd8c8462cf1d7506d549ec58460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81d31970fec7df2cc8ccc741a21cbc31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bd">observer_biobj_log_nondom_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#a81d31970fec7df2cc8ccc741a21cbc31">log_nondom_mode</a></td></tr>
+<tr class="memdesc:a81d31970fec7df2cc8ccc741a21cbc31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode for archiving nondominated solutions.  <a href="#a81d31970fec7df2cc8ccc741a21cbc31">More...</a><br /></td></tr>
 <tr class="separator:a81d31970fec7df2cc8ccc741a21cbc31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2959d2026519add990a2e208355a900b"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#a2959d2026519add990a2e208355a900b">nondom_file</a></td></tr>
-<tr class="separator:a2959d2026519add990a2e208355a900b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab525352bf723f1a0b088d7757690356f"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#ab525352bf723f1a0b088d7757690356f">archive_file</a></td></tr>
+<tr class="memdesc:ab525352bf723f1a0b088d7757690356f"><td class="mdescLeft">&#160;</td><td class="mdescRight">File for archiving nondominated solutions (all or final).  <a href="#ab525352bf723f1a0b088d7757690356f">More...</a><br /></td></tr>
+<tr class="separator:ab525352bf723f1a0b088d7757690356f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2c634e2d1e1e3fcb602f4998b3f6f6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#af2c634e2d1e1e3fcb602f4998b3f6f6d">log_vars</a></td></tr>
+<tr class="memdesc:af2c634e2d1e1e3fcb602f4998b3f6f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to log the decision values.  <a href="#af2c634e2d1e1e3fcb602f4998b3f6f6d">More...</a><br /></td></tr>
 <tr class="separator:af2c634e2d1e1e3fcb602f4998b3f6f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1210e0d0c3b8c2dea8666528a1040d66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#a1210e0d0c3b8c2dea8666528a1040d66">precision_x</a></td></tr>
+<tr class="memdesc:a1210e0d0c3b8c2dea8666528a1040d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precision for outputting decision values.  <a href="#a1210e0d0c3b8c2dea8666528a1040d66">More...</a><br /></td></tr>
 <tr class="separator:a1210e0d0c3b8c2dea8666528a1040d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5feb347ca34531d71c7979566bea2711"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#a5feb347ca34531d71c7979566bea2711">precision_f</a></td></tr>
+<tr class="memdesc:a5feb347ca34531d71c7979566bea2711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precision for outputting objective values.  <a href="#a5feb347ca34531d71c7979566bea2711">More...</a><br /></td></tr>
 <tr class="separator:a5feb347ca34531d71c7979566bea2711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ab1b88adaf2073e4894ca098e0f0c44"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#a7ab1b88adaf2073e4894ca098e0f0c44">number_of_evaluations</a></td></tr>
+<tr class="memdesc:a7ab1b88adaf2073e4894ca098e0f0c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of evaluations performed so far.  <a href="#a7ab1b88adaf2073e4894ca098e0f0c44">More...</a><br /></td></tr>
 <tr class="separator:a7ab1b88adaf2073e4894ca098e0f0c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6b20eee35eaa31d0f1879c15a3806e3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#af6b20eee35eaa31d0f1879c15a3806e3">number_of_variables</a></td></tr>
+<tr class="memdesc:af6b20eee35eaa31d0f1879c15a3806e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of the problem.  <a href="#af6b20eee35eaa31d0f1879c15a3806e3">More...</a><br /></td></tr>
 <tr class="separator:af6b20eee35eaa31d0f1879c15a3806e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7f5522e84358e9b7a4ab06d60d442db"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#aa7f5522e84358e9b7a4ab06d60d442db">number_of_objectives</a></td></tr>
+<tr class="memdesc:aa7f5522e84358e9b7a4ab06d60d442db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of objectives (clearly equal to 2).  <a href="#aa7f5522e84358e9b7a4ab06d60d442db">More...</a><br /></td></tr>
 <tr class="separator:aa7f5522e84358e9b7a4ab06d60d442db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a415bf642799c6a11b786209d1b36bb26"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#a415bf642799c6a11b786209d1b36bb26">suite_dep_instance</a></td></tr>
+<tr class="memdesc:a415bf642799c6a11b786209d1b36bb26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suite-dependent instance number of the observed problem.  <a href="#a415bf642799c6a11b786209d1b36bb26">More...</a><br /></td></tr>
 <tr class="separator:a415bf642799c6a11b786209d1b36bb26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b6fc11900134d0a849656e5999ceb9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="logger__biobj__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#a9b6fc11900134d0a849656e5999ceb9b">archive_tree</a></td></tr>
+<tr class="memitem:a9b6fc11900134d0a849656e5999ceb9b"><td class="memItemLeft" align="right" valign="top">avl_tree_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#a9b6fc11900134d0a849656e5999ceb9b">archive_tree</a></td></tr>
+<tr class="memdesc:a9b6fc11900134d0a849656e5999ceb9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tree keeping currently non-dominated solutions.  <a href="#a9b6fc11900134d0a849656e5999ceb9b">More...</a><br /></td></tr>
 <tr class="separator:a9b6fc11900134d0a849656e5999ceb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49fd1c58a5bc4552e703793e83c33e7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="logger__biobj__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#a49fd1c58a5bc4552e703793e83c33e7b">buffer_tree</a></td></tr>
+<tr class="memitem:a49fd1c58a5bc4552e703793e83c33e7b"><td class="memItemLeft" align="right" valign="top">avl_tree_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#a49fd1c58a5bc4552e703793e83c33e7b">buffer_tree</a></td></tr>
+<tr class="memdesc:a49fd1c58a5bc4552e703793e83c33e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tree with pointers to nondominated solutions that haven't been logged yet.  <a href="#a49fd1c58a5bc4552e703793e83c33e7b">More...</a><br /></td></tr>
 <tr class="separator:a49fd1c58a5bc4552e703793e83c33e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac36a09c28e342d5941b59535cb8db05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#aac36a09c28e342d5941b59535cb8db05">compute_indicators</a></td></tr>
+<tr class="memdesc:aac36a09c28e342d5941b59535cb8db05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to compute the indicators.  <a href="#aac36a09c28e342d5941b59535cb8db05">More...</a><br /></td></tr>
 <tr class="separator:aac36a09c28e342d5941b59535cb8db05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5b0d810c8109faf2e49f210daf5361a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlogger__biobj__indicator__t.html">logger_biobj_indicator_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__t.html#ae5b0d810c8109faf2e49f210daf5361a">indicators</a> [<a class="el" href="observer__biobj_8c.html#adf30f63a6cfdb3873ff069238c48c45d">OBSERVER_BIOBJ_NUMBER_OF_INDICATORS</a>]</td></tr>
+<tr class="memdesc:ae5b0d810c8109faf2e49f210daf5361a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implemented indicators.  <a href="#ae5b0d810c8109faf2e49f210daf5361a">More...</a><br /></td></tr>
 <tr class="separator:ae5b0d810c8109faf2e49f210daf5361a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The data type for the bi-objective logger. </p>
+<dl class="section note"><dt>Note</dt><dd>Some fields from the observers (<a class="el" href="structcoco__observer.html" title="The COCO observer structure. ">coco_observer</a> as well as observer_biobj) need to be copied here because the observers can be deleted before the logger is finalized and we need these fields for finalization. </dd></dl>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="ab525352bf723f1a0b088d7757690356f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* archive_file</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>File for archiving nondominated solutions (all or final). </p>
+
+</div>
+</div>
 <a class="anchor" id="a9b6fc11900134d0a849656e5999ceb9b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="logger__biobj__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a>* archive_tree</td>
+          <td class="memname">avl_tree_t* archive_tree</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The tree keeping currently non-dominated solutions. </p>
 
 </div>
 </div>
@@ -145,10 +181,12 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="logger__biobj__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a>* buffer_tree</td>
+          <td class="memname">avl_tree_t* buffer_tree</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The tree with pointers to nondominated solutions that haven't been logged yet. </p>
 
 </div>
 </div>
@@ -162,6 +200,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Whether to compute the indicators. </p>
+
 </div>
 </div>
 <a class="anchor" id="ae5b0d810c8109faf2e49f210daf5361a"></a>
@@ -173,6 +213,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The implemented indicators. </p>
 
 </div>
 </div>
@@ -186,6 +228,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Mode for archiving nondominated solutions. </p>
+
 </div>
 </div>
 <a class="anchor" id="af2c634e2d1e1e3fcb602f4998b3f6f6d"></a>
@@ -198,17 +242,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a2959d2026519add990a2e208355a900b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">FILE* nondom_file</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Whether to log the decision values. </p>
 
 </div>
 </div>
@@ -222,6 +256,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The number of evaluations performed so far. </p>
+
 </div>
 </div>
 <a class="anchor" id="aa7f5522e84358e9b7a4ab06d60d442db"></a>
@@ -233,6 +269,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Number of objectives (clearly equal to 2). </p>
 
 </div>
 </div>
@@ -246,6 +284,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Dimension of the problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="aac38dfd8c8462cf1d7506d549ec58460"></a>
@@ -257,6 +297,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pointer to the general observer to access its fields. </p>
 
 </div>
 </div>
@@ -270,6 +312,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Precision for outputting objective values. </p>
+
 </div>
 </div>
 <a class="anchor" id="a1210e0d0c3b8c2dea8666528a1040d66"></a>
@@ -282,6 +326,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Precision for outputting decision values. </p>
+
 </div>
 </div>
 <a class="anchor" id="a415bf642799c6a11b786209d1b36bb26"></a>
@@ -293,6 +339,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Suite-dependent instance number of the observed problem. </p>
 
 </div>
 </div>

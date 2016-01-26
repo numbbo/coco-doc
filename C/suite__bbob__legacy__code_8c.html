@@ -99,6 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">suite_bbob_legacy_code.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Legacy code from BBOB2009 required to replicate the 2009 functions.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
@@ -107,36 +110,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a30f5ab8c8eebf32a5ef95bf3d5297c6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a30f5ab8c8eebf32a5ef95bf3d5297c6d">SUITE_BBOB2009_MAX_DIM</a>&#160;&#160;&#160;40</td></tr>
+<tr class="memdesc:a30f5ab8c8eebf32a5ef95bf3d5297c6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximal dimension used in BBOB2009.  <a href="#a30f5ab8c8eebf32a5ef95bf3d5297c6d">More...</a><br /></td></tr>
 <tr class="separator:a30f5ab8c8eebf32a5ef95bf3d5297c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2ec6e1c131829dfca561e15a62670578"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a2ec6e1c131829dfca561e15a62670578">bbob2009_fmin</a> (double a, double b)</td></tr>
+<tr class="memdesc:a2ec6e1c131829dfca561e15a62670578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the minimum of the two values.  <a href="#a2ec6e1c131829dfca561e15a62670578">More...</a><br /></td></tr>
 <tr class="separator:a2ec6e1c131829dfca561e15a62670578"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9176e3ed48baabef3d59abb111e4ce2a"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a9176e3ed48baabef3d59abb111e4ce2a">bbob2009_fmax</a> (double a, double b)</td></tr>
+<tr class="memdesc:a9176e3ed48baabef3d59abb111e4ce2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the maximum of the two values.  <a href="#a9176e3ed48baabef3d59abb111e4ce2a">More...</a><br /></td></tr>
 <tr class="separator:a9176e3ed48baabef3d59abb111e4ce2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa419105fb5ab1a7d1eca3d036e1db642"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#aa419105fb5ab1a7d1eca3d036e1db642">bbob2009_round</a> (double x)</td></tr>
+<tr class="memdesc:aa419105fb5ab1a7d1eca3d036e1db642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounds the given value.  <a href="#aa419105fb5ab1a7d1eca3d036e1db642">More...</a><br /></td></tr>
 <tr class="separator:aa419105fb5ab1a7d1eca3d036e1db642"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b6581a2e9fab3c8419752070b66aaab"><td class="memItemLeft" align="right" valign="top">static double **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a2b6581a2e9fab3c8419752070b66aaab">bbob2009_allocate_matrix</a> (const size_t n, const size_t m)</td></tr>
+<tr class="memdesc:a2b6581a2e9fab3c8419752070b66aaab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a n by m matrix structured as an array of pointers to double arrays.  <a href="#a2b6581a2e9fab3c8419752070b66aaab">More...</a><br /></td></tr>
 <tr class="separator:a2b6581a2e9fab3c8419752070b66aaab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a134f9391afc473d62fede6a8f5c375e4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a134f9391afc473d62fede6a8f5c375e4">bbob2009_free_matrix</a> (double **matrix, const size_t n)</td></tr>
+<tr class="memdesc:a134f9391afc473d62fede6a8f5c375e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the matrix structured as an array of pointers to double arrays.  <a href="#a134f9391afc473d62fede6a8f5c375e4">More...</a><br /></td></tr>
 <tr class="separator:a134f9391afc473d62fede6a8f5c375e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab67433e81f23d1aa989b1866c93378c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#aab67433e81f23d1aa989b1866c93378c">bbob2009_unif</a> (double *r, size_t N, long inseed)</td></tr>
+<tr class="memdesc:aab67433e81f23d1aa989b1866c93378c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates N uniform random numbers using inseed as the seed and stores them in r.  <a href="#aab67433e81f23d1aa989b1866c93378c">More...</a><br /></td></tr>
 <tr class="separator:aab67433e81f23d1aa989b1866c93378c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bb6b49daf986e9427c18b9cf321a81d"><td class="memItemLeft" align="right" valign="top">static double **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a5bb6b49daf986e9427c18b9cf321a81d">bbob2009_reshape</a> (double **B, double *vector, size_t m, size_t n)</td></tr>
+<tr class="memdesc:a5bb6b49daf986e9427c18b9cf321a81d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts from packed matrix storage to an array of array of double representation.  <a href="#a5bb6b49daf986e9427c18b9cf321a81d">More...</a><br /></td></tr>
 <tr class="separator:a5bb6b49daf986e9427c18b9cf321a81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a46792b4b40b215927f6cdf54602410"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a4a46792b4b40b215927f6cdf54602410">bbob2009_gauss</a> (double *g, size_t N, long seed)</td></tr>
+<tr class="memdesc:a4a46792b4b40b215927f6cdf54602410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates N Gaussian random numbers using the given seed and stores them in g.  <a href="#a4a46792b4b40b215927f6cdf54602410">More...</a><br /></td></tr>
 <tr class="separator:a4a46792b4b40b215927f6cdf54602410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bd83c06428bdb03ac1f2502e726df03"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a2bd83c06428bdb03ac1f2502e726df03">bbob2009_compute_rotation</a> (double **B, long seed, size_t DIM)</td></tr>
+<tr class="memdesc:a2bd83c06428bdb03ac1f2502e726df03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a DIM by DIM rotation matrix based on seed and stores it in B.  <a href="#a2bd83c06428bdb03ac1f2502e726df03">More...</a><br /></td></tr>
 <tr class="separator:a2bd83c06428bdb03ac1f2502e726df03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63a7e26050ab475e67608ef4038c16ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a63a7e26050ab475e67608ef4038c16ac">bbob2009_copy_rotation_matrix</a> (double **rot, double *M, double *b, const size_t dimension)</td></tr>
-<tr class="separator:a63a7e26050ab475e67608ef4038c16ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49791117180d3f714bb88dad158d69d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a49791117180d3f714bb88dad158d69d5">bbob2009_copy_rotation_matrix</a> (double **rot, double *M, double *b, const size_t DIM)</td></tr>
+<tr class="separator:a49791117180d3f714bb88dad158d69d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50ac6ec7b28945ff6bd766ddd6da3373"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a50ac6ec7b28945ff6bd766ddd6da3373">bbob2009_compute_xopt</a> (double *xopt, long seed, size_t DIM)</td></tr>
+<tr class="memdesc:a50ac6ec7b28945ff6bd766ddd6da3373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly computes the location of the global optimum.  <a href="#a50ac6ec7b28945ff6bd766ddd6da3373">More...</a><br /></td></tr>
 <tr class="separator:a50ac6ec7b28945ff6bd766ddd6da3373"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d48c8877bb7ff819b57a115ebc3476d"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__bbob__legacy__code_8c.html#a1d48c8877bb7ff819b57a115ebc3476d">bbob2009_compute_fopt</a> (size_t function, size_t instance)</td></tr>
+<tr class="memdesc:a1d48c8877bb7ff819b57a115ebc3476d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly chooses the objective offset for the given function and instance.  <a href="#a1d48c8877bb7ff819b57a115ebc3476d">More...</a><br /></td></tr>
 <tr class="separator:a1d48c8877bb7ff819b57a115ebc3476d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Legacy code from BBOB2009 required to replicate the 2009 functions. </p>
+<p>All of this code should only be used by the suite_bbob2009 functions to provide compatibility to the legacy code. New test beds should strive to use the new COCO facilities for random number generation etc. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a30f5ab8c8eebf32a5ef95bf3d5297c6d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -146,6 +164,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Maximal dimension used in BBOB2009. </p>
 
 </div>
 </div>
@@ -181,8 +201,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>bbob2009_allocate_matrix(n, m):</p>
-<p>Allocate a ${n} by ${m} matrix structured as an array of pointers to double arrays. </p>
+
+<p>Allocates a n by m matrix structured as an array of pointers to double arrays. </p>
 
 </div>
 </div>
@@ -217,8 +237,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>bbob2009_compute_fopt(function, instance):</p>
-<p>Randomly choose the objective offset for function ${function} and instance ${instance}. </p>
+
+<p>Randomly chooses the objective offset for the given function and instance. </p>
 
 </div>
 </div>
@@ -259,8 +279,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>bbob2009_compute_rotation(B, seed, DIM):</p>
-<p>Compute a ${DIM}x${DIM} rotation matrix based on ${seed} and store it in ${B}. </p>
+
+<p>Computes a DIM by DIM rotation matrix based on seed and stores it in B. </p>
 
 </div>
 </div>
@@ -301,12 +321,12 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>bbob2009_compute_xopt(xopt, seed, DIM):</p>
-<p>Randomly compute the location of the global optimum. </p>
+
+<p>Randomly computes the location of the global optimum. </p>
 
 </div>
 </div>
-<a class="anchor" id="a63a7e26050ab475e67608ef4038c16ac"></a>
+<a class="anchor" id="a49791117180d3f714bb88dad158d69d5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -335,7 +355,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>dimension</em>&#160;</td>
+          <td class="paramname"><em>DIM</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -384,6 +404,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Computes the maximum of the two values. </p>
+
 </div>
 </div>
 <a class="anchor" id="a2ec6e1c131829dfca561e15a62670578"></a>
@@ -418,6 +440,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Computes the minimum of the two values. </p>
+
 </div>
 </div>
 <a class="anchor" id="a134f9391afc473d62fede6a8f5c375e4"></a>
@@ -451,6 +475,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Frees the matrix structured as an array of pointers to double arrays. </p>
 
 </div>
 </div>
@@ -491,8 +517,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>bbob2009_gauss(g, N, seed)</p>
-<p>Generate ${N} Gaussian random numbers using the seed ${seed} and store them in ${g}. </p>
+
+<p>Generates N Gaussian random numbers using the given seed and stores them in g. </p>
 
 </div>
 </div>
@@ -539,8 +565,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>bbob2009_reshape(B, vector, m, n):</p>
-<p>Convert from packed matrix storage to an array of array of double representation. </p>
+
+<p>Converts from packed matrix storage to an array of array of double representation. </p>
 
 </div>
 </div>
@@ -565,6 +591,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Rounds the given value. </p>
 
 </div>
 </div>
@@ -605,8 +633,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>bbob2009_unif(r, N, inseed):</p>
-<p>Generate N uniform random numbers using ${inseed} as the seed and store them in ${r}. </p>
+
+<p>Generates N uniform random numbers using inseed as the seed and stores them in r. </p>
 
 </div>
 </div>

@@ -19,6 +19,7 @@ var searchData=
   ['coco_5ffile_5fexists',['coco_file_exists',['../coco__utilities_8c.html#a58008b6b418e88e5423d2b1c88e23fe4',1,'coco_utilities.c']]],
   ['coco_5ffree_5fmemory',['coco_free_memory',['../coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f',1,'coco_free_memory(void *data):&#160;coco_runtime_c.c'],['../coco__runtime__c_8c.html#a8542ff7c23ec7a8e64487a50232db26f',1,'coco_free_memory(void *data):&#160;coco_runtime_c.c']]],
   ['coco_5fget_5fbbob_5fproblem',['coco_get_bbob_problem',['../suite__bbob_8c.html#a36c41b652a96f403938f3f6a8ce77a9e',1,'suite_bbob.c']]],
+  ['coco_5fget_5flargescale_5fproblem',['coco_get_largescale_problem',['../suite__largescale_8c.html#a3fa56f5b1cde0f788d40133a008356b5',1,'suite_largescale.c']]],
   ['coco_5finfo',['coco_info',['../coco_8h.html#a25461e3167b8b68602e6407efdcf52bc',1,'coco_info(const char *message,...):&#160;coco_runtime_c.c'],['../coco__runtime__c_8c.html#a25461e3167b8b68602e6407efdcf52bc',1,'coco_info(const char *message,...):&#160;coco_runtime_c.c']]],
   ['coco_5finfo_5fpartial',['coco_info_partial',['../coco__runtime__c_8c.html#a328fada7e4a768ddfdf9303603ea0ef5',1,'coco_runtime_c.c']]],
   ['coco_5fjoin_5fpath',['coco_join_path',['../coco__utilities_8c.html#a8baeacc73082059c6381f72fee5d6d24',1,'coco_utilities.c']]],

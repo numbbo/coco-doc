@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['mo_5fget_5fdistance_5fto_5froi',['mo_get_distance_to_ROI',['../mo__generics_8c.html#a37432ae8569214ca61ea9ef6e3dbd13f',1,'mo_generics.c']]],
-  ['mo_5fget_5fdominance',['mo_get_dominance',['../mo__generics_8c.html#abdc6dfb57eb6921433dedf209d64dfaf',1,'mo_generics.c']]],
-  ['mo_5fget_5fnorm',['mo_get_norm',['../mo__generics_8c.html#ac4ff7557b4b78d0398b7d17a69fe8a20',1,'mo_generics.c']]]
+  ['observer_5fbbob',['observer_bbob',['../observer__bbob_8c.html#ac12ad38da918daff29bc476f6b1876b3',1,'observer_bbob.c']]],
+  ['observer_5fbiobj',['observer_biobj',['../observer__biobj_8c.html#acca6899355902a7bfc5406254bff540c',1,'observer_biobj.c']]],
+  ['observer_5ftoy',['observer_toy',['../observer__toy_8c.html#a499693ce35801e431f986b0c11009a59',1,'observer_toy.c']]],
+  ['observer_5ftoy_5ffree',['observer_toy_free',['../observer__toy_8c.html#aae9097f030e7c581ee74f60d2fd7a57f',1,'observer_toy.c']]]
 ];

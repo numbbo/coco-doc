@@ -100,6 +100,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">f_weierstrass.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the Weierstrass function and problem.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
@@ -115,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structf__weierstrass__data__t.html">f_weierstrass_data_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type for f_weierstrass.  <a href="structf__weierstrass__data__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type for the Weierstrass problem.  <a href="structf__weierstrass__data__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -127,15 +130,21 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1d1c4a1f14e2c8dd60890a48eb531feb"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__weierstrass_8c.html#a1d1c4a1f14e2c8dd60890a48eb531feb">f_weierstrass_raw</a> (const double *x, const size_t number_of_variables, <a class="el" href="structf__weierstrass__data__t.html">f_weierstrass_data_t</a> *data)</td></tr>
+<tr class="memdesc:a1d1c4a1f14e2c8dd60890a48eb531feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the Weierstrass function without connections to any COCO structures.  <a href="#a1d1c4a1f14e2c8dd60890a48eb531feb">More...</a><br /></td></tr>
 <tr class="separator:a1d1c4a1f14e2c8dd60890a48eb531feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa75a574f44b0cad99a4c64c1db66cd7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__weierstrass_8c.html#afa75a574f44b0cad99a4c64c1db66cd7">f_weierstrass_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:afa75a574f44b0cad99a4c64c1db66cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the raw function to evaluate the COCO problem.  <a href="#afa75a574f44b0cad99a4c64c1db66cd7">More...</a><br /></td></tr>
 <tr class="separator:afa75a574f44b0cad99a4c64c1db66cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6516fe9db3ced7fb4cce26f2bc86b23a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__weierstrass_8c.html#a6516fe9db3ced7fb4cce26f2bc86b23a">f_weierstrass_allocate</a> (const size_t number_of_variables)</td></tr>
+<tr class="memdesc:a6516fe9db3ced7fb4cce26f2bc86b23a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic Weierstrass problem.  <a href="#a6516fe9db3ced7fb4cce26f2bc86b23a">More...</a><br /></td></tr>
 <tr class="separator:a6516fe9db3ced7fb4cce26f2bc86b23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83276efb2c6287a1e53096263b53f2c8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__weierstrass_8c.html#a83276efb2c6287a1e53096263b53f2c8">f_weierstrass_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:a83276efb2c6287a1e53096263b53f2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB Weierstrass problem.  <a href="#a83276efb2c6287a1e53096263b53f2c8">More...</a><br /></td></tr>
 <tr class="separator:a83276efb2c6287a1e53096263b53f2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the Weierstrass function and problem. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a18749745931e068554050348303e1c0d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -172,6 +181,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Allocates the basic Weierstrass problem. </p>
 
 </div>
 </div>
@@ -231,6 +242,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates the BBOB Weierstrass problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="afa75a574f44b0cad99a4c64c1db66cd7"></a>
@@ -271,6 +284,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Uses the raw function to evaluate the COCO problem. </p>
+
 </div>
 </div>
 <a class="anchor" id="a1d1c4a1f14e2c8dd60890a48eb531feb"></a>
@@ -310,6 +325,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implements the Weierstrass function without connections to any COCO structures. </p>
 
 </div>
 </div>
