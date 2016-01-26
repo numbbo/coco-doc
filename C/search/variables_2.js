@@ -1,7 +1,7 @@
 var searchData=
 [
   ['cmpitem',['cmpitem',['../structavl__tree.html#aa352615ae3765bfa4095f861732f2570',1,'avl_tree']]],
-  ['coco_5flog_5flevel',['coco_log_level',['../coco__runtime__c_8c.html#ade0947aadeb56a32c006a0adbf482106',1,'coco_runtime_c.c']]],
+  ['coco_5flog_5flevel',['coco_log_level',['../coco__utilities_8c.html#ade0947aadeb56a32c006a0adbf482106',1,'coco_utilities.c']]],
   ['coco_5fobserver_5falways_5flog',['coco_observer_always_log',['../coco__observer_8c.html#af46183d106a2b1f37610f0ba3cc0059a',1,'coco_observer.c']]],
   ['coco_5fpi',['coco_pi',['../coco_8h.html#a973742d29d384e21661bda90875ccf39',1,'coco.h']]],
   ['coco_5ftwo_5fpi',['coco_two_pi',['../coco_8h.html#ad13e23673e37cc257befd3695c218304',1,'coco.h']]],

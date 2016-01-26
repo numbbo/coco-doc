@@ -93,12 +93,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">coco_runtime_c.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Generic COCO runtime implementation for the C language.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdarg.h&gt;</code><br />
@@ -107,9 +109,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8ea3d67ff51199e3350e1f2f27283ce7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#a8ea3d67ff51199e3350e1f2f27283ce7">coco_set_log_level</a> (const char *log_level)</td></tr>
-<tr class="memdesc:a8ea3d67ff51199e3350e1f2f27283ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the current log level to the given value.  <a href="#a8ea3d67ff51199e3350e1f2f27283ce7">More...</a><br /></td></tr>
-<tr class="separator:a8ea3d67ff51199e3350e1f2f27283ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6191daa0f616cacdea2ae3de985d9487"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#a6191daa0f616cacdea2ae3de985d9487">coco_error</a> (const char *message,...)</td></tr>
 <tr class="memdesc:a6191daa0f616cacdea2ae3de985d9487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals a fatal error.  <a href="#a6191daa0f616cacdea2ae3de985d9487">More...</a><br /></td></tr>
 <tr class="separator:a6191daa0f616cacdea2ae3de985d9487"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,13 +129,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a8542ff7c23ec7a8e64487a50232db26f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#a8542ff7c23ec7a8e64487a50232db26f">coco_free_memory</a> (void *data)</td></tr>
 <tr class="memdesc:a8542ff7c23ec7a8e64487a50232db26f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the allocated memory.  <a href="#a8542ff7c23ec7a8e64487a50232db26f">More...</a><br /></td></tr>
 <tr class="separator:a8542ff7c23ec7a8e64487a50232db26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ade0947aadeb56a32c006a0adbf482106"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a91ec58921a2cd0ccb3d2d3aff43f647a">coco_log_level_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#ade0947aadeb56a32c006a0adbf482106">coco_log_level</a> = <a class="el" href="coco_8h.html#a91ec58921a2cd0ccb3d2d3aff43f647aa31c8cf7bf4d921ee5c68a536428645b2">COCO_INFO</a></td></tr>
-<tr class="separator:ade0947aadeb56a32c006a0adbf482106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Generic COCO runtime implementation for the C language. </p>
+<p>Other language interfaces might want to replace this so that memory allocation and error handling go through the respective language runtime. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="aa1b016a6e67c46c20410b1daa959737b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -292,37 +289,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8ea3d67ff51199e3350e1f2f27283ce7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void coco_set_log_level </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>log_level</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Changes the current log level to the given value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">log_level</td><td>Denotes the level of information given to the user through the standard output and error streams. Can take on the values:<ul>
-<li>"error" (only error messages are output),</li>
-<li>"warning" (only error and warning messages are output),</li>
-<li>"info" (only error, warning and info messages are output) and</li>
-<li>"debug" (all messages are output).</li>
-</ul>
-</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>The default value is info. </p>
-
-</div>
-</div>
 <a class="anchor" id="adb3189475b296249e802e13ba412d504"></a>
 <div class="memitem">
 <div class="memproto">
@@ -348,28 +314,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Warns about error conditions. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="ade0947aadeb56a32c006a0adbf482106"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="coco_8h.html#a91ec58921a2cd0ccb3d2d3aff43f647a">coco_log_level_type_e</a> coco_log_level = <a class="el" href="coco_8h.html#a91ec58921a2cd0ccb3d2d3aff43f647aa31c8cf7bf4d921ee5c68a536428645b2">COCO_INFO</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Initialize the logging level to COCO_INFO. </p>
 
 </div>
 </div>

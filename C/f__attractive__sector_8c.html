@@ -113,16 +113,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structf__attractive__sector__data__t.html">f_attractive_sector_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type for f_attractive_sector.  <a href="structf__attractive__sector__data__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3b1d3da4960bf351bcabd6d733d958fd"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__attractive__sector_8c.html#a3b1d3da4960bf351bcabd6d733d958fd">f_attractive_sector_raw</a> (const double *x, const size_t number_of_variables, <a class="el" href="structf__attractive__sector__data__t.html">f_attractive_sector_data_t</a> *data)</td></tr>
 <tr class="separator:a3b1d3da4960bf351bcabd6d733d958fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1221246eac4d6ac789c464eec879980"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__attractive__sector_8c.html#ae1221246eac4d6ac789c464eec879980">f_attractive_sector_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self, const double *x, double *y)</td></tr>
-<tr class="separator:ae1221246eac4d6ac789c464eec879980"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeb957301633b0ead631a5095de48fd2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__attractive__sector_8c.html#afeb957301633b0ead631a5095de48fd2">f_attractive_sector_free</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:afeb957301633b0ead631a5095de48fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f9a10cc116150698e26b5e691f924f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__attractive__sector_8c.html#a31f9a10cc116150698e26b5e691f924f">f_attractive_sector_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="separator:a31f9a10cc116150698e26b5e691f924f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e94e459ad407d223be2023dc851090e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__attractive__sector_8c.html#a5e94e459ad407d223be2023dc851090e">f_attractive_sector_free</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="separator:a5e94e459ad407d223be2023dc851090e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab7c8eb4fc6bd7768eda17fe53ad1dc6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__attractive__sector_8c.html#aab7c8eb4fc6bd7768eda17fe53ad1dc6">f_attractive_sector_allocate</a> (const size_t number_of_variables, const double *xopt)</td></tr>
 <tr class="separator:aab7c8eb4fc6bd7768eda17fe53ad1dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2323dae47ee71c1a548e6c324a2ed5da"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__attractive__sector_8c.html#a2323dae47ee71c1a548e6c324a2ed5da">f_attractive_sector_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
@@ -221,7 +222,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae1221246eac4d6ac789c464eec879980"></a>
+<a class="anchor" id="a31f9a10cc116150698e26b5e691f924f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -232,7 +233,7 @@ Functions</h2></td></tr>
           <td class="memname">static void f_attractive_sector_evaluate </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>problem</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -261,7 +262,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afeb957301633b0ead631a5095de48fd2"></a>
+<a class="anchor" id="a5e94e459ad407d223be2023dc851090e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -272,7 +273,7 @@ Functions</h2></td></tr>
           <td class="memname">static void f_attractive_sector_free </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

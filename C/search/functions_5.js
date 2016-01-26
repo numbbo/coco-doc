@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['logger_5fbbob',['logger_bbob',['../logger__bbob_8c.html#afed6ce4f6e93222d2219e54bd383b612',1,'logger_bbob(coco_observer_t *observer, coco_problem_t *problem):&#160;logger_bbob.c'],['../observer__bbob_8c.html#afed6ce4f6e93222d2219e54bd383b612',1,'logger_bbob(coco_observer_t *observer, coco_problem_t *problem):&#160;observer_bbob.c']]],
+  ['logger_5fbbob',['logger_bbob',['../logger__bbob_8c.html#ad618d945d6388d69094a19dbc742d61a',1,'logger_bbob(coco_observer_t *observer, coco_problem_t *inner_problem):&#160;logger_bbob.c'],['../observer__bbob_8c.html#afed6ce4f6e93222d2219e54bd383b612',1,'logger_bbob(coco_observer_t *observer, coco_problem_t *problem):&#160;observer_bbob.c']]],
   ['logger_5fbbob_5ferror_5fio',['logger_bbob_error_io',['../logger__bbob_8c.html#ac2fb59dbf4d708d1eab420546378d30f',1,'logger_bbob.c']]],
-  ['logger_5fbbob_5fevaluate',['logger_bbob_evaluate',['../logger__bbob_8c.html#a3d21eb20b4cb7bd4fa8cc24fbc2930c3',1,'logger_bbob.c']]],
+  ['logger_5fbbob_5fevaluate',['logger_bbob_evaluate',['../logger__bbob_8c.html#a76dce2c94ba8d4abd3531bac8127624e',1,'logger_bbob.c']]],
   ['logger_5fbbob_5ffree',['logger_bbob_free',['../logger__bbob_8c.html#a93ed3d158e8be11ec610c48d8b1d4c03',1,'logger_bbob.c']]],
   ['logger_5fbbob_5finitialize',['logger_bbob_initialize',['../logger__bbob_8c.html#a1e3c0c85a851cfefdfebdb1c6a2b77bb',1,'logger_bbob.c']]],
   ['logger_5fbbob_5fopen_5fdatafile',['logger_bbob_open_dataFile',['../logger__bbob_8c.html#a45b719d37e38be6b89382f77590dd072',1,'logger_bbob.c']]],
@@ -10,7 +10,7 @@ var searchData=
   ['logger_5fbbob_5fupdate_5ff_5ftrigger',['logger_bbob_update_f_trigger',['../logger__bbob_8c.html#aba4244ef7caaae0da8664eb4bae659d9',1,'logger_bbob.c']]],
   ['logger_5fbbob_5fupdate_5ft_5ftrigger',['logger_bbob_update_t_trigger',['../logger__bbob_8c.html#a35b380d32833ac1f5bb1af6ce59aad78',1,'logger_bbob.c']]],
   ['logger_5fbbob_5fwrite_5fdata',['logger_bbob_write_data',['../logger__bbob_8c.html#aa1e6fced9fe8f542ae76c518b07ccfc1',1,'logger_bbob.c']]],
-  ['logger_5fbiobj',['logger_biobj',['../logger__biobj_8c.html#a41469dac8832863a7b013e919cb59f04',1,'logger_biobj(coco_observer_t *observer, coco_problem_t *problem):&#160;logger_biobj.c'],['../observer__biobj_8c.html#a5e7c8711d35155ab9df431bcb773943b',1,'logger_biobj(coco_observer_t *self, coco_problem_t *problem):&#160;observer_biobj.c']]],
+  ['logger_5fbiobj',['logger_biobj',['../logger__biobj_8c.html#a4b5844795e3257a17c7558381f46dca4',1,'logger_biobj(coco_observer_t *observer, coco_problem_t *inner_problem):&#160;logger_biobj.c'],['../observer__biobj_8c.html#a41469dac8832863a7b013e919cb59f04',1,'logger_biobj(coco_observer_t *observer, coco_problem_t *problem):&#160;observer_biobj.c']]],
   ['logger_5fbiobj_5fcheck_5fif_5fwithin_5froi',['logger_biobj_check_if_within_ROI',['../logger__biobj_8c.html#ae44be65a3d62cc79797112961f34c4ba',1,'logger_biobj.c']]],
   ['logger_5fbiobj_5fevaluate',['logger_biobj_evaluate',['../logger__biobj_8c.html#aa3b9c5c68499684363d46dadb8e03fa8',1,'logger_biobj.c']]],
   ['logger_5fbiobj_5ffinalize',['logger_biobj_finalize',['../logger__biobj_8c.html#a83c3e1aceee0c8ebf129752718f08556',1,'logger_biobj.c']]],
@@ -22,8 +22,8 @@ var searchData=
   ['logger_5fbiobj_5fnode_5ffree',['logger_biobj_node_free',['../logger__biobj_8c.html#a38cdb0e3396eddb6365d634c13725706',1,'logger_biobj.c']]],
   ['logger_5fbiobj_5ftree_5foutput',['logger_biobj_tree_output',['../logger__biobj_8c.html#aaa525bc3137f9c1ef8de71d04a2a49c0',1,'logger_biobj.c']]],
   ['logger_5fbiobj_5ftree_5fupdate',['logger_biobj_tree_update',['../logger__biobj_8c.html#a6ec137bc7171c3a189746f14e7c931ac',1,'logger_biobj.c']]],
-  ['logger_5ftoy',['logger_toy',['../logger__toy_8c.html#a3dddf7883a4de349d2a755b609a7d34c',1,'logger_toy(coco_observer_t *observer, coco_problem_t *problem):&#160;logger_toy.c'],['../observer__toy_8c.html#a3dddf7883a4de349d2a755b609a7d34c',1,'logger_toy(coco_observer_t *observer, coco_problem_t *problem):&#160;observer_toy.c']]],
-  ['logger_5ftoy_5fevaluate',['logger_toy_evaluate',['../logger__toy_8c.html#ae561a294c6714747ac0a7b81170afd2e',1,'logger_toy.c']]],
+  ['logger_5ftoy',['logger_toy',['../logger__toy_8c.html#a5100bcb34a8dc0d3910c2d51e19db716',1,'logger_toy(coco_observer_t *observer, coco_problem_t *inner_problem):&#160;logger_toy.c'],['../observer__toy_8c.html#a3dddf7883a4de349d2a755b609a7d34c',1,'logger_toy(coco_observer_t *observer, coco_problem_t *problem):&#160;observer_toy.c']]],
+  ['logger_5ftoy_5fevaluate',['logger_toy_evaluate',['../logger__toy_8c.html#a1e3b05bb7ccb0fbc7be34f76e8f7dd57',1,'logger_toy.c']]],
   ['ls_5fallocate_5fblockmatrix',['ls_allocate_blockmatrix',['../large__scale__transformations_8c.html#a2f80e1ab2b4c85016cf978078af96039',1,'large_scale_transformations.c']]],
   ['ls_5fcompute_5fblockrotation',['ls_compute_blockrotation',['../large__scale__transformations_8c.html#ae95585942a628bf270934532973ef6c7',1,'large_scale_transformations.c']]],
   ['ls_5fcompute_5frandom_5fpermutation',['ls_compute_random_permutation',['../large__scale__transformations_8c.html#a49d69232676bbfa49052f123428fa4ce',1,'large_scale_transformations.c']]],
@@ -33,7 +33,5 @@ var searchData=
   ['ls_5fget_5fblock_5fsizes',['ls_get_block_sizes',['../large__scale__transformations_8c.html#a1c5b348c4e501894579c8988d281ecdf',1,'large_scale_transformations.c']]],
   ['ls_5fget_5fnb_5fswaps',['ls_get_nb_swaps',['../large__scale__transformations_8c.html#a72572c36ca7cf02a537dd5a70c2e46da',1,'large_scale_transformations.c']]],
   ['ls_5fget_5fswap_5frange',['ls_get_swap_range',['../large__scale__transformations_8c.html#aaebbb824aebdb385b417ab8fd788412e',1,'large_scale_transformations.c']]],
-  ['ls_5frand_5fint',['ls_rand_int',['../large__scale__transformations_8c.html#a38b3e93fac0f8a4f24fb546cefdc58e5',1,'large_scale_transformations.c']]],
-  ['ls_5ftransform_5fvars_5fpermblockdiag_5fevaluate',['ls_transform_vars_permblockdiag_evaluate',['../transform__vars__permblockdiag_8c.html#af0a3a34b79babc5a6fe4216c7c31ba0e',1,'transform_vars_permblockdiag.c']]],
-  ['ls_5ftransform_5fvars_5fpermblockdiag_5ffree',['ls_transform_vars_permblockdiag_free',['../transform__vars__permblockdiag_8c.html#aac5a280b3762f05200cb39dcca70008a',1,'transform_vars_permblockdiag.c']]]
+  ['ls_5frand_5fint',['ls_rand_int',['../large__scale__transformations_8c.html#a38b3e93fac0f8a4f24fb546cefdc58e5',1,'large_scale_transformations.c']]]
 ];

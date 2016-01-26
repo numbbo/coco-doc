@@ -2,7 +2,6 @@ var searchData=
 [
   ['seed',['seed',['../structtransform__vars__x__hat__data__t.html#affb5f34f39f7103b999d198b18ffed8e',1,'transform_vars_x_hat_data_t']]],
   ['shifted_5fx',['shifted_x',['../structtransform__vars__shift__data__t.html#a8ea4beb5f82907d539abca4a9be29011',1,'transform_vars_shift_data_t']]],
-  ['short_5flag',['SHORT_LAG',['../coco__random_8c.html#a44e550f83a5d040776ced03f3aa7ae81',1,'coco_random.c']]],
   ['smallest_5fvalues_5fof_5finterest',['smallest_values_of_interest',['../structcoco__problem.html#a615012b0828bdd9c1173f6ce03198810',1,'coco_problem']]],
   ['suite_5fbbob_2ec',['suite_bbob.c',['../suite__bbob_8c.html',1,'']]],
   ['suite_5fbbob2009_5fmax_5fdim',['SUITE_BBOB2009_MAX_DIM',['../suite__bbob__legacy__code_8c.html#a30f5ab8c8eebf32a5ef95bf3d5297c6d',1,'suite_bbob_legacy_code.c']]],

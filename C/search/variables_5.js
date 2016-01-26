@@ -1,14 +1,13 @@
 var searchData=
 [
   ['f0',['f0',['../structf__weierstrass__data__t.html#a21dc9c125e26e5af3ff2e487cf27cdcd',1,'f_weierstrass_data_t']]],
+  ['f_5fgallagher_5fpeaks',['f_gallagher_peaks',['../f__gallagher_8c.html#a47570d10030ac37e616d05738062c95a',1,'f_gallagher.c']]],
   ['f_5ftrigger',['f_trigger',['../structlogger__bbob__t.html#a28d09f8b9f188bf9754eaa9150106b17',1,'logger_bbob_t']]],
   ['factor',['factor',['../structtransform__obj__penalize__data__t.html#a2d7e5dd7a479c4c7aef6e6133a1441c5',1,'transform_obj_penalize_data_t::factor()'],['../structtransform__vars__scale__data__t.html#a2d7e5dd7a479c4c7aef6e6133a1441c5',1,'transform_vars_scale_data_t::factor()']]],
   ['fdata_5ffile',['fdata_file',['../structlogger__bbob__t.html#a081c6818a69b1ef9a017016b8d43b7ab',1,'logger_bbob_t']]],
   ['final_5ftarget_5fdelta',['final_target_delta',['../structcoco__problem.html#af8ed81b7e3bd0f65122ba4ba8ab3af85',1,'coco_problem']]],
-  ['first_5fnon_5fzero_5fmap',['first_non_zero_map',['../structls__transform__vars__permblockdiag__t.html#ab7654d3660dff9599b5275208e76fac1',1,'ls_transform_vars_permblockdiag_t']]],
+  ['first_5fnon_5fzero_5fmap',['first_non_zero_map',['../structtransform__vars__permblockdiag__t.html#ab7654d3660dff9599b5275208e76fac1',1,'transform_vars_permblockdiag_t']]],
   ['fopt',['fopt',['../structf__lunacek__bi__rastrigin__data__t.html#aa3709c4fc5a2c8402b7f647959a82caa',1,'f_lunacek_bi_rastrigin_data_t::fopt()'],['../structf__step__ellipsoid__data__t.html#aa3709c4fc5a2c8402b7f647959a82caa',1,'f_step_ellipsoid_data_t::fopt()']]],
-  ['free_5fdata',['free_data',['../structcoco__transformed__data__t.html#adc93e0c1ce1f7aa3c18a9529baf15ada',1,'coco_transformed_data_t']]],
-  ['free_5fproblem',['free_problem',['../structcoco__problem.html#aedef9c93908466a0edee66786c93cf9b',1,'coco_problem']]],
   ['freeitem',['freeitem',['../structavl__tree.html#a3dedf71c6328ed2de9fcb8c01b5bf0cc',1,'avl_tree']]],
   ['function_5fid',['function_id',['../structlogger__bbob__t.html#a53797c8631ffcb70f78ec01df95683d6',1,'logger_bbob_t']]],
   ['functions',['functions',['../structcoco__suite.html#a254f291727a1453c81e55ae1d819e423',1,'coco_suite']]]

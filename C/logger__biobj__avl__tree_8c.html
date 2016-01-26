@@ -129,26 +129,26 @@ Macros</h2></td></tr>
 <tr class="separator:a14e920d3ba21317e96c74a3af63565d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47969a6eb8162e561206e39e28f60fad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a47969a6eb8162e561206e39e28f60fad">AVL_ALLOCATOR_INITIALIZER</a>(alloc,  dealloc)&#160;&#160;&#160;{ (alloc), (dealloc) }</td></tr>
 <tr class="separator:a47969a6eb8162e561206e39e28f60fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f10f1a65aff7cebb115a3878f6e845b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a4f10f1a65aff7cebb115a3878f6e845b">NODE_COUNT</a>(n)&#160;&#160;&#160;((n) ? (n)-&gt;count : 0)</td></tr>
-<tr class="separator:a4f10f1a65aff7cebb115a3878f6e845b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7ace3afb75cee5e98d07b6ecc600b81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#ac7ace3afb75cee5e98d07b6ecc600b81">L_COUNT</a>(n)      &#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a4f10f1a65aff7cebb115a3878f6e845b">NODE_COUNT</a>((n)-&gt;left))</td></tr>
-<tr class="separator:ac7ace3afb75cee5e98d07b6ecc600b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6171f5837494acfb2a3b54356058981a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a6171f5837494acfb2a3b54356058981a">R_COUNT</a>(n)      &#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a4f10f1a65aff7cebb115a3878f6e845b">NODE_COUNT</a>((n)-&gt;right))</td></tr>
-<tr class="separator:a6171f5837494acfb2a3b54356058981a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1a78d22df20aba06df8acc7600a37fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#af1a78d22df20aba06df8acc7600a37fa">CALC_COUNT</a>(n)&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#ac7ace3afb75cee5e98d07b6ecc600b81">L_COUNT</a>(n) + <a class="el" href="logger__biobj__avl__tree_8c.html#a6171f5837494acfb2a3b54356058981a">R_COUNT</a>(n) + 1)</td></tr>
-<tr class="separator:af1a78d22df20aba06df8acc7600a37fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae18e75bac035cd8400a45479489fcf32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#ae18e75bac035cd8400a45479489fcf32">NODE_DEPTH</a>(n)&#160;&#160;&#160;((n) ? (n)-&gt;depth : 0)</td></tr>
-<tr class="separator:ae18e75bac035cd8400a45479489fcf32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f1695ff5cc56fbd94640b079ca7006c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a2f1695ff5cc56fbd94640b079ca7006c">L_DEPTH</a>(n)      &#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#ae18e75bac035cd8400a45479489fcf32">NODE_DEPTH</a>((n)-&gt;left))</td></tr>
-<tr class="separator:a2f1695ff5cc56fbd94640b079ca7006c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23a94ed5f6aba10897cde02b95e33ebd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a23a94ed5f6aba10897cde02b95e33ebd">R_DEPTH</a>(n)      &#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#ae18e75bac035cd8400a45479489fcf32">NODE_DEPTH</a>((n)-&gt;right))</td></tr>
-<tr class="separator:a23a94ed5f6aba10897cde02b95e33ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f43a69defa2f43dd9c86de45aad69e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a2f43a69defa2f43dd9c86de45aad69e5">CALC_DEPTH</a>(n)&#160;&#160;&#160;((unsigned char)((<a class="el" href="logger__biobj__avl__tree_8c.html#a2f1695ff5cc56fbd94640b079ca7006c">L_DEPTH</a>(n) &gt; <a class="el" href="logger__biobj__avl__tree_8c.html#a23a94ed5f6aba10897cde02b95e33ebd">R_DEPTH</a>(n) ? <a class="el" href="logger__biobj__avl__tree_8c.html#a2f1695ff5cc56fbd94640b079ca7006c">L_DEPTH</a>(n) : <a class="el" href="logger__biobj__avl__tree_8c.html#a23a94ed5f6aba10897cde02b95e33ebd">R_DEPTH</a>(n)) + 1))</td></tr>
-<tr class="separator:a2f43a69defa2f43dd9c86de45aad69e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafa3803b6719ab2f62b925d70c49c2d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#aafa3803b6719ab2f62b925d70c49c2d4">avl_const_node</a>(x)&#160;&#160;&#160;((<a class="el" href="logger__biobj__avl__tree_8c.html#a09799ec4ab35e977b149c025d2e84691">avl_node_t</a> *)(x))</td></tr>
-<tr class="separator:aafa3803b6719ab2f62b925d70c49c2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dc563ff7ef2943b2bff559a0576c2c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a8dc563ff7ef2943b2bff559a0576c2c0">avl_const_item</a>(x)&#160;&#160;&#160;((void *)(x))</td></tr>
-<tr class="separator:a8dc563ff7ef2943b2bff559a0576c2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83024340adbfda910dcd01c1371cf658"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a83024340adbfda910dcd01c1371cf658">AVL_NODE_COUNT</a>(n)&#160;&#160;&#160;((n) ? (n)-&gt;count : 0)</td></tr>
+<tr class="separator:a83024340adbfda910dcd01c1371cf658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4938b3bfe1027cff11b08539d968041"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#ad4938b3bfe1027cff11b08539d968041">AVL_L_COUNT</a>(n)      &#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a83024340adbfda910dcd01c1371cf658">AVL_NODE_COUNT</a>((n)-&gt;left))</td></tr>
+<tr class="separator:ad4938b3bfe1027cff11b08539d968041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43e94b4c6922274949584950c520ae72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a43e94b4c6922274949584950c520ae72">AVL_R_COUNT</a>(n)      &#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a83024340adbfda910dcd01c1371cf658">AVL_NODE_COUNT</a>((n)-&gt;right))</td></tr>
+<tr class="separator:a43e94b4c6922274949584950c520ae72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6fe78bcec8c2751ec087eae721be04f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#ad6fe78bcec8c2751ec087eae721be04f">AVL_CALC_COUNT</a>(n)&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#ad4938b3bfe1027cff11b08539d968041">AVL_L_COUNT</a>(n) + <a class="el" href="logger__biobj__avl__tree_8c.html#a43e94b4c6922274949584950c520ae72">AVL_R_COUNT</a>(n) + 1)</td></tr>
+<tr class="separator:ad6fe78bcec8c2751ec087eae721be04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15dbdf8c8c92f703263438c919813050"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a15dbdf8c8c92f703263438c919813050">AVL_NODE_DEPTH</a>(n)&#160;&#160;&#160;((n) ? (n)-&gt;depth : 0)</td></tr>
+<tr class="separator:a15dbdf8c8c92f703263438c919813050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4f558aac2f035d708d92d232464b179"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#af4f558aac2f035d708d92d232464b179">AVL_L_DEPTH</a>(n)      &#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a15dbdf8c8c92f703263438c919813050">AVL_NODE_DEPTH</a>((n)-&gt;left))</td></tr>
+<tr class="separator:af4f558aac2f035d708d92d232464b179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2652b826f959e080e122ec09f94f541e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a2652b826f959e080e122ec09f94f541e">AVL_R_DEPTH</a>(n)      &#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a15dbdf8c8c92f703263438c919813050">AVL_NODE_DEPTH</a>((n)-&gt;right))</td></tr>
+<tr class="separator:a2652b826f959e080e122ec09f94f541e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e76aa2d87324c2fd90376eb9206e95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a04e76aa2d87324c2fd90376eb9206e95">AVL_CALC_DEPTH</a>(n)&#160;&#160;&#160;((unsigned char)((<a class="el" href="logger__biobj__avl__tree_8c.html#af4f558aac2f035d708d92d232464b179">AVL_L_DEPTH</a>(n) &gt; <a class="el" href="logger__biobj__avl__tree_8c.html#a2652b826f959e080e122ec09f94f541e">AVL_R_DEPTH</a>(n) ? <a class="el" href="logger__biobj__avl__tree_8c.html#af4f558aac2f035d708d92d232464b179">AVL_L_DEPTH</a>(n) : <a class="el" href="logger__biobj__avl__tree_8c.html#a2652b826f959e080e122ec09f94f541e">AVL_R_DEPTH</a>(n)) + 1))</td></tr>
+<tr class="separator:a04e76aa2d87324c2fd90376eb9206e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd4347f10ce4712435b8b91fca8b78e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#a6fd4347f10ce4712435b8b91fca8b78e">AVL_CONST_NODE</a>(x)&#160;&#160;&#160;((<a class="el" href="logger__biobj__avl__tree_8c.html#a09799ec4ab35e977b149c025d2e84691">avl_node_t</a> *)(x))</td></tr>
+<tr class="separator:a6fd4347f10ce4712435b8b91fca8b78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8d70acfaeee3dd30973222eef04bc4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj__avl__tree_8c.html#aa8d70acfaeee3dd30973222eef04bc4e">AVL_CONST_ITEM</a>(x)&#160;&#160;&#160;((void *)(x))</td></tr>
+<tr class="separator:aa8d70acfaeee3dd30973222eef04bc4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -252,6 +252,38 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad6fe78bcec8c2751ec087eae721be04f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVL_CALC_COUNT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#ad4938b3bfe1027cff11b08539d968041">AVL_L_COUNT</a>(n) + <a class="el" href="logger__biobj__avl__tree_8c.html#a43e94b4c6922274949584950c520ae72">AVL_R_COUNT</a>(n) + 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a04e76aa2d87324c2fd90376eb9206e95"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVL_CALC_DEPTH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;((unsigned char)((<a class="el" href="logger__biobj__avl__tree_8c.html#af4f558aac2f035d708d92d232464b179">AVL_L_DEPTH</a>(n) &gt; <a class="el" href="logger__biobj__avl__tree_8c.html#a2652b826f959e080e122ec09f94f541e">AVL_R_DEPTH</a>(n) ? <a class="el" href="logger__biobj__avl__tree_8c.html#af4f558aac2f035d708d92d232464b179">AVL_L_DEPTH</a>(n) : <a class="el" href="logger__biobj__avl__tree_8c.html#a2652b826f959e080e122ec09f94f541e">AVL_R_DEPTH</a>(n)) + 1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a6aacc30eebca52f7267c442f5eee374e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -278,12 +310,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8dc563ff7ef2943b2bff559a0576c2c0"></a>
+<a class="anchor" id="aa8d70acfaeee3dd30973222eef04bc4e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define avl_const_item</td>
+          <td class="memname">#define AVL_CONST_ITEM</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
@@ -294,12 +326,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aafa3803b6719ab2f62b925d70c49c2d4"></a>
+<a class="anchor" id="a6fd4347f10ce4712435b8b91fca8b78e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define avl_const_node</td>
+          <td class="memname">#define AVL_CONST_NODE</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
@@ -334,6 +366,70 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad4938b3bfe1027cff11b08539d968041"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVL_L_COUNT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a83024340adbfda910dcd01c1371cf658">AVL_NODE_COUNT</a>((n)-&gt;left))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af4f558aac2f035d708d92d232464b179"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVL_L_DEPTH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a15dbdf8c8c92f703263438c919813050">AVL_NODE_DEPTH</a>((n)-&gt;left))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a83024340adbfda910dcd01c1371cf658"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVL_NODE_COUNT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;((n) ? (n)-&gt;count : 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a15dbdf8c8c92f703263438c919813050"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVL_NODE_DEPTH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;((n) ? (n)-&gt;depth : 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a1042e14b2562d3f6c942c1ad49289493"></a>
 <div class="memitem">
 <div class="memproto">
@@ -344,6 +440,38 @@ Variables</h2></td></tr>
           <td class="paramtype">&#160;</td>
           <td class="paramname">item</td><td>)</td>
           <td>&#160;&#160;&#160;{ 0, 0, 0, 0, 0, (item), 0, 0 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a43e94b4c6922274949584950c520ae72"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVL_R_COUNT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a83024340adbfda910dcd01c1371cf658">AVL_NODE_COUNT</a>((n)-&gt;right))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2652b826f959e080e122ec09f94f541e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AVL_R_DEPTH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a15dbdf8c8c92f703263438c919813050">AVL_NODE_DEPTH</a>((n)-&gt;right))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -370,134 +498,6 @@ Variables</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td>&#160;&#160;&#160;{ 0, 0, 0, (cmp), (free), {0}, 0, 0 }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af1a78d22df20aba06df8acc7600a37fa"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CALC_COUNT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#ac7ace3afb75cee5e98d07b6ecc600b81">L_COUNT</a>(n) + <a class="el" href="logger__biobj__avl__tree_8c.html#a6171f5837494acfb2a3b54356058981a">R_COUNT</a>(n) + 1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a2f43a69defa2f43dd9c86de45aad69e5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CALC_DEPTH</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;((unsigned char)((<a class="el" href="logger__biobj__avl__tree_8c.html#a2f1695ff5cc56fbd94640b079ca7006c">L_DEPTH</a>(n) &gt; <a class="el" href="logger__biobj__avl__tree_8c.html#a23a94ed5f6aba10897cde02b95e33ebd">R_DEPTH</a>(n) ? <a class="el" href="logger__biobj__avl__tree_8c.html#a2f1695ff5cc56fbd94640b079ca7006c">L_DEPTH</a>(n) : <a class="el" href="logger__biobj__avl__tree_8c.html#a23a94ed5f6aba10897cde02b95e33ebd">R_DEPTH</a>(n)) + 1))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac7ace3afb75cee5e98d07b6ecc600b81"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define L_COUNT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a4f10f1a65aff7cebb115a3878f6e845b">NODE_COUNT</a>((n)-&gt;left))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a2f1695ff5cc56fbd94640b079ca7006c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define L_DEPTH</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#ae18e75bac035cd8400a45479489fcf32">NODE_DEPTH</a>((n)-&gt;left))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4f10f1a65aff7cebb115a3878f6e845b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NODE_COUNT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;((n) ? (n)-&gt;count : 0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae18e75bac035cd8400a45479489fcf32"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NODE_DEPTH</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;((n) ? (n)-&gt;depth : 0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6171f5837494acfb2a3b54356058981a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define R_COUNT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#a4f10f1a65aff7cebb115a3878f6e845b">NODE_COUNT</a>((n)-&gt;right))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a23a94ed5f6aba10897cde02b95e33ebd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define R_DEPTH</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;(<a class="el" href="logger__biobj__avl__tree_8c.html#ae18e75bac035cd8400a45479489fcf32">NODE_DEPTH</a>((n)-&gt;right))</td>
         </tr>
       </table>
 </div><div class="memdoc">

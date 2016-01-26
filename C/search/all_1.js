@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b',['b',['../structtransform__vars__affine__data__t.html#a9f92e5582bf339a3c95df78b9c684fe0',1,'transform_vars_affine_data_t::b()'],['../structls__transform__vars__permblockdiag__t.html#a538f69b3a2f11852979fe8a7880baa62',1,'ls_transform_vars_permblockdiag_t::B()']]],
+  ['b',['b',['../structtransform__vars__affine__data__t.html#a9f92e5582bf339a3c95df78b9c684fe0',1,'transform_vars_affine_data_t::b()'],['../structtransform__vars__permblockdiag__t.html#a538f69b3a2f11852979fe8a7880baa62',1,'transform_vars_permblockdiag_t::B()']]],
   ['bbob2009_5fallocate_5fmatrix',['bbob2009_allocate_matrix',['../suite__bbob__legacy__code_8c.html#a2b6581a2e9fab3c8419752070b66aaab',1,'suite_bbob_legacy_code.c']]],
   ['bbob2009_5fcompute_5ffopt',['bbob2009_compute_fopt',['../suite__bbob__legacy__code_8c.html#a1d48c8877bb7ff819b57a115ebc3476d',1,'suite_bbob_legacy_code.c']]],
   ['bbob2009_5fcompute_5frotation',['bbob2009_compute_rotation',['../suite__bbob__legacy__code_8c.html#a2bd83c06428bdb03ac1f2502e726df03',1,'suite_bbob_legacy_code.c']]],
@@ -31,8 +31,8 @@ var searchData=
   ['best_5fsolution',['best_solution',['../structlogger__bbob__t.html#af8176ad71b4758812f3c561d362cf41b',1,'logger_bbob_t']]],
   ['best_5fvalue',['best_value',['../structcoco__problem.html#a1a07a4305f85eb196c5a389a62eaacdf',1,'coco_problem::best_value()'],['../structlogger__biobj__indicator__t.html#af24c8f42a2d3d6b068416bd8f1f81b47',1,'logger_biobj_indicator_t::best_value()']]],
   ['beta',['beta',['../structtransform__vars__asymmetric__data__t.html#a9424343761f8c4f4c1afe8f5b6bf471b',1,'transform_vars_asymmetric_data_t']]],
-  ['bk',['bk',['../structf__weierstrass__data__t.html#a68276908110f5bc39ee31c348ed0f18d',1,'f_weierstrass_data_t']]],
-  ['block_5fsize_5fmap',['block_size_map',['../structls__transform__vars__permblockdiag__t.html#a39dc52213ed2020d5f5e8635b1e822bc',1,'ls_transform_vars_permblockdiag_t']]],
-  ['block_5fsizes',['block_sizes',['../structls__transform__vars__permblockdiag__t.html#a8b14af702a13abd246a964baa849e214',1,'ls_transform_vars_permblockdiag_t']]],
+  ['bk',['bk',['../structf__weierstrass__data__t.html#abfa3995b41e12df8198e6d485a4e36be',1,'f_weierstrass_data_t']]],
+  ['block_5fsize_5fmap',['block_size_map',['../structtransform__vars__permblockdiag__t.html#a39dc52213ed2020d5f5e8635b1e822bc',1,'transform_vars_permblockdiag_t']]],
+  ['block_5fsizes',['block_sizes',['../structtransform__vars__permblockdiag__t.html#a8b14af702a13abd246a964baa849e214',1,'transform_vars_permblockdiag_t']]],
   ['buffer_5ftree',['buffer_tree',['../structlogger__biobj__t.html#a49fd1c58a5bc4552e703793e83c33e7b',1,'logger_biobj_t']]]
 ];

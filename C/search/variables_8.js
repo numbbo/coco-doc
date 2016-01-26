@@ -1,18 +1,11 @@
 var searchData=
 [
-  ['idx_5ff_5ftrigger',['idx_f_trigger',['../structlogger__bbob__t.html#addcbae9516efc2bffdc803a31e983bae',1,'logger_bbob_t']]],
-  ['idx_5ft_5ftrigger',['idx_t_trigger',['../structlogger__bbob__t.html#a71047c8a3ef6c4e53dea617d40b962e5',1,'logger_bbob_t']]],
-  ['idx_5ftdim_5ftrigger',['idx_tdim_trigger',['../structlogger__bbob__t.html#a4a465bcfeb4643ee5061423be05ad1dd',1,'logger_bbob_t']]],
-  ['index',['index',['../structcoco__random__state.html#a3f42f10d93f6edb91d7d3f6edad25921',1,'coco_random_state']]],
-  ['index_5ffile',['index_file',['../structlogger__bbob__t.html#aa04eace4ad13391be71a0fe71f90e690',1,'logger_bbob_t']]],
-  ['indicator_5fcontribution',['indicator_contribution',['../structlogger__biobj__avl__item__t.html#ab919128612c4b596a3298d284de9cb92',1,'logger_biobj_avl_item_t']]],
-  ['indicators',['indicators',['../structlogger__biobj__t.html#ae5b0d810c8109faf2e49f210daf5361a',1,'logger_biobj_t']]],
-  ['info_5ffile',['info_file',['../structlogger__biobj__indicator__t.html#a80a54c0143d1d97ac20972250ffb58b3',1,'logger_biobj_indicator_t']]],
-  ['initial_5fsolution',['initial_solution',['../structcoco__problem.html#a55d88ab42e1b89dcfd74111130999305',1,'coco_problem']]],
-  ['inner_5fproblem',['inner_problem',['../structcoco__transformed__data__t.html#a8e6b808dd4920578f0a8706d14133720',1,'coco_transformed_data_t']]],
-  ['instance_5fid',['instance_id',['../structlogger__bbob__t.html#ad77442b741c602ef50fdcbad1aefdaef',1,'logger_bbob_t']]],
-  ['instances',['instances',['../structcoco__suite.html#a2c9ef7cb9714331b9a3b6079c9bba732',1,'coco_suite']]],
-  ['is_5factive',['is_active',['../structcoco__observer.html#a49e74ec974c1878346edd82cccbe63d8',1,'coco_observer']]],
-  ['is_5finitialized',['is_initialized',['../structlogger__bbob__t.html#a744d9706c873299c528f99016ace9201',1,'logger_bbob_t']]],
-  ['item',['item',['../structavl__node.html#aeeeae972d4d97226aa998aa9ca91346c',1,'avl_node']]]
+  ['largest_5fvalues_5fof_5finterest',['largest_values_of_interest',['../structcoco__problem.html#a821b08daf840db95cd3be6ba31a7a588',1,'coco_problem']]],
+  ['last_5ffvalue',['last_fvalue',['../structlogger__bbob__t.html#a8762d55159c42bf407bc438266ae8208',1,'logger_bbob_t']]],
+  ['left',['left',['../structavl__node.html#a943f33ef76c05ce090779ce3ca3c6057',1,'avl_node']]],
+  ['log_5ffile',['log_file',['../structlogger__biobj__indicator__t.html#ab936051f5aaca44c6c3c41dee0d19c36',1,'logger_biobj_indicator_t::log_file()'],['../structobserver__toy__t.html#ab936051f5aaca44c6c3c41dee0d19c36',1,'observer_toy_t::log_file()']]],
+  ['log_5fnondom_5fmode',['log_nondom_mode',['../structlogger__biobj__t.html#a81d31970fec7df2cc8ccc741a21cbc31',1,'logger_biobj_t::log_nondom_mode()'],['../structobserver__biobj__t.html#a81d31970fec7df2cc8ccc741a21cbc31',1,'observer_biobj_t::log_nondom_mode()']]],
+  ['log_5fvars',['log_vars',['../structlogger__biobj__t.html#af2c634e2d1e1e3fcb602f4998b3f6f6d',1,'logger_biobj_t']]],
+  ['log_5fvars_5fmode',['log_vars_mode',['../structobserver__biobj__t.html#a1f065b8028d2efc66683aaff5cf069a8',1,'observer_biobj_t']]],
+  ['logger_5finitialize_5ffunction',['logger_initialize_function',['../structcoco__observer.html#a0bd52d4e1b3601b117f9b3335b6d1787',1,'coco_observer']]]
 ];

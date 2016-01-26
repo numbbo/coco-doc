@@ -1,11 +1,18 @@
 var searchData=
 [
-  ['observer',['observer',['../structlogger__bbob__t.html#aac38dfd8c8462cf1d7506d549ec58460',1,'logger_bbob_t::observer()'],['../structlogger__biobj__t.html#aac38dfd8c8462cf1d7506d549ec58460',1,'logger_biobj_t::observer()'],['../structlogger__toy__t.html#aac38dfd8c8462cf1d7506d549ec58460',1,'logger_toy_t::observer()']]],
-  ['observer_5fbiobj_5findicators',['OBSERVER_BIOBJ_INDICATORS',['../observer__biobj_8c.html#a5058b2a8e306e6597bbec87cdab8e43e',1,'observer_biobj.c']]],
-  ['offset',['offset',['../structtransform__obj__shift__data__t.html#a129303e4bd38a8cdba722b6238ed56e9',1,'transform_obj_shift_data_t::offset()'],['../structtransform__vars__shift__data__t.html#a6bdb8be2b14c1051356872d0ccd36ead',1,'transform_vars_shift_data_t::offset()']]],
-  ['old_5ffree_5fproblem',['old_free_problem',['../structf__gallagher__data__t.html#ab7ed051479015d9cff7cad1f6d75a046',1,'f_gallagher_data_t::old_free_problem()'],['../structf__lunacek__bi__rastrigin__data__t.html#ab7ed051479015d9cff7cad1f6d75a046',1,'f_lunacek_bi_rastrigin_data_t::old_free_problem()'],['../structtransform__vars__shift__data__t.html#ab7ed051479015d9cff7cad1f6d75a046',1,'transform_vars_shift_data_t::old_free_problem()'],['../structtransform__vars__x__hat__data__t.html#ab7ed051479015d9cff7cad1f6d75a046',1,'transform_vars_x_hat_data_t::old_free_problem()'],['../structtransform__vars__z__hat__data__t.html#ab7ed051479015d9cff7cad1f6d75a046',1,'transform_vars_z_hat_data_t::old_free_problem()']]],
-  ['optimal_5ffvalue',['optimal_fvalue',['../structlogger__bbob__t.html#a36062ae1b535b56d0492d774f006d4bf',1,'logger_bbob_t']]],
-  ['oscillated_5fx',['oscillated_x',['../structtransform__vars__oscillate__data__t.html#a08837da31a79f6afc51bd73dd6294056',1,'transform_vars_oscillate_data_t']]],
-  ['output_5ffolder',['output_folder',['../structcoco__observer.html#a2ee9ef74c0b8e21d86c8b32509da9302',1,'coco_observer']]],
-  ['overall_5fvalue',['overall_value',['../structlogger__biobj__indicator__t.html#aa7cad476b2f3c8de9f6e050f3530ad47',1,'logger_biobj_indicator_t']]]
+  ['p1',['P1',['../structtransform__vars__permblockdiag__t.html#af659eec06c9198dea56b58f6365e87f5',1,'transform_vars_permblockdiag_t']]],
+  ['p2',['P2',['../structtransform__vars__permblockdiag__t.html#ac2e2d04008c273ebaa484e404f745e56',1,'transform_vars_permblockdiag_t']]],
+  ['parent',['parent',['../structavl__node.html#a570afe934c75e76225958789ad6ad6b2',1,'avl_node']]],
+  ['peak_5fvalues',['peak_values',['../structf__gallagher__data__t.html#a47566479c2077f39842feeeafc65eb6a',1,'f_gallagher_data_t']]],
+  ['precision_5ff',['precision_f',['../structcoco__observer.html#a5feb347ca34531d71c7979566bea2711',1,'coco_observer::precision_f()'],['../structlogger__biobj__t.html#a5feb347ca34531d71c7979566bea2711',1,'logger_biobj_t::precision_f()']]],
+  ['precision_5fx',['precision_x',['../structcoco__observer.html#a1210e0d0c3b8c2dea8666528a1040d66',1,'coco_observer::precision_x()'],['../structlogger__biobj__t.html#a1210e0d0c3b8c2dea8666528a1040d66',1,'logger_biobj_t::precision_x()']]],
+  ['prev',['prev',['../structavl__node.html#a29d76db276278ade78d672632b590530',1,'avl_node']]],
+  ['previous_5ffunction',['previous_function',['../structobserver__biobj__t.html#a583848093949f49114990e265c0526ba',1,'observer_biobj_t']]],
+  ['problem1',['problem1',['../structcoco__problem__stacked__data__t.html#a334d3d893eca655a79885091720b37f0',1,'coco_problem_stacked_data_t']]],
+  ['problem2',['problem2',['../structcoco__problem__stacked__data__t.html#aae7d2027ec9d9e46a56ed806c168566f',1,'coco_problem_stacked_data_t']]],
+  ['problem_5ffree_5ffunction',['problem_free_function',['../structcoco__problem.html#a6611a92622180c8b62628c85722ee793',1,'coco_problem']]],
+  ['problem_5fid',['problem_id',['../structcoco__problem.html#a2c28928a0b6868b6ef2ec1d72dfb7dd8',1,'coco_problem']]],
+  ['problem_5fname',['problem_name',['../structcoco__problem.html#acaea46926965991bd420e6965eacf8e5',1,'coco_problem']]],
+  ['problem_5ftype',['problem_type',['../structcoco__problem.html#a333fe8225776412beb2cf06b8155b65e',1,'coco_problem']]],
+  ['produce_5fall_5fdata',['produce_all_data',['../structobserver__biobj__t.html#a7a112dcddb15c62d4b092e508316266b',1,'observer_biobj_t']]]
 ];

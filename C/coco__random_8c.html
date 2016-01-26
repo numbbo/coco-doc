@@ -100,26 +100,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">coco_random.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Definitions of functions regarding COCO random numbers.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;math.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__random__state.html">coco_random_state</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure containing the state of the COCO random generator.  <a href="structcoco__random__state.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a5788b5ff34876be50bccdf0ad639a646"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#a5788b5ff34876be50bccdf0ad639a646">COCO_NORMAL_POLAR</a>&#160;&#160;&#160;/* Use polar transformation method */</td></tr>
 <tr class="separator:a5788b5ff34876be50bccdf0ad639a646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44e550f83a5d040776ced03f3aa7ae81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#a44e550f83a5d040776ced03f3aa7ae81">SHORT_LAG</a>&#160;&#160;&#160;273</td></tr>
-<tr class="separator:a44e550f83a5d040776ced03f3aa7ae81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44ef0e8348cb10b83ad955801739050c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#a44ef0e8348cb10b83ad955801739050c">LONG_LAG</a>&#160;&#160;&#160;607</td></tr>
-<tr class="separator:a44ef0e8348cb10b83ad955801739050c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1351536f81d4083c17728eb9e5451d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#ab1351536f81d4083c17728eb9e5451d9">COCO_SHORT_LAG</a>&#160;&#160;&#160;273</td></tr>
+<tr class="separator:ab1351536f81d4083c17728eb9e5451d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaac08a3af55dd915d70ea15426aa0aa7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#aaac08a3af55dd915d70ea15426aa0aa7">COCO_LONG_LAG</a>&#160;&#160;&#160;607</td></tr>
+<tr class="separator:aaac08a3af55dd915d70ea15426aa0aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae6581fb15fd445af6457949d2acf57bb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#ae6581fb15fd445af6457949d2acf57bb">coco_random_generate</a> (<a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *state)</td></tr>
+<tr class="memdesc:ae6581fb15fd445af6457949d2acf57bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A lagged Fibonacci random number generator.  <a href="#ae6581fb15fd445af6457949d2acf57bb">More...</a><br /></td></tr>
 <tr class="separator:ae6581fb15fd445af6457949d2acf57bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1eec26188c49daa70532b3822bffeae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a8074dbded77d5b52956a7fb65c07a105">coco_random_state_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__random_8c.html#af1eec26188c49daa70532b3822bffeae">coco_random_new</a> (uint32_t seed)</td></tr>
 <tr class="memdesc:af1eec26188c49daa70532b3822bffeae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a new random number state using the given seed.  <a href="#af1eec26188c49daa70532b3822bffeae">More...</a><br /></td></tr>
@@ -134,7 +139,22 @@ Functions</h2></td></tr>
 <tr class="memdesc:a6344ee786bf0f08e540343bd1e70babf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates an approximately normal random number.  <a href="#a6344ee786bf0f08e540343bd1e70babf">More...</a><br /></td></tr>
 <tr class="separator:a6344ee786bf0f08e540343bd1e70babf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definitions of functions regarding COCO random numbers. </p>
+<dl class="section note"><dt>Note</dt><dd>This file contains non-C89-standard types (such as uint32_t and uint64_t), which should eventually be fixed. </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="aaac08a3af55dd915d70ea15426aa0aa7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COCO_LONG_LAG&#160;&#160;&#160;607</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a5788b5ff34876be50bccdf0ad639a646"></a>
 <div class="memitem">
 <div class="memproto">
@@ -147,24 +167,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a44ef0e8348cb10b83ad955801739050c"></a>
+<a class="anchor" id="ab1351536f81d4083c17728eb9e5451d9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LONG_LAG&#160;&#160;&#160;607</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a44e550f83a5d040776ced03f3aa7ae81"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SHORT_LAG&#160;&#160;&#160;273</td>
+          <td class="memname">#define COCO_SHORT_LAG&#160;&#160;&#160;273</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -211,8 +219,9 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>coco_random_generate(state):</p>
-<p>This is a lagged Fibonacci generator that is nice because it is reasonably small and directly generates double values. The chosen lags (607 and 273) lead to a generator with a period in excess of 2^607-1. </p>
+
+<p>A lagged Fibonacci random number generator. </p>
+<p>This generator is nice because it is reasonably small and directly generates double values. The chosen lags (607 and 273) lead to a generator with a period in excess of 2^607-1. </p>
 
 </div>
 </div>

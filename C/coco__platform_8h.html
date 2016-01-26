@@ -92,88 +92,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">coco_platform.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Automatic platform-dependent configuration of the COCO framework.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;dirent.h&gt;</code><br />
 </div>
 <p><a href="coco__platform_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a570282ae7ba596263ec812b368d99b34"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__platform_8h.html#a570282ae7ba596263ec812b368d99b34">rmdir</a> (const char *pathname)</td></tr>
-<tr class="separator:a570282ae7ba596263ec812b368d99b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acad0be8a645bcb376877ddbab6b00ac0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__platform_8h.html#acad0be8a645bcb376877ddbab6b00ac0">unlink</a> (const char *file_name)</td></tr>
-<tr class="separator:acad0be8a645bcb376877ddbab6b00ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee98bbe743c2d14dbaa67f01c3fb9ed5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__platform_8h.html#aee98bbe743c2d14dbaa67f01c3fb9ed5">mkdir</a> (const char *pathname, mode_t mode)</td></tr>
-<tr class="separator:aee98bbe743c2d14dbaa67f01c3fb9ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="aee98bbe743c2d14dbaa67f01c3fb9ed5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mkdir </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>pathname</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mode_t&#160;</td>
-          <td class="paramname"><em>mode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a570282ae7ba596263ec812b368d99b34"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int rmdir </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>pathname</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Automatic platform-dependent configuration of the COCO framework</p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Automatic platform-dependent configuration of the COCO framework. </p>
 <p>Some platforms and standard conforming compilers require extra defines or includes to provide some functionality.</p>
 <p>Because most feature defines need to be set before the first system header is included and we do not know when a system header is included for the first time in the amalgamation, all internal files that need these definitions should include this file before any system headers. </p>
-
-</div>
-</div>
-<a class="anchor" id="acad0be8a645bcb376877ddbab6b00ac0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int unlink </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>file_name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
 </div>

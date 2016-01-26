@@ -108,16 +108,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structf__step__ellipsoid__data__t.html">f_step_ellipsoid_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type for f_step_ellipsoid.  <a href="structf__step__ellipsoid__data__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab105bbc9f0388372379159f43a899ecf"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#ab105bbc9f0388372379159f43a899ecf">f_step_ellipsoid_raw</a> (const double *x, size_t number_of_variables, <a class="el" href="structf__step__ellipsoid__data__t.html">f_step_ellipsoid_data_t</a> *data)</td></tr>
 <tr class="separator:ab105bbc9f0388372379159f43a899ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4b0395d62d647229e15986c810909c6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#ad4b0395d62d647229e15986c810909c6">f_step_ellipsoid_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self, const double *x, double *y)</td></tr>
-<tr class="separator:ad4b0395d62d647229e15986c810909c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a737fdf24c0d03ae07b597adcf072e5c0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#a737fdf24c0d03ae07b597adcf072e5c0">f_step_ellipsoid_free</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *self)</td></tr>
-<tr class="separator:a737fdf24c0d03ae07b597adcf072e5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae520e36d3c0c7033d8054d3a8f3fca0b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#ae520e36d3c0c7033d8054d3a8f3fca0b">f_step_ellipsoid_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="separator:ae520e36d3c0c7033d8054d3a8f3fca0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a564ad81215d8ea29a013f0ea2d89c890"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#a564ad81215d8ea29a013f0ea2d89c890">f_step_ellipsoid_free</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem)</td></tr>
+<tr class="separator:a564ad81215d8ea29a013f0ea2d89c890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97bda698706442034825b2c65f8a8675"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#a97bda698706442034825b2c65f8a8675">f_step_ellipsoid_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="separator:a97bda698706442034825b2c65f8a8675"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -180,7 +181,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad4b0395d62d647229e15986c810909c6"></a>
+<a class="anchor" id="ae520e36d3c0c7033d8054d3a8f3fca0b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -191,7 +192,7 @@ Functions</h2></td></tr>
           <td class="memname">static void f_step_ellipsoid_evaluate </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>problem</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -220,7 +221,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a737fdf24c0d03ae07b597adcf072e5c0"></a>
+<a class="anchor" id="a564ad81215d8ea29a013f0ea2d89c890"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -231,7 +232,7 @@ Functions</h2></td></tr>
           <td class="memname">static void f_step_ellipsoid_free </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

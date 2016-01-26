@@ -9,7 +9,7 @@ var searchData=
   ['indicators',['indicators',['../structlogger__biobj__t.html#ae5b0d810c8109faf2e49f210daf5361a',1,'logger_biobj_t']]],
   ['info_5ffile',['info_file',['../structlogger__biobj__indicator__t.html#a80a54c0143d1d97ac20972250ffb58b3',1,'logger_biobj_indicator_t']]],
   ['initial_5fsolution',['initial_solution',['../structcoco__problem.html#a55d88ab42e1b89dcfd74111130999305',1,'coco_problem']]],
-  ['inner_5fproblem',['inner_problem',['../structcoco__transformed__data__t.html#a8e6b808dd4920578f0a8706d14133720',1,'coco_transformed_data_t']]],
+  ['inner_5fproblem',['inner_problem',['../structcoco__problem__transformed__data__t.html#a8e6b808dd4920578f0a8706d14133720',1,'coco_problem_transformed_data_t']]],
   ['instance_5fid',['instance_id',['../structlogger__bbob__t.html#ad77442b741c602ef50fdcbad1aefdaef',1,'logger_bbob_t']]],
   ['instances',['instances',['../structcoco__suite.html#a2c9ef7cb9714331b9a3b6079c9bba732',1,'coco_suite']]],
   ['is_5factive',['is_active',['../structcoco__observer.html#a49e74ec974c1878346edd82cccbe63d8',1,'coco_observer']]],
