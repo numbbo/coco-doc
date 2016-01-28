@@ -90,15 +90,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>For a getting started guide see <a href="https://github.com/numbbo/coco/blob/master/README.md#getting-started">here</a>.</p>
 <p><b>Reimplementation of COCO in ANSI C</b></p>
 <p>In order to allow for easier maintenance and further extensions of the COCO platform, it was rewritten entirely from 2014 till 2016. Now, a single implementation in ANSI C (aka C89) is used and called from the other languages to conduct the experiments. This documentation of the COCO C code serves therefore as the basic reference for:</p><ul>
-<li>How to conduct benchmarking experiments in C</li>
-<li>How to write new test functions and combine them into test suites</li>
-<li>How to write additional performance indicators and logging functionality</li>
+<li><a href="#benchmarking">How to conduct benchmarking experiments in C</a></li>
+<li><a href="#new-suites">How to write new test functions and combine them into test suites</a></li>
+<li><a href="#new-indicators">How to write additional performance indicators and logging functionality</a></li>
 </ul>
 <p><b>Pointers to the source code and other documentation</b></p>
 <p>The actual source code of COCO can be found at <a href="http://github.com/numbbo/coco">http://github.com/numbbo/coco</a></p>
 <p>More information about the biobjective test suite (bbob-biobj) can be found at <a href="http://numbbo.github.io/bbob-biobj-functions-doc">http://numbbo.github.io/bbob-biobj-functions-doc</a></p>
 <p>How to conduct experiments in all supported languages is described at <a href="http://numbbo.github.io/bbob-biobj-experiments-doc">http://numbbo.github.io/bbob-biobj-experiments-doc</a> (coming soon)</p>
-<h2>How to conduct benchmarking experiments in C</h2>
+<h2>How to conduct benchmarking experiments in C <a class="anchor" id="benchmarking"></a></h2>
 <p>At this point we assume that the <code>example_experiment</code> in C is running on your machine (see the <a href="https://github.com/numbbo/coco/blob/master/README.md#getting-started">getting started guide</a> if you need any assistance). The best way to create your own benchmark experiment is to copy that example and make the changes you need to include your optimizer.</p>
 <p>Benchmarking the algorithm <code>my_optimizer</code> on the <code>bbob-biobj</code> suite with default parameters (see below for explanation of the <a href="#suite-parameters">suite parameters</a> and <a href="#observer-parameters">observer parameters</a>) is invoked in the following way: </p><pre class="fragment">coco_suite_t *suite;
 coco_observer_t *observer;
@@ -180,9 +180,9 @@ size_t coco_problem_get_number_of_objectives(const coco_problem_t *problem);
 /* Returns the number of evaluations done on the problem */
 size_t coco_problem_get_evaluations(coco_problem_t *problem);
 </pre><p>See the <code><a class="el" href="coco_8h.html" title="All public COCO functions, constants and variables are defined in this file. ">coco.h</a></code> file for more information on these and other functions you can use to interface COCO problem and other COCO structures.</p>
-<h2>How to write new test functions and combine them into test suites</h2>
+<h2>How to write new test functions and combine them into test suites <a class="anchor" id="new-suites"></a></h2>
 <p>COMING SOON...</p>
-<h2>How to write additional performance indicators and logging functionality</h2>
+<h2>How to write additional performance indicators and logging functionality <a class="anchor" id="new-indicators"></a></h2>
 <p>COMING SOON... </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
