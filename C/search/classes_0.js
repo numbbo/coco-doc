@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['coco_5fobserver',['coco_observer',['../structcoco__observer.html',1,'']]],
-  ['coco_5fproblem',['coco_problem',['../structcoco__problem.html',1,'']]],
+  ['coco_5fobserver_5fs',['coco_observer_s',['../structcoco__observer__s.html',1,'']]],
+  ['coco_5fproblem_5fs',['coco_problem_s',['../structcoco__problem__s.html',1,'']]],
   ['coco_5fproblem_5fstacked_5fdata_5ft',['coco_problem_stacked_data_t',['../structcoco__problem__stacked__data__t.html',1,'']]],
   ['coco_5fproblem_5ftransformed_5fdata_5ft',['coco_problem_transformed_data_t',['../structcoco__problem__transformed__data__t.html',1,'']]],
-  ['coco_5frandom_5fstate',['coco_random_state',['../structcoco__random__state.html',1,'']]],
-  ['coco_5fsuite',['coco_suite',['../structcoco__suite.html',1,'']]]
+  ['coco_5frandom_5fstate_5fs',['coco_random_state_s',['../structcoco__random__state__s.html',1,'']]],
+  ['coco_5fsuite_5fs',['coco_suite_s',['../structcoco__suite__s.html',1,'']]]
 ];

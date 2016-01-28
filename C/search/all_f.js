@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['within_5froi',['within_ROI',['../structlogger__biobj__avl__item__t.html#a4671185829104d65a7910b5ccf0183c4',1,'logger_biobj_avl_item_t']]],
-  ['written_5flast_5feval',['written_last_eval',['../structlogger__bbob__data__t.html#a1d232119493fd47022ab84d99a44cd5c',1,'logger_bbob_data_t']]]
+  ['value',['value',['../structf__gallagher__permutation__t.html#aee90379adb0307effb138f4871edbc5c',1,'f_gallagher_permutation_t']]]
 ];

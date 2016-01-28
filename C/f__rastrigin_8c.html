@@ -119,16 +119,16 @@ Functions</h2></td></tr>
 <tr class="memitem:a7185995f580bb346172f6463d012cb12"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#a7185995f580bb346172f6463d012cb12">f_rastrigin_raw</a> (const double *x, const size_t number_of_variables)</td></tr>
 <tr class="memdesc:a7185995f580bb346172f6463d012cb12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the Rastrigin function without connections to any COCO structures.  <a href="#a7185995f580bb346172f6463d012cb12">More...</a><br /></td></tr>
 <tr class="separator:a7185995f580bb346172f6463d012cb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d8c7ccc68426823c63620e5f6f03a90"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#a9d8c7ccc68426823c63620e5f6f03a90">f_rastrigin_evaluate</a> (<a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memitem:a9d8c7ccc68426823c63620e5f6f03a90"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#a9d8c7ccc68426823c63620e5f6f03a90">f_rastrigin_evaluate</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
 <tr class="memdesc:a9d8c7ccc68426823c63620e5f6f03a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the raw function to evaluate the COCO problem.  <a href="#a9d8c7ccc68426823c63620e5f6f03a90">More...</a><br /></td></tr>
 <tr class="separator:a9d8c7ccc68426823c63620e5f6f03a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f1a0bbdc7efe1bc4869f59d2fb08840"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#a4f1a0bbdc7efe1bc4869f59d2fb08840">f_rastrigin_allocate</a> (const size_t number_of_variables)</td></tr>
+<tr class="memitem:a4f1a0bbdc7efe1bc4869f59d2fb08840"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#a4f1a0bbdc7efe1bc4869f59d2fb08840">f_rastrigin_allocate</a> (const size_t number_of_variables)</td></tr>
 <tr class="memdesc:a4f1a0bbdc7efe1bc4869f59d2fb08840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic Rastrigin problem.  <a href="#a4f1a0bbdc7efe1bc4869f59d2fb08840">More...</a><br /></td></tr>
 <tr class="separator:a4f1a0bbdc7efe1bc4869f59d2fb08840"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab85eedbec721f366c1392de80bf482eb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#ab85eedbec721f366c1392de80bf482eb">f_rastrigin_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memitem:ab85eedbec721f366c1392de80bf482eb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#ab85eedbec721f366c1392de80bf482eb">f_rastrigin_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="memdesc:ab85eedbec721f366c1392de80bf482eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB Rastrigin problem.  <a href="#ab85eedbec721f366c1392de80bf482eb">More...</a><br /></td></tr>
 <tr class="separator:ab85eedbec721f366c1392de80bf482eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af00e833080e849ba9794027d439ce5a0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#af00e833080e849ba9794027d439ce5a0">f_rastrigin_rotated_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memitem:af00e833080e849ba9794027d439ce5a0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#af00e833080e849ba9794027d439ce5a0">f_rastrigin_rotated_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="memdesc:af00e833080e849ba9794027d439ce5a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB rotated Rastrigin problem.  <a href="#af00e833080e849ba9794027d439ce5a0">More...</a><br /></td></tr>
 <tr class="separator:af00e833080e849ba9794027d439ce5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -143,7 +143,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a>* f_rastrigin_allocate </td>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_rastrigin_allocate </td>
           <td>(</td>
           <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>number_of_variables</em></td><td>)</td>
@@ -169,7 +169,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a>* f_rastrigin_bbob_problem_allocate </td>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_rastrigin_bbob_problem_allocate </td>
           <td>(</td>
           <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>function</em>, </td>
@@ -231,7 +231,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void f_rastrigin_evaluate </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
           <td class="paramname"><em>problem</em>, </td>
         </tr>
         <tr>
@@ -307,7 +307,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a>* f_rastrigin_rotated_bbob_problem_allocate </td>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_rastrigin_rotated_bbob_problem_allocate </td>
           <td>(</td>
           <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>function</em>, </td>

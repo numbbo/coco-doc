@@ -1,9 +1,9 @@
 var searchData=
 [
   ['large_5fscale_5ftransformations_2ec',['large_scale_transformations.c',['../large__scale__transformations_8c.html',1,'']]],
-  ['largest_5fvalues_5fof_5finterest',['largest_values_of_interest',['../structcoco__problem.html#a821b08daf840db95cd3be6ba31a7a588',1,'coco_problem']]],
+  ['largest_5fvalues_5fof_5finterest',['largest_values_of_interest',['../structcoco__problem__s.html#a821b08daf840db95cd3be6ba31a7a588',1,'coco_problem_s']]],
   ['last_5ffvalue',['last_fvalue',['../structlogger__bbob__data__t.html#a8762d55159c42bf407bc438266ae8208',1,'logger_bbob_data_t']]],
-  ['log_5ffile',['log_file',['../structlogger__biobj__indicator__t.html#ab936051f5aaca44c6c3c41dee0d19c36',1,'logger_biobj_indicator_t::log_file()'],['../structobserver__toy__data__t.html#ab936051f5aaca44c6c3c41dee0d19c36',1,'observer_toy_data_t::log_file()']]],
+  ['log_5ffile',['log_file',['../structobserver__toy__data__t.html#ab936051f5aaca44c6c3c41dee0d19c36',1,'observer_toy_data_t']]],
   ['log_5fnondom_5fall',['LOG_NONDOM_ALL',['../observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bda78c0d9c657bb6249e933950263dd5407',1,'observer_biobj.c']]],
   ['log_5fnondom_5ffinal',['LOG_NONDOM_FINAL',['../observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bdabf0d04baf535f9b4d4aa4c3f2e0fcaff',1,'observer_biobj.c']]],
   ['log_5fnondom_5fmode',['log_nondom_mode',['../structlogger__biobj__data__t.html#a81d31970fec7df2cc8ccc741a21cbc31',1,'logger_biobj_data_t::log_nondom_mode()'],['../structobserver__biobj__data__t.html#a81d31970fec7df2cc8ccc741a21cbc31',1,'observer_biobj_data_t::log_nondom_mode()']]],
@@ -41,7 +41,7 @@ var searchData=
   ['logger_5fbiobj_5fnode_5ffree',['logger_biobj_node_free',['../logger__biobj_8c.html#a38cdb0e3396eddb6365d634c13725706',1,'logger_biobj.c']]],
   ['logger_5fbiobj_5ftree_5foutput',['logger_biobj_tree_output',['../logger__biobj_8c.html#aaa525bc3137f9c1ef8de71d04a2a49c0',1,'logger_biobj.c']]],
   ['logger_5fbiobj_5ftree_5fupdate',['logger_biobj_tree_update',['../logger__biobj_8c.html#aadac94b8bb461917c428a3d41d23c6c7',1,'logger_biobj.c']]],
-  ['logger_5finitialize_5ffunction',['logger_initialize_function',['../structcoco__observer.html#a0bd52d4e1b3601b117f9b3335b6d1787',1,'coco_observer']]],
+  ['logger_5finitialize_5ffunction',['logger_initialize_function',['../structcoco__observer__s.html#a0bd52d4e1b3601b117f9b3335b6d1787',1,'coco_observer_s']]],
   ['logger_5ftoy',['logger_toy',['../logger__toy_8c.html#a5100bcb34a8dc0d3910c2d51e19db716',1,'logger_toy(coco_observer_t *observer, coco_problem_t *inner_problem):&#160;logger_toy.c'],['../observer__toy_8c.html#a3dddf7883a4de349d2a755b609a7d34c',1,'logger_toy(coco_observer_t *observer, coco_problem_t *problem):&#160;observer_toy.c']]],
   ['logger_5ftoy_2ec',['logger_toy.c',['../logger__toy_8c.html',1,'']]],
   ['logger_5ftoy_5fdata_5ft',['logger_toy_data_t',['../structlogger__toy__data__t.html',1,'']]],

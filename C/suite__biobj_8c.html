@@ -116,21 +116,21 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5b47fb18f2f9cd8f1c74cc08e29b920a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#a5b47fb18f2f9cd8f1c74cc08e29b920a">coco_suite_allocate</a> (const char *suite_name, const size_t number_of_functions, const size_t number_of_dimensions, const size_t *dimensions, const char *default_instances)</td></tr>
+<tr class="memitem:a5b47fb18f2f9cd8f1c74cc08e29b920a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#a5b47fb18f2f9cd8f1c74cc08e29b920a">coco_suite_allocate</a> (const char *suite_name, const size_t number_of_functions, const size_t number_of_dimensions, const size_t *dimensions, const char *default_instances)</td></tr>
 <tr class="separator:a5b47fb18f2f9cd8f1c74cc08e29b920a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc385c8b0a10b0f5e1cb27aeb92fb1e2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#acc385c8b0a10b0f5e1cb27aeb92fb1e2">suite_biobj_free</a> (void *stuff)</td></tr>
 <tr class="memdesc:acc385c8b0a10b0f5e1cb27aeb92fb1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory of the given bi-objective suite.  <a href="#acc385c8b0a10b0f5e1cb27aeb92fb1e2">More...</a><br /></td></tr>
 <tr class="separator:acc385c8b0a10b0f5e1cb27aeb92fb1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae263020ff9af8b811166f20df592ca7a"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#ae263020ff9af8b811166f20df592ca7a">suite_biobj_get_new_instance</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, const size_t instance, const size_t instance1, const size_t num_bbob_functions, const size_t *bbob_functions)</td></tr>
+<tr class="memitem:ae263020ff9af8b811166f20df592ca7a"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#ae263020ff9af8b811166f20df592ca7a">suite_biobj_get_new_instance</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t instance, const size_t instance1, const size_t num_bbob_functions, const size_t *bbob_functions)</td></tr>
 <tr class="memdesc:ae263020ff9af8b811166f20df592ca7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the instance number of the second problem/objective so that the resulting bi-objective problem has more than a single optimal solution.  <a href="#ae263020ff9af8b811166f20df592ca7a">More...</a><br /></td></tr>
 <tr class="separator:ae263020ff9af8b811166f20df592ca7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25c64ad090d2c5ac4900c31305fac986"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#a25c64ad090d2c5ac4900c31305fac986">suite_biobj_allocate</a> (void)</td></tr>
-<tr class="memdesc:a25c64ad090d2c5ac4900c31305fac986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dimensions and default instances for the bbob-biobj suite.  <a href="#a25c64ad090d2c5ac4900c31305fac986">More...</a><br /></td></tr>
-<tr class="separator:a25c64ad090d2c5ac4900c31305fac986"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a227f2866c313806a0650b122135274f6"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#a227f2866c313806a0650b122135274f6">suite_biobj_get_instances_by_year</a> (const int year)</td></tr>
-<tr class="memdesc:a227f2866c313806a0650b122135274f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the instances associated with years for the bbob-biobj suite.  <a href="#a227f2866c313806a0650b122135274f6">More...</a><br /></td></tr>
-<tr class="separator:a227f2866c313806a0650b122135274f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44b8137e7dcba9d00fb1b99da7cea921"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#a44b8137e7dcba9d00fb1b99da7cea921">suite_biobj_get_problem</a> (<a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
+<tr class="memitem:a71f5716e1d82e996993795b4cc727a0b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#a71f5716e1d82e996993795b4cc727a0b">suite_biobj_initialize</a> (void)</td></tr>
+<tr class="memdesc:a71f5716e1d82e996993795b4cc727a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dimensions and default instances for the bbob-biobj suite.  <a href="#a71f5716e1d82e996993795b4cc727a0b">More...</a><br /></td></tr>
+<tr class="separator:a71f5716e1d82e996993795b4cc727a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc996be6014cc1379a6106547a19f21"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#accc996be6014cc1379a6106547a19f21">suite_biobj_get_instances_by_year</a> (const int year)</td></tr>
+<tr class="memdesc:accc996be6014cc1379a6106547a19f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the instances associated with years for the bbob-biobj suite.  <a href="#accc996be6014cc1379a6106547a19f21">More...</a><br /></td></tr>
+<tr class="separator:accc996be6014cc1379a6106547a19f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44b8137e7dcba9d00fb1b99da7cea921"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#a44b8137e7dcba9d00fb1b99da7cea921">suite_biobj_get_problem</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
 <tr class="memdesc:a44b8137e7dcba9d00fb1b99da7cea921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the problem from the bbob-biobj suite that corresponds to the given parameters.  <a href="#a44b8137e7dcba9d00fb1b99da7cea921">More...</a><br /></td></tr>
 <tr class="separator:a44b8137e7dcba9d00fb1b99da7cea921"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a706bf77ab876859a594b4bc5426bd204"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__biobj_8c.html#a706bf77ab876859a594b4bc5426bd204">suite_biobj_get_best_value</a> (const char *indicator_name, const char *key)</td></tr>
@@ -156,7 +156,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a>* coco_suite_allocate </td>
+          <td class="memname">static <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a>* coco_suite_allocate </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>suite_name</em>, </td>
@@ -197,32 +197,6 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a25c64ad090d2c5ac4900c31305fac986"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a>* suite_biobj_allocate </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the dimensions and default instances for the bbob-biobj suite. </p>
 
 </div>
 </div>
@@ -288,7 +262,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a227f2866c313806a0650b122135274f6"></a>
+<a class="anchor" id="accc996be6014cc1379a6106547a19f21"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -296,7 +270,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static char* suite_biobj_get_instances_by_year </td>
+          <td class="memname">static const char* suite_biobj_get_instances_by_year </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>year</em></td><td>)</td>
@@ -324,7 +298,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static size_t suite_biobj_get_new_instance </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em>, </td>
         </tr>
         <tr>
@@ -377,9 +351,9 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="coco_8h.html#ab37f586e1b6b40ac42d4fe8aeb998453">coco_problem_t</a>* suite_biobj_get_problem </td>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* suite_biobj_get_problem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#af2416b0deaf9c04e05663197c96b53f5">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em>, </td>
         </tr>
         <tr>
@@ -428,6 +402,32 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The problem that corresponds to the given parameters. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a71f5716e1d82e996993795b4cc727a0b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a>* suite_biobj_initialize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the dimensions and default instances for the bbob-biobj suite. </p>
 
 </div>
 </div>

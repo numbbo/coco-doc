@@ -19,6 +19,5 @@ var searchData=
   ['old_5ffree_5fproblem',['old_free_problem',['../structf__gallagher__data__t.html#aeaa3e6a4c6a05ba658b7bd7160e8b46c',1,'f_gallagher_data_t::old_free_problem()'],['../structf__lunacek__bi__rastrigin__data__t.html#aeaa3e6a4c6a05ba658b7bd7160e8b46c',1,'f_lunacek_bi_rastrigin_data_t::old_free_problem()'],['../structtransform__vars__shift__data__t.html#aeaa3e6a4c6a05ba658b7bd7160e8b46c',1,'transform_vars_shift_data_t::old_free_problem()'],['../structtransform__vars__x__hat__data__t.html#aeaa3e6a4c6a05ba658b7bd7160e8b46c',1,'transform_vars_x_hat_data_t::old_free_problem()'],['../structtransform__vars__z__hat__data__t.html#aeaa3e6a4c6a05ba658b7bd7160e8b46c',1,'transform_vars_z_hat_data_t::old_free_problem()']]],
   ['optimal_5ffvalue',['optimal_fvalue',['../structlogger__bbob__data__t.html#a36062ae1b535b56d0492d774f006d4bf',1,'logger_bbob_data_t']]],
   ['oscillated_5fx',['oscillated_x',['../structtransform__vars__oscillate__data__t.html#a08837da31a79f6afc51bd73dd6294056',1,'transform_vars_oscillate_data_t']]],
-  ['output_5ffolder',['output_folder',['../structcoco__observer.html#a2ee9ef74c0b8e21d86c8b32509da9302',1,'coco_observer']]],
   ['overall_5fvalue',['overall_value',['../structlogger__biobj__indicator__t.html#aa7cad476b2f3c8de9f6e050f3530ad47',1,'logger_biobj_indicator_t']]]
 ];

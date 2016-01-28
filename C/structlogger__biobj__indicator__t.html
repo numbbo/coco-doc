@@ -104,9 +104,12 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a5ac083a645d964373f022d03df4849c8"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__indicator__t.html#a5ac083a645d964373f022d03df4849c8">name</a></td></tr>
 <tr class="memdesc:a5ac083a645d964373f022d03df4849c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the indicator used for identification and the output.  <a href="#a5ac083a645d964373f022d03df4849c8">More...</a><br /></td></tr>
 <tr class="separator:a5ac083a645d964373f022d03df4849c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab936051f5aaca44c6c3c41dee0d19c36"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__indicator__t.html#ab936051f5aaca44c6c3c41dee0d19c36">log_file</a></td></tr>
-<tr class="memdesc:ab936051f5aaca44c6c3c41dee0d19c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">File for logging indicator values at target hits.  <a href="#ab936051f5aaca44c6c3c41dee0d19c36">More...</a><br /></td></tr>
-<tr class="separator:ab936051f5aaca44c6c3c41dee0d19c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2320e45b08ef8ae1418719cf896de795"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__indicator__t.html#a2320e45b08ef8ae1418719cf896de795">dat_file</a></td></tr>
+<tr class="memdesc:a2320e45b08ef8ae1418719cf896de795"><td class="mdescLeft">&#160;</td><td class="mdescRight">File for logging indicator values at predefined values.  <a href="#a2320e45b08ef8ae1418719cf896de795">More...</a><br /></td></tr>
+<tr class="separator:a2320e45b08ef8ae1418719cf896de795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05a7062eb1c2b5e5fa2a507f3473aa2"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__indicator__t.html#af05a7062eb1c2b5e5fa2a507f3473aa2">tdat_file</a></td></tr>
+<tr class="memdesc:af05a7062eb1c2b5e5fa2a507f3473aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">File for logging indicator values at predefined evaluations.  <a href="#af05a7062eb1c2b5e5fa2a507f3473aa2">More...</a><br /></td></tr>
+<tr class="separator:af05a7062eb1c2b5e5fa2a507f3473aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80a54c0143d1d97ac20972250ffb58b3"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__indicator__t.html#a80a54c0143d1d97ac20972250ffb58b3">info_file</a></td></tr>
 <tr class="memdesc:a80a54c0143d1d97ac20972250ffb58b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">File for logging summary information on algorithm performance.  <a href="#a80a54c0143d1d97ac20972250ffb58b3">More...</a><br /></td></tr>
 <tr class="separator:a80a54c0143d1d97ac20972250ffb58b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,6 +180,20 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2320e45b08ef8ae1418719cf896de795"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* dat_file</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>File for logging indicator values at predefined values. </p>
+
+</div>
+</div>
 <a class="anchor" id="a80a54c0143d1d97ac20972250ffb58b3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -188,20 +205,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>File for logging summary information on algorithm performance. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab936051f5aaca44c6c3c41dee0d19c36"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">FILE* log_file</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>File for logging indicator values at target hits. </p>
 
 </div>
 </div>
@@ -272,6 +275,20 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether the target was hit in the latest evaluation. </p>
+
+</div>
+</div>
+<a class="anchor" id="af05a7062eb1c2b5e5fa2a507f3473aa2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* tdat_file</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>File for logging indicator values at predefined evaluations. </p>
 
 </div>
 </div>
