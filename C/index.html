@@ -140,7 +140,7 @@ observer = coco_observer("bbob-biobj", observer_options);
 <h3>Observer parameters <a class="anchor" id="observer-parameters"></a></h3>
 <p>The observer controls the logging that is performed within the benchmark. Some observer parameters are general, while others are specific to the chosen observer.</p>
 <p>Possible keys and values for the general <code>observer_options</code> are:</p><ul>
-<li><code>result_folder: NAME</code>, determines the output folder. If the folder with the given name already exists, first NAME_001 will be tried, then NAME_002 and so on. The default value is "results".</li>
+<li><code>result_folder: NAME</code>, determines the folder within the "exdata" folder into which the results will be output. If the folder with the given name already exists, first NAME_001 will be tried, then NAME_002 and so on. The default value is "default".</li>
 <li><code>algorithm_name: NAME</code>, where <code>NAME</code> is a short name of the algorithm that will be used in plots (no spaces are allowed). The default value is "ALG".</li>
 <li><code>algorithm_info: STRING</code> stores the description of the algorithm. If it contains spaces, it must be surrounded by double quotes. The default value is "" (no description).</li>
 <li><code>precision_x: VALUE</code> defines the precision used when outputting variables and corresponds to the number of digits to be printed after the decimal point. The default value is 8.</li>
