@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mo_5fnumber_5fof_5ftargets',['MO_NUMBER_OF_TARGETS',['../mo__targets_8c.html#a03cccb2719d2db32c250abca901b177f',1,'mo_targets.c']]]
+  ['logger_5fbiobj_5fnumber_5fof_5findicators',['LOGGER_BIOBJ_NUMBER_OF_INDICATORS',['../logger__biobj_8c.html#abd9abc1d315bd613942dbe8855f11b7c',1,'logger_biobj.c']]]
 ];

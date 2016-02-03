@@ -5,8 +5,5 @@ var searchData=
   ['mo_5fget_5fdistance_5fto_5froi',['mo_get_distance_to_ROI',['../mo__utilities_8c.html#a37432ae8569214ca61ea9ef6e3dbd13f',1,'mo_utilities.c']]],
   ['mo_5fget_5fdominance',['mo_get_dominance',['../mo__utilities_8c.html#abdc6dfb57eb6921433dedf209d64dfaf',1,'mo_utilities.c']]],
   ['mo_5fget_5fnorm',['mo_get_norm',['../mo__utilities_8c.html#ac4ff7557b4b78d0398b7d17a69fe8a20',1,'mo_utilities.c']]],
-  ['mo_5fnumber_5fof_5ftargets',['MO_NUMBER_OF_TARGETS',['../mo__targets_8c.html#a03cccb2719d2db32c250abca901b177f',1,'mo_targets.c']]],
-  ['mo_5frelateive_5ftarget_5fvalues',['mo_relateive_target_values',['../mo__targets_8c.html#af7723aa29d1515ef154bba8b5f0f9223',1,'mo_targets.c']]],
-  ['mo_5ftargets_2ec',['mo_targets.c',['../mo__targets_8c.html',1,'']]],
   ['mo_5futilities_2ec',['mo_utilities.c',['../mo__utilities_8c.html',1,'']]]
 ];

@@ -94,10 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">observer_biobj.c File Reference</div>  </div>
 </div><!--header-->
@@ -115,12 +113,6 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structobserver__biobj__data__t.html">observer_biobj_data_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bbob-biobj observer data type.  <a href="structobserver__biobj__data__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:adf30f63a6cfdb3873ff069238c48c45d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#adf30f63a6cfdb3873ff069238c48c45d">OBSERVER_BIOBJ_NUMBER_OF_INDICATORS</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:adf30f63a6cfdb3873ff069238c48c45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of implemented indicators.  <a href="#adf30f63a6cfdb3873ff069238c48c45d">More...</a><br /></td></tr>
-<tr class="separator:adf30f63a6cfdb3873ff069238c48c45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -144,31 +136,10 @@ Functions</h2></td></tr>
 <tr class="memitem:acca6899355902a7bfc5406254bff540c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#acca6899355902a7bfc5406254bff540c">observer_biobj</a> (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, const char *options)</td></tr>
 <tr class="memdesc:acca6899355902a7bfc5406254bff540c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the bi-objective observer.  <a href="#acca6899355902a7bfc5406254bff540c">More...</a><br /></td></tr>
 <tr class="separator:acca6899355902a7bfc5406254bff540c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a167a07fd15995d2d259763f95a2dfdf8"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#a167a07fd15995d2d259763f95a2dfdf8">observer_biobj_indicators</a> [<a class="el" href="observer__biobj_8c.html#adf30f63a6cfdb3873ff069238c48c45d">OBSERVER_BIOBJ_NUMBER_OF_INDICATORS</a>] = { &quot;hyp&quot; }</td></tr>
-<tr class="memdesc:a167a07fd15995d2d259763f95a2dfdf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Names of implemented indicators.  <a href="#a167a07fd15995d2d259763f95a2dfdf8">More...</a><br /></td></tr>
-<tr class="separator:a167a07fd15995d2d259763f95a2dfdf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the bbob-biobj observer. </p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="adf30f63a6cfdb3873ff069238c48c45d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OBSERVER_BIOBJ_NUMBER_OF_INDICATORS&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Number of implemented indicators. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a class="anchor" id="af7d3edad14e9bc80fda6ec29119888bd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -281,31 +252,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes the bi-objective observer. </p>
-<p>Possible options:</p><ul>
-<li>log_nondominated : none (don't log nondominated solutions)</li>
-<li>log_nondominated : final (log only the final nondominated solutions)</li>
-<li>log_nondominated : all (log every solution that is nondominated at creation time; default value)</li>
-<li>log_decision_variables : none (don't output decision variables)</li>
-<li>log_decision_variables : log_dim (output decision variables only for dimensions lower or equal to 5; default value)</li>
-<li>log_decision_variables : all (output all decision variables)</li>
-<li>compute_indicators : 0 / 1 (whether to compute and output performance indicators; default value is 1)</li>
-<li>produce_all_data: 0 / 1 (whether to produce all data; if set to 1, overwrites other options and is equivalent to setting log_nondominated to all, log_decision_variables to log_dim and compute_indicators to 1; if set to 0, it does not change the values of other options; default value is 0) </li>
+<p>Possible options:</p>
+<ul>
+<li>"log_nondominated: STRING" determines which nondominated solutions to log. STRING can take on the values "none" (don't log nondominated solutions), "final" (log only the final nondominated solutions) and "all" (log every solution that is nondominated at creation time). The default value is "all".</li>
+<li>"log_decision_variables: STRING" determines whether the decision variables are to be logged in addition to the objective variables in the output of nondominated solutions. STRING can take on the values "none" (don't output decision variables), "low_dim"(output decision variables only for dimensions lower or equal to 5) and "all" (output all decision variables). The default value is "low_dim".</li>
+<li>"compute_indicators: VALUE" determines whether to compute and output performance indicators (1) or not (0). The default value is 1.</li>
+<li>"produce_all_data: VALUE" determines whether to produce all data required for the workshop. If set to 1, it overwrites some other options and is equivalent to setting "log_nondominated: all", "log_decision_variables: low_dim" and "compute_indicators: 1". If set to 0, it does not change the values of the other options. The default value is 0. </li>
 </ul>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a167a07fd15995d2d259763f95a2dfdf8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* observer_biobj_indicators[<a class="el" href="observer__biobj_8c.html#adf30f63a6cfdb3873ff069238c48c45d">OBSERVER_BIOBJ_NUMBER_OF_INDICATORS</a>] = { &quot;hyp&quot; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Names of implemented indicators. </p>
 
 </div>
 </div>

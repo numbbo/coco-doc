@@ -122,18 +122,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a81f05f402ad21f47006c2385e2e47ced"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a81f05f402ad21f47006c2385e2e47ced">coco_suite_intialize</a> (const char *suite_name)</td></tr>
 <tr class="memdesc:a81f05f402ad21f47006c2385e2e47ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the initializer of the given suite.  <a href="#a81f05f402ad21f47006c2385e2e47ced">More...</a><br /></td></tr>
 <tr class="separator:a81f05f402ad21f47006c2385e2e47ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700d0c962901f5c799d9ba6fd704f242"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a700d0c962901f5c799d9ba6fd704f242">coco_suite_get_instances_by_year</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const int year)</td></tr>
-<tr class="memdesc:a700d0c962901f5c799d9ba6fd704f242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the function that sets the instanced by year for the given suite.  <a href="#a700d0c962901f5c799d9ba6fd704f242">More...</a><br /></td></tr>
-<tr class="separator:a700d0c962901f5c799d9ba6fd704f242"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a807a9e26d5d60bebac3d1799e9be097e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a807a9e26d5d60bebac3d1799e9be097e">coco_suite_get_problem_from_indices</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, size_t function_idx, size_t dimension_idx, size_t instance_idx)</td></tr>
-<tr class="memdesc:a807a9e26d5d60bebac3d1799e9be097e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the function that returns the problem corresponding to the given suite, function index, dimension index and instance index.  <a href="#a807a9e26d5d60bebac3d1799e9be097e">More...</a><br /></td></tr>
-<tr class="separator:a807a9e26d5d60bebac3d1799e9be097e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdef24d894feb478f2a8b4a22f183881"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#abdef24d894feb478f2a8b4a22f183881">coco_suite_get_instances_by_year</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const int year)</td></tr>
+<tr class="memdesc:abdef24d894feb478f2a8b4a22f183881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the function that sets the instanced by year for the given suite.  <a href="#abdef24d894feb478f2a8b4a22f183881">More...</a><br /></td></tr>
+<tr class="separator:abdef24d894feb478f2a8b4a22f183881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ba35533f22304d27fc88925d12e44b8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a8ba35533f22304d27fc88925d12e44b8">coco_suite_get_problem_from_indices</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
+<tr class="memdesc:a8ba35533f22304d27fc88925d12e44b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the function that returns the problem corresponding to the given suite, function index, dimension index and instance index.  <a href="#a8ba35533f22304d27fc88925d12e44b8">More...</a><br /></td></tr>
+<tr class="separator:a8ba35533f22304d27fc88925d12e44b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b47fb18f2f9cd8f1c74cc08e29b920a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a5b47fb18f2f9cd8f1c74cc08e29b920a">coco_suite_allocate</a> (const char *suite_name, const size_t number_of_functions, const size_t number_of_dimensions, const size_t *dimensions, const char *default_instances)</td></tr>
 <tr class="memdesc:a5b47fb18f2f9cd8f1c74cc08e29b920a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the space for a coco_suite_t instance.  <a href="#a5b47fb18f2f9cd8f1c74cc08e29b920a">More...</a><br /></td></tr>
 <tr class="separator:a5b47fb18f2f9cd8f1c74cc08e29b920a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50cdbde6192cc1b4a438638d53b1d435"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a50cdbde6192cc1b4a438638d53b1d435">coco_suite_count_numbers</a> (const size_t *numbers, const char *name)</td></tr>
-<tr class="memdesc:a50cdbde6192cc1b4a438638d53b1d435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of positive numbers pointed to by numbers (the count stops when the first 0 is encountered).  <a href="#a50cdbde6192cc1b4a438638d53b1d435">More...</a><br /></td></tr>
-<tr class="separator:a50cdbde6192cc1b4a438638d53b1d435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af84c78393f07781d720c6e9a496d796b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#af84c78393f07781d720c6e9a496d796b">coco_suite_set_instance</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t *instance_numbers)</td></tr>
 <tr class="memdesc:af84c78393f07781d720c6e9a496d796b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the suite instance to the given instance_numbers.  <a href="#af84c78393f07781d720c6e9a496d796b">More...</a><br /></td></tr>
 <tr class="separator:af84c78393f07781d720c6e9a496d796b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,30 +140,27 @@ Functions</h2></td></tr>
 <tr class="memitem:afe2aae43806fcc21b1cf0e070efb9ed0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#afe2aae43806fcc21b1cf0e070efb9ed0">coco_suite_filter_dimensions</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t *dimension_numbers)</td></tr>
 <tr class="memdesc:afe2aae43806fcc21b1cf0e070efb9ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters dimensions w.r.t. the given dimension_numbers.  <a href="#afe2aae43806fcc21b1cf0e070efb9ed0">More...</a><br /></td></tr>
 <tr class="separator:afe2aae43806fcc21b1cf0e070efb9ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adef4adab578dc3303dee388a11de6df7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#adef4adab578dc3303dee388a11de6df7">coco_suite_get_function_from_function_index</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, size_t function_idx)</td></tr>
-<tr class="memdesc:adef4adab578dc3303dee388a11de6df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the function number in the suite in position function_idx (counting from 0).  <a href="#adef4adab578dc3303dee388a11de6df7">More...</a><br /></td></tr>
-<tr class="separator:adef4adab578dc3303dee388a11de6df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af54ec1bf5292d2bb2b3afc89a2612213"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#af54ec1bf5292d2bb2b3afc89a2612213">coco_suite_get_dimension_from_dimension_index</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, size_t dimension_idx)</td></tr>
-<tr class="memdesc:af54ec1bf5292d2bb2b3afc89a2612213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension number in the suite in position dimension_idx (counting from 0).  <a href="#af54ec1bf5292d2bb2b3afc89a2612213">More...</a><br /></td></tr>
-<tr class="separator:af54ec1bf5292d2bb2b3afc89a2612213"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8c06421ad1e86e7fa119abbe44af19b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#ad8c06421ad1e86e7fa119abbe44af19b">coco_suite_get_instance_from_instance_index</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, size_t instance_idx)</td></tr>
-<tr class="memdesc:ad8c06421ad1e86e7fa119abbe44af19b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instance number in the suite in position instance_idx (counting from 0).  <a href="#ad8c06421ad1e86e7fa119abbe44af19b">More...</a><br /></td></tr>
-<tr class="separator:ad8c06421ad1e86e7fa119abbe44af19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a348c0b075d764eb9f4c71d49a701a12b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a348c0b075d764eb9f4c71d49a701a12b">coco_suite_get_function_from_function_index</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t function_idx)</td></tr>
+<tr class="memdesc:a348c0b075d764eb9f4c71d49a701a12b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the function number in the suite in position function_idx (counting from 0).  <a href="#a348c0b075d764eb9f4c71d49a701a12b">More...</a><br /></td></tr>
+<tr class="separator:a348c0b075d764eb9f4c71d49a701a12b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7bae708066f72308be1c14760db200d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#ab7bae708066f72308be1c14760db200d">coco_suite_get_dimension_from_dimension_index</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t dimension_idx)</td></tr>
+<tr class="memdesc:ab7bae708066f72308be1c14760db200d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension number in the suite in position dimension_idx (counting from 0).  <a href="#ab7bae708066f72308be1c14760db200d">More...</a><br /></td></tr>
+<tr class="separator:ab7bae708066f72308be1c14760db200d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b76b849d2474e3c0067b35e7f89fb0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#ae5b76b849d2474e3c0067b35e7f89fb0">coco_suite_get_instance_from_instance_index</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t instance_idx)</td></tr>
+<tr class="memdesc:ae5b76b849d2474e3c0067b35e7f89fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instance number in the suite in position instance_idx (counting from 0).  <a href="#ae5b76b849d2474e3c0067b35e7f89fb0">More...</a><br /></td></tr>
+<tr class="separator:ae5b76b849d2474e3c0067b35e7f89fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbb63c0ca4af2e1a86b78e58e9f2d352"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#adbb63c0ca4af2e1a86b78e58e9f2d352">coco_suite_free</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite)</td></tr>
 <tr class="memdesc:adbb63c0ca4af2e1a86b78e58e9f2d352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given suite.  <a href="#adbb63c0ca4af2e1a86b78e58e9f2d352">More...</a><br /></td></tr>
 <tr class="separator:adbb63c0ca4af2e1a86b78e58e9f2d352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3146257b90351081d7ccfb97fe89f41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#af3146257b90351081d7ccfb97fe89f41">coco_suite_get_problem</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, size_t problem_index)</td></tr>
-<tr class="memdesc:af3146257b90351081d7ccfb97fe89f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the problem of the suite defined by problem_index.  <a href="#af3146257b90351081d7ccfb97fe89f41">More...</a><br /></td></tr>
-<tr class="separator:af3146257b90351081d7ccfb97fe89f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade114812e9775176609c0a28ad73a7f9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#ade114812e9775176609c0a28ad73a7f9">coco_suite_get_number_of_problems</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite)</td></tr>
-<tr class="memdesc:ade114812e9775176609c0a28ad73a7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of problems in the given suite.  <a href="#ade114812e9775176609c0a28ad73a7f9">More...</a><br /></td></tr>
-<tr class="separator:ade114812e9775176609c0a28ad73a7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5d8ad42424826cb143ea33e112e230c"><td class="memItemLeft" align="right" valign="top">static size_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#ac5d8ad42424826cb143ea33e112e230c">coco_suite_parse_ranges</a> (const char *string, const char *name, size_t min, size_t max)</td></tr>
-<tr class="memdesc:ac5d8ad42424826cb143ea33e112e230c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the numbers defined by the ranges.  <a href="#ac5d8ad42424826cb143ea33e112e230c">More...</a><br /></td></tr>
-<tr class="separator:ac5d8ad42424826cb143ea33e112e230c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c6fe6ea91f8a0dacb6523680280e8f6"><td class="memItemLeft" align="right" valign="top">static size_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a3c6fe6ea91f8a0dacb6523680280e8f6">coco_suite_get_instance_indices</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const char *suite_instance)</td></tr>
-<tr class="memdesc:a3c6fe6ea91f8a0dacb6523680280e8f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instances read from either a "year: YEAR" or "instances: NUMBERS" string.  <a href="#a3c6fe6ea91f8a0dacb6523680280e8f6">More...</a><br /></td></tr>
-<tr class="separator:a3c6fe6ea91f8a0dacb6523680280e8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8456ba2ae830c1e4c15d39922ec18d18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a8456ba2ae830c1e4c15d39922ec18d18">coco_suite_get_problem</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t problem_index)</td></tr>
+<tr class="memdesc:a8456ba2ae830c1e4c15d39922ec18d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the problem of the suite defined by problem_index.  <a href="#a8456ba2ae830c1e4c15d39922ec18d18">More...</a><br /></td></tr>
+<tr class="separator:a8456ba2ae830c1e4c15d39922ec18d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e34e34ffc1d99f1e9247426151741c5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a3e34e34ffc1d99f1e9247426151741c5">coco_suite_get_number_of_problems</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite)</td></tr>
+<tr class="memdesc:a3e34e34ffc1d99f1e9247426151741c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of problems in the given suite.  <a href="#a3e34e34ffc1d99f1e9247426151741c5">More...</a><br /></td></tr>
+<tr class="separator:a3e34e34ffc1d99f1e9247426151741c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86323d6e7a90ddf57b01b6e4645caae9"><td class="memItemLeft" align="right" valign="top">static size_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a86323d6e7a90ddf57b01b6e4645caae9">coco_suite_get_instance_indices</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const char *suite_instance)</td></tr>
+<tr class="memdesc:a86323d6e7a90ddf57b01b6e4645caae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the instances read from either a "year: YEAR" or "instances: NUMBERS" string.  <a href="#a86323d6e7a90ddf57b01b6e4645caae9">More...</a><br /></td></tr>
+<tr class="separator:a86323d6e7a90ddf57b01b6e4645caae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9431f82b2c9a4fed1281719027717377"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a9431f82b2c9a4fed1281719027717377">coco_suite_is_next_item_found</a> (const size_t *items, const size_t number_of_items, long *current_item_id)</td></tr>
 <tr class="memdesc:a9431f82b2c9a4fed1281719027717377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates through the items from the current_item_id position on in search for the next positive item.  <a href="#a9431f82b2c9a4fed1281719027717377">More...</a><br /></td></tr>
 <tr class="separator:a9431f82b2c9a4fed1281719027717377"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,12 +179,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a422cee3f06f4b2524234102f75306fe7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a422cee3f06f4b2524234102f75306fe7">coco_suite_get_next_problem</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer)</td></tr>
 <tr class="memdesc:a422cee3f06f4b2524234102f75306fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next (observed) problem of the suite or NULL if there is no next problem left.  <a href="#a422cee3f06f4b2524234102f75306fe7">More...</a><br /></td></tr>
 <tr class="separator:a422cee3f06f4b2524234102f75306fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b9a2edcb4fdb3e32e5a56a80e21485d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a5b9a2edcb4fdb3e32e5a56a80e21485d">coco_suite_encode_problem_index</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
-<tr class="memdesc:a5b9a2edcb4fdb3e32e5a56a80e21485d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the index of the problem in the suite that corresponds to the given function, dimension and instance indexes.  <a href="#a5b9a2edcb4fdb3e32e5a56a80e21485d">More...</a><br /></td></tr>
-<tr class="separator:a5b9a2edcb4fdb3e32e5a56a80e21485d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af28fb6c5141fb0a60b94d15e11e119b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#af28fb6c5141fb0a60b94d15e11e119b0">coco_suite_decode_problem_index</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t problem_index, size_t *function_idx, size_t *dimension_idx, size_t *instance_idx)</td></tr>
-<tr class="memdesc:af28fb6c5141fb0a60b94d15e11e119b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the function, dimension and instance indexes of the problem with problem_index in the given suite.  <a href="#af28fb6c5141fb0a60b94d15e11e119b0">More...</a><br /></td></tr>
-<tr class="separator:af28fb6c5141fb0a60b94d15e11e119b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56279a2384ad7255d0cc459c2d707284"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a56279a2384ad7255d0cc459c2d707284">coco_suite_encode_problem_index</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
+<tr class="memdesc:a56279a2384ad7255d0cc459c2d707284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the index of the problem in the suite that corresponds to the given function, dimension and instance indexes.  <a href="#a56279a2384ad7255d0cc459c2d707284">More...</a><br /></td></tr>
+<tr class="separator:a56279a2384ad7255d0cc459c2d707284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba31042ce1fc719ad2b55e334bc56f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#afba31042ce1fc719ad2b55e334bc56f2">coco_suite_decode_problem_index</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t problem_index, size_t *function_idx, size_t *dimension_idx, size_t *instance_idx)</td></tr>
+<tr class="memdesc:afba31042ce1fc719ad2b55e334bc56f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the function, dimension and instance indexes of the problem with problem_index in the given suite.  <a href="#afba31042ce1fc719ad2b55e334bc56f2">More...</a><br /></td></tr>
+<tr class="separator:afba31042ce1fc719ad2b55e334bc56f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions of functions regarding COCO suites. </p>
@@ -326,51 +320,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a50cdbde6192cc1b4a438638d53b1d435"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static size_t coco_suite_count_numbers </td>
-          <td>(</td>
-          <td class="paramtype">const size_t *&#160;</td>
-          <td class="paramname"><em>numbers</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the number of positive numbers pointed to by numbers (the count stops when the first 0 is encountered). </p>
-<p>If there are more than COCO_MAX_INSTANCES numbers, a coco_error is raised. The name argument is used only to provide more informative output in case of any problems. </p>
-
-</div>
-</div>
-<a class="anchor" id="af28fb6c5141fb0a60b94d15e11e119b0"></a>
+<a class="anchor" id="afba31042ce1fc719ad2b55e334bc56f2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void coco_suite_decode_problem_index </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em>, </td>
         </tr>
         <tr>
@@ -419,14 +376,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5b9a2edcb4fdb3e32e5a56a80e21485d"></a>
+<a class="anchor" id="a56279a2384ad7255d0cc459c2d707284"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">size_t coco_suite_encode_problem_index </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em>, </td>
         </tr>
         <tr>
@@ -573,20 +530,20 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af54ec1bf5292d2bb2b3afc89a2612213"></a>
+<a class="anchor" id="ab7bae708066f72308be1c14760db200d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">size_t coco_suite_get_dimension_from_dimension_index </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>dimension_idx</em>&#160;</td>
         </tr>
         <tr>
@@ -609,20 +566,20 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adef4adab578dc3303dee388a11de6df7"></a>
+<a class="anchor" id="a348c0b075d764eb9f4c71d49a701a12b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">size_t coco_suite_get_function_from_function_index </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>function_idx</em>&#160;</td>
         </tr>
         <tr>
@@ -645,20 +602,20 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad8c06421ad1e86e7fa119abbe44af19b"></a>
+<a class="anchor" id="ae5b76b849d2474e3c0067b35e7f89fb0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">size_t coco_suite_get_instance_from_instance_index </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>instance_idx</em>&#160;</td>
         </tr>
         <tr>
@@ -681,7 +638,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3c6fe6ea91f8a0dacb6523680280e8f6"></a>
+<a class="anchor" id="a86323d6e7a90ddf57b01b6e4645caae9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -691,7 +648,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static size_t* coco_suite_get_instance_indices </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em>, </td>
         </tr>
         <tr>
@@ -718,7 +675,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a700d0c962901f5c799d9ba6fd704f242"></a>
+<a class="anchor" id="abdef24d894feb478f2a8b4a22f183881"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -728,7 +685,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static const char* coco_suite_get_instances_by_year </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em>, </td>
         </tr>
         <tr>
@@ -792,14 +749,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ade114812e9775176609c0a28ad73a7f9"></a>
+<a class="anchor" id="a3e34e34ffc1d99f1e9247426151741c5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">size_t coco_suite_get_number_of_problems </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em></td><td>)</td>
           <td></td>
         </tr>
@@ -818,7 +775,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af3146257b90351081d7ccfb97fe89f41"></a>
+<a class="anchor" id="a8456ba2ae830c1e4c15d39922ec18d18"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -831,7 +788,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>problem_index</em>&#160;</td>
         </tr>
         <tr>
@@ -855,7 +812,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a807a9e26d5d60bebac3d1799e9be097e"></a>
+<a class="anchor" id="a8ba35533f22304d27fc88925d12e44b8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -871,19 +828,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>function_idx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>dimension_idx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>instance_idx</em>&#160;</td>
         </tr>
         <tr>
@@ -1052,55 +1009,6 @@ Functions</h2></td></tr>
 
 <p>Iterates through the items from the current_item_id position on in search for the next positive item. </p>
 <p>If such an item is found, current_item_id points to this item and the method returns 1. If such an item cannot be found, current_item_id points to the first positive item and the method returns 0. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac5d8ad42424826cb143ea33e112e230c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static size_t* coco_suite_parse_ranges </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>string</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the numbers defined by the ranges. </p>
-<p>Reads ranges from a string of positive ranges separated by commas. For example: "-3,5-6,8-". Returns the numbers that are defined by the ranges if min and max are used as their extremes. If the ranges with open beginning/end are not allowed, use 0 as min/max. The returned string has an appended 0 to mark its end. A maximum of COCO_MAX_INSTANCES values is returned. If there is a problem with one of the ranges, the parsing stops and the current result is returned. The memory of the returned object needs to be freed by the caller. </p>
 
 </div>
 </div>

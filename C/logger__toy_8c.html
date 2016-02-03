@@ -118,6 +118,9 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad8021d4f20a11aa8a37c1ddcf6e9da5b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__toy_8c.html#ad8021d4f20a11aa8a37c1ddcf6e9da5b">logger_toy_free</a> (void *stuff)</td></tr>
+<tr class="memdesc:ad8021d4f20a11aa8a37c1ddcf6e9da5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory of the given toy logger.  <a href="#ad8021d4f20a11aa8a37c1ddcf6e9da5b">More...</a><br /></td></tr>
+<tr class="separator:ad8021d4f20a11aa8a37c1ddcf6e9da5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e3b05bb7ccb0fbc7be34f76e8f7dd57"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__toy_8c.html#a1e3b05bb7ccb0fbc7be34f76e8f7dd57">logger_toy_evaluate</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
 <tr class="memdesc:a1e3b05bb7ccb0fbc7be34f76e8f7dd57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the function, increases the number of evaluations and outputs information based on the targets that have been hit.  <a href="#a1e3b05bb7ccb0fbc7be34f76e8f7dd57">More...</a><br /></td></tr>
 <tr class="separator:a1e3b05bb7ccb0fbc7be34f76e8f7dd57"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,7 +130,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the toy logger. </p>
-<p>Logs the evaluation number and function value each time a target has been hit. </p>
+<p>Logs the evaluation number, function value the target hit and all the variables each time a target has been hit. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a5100bcb34a8dc0d3910c2d51e19db716"></a>
 <div class="memitem">
@@ -204,6 +207,32 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Evaluates the function, increases the number of evaluations and outputs information based on the targets that have been hit. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad8021d4f20a11aa8a37c1ddcf6e9da5b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void logger_toy_free </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>stuff</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Frees the memory of the given toy logger. </p>
 
 </div>
 </div>

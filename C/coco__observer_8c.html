@@ -93,8 +93,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">coco_observer.c File Reference</div>  </div>
 </div><!--header-->
@@ -104,18 +105,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__internal_8h_source.html">coco_internal.h</a>&quot;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
+<code>#include &lt;float.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="logger__bbob_8c.html">logger_bbob.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger__biobj_8c.html">logger_biobj.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger__toy_8c.html">logger_toy.c</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__observer__targets__t.html">coco_observer_targets_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for triggers based on target values.  <a href="structcoco__observer__targets__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for triggers based on numbers of evaluations.  <a href="structcoco__observer__evaluations__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ad48256c2324603b1f78e18ff0a705b5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#ad48256c2324603b1f78e18ff0a705b5e">COCO_MAX_EVALS_TO_LOG</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="memdesc:ad48256c2324603b1f78e18ff0a705b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of evaluations to trigger logging.  <a href="#ad48256c2324603b1f78e18ff0a705b5e">More...</a><br /></td></tr>
+<tr class="separator:ad48256c2324603b1f78e18ff0a705b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac9f1dae098136230a8c2b94c76ead51d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#ac9f1dae098136230a8c2b94c76ead51d">coco_observer_evaluation_to_log</a> (size_t evaluation_number, size_t dimension)</td></tr>
-<tr class="memdesc:ac9f1dae098136230a8c2b94c76ead51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the evaluation should be logged.  <a href="#ac9f1dae098136230a8c2b94c76ead51d">More...</a><br /></td></tr>
-<tr class="separator:ac9f1dae098136230a8c2b94c76ead51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1bc5366659356e05d72a89806f61730"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#af1bc5366659356e05d72a89806f61730">coco_observer_allocate</a> (const char *result_folder, const char *algorithm_name, const char *algorithm_info, const int precision_x, const int precision_f)</td></tr>
-<tr class="memdesc:af1bc5366659356e05d72a89806f61730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory for a coco_observer_t instance.  <a href="#af1bc5366659356e05d72a89806f61730">More...</a><br /></td></tr>
-<tr class="separator:af1bc5366659356e05d72a89806f61730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a36b0037255a7255bab8f72cc0d552"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a96a36b0037255a7255bab8f72cc0d552">coco_observer_allocate</a> (const char *result_folder, const char *algorithm_name, const char *algorithm_info, const size_t number_target_triggers, const double target_precision, const size_t number_evaluation_triggers, const char *base_evaluation_triggers, const int precision_x, const int precision_f)</td></tr>
+<tr class="memdesc:a96a36b0037255a7255bab8f72cc0d552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory for a coco_observer_t instance.  <a href="#a96a36b0037255a7255bab8f72cc0d552">More...</a><br /></td></tr>
+<tr class="separator:a96a36b0037255a7255bab8f72cc0d552"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01a11a7c64e03eb432eb8f13fceec0de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a01a11a7c64e03eb432eb8f13fceec0de">coco_observer_free</a> (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer)</td></tr>
 <tr class="memdesc:a01a11a7c64e03eb432eb8f13fceec0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given observer.  <a href="#a01a11a7c64e03eb432eb8f13fceec0de">More...</a><br /></td></tr>
 <tr class="separator:a01a11a7c64e03eb432eb8f13fceec0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,16 +141,49 @@ Functions</h2></td></tr>
 <tr class="memitem:af894effafadb5f75ecd3bb75843f8a3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#af894effafadb5f75ecd3bb75843f8a3e">coco_problem_add_observer</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer)</td></tr>
 <tr class="memdesc:af894effafadb5f75ecd3bb75843f8a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an observer to the given problem.  <a href="#af894effafadb5f75ecd3bb75843f8a3e">More...</a><br /></td></tr>
 <tr class="separator:af894effafadb5f75ecd3bb75843f8a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:af46183d106a2b1f37610f0ba3cc0059a"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#af46183d106a2b1f37610f0ba3cc0059a">coco_observer_always_log</a> [3] = {1, 2, 5}</td></tr>
-<tr class="memdesc:af46183d106a2b1f37610f0ba3cc0059a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A set of numbers from which the evaluations that should always be logged are computed.  <a href="#af46183d106a2b1f37610f0ba3cc0059a">More...</a><br /></td></tr>
-<tr class="separator:af46183d106a2b1f37610f0ba3cc0059a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methods regarding triggers based on target values</div></td></tr>
+<tr class="memitem:a4fdd05cce82ebcc91e275c870bb9f4ec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structcoco__observer__targets__t.html">coco_observer_targets_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a4fdd05cce82ebcc91e275c870bb9f4ec">coco_observer_targets</a> (const size_t number_of_targets, const double precision)</td></tr>
+<tr class="memdesc:a4fdd05cce82ebcc91e275c870bb9f4ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a structure containing information on targets.  <a href="#a4fdd05cce82ebcc91e275c870bb9f4ec">More...</a><br /></td></tr>
+<tr class="separator:a4fdd05cce82ebcc91e275c870bb9f4ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7da5e1a2dfd7dcbc03628741d6e1b6fe"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a7da5e1a2dfd7dcbc03628741d6e1b6fe">coco_observer_targets_trigger</a> (<a class="el" href="structcoco__observer__targets__t.html">coco_observer_targets_t</a> *targets, const double given_value)</td></tr>
+<tr class="memdesc:a7da5e1a2dfd7dcbc03628741d6e1b6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a structure containing information on targets.  <a href="#a7da5e1a2dfd7dcbc03628741d6e1b6fe">More...</a><br /></td></tr>
+<tr class="separator:a7da5e1a2dfd7dcbc03628741d6e1b6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methods regarding triggers based on numbers of evaluations.</div></td></tr>
+<tr class="memitem:a4eb3a60920c3ac730137ad4e794ccdff"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a4eb3a60920c3ac730137ad4e794ccdff">coco_observer_evaluations</a> (const char *base_evaluations, const size_t dimension)</td></tr>
+<tr class="memdesc:a4eb3a60920c3ac730137ad4e794ccdff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a structure containing information on triggers based on evaluation numbers.  <a href="#a4eb3a60920c3ac730137ad4e794ccdff">More...</a><br /></td></tr>
+<tr class="separator:a4eb3a60920c3ac730137ad4e794ccdff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537c9c74fbe292c031dcb2c9e1171c9d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a537c9c74fbe292c031dcb2c9e1171c9d">coco_observer_evaluations_trigger_first</a> (<a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a> *evaluations, const size_t evaluation_number)</td></tr>
+<tr class="memdesc:a537c9c74fbe292c031dcb2c9e1171c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes and returns whether the given evaluation number triggers the first condition of the logging based on the number of evaluations.  <a href="#a537c9c74fbe292c031dcb2c9e1171c9d">More...</a><br /></td></tr>
+<tr class="separator:a537c9c74fbe292c031dcb2c9e1171c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad02da20cbd5aa711bb9cdf4d1b4145c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#aad02da20cbd5aa711bb9cdf4d1b4145c">coco_observer_evaluations_trigger_second</a> (<a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a> *evaluations, const size_t evaluation_number)</td></tr>
+<tr class="memdesc:aad02da20cbd5aa711bb9cdf4d1b4145c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes and returns whether the given evaluation number triggers the second condition of the logging based on the number of evaluations.  <a href="#aad02da20cbd5aa711bb9cdf4d1b4145c">More...</a><br /></td></tr>
+<tr class="separator:aad02da20cbd5aa711bb9cdf4d1b4145c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a9401ce61d895ac058ea7fc665fcc7"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a71a9401ce61d895ac058ea7fc665fcc7">coco_observer_evaluations_trigger</a> (<a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a> *evaluations, const size_t evaluation_number)</td></tr>
+<tr class="memdesc:a71a9401ce61d895ac058ea7fc665fcc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if any of the two triggers based on the number of evaluations equal 1 and 0 otherwise.  <a href="#a71a9401ce61d895ac058ea7fc665fcc7">More...</a><br /></td></tr>
+<tr class="separator:a71a9401ce61d895ac058ea7fc665fcc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a634cc2215fcc35800f20aeb2e6b29c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a5a634cc2215fcc35800f20aeb2e6b29c">coco_observer_evaluations_free</a> (<a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a> *evaluations)</td></tr>
+<tr class="memdesc:a5a634cc2215fcc35800f20aeb2e6b29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given evaluations object.  <a href="#a5a634cc2215fcc35800f20aeb2e6b29c">More...</a><br /></td></tr>
+<tr class="separator:a5a634cc2215fcc35800f20aeb2e6b29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions of functions regarding COCO observers. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ad48256c2324603b1f78e18ff0a705b5e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COCO_MAX_EVALS_TO_LOG&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The maximum number of evaluations to trigger logging. </p>
+<dl class="section note"><dt>Note</dt><dd>This is not the maximal evaluation number to be logged, but the maximal number of times logging is triggered by the number of evaluations. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a000c4ab20f8dc9d358efb0d25c80b832"></a>
 <div class="memitem">
 <div class="memproto">
@@ -162,16 +211,20 @@ Variables</h2></td></tr>
 <p>Constructs a COCO observer. </p>
 <p>Currently, three observers are supported:</p><ul>
 <li>"bbob" is the observer for single-objective (both noisy and noiseless) problems with known optima, which creates *.info, *.dat, *.tdat and *.rdat files and logs the distance to the optimum.</li>
-<li>"bbob-biobj" is the observer for bi-objective problems, which creates *.info and *.dat files for the given indicators, as well as an archive folder with *.dat files containing nondominated solutions.</li>
+<li>"bbob-biobj" is the observer for bi-objective problems, which creates *.info, *.dat and *.tdat files for the given indicators, as well as an archive folder with *.adat files containing nondominated solutions.</li>
 <li>"toy" is a simple observer that logs when a target has been hit.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">observer_name</td><td>A string containing the name of the observer. Currently supported observer names are "bbob", "bbob-biobj", "toy". "no_observer", "" or NULL return NULL. </td></tr>
+    <tr><td class="paramname">observer_name</td><td>A string containing the name of the observer. Currently supported observer names are "bbob", "bbob-biobj", "toy". Strings "no_observer", "" or NULL return NULL. </td></tr>
     <tr><td class="paramname">observer_options</td><td>A string of pairs "key: value" used to pass the options to the observer. Some observer options are general, while others are specific to some observers. Here we list only the general options, see observer_bbob, observer_biobj and observer_toy for options of the specific observers.<ul>
 <li>"result_folder: NAME" determines the folder within the "exdata" folder into which the results will be output. If the folder with the given name already exists, first NAME_001 will be tried, then NAME_002 and so on. The default value is "default".</li>
 <li>"algorithm_name: NAME", where NAME is a short name of the algorithm that will be used in plots (no spaces are allowed). The default value is "ALG".</li>
 <li>"algorithm_info: STRING" stores the description of the algorithm. If it contains spaces, it must be surrounded by double quotes. The default value is "" (no description).</li>
+<li>"number_target_triggers: VALUE" defines the number of targets between each 10**i and 10**(i+1) (equally spaced in the logarithmic scale) that trigger logging. The default value is 100.</li>
+<li>"target_precision: VALUE" defines the precision used for targets (there are no targets for abs(values) &lt; target_precision). The default value is 1e-8.</li>
+<li>"number_evaluation_triggers: VALUE" defines the number of evaluations to be logged between each 10**i and 10**(i+1). The default value is 20.</li>
+<li>"base_evaluation_triggers: VALUES" defines the base evaluations used to produce an additional evaluation-based logging. The numbers of evaluations that trigger logging are every base_evaluation * dimension * (10**i). For example, if base_evaluation_triggers = "1,2,5", the logger will be triggered by evaluations dim*1, dim*2, dim*5, 10*dim*1, 10*dim*2, 10*dim*5, 100*dim*1, 100*dim*2, 100*dim*5, ... The default value is "1,2,5".</li>
 <li>"precision_x: VALUE" defines the precision used when outputting variables and corresponds to the number of digits to be printed after the decimal point. The default value is 8.</li>
 <li>precision_f: VALUE defines the precision used when outputting f values and corresponds to the number of digits to be printed after the decimal point. The default value is 15.</li>
 </ul>
@@ -183,7 +236,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af1bc5366659356e05d72a89806f61730"></a>
+<a class="anchor" id="a96a36b0037255a7255bab8f72cc0d552"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -207,6 +260,30 @@ Variables</h2></td></tr>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>algorithm_info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_target_triggers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>target_precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_evaluation_triggers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>base_evaluation_triggers</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -237,7 +314,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac9f1dae098136230a8c2b94c76ead51d"></a>
+<a class="anchor" id="a4eb3a60920c3ac730137ad4e794ccdff"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -245,15 +322,15 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int coco_observer_evaluation_to_log </td>
+          <td class="memname">static <a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a>* coco_observer_evaluations </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>evaluation_number</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>base_evaluations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>dimension</em>&#160;</td>
         </tr>
         <tr>
@@ -269,8 +346,158 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Determines whether the evaluation should be logged. </p>
-<p>Returns true if the evaluation_number corresponds to a number that should always be logged and false otherwise (computed from coco_observer_always_log). For example, if coco_observer_always_log = {1, 2, 5}, returns true for 1, dim*1, dim*2, dim*5, 10*dim*1, 10*dim*2, 10*dim*5, 100*dim*1, 100*dim*2, ... </p>
+<p>Creates and returns a structure containing information on triggers based on evaluation numbers. </p>
+<p>The numbers of evaluations that trigger logging are any of the two:</p><ul>
+<li>every 10**(exponent1/number_of_triggers) for exponent1 &gt;= 0</li>
+<li>every base_evaluation * dimension * (10**exponent2) for exponent2 &gt;= 0</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="structcoco__observer__evaluations__t.html" title="The type for triggers based on numbers of evaluations. ">coco_observer_evaluations_t</a> object instances need to be freed using the coco_observer_evaluations_free function!</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base_evaluations</td><td>Evaluation numbers formatted as a string, which are used as the base to compute the second trigger. For example, if base_evaluations = "1,2,5", the logger will be triggered by evaluations dim*1, dim*2, dim*5, 10*dim*1, 10*dim*2, 10*dim*5, 100*dim*1, 100*dim*2, 100*dim*5, ... </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5a634cc2215fcc35800f20aeb2e6b29c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void coco_observer_evaluations_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a> *&#160;</td>
+          <td class="paramname"><em>evaluations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Frees the given evaluations object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a71a9401ce61d895ac058ea7fc665fcc7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_observer_evaluations_trigger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a> *&#160;</td>
+          <td class="paramname"><em>evaluations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>evaluation_number</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns 1 if any of the two triggers based on the number of evaluations equal 1 and 0 otherwise. </p>
+<p>The numbers of evaluations that trigger logging are any of the two:</p><ul>
+<li>every 10**(exponent1/number_of_triggers) for exponent1 &gt;= 0</li>
+<li>every base_evaluation * dimension * (10**exponent2) for exponent2 &gt;= 0 </li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="a537c9c74fbe292c031dcb2c9e1171c9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_observer_evaluations_trigger_first </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a> *&#160;</td>
+          <td class="paramname"><em>evaluations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>evaluation_number</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes and returns whether the given evaluation number triggers the first condition of the logging based on the number of evaluations. </p>
+<p>The second condition is: evaluation_number == 10**(exponent1/number_of_triggers) </p>
+
+</div>
+</div>
+<a class="anchor" id="aad02da20cbd5aa711bb9cdf4d1b4145c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_observer_evaluations_trigger_second </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a> *&#160;</td>
+          <td class="paramname"><em>evaluations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>evaluation_number</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes and returns whether the given evaluation number triggers the second condition of the logging based on the number of evaluations. </p>
+<p>The second condition is: evaluation_number == base_evaluation[base_index] * dimension * (10**exponent2) </p>
 
 </div>
 </div>
@@ -289,6 +516,92 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Frees the given observer. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4fdd05cce82ebcc91e275c870bb9f4ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structcoco__observer__targets__t.html">coco_observer_targets_t</a>* coco_observer_targets </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_of_targets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>precision</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates and returns a structure containing information on targets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number_of_targets</td><td>The number of targets between 10**(i/n) and 10**((i+1)/n) for each i. </td></tr>
+    <tr><td class="paramname">precision</td><td>Minimal precision of interest. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7da5e1a2dfd7dcbc03628741d6e1b6fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_observer_targets_trigger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcoco__observer__targets__t.html">coco_observer_targets_t</a> *&#160;</td>
+          <td class="paramname"><em>targets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>given_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates and returns a structure containing information on targets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number_of_targets</td><td>The number of targets between 10**(i/n) and 10**((i+1)/n) for each i. </td></tr>
+    <tr><td class="paramname">precision</td><td>Minimal precision of interest. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -317,39 +630,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds an observer to the given problem. </p>
-<p>Wraps the observer around the problem if the observer is not NULL and invokes initialization of the corresponding logger.</p>
+<p>Wraps the observer's logger around the problem if the observer is not NULL and invokes the initialization of this logger.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
-    <tr><td class="paramname">observer</td><td>The COCO observer that will wrap the problem.</td></tr>
+    <tr><td class="paramname">observer</td><td>The COCO observer, whose logger will wrap the problem.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The observed problem in the form of a new COCO problem instance or the same problem if the observer is NULL. </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="af46183d106a2b1f37610f0ba3cc0059a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const size_t coco_observer_always_log[3] = {1, 2, 5}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A set of numbers from which the evaluations that should always be logged are computed. </p>
-<p>For example, if logger_biobj_always_log[3] = {1, 2, 5}, the logger will always output evaluations 1, dim*1, dim*2, dim*5, 10*dim*1, 10*dim*2, 10*dim*5, 100*dim*1, 100*dim*2, 100*dim*5, ... </p>
 
 </div>
 </div>

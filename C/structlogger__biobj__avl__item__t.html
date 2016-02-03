@@ -107,12 +107,12 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a7c3123a306a879fdcbf1b923fcccee07"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html#a7c3123a306a879fdcbf1b923fcccee07">y</a></td></tr>
 <tr class="memdesc:a7c3123a306a879fdcbf1b923fcccee07"><td class="mdescLeft">&#160;</td><td class="mdescRight">The values of objectives of this solution.  <a href="#a7c3123a306a879fdcbf1b923fcccee07">More...</a><br /></td></tr>
 <tr class="separator:a7c3123a306a879fdcbf1b923fcccee07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919be0aab1aa7cec65e864410a93be73"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html#a919be0aab1aa7cec65e864410a93be73">time_stamp</a></td></tr>
-<tr class="memdesc:a919be0aab1aa7cec65e864410a93be73"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of evaluations when the solution was created.  <a href="#a919be0aab1aa7cec65e864410a93be73">More...</a><br /></td></tr>
-<tr class="separator:a919be0aab1aa7cec65e864410a93be73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab919128612c4b596a3298d284de9cb92"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html#ab919128612c4b596a3298d284de9cb92">indicator_contribution</a> [<a class="el" href="observer__biobj_8c.html#adf30f63a6cfdb3873ff069238c48c45d">OBSERVER_BIOBJ_NUMBER_OF_INDICATORS</a>]</td></tr>
-<tr class="memdesc:ab919128612c4b596a3298d284de9cb92"><td class="mdescLeft">&#160;</td><td class="mdescRight">The contribution of this solution to the overall indicator values.  <a href="#ab919128612c4b596a3298d284de9cb92">More...</a><br /></td></tr>
-<tr class="separator:ab919128612c4b596a3298d284de9cb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a289ca40d7ee6a88804435585a91f0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html#a61a289ca40d7ee6a88804435585a91f0">evaluation_number</a></td></tr>
+<tr class="memdesc:a61a289ca40d7ee6a88804435585a91f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The evaluation number of when the solution was created.  <a href="#a61a289ca40d7ee6a88804435585a91f0">More...</a><br /></td></tr>
+<tr class="separator:a61a289ca40d7ee6a88804435585a91f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba94466ac7897eba010a3ef23df91679"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html#aba94466ac7897eba010a3ef23df91679">indicator_contribution</a> [<a class="el" href="logger__biobj_8c.html#abd9abc1d315bd613942dbe8855f11b7c">LOGGER_BIOBJ_NUMBER_OF_INDICATORS</a>]</td></tr>
+<tr class="memdesc:aba94466ac7897eba010a3ef23df91679"><td class="mdescLeft">&#160;</td><td class="mdescRight">The contribution of this solution to the overall indicator values.  <a href="#aba94466ac7897eba010a3ef23df91679">More...</a><br /></td></tr>
+<tr class="separator:aba94466ac7897eba010a3ef23df91679"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4671185829104d65a7910b5ccf0183c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html#a4671185829104d65a7910b5ccf0183c4">within_ROI</a></td></tr>
 <tr class="memdesc:a4671185829104d65a7910b5ccf0183c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the solution is within the region of interest (ROI).  <a href="#a4671185829104d65a7910b5ccf0183c4">More...</a><br /></td></tr>
 <tr class="separator:a4671185829104d65a7910b5ccf0183c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,31 +120,31 @@ Data Fields</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The type for the node's item in the AVL tree. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="ab919128612c4b596a3298d284de9cb92"></a>
+<a class="anchor" id="a61a289ca40d7ee6a88804435585a91f0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double indicator_contribution[<a class="el" href="observer__biobj_8c.html#adf30f63a6cfdb3873ff069238c48c45d">OBSERVER_BIOBJ_NUMBER_OF_INDICATORS</a>]</td>
+          <td class="memname">size_t evaluation_number</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The evaluation number of when the solution was created. </p>
+
+</div>
+</div>
+<a class="anchor" id="aba94466ac7897eba010a3ef23df91679"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double indicator_contribution[<a class="el" href="logger__biobj_8c.html#abd9abc1d315bd613942dbe8855f11b7c">LOGGER_BIOBJ_NUMBER_OF_INDICATORS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The contribution of this solution to the overall indicator values. </p>
-
-</div>
-</div>
-<a class="anchor" id="a919be0aab1aa7cec65e864410a93be73"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t time_stamp</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The number of evaluations when the solution was created. </p>
 
 </div>
 </div>

@@ -1,16 +1,14 @@
 var searchData=
 [
-  ['observer',['observer',['../structlogger__bbob__data__t.html#aac38dfd8c8462cf1d7506d549ec58460',1,'logger_bbob_data_t::observer()'],['../structlogger__biobj__data__t.html#aac38dfd8c8462cf1d7506d549ec58460',1,'logger_biobj_data_t::observer()'],['../structlogger__toy__data__t.html#aac38dfd8c8462cf1d7506d549ec58460',1,'logger_toy_data_t::observer()']]],
+  ['observer',['observer',['../structlogger__bbob__data__t.html#aac38dfd8c8462cf1d7506d549ec58460',1,'logger_bbob_data_t']]],
   ['observer_5fbbob',['observer_bbob',['../observer__bbob_8c.html#ac12ad38da918daff29bc476f6b1876b3',1,'observer_bbob.c']]],
   ['observer_5fbbob_2ec',['observer_bbob.c',['../observer__bbob_8c.html',1,'']]],
   ['observer_5fbbob_5fdata_5ft',['observer_bbob_data_t',['../structobserver__bbob__data__t.html',1,'']]],
   ['observer_5fbiobj',['observer_biobj',['../observer__biobj_8c.html#acca6899355902a7bfc5406254bff540c',1,'observer_biobj.c']]],
   ['observer_5fbiobj_2ec',['observer_biobj.c',['../observer__biobj_8c.html',1,'']]],
   ['observer_5fbiobj_5fdata_5ft',['observer_biobj_data_t',['../structobserver__biobj__data__t.html',1,'']]],
-  ['observer_5fbiobj_5findicators',['observer_biobj_indicators',['../observer__biobj_8c.html#a167a07fd15995d2d259763f95a2dfdf8',1,'observer_biobj.c']]],
   ['observer_5fbiobj_5flog_5fnondom_5fe',['observer_biobj_log_nondom_e',['../observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bd',1,'observer_biobj.c']]],
   ['observer_5fbiobj_5flog_5fvars_5fe',['observer_biobj_log_vars_e',['../observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83',1,'observer_biobj.c']]],
-  ['observer_5fbiobj_5fnumber_5fof_5findicators',['OBSERVER_BIOBJ_NUMBER_OF_INDICATORS',['../observer__biobj_8c.html#adf30f63a6cfdb3873ff069238c48c45d',1,'observer_biobj.c']]],
   ['observer_5ftoy',['observer_toy',['../observer__toy_8c.html#a499693ce35801e431f986b0c11009a59',1,'observer_toy.c']]],
   ['observer_5ftoy_2ec',['observer_toy.c',['../observer__toy_8c.html',1,'']]],
   ['observer_5ftoy_5fdata_5ft',['observer_toy_data_t',['../structobserver__toy__data__t.html',1,'']]],

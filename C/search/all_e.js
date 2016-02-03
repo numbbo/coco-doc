@@ -1,12 +1,11 @@
 var searchData=
 [
   ['the_20coco_2fnumbbo_20experiments_20interface',['The COCO/NumBBO experiments interface',['../index.html',1,'']]],
-  ['t_5ftrigger',['t_trigger',['../structlogger__bbob__data__t.html#a82247a6b89d6a919fb2f3efe191a908f',1,'logger_bbob_data_t']]],
   ['target_5fhit',['target_hit',['../structlogger__biobj__indicator__t.html#aeca82877600abd989b60d663e26402b8',1,'logger_biobj_indicator_t']]],
-  ['targets',['targets',['../structobserver__toy__data__t.html#a385d698ba023ab14abe60f4774da0553',1,'observer_toy_data_t']]],
+  ['target_5fprecision',['target_precision',['../structcoco__observer__s.html#a4830a93f3fce0ff9a8503c5345eeca3f',1,'coco_observer_s']]],
+  ['targets',['targets',['../structlogger__bbob__data__t.html#a27b4e91c707417b6b3a5a44d6fe06119',1,'logger_bbob_data_t::targets()'],['../structlogger__biobj__indicator__t.html#a27b4e91c707417b6b3a5a44d6fe06119',1,'logger_biobj_indicator_t::targets()'],['../structlogger__toy__data__t.html#a27b4e91c707417b6b3a5a44d6fe06119',1,'logger_toy_data_t::targets()']]],
   ['tdat_5ffile',['tdat_file',['../structlogger__biobj__indicator__t.html#af05a7062eb1c2b5e5fa2a507f3473aa2',1,'logger_biobj_indicator_t']]],
   ['tdata_5ffile',['tdata_file',['../structlogger__bbob__data__t.html#ace55619f050ae5af12f87ebf07e9ae08',1,'logger_bbob_data_t']]],
-  ['time_5fstamp',['time_stamp',['../structlogger__biobj__avl__item__t.html#a919be0aab1aa7cec65e864410a93be73',1,'logger_biobj_avl_item_t']]],
   ['transform_5fobj_5foscillate',['transform_obj_oscillate',['../transform__obj__oscillate_8c.html#a99619674d1ffca47844baf8a6820b10a',1,'transform_obj_oscillate.c']]],
   ['transform_5fobj_5foscillate_2ec',['transform_obj_oscillate.c',['../transform__obj__oscillate_8c.html',1,'']]],
   ['transform_5fobj_5foscillate_5fevaluate',['transform_obj_oscillate_evaluate',['../transform__obj__oscillate_8c.html#a068655f31434e306683c24cb2a74af91',1,'transform_obj_oscillate.c']]],
@@ -62,7 +61,7 @@ var searchData=
   ['transform_5fvars_5fshift_5fdata_5ft',['transform_vars_shift_data_t',['../structtransform__vars__shift__data__t.html',1,'']]],
   ['transform_5fvars_5fshift_5fevaluate',['transform_vars_shift_evaluate',['../transform__vars__shift_8c.html#ac01d1dc196331d95dcf51b93437aa1cf',1,'transform_vars_shift.c']]],
   ['transform_5fvars_5fshift_5ffree',['transform_vars_shift_free',['../transform__vars__shift_8c.html#a04997e5f13a789dfdb2ee595f34db900',1,'transform_vars_shift.c']]],
-  ['transform_5fvars_5fx_5fhat',['transform_vars_x_hat',['../transform__vars__x__hat_8c.html#aa639783a080e7d0fe1dcd0b58c42996c',1,'transform_vars_x_hat.c']]],
+  ['transform_5fvars_5fx_5fhat',['transform_vars_x_hat',['../transform__vars__x__hat_8c.html#ad05c1bcaf9a6336444d405c2acfe5d6e',1,'transform_vars_x_hat.c']]],
   ['transform_5fvars_5fx_5fhat_2ec',['transform_vars_x_hat.c',['../transform__vars__x__hat_8c.html',1,'']]],
   ['transform_5fvars_5fx_5fhat_5fdata_5ft',['transform_vars_x_hat_data_t',['../structtransform__vars__x__hat__data__t.html',1,'']]],
   ['transform_5fvars_5fx_5fhat_5fevaluate',['transform_vars_x_hat_evaluate',['../transform__vars__x__hat_8c.html#aa9f7db2e3aadd4192b0df486467e6dfc',1,'transform_vars_x_hat.c']]],
