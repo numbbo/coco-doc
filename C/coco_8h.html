@@ -232,6 +232,9 @@ index | instance_idx | function_idx | dimension_idx
 <tr class="memitem:af894effafadb5f75ecd3bb75843f8a3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af894effafadb5f75ecd3bb75843f8a3e">coco_problem_add_observer</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer)</td></tr>
 <tr class="memdesc:af894effafadb5f75ecd3bb75843f8a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an observer to the given problem.  <a href="#af894effafadb5f75ecd3bb75843f8a3e">More...</a><br /></td></tr>
 <tr class="separator:af894effafadb5f75ecd3bb75843f8a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac58e5039567090d6303b81f58532213"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#aac58e5039567090d6303b81f58532213">coco_problem_remove_observer</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer)</td></tr>
+<tr class="memdesc:aac58e5039567090d6303b81f58532213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an observer from the given problem.  <a href="#aac58e5039567090d6303b81f58532213">More...</a><br /></td></tr>
+<tr class="separator:aac58e5039567090d6303b81f58532213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Methods regarding COCO problem</div></td></tr>
 <tr class="memitem:aabbc02b57084ab069c37e1c27426b95c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#aabbc02b57084ab069c37e1c27426b95c">coco_evaluate_function</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
 <tr class="memdesc:aabbc02b57084ab069c37e1c27426b95c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the problem function in point x and save the result in y.  <a href="#aabbc02b57084ab069c37e1c27426b95c">More...</a><br /></td></tr>
@@ -719,7 +722,7 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 <li>"number_evaluation_triggers: VALUE" defines the number of evaluations to be logged between each 10**i and 10**(i+1). The default value is 20.</li>
 <li>"base_evaluation_triggers: VALUES" defines the base evaluations used to produce an additional evaluation-based logging. The numbers of evaluations that trigger logging are every base_evaluation * dimension * (10**i). For example, if base_evaluation_triggers = "1,2,5", the logger will be triggered by evaluations dim*1, dim*2, dim*5, 10*dim*1, 10*dim*2, 10*dim*5, 100*dim*1, 100*dim*2, 100*dim*5, ... The default value is "1,2,5".</li>
 <li>"precision_x: VALUE" defines the precision used when outputting variables and corresponds to the number of digits to be printed after the decimal point. The default value is 8.</li>
-<li>precision_f: VALUE defines the precision used when outputting f values and corresponds to the number of digits to be printed after the decimal point. The default value is 15.</li>
+<li>"precision_f: VALUE" defines the precision used when outputting f values and corresponds to the number of digits to be printed after the decimal point. The default value is 15.</li>
 </ul>
 </td></tr>
   </table>
@@ -1038,6 +1041,43 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 </div><div class="memdoc">
 
 <p>Returns the problem_index of the problem in its current suite. </p>
+
+</div>
+</div>
+<a class="anchor" id="aac58e5039567090d6303b81f58532213"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* coco_problem_remove_observer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *&#160;</td>
+          <td class="paramname"><em>observer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes an observer from the given problem. </p>
+<p>Frees the observer's logger and returns the inner problem.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">problem</td><td>The observed COCO problem. </td></tr>
+    <tr><td class="paramname">observer</td><td>The COCO observer, whose logger was wrapping the problem.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The unobserved problem as a pointer to the inner problem or the same problem if the problem was not observed. </dd></dl>
 
 </div>
 </div>

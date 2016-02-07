@@ -115,12 +115,14 @@ Data Structures</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a3dddf7883a4de349d2a755b609a7d34c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__toy_8c.html#a3dddf7883a4de349d2a755b609a7d34c">logger_toy</a> (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="separator:a3dddf7883a4de349d2a755b609a7d34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617973fa498e70222610b57167b3284c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__toy_8c.html#a617973fa498e70222610b57167b3284c">logger_toy_free</a> (void *logger)</td></tr>
+<tr class="separator:a617973fa498e70222610b57167b3284c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae9097f030e7c581ee74f60d2fd7a57f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__toy_8c.html#aae9097f030e7c581ee74f60d2fd7a57f">observer_toy_free</a> (void *stuff)</td></tr>
 <tr class="memdesc:aae9097f030e7c581ee74f60d2fd7a57f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees memory of the toy observer data structure.  <a href="#aae9097f030e7c581ee74f60d2fd7a57f">More...</a><br /></td></tr>
 <tr class="separator:aae9097f030e7c581ee74f60d2fd7a57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a499693ce35801e431f986b0c11009a59"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__toy_8c.html#a499693ce35801e431f986b0c11009a59">observer_toy</a> (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, const char *options)</td></tr>
-<tr class="memdesc:a499693ce35801e431f986b0c11009a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the toy observer.  <a href="#a499693ce35801e431f986b0c11009a59">More...</a><br /></td></tr>
-<tr class="separator:a499693ce35801e431f986b0c11009a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee950796fd5c2f79eb5423249b116747"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__toy_8c.html#aee950796fd5c2f79eb5423249b116747">observer_toy</a> (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, const char *options, <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> **option_keys)</td></tr>
+<tr class="memdesc:aee950796fd5c2f79eb5423249b116747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the toy observer.  <a href="#aee950796fd5c2f79eb5423249b116747">More...</a><br /></td></tr>
+<tr class="separator:aee950796fd5c2f79eb5423249b116747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the toy observer. </p>
@@ -159,7 +161,31 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a499693ce35801e431f986b0c11009a59"></a>
+<a class="anchor" id="a617973fa498e70222610b57167b3284c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void logger_toy_free </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>logger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee950796fd5c2f79eb5423249b116747"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -176,7 +202,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>options</em>&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> **&#160;</td>
+          <td class="paramname"><em>option_keys</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

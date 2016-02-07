@@ -203,12 +203,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a4c538e38441ef85dc693d0861986ce79"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a4c538e38441ef85dc693d0861986ce79">coco_problem_transformed_recommend_solution</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x)</td></tr>
 <tr class="memdesc:a4c538e38441ef85dc693d0861986ce79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the coco_recommend_solution function on the inner problem.  <a href="#a4c538e38441ef85dc693d0861986ce79">More...</a><br /></td></tr>
 <tr class="separator:a4c538e38441ef85dc693d0861986ce79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cecccaee3128d48c50c8ea7a1827b5f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a7cecccaee3128d48c50c8ea7a1827b5f">coco_problem_transformed_free_data</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a7cecccaee3128d48c50c8ea7a1827b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees only the data of the transformed problem leaving the inner problem intact.  <a href="#a7cecccaee3128d48c50c8ea7a1827b5f">More...</a><br /></td></tr>
+<tr class="separator:a7cecccaee3128d48c50c8ea7a1827b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaab9dd1616ae68267d24d0b99ae16f9d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#aaab9dd1616ae68267d24d0b99ae16f9d">coco_problem_transformed_free</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:aaab9dd1616ae68267d24d0b99ae16f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the transformed problem.  <a href="#aaab9dd1616ae68267d24d0b99ae16f9d">More...</a><br /></td></tr>
 <tr class="separator:aaab9dd1616ae68267d24d0b99ae16f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb512d59fba319eb7ebff61b842232e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#abb512d59fba319eb7ebff61b842232e3">coco_problem_transformed_allocate</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *inner_problem, void *user_data, <a class="el" href="coco__internal_8h.html#ae21082955b28c4e6e0d3d3a397e4bf10">coco_data_free_function_t</a> data_free_function)</td></tr>
-<tr class="memdesc:abb512d59fba319eb7ebff61b842232e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a transformed problem that wraps the inner_problem.  <a href="#abb512d59fba319eb7ebff61b842232e3">More...</a><br /></td></tr>
-<tr class="separator:abb512d59fba319eb7ebff61b842232e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addad0c28ae442682eb3c5492b19ffbf0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#addad0c28ae442682eb3c5492b19ffbf0">coco_problem_transformed_allocate</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *inner_problem, void *user_data, <a class="el" href="coco__internal_8h.html#ae21082955b28c4e6e0d3d3a397e4bf10">coco_data_free_function_t</a> data_free_function, const char *name_prefix)</td></tr>
+<tr class="memdesc:addad0c28ae442682eb3c5492b19ffbf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a transformed problem that wraps the inner_problem.  <a href="#addad0c28ae442682eb3c5492b19ffbf0">More...</a><br /></td></tr>
+<tr class="separator:addad0c28ae442682eb3c5492b19ffbf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Methods regarding the stacked COCO problem</div></td></tr>
 <tr class="memitem:a8c44666c43622660584170976d5ae5f2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a8c44666c43622660584170976d5ae5f2">coco_problem_stacked_evaluate_function</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
 <tr class="memdesc:a8c44666c43622660584170976d5ae5f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the coco_evaluate_function function on the underlying problems.  <a href="#a8c44666c43622660584170976d5ae5f2">More...</a><br /></td></tr>
@@ -1123,7 +1126,7 @@ Best parameter becomes somewhat meaningless, but the nadir value make sense now.
 
 </div>
 </div>
-<a class="anchor" id="abb512d59fba319eb7ebff61b842232e3"></a>
+<a class="anchor" id="addad0c28ae442682eb3c5492b19ffbf0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1146,7 +1149,13 @@ Best parameter becomes somewhat meaningless, but the nadir value make sense now.
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="coco__internal_8h.html#ae21082955b28c4e6e0d3d3a397e4bf10">coco_data_free_function_t</a>&#160;</td>
-          <td class="paramname"><em>data_free_function</em>&#160;</td>
+          <td class="paramname"><em>data_free_function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name_prefix</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1162,7 +1171,7 @@ Best parameter becomes somewhat meaningless, but the nadir value make sense now.
 </div><div class="memdoc">
 
 <p>Allocates a transformed problem that wraps the inner_problem. </p>
-<p>By default all methods will dispatch to the inner_problem. </p>
+<p>By default all methods will dispatch to the inner_problem. A prefix is prepended to the problem name in order to reflect the transformation somewhere. </p>
 
 </div>
 </div>
@@ -1273,6 +1282,33 @@ Best parameter becomes somewhat meaningless, but the nadir value make sense now.
 </div><div class="memdoc">
 
 <p>Frees the transformed problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7cecccaee3128d48c50c8ea7a1827b5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void coco_problem_transformed_free_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Frees only the data of the transformed problem leaving the inner problem intact. </p>
+<dl class="section note"><dt>Note</dt><dd>If there is no other pointer to the inner problem, access to it will be lost. </dd></dl>
 
 </div>
 </div>

@@ -113,6 +113,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__stacked__data__t.html">coco_problem_stacked_data_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stacked COCO problem data type.  <a href="structcoco__problem__stacked__data__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The option keys data type.  <a href="structcoco__option__keys__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html">coco_problem_s</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The COCO problem structure.  <a href="structcoco__problem__s.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,9 +143,12 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a5aef4f47b68e572fbe2e9e59e14dc726"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__internal_8h.html#a5aef4f47b68e572fbe2e9e59e14dc726">coco_recommend_function_t</a>) (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x)</td></tr>
 <tr class="memdesc:a5aef4f47b68e572fbe2e9e59e14dc726"><td class="mdescLeft">&#160;</td><td class="mdescRight">The recommend solutions function type.  <a href="#a5aef4f47b68e572fbe2e9e59e14dc726">More...</a><br /></td></tr>
 <tr class="separator:a5aef4f47b68e572fbe2e9e59e14dc726"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b67e36b731c76b3701d5bbbde48e73f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__internal_8h.html#a1b67e36b731c76b3701d5bbbde48e73f">coco_logger_initialize_function_t</a>) (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
-<tr class="memdesc:a1b67e36b731c76b3701d5bbbde48e73f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The logger initialize function type.  <a href="#a1b67e36b731c76b3701d5bbbde48e73f">More...</a><br /></td></tr>
-<tr class="separator:a1b67e36b731c76b3701d5bbbde48e73f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7305390f20860fa6e7913da253e4416"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__internal_8h.html#aa7305390f20860fa6e7913da253e4416">coco_logger_allocate_function_t</a>) (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:aa7305390f20860fa6e7913da253e4416"><td class="mdescLeft">&#160;</td><td class="mdescRight">The allocate logger function type.  <a href="#aa7305390f20860fa6e7913da253e4416">More...</a><br /></td></tr>
+<tr class="separator:aa7305390f20860fa6e7913da253e4416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e23993ad9b71c438ed1bd5a31afe4af"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__internal_8h.html#a9e23993ad9b71c438ed1bd5a31afe4af">coco_logger_free_function_t</a>) (void *logger)</td></tr>
+<tr class="memdesc:a9e23993ad9b71c438ed1bd5a31afe4af"><td class="mdescLeft">&#160;</td><td class="mdescRight">The free logger function type.  <a href="#a9e23993ad9b71c438ed1bd5a31afe4af">More...</a><br /></td></tr>
+<tr class="separator:a9e23993ad9b71c438ed1bd5a31afe4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions of internal COCO structures and typedefs. </p>
@@ -193,18 +199,33 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1b67e36b731c76b3701d5bbbde48e73f"></a>
+<a class="anchor" id="aa7305390f20860fa6e7913da253e4416"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>*(* coco_logger_initialize_function_t) (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td>
+          <td class="memname">typedef <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>*(* coco_logger_allocate_function_t) (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The logger initialize function type. </p>
-<p>This is a template for functions initialize a logger (wrap a logger around the given problem and return the wrapped problem). </p>
+<p>The allocate logger function type. </p>
+<p>This is a template for functions that allocate a logger (wrap a logger around the given problem and return the wrapped problem). </p>
+
+</div>
+</div>
+<a class="anchor" id="a9e23993ad9b71c438ed1bd5a31afe4af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* coco_logger_free_function_t) (void *logger)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The free logger function type. </p>
+<p>This is a template for functions that free a logger. </p>
 
 </div>
 </div>

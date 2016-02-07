@@ -153,7 +153,25 @@ Functions</h2></td></tr>
 <tr class="memitem:abd9184c71fc3e4070b7fab0ddedd17a3"><td class="memItemLeft" align="right" valign="top">static double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#abd9184c71fc3e4070b7fab0ddedd17a3">coco_duplicate_vector</a> (const double *src, const size_t number_of_elements)</td></tr>
 <tr class="memdesc:abd9184c71fc3e4070b7fab0ddedd17a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe memory allocation for a vector of doubles that either succeeds or triggers a coco_error.  <a href="#abd9184c71fc3e4070b7fab0ddedd17a3">More...</a><br /></td></tr>
 <tr class="separator:abd9184c71fc3e4070b7fab0ddedd17a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Methods regarding reading options from a string</div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methods regarding string options</div></td></tr>
+<tr class="memitem:a0ec281b40a0b803bc7f7e73ca0f16187"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a0ec281b40a0b803bc7f7e73ca0f16187">coco_option_keys_allocate</a> (const size_t count, const char **keys)</td></tr>
+<tr class="memdesc:a0ec281b40a0b803bc7f7e73ca0f16187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates an option keys structure holding the given number of option keys.  <a href="#a0ec281b40a0b803bc7f7e73ca0f16187">More...</a><br /></td></tr>
+<tr class="separator:a0ec281b40a0b803bc7f7e73ca0f16187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4309c37db561b9c307b8a636142453"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a9d4309c37db561b9c307b8a636142453">coco_option_keys_free</a> (<a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *option_keys)</td></tr>
+<tr class="memdesc:a9d4309c37db561b9c307b8a636142453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given option keys structure.  <a href="#a9d4309c37db561b9c307b8a636142453">More...</a><br /></td></tr>
+<tr class="separator:a9d4309c37db561b9c307b8a636142453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ce5162161cb93bdf0b7b1d9aff658e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a93ce5162161cb93bdf0b7b1d9aff658e">coco_option_keys_get_redundant</a> (const <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *known_option_keys, const <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *given_option_keys)</td></tr>
+<tr class="memdesc:a93ce5162161cb93bdf0b7b1d9aff658e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns redundant option keys (the ones present in given_option_keys but not in known_option_keys).  <a href="#a93ce5162161cb93bdf0b7b1d9aff658e">More...</a><br /></td></tr>
+<tr class="separator:a93ce5162161cb93bdf0b7b1d9aff658e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ad77e46bc5de7528c6f6a9d79c8ca6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a53ad77e46bc5de7528c6f6a9d79c8ca6">coco_option_keys_add</a> (<a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> **basic_option_keys, const <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *additional_option_keys)</td></tr>
+<tr class="memdesc:a53ad77e46bc5de7528c6f6a9d79c8ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds additional option keys to the given basic option keys (changes the basic keys).  <a href="#a53ad77e46bc5de7528c6f6a9d79c8ca6">More...</a><br /></td></tr>
+<tr class="separator:a53ad77e46bc5de7528c6f6a9d79c8ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91d8ec295de4f345789d527d49d4fff3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a91d8ec295de4f345789d527d49d4fff3">coco_option_keys</a> (const char *option_string)</td></tr>
+<tr class="memdesc:a91d8ec295de4f345789d527d49d4fff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of option keys from the given string of options containing keys and values separated by colons.  <a href="#a91d8ec295de4f345789d527d49d4fff3">More...</a><br /></td></tr>
+<tr class="separator:a91d8ec295de4f345789d527d49d4fff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0c3a255b3790e607877f95411f53428"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#af0c3a255b3790e607877f95411f53428">coco_option_keys_get_output_string</a> (const <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *option_keys, const char *info_string)</td></tr>
+<tr class="memdesc:af0c3a255b3790e607877f95411f53428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a string containing the info_string and all keys from option_keys.  <a href="#af0c3a255b3790e607877f95411f53428">More...</a><br /></td></tr>
+<tr class="separator:af0c3a255b3790e607877f95411f53428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2e464f77ffb25f27db77e52e61c920d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ad2e464f77ffb25f27db77e52e61c920d">coco_options_read</a> (const char *options, const char *name, const char *format, void *pointer)</td></tr>
 <tr class="memdesc:ad2e464f77ffb25f27db77e52e61c920d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses options in the form "name1: value1 name2: value2".  <a href="#ad2e464f77ffb25f27db77e52e61c920d">More...</a><br /></td></tr>
 <tr class="separator:ad2e464f77ffb25f27db77e52e61c920d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,6 +200,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a0f72002062d106562eaadb0a9efe922a"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a0f72002062d106562eaadb0a9efe922a">coco_double_min</a> (const double a, const double b)</td></tr>
 <tr class="memdesc:a0f72002062d106562eaadb0a9efe922a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum of a and b.  <a href="#a0f72002062d106562eaadb0a9efe922a">More...</a><br /></td></tr>
 <tr class="separator:a0f72002062d106562eaadb0a9efe922a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca24d7fbafb048c2cabd542242c792e8"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#aca24d7fbafb048c2cabd542242c792e8">coco_double_to_size_t</a> (const double number)</td></tr>
+<tr class="memdesc:aca24d7fbafb048c2cabd542242c792e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a "safer" double to size_t conversion.  <a href="#aca24d7fbafb048c2cabd542242c792e8">More...</a><br /></td></tr>
+<tr class="separator:aca24d7fbafb048c2cabd542242c792e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Miscellaneous methods</div></td></tr>
 <tr class="memitem:a05580bc3a9e7eadf579b4ec4e7253eb8"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a05580bc3a9e7eadf579b4ec4e7253eb8">coco_current_time_get_string</a> (void)</td></tr>
 <tr class="memdesc:a05580bc3a9e7eadf579b4ec4e7253eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current time as a string.  <a href="#a05580bc3a9e7eadf579b4ec4e7253eb8">More...</a><br /></td></tr>
@@ -531,6 +552,32 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aca24d7fbafb048c2cabd542242c792e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t coco_double_to_size_t </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs a "safer" double to size_t conversion. </p>
+
+</div>
+</div>
 <a class="anchor" id="abd9184c71fc3e4070b7fab0ddedd17a3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -690,6 +737,204 @@ Should work cross-platform.</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on successful completion, and -1 on error. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a91d8ec295de4f345789d527d49d4fff3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a>* coco_option_keys </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>option_string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an instance of option keys from the given string of options containing keys and values separated by colons. </p>
+<dl class="section note"><dt>Note</dt><dd>Relies heavily on the "key: value" format and might fail if the number of colons doesn't match the number of keys. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a53ad77e46bc5de7528c6f6a9d79c8ca6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void coco_option_keys_add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> **&#160;</td>
+          <td class="paramname"><em>basic_option_keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *&#160;</td>
+          <td class="paramname"><em>additional_option_keys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds additional option keys to the given basic option keys (changes the basic keys). </p>
+
+</div>
+</div>
+<a class="anchor" id="a0ec281b40a0b803bc7f7e73ca0f16187"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a>* coco_option_keys_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>keys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocates an option keys structure holding the given number of option keys. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9d4309c37db561b9c307b8a636142453"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void coco_option_keys_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *&#160;</td>
+          <td class="paramname"><em>option_keys</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Frees the given option keys structure. </p>
+
+</div>
+</div>
+<a class="anchor" id="af0c3a255b3790e607877f95411f53428"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* coco_option_keys_get_output_string </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *&#160;</td>
+          <td class="paramname"><em>option_keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>info_string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates and returns a string containing the info_string and all keys from option_keys. </p>
+<p>Can be used to output information about the given option_keys. </p>
+
+</div>
+</div>
+<a class="anchor" id="a93ce5162161cb93bdf0b7b1d9aff658e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a>* coco_option_keys_get_redundant </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *&#160;</td>
+          <td class="paramname"><em>known_option_keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> *&#160;</td>
+          <td class="paramname"><em>given_option_keys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns redundant option keys (the ones present in given_option_keys but not in known_option_keys). </p>
 
 </div>
 </div>
