@@ -133,9 +133,11 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a41469dac8832863a7b013e919cb59f04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#a41469dac8832863a7b013e919cb59f04">logger_biobj</a> (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="separator:a41469dac8832863a7b013e919cb59f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acca6899355902a7bfc5406254bff540c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#acca6899355902a7bfc5406254bff540c">observer_biobj</a> (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, const char *options)</td></tr>
-<tr class="memdesc:acca6899355902a7bfc5406254bff540c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the bi-objective observer.  <a href="#acca6899355902a7bfc5406254bff540c">More...</a><br /></td></tr>
-<tr class="separator:acca6899355902a7bfc5406254bff540c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76fc843f13159641f944e1f3f4facf66"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#a76fc843f13159641f944e1f3f4facf66">logger_biobj_free</a> (void *logger)</td></tr>
+<tr class="separator:a76fc843f13159641f944e1f3f4facf66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dcda55e6db04c1148e80d0296cb601c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#a9dcda55e6db04c1148e80d0296cb601c">observer_biobj</a> (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer, const char *options, <a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> **option_keys)</td></tr>
+<tr class="memdesc:a9dcda55e6db04c1148e80d0296cb601c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the bi-objective observer.  <a href="#a9dcda55e6db04c1148e80d0296cb601c">More...</a><br /></td></tr>
+<tr class="separator:a9dcda55e6db04c1148e80d0296cb601c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the bbob-biobj observer. </p>
@@ -219,7 +221,31 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="acca6899355902a7bfc5406254bff540c"></a>
+<a class="anchor" id="a76fc843f13159641f944e1f3f4facf66"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void logger_biobj_free </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>logger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9dcda55e6db04c1148e80d0296cb601c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -236,7 +262,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>options</em>&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcoco__option__keys__t.html">coco_option_keys_t</a> **&#160;</td>
+          <td class="paramname"><em>option_keys</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

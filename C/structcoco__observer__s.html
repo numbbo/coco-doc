@@ -106,6 +106,9 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a49e74ec974c1878346edd82cccbe63d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__observer__s.html#a49e74ec974c1878346edd82cccbe63d8">is_active</a></td></tr>
 <tr class="memdesc:a49e74ec974c1878346edd82cccbe63d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the observer is active (the logger will log some output).  <a href="#a49e74ec974c1878346edd82cccbe63d8">More...</a><br /></td></tr>
 <tr class="separator:a49e74ec974c1878346edd82cccbe63d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17b55368e521787a5290cb525005801"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__observer__s.html#ab17b55368e521787a5290cb525005801">observer_name</a></td></tr>
+<tr class="memdesc:ab17b55368e521787a5290cb525005801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the observer for identification purposes.  <a href="#ab17b55368e521787a5290cb525005801">More...</a><br /></td></tr>
+<tr class="separator:ab17b55368e521787a5290cb525005801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1057f3131668b86153b301d175958b3"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__observer__s.html#aa1057f3131668b86153b301d175958b3">result_folder</a></td></tr>
 <tr class="memdesc:aa1057f3131668b86153b301d175958b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the result folder.  <a href="#aa1057f3131668b86153b301d175958b3">More...</a><br /></td></tr>
 <tr class="separator:aa1057f3131668b86153b301d175958b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,9 +142,12 @@ Data Fields</h2></td></tr>
 <tr class="memitem:ae5534a7ad41b9c593992466c2f428296"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco__internal_8h.html#ae21082955b28c4e6e0d3d3a397e4bf10">coco_data_free_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__observer__s.html#ae5534a7ad41b9c593992466c2f428296">data_free_function</a></td></tr>
 <tr class="memdesc:ae5534a7ad41b9c593992466c2f428296"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function for freeing this observer.  <a href="#ae5534a7ad41b9c593992466c2f428296">More...</a><br /></td></tr>
 <tr class="separator:ae5534a7ad41b9c593992466c2f428296"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bd52d4e1b3601b117f9b3335b6d1787"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco__internal_8h.html#a1b67e36b731c76b3701d5bbbde48e73f">coco_logger_initialize_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__observer__s.html#a0bd52d4e1b3601b117f9b3335b6d1787">logger_initialize_function</a></td></tr>
-<tr class="memdesc:a0bd52d4e1b3601b117f9b3335b6d1787"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function for initializing the corresponding logger.  <a href="#a0bd52d4e1b3601b117f9b3335b6d1787">More...</a><br /></td></tr>
-<tr class="separator:a0bd52d4e1b3601b117f9b3335b6d1787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bb65ae85a94a7d09404d6a77a55afe8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco__internal_8h.html#aa7305390f20860fa6e7913da253e4416">coco_logger_allocate_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__observer__s.html#a1bb65ae85a94a7d09404d6a77a55afe8">logger_allocate_function</a></td></tr>
+<tr class="memdesc:a1bb65ae85a94a7d09404d6a77a55afe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function for allocating the logger.  <a href="#a1bb65ae85a94a7d09404d6a77a55afe8">More...</a><br /></td></tr>
+<tr class="separator:a1bb65ae85a94a7d09404d6a77a55afe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95df3e1eb43494f88c92a0826f7071c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco__internal_8h.html#a9e23993ad9b71c438ed1bd5a31afe4af">coco_logger_free_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__observer__s.html#a95df3e1eb43494f88c92a0826f7071c9">logger_free_function</a></td></tr>
+<tr class="memdesc:a95df3e1eb43494f88c92a0826f7071c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function for freeing the logger.  <a href="#a95df3e1eb43494f88c92a0826f7071c9">More...</a><br /></td></tr>
+<tr class="separator:a95df3e1eb43494f88c92a0826f7071c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The COCO observer structure. </p>
@@ -231,17 +237,31 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0bd52d4e1b3601b117f9b3335b6d1787"></a>
+<a class="anchor" id="a1bb65ae85a94a7d09404d6a77a55afe8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="coco__internal_8h.html#a1b67e36b731c76b3701d5bbbde48e73f">coco_logger_initialize_function_t</a> logger_initialize_function</td>
+          <td class="memname"><a class="el" href="coco__internal_8h.html#aa7305390f20860fa6e7913da253e4416">coco_logger_allocate_function_t</a> logger_allocate_function</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The function for initializing the corresponding logger. </p>
+<p>The function for allocating the logger. </p>
+
+</div>
+</div>
+<a class="anchor" id="a95df3e1eb43494f88c92a0826f7071c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="coco__internal_8h.html#a9e23993ad9b71c438ed1bd5a31afe4af">coco_logger_free_function_t</a> logger_free_function</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function for freeing the logger. </p>
 
 </div>
 </div>
@@ -270,6 +290,20 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The number of targets between each 10**i and 10**(i+1). </p>
+
+</div>
+</div>
+<a class="anchor" id="ab17b55368e521787a5290cb525005801"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* observer_name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Name of the observer for identification purposes. </p>
 
 </div>
 </div>

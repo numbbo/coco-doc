@@ -180,7 +180,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a422cee3f06f4b2524234102f75306fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next (observed) problem of the suite or NULL if there is no next problem left.  <a href="#a422cee3f06f4b2524234102f75306fe7">More...</a><br /></td></tr>
 <tr class="separator:a422cee3f06f4b2524234102f75306fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56279a2384ad7255d0cc459c2d707284"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a56279a2384ad7255d0cc459c2d707284">coco_suite_encode_problem_index</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
-<tr class="memdesc:a56279a2384ad7255d0cc459c2d707284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the index of the problem in the suite that corresponds to the given function, dimension and instance indexes.  <a href="#a56279a2384ad7255d0cc459c2d707284">More...</a><br /></td></tr>
+<tr class="memdesc:a56279a2384ad7255d0cc459c2d707284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the index of the problem in the suite that corresponds to the given function, dimension and instance indices.  <a href="#a56279a2384ad7255d0cc459c2d707284">More...</a><br /></td></tr>
 <tr class="separator:a56279a2384ad7255d0cc459c2d707284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afba31042ce1fc719ad2b55e334bc56f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#afba31042ce1fc719ad2b55e334bc56f2">coco_suite_decode_problem_index</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t problem_index, size_t *function_idx, size_t *dimension_idx, size_t *instance_idx)</td></tr>
 <tr class="memdesc:afba31042ce1fc719ad2b55e334bc56f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the function, dimension and instance indexes of the problem with problem_index in the given suite.  <a href="#afba31042ce1fc719ad2b55e334bc56f2">More...</a><br /></td></tr>
@@ -254,8 +254,8 @@ Functions</h2></td></tr>
 </td></tr>
     <tr><td class="paramname">suite_options</td><td>A string of pairs "key: value" used to filter the suite (especially useful for parallelizing the experiments). Supported options:<ul>
 <li>"dimensions: LIST", where LIST is the list of dimensions to keep in the suite (range-style syntax is not allowed here),</li>
-<li>"function_idx: VALUES", where VALUES is a list or a range of function indexes (starting from 1) to keep in the suite, and</li>
-<li>"instance_idx: VALUES", where VALUES is a list or a range of instance indexes (starting from 1) to keep in the suite.</li>
+<li>"function_indices: VALUES", where VALUES is a list or a range of function indices (starting from 1) to keep in the suite, and</li>
+<li>"instance_indices: VALUES", where VALUES is a list or a range of instance indices (starting from 1) to keep in the suite.</li>
 </ul>
 </td></tr>
   </table>
@@ -412,7 +412,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Computes the index of the problem in the suite that corresponds to the given function, dimension and instance indexes. </p>
+<p>Computes the index of the problem in the suite that corresponds to the given function, dimension and instance indices. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">suite</td><td>The suite. </td></tr>
