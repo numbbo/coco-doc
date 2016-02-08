@@ -1323,6 +1323,7 @@ x must point to a correctly sized allocated memory region.</dd></dl>
 </td></tr>
     <tr><td class="paramname">suite_options</td><td>A string of pairs "key: value" used to filter the suite (especially useful for parallelizing the experiments). Supported options:<ul>
 <li>"dimensions: LIST", where LIST is the list of dimensions to keep in the suite (range-style syntax is not allowed here),</li>
+<li>"dimension_indices: VALUES", where VALUES is a list or a range of dimension indices (starting from 1) to keep in the suite, and</li>
 <li>"function_indices: VALUES", where VALUES is a list or a range of function indices (starting from 1) to keep in the suite, and</li>
 <li>"instance_indices: VALUES", where VALUES is a list or a range of instance indices (starting from 1) to keep in the suite.</li>
 </ul>

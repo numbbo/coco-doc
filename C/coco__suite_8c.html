@@ -134,9 +134,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af84c78393f07781d720c6e9a496d796b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#af84c78393f07781d720c6e9a496d796b">coco_suite_set_instance</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t *instance_numbers)</td></tr>
 <tr class="memdesc:af84c78393f07781d720c6e9a496d796b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the suite instance to the given instance_numbers.  <a href="#af84c78393f07781d720c6e9a496d796b">More...</a><br /></td></tr>
 <tr class="separator:af84c78393f07781d720c6e9a496d796b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa82fc5ff3a7e25722c86f5bbf3e09202"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#aa82fc5ff3a7e25722c86f5bbf3e09202">coco_suite_filter_idx</a> (size_t *items, const size_t number_of_items, const size_t *indices, const char *name)</td></tr>
-<tr class="memdesc:aa82fc5ff3a7e25722c86f5bbf3e09202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters the given items w.r.t. the given indices (starting from 0).  <a href="#aa82fc5ff3a7e25722c86f5bbf3e09202">More...</a><br /></td></tr>
-<tr class="separator:aa82fc5ff3a7e25722c86f5bbf3e09202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa33cfceec3d57a8fb803b0dde8328b22"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#aa33cfceec3d57a8fb803b0dde8328b22">coco_suite_filter_indices</a> (size_t *items, const size_t number_of_items, const size_t *indices, const char *name)</td></tr>
+<tr class="memdesc:aa33cfceec3d57a8fb803b0dde8328b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters the given items w.r.t. the given indices (starting from 1).  <a href="#aa33cfceec3d57a8fb803b0dde8328b22">More...</a><br /></td></tr>
+<tr class="separator:aa33cfceec3d57a8fb803b0dde8328b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe2aae43806fcc21b1cf0e070efb9ed0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#afe2aae43806fcc21b1cf0e070efb9ed0">coco_suite_filter_dimensions</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t *dimension_numbers)</td></tr>
 <tr class="memdesc:afe2aae43806fcc21b1cf0e070efb9ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters dimensions w.r.t. the given dimension_numbers.  <a href="#afe2aae43806fcc21b1cf0e070efb9ed0">More...</a><br /></td></tr>
 <tr class="separator:afe2aae43806fcc21b1cf0e070efb9ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,6 +254,7 @@ Functions</h2></td></tr>
 </td></tr>
     <tr><td class="paramname">suite_options</td><td>A string of pairs "key: value" used to filter the suite (especially useful for parallelizing the experiments). Supported options:<ul>
 <li>"dimensions: LIST", where LIST is the list of dimensions to keep in the suite (range-style syntax is not allowed here),</li>
+<li>"dimension_indices: VALUES", where VALUES is a list or a range of dimension indices (starting from 1) to keep in the suite, and</li>
 <li>"function_indices: VALUES", where VALUES is a list or a range of function indices (starting from 1) to keep in the suite, and</li>
 <li>"instance_indices: VALUES", where VALUES is a list or a range of instance indices (starting from 1) to keep in the suite.</li>
 </ul>
@@ -463,7 +464,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa82fc5ff3a7e25722c86f5bbf3e09202"></a>
+<a class="anchor" id="aa33cfceec3d57a8fb803b0dde8328b22"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -471,7 +472,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void coco_suite_filter_idx </td>
+          <td class="memname">static void coco_suite_filter_indices </td>
           <td>(</td>
           <td class="paramtype">size_t *&#160;</td>
           <td class="paramname"><em>items</em>, </td>
@@ -507,8 +508,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Filters the given items w.r.t. the given indices (starting from 0). </p>
-<p>Sets items[i] to 0 for every i that cannot be found in indices. </p>
+<p>Filters the given items w.r.t. the given indices (starting from 1). </p>
+<p>Sets items[i - 1] to 0 for every i that cannot be found in indices (this function performs the conversion from user-friendly indices starting from 1 to C-friendly indices starting from 0). </p>
 
 </div>
 </div>
