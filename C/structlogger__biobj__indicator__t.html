@@ -140,6 +140,10 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The indicator type. </p>
+<p><b> The hypervolume indicator ("hyp") </b></p>
+<p>The hypervolume indicator measures the volume of the portion of the ROI in the objective space that is dominated by the current Pareto front approximation. Instead of logging the hypervolume indicator value, this implementation logs the difference between the best know hypervolume indicator (a value stored in best_value) and the hypervolume indicator of the current Pareto front approximation (current_value). The current_value equals 0 if no solution is located in the ROI. In order to be able to register the performance of an optimizer even before the ROI is reached, an additional value is computed when no solutions are located inside the ROI. This value is stored in additional_penalty and equals the normalized distance to the ROI of the solution closest to the ROI (additional_penalty is set to 0 as soon as a solution reaches the ROI). The final value to be logged (overall_value) is therefore computed in the following way:</p>
+<p>overall_value = best_value - current_value + additional_penalty</p>
+<dl class="section note"><dt>Note</dt><dd>Other indicators are yet to be implemented. </dd></dl>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a9e75d63c1878c234736b04dee80123c5"></a>
 <div class="memitem">

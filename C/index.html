@@ -132,6 +132,7 @@ observer = coco_observer("bbob-biobj", observer_options);
 <li><code>function_indices: VALUES</code>, where <code>VALUES</code> is a list or a range of function indices (starting from 1) to keep in the suite, and</li>
 <li><code>instance_indices: VALUES</code>, where <code>VALUES</code> is a list or a range of instance indices (starting from 1) to keep in the suite.</li>
 </ul>
+<p>If both <code>dimensions</code> and <code>dimension_indices</code> appear in the <code>suite_options</code> string, only the first one is taken into account. If no <code>suite_options</code> is given, no filtering by functions, dimensions and instances is performed, i.e. the experiment will be run on the entire benchmark suite.</p>
 <p>For example, the call: </p><pre class="fragment">suite = coco_suite("bbob-biobj", 
                    "instances: 10-20", 
                    "dimensions: 2,3,5,10,20 instance_indices:1-5");
