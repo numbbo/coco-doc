@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/numbbo-ttusar/code-experiments/src/coco_runtime_c.c File Reference</title>
+        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/numbbo-ttusar/code-experiments/src/coco_runtime_matlab.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -95,45 +95,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">coco_runtime_c.c File Reference</div>  </div>
+<div class="title">coco_runtime_matlab.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Generic COCO runtime implementation for the C language.  
+<p>Specific COCO runtime implementation for the Matlab language that replaces <a class="el" href="coco__runtime__c_8c.html" title="Generic COCO runtime implementation for the C language. ">coco_runtime_c.c</a> with the Matlab-specific counterparts.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &lt;mex.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__utilities_8c.html">coco_utilities.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6191daa0f616cacdea2ae3de985d9487"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#a6191daa0f616cacdea2ae3de985d9487">coco_error</a> (const char *message,...)</td></tr>
+<tr class="memitem:a6191daa0f616cacdea2ae3de985d9487"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__matlab_8c.html#a6191daa0f616cacdea2ae3de985d9487">coco_error</a> (const char *message,...)</td></tr>
 <tr class="memdesc:a6191daa0f616cacdea2ae3de985d9487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals a fatal error.  <a href="#a6191daa0f616cacdea2ae3de985d9487">More...</a><br /></td></tr>
 <tr class="separator:a6191daa0f616cacdea2ae3de985d9487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb3189475b296249e802e13ba412d504"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#adb3189475b296249e802e13ba412d504">coco_warning</a> (const char *message,...)</td></tr>
+<tr class="memitem:adb3189475b296249e802e13ba412d504"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__matlab_8c.html#adb3189475b296249e802e13ba412d504">coco_warning</a> (const char *message,...)</td></tr>
 <tr class="memdesc:adb3189475b296249e802e13ba412d504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warns about error conditions.  <a href="#adb3189475b296249e802e13ba412d504">More...</a><br /></td></tr>
 <tr class="separator:adb3189475b296249e802e13ba412d504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25461e3167b8b68602e6407efdcf52bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#a25461e3167b8b68602e6407efdcf52bc">coco_info</a> (const char *message,...)</td></tr>
+<tr class="memitem:a25461e3167b8b68602e6407efdcf52bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__matlab_8c.html#a25461e3167b8b68602e6407efdcf52bc">coco_info</a> (const char *message,...)</td></tr>
 <tr class="memdesc:a25461e3167b8b68602e6407efdcf52bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs some information.  <a href="#a25461e3167b8b68602e6407efdcf52bc">More...</a><br /></td></tr>
 <tr class="separator:a25461e3167b8b68602e6407efdcf52bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afec5912278d4a6317f25468f20e9fd11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#afec5912278d4a6317f25468f20e9fd11">coco_info_partial</a> (const char *message,...)</td></tr>
+<tr class="memitem:afec5912278d4a6317f25468f20e9fd11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__matlab_8c.html#afec5912278d4a6317f25468f20e9fd11">coco_info_partial</a> (const char *message,...)</td></tr>
 <tr class="memdesc:afec5912278d4a6317f25468f20e9fd11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints only the given message without any prefix and new line.  <a href="#afec5912278d4a6317f25468f20e9fd11">More...</a><br /></td></tr>
 <tr class="separator:afec5912278d4a6317f25468f20e9fd11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7c6d1e119e3b8c647da24f6f609c40f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#ab7c6d1e119e3b8c647da24f6f609c40f">coco_debug</a> (const char *message,...)</td></tr>
+<tr class="memitem:ab7c6d1e119e3b8c647da24f6f609c40f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__matlab_8c.html#ab7c6d1e119e3b8c647da24f6f609c40f">coco_debug</a> (const char *message,...)</td></tr>
 <tr class="memdesc:ab7c6d1e119e3b8c647da24f6f609c40f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs detailed information usually used for debugging.  <a href="#ab7c6d1e119e3b8c647da24f6f609c40f">More...</a><br /></td></tr>
 <tr class="separator:ab7c6d1e119e3b8c647da24f6f609c40f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1b016a6e67c46c20410b1daa959737b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#aa1b016a6e67c46c20410b1daa959737b">coco_allocate_memory</a> (const size_t size)</td></tr>
+<tr class="memitem:aa1b016a6e67c46c20410b1daa959737b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__matlab_8c.html#aa1b016a6e67c46c20410b1daa959737b">coco_allocate_memory</a> (const size_t size)</td></tr>
 <tr class="memdesc:aa1b016a6e67c46c20410b1daa959737b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe memory allocation that either succeeds or triggers a coco_error.  <a href="#aa1b016a6e67c46c20410b1daa959737b">More...</a><br /></td></tr>
 <tr class="separator:aa1b016a6e67c46c20410b1daa959737b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8542ff7c23ec7a8e64487a50232db26f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__c_8c.html#a8542ff7c23ec7a8e64487a50232db26f">coco_free_memory</a> (void *data)</td></tr>
+<tr class="memitem:a8542ff7c23ec7a8e64487a50232db26f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__runtime__matlab_8c.html#a8542ff7c23ec7a8e64487a50232db26f">coco_free_memory</a> (void *data)</td></tr>
 <tr class="memdesc:a8542ff7c23ec7a8e64487a50232db26f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the allocated memory.  <a href="#a8542ff7c23ec7a8e64487a50232db26f">More...</a><br /></td></tr>
 <tr class="separator:a8542ff7c23ec7a8e64487a50232db26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Generic COCO runtime implementation for the C language. </p>
-<p>Other language interfaces might want to replace this so that memory allocation and error handling go through the respective language runtime. </p>
+<div class="textblock"><p>Specific COCO runtime implementation for the Matlab language that replaces <a class="el" href="coco__runtime__c_8c.html" title="Generic COCO runtime implementation for the C language. ">coco_runtime_c.c</a> with the Matlab-specific counterparts. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="aa1b016a6e67c46c20410b1daa959737b"></a>
 <div class="memitem">
