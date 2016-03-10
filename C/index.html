@@ -100,22 +100,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>How to conduct experiments in all supported languages is described at <a href="http://numbbo.github.io/bbob-biobj-experiments-doc">http://numbbo.github.io/bbob-biobj-experiments-doc</a> (coming soon)</p>
 <h2>How to conduct benchmarking experiments in C <a class="anchor" id="benchmarking"></a></h2>
 <p>At this point we assume that the <code>example_experiment</code> in C is running on your machine (see the <a href="https://github.com/numbbo/coco/blob/master/README.md#getting-started">getting started guide</a> if you need any assistance). The best way to create your own benchmark experiment is to copy that example and make the changes you need to include your optimizer.</p>
-<p>Benchmarking the algorithm <code>my_optimizer</code> on the <code>bbob-biobj</code> suite with default parameters (see below for explanation of the <a href="#suite-parameters">suite parameters</a> and <a href="#observer-parameters">observer parameters</a>) is invoked in the following way: </p><pre class="fragment">coco_suite_t *suite;
+<p>In order to simplify the interface between the optimizers and the COCO platform, a static pointer to a COCO problem and a function type for evaluation functions are used: </p><pre class="fragment">static coco_problem_t *PROBLEM;
+typedef void (*evaluate_function_t)(const double *x, double *y);
+</pre><p>Benchmarking a single run of the algorithm <code>my_optimizer</code> on the <code>bbob-biobj</code> suite with default parameters is invoked in the following way (see below for explanation of the <a href="#suite-parameters">suite parameters</a> and <a href="#observer-parameters">observer parameters</a>): </p><pre class="fragment">coco_suite_t *suite;
 coco_observer_t *observer;
-coco_problem_t *problem;
 
 suite = coco_suite("bbob-biobj", "", "");
 observer = coco_observer("bbob-biobj", "");
 
-while ((problem = coco_suite_get_next_problem(suite, observer)) != NULL) {
-  my_optimizer(problem);
-}
+while ((PROBLEM = coco_suite_get_next_problem(suite, observer)) != NULL) {
+  size_t dimension = coco_problem_get_dimension(PROBLEM);
+
+  my_optimizer(evaluate_function, 
+               dimension,
+               coco_problem_get_number_of_objectives(PROBLEM),
+               coco_problem_get_smallest_values_of_interest(PROBLEM),
+               coco_problem_get_largest_values_of_interest(PROBLEM),
+               dimension * BUDGET_MULTIPLIER,
+               random_generator);
+}  
 
 coco_observer_free(observer);
 coco_suite_free(suite);
-</pre><p>The <code>coco_suite_t</code> object is a collection of (in this case biobjective) optimization problems of type <code>coco_problem_t</code>. The while loop iterates through all problems of the suite and optimizes each of them with <code>my_optimizer</code> (a simple random search is used in the <code>example_experiment</code>). The <code>coco_observer_t</code> object takes care of logging the performance of the optimizer. Note that this benchmarking procedure remains the same whether we are dealing with single- or multi-objective problems and algorithms. To perform benchmarking on a different suite and with a different observer, just replace <code>"bbob-biobj"</code> with the name of the desired suite and observer.</p>
-<p>The optimizer should be run until <code>dimension * BUDGET</code> number of evaluations have been reached. In the <code>example_experiment</code>, the <code>BUDGET</code> is conservatively set using </p><pre class="fragment">static const size_t BUDGET = 2;
-</pre><p>so that the experiment runs quickly. You need to increase the budget for your real benchmarking experiments, but do so gradually (you might want to test <code>BUDGET = 1e2</code> before you use any larger values) to see how it effects the running time of the benchmark.</p>
+</pre><p>The <code>coco_suite_t</code> object is a collection of (in this case biobjective) optimization problems of type <code>coco_problem_t</code>. The while loop iterates through all problems of the suite and optimizes each of them with <code>my_optimizer</code> (a simple random search is used in the <code>example_experiment</code>). The <code>coco_observer_t</code> object takes care of logging the performance of the optimizer. The interface to <code>my_optimizer</code> includes the following parameters:</p><ul>
+<li>the function that evaluates solutions on the optimization problem in question,</li>
+<li>the number of variables (dimension),</li>
+<li>the number of objectives,</li>
+<li>the smallest and largest values of interest, which define the region of interest in the decision space,</li>
+<li>the maximal budget of evaluations and</li>
+<li>the random generator.</li>
+</ul>
+<p>The optimizer should be run until <code>dimension * BUDGET_MULTIPLIER</code> number of evaluations have been reached. In the <code>example_experiment</code>, the <code>BUDGET_MULTIPLIER</code> is conservatively set using </p><pre class="fragment">static const size_t BUDGET_MULTIPLIER = 2;
+</pre><p>so that the experiment runs quickly. You need to increase the budget for your real benchmarking experiments, but do so gradually (you might want to test <code>BUDGET_MULTIPLIER = 1e2</code> before you use any larger values) to see how it effects the running time of the benchmark.</p>
+<p>The actual <code>example_experiment</code> contains an additional loop that supports <b>independent restarts</b> by <code>my_optimizer</code> and takes care of breaking the loop when the target has been hit or the budget of function evaluations has been exhausted. While the simple random search used in the example does not trigger restarts by itself, your optimizer most probably should (in order to avoid being stuck in a local optimum). When restarting the algorithm make sure that the optimizer is not doing the exaclty same thing in every run.</p>
+<p>Note that this benchmarking procedure remains the same whether we are dealing with single- or multi-objective problems and algorithms. To perform benchmarking on a different suite and with a different observer, just replace <code>"bbob-biobj"</code> with the name of the desired suite and observer.</p>
 <p>In the above example, the suite and observer are called without additional parameters (the empty strings <code>""</code> are used), which means that their default values apply. These can be changed by calling: </p><pre class="fragment">suite = coco_suite("bbob-biobj", suite_instance, suite_options);
 observer = coco_observer("bbob-biobj", observer_options);
 </pre><p>where <code>suite_instance</code>, <code>suite_options</code> and <code>observer_options</code> are strings with parameters encoded as pairs <code>"key: value"</code>. When the value consists of one or more integers, it can be encoded using the syntax <code>m-n</code> (meaning all integer values from m to n), <code>-n</code> (meaning all values up to n), <code>n-</code> (meaning all values from n on) and even <code>-</code> (meaning all available values); or by simply listing the values separated by commas (as in <code>2,3,5</code>). No spaces are allowed in the definition of a range or list of values.</p>
