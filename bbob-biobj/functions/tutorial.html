@@ -1,219 +1,140 @@
 
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Benchmarking Multi-objective Optimizers on the bbob-biobj Suite with Coco: A Short Tutorial &mdash; bbob-biobj-functions-doc 0.5-beta documentation</title>
-  
+<!doctype html>
 
-  
-  
 
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-    <link rel="top" title="bbob-biobj-functions-doc 0.5-beta documentation" href="index.html"/>
-        <link rel="prev" title="The bbob-biobj Test Functions and Their Properties" href="functions/index.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
+    <title>5. Benchmarking Multi-objective Optimizers on the bbob-biobj Suite with Coco: A Short Tutorial &mdash; COCO: The bbob-biobj Function Description</title>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="index.html" class="icon icon-home"> bbob-biobj-functions-doc
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                0.5-beta
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="top" title="COCO: The bbob-biobj Function Description" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO: The bbob-biobj Function Description</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tutorial.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="state-of-the-art.html">State-of-the-art in Multiobjective Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="our-approach.html">Overview of the Proposed <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Test Suite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functions/index.html">The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Test Functions and Their Properties</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Benchmarking Multi-objective Optimizers on the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Suite with Coco: A Short Tutorial</a></li>
-</ul>
-
-            
-          
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
-    </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">bbob-biobj-functions-doc</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Benchmarking Multi-objective Optimizers on the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Suite with Coco: A Short Tutorial</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="_sources/tutorial.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
   <div class="section" id="benchmarking-multi-objective-optimizers-on-the-bbob-biobj-suite-with-coco-a-short-tutorial">
 <h1>Benchmarking Multi-objective Optimizers on the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Suite with Coco: A Short Tutorial<a class="headerlink" href="#benchmarking-multi-objective-optimizers-on-the-bbob-biobj-suite-with-coco-a-short-tutorial" title="Permalink to this headline">¶</a></h1>
-<p>The Comparing Continuous Optimizers platform (COCO) offers an almost automated way of benchmarking numerical (black-box)
-optimizers. Running experiments is supported in various languages (C, Java, Matlab/Octave, python) during which the
-data acquisition is automated and even hidden to the user such that she/he only needs to care about connecting
-an optimization algorithm to the Coco framework and providing some cpu time for the actual experiment. The automatically
-created data folder can be postprocessed with a generic python script which produces various outputs (plots, html, and
-LaTeX/PDF summaries) semi-automatically.</p>
-<p>Since its entire rewrite, the Coco platform now especially contains a multi-objective benchmark suite <cite>bbob-biobj</cite> with
-the above described 55 functions of two objectives each. In the following, we will present briefly how to run
-an experiment with Coco (in the python programming language as an example), postprocess the data, and create a
-pdf with the results, preparing for a submission at the GECCO conference (i.e., in ACM style). The comparison of two
-and more algorithm data sets is also provided, but not detailed here. For more information, we refer to the
-documentation of the C code of Coco which every supported language is build upon: <a class="reference external" href="http://numbbo.github.io/coco-doc/C/">http://numbbo.github.io/coco-doc/C/</a>.</p>
-<p>will go here:</p>
-<p>a short tutorial on how to use the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite for benchmarking multi-objective optimizers within the Coco
-framework</p>
+<p>The Comparing Continuous Optimizers platform (Coco) offers an almost
+automated way of benchmarking numerical (black-box) optimizers. Running
+experiments is supported in various languages (C, Java, Matlab/Octave,
+python) during which the data acquisition is automated and even hidden to
+the user such that she/he only needs to care about connecting an
+optimization algorithm to the Coco framework and providing some cpu time
+for the actual experiment. The automatically created data folder can be
+postprocessed with a generic python script which produces various outputs
+(plots, html, and LaTeX/PDF summaries) semi-automatically.</p>
+<p>Since its entire rewrite, the Coco platform now especially contains a
+multi-objective benchmark suite <code class="docutils literal"><span class="pre">bbob-biobj</span></code> with the above described
+55 functions of two objectives each. In the following, we will present
+briefly how to run an experiment with Coco (in the python programming
+language as an example), postprocess the data, and create a pdf with the
+results, preparing for a submission at the GECCO conference (i.e., in
+ACM style). The comparison of two and more algorithm data sets is also
+provided, but not detailed here. For more information, we refer to the
+documentation of the C code of Coco which every supported language is
+built upon at <a class="reference external" href="http://numbbo.github.io/coco-doc/C/">http://numbbo.github.io/coco-doc/C/</a> and the documentation
+of the Coco platform in general, see <a class="reference external" href="http://github.com/numbbo/coco">http://github.com/numbbo/coco</a>.</p>
+<p>As the very first step, the COCO source code shall be downloaded
+from the github page at <a class="reference external" href="https://github.com/numbbo/coco/archive/master.zip">https://github.com/numbbo/coco/archive/master.zip</a>
+and extracted. Note that in order to compile and run the code,
+a standard C compiler (e.g. gcc) and python needs to be installed (we
+recommend using the Anaconda distribution for python from
+<a class="reference external" href="https://www.continuum.io/downloads">https://www.continuum.io/downloads</a>). If this is the case,
+typing:</p>
+<div class="highlight-python"><div class="highlight"><pre>python do.py run-python
+</pre></div>
+</div>
+<p>in a terminal (or command line, however it is called depending on the
+operating system) within the root folder of the extracted <code class="docutils literal"><span class="pre">.zip</span></code> file
+will build/install the COCO software locally for Python and run a simple
+example experiment as integration test. The example experiment itself
+can be found in the folder <code class="docutils literal"><span class="pre">code-experiments/build/python/</span></code>
+as <code class="docutils literal"><span class="pre">example_experiment.py</span></code>.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Finish the short tutorial on how to use the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite
+for benchmarking multi-objective optimizers within the Coco framework.</p>
+</div>
 </div>
 
 
-           </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="functions/index.html" class="btn btn-neutral" title="The bbob-biobj Test Functions and Their Properties" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2015, The BBOBies.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
-
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.5-beta',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-   
-
-</body>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">COCO: The bbob-biobj Function Description</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015-2016, The BBOBies.
+      Last updated on Mar 16, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
 </html>
