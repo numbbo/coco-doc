@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/numbbo-ttusar/code-experiments/src/coco_observer.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/numbbo-newcococode-brockho/code-experiments/src/coco_observer.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -149,7 +149,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a4fdd05cce82ebcc91e275c870bb9f4ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a structure containing information on targets.  <a href="#a4fdd05cce82ebcc91e275c870bb9f4ec">More...</a><br /></td></tr>
 <tr class="separator:a4fdd05cce82ebcc91e275c870bb9f4ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7da5e1a2dfd7dcbc03628741d6e1b6fe"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a7da5e1a2dfd7dcbc03628741d6e1b6fe">coco_observer_targets_trigger</a> (<a class="el" href="structcoco__observer__targets__t.html">coco_observer_targets_t</a> *targets, const double given_value)</td></tr>
-<tr class="memdesc:a7da5e1a2dfd7dcbc03628741d6e1b6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a structure containing information on targets.  <a href="#a7da5e1a2dfd7dcbc03628741d6e1b6fe">More...</a><br /></td></tr>
+<tr class="memdesc:a7da5e1a2dfd7dcbc03628741d6e1b6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes and returns whether the given value should trigger logging.  <a href="#a7da5e1a2dfd7dcbc03628741d6e1b6fe">More...</a><br /></td></tr>
 <tr class="separator:a7da5e1a2dfd7dcbc03628741d6e1b6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Methods regarding triggers based on numbers of evaluations.</div></td></tr>
 <tr class="memitem:a4eb3a60920c3ac730137ad4e794ccdff"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structcoco__observer__evaluations__t.html">coco_observer_evaluations_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a4eb3a60920c3ac730137ad4e794ccdff">coco_observer_evaluations</a> (const char *base_evaluations, const size_t dimension)</td></tr>
@@ -603,14 +603,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates and returns a structure containing information on targets. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">number_of_targets</td><td>The number of targets between 10**(i/n) and 10**((i+1)/n) for each i. </td></tr>
-    <tr><td class="paramname">precision</td><td>Minimal precision of interest. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Computes and returns whether the given value should trigger logging. </p>
 
 </div>
 </div>

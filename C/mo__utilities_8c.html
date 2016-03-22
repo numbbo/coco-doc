@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/numbbo-ttusar/code-experiments/src/mo_utilities.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/numbbo-newcococode-brockho/code-experiments/src/mo_utilities.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -116,6 +116,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a37432ae8569214ca61ea9ef6e3dbd13f"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#a37432ae8569214ca61ea9ef6e3dbd13f">mo_get_distance_to_ROI</a> (const double *y, const double *ideal, const double *nadir, const size_t dimension)</td></tr>
 <tr class="memdesc:a37432ae8569214ca61ea9ef6e3dbd13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes and returns the minimal normalized distance from the point y to the ROI.  <a href="#a37432ae8569214ca61ea9ef6e3dbd13f">More...</a><br /></td></tr>
 <tr class="separator:a37432ae8569214ca61ea9ef6e3dbd13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7236a1a1046f2cddfa22446c1d2d15c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#ae7236a1a1046f2cddfa22446c1d2d15c">mo_solution_is_within_ROI</a> (const double *y, const double *ideal, const double *nadir, const size_t dimension)</td></tr>
+<tr class="memdesc:ae7236a1a1046f2cddfa22446c1d2d15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes and returns whether the solution y is within the ROI.  <a href="#ae7236a1a1046f2cddfa22446c1d2d15c">More...</a><br /></td></tr>
+<tr class="separator:ae7236a1a1046f2cddfa22446c1d2d15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions of miscellaneous functions used for multi-objective problems. </p>
@@ -165,7 +168,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes and returns the minimal normalized distance from the point y to the ROI. </p>
-<dl class="section note"><dt>Note</dt><dd>Assumes the point is dominated by the ideal point and the dimension equals 2. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Assumes the point is dominated by the ideal point and dimension equals 2. </dd></dl>
 
 </div>
 </div>
@@ -254,6 +257,55 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes and returns the Euclidean norm of two dim-dimensional points first and second. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae7236a1a1046f2cddfa22446c1d2d15c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int mo_solution_is_within_ROI </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>ideal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>nadir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes and returns whether the solution y is within the ROI. </p>
+<dl class="section note"><dt>Note</dt><dd>Assumes the solution is dominated by the ideal point and dimension equals 2. </dd></dl>
 
 </div>
 </div>

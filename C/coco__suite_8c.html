@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/numbbo-ttusar/code-experiments/src/coco_suite.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/numbbo-newcococode-brockho/code-experiments/src/coco_suite.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -126,7 +126,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:abdef24d894feb478f2a8b4a22f183881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the function that sets the instanced by year for the given suite.  <a href="#abdef24d894feb478f2a8b4a22f183881">More...</a><br /></td></tr>
 <tr class="separator:abdef24d894feb478f2a8b4a22f183881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ba35533f22304d27fc88925d12e44b8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a8ba35533f22304d27fc88925d12e44b8">coco_suite_get_problem_from_indices</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
-<tr class="memdesc:a8ba35533f22304d27fc88925d12e44b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the function that returns the problem corresponding to the given suite, function index, dimension index and instance index.  <a href="#a8ba35533f22304d27fc88925d12e44b8">More...</a><br /></td></tr>
+<tr class="memdesc:a8ba35533f22304d27fc88925d12e44b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the function that returns the problem corresponding to the given suite, function index, dimension index and instance index. If the indices don't correspond to a problem because of suite filtering, it returns NULL.  <a href="#a8ba35533f22304d27fc88925d12e44b8">More...</a><br /></td></tr>
 <tr class="separator:a8ba35533f22304d27fc88925d12e44b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b47fb18f2f9cd8f1c74cc08e29b920a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a5b47fb18f2f9cd8f1c74cc08e29b920a">coco_suite_allocate</a> (const char *suite_name, const size_t number_of_functions, const size_t number_of_dimensions, const size_t *dimensions, const char *default_instances)</td></tr>
 <tr class="memdesc:a5b47fb18f2f9cd8f1c74cc08e29b920a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the space for a coco_suite_t instance.  <a href="#a5b47fb18f2f9cd8f1c74cc08e29b920a">More...</a><br /></td></tr>
@@ -809,7 +809,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The problem of the suite defined by problem_index. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The problem of the suite defined by problem_index (NULL if this problem has been filtered out from the suite). </dd></dl>
 
 </div>
 </div>
@@ -857,7 +857,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Calls the function that returns the problem corresponding to the given suite, function index, dimension index and instance index. </p>
+<p>Calls the function that returns the problem corresponding to the given suite, function index, dimension index and instance index. If the indices don't correspond to a problem because of suite filtering, it returns NULL. </p>
 <dl class="section note"><dt>Note</dt><dd>This function needs to be updated when a new suite is added to COCO. </dd></dl>
 
 </div>

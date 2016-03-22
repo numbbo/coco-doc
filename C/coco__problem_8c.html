@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/numbbo-ttusar/code-experiments/src/coco_problem.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/numbbo-newcococode-brockho/code-experiments/src/coco_problem.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -143,6 +143,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a6ad88cdba2ffd15847346d594974067f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a6ad88cdba2ffd15847346d594974067f">coco_problem_get_evaluations</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:a6ad88cdba2ffd15847346d594974067f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of evaluations done on the problem.  <a href="#a6ad88cdba2ffd15847346d594974067f">More...</a><br /></td></tr>
 <tr class="separator:a6ad88cdba2ffd15847346d594974067f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d030b84e874b59c84b99e3aacd0dbee"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a5d030b84e874b59c84b99e3aacd0dbee">coco_problem_is_best_parameter_zero</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a5d030b84e874b59c84b99e3aacd0dbee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if the best parameter is (close to) zero and 0 otherwise.  <a href="#a5d030b84e874b59c84b99e3aacd0dbee">More...</a><br /></td></tr>
+<tr class="separator:a5d030b84e874b59c84b99e3aacd0dbee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1164d85fd641ca48046b943344ae9069"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a1164d85fd641ca48046b943344ae9069">coco_problem_final_target_hit</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:a1164d85fd641ca48046b943344ae9069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if the final target was hit, 0 otherwise.  <a href="#a1164d85fd641ca48046b943344ae9069">More...</a><br /></td></tr>
 <tr class="separator:a1164d85fd641ca48046b943344ae9069"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -467,7 +470,7 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 </div><div class="memdoc">
 
 <p>Returns 1 if the final target was hit, 0 otherwise. </p>
-<dl class="section note"><dt>Note</dt><dd>Can be used to prevent unnessary burning of CPU time. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Can be used to prevent unnecessary burning of CPU time. </dd></dl>
 
 </div>
 </div>
@@ -844,6 +847,32 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 
 <p>Checks whether the given string is in the right format to be a problem_id. </p>
 <p>No non-alphanumeric characters besides '-', '_' and '.' are allowed. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5d030b84e874b59c84b99e3aacd0dbee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_problem_is_best_parameter_zero </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns 1 if the best parameter is (close to) zero and 0 otherwise. </p>
 
 </div>
 </div>

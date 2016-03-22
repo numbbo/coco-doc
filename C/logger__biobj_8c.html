@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/numbbo-ttusar/code-experiments/src/logger_biobj.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/numbbo-newcococode-brockho/code-experiments/src/logger_biobj.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -112,8 +112,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="coco__utilities_8c.html">coco_utilities.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__string_8c.html">coco_string.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mo__avl__tree_8c.html">mo_avl_tree.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="observer__biobj_8c.html">observer_biobj.c</a>&quot;</code><br />
-<code>#include &quot;logger_biobj_avl_tree.c&quot;</code><br />
 <code>#include &quot;<a class="el" href="mo__utilities_8c.html">mo_utilities.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -125,7 +125,7 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bi-objective logger data type.  <a href="structlogger__biobj__data__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for the node's item in the AVL tree.  <a href="structlogger__biobj__avl__item__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for the node's item in the AVL tree as used by the bi-objective logger.  <a href="structlogger__biobj__avl__item__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -140,18 +140,18 @@ Functions</h2></td></tr>
 <tr class="memdesc:ac3db5070e0269f2ff5a98fb495793a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns the information on the solution in the form of a node's item in the AVL tree.  <a href="#ac3db5070e0269f2ff5a98fb495793a0d">More...</a><br /></td></tr>
 <tr class="separator:ac3db5070e0269f2ff5a98fb495793a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38cdb0e3396eddb6365d634c13725706"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a38cdb0e3396eddb6365d634c13725706">logger_biobj_node_free</a> (<a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item, void *userdata)</td></tr>
-<tr class="memdesc:a38cdb0e3396eddb6365d634c13725706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the data of the given <a class="el" href="structlogger__biobj__avl__item__t.html" title="The type for the node&#39;s item in the AVL tree. ">logger_biobj_avl_item_t</a>.  <a href="#a38cdb0e3396eddb6365d634c13725706">More...</a><br /></td></tr>
+<tr class="memdesc:a38cdb0e3396eddb6365d634c13725706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the data of the given <a class="el" href="structlogger__biobj__avl__item__t.html" title="The type for the node&#39;s item in the AVL tree as used by the bi-objective logger. ">logger_biobj_avl_item_t</a>.  <a href="#a38cdb0e3396eddb6365d634c13725706">More...</a><br /></td></tr>
 <tr class="separator:a38cdb0e3396eddb6365d634c13725706"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b406c171fd2e9832a4a3ccf3fd00734"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a6b406c171fd2e9832a4a3ccf3fd00734">logger_biobj_check_if_within_ROI</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, avl_node_t *node)</td></tr>
-<tr class="memdesc:a6b406c171fd2e9832a4a3ccf3fd00734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given node is smaller than the nadir point, and stores this information in the node's item-&gt;within_ROI field.  <a href="#a6b406c171fd2e9832a4a3ccf3fd00734">More...</a><br /></td></tr>
-<tr class="separator:a6b406c171fd2e9832a4a3ccf3fd00734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8be11c3f8c534f32c5eaa96c2fd36463"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a8be11c3f8c534f32c5eaa96c2fd36463">logger_biobj_check_within_ROI</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *node_item)</td></tr>
+<tr class="memdesc:a8be11c3f8c534f32c5eaa96c2fd36463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given node item is within the ROI and stores this information in its within_ROI field.  <a href="#a8be11c3f8c534f32c5eaa96c2fd36463">More...</a><br /></td></tr>
+<tr class="separator:a8be11c3f8c534f32c5eaa96c2fd36463"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c34dfbb9b867965a28dff7f01f1e2e4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a2c34dfbb9b867965a28dff7f01f1e2e4">avl_tree_compare_by_last_objective</a> (const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item1, const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item2, void *userdata)</td></tr>
 <tr class="memdesc:a2c34dfbb9b867965a28dff7f01f1e2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the ordering of AVL tree nodes based on the value of the last objective.  <a href="#a2c34dfbb9b867965a28dff7f01f1e2e4">More...</a><br /></td></tr>
 <tr class="separator:a2c34dfbb9b867965a28dff7f01f1e2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63e2f011fb586e3d98273bb2bf4a6f9e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a63e2f011fb586e3d98273bb2bf4a6f9e">avl_tree_compare_by_eval_number</a> (const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item1, const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item2, void *userdata)</td></tr>
 <tr class="memdesc:a63e2f011fb586e3d98273bb2bf4a6f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the ordering of AVL tree nodes based on the evaluation number (the time when the nodes were created).  <a href="#a63e2f011fb586e3d98273bb2bf4a6f9e">More...</a><br /></td></tr>
 <tr class="separator:a63e2f011fb586e3d98273bb2bf4a6f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1482ab52f6f705fc3d84b3ae2e17c003"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a1482ab52f6f705fc3d84b3ae2e17c003">logger_biobj_tree_output</a> (FILE *file, const avl_tree_t *tree, const size_t dim, const size_t num_obj, const int log_vars, const int precision_x, const int precision_f)</td></tr>
+<tr class="memitem:a1482ab52f6f705fc3d84b3ae2e17c003"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a1482ab52f6f705fc3d84b3ae2e17c003">logger_biobj_tree_output</a> (FILE *file, const <a class="el" href="mo__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a> *tree, const size_t dim, const size_t num_obj, const int log_vars, const int precision_x, const int precision_f)</td></tr>
 <tr class="memdesc:a1482ab52f6f705fc3d84b3ae2e17c003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the AVL tree to the given file. Returns the number of nodes in the tree.  <a href="#a1482ab52f6f705fc3d84b3ae2e17c003">More...</a><br /></td></tr>
 <tr class="separator:a1482ab52f6f705fc3d84b3ae2e17c003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92eb77c11712da257319c1d75d3f27fd"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a92eb77c11712da257319c1d75d3f27fd">logger_biobj_tree_update</a> (<a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a> *logger, const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *node_item)</td></tr>
@@ -336,7 +336,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6b406c171fd2e9832a4a3ccf3fd00734"></a>
+<a class="anchor" id="a8be11c3f8c534f32c5eaa96c2fd36463"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -344,7 +344,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void logger_biobj_check_if_within_ROI </td>
+          <td class="memname">static void logger_biobj_check_within_ROI </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
           <td class="paramname"><em>problem</em>, </td>
@@ -352,8 +352,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">avl_node_t *&#160;</td>
-          <td class="paramname"><em>node</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *&#160;</td>
+          <td class="paramname"><em>node_item</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -368,7 +368,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Checks if the given node is smaller than the nadir point, and stores this information in the node's item-&gt;within_ROI field. </p>
+<p>Checks if the given node item is within the ROI and stores this information in its within_ROI field. </p>
 
 </div>
 </div>
@@ -663,7 +663,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Frees the data of the given <a class="el" href="structlogger__biobj__avl__item__t.html" title="The type for the node&#39;s item in the AVL tree. ">logger_biobj_avl_item_t</a>. </p>
+<p>Frees the data of the given <a class="el" href="structlogger__biobj__avl__item__t.html" title="The type for the node&#39;s item in the AVL tree as used by the bi-objective logger. ">logger_biobj_avl_item_t</a>. </p>
 
 </div>
 </div>
@@ -683,7 +683,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const avl_tree_t *&#160;</td>
+          <td class="paramtype">const <a class="el" href="mo__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a> *&#160;</td>
           <td class="paramname"><em>tree</em>, </td>
         </tr>
         <tr>

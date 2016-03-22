@@ -9,7 +9,7 @@ var searchData=
   ['logger_5fbbob_5fopenindexfile',['logger_bbob_openIndexFile',['../logger__bbob_8c.html#a1eff07ce199172829a42ab762bebdd3a',1,'logger_bbob.c']]],
   ['logger_5fbbob_5fwrite_5fdata',['logger_bbob_write_data',['../logger__bbob_8c.html#aa1e6fced9fe8f542ae76c518b07ccfc1',1,'logger_bbob.c']]],
   ['logger_5fbiobj',['logger_biobj',['../logger__biobj_8c.html#a4b5844795e3257a17c7558381f46dca4',1,'logger_biobj(coco_observer_t *observer, coco_problem_t *inner_problem):&#160;logger_biobj.c'],['../observer__biobj_8c.html#a41469dac8832863a7b013e919cb59f04',1,'logger_biobj(coco_observer_t *observer, coco_problem_t *problem):&#160;observer_biobj.c']]],
-  ['logger_5fbiobj_5fcheck_5fif_5fwithin_5froi',['logger_biobj_check_if_within_ROI',['../logger__biobj_8c.html#a6b406c171fd2e9832a4a3ccf3fd00734',1,'logger_biobj.c']]],
+  ['logger_5fbiobj_5fcheck_5fwithin_5froi',['logger_biobj_check_within_ROI',['../logger__biobj_8c.html#a8be11c3f8c534f32c5eaa96c2fd36463',1,'logger_biobj.c']]],
   ['logger_5fbiobj_5fevaluate',['logger_biobj_evaluate',['../logger__biobj_8c.html#aa3b9c5c68499684363d46dadb8e03fa8',1,'logger_biobj.c']]],
   ['logger_5fbiobj_5ffinalize',['logger_biobj_finalize',['../logger__biobj_8c.html#ae351ff62fa1da989f16c113ec200c73c',1,'logger_biobj.c']]],
   ['logger_5fbiobj_5ffree',['logger_biobj_free',['../logger__biobj_8c.html#a48b77cb7ab3ff1ec74596d2711e5de32',1,'logger_biobj_free(void *stuff):&#160;logger_biobj.c'],['../observer__biobj_8c.html#a76fc843f13159641f944e1f3f4facf66',1,'logger_biobj_free(void *logger):&#160;observer_biobj.c']]],
