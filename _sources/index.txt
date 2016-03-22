@@ -15,11 +15,11 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 .. |
 .. |
 
-.. Here we put the abstract when using LaTeX, the \abstractinrst command is defined in 
-     the 'preamble' of latex_elements in source/conf.py, the text
-     is defined in `abstract` of conf.py. To flip abstract and 
-     table of contents, or update the table of contents, toggle 
-     the \generatetoc command in the 'preamble' accordingly. 
+.. Here we put the abstract when using LaTeX, the \abstractinrst 
+   command is defined in the 'preamble' of latex_elements in source/conf.py,
+   the text is defined in `abstract` of conf.py. To flip abstract and table
+   of contents, or update the table of contents, toggle the \generatetoc
+   command in the 'preamble' accordingly. 
 
 .. raw:: latex
 
@@ -281,20 +281,21 @@ the following defining features.
 #. A single performance measure is used --- and thereafter aggregated and 
    displayed in 
    several ways --- namely **runtime**, *measured in 
-   number of* |f|-*evaluations* [BBO2016perf]_. Runtime has the advantage to 
+   number of* |f|-*evaluations* [BBO2016perf]_. Runtime has the advantages to 
 
    - be independent of the computational platform, language, compiler, coding 
      styles, and other specific experimental conditions [#]_
-   - be easily interpretable without expert domain knowledge
+   - be relevant, meaningful and easily interpretable without expert domain knowledge
    - be quantitative on the ratio scale [STE1946]_ [#]_
    - assume a wide range of values 
-   - aggregate over a collection of values in a very meaningful way
+   - aggregate over a collection of values in a meaningful way
      
    A *missing* runtime value is considered as possible outcome (see below).
     
-#. The display is as comprehensible, intuitive and informative as possible. 
+#. The display is as comprehensible, intuitive and informative as possible, 
+   We believe that details matter. 
    Aggregation over dimension is avoided, because dimension is an a priori
-   known parameter that can and should be used for algorithm selection
+   known parameter that can and should be used for algorithm design or selection
    decisions. 
 
 .. [#] For example, the optimum is not in all-zeros, optima are not placed 
@@ -606,10 +607,17 @@ Currently, the COCO_ framework provides three different test suites.
 .. _`old code basis`: http://coco.gforge.inria.fr/doku.php?id=downloads
 
 
-Acknowledgments
-================
+.. raw:: html
+    
+    <H2>References</H2>
+
+.. raw:: latex
+
+    \section*{Acknowledgments}
+
 The authors would like to thank Raymond Ros, Steffen Finck, Marc Schoenauer, 
-and Petr Posik for their many invaluable contributions to this work. 
+Petr Posik and Dejan Tusar for their many invaluable contributions to this 
+work. 
 
 The authors also acknowledge support by the grant ANR-12-MONU-0009 (NumBBO) 
 of the French National Research Agency.
@@ -619,13 +627,14 @@ of the French National Research Agency.
 .. raw:: html
     
     <H2>References</H2>
-    
-.. author list yet to be defined
 
-.. [BBO2016biobj] The BBOBies: `COCO: The Bi-objective Black Box Optimization Benchmarking (bbob-biobj) Test Suite`__.
+.. [BBO2016biobj] T. Tusar, D. Brockhoff, N. Hansen, A. Auger (2016), 
+  `COCO: The Bi-objective Black Box Optimization Benchmarking (bbob-biobj) 
+  Test Suite`__.
 __ http://numbbo.github.io/coco-doc/bbob-biobj/functions/ 
 
-.. [BBO2016ex] The BBOBies: `COCO: Experimental Procedure`__. 
+.. [BBO2016ex] N. Hansen, T. Tusar, A. Auger, D. Brockhoff, O. Mersmann (2016): 
+  `COCO: Experimental Procedure`__. 
 __ http://numbbo.github.io/coco-doc/experimental-setup/
 
 .. [BBO2016perf] The BBOBies: `Performance Assessment`__. 

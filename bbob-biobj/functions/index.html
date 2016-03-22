@@ -58,7 +58,10 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#the-bbob-biobj-test-functions-and-their-properties">The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Test Functions and Their Properties</a><ul>
-<li><a class="reference internal" href="#some-function-properties">Some Function Properties</a></li>
+<li><a class="reference internal" href="#some-function-properties">Some Function Properties</a><ul>
+<li><a class="reference internal" href="#bounded-or-unbounded-domain">Bounded or Unbounded Domain</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#the-55-bbob-biobj-functions">The 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Functions</a><ul>
 <li><a class="reference internal" href="#sphere-sphere"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/>: Sphere/Sphere</a></li>
 <li><a class="reference internal" href="#sphere-ellipsoid-separable"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/>: Sphere/Ellipsoid separable</a></li>
@@ -164,7 +167,7 @@ normalization.
 <p class="first admonition-title">Note</p>
 <p class="last">For the time being, this documentation is under development and might not contain all final data.</p>
 </div>
-<div class="figure align-center" id="id14">
+<div class="figure align-center" id="id16">
 <a class="reference internal image-reference" href="_images/examples-bbob-biobj.png"><img alt="_images/examples-bbob-biobj.png" src="_images/examples-bbob-biobj.png" style="width: 539.4px; height: 444.6px;" /></a>
 <p class="caption"><span class="caption-text">Example plots of the Pareto front approximation, found by NSGA-II on selected <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions. In blue the
 non-dominated points at the end of different independent runs, in red the points that are non-dominated over all runs.</span></p>
@@ -263,7 +266,7 @@ them together with their common properties.</p>
 multi-objective optimization algorithms are not sensitive to permutations of
 the objective functions such that combining the 24  <code class="docutils literal"><span class="pre">bbob</span></code> functions and
 taking out the function <img class="math" src="_images/math/e1260df3ecbabab7b38e99406d15465305d6e7c4.png" alt="(g_2,g_1)" style="vertical-align: -4px"/> if the function <img class="math" src="_images/math/6d30e7d4914e8e8471d1d45a0e5f23b667e3ef1f.png" alt="(g_1,g_2)" style="vertical-align: -4px"/>
-is present results in <img class="math" src="_images/math/b52cc6aa8cfb4ca274183d8bbb9c76a8d21b69f1.png" alt="24+ {24 \choose 2} = 300" style="vertical-align: -6px"/> functions.</p>
+is present results in <img class="math" src="_images/math/09b8185a62c951077e23976d810caaae203194f3.png" alt="24 + {24 \choose 2} = 24 + (24\times23)/2 = (24\times25)/2 = 300" style="vertical-align: -6px"/> functions.</p>
 <p>Some first tests, e.g. in <a class="reference internal" href="#bth2015a" id="id5">[BTH2015a]</a>, showed that having 300 functions is
 impracticable in terms of the overall running time of the benchmarking
 experiment.  We then decided to exploit the organization of the <code class="docutils literal"><span class="pre">bbob</span></code>
@@ -417,7 +420,7 @@ and their properties.</p>
 <a class="reference internal" href="#f40"><span>f40</span></a><img class="math" src="_images/math/341ef284d1abdb89e905200b3d9a96a45cf59ed0.png" alt="_{13.21}" style="vertical-align: -4px"/></p>
 <p>41&#8211;50: <a class="reference internal" href="#f41"><span>f41</span></a><img class="math" src="_images/math/ddd41d538598516e0bac79c35b7f34c442278410.png" alt="_{14.14}" style="vertical-align: -4px"/> <a class="reference internal" href="#f42"><span>f42</span></a><img class="math" src="_images/math/5cd9dd5ba9a1a3f99a4f830b918a2f6479047fe8.png" alt="_{14.15}" style="vertical-align: -4px"/> <a class="reference internal" href="#f43"><span>f43</span></a><img class="math" src="_images/math/475a2855430d50f3ad0aeebfd7dba39ce7b4302b.png" alt="_{14.17}" style="vertical-align: -4px"/> <a class="reference internal" href="#f44"><span>f44</span></a><img class="math" src="_images/math/d41bdbf7c6e1322fee89cde657e53258f1782488.png" alt="_{14.20}" style="vertical-align: -4px"/> <a class="reference internal" href="#f45"><span>f45</span></a><img class="math" src="_images/math/653879d031b54ead6bcd57924b5f2496e29185fa.png" alt="_{14.21}" style="vertical-align: -4px"/> <a class="reference internal" href="#f46"><span>f46</span></a><img class="math" src="_images/math/f70bfc1bedef82c3847fcd0a70db14ae6f5c9f60.png" alt="_{15.15}" style="vertical-align: -4px"/> <a class="reference internal" href="#f47"><span>f47</span></a><img class="math" src="_images/math/08cc12a01f90073de163d5f2fd83e4fe79ab5030.png" alt="_{15.17}" style="vertical-align: -4px"/> <a class="reference internal" href="#f48"><span>f48</span></a><img class="math" src="_images/math/648dda7a414366e07b4af2eea55ed153486d52fb.png" alt="_{15.20}" style="vertical-align: -4px"/> <a class="reference internal" href="#f49"><span>f49</span></a><img class="math" src="_images/math/7efcd00d86fcbedc1ce5b11ee36bad85565a78a4.png" alt="_{15.21}" style="vertical-align: -4px"/>
 <a class="reference internal" href="#f50"><span>f50</span></a><img class="math" src="_images/math/c9460f4e7d2b28f7d20858b1c65ccdbf7c39acbd.png" alt="_{17.17}" style="vertical-align: -4px"/></p>
-<p>52&#8211;55: <a class="reference internal" href="#f51"><span>f51</span></a><img class="math" src="_images/math/c6a592be58d3d83500bf15e9a31f589f89c5cc27.png" alt="_{17.20}" style="vertical-align: -4px"/> <a class="reference internal" href="#f52"><span>f52</span></a><img class="math" src="_images/math/51750450b323187d230dbfc02f2c7d2a505e9647.png" alt="_{17.21}" style="vertical-align: -4px"/> <a class="reference internal" href="#f53"><span>f53</span></a><img class="math" src="_images/math/a9590ed54abc6c2fd90644a55b41d5b5206176ae.png" alt="_{20.20}" style="vertical-align: -3px"/> <a class="reference internal" href="#f54"><span>f54</span></a> <img class="math" src="_images/math/93de778d08d78c14e537a94e30c48f3b320fb432.png" alt="_{20.21}" style="vertical-align: -4px"/>  <a class="reference internal" href="#f55"><span>f55</span></a> <img class="math" src="_images/math/da04f2010f536048e08c4a985adb9bfd5c7bd597.png" alt="_{21.21}" style="vertical-align: -4px"/></p>
+<p>51&#8211;55: <a class="reference internal" href="#f51"><span>f51</span></a><img class="math" src="_images/math/c6a592be58d3d83500bf15e9a31f589f89c5cc27.png" alt="_{17.20}" style="vertical-align: -4px"/> <a class="reference internal" href="#f52"><span>f52</span></a><img class="math" src="_images/math/51750450b323187d230dbfc02f2c7d2a505e9647.png" alt="_{17.21}" style="vertical-align: -4px"/> <a class="reference internal" href="#f53"><span>f53</span></a><img class="math" src="_images/math/a9590ed54abc6c2fd90644a55b41d5b5206176ae.png" alt="_{20.20}" style="vertical-align: -3px"/> <a class="reference internal" href="#f54"><span>f54</span></a> <img class="math" src="_images/math/93de778d08d78c14e537a94e30c48f3b320fb432.png" alt="_{20.21}" style="vertical-align: -4px"/>  <a class="reference internal" href="#f55"><span>f55</span></a> <img class="math" src="_images/math/da04f2010f536048e08c4a985adb9bfd5c7bd597.png" alt="_{21.21}" style="vertical-align: -4px"/></p>
 <div class="section" id="some-function-properties">
 <h3>Some Function Properties<a class="headerlink" href="#some-function-properties" title="Permalink to this headline">¶</a></h3>
 <p>In the description of the 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions below, several
@@ -444,14 +447,35 @@ positive definite matrix, as the condition number of the Hessian matrix
 <img class="math" src="_images/math/4d632a8aa5526e4af2b2d8b604b5a6af9a5a04e2.png" alt="H" style="vertical-align: 0px"/>. Since contour lines associated to a convex quadratic function
 are ellipsoids, the condition number corresponds to the square root of
 the ratio between the largest axis of the ellipsoid and the shortest axis.
-In the more general case, &#8220;we can call a function ill-conditioned if for
-points with similar function values the minimal displacement (in search
-space) that produces a given function value improvement differs by
-orders of magnitude.&#8221; <a class="reference internal" href="#han2011" id="id9">[Han2011]</a></p>
+In the more general case, we can consider a function as ill-conditioned if for
+solution points from the same level-set &#8220;the minimal displacement [...] that
+produces a given function value improvement differs by
+orders of magnitude&#8221; <a class="reference internal" href="#han2011" id="id9">[HAN2011]</a>.</p>
 <p>The proposed <code class="docutils literal"><span class="pre">bbob-biobj</span></code> testbed contains ill-conditioned functions
 with a typical conditioning of <img class="math" src="_images/math/1add4bf11c8d6aa78f9b60799d818842f5257dd9.png" alt="10^6" style="vertical-align: -1px"/>. We believe this is a realistic
 requirement, while we have seen practical problems with conditioning
 as large as <img class="math" src="_images/math/ae7febea9bb52f37802fa9cf7598e70c51d0f43f.png" alt="10^{10}" style="vertical-align: -1px"/>.</p>
+<div class="section" id="bounded-or-unbounded-domain">
+<h4>Bounded or Unbounded Domain<a class="headerlink" href="#bounded-or-unbounded-domain" title="Permalink to this headline">¶</a></h4>
+<p>All bi-objective functions, provided in the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite are unbounded, i.e., defined
+on the entire real-valued space <img class="math" src="_images/math/414e585340b56b20cba4a1971dde4eaabcaaf515.png" alt="\mathbb{R}^D" style="vertical-align: 0px"/>.
+Nevertheless, they are designed such that the search domain of interest is <img class="math" src="_images/math/a800ac0a1f7f6bb4a3773a9327a9197b6df474d6.png" alt="[-5,5]^D" style="vertical-align: -5px"/>
+and bound-constraint methods are likely to be competitive. <a class="footnote-reference" href="#id11" id="id10">[2]</a></p>
+<p>While we believe that this domain contains the Pareto set, due to the nature
+of the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> function definitions, there is no guarantee that this
+is the case &#8212; it is only guaranteed that the extremal solutions and their
+neighborhood ball of radius one lie within this region.</p>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[2]</a></td><td>The functions <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a4ea6c067adfa866b0179329fe9b7c458"><code class="docutils literal"><span class="pre">coco_problem_get_smallest_value_of_interest</span></code></a> and
+<a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a29c89e039494ae8b4f8e520cba1eb154"><code class="docutils literal"><span class="pre">coco_problem_get_largest_value_of_interest</span></code></a>
+of the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> platform allows the optimizer
+to retrieve the <em>search domain of interest</em> from the <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a408ba01b98c78bf5be3df36562d99478"><code class="docutils literal"><span class="pre">coco_problem_t</span></code></a>,
+for example to generate the initial search points.</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section" id="the-55-bbob-biobj-functions">
 <h3>The 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Functions<a class="headerlink" href="#the-55-bbob-biobj-functions" title="Permalink to this headline">¶</a></h3>
@@ -1077,7 +1101,7 @@ February 2010.</td></tr>
 <table class="docutils citation" frame="void" id="han2011" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[Han2011]</a></td><td>N. Hansen, R. Ros, N. Mauny, M. Schoenauer, and A. Auger (2011).&nbsp;Impacts
+<tr><td class="label"><a class="fn-backref" href="#id9">[HAN2011]</a></td><td>N. Hansen, R. Ros, N. Mauny, M. Schoenauer, and A. Auger (2011).&nbsp;Impacts
 of Invariance in Search: When CMA-ES and PSO Face Ill-Conditioned and
 Non-Separable Problems. Applied Soft Computing. Vol. 11, pp. 5755-5769.
 Elsevier.</td></tr>
@@ -1105,8 +1129,8 @@ Elsevier.</td></tr>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015-2016, The BBOBies.
-      Last updated on Mar 16, 2016.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Last updated on Mar 17, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
 </html>
