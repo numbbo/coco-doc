@@ -59,7 +59,6 @@
 </li>
 <li><a class="reference internal" href="#general-code-structure">General Code Structure</a></li>
 <li><a class="reference internal" href="#test-suites">Test Suites</a></li>
-<li><a class="reference internal" href="#acknowledgments">Acknowledgments</a></li>
 </ul>
 </li>
 </ul>
@@ -143,19 +142,19 @@ $ python do.py run-python  # install Python experimental module cocoex
 $ python do.py install-postprocessing  # install post-processing :-)
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="ch">#!/usr/bin/env python</span>
 <span class="kn">import</span> <span class="nn">cocoex</span>
-<span class="kn">import</span> <span class="nn">cocopp</span>  <span class="c"># or: import bbob_pproc as cocopp</span>
+<span class="kn">import</span> <span class="nn">cocopp</span>  <span class="c1"># or: import bbob_pproc as cocopp</span>
 <span class="kn">from</span> <span class="nn">myoptimizer</span> <span class="kn">import</span> <span class="n">fmin</span>
 
-<span class="n">suite</span> <span class="o">=</span> <span class="n">cocoex</span><span class="o">.</span><span class="n">Suite</span><span class="p">(</span><span class="s">&quot;bbob&quot;</span><span class="p">,</span> <span class="s">&quot;year: 2016&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
-<span class="n">observer</span> <span class="o">=</span> <span class="n">cocoex</span><span class="o">.</span><span class="n">Observer</span><span class="p">(</span><span class="s">&quot;bbob&quot;</span><span class="p">,</span> <span class="s">&quot;result_folder: myoptimizer-on-bbob&quot;</span><span class="p">)</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">cocoex</span><span class="o">.</span><span class="n">Suite</span><span class="p">(</span><span class="s2">&quot;bbob&quot;</span><span class="p">,</span> <span class="s2">&quot;year: 2016&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">observer</span> <span class="o">=</span> <span class="n">cocoex</span><span class="o">.</span><span class="n">Observer</span><span class="p">(</span><span class="s2">&quot;bbob&quot;</span><span class="p">,</span> <span class="s2">&quot;result_folder: myoptimizer-on-bbob&quot;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">suite</span><span class="p">:</span>  <span class="c"># loop over all problems</span>
-    <span class="n">observer</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  <span class="c"># prepare logging of necessary data</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">suite</span><span class="p">:</span>  <span class="c1"># loop over all problems</span>
+    <span class="n">observer</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  <span class="c1"># prepare logging of necessary data</span>
     <span class="n">fmin</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">initial_solution</span><span class="p">)</span>
 
-<span class="n">cocopp</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="s">&#39;exdata/myoptimizer-on-bbob&#39;</span><span class="p">)</span>  <span class="c"># invoke data post-processing</span>
+<span class="n">cocopp</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="s1">&#39;exdata/myoptimizer-on-bbob&#39;</span><span class="p">)</span>  <span class="c1"># invoke data post-processing</span>
 </pre></div>
 </div>
 <p>Now the file <code class="docutils literal"><span class="pre">ppdata/ppdata.html</span></code> can be used to browse the resulting data.</p>
@@ -221,20 +220,21 @@ experiment, the experimental procedure is <em>budget-free</em> <a class="referen
 <li><p class="first">A single performance measure is used &#8212; and thereafter aggregated and
 displayed in
 several ways &#8212; namely <strong>runtime</strong>, <em>measured in
-number of</em> <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-<em>evaluations</em> <a class="reference internal" href="#bbo2016perf" id="id12">[BBO2016perf]</a>. Runtime has the advantage to</p>
+number of</em> <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-<em>evaluations</em> <a class="reference internal" href="#bbo2016perf" id="id12">[BBO2016perf]</a>. Runtime has the advantages to</p>
 <ul class="simple">
 <li>be independent of the computational platform, language, compiler, coding
 styles, and other specific experimental conditions <a class="footnote-reference" href="#id18" id="id13">[4]</a></li>
-<li>be easily interpretable without expert domain knowledge</li>
+<li>be relevant, meaningful and easily interpretable without expert domain knowledge</li>
 <li>be quantitative on the ratio scale <a class="reference internal" href="#ste1946" id="id14">[STE1946]</a> <a class="footnote-reference" href="#id19" id="id15">[5]</a></li>
 <li>assume a wide range of values</li>
-<li>aggregate over a collection of values in a very meaningful way</li>
+<li>aggregate over a collection of values in a meaningful way</li>
 </ul>
 <p>A <em>missing</em> runtime value is considered as possible outcome (see below).</p>
 </li>
-<li><p class="first">The display is as comprehensible, intuitive and informative as possible.
+<li><p class="first">The display is as comprehensible, intuitive and informative as possible,
+We believe that details matter.
 Aggregation over dimension is avoided, because dimension is an a priori
-known parameter that can and should be used for algorithm selection
+known parameter that can and should be used for algorithm design or selection
 decisions.</p>
 </li>
 </ol>
@@ -521,23 +521,24 @@ currently only implemented in the <a class="reference external" href="http://coc
 <dt><code class="docutils literal"><span class="pre">bbob-biobj</span></code></dt>
 <dd>contains 55 bi-objective (<img class="math" src="_images/math/35a82f7fa7e77be3728336c5bd59dc655eb19b57.png" alt="m=2" style="vertical-align: 0px"/>) functions in 15 subgroups <a class="reference internal" href="#bbo2016biobj" id="id56">[BBO2016biobj]</a>.</dd>
 </dl>
-</div>
-<div class="section" id="acknowledgments">
-<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h2>
-<p>The authors would like to thank Raymond Ros, Steffen Finck, Marc Schoenauer,
-and Petr Posik for their many invaluable contributions to this work.</p>
+<H2>References</H2><p>The authors would like to thank Raymond Ros, Steffen Finck, Marc Schoenauer,
+Petr Posik and Dejan Tusar for their many invaluable contributions to this
+work.</p>
 <p>The authors also acknowledge support by the grant ANR-12-MONU-0009 (NumBBO)
 of the French National Research Agency.</p>
 <H2>References</H2><table class="docutils citation" frame="void" id="bbo2016biobj" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[BBO2016biobj]</td><td><em>(<a class="fn-backref" href="#id27">1</a>, <a class="fn-backref" href="#id56">2</a>)</em> The BBOBies: <a class="reference external" href="http://numbbo.github.io/coco-doc/bbob-biobj/functions/">COCO: The Bi-objective Black Box Optimization Benchmarking (bbob-biobj) Test Suite</a>.</td></tr>
+<tr><td class="label">[BBO2016biobj]</td><td><em>(<a class="fn-backref" href="#id27">1</a>, <a class="fn-backref" href="#id56">2</a>)</em> T. Tusar, D. Brockhoff, N. Hansen, A. Auger (2016),
+<a class="reference external" href="http://numbbo.github.io/coco-doc/bbob-biobj/functions/">COCO: The Bi-objective Black Box Optimization Benchmarking (bbob-biobj)
+Test Suite</a>.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="bbo2016ex" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[BBO2016ex]</td><td><em>(<a class="fn-backref" href="#id11">1</a>, <a class="fn-backref" href="#id29">2</a>, <a class="fn-backref" href="#id38">3</a>)</em> The BBOBies: <a class="reference external" href="http://numbbo.github.io/coco-doc/experimental-setup/">COCO: Experimental Procedure</a>.</td></tr>
+<tr><td class="label">[BBO2016ex]</td><td><em>(<a class="fn-backref" href="#id11">1</a>, <a class="fn-backref" href="#id29">2</a>, <a class="fn-backref" href="#id38">3</a>)</em> N. Hansen, T. Tusar, A. Auger, D. Brockhoff, O. Mersmann (2016):
+<a class="reference external" href="http://numbbo.github.io/coco-doc/experimental-setup/">COCO: Experimental Procedure</a>.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="bbo2016perf" rules="none">
@@ -652,7 +653,8 @@ Evaluating evolutionary algorithms. <em>Artificial intelligence</em>, 85(1), 245
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Last updated on Mar 22, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
 </html>
