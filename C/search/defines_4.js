@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nan',['NAN',['../coco_8h.html#a8abfcc76130f3f991d124dd22d7e69bc',1,'coco.h']]]
+  ['logger_5fbiobj_5fnumber_5fof_5findicators',['LOGGER_BIOBJ_NUMBER_OF_INDICATORS',['../logger__biobj_8c.html#abd9abc1d315bd613942dbe8855f11b7c',1,'logger_biobj.c']]]
 ];

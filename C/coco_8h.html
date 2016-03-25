@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/numbbo-newcococode-brockho/code-experiments/src/coco.h File Reference</title>
+        <title>coco-doc-C: /Users/tea/Work/GitHub/coco-ttusar/code-experiments/src/coco.h File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -106,14 +106,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;float.h&gt;</code><br />
 </div>
 <p><a href="coco_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a8abfcc76130f3f991d124dd22d7e69bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a8abfcc76130f3f991d124dd22d7e69bc">NAN</a>&#160;&#160;&#160;8.8888e88</td></tr>
-<tr class="memdesc:a8abfcc76130f3f991d124dd22d7e69bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">To be used only if undefined by the included headers.  <a href="#a8abfcc76130f3f991d124dd22d7e69bc">More...</a><br /></td></tr>
+<tr class="memdesc:a8abfcc76130f3f991d124dd22d7e69bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of NAN to be used only if undefined by the included headers.  <a href="#a8abfcc76130f3f991d124dd22d7e69bc">More...</a><br /></td></tr>
 <tr class="separator:a8abfcc76130f3f991d124dd22d7e69bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e1baae9134e580910322362dc23290e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a2e1baae9134e580910322362dc23290e">isnan</a>(x)&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:a2e1baae9134e580910322362dc23290e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of isnan to be used only if undefined by the included headers.  <a href="#a2e1baae9134e580910322362dc23290e">More...</a><br /></td></tr>
+<tr class="separator:a2e1baae9134e580910322362dc23290e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a956e2723d559858d08644ac99146e910"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a956e2723d559858d08644ac99146e910">INFINITY</a>&#160;&#160;&#160;1e22</td></tr>
+<tr class="memdesc:a956e2723d559858d08644ac99146e910"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of INFINITY to be used only if undefined by the included headers.  <a href="#a956e2723d559858d08644ac99146e910">More...</a><br /></td></tr>
+<tr class="separator:a956e2723d559858d08644ac99146e910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a266c767456556e5c0da234b602b18b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a2a266c767456556e5c0da234b602b18b">isinf</a>(x)&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:a2a266c767456556e5c0da234b602b18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of isinf to be used only if undefined by the included headers.  <a href="#a2a266c767456556e5c0da234b602b18b">More...</a><br /></td></tr>
+<tr class="separator:a2a266c767456556e5c0da234b602b18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -373,6 +383,56 @@ Variables</h2></td></tr>
 <div class="textblock"><p>All public COCO functions, constants and variables are defined in this file. </p>
 <p>It is the authoritative reference, if any function deviates from the documented behavior it is considered a bug. See the function definitions for their detailed descriptions. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a956e2723d559858d08644ac99146e910"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INFINITY&#160;&#160;&#160;1e22</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition of INFINITY to be used only if undefined by the included headers. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2a266c767456556e5c0da234b602b18b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define isinf</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition of isinf to be used only if undefined by the included headers. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2e1baae9134e580910322362dc23290e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define isnan</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition of isnan to be used only if undefined by the included headers. </p>
+
+</div>
+</div>
 <a class="anchor" id="a8abfcc76130f3f991d124dd22d7e69bc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -383,7 +443,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>To be used only if undefined by the included headers. </p>
+<p>Definition of NAN to be used only if undefined by the included headers. </p>
 
 </div>
 </div>

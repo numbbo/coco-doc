@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/numbbo-newcococode-brockho/code-experiments/src/coco_problem.c File Reference</title>
+        <title>coco-doc-C: /Users/tea/Work/GitHub/coco-ttusar/code-experiments/src/coco_problem.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -225,9 +225,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad1cd9892477205193602fdc4f0aaff40"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#ad1cd9892477205193602fdc4f0aaff40">coco_problem_stacked_free</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:ad1cd9892477205193602fdc4f0aaff40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the stacked problem.  <a href="#ad1cd9892477205193602fdc4f0aaff40">More...</a><br /></td></tr>
 <tr class="separator:ad1cd9892477205193602fdc4f0aaff40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73d7a200b5510984c1e3908c9c297f58"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a73d7a200b5510984c1e3908c9c297f58">coco_problem_stacked_allocate</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem1, <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem2)</td></tr>
-<tr class="memdesc:a73d7a200b5510984c1e3908c9c297f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a problem constructed by stacking two COCO problems.  <a href="#a73d7a200b5510984c1e3908c9c297f58">More...</a><br /></td></tr>
-<tr class="separator:a73d7a200b5510984c1e3908c9c297f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0137a394b5a97e3bea88b95996db518f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a0137a394b5a97e3bea88b95996db518f">coco_problem_stacked_allocate</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem1, <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem2, const double *smallest_values_of_interest, const double *largest_values_of_interest)</td></tr>
+<tr class="memdesc:a0137a394b5a97e3bea88b95996db518f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a problem constructed by stacking two COCO problems.  <a href="#a0137a394b5a97e3bea88b95996db518f">More...</a><br /></td></tr>
+<tr class="separator:a0137a394b5a97e3bea88b95996db518f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions of functions regarding COCO problems. </p>
@@ -1005,7 +1005,7 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a73d7a200b5510984c1e3908c9c297f58"></a>
+<a class="anchor" id="a0137a394b5a97e3bea88b95996db518f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1022,7 +1022,19 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>problem2</em>&#160;</td>
+          <td class="paramname"><em>problem2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>smallest_values_of_interest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>largest_values_of_interest</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1038,7 +1050,7 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 </div><div class="memdoc">
 
 <p>Allocates a problem constructed by stacking two COCO problems. </p>
-<p>This is particularly useful for generating multi-objective problems, e.g. a bi-objective problem from two single-objective problems. The stacked problem must behave like a normal COCO problem accepting the same input.</p>
+<p>This is particularly useful for generating multi-objective problems, e.g. a bi-objective problem from two single-objective problems. The stacked problem must behave like a normal COCO problem accepting the same input. The region of interest in the decision space is defined by parameters smallest_values_of_interest and largest_values_of_interest, which are two arrays of size equal to the dimensionality of both problems.</p>
 <dl class="section note"><dt>Note</dt><dd>Regions of interest in the decision space must either agree or at least one of them must be NULL. </dd>
 <dd>
 Best parameter becomes somewhat meaningless, but the nadir value make sense now. </dd></dl>
