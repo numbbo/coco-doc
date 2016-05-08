@@ -1,203 +1,524 @@
 
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Welcome to the experimental setup description for the bbob-biobj suite! &mdash; docs-bbob-biobj-perf-assessment 0.7-beta documentation</title>
-  
+<!doctype html>
 
-  
-  
 
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-    <link rel="top" title="docs-bbob-biobj-perf-assessment 0.7-beta documentation" href="#"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
+    <title>Biobjective Performance Assessment with the COCO Platform &mdash; Biobjective Performance Assessment with the COCO Platform</title>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="#" class="icon icon-home"> docs-bbob-biobj-perf-assessment
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                0.7-beta
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <ul class="simple">
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">docs-bbob-biobj-perf-assessment</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
-      
-    <li>Welcome to the experimental setup description for the bbob-biobj suite!</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <div class="section" id="welcome-to-the-experimental-setup-description-for-the-bbob-biobj-suite">
-<h1>Welcome to the experimental setup description for the bbob-biobj suite!<a class="headerlink" href="#welcome-to-the-experimental-setup-description-for-the-bbob-biobj-suite" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul class="simple">
-</ul>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span>Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span>Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span>Search Page</span></a></li>
-</ul>
-</div>
-
-
-           </div>
-          </div>
-          <footer>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2016, The BBOBies.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-  
-
-
-  
-
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.7-beta',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.7-beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="top" title="Biobjective Performance Assessment with the COCO Platform" href="#" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">Biobjective Performance Assessment with the COCO Platform</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Biobjective Performance Assessment with the COCO Platform</a><ul>
+<li><a class="reference internal" href="#chaptertitle">CHAPTERTITLE</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#definitions-and-terminology">Definitions and Terminology</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#performance-assessment-with-a-quality-indicator">Performance Assessment with a Quality Indicator</a><ul>
+<li><a class="reference internal" href="#definition-of-the-quality-indicator">Definition of the Quality Indicator</a></li>
+<li><a class="reference internal" href="#rationales-behind-the-performance-measure">Rationales Behind the Performance Measure</a></li>
+<li><a class="reference internal" href="#specificities-and-properties">Specificities and Properties</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#definition-of-target-values">Definition of Target Values</a><ul>
+<li><a class="reference internal" href="#target-precision-values">Target Precision Values</a></li>
+<li><a class="reference internal" href="#the-reference-hypervolume-indicator-value">The Reference Hypervolume Indicator Value</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#instances-and-generalization-experiment">Instances and Generalization Experiment</a></li>
+<li><a class="reference internal" href="#data-storage-and-future-recalculations-of-indicator-values">Data Storage and Future Recalculations of Indicator Values</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-  
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="biobjective-performance-assessment-with-the-coco-platform">
+<h1>Biobjective Performance Assessment with the COCO Platform<a class="headerlink" href="#biobjective-performance-assessment-with-the-coco-platform" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="chaptertitle">
+<h2>CHAPTERTITLE<a class="headerlink" href="#chaptertitle" title="Permalink to this headline">¶</a></h2>
+See: <I>ArXiv e-prints</I>,
+<A HREF="http://arxiv.org/abs/160x.xxxxx">arXiv:160x.xxxxx</A>, 2016.<p>This document details the rationales behind assessing the performance of
+numerical black-box optimizers on multi-objective problems within the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>
+platform and in particular on the biobjective test suite <a class="reference external" href="http://numbbo.github.io/coco-doc/bbob-biobj/functions"><code class="docutils literal"><span class="pre">bbob-biobj</span></code></a>.
+The evaluation is based on a hypervolume of all non-dominated solutions in the
+archive of candidate solutions and measures the runtime until the
+hypervolume value succeeds prescribed target values.</p>
+<div class="section" id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<p>The performance assessment of (numerical) optimization algorithms with the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>
+platform <a class="reference internal" href="#han2016co" id="id1">[HAN2016co]</a> is invariably based on the
+measurement of the <em>runtime</em> <a class="footnote-reference" href="#id6" id="id2">[1]</a> until a <em>quality indicator</em> reaches a predefined
+<em>target value</em>.
+On each problem instance, several target values are defined and for each
+target value a runtime is measured (or no runtime value is available if the
+indicator does not reach the target value) <a class="reference internal" href="#han2016perf" id="id3">[HAN2016perf]</a>.
+In the single-objective, noise-free case, the assessed quality indicator is, at
+each given time step, the function value of the best solution the algorithm has
+obtained (evaluated or recommended, see <a class="reference internal" href="#han2016ex" id="id4">[HAN2016ex]</a>) before or at this time
+step.</p>
+<p>In the bi- and multi-objective case, e.g. on the biobjective <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+test suite <a class="reference internal" href="#tus2016" id="id5">[TUS2016]</a>, the assessed quality
+indicator at the given time step is a hypervolume indicator computed from
+<em>all</em> solutions obtained (evaluated or recommended) before or at this time
+step.</p>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Time is considered to be <em>number of function evaluations</em> and,
+consequently, runtime is measured in number of function evaluations.</td></tr>
+</tbody>
+</table>
+<div class="section" id="definitions-and-terminology">
+<h4>Definitions and Terminology<a class="headerlink" href="#definitions-and-terminology" title="Permalink to this headline">¶</a></h4>
+<p>In this section, we introduce the definitions of some basic terms and concepts.</p>
+<dl class="docutils">
+<dt><em>function instance, problem</em></dt>
+<dd><p class="first">In the case of the bi-objective performance assessment within <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>, a problem is a 5-tuple of</p>
+<ul class="simple">
+<li>a <em>parameterized function</em> <img class="math" src="_images/math/36ccea85521ed2e4644d75a94165d0b874967015.png" alt="f_\theta: \mathbb{R}^n \to \mathbb{R}^2" style="vertical-align: -4px"/>, mapping the decision variables of a solution <img class="math" src="_images/math/e0de6f5386a269c261ecef219c9844e74884539d.png" alt="x\in\mathbb{R}^n" style="vertical-align: -1px"/> to its objective vector <img class="math" src="_images/math/3938a13d1b9e431d0365e6933429ff0418d4c7c2.png" alt="f_\theta(x) = (f_\alpha(x),f_\beta(x))" style="vertical-align: -5px"/> with <img class="math" src="_images/math/a7a6991214667939bc622a3ff12a2823cb56022c.png" alt="f_\alpha: \mathbb{R}^n \mapsto \mathbb{R}" style="vertical-align: -4px"/> and <img class="math" src="_images/math/48f51c8e04ce7f4b2de46297051dc7a3444eea17.png" alt="f_\beta: \mathbb{R}^n \mapsto \mathbb{R}" style="vertical-align: -5px"/> being parameterized (single-objective) functions themselves</li>
+<li>its concrete parameter value <img class="math" src="_images/math/cede7da44607723797eebce7064f06b42962b0ca.png" alt="\theta\in\Theta" style="vertical-align: -1px"/> determining the so-called
+<em>function instance</em> <img class="math" src="_images/math/8e66149081fdbba5cad4420e5977456c05f9f8d3.png" alt="i" style="vertical-align: 0px"/>,</li>
+<li>the <em>problem dimension</em> <img class="math" src="_images/math/7bc0d11b5a52732a23025dcc422625c0a5dde474.png" alt="n" style="vertical-align: 0px"/>,</li>
+<li>an underlying quality indicator <img class="math" src="_images/math/592e9f34062623dee6b227c81478031be50af639.png" alt="I" style="vertical-align: 0px"/>, mapping a set of solutions to its quality, and</li>
+<li>a <em>target value</em> <img class="math" src="_images/math/a643ca6e3107cc5df3818092006542efd1852eb0.png" alt="I_{\rm target}" style="vertical-align: -6px"/> of the underlying quality indicator, see below for details.</li>
+</ul>
+<p class="last">We call a problem <em>solved</em> by an optimization algorithm if the algorithm
+reaches a quality indicator value at least as good as the associated target value.
+The number of function evaluations needed to surpass the target value for the first time
+is <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>&#8216;s central performance measure. <a class="reference internal" href="#han2016co" id="id7">[HAN2016co]</a> In case a single
+quality indicator is used for all problems in a benchmark suite, we can drop the
+quality indicator and refer to a problem as a quadruple <img class="math" src="_images/math/3abf89ee01623782df7fc95d4cbeae065fe6318b.png" alt="f_\theta,\theta,n,I_{\rm target}" style="vertical-align: -6px"/>.
+Note that typically more than one problem for a <em>function instance</em> of
+<img class="math" src="_images/math/187252d73804432fb98bd38a5e42e868db86423d.png" alt="(f_\theta,\theta,n)" style="vertical-align: -4px"/> is defined by choosing more than one target value.</p>
+</dd>
+<dt><em>Pareto set</em>, <em>Pareto front</em>, and <em>Pareto dominance</em></dt>
+<dd>For a function instance, i.e., a function <img class="math" src="_images/math/b63cbe17e1ad8f60069ac74943357f2992de2c7c.png" alt="f_\theta=(f_\alpha,f_\beta)" style="vertical-align: -5px"/> with
+given parameter value <img class="math" src="_images/math/1ef862e9671b70509fc6c65477236e3cbcbc838c.png" alt="\theta" style="vertical-align: 0px"/> and dimension <img class="math" src="_images/math/7bc0d11b5a52732a23025dcc422625c0a5dde474.png" alt="n" style="vertical-align: 0px"/>, the Pareto set is the set
+of all (Pareto-optimal) solutions for which no solutions in the search space
+<img class="math" src="_images/math/eced63c9821e9e858ea125eb54fb3433aa8738f4.png" alt="\R^n" style="vertical-align: 0px"/> exist that have either an improved <img class="math" src="_images/math/5639e8a2129ee3b4a5d622218ac095b5b2adc538.png" alt="f_\alpha" style="vertical-align: -4px"/> or an improved
+<img class="math" src="_images/math/03dd74757e43b22a8b1fa4280823cf677cead627.png" alt="f_\beta" style="vertical-align: -5px"/> value while the other value is at least as good
+(or in other words, a <em>Pareto-optimal</em> solution in the Pareto set has no other solution
+that <em>dominates</em> it). The image of the Pareto set in the <em>objective space</em> is called
+the Pareto front. We generalize the standard Pareto dominance relation to sets by saying
+solution set <img class="math" src="_images/math/aceae7092747d31f367b266ec4ee7fd4024d3520.png" alt="A=\{a_1,\ldots,a_{|A|}\}" style="vertical-align: -6px"/> dominates solution set <img class="math" src="_images/math/6fc34a421a5340ff7d9077150dff3cebf916fa5b.png" alt="B=\{b_1,\ldots,b_{|B|}\}" style="vertical-align: -6px"/>
+if and only if for all <img class="math" src="_images/math/3256270afa767a90c266f762c88c924108e92cae.png" alt="b_i\in B" style="vertical-align: -3px"/> there is at least one solution <img class="math" src="_images/math/921b1e9f9023da5ef21caefd02c4920b47fc7022.png" alt="a_j" style="vertical-align: -5px"/>
+that dominates it.</dd>
+<dt><em>ideal point</em></dt>
+<dd>The ideal point (in objective space) is defined as the vector in objective space that
+contains the optimal function value for each objective <em>independently</em>, i.e. for the above
+concrete function instance, the ideal point is given by
+<img class="math" src="_images/math/b3b9f898378bcad3b2b7deb76192fea488c5d3f3.png" alt="z_{\rm ideal}  = (\inf_{x\in \mathbb{R}^n} f_\alpha(x), \inf_{x\in \mathbb{R}^n} f_\beta(x))" style="vertical-align: -5px"/>.</dd>
+<dt><em>nadir point</em></dt>
+<dd>The nadir point (in objective space) consists in each objective of
+the worst value obtained by any Pareto-optimal solution. More precisely, if
+<img class="math" src="_images/math/18d311091a584434cc9a8a0b53967fa9e65b6085.png" alt="\mathcal{PO}" style="vertical-align: -1px"/> denotes the Pareto set, the nadir point satisfies
+<img class="math" src="_images/math/48d8906fc75b4361271523a64e6de3a61064c5bb.png" alt="z_{\rm nadir}  =  \left( \sup_{x \in \mathcal{PO}} f_\alpha(x),
+\sup_{x \in \mathcal{PO}} f_\beta(x)  \right)" style="vertical-align: -5px"/>.</dd>
+<dt><em>archive</em></dt>
+<dd>An external archive or simply an archive is the set of non-dominated solutions,
+obtained over an algorithm run. At each point <img class="math" src="_images/math/56df6e67a4d69032d8ef78dcb7c348e3ffbc6abd.png" alt="t" style="vertical-align: 0px"/> in time (that is after
+<img class="math" src="_images/math/56df6e67a4d69032d8ef78dcb7c348e3ffbc6abd.png" alt="t" style="vertical-align: 0px"/> function evaluations), we consider the set of all
+mutually non-dominating solutions that have been evaluated so far. We
+denote the archive after <img class="math" src="_images/math/56df6e67a4d69032d8ef78dcb7c348e3ffbc6abd.png" alt="t" style="vertical-align: 0px"/> function evaluations as <img class="math" src="_images/math/c07fd602301febefebc3c4b12d3e2503d989794a.png" alt="A_t" style="vertical-align: -3px"/>
+and use it to define the performance of the algorithm in terms of a (quality)
+indicator function <img class="math" src="_images/math/039823cec8227564015a756f273eedadb29556ef.png" alt="A_t \rightarrow \R" style="vertical-align: -3px"/> that might depend on a problem&#8217;s
+underlying parameterized function and its dimension and instance.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="performance-assessment-with-a-quality-indicator">
+<h3>Performance Assessment with a Quality Indicator<a class="headerlink" href="#performance-assessment-with-a-quality-indicator" title="Permalink to this headline">¶</a></h3>
+<p>For measuring the runtime on a given problem, we consider a quality indicator
+which is to be optimized (minimized).
+In the noiseless single-objective case, the quality indicator is the best so-far observed objective function value (recommendations can replace previous observations).
+In the case of the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite, the quality indicator is based on the
+hypervolume indicator of the <em>archive</em> <img class="math" src="_images/math/c07fd602301febefebc3c4b12d3e2503d989794a.png" alt="A_t" style="vertical-align: -3px"/>.</p>
+<div class="section" id="definition-of-the-quality-indicator">
+<h4>Definition of the Quality Indicator<a class="headerlink" href="#definition-of-the-quality-indicator" title="Permalink to this headline">¶</a></h4>
+<p>The indicator <img class="math" src="_images/math/d3e2bf5349a3188ab8b7cf47a77589ad5e42cce8.png" alt="\IHV" style="vertical-align: -5px"/> to be mininized is either the negative
+hypervolume indicator of the archive with the nadir
+point as reference point or the distance to the region of interest
+<img class="math" src="_images/math/ce9d99de6616bd01f3a031e71c1e1db8652026b7.png" alt="[z_{\text{ideal}}, z_{\text{nadir}}]" style="vertical-align: -5px"/> after a normalization of the
+objective space <a class="footnote-reference" href="#id9" id="id8">[2]</a>:</p>
+<div class="math">
+<p><img src="_images/math/e2279ab2f468609c885a508d4c992ce69adceb72.png" alt="\begin{equation*}
+    \IHV =  \left\{ \begin{array}{ll}
+    - \text{HV}(A_t, [z_{\text{ideal}}, z_{\text{nadir}}]) &amp; \text{if $A_t$ dominates } \{z_{\text{nadir}}\}\\
+    dist(A_t, [z_{\text{ideal}}, z_{\text{nadir}}]) &amp; \text{otherwise}
+    \end{array}     \right.\enspace .
+    \end{equation*}"/></p>
+</div><p>where</p>
+<div class="math">
+<p><img src="_images/math/0f63d49cdb086ef56157f0d5e9a777fef685b539.png" alt="\begin{equation*}
+\text{HV}(A_t, z_{\text{ideal}}, z_{\text{nadir}}) = \text{VOL}\left( \bigcup_{a \in A_t} \left[\frac{f_\alpha(a)-z_{\text{ideal}, \alpha}}{z_{\text{nadir}, \alpha}-z_{\text{ideal}, \alpha}}, 1\right]\times\left[\frac{f_\beta(a)-z_{\text{ideal}, \beta}}{z_{\text{nadir}, \beta}-z_{\text{ideal}, \beta}}, 1\right]\right)
+    \end{equation*}"/></p>
+</div><p>is the (normalized) hypervolume of archive <img class="math" src="_images/math/c07fd602301febefebc3c4b12d3e2503d989794a.png" alt="A_t" style="vertical-align: -3px"/> with respect to the
+nadir point <img class="math" src="_images/math/32db6083f9f3a68d8a63136db8a50dcd1db6f8f4.png" alt="(z_{\text{nadir}, \alpha}, z_{\text{nadir},\beta})" style="vertical-align: -5px"/> as reference point and where (with division understood to be element-wise, Hadamard division),</p>
+<div class="math">
+<p><img src="_images/math/f666f121ac4cd3e2d59b8eab2d573e7751b548ab.png" alt="\begin{equation*}
+    dist(A_t, [z_{\text{ideal}}, z_{\text{nadir}}]) = \inf_{a\in A_t, z\in [z_{\text{ideal}}, z_{\text{nadir}}]} \left\|\frac{f(a)-z}{z_{\text{nadir}}-z_{\text{ideal}}}\right\|
+    \end{equation*}"/></p>
+</div><p>is the smallest (normalized) Euclidean distance between a solution in the archive and the region of interest, see also the figures below for an illustration.</p>
+<div class="figure align-center" id="id39">
+<a class="reference internal image-reference" href="_images/IHDoutside.svg"><img src="_images/IHDoutside.svg" width="60%" /></a>
+<p class="caption"><span class="caption-text">Illustration of Coco&#8217;s quality indicator (to be minimized) in the
+(normalized) bi-objective case if no solution of the archive (blue filled circles)
+dominates the nadir point (black filled circle), i.e., the shortest
+distance of an archive member to the region of interest (ROI), delimited
+by the nadir point.
+Here, it is the fourth point from the left (indicated by the red arrow) that defines
+the smallest distance.</span></p>
+</div>
+<div class="figure align-center" id="id40">
+<a class="reference internal image-reference" href="_images/IHDinside.svg"><img src="_images/IHDinside.svg" width="60%" /></a>
+<p class="caption"><span class="caption-text">Illustration of Coco&#8217;s quality indicator (to be minimized) in the
+bi-objective case if the nadir point (black filled circle) is dominated by
+at least one solution in the archive (blue filled circles). The indicator is the
+negative hypervolume of the archive with the nadir point as reference point.</span></p>
+</div>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[2]</a></td><td>We conduct an affine transformation of both objective function values
+such that the ideal point <img class="math" src="_images/math/3f73643e6a3fbc1dc0f726c4abea4d52fef07bc4.png" alt="z_{\text{ideal}}= (z_{\text{ideal}, \alpha},
+z_{\text{ideal}, \beta})" style="vertical-align: -5px"/> is mapped to <img class="math" src="_images/math/68205363796436f38a5c62faae8a0f4c4be27045.png" alt="(0,0)" style="vertical-align: -4px"/> and the nadir point
+<img class="math" src="_images/math/d8a538086a157862d928f8baf9704613aca91699.png" alt="z_{\text{nadir}}= (z_{\text{nadir}, \alpha}, z_{\text{nadir}, \beta})" style="vertical-align: -5px"/>
+is mapped to <img class="math" src="_images/math/d880034787de90d6bb07f5b92537df610da6bd57.png" alt="(1,1)" style="vertical-align: -4px"/>.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rationales-behind-the-performance-measure">
+<h4>Rationales Behind the Performance Measure<a class="headerlink" href="#rationales-behind-the-performance-measure" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt><em>Why using an archive?</em></dt>
+<dd>We believe using an archive to keep all non-dominated solutions is relevant in practice
+in bi-objective real-world applications, in particular when function evaluations are
+expensive. Using an external archive for the performance assessment has the additional
+advantage that no populuation size needs to be prescribed and algorithms with different
+or even changing population sizes can be easily compared.</dd>
+<dt><em>Why hypervolume?</em></dt>
+<dd>Although, in principle, other quality indicators can be used in replacement of the
+hypervolume, the monotonicity of the hypervolume is a strong theoretical argument
+for using it in the performance assessment: the hypervolume indicator value of the
+archive improves if and only if a new non-dominated solution is generated <a class="reference internal" href="#zit2003" id="id10">[ZIT2003]</a>.</dd>
+</dl>
+</div>
+<div class="section" id="specificities-and-properties">
+<h4>Specificities and Properties<a class="headerlink" href="#specificities-and-properties" title="Permalink to this headline">¶</a></h4>
+<p>In summary, the proposed <code class="docutils literal"><span class="pre">bbob-biobj</span></code> performance criterion has the following
+specificities:</p>
+<ul class="simple">
+<li>Algorithm performance is measured via runtime until the quality of the archive of non-dominated
+solutions found so far surpasses a target value.</li>
+<li>To compute the quality indicator, the objective space is normalized.
+The region of interest (ROI) <img class="math" src="_images/math/ce9d99de6616bd01f3a031e71c1e1db8652026b7.png" alt="[z_{\text{ideal}}, z_{\text{nadir}}]" style="vertical-align: -5px"/>,
+defined by the ideal and nadir point, is mapped to <img class="math" src="_images/math/b2fe02783e9ce46cb4c2e8d4549036fab5e4eead.png" alt="[0, 1]^2" style="vertical-align: -5px"/>.</li>
+<li>If the nadir point is dominated by at least one point in the archive, the
+quality is computed as the negative hypervolume of the archive using
+the nadir point as hypervolume reference point.</li>
+<li>If the nadir point is not dominated by the archive, the quality equals the
+distance of the archive to the ROI.</li>
+</ul>
+<p>This implies that:</p>
+<ul class="simple">
+<li>the quality indicator value of an archive that contains the nadir point as
+non-dominated point is <img class="math" src="_images/math/2bf86ce5690429b56883b0bdeb8e491588f4f38b.png" alt="0" style="vertical-align: 0px"/>.</li>
+<li>the quality indicator value is bounded from below by <img class="math" src="_images/math/f566ca3cb9b2e0a87b141badea5481beb300f5f5.png" alt="-1" style="vertical-align: -1px"/>, which is
+the quality of an archive that contains the ideal point, and</li>
+<li>because the quality of an archive is used as performance criterion, no
+population size has to be prescribed to the algorithm. In particular,
+steady-state and generational algorithms can be compared directly as well
+as algorithms with varying population size and algorithms which carry along
+their external archive themselves.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="definition-of-target-values">
+<h3>Definition of Target Values<a class="headerlink" href="#definition-of-target-values" title="Permalink to this headline">¶</a></h3>
+<p>For each problem instance of the benchmark suite, consisting of a parameterized
+function, its dimension and its instance parameter <img class="math" src="_images/math/7b17158cd34922d55a6b455d473d4b16fa5014b4.png" alt="\theta_i" style="vertical-align: -3px"/>, a set of quality
+indicator target values is chosen, eventually used to measure algorithm runtime to
+reach each of these targets.
+The target values are based on a target precision <img class="math" src="_images/math/0fcd4c35133b823b54c75a11d1817b9cfa50acb0.png" alt="\Delta I" style="vertical-align: 0px"/> and a
+<em>reference hypervolume indicator value</em>, <img class="math" src="_images/math/564d9184fb9c15f30f7134701ada4ff2ca8de91c.png" alt="I_i^\mathrm{ref}" style="vertical-align: -4px"/>, which is an approximation of the
+<img class="math" src="_images/math/d3e2bf5349a3188ab8b7cf47a77589ad5e42cce8.png" alt="\IHV" style="vertical-align: -5px"/> indicator value of the Pareto set.</p>
+<div class="section" id="target-precision-values">
+<h4>Target Precision Values<a class="headerlink" href="#target-precision-values" title="Permalink to this headline">¶</a></h4>
+<p>All target indicator values are computed in the form of <img class="math" src="_images/math/564d9184fb9c15f30f7134701ada4ff2ca8de91c.png" alt="I_i^\mathrm{ref}" style="vertical-align: -4px"/> <img class="math" src="_images/math/4f8de8f9962c4daffcdbacc42822115def7578ad.png" alt="+\,\Delta
+I" style="vertical-align: -2px"/> from the instance dependent reference value <img class="math" src="_images/math/564d9184fb9c15f30f7134701ada4ff2ca8de91c.png" alt="I_i^\mathrm{ref}" style="vertical-align: -4px"/> and a target precision
+value <img class="math" src="_images/math/0fcd4c35133b823b54c75a11d1817b9cfa50acb0.png" alt="\Delta I" style="vertical-align: 0px"/>.
+For the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite, 58 target precisions <img class="math" src="_images/math/0fcd4c35133b823b54c75a11d1817b9cfa50acb0.png" alt="\Delta I" style="vertical-align: 0px"/> are
+chosen, identical for all problem instances, as</p>
+<div class="math">
+<p><img src="_images/math/867d4d2a2ce61e903f2a38bedd99ae4de43ad9f6.png" alt="\Delta I \in \{ \underbrace{-10^{-4}, -10^{-4.2}, \dots, -10^{-4.8}, -10^{-5}}_{
+\text{six negative target precision values}}, 0, 10^{-5}, 10^{-4.9}, 10^{-4.8}, \dots, 10^{-0.1}, 10^0 \}\enspace."/></p>
+</div><p>Negative target precisions are used because the reference indicator value, as
+defined in the next section, can be surpassed by an optimization algorithm. <a class="footnote-reference" href="#id13" id="id11">[3]</a>
+The runtimes to reach these target values are presented as empirical cumulative
+distribution function, ECDF <a class="reference internal" href="#han2016perf" id="id12">[HAN2016perf]</a>.
+Runtimes to reach specific target precisions are presented as well.
+It is not uncommon however that the quality indicator value of the algorithm
+never surpasses some of these target values, which leads to missing runtime
+measurements.</p>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[3]</a></td><td>In comparison, the reference value in the single-objective case is
+the <img class="math" src="_images/math/dd675eae8a6fc90e0e73930e5e09f1c885df11e1.png" alt="f" style="vertical-align: -4px"/>-value of the known global optimum and, consequently, the target
+precision values have been strictly positive <a class="reference internal" href="#han2016perf" id="id14">[HAN2016perf]</a>.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="the-reference-hypervolume-indicator-value">
+<h4>The Reference Hypervolume Indicator Value<a class="headerlink" href="#the-reference-hypervolume-indicator-value" title="Permalink to this headline">¶</a></h4>
+<p>Unlike the single-objective <code class="docutils literal"><span class="pre">bbob</span></code> test suite <a class="reference internal" href="#han2009fun" id="id15">[HAN2009fun]</a>, the
+biobjective <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite does not provide analytic expressions of
+its optima.
+Except for <img class="math" src="_images/math/06257cfc80c43b463c646374837e0b5396588c86.png" alt="f_1" style="vertical-align: -4px"/>, the Pareto set and the Pareto front are unknown.</p>
+<p>Instead of the unknown hypervolume of the true Pareto set, we use the hypervolume of an approximation of the Pareto set as reference hypervolume indicator value <img class="math" src="_images/math/564d9184fb9c15f30f7134701ada4ff2ca8de91c.png" alt="I_i^\mathrm{ref}" style="vertical-align: -4px"/>. <a class="footnote-reference" href="#id18" id="id16">[4]</a>
+To obtain the approximation, several multi-objective optimization algorithms
+have been run and all non-dominated solutions over all runs have been
+recorded. <a class="footnote-reference" href="#id19" id="id17">[5]</a>
+The hypervolume indicator value of the obtained set of non-dominated
+solutions, also called <em>non-dominated reference set</em>, separately obtained
+for each problem instance in the benchmark suite, is then used as the
+reference hypervolume indicator value.</p>
+<table class="docutils footnote" frame="void" id="id18" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id16">[4]</a></td><td>Using the quality indicator value of the <em>true</em> Pareto set might not
+be desirable, because the set contains an infinite number of solutions,
+which is neither a possible nor a desirable goal to aspire in practice.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id19" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id17">[5]</a></td><td>Amongst others, we run versions of NSGA-II <a class="reference internal" href="#deb2002" id="id20">[DEB2002]</a> via Matlab&#8217;s
+<code class="docutils literal"><span class="pre">gamultiobj</span></code> <a class="reference external" href="http://www.mathworks.com/help/gads/gamultiobj.html">function</a>, SMS-EMOA <a class="reference internal" href="#beu2007" id="id21">[BEU2007]</a>, MOEA/D <a class="reference internal" href="#zha2007" id="id22">[ZHA2007]</a>,
+RM-MEDA <a class="reference internal" href="#zha2008" id="id23">[ZHA2008]</a>, and MO-CMA-ES <a class="reference internal" href="#vos2010" id="id24">[VOS2010]</a>, together with simple
+uniform RANDOMSEARCH and the single-objective CMA-ES <a class="reference internal" href="#han2001" id="id25">[HAN2001]</a> on scalarized problems
+(i.e. weighted sum) to create first approximations of the bi-objective
+problems&#8217; Pareto sets.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="instances-and-generalization-experiment">
+<h3>Instances and Generalization Experiment<a class="headerlink" href="#instances-and-generalization-experiment" title="Permalink to this headline">¶</a></h3>
+<p>The standard procedure for an experiment on a benchmark suite, like the
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite, prescribes to run the algorithm of choice once on each
+problem of the suite <a class="reference internal" href="#han2016ex" id="id27">[HAN2016ex]</a>.
+For the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite, the postprocessing part of <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> displays currently by
+default only 5 out of the 10 instances from each function-dimension pair.</p>
+</div>
+<div class="section" id="data-storage-and-future-recalculations-of-indicator-values">
+<h3>Data Storage and Future Recalculations of Indicator Values<a class="headerlink" href="#data-storage-and-future-recalculations-of-indicator-values" title="Permalink to this headline">¶</a></h3>
+<p>Having a good approximation of the Pareto set/Pareto front is crucial in assessing
+algorithm performance with the above suggested performance criterion. In order to allow
+the reference sets to approximate the Pareto set/Pareto front better and better over time,
+the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> platform records every non-dominated solution over the algorithm run.
+Algorithm data sets, submitted through the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> platform&#8217;s web page, can therefore
+be used to improve the quality of the reference set by adding all solutions to the
+reference set which are currently non-dominated to it.</p>
+<p>Recording every new non-dominated solution within every algorithm run also allows to
+recover the algorithm runs after the experiment and to recalculate the corresponding
+hypervolume difference values if the reference set changes in the future. In order
+to be able to distinguish between different collections of reference sets that might
+have been used during the actual benchmarking experiment and the production of the
+graphical output, <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> writes the absolute hypervolume reference values together
+with the performance data during the benchmarking experiment and displays
+a version number in the plots generated that allows to retrieve the used reference
+values from the <a class="reference external" href="https://github.com/numbbo/coco">Github repository of COCO</a>.</p>
+<H2>Acknowledgements</H2><p>This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
+of the French National Research Agency.</p>
+<p>The authors would like to thank Thanh-Do Tran for his
+contributions and assistance with the preliminary code of the bi-objective
+setting and for providing us with his extensive experimental data. We also thank
+Tobias Glasmachers, Oswin Krause, and Ilya Loshchilov for their bug reports, feature
+requests, code testing, and many valuable discussions. Special thanks go
+to Olaf Mersmann for the inital rewriting of the COCO platform without which
+the bi-objective extension of COCO would not have happened.</p>
+<H2>References</H2><table class="docutils citation" frame="void" id="beu2007" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id21">[BEU2007]</a></td><td>N. Beume, B. Naujoks, and M. Emmerich (2007). SMS-EMOA: Multiobjective
+selection based on dominated hypervolume. <em>European Journal of Operational
+Research</em>, 181(3), pp. 1653-1669.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="deb2002" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id20">[DEB2002]</a></td><td>K. Deb, A. Pratap, S. Agarwal, and T. A. M. T. Meyarivan (2002). A
+fast and elitist multiobjective genetic algorithm: NSGA-II. <em>IEEE Transactions
+on Evolutionary Computation</em>, 6(2), pp. 182-197.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="han2001" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id25">[HAN2001]</a></td><td>N. Hansen and A. Ostermeier (2001). Completely derandomized
+self-adaptation in evolution strategies. <em>Evolutionary computation</em>, 9(2),
+pp. 159-195.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="han2016perf" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[HAN2016perf]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id12">2</a>, <a class="fn-backref" href="#id14">3</a>)</em> N. Hansen, A. Auger, D. Brockhoff, D. Tušar, T. Tušar
+(2016). <a class="reference external" href="http://numbbo.github.io/coco-doc/perf-assessment">COCO: Performance Assessment</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/160x.xxxxx">arXiv:160x.xxxxx</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="han2016co" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[HAN2016co]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> N. Hansen, A. Auger, O. Mersmann, T. Tušar, D. Brockhoff (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/">COCO: A Platform for Comparing Continuous Optimizers in a Black-Box
+Setting</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1603.08785">arXiv:1603.08785</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="han2009fun" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id15">[HAN2009fun]</a></td><td>N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
+<a class="reference external" href="http://coco.gforge.inria.fr/">Real-parameter black-box optimization benchmarking 2009: Noiseless functions definitions</a>. <a class="reference external" href="https://hal.inria.fr/inria-00362633">Technical Report RR-6829</a>, Inria, updated February 2010.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="han2016ex" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[HAN2016ex]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id27">2</a>)</em> N. Hansen, T. Tušar, A. Auger, D. Brockhoff, O. Mersmann (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/experimental-setup/">COCO: The Experimental Procedure</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1603.08776">arXiv:1603.08776</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="tus2016" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[TUS2016]</a></td><td>T. Tušar, D. Brockhoff, N. Hansen, A. Auger (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/bbob-biobj/functions/">COCO: The Bi-objective Black Box Optimization Benchmarking (bbob-biobj)
+Test Suite</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1604.00359">arXiv:1604.00359</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="vos2010" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id24">[VOS2010]</a></td><td>T. Voß, N. Hansen, and C. Igel (2010). Improved step size
+adaptation for the MO-CMA-ES. In <em>Genetic and Evolutionary Computation
+Conference (GECCO 2010)</em>, pp. 487-494. ACM.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="zha2007" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id22">[ZHA2007]</a></td><td>Q. Zhang, and H. Li (2007). MOEA/D: A multiobjective
+evolutionary algorithm based on decomposition. <em>IEEE Transactions on
+Evolutionary Computation</em>, 11(6), pp. 712-731.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="zha2008" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id23">[ZHA2008]</a></td><td>Q. Zhang, A. Zhou, and Y. Jin (2008). RM-MEDA: A regularity
+model-based multiobjective estimation of distribution algorithm. <em>IEEE
+Transactions on Evolutionary Computation</em>, 12(1), pp. 41-63.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="zit2003" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[ZIT2003]</a></td><td>E. Zitzler, L. Thiele, M. Laumanns, C. M. Fonseca, and V. Grunert da Fonseca (2003). Performance Assessment of Multiobjective Optimizers: An Analysis and Review.
+<em>IEEE Transactions on Evolutionary Computation</em>, 7(2), pp. 117-132.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-   
 
-</body>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">Biobjective Performance Assessment with the COCO Platform</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+      Last updated on May 08, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
+    </div>
+  </body>
 </html>
