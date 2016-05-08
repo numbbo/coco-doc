@@ -46,7 +46,6 @@
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Biobjective Performance Assessment with the COCO Platform</a><ul>
-<li><a class="reference internal" href="#chaptertitle">CHAPTERTITLE</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li><a class="reference internal" href="#definitions-and-terminology">Definitions and Terminology</a></li>
 </ul>
@@ -64,8 +63,6 @@
 </li>
 <li><a class="reference internal" href="#instances-and-generalization-experiment">Instances and Generalization Experiment</a></li>
 <li><a class="reference internal" href="#data-storage-and-future-recalculations-of-indicator-values">Data Storage and Future Recalculations of Indicator Values</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -100,8 +97,6 @@
             
   <div class="section" id="biobjective-performance-assessment-with-the-coco-platform">
 <h1>Biobjective Performance Assessment with the COCO Platform<a class="headerlink" href="#biobjective-performance-assessment-with-the-coco-platform" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="chaptertitle">
-<h2>CHAPTERTITLE<a class="headerlink" href="#chaptertitle" title="Permalink to this headline">¶</a></h2>
 See: <I>ArXiv e-prints</I>,
 <A HREF="http://arxiv.org/abs/160x.xxxxx">arXiv:160x.xxxxx</A>, 2016.<p>This document details the rationales behind assessing the performance of
 numerical black-box optimizers on multi-objective problems within the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>
@@ -110,7 +105,7 @@ The evaluation is based on a hypervolume of all non-dominated solutions in the
 archive of candidate solutions and measures the runtime until the
 hypervolume value succeeds prescribed target values.</p>
 <div class="section" id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The performance assessment of (numerical) optimization algorithms with the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>
 platform <a class="reference internal" href="#han2016co" id="id1">[HAN2016co]</a> is invariably based on the
 measurement of the <em>runtime</em> <a class="footnote-reference" href="#id6" id="id2">[1]</a> until a <em>quality indicator</em> reaches a predefined
@@ -135,7 +130,7 @@ consequently, runtime is measured in number of function evaluations.</td></tr>
 </tbody>
 </table>
 <div class="section" id="definitions-and-terminology">
-<h4>Definitions and Terminology<a class="headerlink" href="#definitions-and-terminology" title="Permalink to this headline">¶</a></h4>
+<h3>Definitions and Terminology<a class="headerlink" href="#definitions-and-terminology" title="Permalink to this headline">¶</a></h3>
 <p>In this section, we introduce the definitions of some basic terms and concepts.</p>
 <dl class="docutils">
 <dt><em>function instance, problem</em></dt>
@@ -193,14 +188,14 @@ underlying parameterized function and its dimension and instance.</dd>
 </div>
 </div>
 <div class="section" id="performance-assessment-with-a-quality-indicator">
-<h3>Performance Assessment with a Quality Indicator<a class="headerlink" href="#performance-assessment-with-a-quality-indicator" title="Permalink to this headline">¶</a></h3>
+<h2>Performance Assessment with a Quality Indicator<a class="headerlink" href="#performance-assessment-with-a-quality-indicator" title="Permalink to this headline">¶</a></h2>
 <p>For measuring the runtime on a given problem, we consider a quality indicator
 which is to be optimized (minimized).
 In the noiseless single-objective case, the quality indicator is the best so-far observed objective function value (recommendations can replace previous observations).
 In the case of the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite, the quality indicator is based on the
 hypervolume indicator of the <em>archive</em> <img class="math" src="_images/math/c07fd602301febefebc3c4b12d3e2503d989794a.png" alt="A_t" style="vertical-align: -3px"/>.</p>
 <div class="section" id="definition-of-the-quality-indicator">
-<h4>Definition of the Quality Indicator<a class="headerlink" href="#definition-of-the-quality-indicator" title="Permalink to this headline">¶</a></h4>
+<h3>Definition of the Quality Indicator<a class="headerlink" href="#definition-of-the-quality-indicator" title="Permalink to this headline">¶</a></h3>
 <p>The indicator <img class="math" src="_images/math/d3e2bf5349a3188ab8b7cf47a77589ad5e42cce8.png" alt="\IHV" style="vertical-align: -5px"/> to be mininized is either the negative
 hypervolume indicator of the archive with the nadir
 point as reference point or the distance to the region of interest
@@ -254,7 +249,7 @@ is mapped to <img class="math" src="_images/math/d880034787de90d6bb07f5b92537df6
 </table>
 </div>
 <div class="section" id="rationales-behind-the-performance-measure">
-<h4>Rationales Behind the Performance Measure<a class="headerlink" href="#rationales-behind-the-performance-measure" title="Permalink to this headline">¶</a></h4>
+<h3>Rationales Behind the Performance Measure<a class="headerlink" href="#rationales-behind-the-performance-measure" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt><em>Why using an archive?</em></dt>
 <dd>We believe using an archive to keep all non-dominated solutions is relevant in practice
@@ -270,7 +265,7 @@ archive improves if and only if a new non-dominated solution is generated <a cla
 </dl>
 </div>
 <div class="section" id="specificities-and-properties">
-<h4>Specificities and Properties<a class="headerlink" href="#specificities-and-properties" title="Permalink to this headline">¶</a></h4>
+<h3>Specificities and Properties<a class="headerlink" href="#specificities-and-properties" title="Permalink to this headline">¶</a></h3>
 <p>In summary, the proposed <code class="docutils literal"><span class="pre">bbob-biobj</span></code> performance criterion has the following
 specificities:</p>
 <ul class="simple">
@@ -300,7 +295,7 @@ their external archive themselves.</li>
 </div>
 </div>
 <div class="section" id="definition-of-target-values">
-<h3>Definition of Target Values<a class="headerlink" href="#definition-of-target-values" title="Permalink to this headline">¶</a></h3>
+<h2>Definition of Target Values<a class="headerlink" href="#definition-of-target-values" title="Permalink to this headline">¶</a></h2>
 <p>For each problem instance of the benchmark suite, consisting of a parameterized
 function, its dimension and its instance parameter <img class="math" src="_images/math/7b17158cd34922d55a6b455d473d4b16fa5014b4.png" alt="\theta_i" style="vertical-align: -3px"/>, a set of quality
 indicator target values is chosen, eventually used to measure algorithm runtime to
@@ -309,7 +304,7 @@ The target values are based on a target precision <img class="math" src="_images
 <em>reference hypervolume indicator value</em>, <img class="math" src="_images/math/564d9184fb9c15f30f7134701ada4ff2ca8de91c.png" alt="I_i^\mathrm{ref}" style="vertical-align: -4px"/>, which is an approximation of the
 <img class="math" src="_images/math/d3e2bf5349a3188ab8b7cf47a77589ad5e42cce8.png" alt="\IHV" style="vertical-align: -5px"/> indicator value of the Pareto set.</p>
 <div class="section" id="target-precision-values">
-<h4>Target Precision Values<a class="headerlink" href="#target-precision-values" title="Permalink to this headline">¶</a></h4>
+<h3>Target Precision Values<a class="headerlink" href="#target-precision-values" title="Permalink to this headline">¶</a></h3>
 <p>All target indicator values are computed in the form of <img class="math" src="_images/math/564d9184fb9c15f30f7134701ada4ff2ca8de91c.png" alt="I_i^\mathrm{ref}" style="vertical-align: -4px"/> <img class="math" src="_images/math/4f8de8f9962c4daffcdbacc42822115def7578ad.png" alt="+\,\Delta
 I" style="vertical-align: -2px"/> from the instance dependent reference value <img class="math" src="_images/math/564d9184fb9c15f30f7134701ada4ff2ca8de91c.png" alt="I_i^\mathrm{ref}" style="vertical-align: -4px"/> and a target precision
 value <img class="math" src="_images/math/0fcd4c35133b823b54c75a11d1817b9cfa50acb0.png" alt="\Delta I" style="vertical-align: 0px"/>.
@@ -336,7 +331,7 @@ precision values have been strictly positive <a class="reference internal" href=
 </table>
 </div>
 <div class="section" id="the-reference-hypervolume-indicator-value">
-<h4>The Reference Hypervolume Indicator Value<a class="headerlink" href="#the-reference-hypervolume-indicator-value" title="Permalink to this headline">¶</a></h4>
+<h3>The Reference Hypervolume Indicator Value<a class="headerlink" href="#the-reference-hypervolume-indicator-value" title="Permalink to this headline">¶</a></h3>
 <p>Unlike the single-objective <code class="docutils literal"><span class="pre">bbob</span></code> test suite <a class="reference internal" href="#han2009fun" id="id15">[HAN2009fun]</a>, the
 biobjective <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite does not provide analytic expressions of
 its optima.
@@ -371,7 +366,7 @@ problems&#8217; Pareto sets.</td></tr>
 </div>
 </div>
 <div class="section" id="instances-and-generalization-experiment">
-<h3>Instances and Generalization Experiment<a class="headerlink" href="#instances-and-generalization-experiment" title="Permalink to this headline">¶</a></h3>
+<h2>Instances and Generalization Experiment<a class="headerlink" href="#instances-and-generalization-experiment" title="Permalink to this headline">¶</a></h2>
 <p>The standard procedure for an experiment on a benchmark suite, like the
 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite, prescribes to run the algorithm of choice once on each
 problem of the suite <a class="reference internal" href="#han2016ex" id="id27">[HAN2016ex]</a>.
@@ -379,7 +374,7 @@ For the <code class="docutils literal"><span class="pre">bbob-biobj</span></code
 default only 5 out of the 10 instances from each function-dimension pair.</p>
 </div>
 <div class="section" id="data-storage-and-future-recalculations-of-indicator-values">
-<h3>Data Storage and Future Recalculations of Indicator Values<a class="headerlink" href="#data-storage-and-future-recalculations-of-indicator-values" title="Permalink to this headline">¶</a></h3>
+<h2>Data Storage and Future Recalculations of Indicator Values<a class="headerlink" href="#data-storage-and-future-recalculations-of-indicator-values" title="Permalink to this headline">¶</a></h2>
 <p>Having a good approximation of the Pareto set/Pareto front is crucial in assessing
 algorithm performance with the above suggested performance criterion. In order to allow
 the reference sets to approximate the Pareto set/Pareto front better and better over time,
@@ -497,7 +492,6 @@ Transactions on Evolutionary Computation</em>, 12(1), pp. 41-63.</td></tr>
 <em>IEEE Transactions on Evolutionary Computation</em>, 7(2), pp. 117-132.</td></tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 
