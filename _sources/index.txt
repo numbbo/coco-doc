@@ -255,7 +255,7 @@ benchmarking far over a hundred algorithms by many researchers.
    
 .. [#] In order to get even more insightful result on the comparatively 
    difficult ``bbob`` benchmark suite, additionally randomized restarts are advisable. 
-   Example code is given in |example_experiment.py| which runs
+   Example code is given in |example_experiment.py|_ which runs
    out-of-the-box as a benchmarking Python script.  
        
 .. left to the reader to
