@@ -36,6 +36,6 @@ $(window).resize(function(){
         $("li.nav-item-0 a").text("Top");
     }
     else {
-        $("li.nav-item-0 a").text("COCO: The bbob-biobj Function Description");
+        $("li.nav-item-0 a").text("COCO: The Bi-objective Black-Box Optimization Benchmarking (bbob-biobj) Test Suite");
     }
 });

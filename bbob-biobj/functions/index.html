@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>COCO: The bbob-biobj Test Suite &mdash; COCO: The bbob-biobj Function Description</title>
+    <title>COCO: The Bi-objective Black-Box Optimization Benchmarking (bbob-biobj) Test Suite &mdash; COCO: The Bi-objective Black-Box Optimization Benchmarking (bbob-biobj) Test Suite</title>
     
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/bizstyle.js"></script>
-    <link rel="top" title="COCO: The bbob-biobj Function Description" href="#" />
+    <link rel="top" title="COCO: The Bi-objective Black-Box Optimization Benchmarking (bbob-biobj) Test Suite" href="#" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -38,30 +38,28 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="#">COCO: The bbob-biobj Function Description</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">COCO: The Bi-objective Black-Box Optimization Benchmarking (bbob-biobj) Test Suite</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">COCO: The Bi-objective Black Box Optimization Benchmarking (bbob-biobj) Test Suite</a><ul>
+<li><a class="reference internal" href="#">COCO: The Bi-objective Black-Box Optimization Benchmarking (<code class="docutils literal"><span class="pre">bbob-biobj</span></code>) Test Suite</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li><a class="reference internal" href="#definitions-and-terminology">Definitions and Terminology</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#overview-of-the-proposed-bbob-biobj-test-suite">Overview of the Proposed <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Test Suite</a><ul>
-<li><a class="reference internal" href="#the-single-objective-bbob-functions-used">The Single-objective <code class="docutils literal"><span class="pre">bbob</span></code> Functions Used</a></li>
+<li><a class="reference internal" href="#the-single-objective-bbob-functions">The Single-objective <code class="docutils literal"><span class="pre">bbob</span></code> Functions</a></li>
 <li><a class="reference internal" href="#function-groups">Function Groups</a></li>
-<li><a class="reference internal" href="#normalization-ideal-and-nadir-point">Normalization, Ideal and Nadir Point</a></li>
+<li><a class="reference internal" href="#normalization-of-objectives">Normalization of Objectives</a></li>
 <li><a class="reference internal" href="#instances">Instances</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#the-bbob-biobj-test-functions-and-their-properties">The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Test Functions and Their Properties</a><ul>
-<li><a class="reference internal" href="#some-function-properties">Some Function Properties</a><ul>
-<li><a class="reference internal" href="#bounded-or-unbounded-domain">Bounded or Unbounded Domain</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#some-function-properties">Some Function Properties</a></li>
+<li><a class="reference internal" href="#domain-bounds">Domain Bounds</a></li>
 <li><a class="reference internal" href="#the-55-bbob-biobj-functions">The 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Functions</a><ul>
 <li><a class="reference internal" href="#sphere-sphere"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/>: Sphere/Sphere</a></li>
 <li><a class="reference internal" href="#sphere-ellipsoid-separable"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/>: Sphere/Ellipsoid separable</a></li>
@@ -155,30 +153,28 @@
           <div class="body" role="main">
             
   <div class="section" id="coco-the-bi-objective-black-box-optimization-benchmarking-bbob-biobj-test-suite">
-<h1>COCO: The Bi-objective Black Box Optimization Benchmarking (bbob-biobj) Test Suite<a class="headerlink" href="#coco-the-bi-objective-black-box-optimization-benchmarking-bbob-biobj-test-suite" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite contains 55 bi-objective
-functions in continuous domain which are derived from combining
-functions of the well-known single-objective noiseless <code class="docutils literal"><span class="pre">bbob</span></code> test suite. It will be used as the main test suite of
-the upcoming <a href="http://numbbo.github.io/workshops/BBOB-2016/">BBOB-2016 workshop</a> at GECCO. Besides giving the actual
-function definitions and presenting their (known) properties, this documentation also aims at
-giving the rationale behind our approach in terms of function groups, instances, and potential objective space
-normalization.
-</p><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For the time being, this documentation is under development and might not contain all final data.</p>
-</div>
-<div class="figure align-center" id="id16">
+<h1>COCO: The Bi-objective Black-Box Optimization Benchmarking (<code class="docutils literal"><span class="pre">bbob-biobj</span></code>) Test Suite<a class="headerlink" href="#coco-the-bi-objective-black-box-optimization-benchmarking-bbob-biobj-test-suite" title="Permalink to this headline">¶</a></h1>
+See also: <I>ArXiv e-prints</I>,
+<A HREF="http://arxiv.org/abs/1604.00359">arXiv:1604.00359</A>, 2016.<p>The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite contains 55 bi-objective
+functions in continuous domain which are derived from combining functions of
+the well-known single-objective noiseless <code class="docutils literal"><span class="pre">bbob</span></code> test suite. Besides giving
+the actual function definitions and presenting their (known) properties, this
+documentation also aims at giving the rationale behind our approach in terms
+of function groups, instances, and potential objective space normalization.</p>
+<div class="figure align-center" id="id24">
 <a class="reference internal image-reference" href="_images/examples-bbob-biobj.png"><img alt="_images/examples-bbob-biobj.png" src="_images/examples-bbob-biobj.png" style="width: 539.4px; height: 444.6px;" /></a>
-<p class="caption"><span class="caption-text">Example plots of the Pareto front approximation, found by NSGA-II on selected <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions. In blue the
-non-dominated points at the end of different independent runs, in red the points that are non-dominated over all runs.</span></p>
+<p class="caption"><span class="caption-text">Example plots of the Pareto front approximation, found by NSGA-II on
+selected <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions. In blue the non-dominated points at the
+end of different independent runs, in red the points that are
+non-dominated over all runs.</span></p>
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>In the following, we consider bi-objective, unconstrained and bound-constraint
+<p>In the following, we consider bi-objective, unconstrained
 <strong>minimization</strong> problems of the form</p>
 <div class="math">
-<p><img src="_images/math/b61a2c5e414a25c8f3c236f306297fbf660ac3bb.png" alt="\min_{x \in \mathbb{R}^D} f(x)=(f_\alpha(x),f_\beta(x))"/></p>
-</div><p>where <img class="math" src="_images/math/273f486f7ce4023c108fff2c278487a34aaa6321.png" alt="n" style="vertical-align: 0px"/> is the number of variables of the problem (also called
+<p><img src="_images/math/07b686fd99aef7edd3acb23e9f0569031519fd31.png" alt="\min_{x \in \mathbb{R}^D} f(x)=(f_\alpha(x),f_\beta(x)),"/></p>
+</div><p>where <img class="math" src="_images/math/4216a11e0c2d74797f4ff0f3f9b84737b17eee37.png" alt="D" style="vertical-align: 0px"/> is the number of variables of the problem (also called
 the problem dimension), <img class="math" src="_images/math/d4466f0b9257c8a82ce10b6cf556006c68a46c14.png" alt="f_\alpha: \mathbb{R}^D \rightarrow \mathbb{R}" style="vertical-align: -4px"/>
 and <img class="math" src="_images/math/4be78a999194af3d7bfbafd429c205cd49227ccc.png" alt="f_\beta: \mathbb{R}^D \rightarrow \mathbb{R}" style="vertical-align: -5px"/> are the two
 objective functions, and the <img class="math" src="_images/math/5635bea19cb6959b24a003880d101df14aedfea0.png" alt="\min" style="vertical-align: -1px"/> operator is related to the
@@ -193,11 +189,11 @@ approximation is sought. The Pareto set&#8217;s image in the
 objective space <img class="math" src="_images/math/738de473850a6f37592a38bc756ac77f41e459f4.png" alt="f(\mathbb{R}^D)" style="vertical-align: -4px"/> is called <em>Pareto front</em>.</p>
 <p>The objective of the minimization problem is to find, with as few evaluations
 of <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/> as possible, a set of non-dominated solutions which is (i) as large
-as possible and (ii) has <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-values as close to the pareto front as possible. <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
+as possible and (ii) has <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-values as close to the Pareto front as possible. <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Distance in <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/> space is defined here such that nadir and ideal point
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Distance in <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-space is defined here such that nadir and ideal point
 have in each coordinate distance one. Neither of these points is however
 freely accessible to the optimization algorithm.</td></tr>
 </tbody>
@@ -206,15 +202,14 @@ freely accessible to the optimization algorithm.</td></tr>
 <h3>Definitions and Terminology<a class="headerlink" href="#definitions-and-terminology" title="Permalink to this headline">¶</a></h3>
 <p>We remind in this section different definitions.</p>
 <dl class="docutils">
-<dt><em>function, instance</em></dt>
-<dd><p class="first">A function within COCO is a parametrized function <img class="math" src="_images/math/b39e6b77b06efd34b5c49db3509b9529aaf19ae8.png" alt="f_\theta:
-\mathbb{R}^D \to \mathbb{R}^m" style="vertical-align: -4px"/> with <img class="math" src="_images/math/a5a72571f80799174e855c7b033b340dd852b12e.png" alt="\theta \in \Theta" style="vertical-align: -1px"/> a set of
-parameters. A parameter determines a so-called instance. For example,
-<img class="math" src="_images/math/7e93739b0b278320e48787590326b56e606f81ac.png" alt="\theta" style="vertical-align: 0px"/> encodes the location of the optimum and two different
-instances have shifted optima.</p>
-<p class="last">The integer <img class="math" src="_images/math/273f486f7ce4023c108fff2c278487a34aaa6321.png" alt="n" style="vertical-align: 0px"/> is the dimension of the search space and
-<img class="math" src="_images/math/35a82f7fa7e77be3728336c5bd59dc655eb19b57.png" alt="m=2" style="vertical-align: 0px"/> for the  <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite. For each function instance,
-also called a <em>problem</em>, furthermore <img class="math" src="_images/math/400725e1a7504760afd1657c0fef58323196a163.png" alt="(n, \theta)" style="vertical-align: -4px"/> are fixed.</p>
+<dt><em>function instance, problem</em></dt>
+<dd><p class="first">Each function within COCO <img class="math" src="_images/math/8a2cee5c4b1f0063b52e4724baf7268a812566e7.png" alt="f^\theta: \mathbb{R}^D \to \mathbb{R}^m" style="vertical-align: -4px"/> is parametrized
+with parameter values <img class="math" src="_images/math/a5a72571f80799174e855c7b033b340dd852b12e.png" alt="\theta \in \Theta" style="vertical-align: -1px"/>. A parameter value determines a so-called <em>function
+instance</em>. For example, <img class="math" src="_images/math/7e93739b0b278320e48787590326b56e606f81ac.png" alt="\theta" style="vertical-align: 0px"/> encodes the location of the optimum of single-objective functions,
+which means that different instances have shifted optima. In the <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+test suite, <img class="math" src="_images/math/35a82f7fa7e77be3728336c5bd59dc655eb19b57.png" alt="m=2" style="vertical-align: 0px"/> and the function instances are determined by the instances of the underlying
+single-objective functions.</p>
+<p class="last">A <em>problem</em> is a function instance of a specific dimension <img class="math" src="_images/math/4216a11e0c2d74797f4ff0f3f9b84737b17eee37.png" alt="D" style="vertical-align: 0px"/>.</p>
 </dd>
 <dt><em>ideal point</em></dt>
 <dd><p class="first">The ideal point is defined as the vector in objective space that
@@ -222,25 +217,25 @@ contains the optimal <img class="math" src="_images/math/f0307af130a9303d3def5b2
 More precisely let <img class="math" src="_images/math/f1f692968fe47a50b1ce9601f474c3962bc1ba74.png" alt="f_\alpha^{\rm opt}:= \inf_{x\in \mathbb{R}^D} f_\alpha(x)" style="vertical-align: -4px"/> and
 <img class="math" src="_images/math/866ae8c4b7b7d3ddfab1e44f3ac67a8fb16c11fc.png" alt="f_\beta^{\rm opt}:= \inf_{x\in \mathbb{R}^D} f_\beta(x)" style="vertical-align: -7px"/>, the ideal point is given by</p>
 <div class="last math">
-<p><img src="_images/math/9a4718a20f6b75d6773cb781e3d295f283526a5c.png" alt="\begin{equation*}
-    z_{\rm ideal}  =  (f_\alpha^{\rm opt},f_\beta^{\rm opt}) \enspace.
+<p><img src="_images/math/59a3f592d2fdd577e249d8d5958aa95f11eb379c.png" alt="\begin{equation*}
+    z_{\rm ideal}  =  (f_\alpha^{\rm opt},f_\beta^{\rm opt}).
 \end{equation*}"/></p>
 </div></dd>
 <dt><em>nadir point</em></dt>
 <dd><p class="first">The <em>nadir point</em> (in objective space) consists in each objective of
-the worst value obtained by a Pareto-optimal solution. More precisely
-let <img class="math" src="_images/math/684e8650939f662bf547313c0e1e52d32df81675.png" alt="\mathcal{PO}" style="vertical-align: -1px"/> be the set of Pareto optimal points then the nadir point satisfies</p>
+the worst value obtained by a Pareto-optimal solution. More precisely,
+let <img class="math" src="_images/math/684e8650939f662bf547313c0e1e52d32df81675.png" alt="\mathcal{PO}" style="vertical-align: -1px"/> be the set of Pareto optimal points. Then the nadir point satisfies</p>
 <div class="math">
-<p><img src="_images/math/43d737013f5d188e9e46ae5fb22c70b411eb131d.png" alt="\begin{equation*}
+<p><img src="_images/math/a010b6a2e8b594fdfc3c88312446de728524fe43.png" alt="\begin{equation*}
     z_{\rm nadir}  =   \left( \sup_{x \in \mathcal{PO}} f_\alpha(x),
- \sup_{x \in \mathcal{PO}} f_\beta(x)  \right) \enspace.
+ \sup_{x \in \mathcal{PO}} f_\beta(x)  \right).
 \end{equation*}"/></p>
 </div><p>In the case of two objectives with a unique global minimum each (that
-is a single point in the search space maps to the global minimum)</p>
+is, a single point in the search space maps to the global minimum)</p>
 <div class="math">
-<p><img src="_images/math/f7a25e3138222c50e1c6bd6984d766bfe59aaaa1.png" alt="\begin{equation*}
+<p><img src="_images/math/1b33f6e1220eae570866cf5a683a6e476b19146b.png" alt="\begin{equation*}
     z_{\rm nadir}  =   \left( f_\alpha(x_{\rm opt,\beta}),
-  f_\beta(x_{\rm opt,\alpha})  \right)
+  f_\beta(x_{\rm opt,\alpha})  \right),
 \end{equation*}"/></p>
 </div><p class="last">where <img class="math" src="_images/math/d37dc91f2abfd31c37e44ba17a9478b40dbef931.png" alt="x_{\rm opt,\alpha}= \arg \min f_\alpha(x)" style="vertical-align: -6px"/> and
 <img class="math" src="_images/math/59e05d6e69f9223660036dd7dca3525b734e7721.png" alt="x_{\rm opt,\beta}= \arg \min f_\beta(x)" style="vertical-align: -6px"/>.</p>
@@ -258,8 +253,8 @@ has been used since 2009 in the <a class="reference external" href="http://numbb
 the 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions are given in Section
 <a class="reference internal" href="#sec-test-functions"><span>The bbob-biobj Test Functions and Their Properties</span></a>, we will detail here the main rationale behind
 them together with their common properties.</p>
-<div class="section" id="the-single-objective-bbob-functions-used">
-<h3>The Single-objective <code class="docutils literal"><span class="pre">bbob</span></code> Functions Used<a class="headerlink" href="#the-single-objective-bbob-functions-used" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-single-objective-bbob-functions">
+<h3>The Single-objective <code class="docutils literal"><span class="pre">bbob</span></code> Functions<a class="headerlink" href="#the-single-objective-bbob-functions" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite is designed to be able to assess  performance of algorithms with respect to well-identified difficulties in optimization typically  occurring in real-world problems. A multi-objective problem being a combination of single-objective problems, one can obtain multi-objective problems with representative difficulties by simply combining single objective functions with representative difficulties observed in real-world problems. For this purpose we naturally use the single-objective <code class="docutils literal"><span class="pre">bbob</span></code> suite <a class="reference internal" href="#han2009fun" id="id4">[HAN2009fun]</a>.</p>
 <p>Combining all 24 <code class="docutils literal"><span class="pre">bbob</span></code> functions in pairs thereby results in
 <img class="math" src="_images/math/7d037a6994a5defa2eb21beda04fed7ea01bfab0.png" alt="24^2=576" style="vertical-align: -1px"/> bi-objective functions overall. We however assume that
@@ -267,7 +262,7 @@ multi-objective optimization algorithms are not sensitive to permutations of
 the objective functions such that combining the 24  <code class="docutils literal"><span class="pre">bbob</span></code> functions and
 taking out the function <img class="math" src="_images/math/e1260df3ecbabab7b38e99406d15465305d6e7c4.png" alt="(g_2,g_1)" style="vertical-align: -4px"/> if the function <img class="math" src="_images/math/6d30e7d4914e8e8471d1d45a0e5f23b667e3ef1f.png" alt="(g_1,g_2)" style="vertical-align: -4px"/>
 is present results in <img class="math" src="_images/math/09b8185a62c951077e23976d810caaae203194f3.png" alt="24 + {24 \choose 2} = 24 + (24\times23)/2 = (24\times25)/2 = 300" style="vertical-align: -6px"/> functions.</p>
-<p>Some first tests, e.g. in <a class="reference internal" href="#bth2015a" id="id5">[BTH2015a]</a>, showed that having 300 functions is
+<p>Some first tests, e.g. in <a class="reference internal" href="#bro2015a" id="id5">[BRO2015a]</a>, showed that having 300 functions is
 impracticable in terms of the overall running time of the benchmarking
 experiment.  We then decided to exploit the organization of the <code class="docutils literal"><span class="pre">bbob</span></code>
 functions into classes to choose a subset of functions. More precisely, the 24
@@ -316,13 +311,17 @@ separate versions in the <code class="docutils literal"><span class="pre">bbob</
 </ul>
 <p>Using the above described pairwise combinations, this results in
 having <img class="math" src="_images/math/24e0ef41a17b93ed05da47f6cb04b5164befa6e9.png" alt="10+{10 \choose 2} = 55" style="vertical-align: -6px"/> bi-objective functions in
-the final <cite>bbob-biobj</cite> suite. Those functions are denoted <img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> to <img class="math" src="_images/math/7f888d9179f943871e9520bc083c90bc23b1ad67.png" alt="f_{55}" style="vertical-align: -4px"/> in the sequel.</p>
+the final <cite>bbob-biobj</cite> suite. These functions are denoted <img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> to <img class="math" src="_images/math/7f888d9179f943871e9520bc083c90bc23b1ad67.png" alt="f_{55}" style="vertical-align: -4px"/> in the sequel.</p>
 </div>
 <div class="section" id="function-groups">
 <h3>Function Groups<a class="headerlink" href="#function-groups" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>From combining the original <code class="docutils literal"><span class="pre">bbob</span></code> function classes, we obtain 15 function classes to structure the 55 bi-objective functions of the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite. Each function class contains three or four functions. We are listing below the function classes and in parenthesis  the functions that belong to the respective class:</dt>
-<dd><ol class="first last arabic simple">
+<p>From combining the original <code class="docutils literal"><span class="pre">bbob</span></code> function classes, we obtain 15 function
+classes to structure the 55 bi-objective functions of the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test
+suite. Each function class contains three or four functions. We are listing
+below the function classes and in parenthesis  the functions that belong to
+the respective class:</p>
+<blockquote>
+<div><ol class="arabic simple">
 <li>separable - separable (functions <img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/>, <img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/>, <img class="math" src="_images/math/9fc74cecc6e80f183bbcd097ff6cb4245e3bc185.png" alt="f_{11}" style="vertical-align: -4px"/>)</li>
 <li>separable - moderate (<img class="math" src="_images/math/66c25f7c2effbd670bfda337d7c2b412ce23364a.png" alt="f_3" style="vertical-align: -4px"/>, <img class="math" src="_images/math/b4b6c96cec9e537e5434559abae6ffb30b5518af.png" alt="f_4" style="vertical-align: -4px"/>, <img class="math" src="_images/math/f18d3fb850b2ba1860c71d92e7f9327f4857bc34.png" alt="f_{12}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/>)</li>
 <li>separable - ill-conditioned (<img class="math" src="_images/math/47f46089b12e164160909577c53f672714afe52b.png" alt="f_5" style="vertical-align: -4px"/>, <img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/>, <img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/>)</li>
@@ -333,49 +332,49 @@ the final <cite>bbob-biobj</cite> suite. Those functions are denoted <img class=
 <li>moderate - multi-modal (<img class="math" src="_images/math/44d10304c873eb1e3b3529135533da8559dea4db.png" alt="f_{24}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/44eda1e43f2fe4a918bbfe744fb1fd439c00df1b.png" alt="f_{25}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/8bfadd907993e6c9d9d585bd7640b86e8c464023.png" alt="f_{31}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/058f6317564772c4a1cbb967cea7992729295b89.png" alt="f_{32}" style="vertical-align: -4px"/>)</li>
 <li>moderate - weakly-structured (<img class="math" src="_images/math/7f62ff9e3c23294889d2aed2c06f78fe0b974ed3.png" alt="f_{26}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/ac73a3f85e620937885761493000702abfa2b174.png" alt="f_{27}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/3fee281e80df345871a4760b8ff74410e28761f2.png" alt="f_{33}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/17ca4140532357651ea6077fabc0e6107f580f18.png" alt="f_{34}" style="vertical-align: -4px"/>)</li>
 <li>ill-conditioned - ill-conditioned (<img class="math" src="_images/math/0406b0cd2768d9282a83a18795774b84feac8229.png" alt="f_{35}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/a75323821dc145c5a77e75b00d4fac5802611d0b.png" alt="f_{36}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/96c3ffb4ac055a8c56f6bb792dfdb14acc9efeeb.png" alt="f_{41}" style="vertical-align: -4px"/>)</li>
-<li>ill-conditioned - multi-modal (<img class="math" src="_images/math/ef09c560da4a71f6afb110d8b9d5b768b7766f1e.png" alt="f_{37}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/2a9c093c5b34c3d4815fdf193465311bb1065d9b.png" alt="f_{28}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/e36fc4671e3c215c7bf09d19361102b06f6e96c6.png" alt="f_{42}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/4017f032e9493dc5a6768f4a6af1ce3755bf7b3f.png" alt="f_{43}" style="vertical-align: -4px"/>)</li>
+<li>ill-conditioned - multi-modal (<img class="math" src="_images/math/ef09c560da4a71f6afb110d8b9d5b768b7766f1e.png" alt="f_{37}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/17deb8efcf1d8af9b0e5d61a153a0079daff720d.png" alt="f_{38}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/e36fc4671e3c215c7bf09d19361102b06f6e96c6.png" alt="f_{42}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/4017f032e9493dc5a6768f4a6af1ce3755bf7b3f.png" alt="f_{43}" style="vertical-align: -4px"/>)</li>
 <li>ill-conditioned - weakly-structured (<img class="math" src="_images/math/920095e422c4bd2bf99b0940fe0f6d4bfc16a66a.png" alt="f_{39}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/1cbf2d1e729e92cdd11ded4a8ace96238c7b6004.png" alt="f_{40}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/ecbf808846a11602513056c079cb622a5f8e40e8.png" alt="f_{44}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/c969636adcbbe1e6896b4b87dc71eefd29b46519.png" alt="f_{45}" style="vertical-align: -4px"/>)</li>
 <li>multi-modal - multi-modal (<img class="math" src="_images/math/203c5dcb4ff0a4586154afe5c65cf6053a1484e5.png" alt="f_{46}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/69313751d47eb8bd04869032f67003cc9a97cdd2.png" alt="f_{47}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/5bc40e41da5d8e1f11b0d6181b28a03cbd4f1183.png" alt="f_{50}" style="vertical-align: -4px"/>)</li>
 <li>multi-modal - weakly structured (<img class="math" src="_images/math/b059645c0b76a20343820275625e4c90343ab9c3.png" alt="f_{48}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/83ff1ec68bcb6d01f7f7292b7f8be7972fd67784.png" alt="f_{49}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/09cfc8e3f38a5289d9da256200c3f6175d16db65.png" alt="f_{51}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/8ec1631d96c80c102957a733a5559e18bf5d641e.png" alt="f_{52}" style="vertical-align: -4px"/>)</li>
 <li>weakly structured - weakly structured (<img class="math" src="_images/math/debeee23dcf49ecb455e20f7c584150692c95089.png" alt="f_{53}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/601d5f27d34b75e3653513fb8fed5bf0044e6ba5.png" alt="f_{54}" style="vertical-align: -4px"/>, <img class="math" src="_images/math/7f888d9179f943871e9520bc083c90bc23b1ad67.png" alt="f_{55}" style="vertical-align: -4px"/>)</li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 <p>More details about the single functions can be found in Section <a class="reference internal" href="#sec-test-functions"><span>The bbob-biobj Test Functions and Their Properties</span></a>. We however first describe their common properties in the coming sections.</p>
 </div>
-<div class="section" id="normalization-ideal-and-nadir-point">
-<h3>Normalization, Ideal and Nadir Point<a class="headerlink" href="#normalization-ideal-and-nadir-point" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="normalization-of-objectives">
+<h3>Normalization of Objectives<a class="headerlink" href="#normalization-of-objectives" title="Permalink to this headline">¶</a></h3>
 <p>None of the 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions is explicitly normalized and the
-optimization algorithms therefore have to cope with different scalings
-in the two objective functions. Typically, different orders of magnitude
+optimization algorithms therefore have to cope with objective values in
+different ranges. Typically, different orders of magnitude
 between the objective values can be observed.</p>
-<p>However, to facilitate a comparison between functions in the performance
-assessment, we use a normalization based on the ideal and the nadir point
-to compute the hypervolume indicator (see
-<a class="reference external" href="http://numbbo.github.io/coco-doc/bbob-biobj/perf-assessment/">bbob-biobj-specific performance assessment documentation</a> for details).
-Both, ideal and nadir point can be computed, because the global
+<p>However, to facilitate comparison of algorithm performance over different functions,
+we normalize the objectives based on the ideal and nadir points
+before calculating the hypervolume indicator <a class="reference internal" href="#bro2016biperf" id="id6">[BRO2016biperf]</a>.
+Both points can be computed, because the global
 optimum is known and is unique for the 10 <code class="docutils literal"><span class="pre">bbob</span></code> base functions.
 In the black-box optimization benchmarking setup, however, the values of the
-ideal and nadir point are not accessible to the optimization algorithm
-<a class="reference internal" href="#bbo2016ex" id="id6">[BBO2016ex]</a>.</p>
+ideal and nadir points are not accessible to the optimization algorithm
+<a class="reference internal" href="#han2016ex" id="id7">[HAN2016ex]</a>.</p>
 </div>
 <div class="section" id="instances">
 <h3>Instances<a class="headerlink" href="#instances" title="Permalink to this headline">¶</a></h3>
 <p>Our test functions are parametrized and instances are instantiations of the
-underlying parameters (see <a class="reference internal" href="#coco-2016" id="id7">[COCO:2016]</a>). The instances for the bi-objective
+underlying parameters (see <a class="reference internal" href="#han2016co" id="id8">[HAN2016co]</a>). The instances for the bi-objective
 functions are using instances of each single objective function composing the
-bi-objective one. In addition, we assert two conditions.</p>
+bi-objective one. In addition, we assert two conditions:</p>
 <blockquote>
-<div><ol class="arabic simple">
-<li>The two single-objective optima (also called the extreme optimal points) are not closer than <img class="math" src="_images/math/ae138528b430fc490e1d75e53ecd39f8817c386e.png" alt="10^{-4}" style="vertical-align: -1px"/> in search space.</li>
-<li>The Euclidean distance between the ideal and the nadir point (in objective
-space, considering raw <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-values) is at least <img class="math" src="_images/math/177afaf957ced7e1cb564e40c31c39df0d82c44e.png" alt="10^{-1}" style="vertical-align: -1px"/>.</li>
-</ol>
+<div><p>1. The Euclidean distance between the two single-objective optima (also called the
+extreme optimal points) in the search space is at least <img class="math" src="_images/math/ae138528b430fc490e1d75e53ecd39f8817c386e.png" alt="10^{-4}" style="vertical-align: -1px"/>.</p>
+<p>2. The Euclidean distance between the ideal and the nadir point in the non-normalized
+objective space is at least <img class="math" src="_images/math/177afaf957ced7e1cb564e40c31c39df0d82c44e.png" alt="10^{-1}" style="vertical-align: -1px"/>.</p>
 </div></blockquote>
-<p>We associate to an instance, an instance-id which is an integer. The relation between the instance-id, <img class="math" src="_images/math/e6692dccc70acee14afbcb83261c9fd43a2f781c.png" alt="K^{\rm biobj}_{\rm id}" style="vertical-align: -6px"/>, of a bi-objective function and the instance-ids of the single-objective functions (<img class="math" src="_images/math/9aec1ea6cdc16ae48b0d1fb650a25cb5ad412ecf.png" alt="K_{\rm id}^{f_\alpha}" style="vertical-align: -6px"/> and <img class="math" src="_images/math/4014112d28f2cf05f6ab858dc8919ebb1850a5c4.png" alt="K_{\rm id}^{f_\beta}" style="vertical-align: -6px"/>) composing the bi-objective problem is the following:</p>
+<p>We associate to an instance, an instance-id which is an integer. The relation between the
+instance-id, <img class="math" src="_images/math/27a4744c28cb761cf3a79fd41a3da2265f436c68.png" alt="K^{f}_{\rm id}" style="vertical-align: -6px"/>, of a bi-objective function <img class="math" src="_images/math/37adb9ac025109ea32d19a342e55db61ecc99b4e.png" alt="f = (f_\alpha, f_\beta)" style="vertical-align: -5px"/>
+and the instance-ids, <img class="math" src="_images/math/9aec1ea6cdc16ae48b0d1fb650a25cb5ad412ecf.png" alt="K_{\rm id}^{f_\alpha}" style="vertical-align: -6px"/> and <img class="math" src="_images/math/4014112d28f2cf05f6ab858dc8919ebb1850a5c4.png" alt="K_{\rm id}^{f_\beta}" style="vertical-align: -6px"/>, of its
+underlying single-objective functions <img class="math" src="_images/math/f686a9dc1920114e617ae27a0469689bb095e98a.png" alt="f_\alpha" style="vertical-align: -4px"/> and <img class="math" src="_images/math/256b3f07b0d1e665d3942e7b7a4e5302721cbf48.png" alt="f_\beta" style="vertical-align: -5px"/> is the following:</p>
 <blockquote>
 <div><ul class="simple">
-<li><img class="math" src="_images/math/f832ea112023145d0583d857a5471912657293bb.png" alt="K_{\rm id}^{f_\alpha} = 2 K^{\rm biobj}_{\rm id} + 1" style="vertical-align: -6px"/> and</li>
+<li><img class="math" src="_images/math/efd43905109f8d1f87c7d51fec1229853f8efc35.png" alt="K_{\rm id}^{f_\alpha} = 2 K^{f}_{\rm id} + 1" style="vertical-align: -6px"/> and</li>
 <li><img class="math" src="_images/math/ddd6f9271d29d45921af30bcbe7d998c3c8402e1.png" alt="K_{\rm id}^{f_\beta} = K_{\rm id}^{f_\alpha} + 1" style="vertical-align: -6px"/></li>
 </ul>
 </div></blockquote>
@@ -389,93 +388,239 @@ first instance-id is 19 but for the second objective, instance-id 21 is chosen
 instead of instance-id 20.</p>
 <p>Exceptions to the above rule are, for historical reasons, the
 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> instance-ids 1 and 2 in order to match the instance-ids
-1 to 5 with the ones proposed in <a class="reference internal" href="#bth2015a" id="id8">[BTH2015a]</a>. The <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+1 to 5 with the ones proposed in <a class="reference internal" href="#bro2015a" id="id9">[BRO2015a]</a>. The <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
 instance-id 1 contains the single-objective instance-ids 2 and 4 and
 the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> instance-id 2 contains the two instance-ids 3 and 5.</p>
 <p>For each bi-objective function and given dimension, the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite
-contains 10 instances.</p>
+contains 10 instances. <a class="footnote-reference" href="#id11" id="id10">[2]</a></p>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[2]</a></td><td>In principle, as for the instance generation for the <code class="docutils literal"><span class="pre">bbob</span></code> suite,
+the number of possible instances for the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite is unlimited
+<a class="reference internal" href="#han2016co" id="id12">[HAN2016co]</a>.
+However, running some tests with too few instances will render the
+potential statistics and their interpretation problematic while even the
+tiniest observed difference can be made statistically significant with a
+high enough number of instances. A good compromise to avoid either pitfall
+seems to lie between, say, 9 and 19 instances.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="the-bbob-biobj-test-functions-and-their-properties">
 <span id="sec-test-functions"></span><h2>The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Test Functions and Their Properties<a class="headerlink" href="#the-bbob-biobj-test-functions-and-their-properties" title="Permalink to this headline">¶</a></h2>
 <p>In the following, we detail all 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions
 and their properties.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p>Eventually, the following shall be provided for each function:</p>
-<ul class="last simple">
-<li>plots of the best known approximations of the Pareto set and the Pareto front</li>
-<li>potentially the outcomes of example algorithms</li>
-<li>plots (in objective space) of randomly sampled search points</li>
-<li>potentially function value distributions along cuts through the search space</li>
-</ul>
-</div>
-<p>Quick access to the functions:</p>
-<p>1&#8211;10: <a class="reference internal" href="#f1"><span>f1</span></a><img class="math" src="_images/math/afe879a57f7920df9db2d57f51d3d4514c8922bf.png" alt="_{1.1}" style="vertical-align: -4px"/> <a class="reference internal" href="#f2"><span>f2</span></a><img class="math" src="_images/math/94c231a6fb39c48b4addd0ec5b612673f2055aa3.png" alt="_{1.2}" style="vertical-align: -4px"/> <a class="reference internal" href="#f3"><span>f3</span></a><img class="math" src="_images/math/41698751ad89ae2cdad53a712c4a7ff30b90ee4a.png" alt="_{1.6}" style="vertical-align: -4px"/> <a class="reference internal" href="#f4"><span>f4</span></a><img class="math" src="_images/math/cfdbd830596615e6abab3fbef9002680fbf6ae4f.png" alt="_{1.8}" style="vertical-align: -4px"/> <a class="reference internal" href="#f5"><span>f5</span></a><img class="math" src="_images/math/ef8b1afd7b9f9d1443a31666bcfaa980b3957251.png" alt="_{1.13}" style="vertical-align: -4px"/> <a class="reference internal" href="#f6"><span>f6</span></a><img class="math" src="_images/math/af91b80ac46d1ada0d400136b7dda3fbb1b901ec.png" alt="_{1.14}" style="vertical-align: -4px"/> <a class="reference internal" href="#f7"><span>f7</span></a><img class="math" src="_images/math/8f0d94730b6a2b56eca4fa2f410f8040fa28babb.png" alt="_{1.15}" style="vertical-align: -4px"/> <a class="reference internal" href="#f8"><span>f8</span></a><img class="math" src="_images/math/1bef525362bcb8fcd11ebc4b69dc43701734fd18.png" alt="_{1.17}" style="vertical-align: -4px"/> <a class="reference internal" href="#f9"><span>f9</span></a><img class="math" src="_images/math/309608096a538f389416d17dff84b7a95707885f.png" alt="_{1.20}" style="vertical-align: -4px"/> <a class="reference internal" href="#f10"><span>f10</span></a><img class="math" src="_images/math/c62582af22a1396fd2cbf793f93b4d1bb04e51b5.png" alt="_{1.21}" style="vertical-align: -4px"/></p>
-<p>11&#8211;20: <a class="reference internal" href="#f11"><span>f11</span></a><img class="math" src="_images/math/c146f10383b118eba5fb7e17608513b4fbd0ffa4.png" alt="_{2.2}" style="vertical-align: -3px"/> <a class="reference internal" href="#f12"><span>f12</span></a><img class="math" src="_images/math/861cc21c9efac1288ca862181988978166af72b5.png" alt="_{2.6}" style="vertical-align: -3px"/> <a class="reference internal" href="#f13"><span>f13</span></a><img class="math" src="_images/math/194066a6cb73e72c2510a5e009d1119b379d3a14.png" alt="_{2.8}" style="vertical-align: -3px"/> <a class="reference internal" href="#f14"><span>f14</span></a><img class="math" src="_images/math/b1d9a7b4535b8118ab77e2659f2e04d98c63cd29.png" alt="_{2.13}" style="vertical-align: -4px"/> <a class="reference internal" href="#f15"><span>f15</span></a><img class="math" src="_images/math/402f3e7751fa65a225c40d079742635040bfda90.png" alt="_{2.14}" style="vertical-align: -4px"/> <a class="reference internal" href="#f16"><span>f16</span></a><img class="math" src="_images/math/113f929cfe82dcbf1b99ef49535d65d7d4aebfba.png" alt="_{2.15}" style="vertical-align: -4px"/> <a class="reference internal" href="#f17"><span>f17</span></a><img class="math" src="_images/math/c98b09ce3b597fe6f458be4f52cde4159d981ffa.png" alt="_{2.17}" style="vertical-align: -4px"/> <a class="reference internal" href="#f18"><span>f18</span></a><img class="math" src="_images/math/3df74e91b9383127c811f15017c1741ee987627a.png" alt="_{2.20}" style="vertical-align: -3px"/> <a class="reference internal" href="#f19"><span>f19</span></a><img class="math" src="_images/math/b80f2a4ce6fbd9bb680ed44ae1902c84f8740912.png" alt="_{2.21}" style="vertical-align: -4px"/>
-<a class="reference internal" href="#f20"><span>f20</span></a><img class="math" src="_images/math/b616eaea00460df16cb7860802d6627e3e956152.png" alt="_{6.6}" style="vertical-align: -3px"/></p>
-<p>21&#8211;30: <a class="reference internal" href="#f21"><span>f21</span></a><img class="math" src="_images/math/3c539702c984a2b60a7c64b114341a85db509a5e.png" alt="_{6.8}" style="vertical-align: -3px"/> <a class="reference internal" href="#f22"><span>f22</span></a><img class="math" src="_images/math/4a1cb0cbbc43ef7bd4cc58f0b02cbdda4d912852.png" alt="_{6.13}" style="vertical-align: -4px"/> <a class="reference internal" href="#f23"><span>f23</span></a><img class="math" src="_images/math/850265cce21872b3f5acc185093ebc6a04cb625d.png" alt="_{6.14}" style="vertical-align: -4px"/> <a class="reference internal" href="#f24"><span>f24</span></a><img class="math" src="_images/math/0278f948a8b7d23a980f0dd4ef7efe74c51dbae1.png" alt="_{6.15}" style="vertical-align: -4px"/> <a class="reference internal" href="#f25"><span>f25</span></a><img class="math" src="_images/math/3c493c4653b7acc79c914bea9df6fba51c03508f.png" alt="_{6.17}" style="vertical-align: -4px"/> <a class="reference internal" href="#f26"><span>f26</span></a><img class="math" src="_images/math/56478bbadc06c5431e6b0c29d984280c3fe7ccf2.png" alt="_{6.20}" style="vertical-align: -3px"/> <a class="reference internal" href="#f27"><span>f27</span></a><img class="math" src="_images/math/f4eb00c2f40f67fff8da61dae77d22446931536f.png" alt="_{6.21}" style="vertical-align: -4px"/> <a class="reference internal" href="#f28"><span>f28</span></a><img class="math" src="_images/math/203f36073c0a29ddeb266a031f0e4226bab55a1b.png" alt="_{8.8}" style="vertical-align: -3px"/> <a class="reference internal" href="#f29"><span>f29</span></a><img class="math" src="_images/math/e630ae51915fae788d8cce4dd25f0eadae3c2708.png" alt="_{8.13}" style="vertical-align: -4px"/>
-<a class="reference internal" href="#f30"><span>f30</span></a><img class="math" src="_images/math/e51acbf8084efc6786b31c332c6269c4be884e54.png" alt="_{8.14}" style="vertical-align: -4px"/></p>
-<p>31&#8211;40: <a class="reference internal" href="#f31"><span>f31</span></a><img class="math" src="_images/math/afcb4ad20b313b8e8934d4713273ce1c26d04565.png" alt="_{8.15}" style="vertical-align: -4px"/> <a class="reference internal" href="#f32"><span>f32</span></a><img class="math" src="_images/math/50b903d9a87be4e759fbad322b4213113852fe59.png" alt="_{8.17}" style="vertical-align: -4px"/> <a class="reference internal" href="#f33"><span>f33</span></a><img class="math" src="_images/math/60a80e19955a748fcde1d10d060d6d3df35916aa.png" alt="_{8.20}" style="vertical-align: -3px"/> <a class="reference internal" href="#f34"><span>f34</span></a><img class="math" src="_images/math/54051f8047228290225d6094f92885dc9d10b38d.png" alt="_{8.21}" style="vertical-align: -4px"/> <a class="reference internal" href="#f35"><span>f35</span></a><img class="math" src="_images/math/846b6a653e7dda4190487ef152e3d1f4d1b6563f.png" alt="_{13.13}" style="vertical-align: -4px"/> <a class="reference internal" href="#f36"><span>f36</span></a><img class="math" src="_images/math/01e011c69804ff70283e80e578c730d098b053ad.png" alt="_{13.14}" style="vertical-align: -4px"/> <a class="reference internal" href="#f37"><span>f37</span></a><img class="math" src="_images/math/df9a11a77d124bb09166c174436a7ac6cf34fb6f.png" alt="_{13.15}" style="vertical-align: -4px"/> <a class="reference internal" href="#f38"><span>f38</span></a><img class="math" src="_images/math/b2ef47d2784b86cb32557ff55c0b1f991f00d3a0.png" alt="_{13.17}" style="vertical-align: -4px"/> <a class="reference internal" href="#f39"><span>f39</span></a><img class="math" src="_images/math/e1ba19633d4337a3ea1382925873c38b14491ff9.png" alt="_{13.20}" style="vertical-align: -4px"/>
-<a class="reference internal" href="#f40"><span>f40</span></a><img class="math" src="_images/math/341ef284d1abdb89e905200b3d9a96a45cf59ed0.png" alt="_{13.21}" style="vertical-align: -4px"/></p>
-<p>41&#8211;50: <a class="reference internal" href="#f41"><span>f41</span></a><img class="math" src="_images/math/ddd41d538598516e0bac79c35b7f34c442278410.png" alt="_{14.14}" style="vertical-align: -4px"/> <a class="reference internal" href="#f42"><span>f42</span></a><img class="math" src="_images/math/5cd9dd5ba9a1a3f99a4f830b918a2f6479047fe8.png" alt="_{14.15}" style="vertical-align: -4px"/> <a class="reference internal" href="#f43"><span>f43</span></a><img class="math" src="_images/math/475a2855430d50f3ad0aeebfd7dba39ce7b4302b.png" alt="_{14.17}" style="vertical-align: -4px"/> <a class="reference internal" href="#f44"><span>f44</span></a><img class="math" src="_images/math/d41bdbf7c6e1322fee89cde657e53258f1782488.png" alt="_{14.20}" style="vertical-align: -4px"/> <a class="reference internal" href="#f45"><span>f45</span></a><img class="math" src="_images/math/653879d031b54ead6bcd57924b5f2496e29185fa.png" alt="_{14.21}" style="vertical-align: -4px"/> <a class="reference internal" href="#f46"><span>f46</span></a><img class="math" src="_images/math/f70bfc1bedef82c3847fcd0a70db14ae6f5c9f60.png" alt="_{15.15}" style="vertical-align: -4px"/> <a class="reference internal" href="#f47"><span>f47</span></a><img class="math" src="_images/math/08cc12a01f90073de163d5f2fd83e4fe79ab5030.png" alt="_{15.17}" style="vertical-align: -4px"/> <a class="reference internal" href="#f48"><span>f48</span></a><img class="math" src="_images/math/648dda7a414366e07b4af2eea55ed153486d52fb.png" alt="_{15.20}" style="vertical-align: -4px"/> <a class="reference internal" href="#f49"><span>f49</span></a><img class="math" src="_images/math/7efcd00d86fcbedc1ce5b11ee36bad85565a78a4.png" alt="_{15.21}" style="vertical-align: -4px"/>
-<a class="reference internal" href="#f50"><span>f50</span></a><img class="math" src="_images/math/c9460f4e7d2b28f7d20858b1c65ccdbf7c39acbd.png" alt="_{17.17}" style="vertical-align: -4px"/></p>
-<p>51&#8211;55: <a class="reference internal" href="#f51"><span>f51</span></a><img class="math" src="_images/math/c6a592be58d3d83500bf15e9a31f589f89c5cc27.png" alt="_{17.20}" style="vertical-align: -4px"/> <a class="reference internal" href="#f52"><span>f52</span></a><img class="math" src="_images/math/51750450b323187d230dbfc02f2c7d2a505e9647.png" alt="_{17.21}" style="vertical-align: -4px"/> <a class="reference internal" href="#f53"><span>f53</span></a><img class="math" src="_images/math/a9590ed54abc6c2fd90644a55b41d5b5206176ae.png" alt="_{20.20}" style="vertical-align: -3px"/> <a class="reference internal" href="#f54"><span>f54</span></a> <img class="math" src="_images/math/93de778d08d78c14e537a94e30c48f3b320fb432.png" alt="_{20.21}" style="vertical-align: -4px"/>  <a class="reference internal" href="#f55"><span>f55</span></a> <img class="math" src="_images/math/da04f2010f536048e08c4a985adb9bfd5c7bd597.png" alt="_{21.21}" style="vertical-align: -4px"/></p>
+<p>The following table gives an overview and quick access to the functions,
+inner cell IDs refer to the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions, outer column and row
+annotations refer to the single-objective <code class="docutils literal"><span class="pre">bbob</span></code> functions.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&nbsp;</td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/></a></td>
+<td><a class="reference internal" href="#f1"><span>f1</span></a></td>
+<td><a class="reference internal" href="#f2"><span>f2</span></a></td>
+<td><a class="reference internal" href="#f3"><span>f3</span></a></td>
+<td><a class="reference internal" href="#f4"><span>f4</span></a></td>
+<td><a class="reference internal" href="#f5"><span>f5</span></a></td>
+<td><a class="reference internal" href="#f6"><span>f6</span></a></td>
+<td><a class="reference internal" href="#f7"><span>f7</span></a></td>
+<td><a class="reference internal" href="#f8"><span>f8</span></a></td>
+<td><a class="reference internal" href="#f9"><span>f9</span></a></td>
+<td><a class="reference internal" href="#f10"><span>f10</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f11"><span>f11</span></a></td>
+<td><a class="reference internal" href="#f12"><span>f12</span></a></td>
+<td><a class="reference internal" href="#f13"><span>f13</span></a></td>
+<td><a class="reference internal" href="#f14"><span>f14</span></a></td>
+<td><a class="reference internal" href="#f15"><span>f15</span></a></td>
+<td><a class="reference internal" href="#f16"><span>f16</span></a></td>
+<td><a class="reference internal" href="#f17"><span>f17</span></a></td>
+<td><a class="reference internal" href="#f18"><span>f18</span></a></td>
+<td><a class="reference internal" href="#f19"><span>f19</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f20"><span>f20</span></a></td>
+<td><a class="reference internal" href="#f21"><span>f21</span></a></td>
+<td><a class="reference internal" href="#f22"><span>f22</span></a></td>
+<td><a class="reference internal" href="#f23"><span>f23</span></a></td>
+<td><a class="reference internal" href="#f24"><span>f24</span></a></td>
+<td><a class="reference internal" href="#f25"><span>f25</span></a></td>
+<td><a class="reference internal" href="#f26"><span>f26</span></a></td>
+<td><a class="reference internal" href="#f27"><span>f27</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f28"><span>f28</span></a></td>
+<td><a class="reference internal" href="#f29"><span>f29</span></a></td>
+<td><a class="reference internal" href="#f30"><span>f30</span></a></td>
+<td><a class="reference internal" href="#f31"><span>f31</span></a></td>
+<td><a class="reference internal" href="#f32"><span>f32</span></a></td>
+<td><a class="reference internal" href="#f33"><span>f33</span></a></td>
+<td><a class="reference internal" href="#f34"><span>f34</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f35"><span>f35</span></a></td>
+<td><a class="reference internal" href="#f36"><span>f36</span></a></td>
+<td><a class="reference internal" href="#f37"><span>f37</span></a></td>
+<td><a class="reference internal" href="#f38"><span>f38</span></a></td>
+<td><a class="reference internal" href="#f39"><span>f39</span></a></td>
+<td><a class="reference internal" href="#f40"><span>f40</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f41"><span>f41</span></a></td>
+<td><a class="reference internal" href="#f42"><span>f42</span></a></td>
+<td><a class="reference internal" href="#f43"><span>f43</span></a></td>
+<td><a class="reference internal" href="#f44"><span>f44</span></a></td>
+<td><a class="reference internal" href="#f45"><span>f45</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f46"><span>f46</span></a></td>
+<td><a class="reference internal" href="#f47"><span>f47</span></a></td>
+<td><a class="reference internal" href="#f48"><span>f48</span></a></td>
+<td><a class="reference internal" href="#f49"><span>f49</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f50"><span>f50</span></a></td>
+<td><a class="reference internal" href="#f51"><span>f51</span></a></td>
+<td><a class="reference internal" href="#f52"><span>f52</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f53"><span>f53</span></a></td>
+<td><a class="reference internal" href="#f54"><span>f54</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f55"><span>f55</span></a></td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="some-function-properties">
 <h3>Some Function Properties<a class="headerlink" href="#some-function-properties" title="Permalink to this headline">¶</a></h3>
 <p>In the description of the 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions below, several
 general properties of objective functions will be mentioned that
-shall be quickly defined here.</p>
+are defined here in short. It depends on these properties whether the optimization problem
+is easy or hard to solve.</p>
 <p>A <em>separable</em> function does not show any dependencies between the
-variables and can therefore be solved by applying <img class="math" src="_images/math/273f486f7ce4023c108fff2c278487a34aaa6321.png" alt="n" style="vertical-align: 0px"/> consecutive
+variables and can therefore be solved by applying <img class="math" src="_images/math/4216a11e0c2d74797f4ff0f3f9b84737b17eee37.png" alt="D" style="vertical-align: 0px"/> consecutive
 one-dimensional optimizations along the coordinate axes while
 keeping the other variables fixed. Consequently, <em>non-separable</em>
 problems must be considered. They are much more difficult to solve. The
 typical well-established technique to generate non-separable
-functions from separable ones such as <img class="math" src="_images/math/cb5392aa25abdf7d0a3e540802cc9b9b5398a30e.png" alt="x \in \mathbb{R}^D \mapsto g(x)" style="vertical-align: -4px"/> is the application of a rotation matrix
-<img class="math" src="_images/math/90b712407331a4cd887533df3fd32a1bb68a864e.png" alt="\mathbf R" style="vertical-align: 0px"/> to <img class="math" src="_images/math/4936986eaa605da167708ec77421422baba5c857.png" alt="x" style="vertical-align: 0px"/>, that is <img class="math" src="_images/math/c259133ee0d3733db9720718c2487ed4197ca12a.png" alt="x \in \mathbb{R}^D \mapsto g(\mathbf R x)" style="vertical-align: -4px"/>.</p>
+functions from separable ones is the application of a rotation matrix
+<img class="math" src="_images/math/90b712407331a4cd887533df3fd32a1bb68a864e.png" alt="\mathbf R" style="vertical-align: 0px"/> to <img class="math" src="_images/math/4936986eaa605da167708ec77421422baba5c857.png" alt="x" style="vertical-align: 0px"/>, that is <img class="math" src="_images/math/c259133ee0d3733db9720718c2487ed4197ca12a.png" alt="x \in \mathbb{R}^D \mapsto g(\mathbf R x)" style="vertical-align: -4px"/>,
+where <img class="math" src="_images/math/8f6db44bda25a42ce182b1b908fe26305168addc.png" alt="g" style="vertical-align: -4px"/> is a separable function.</p>
 <p>A <em>unimodal</em> function has only one local minimum which is at the same
 time also its global one.
 A <em>multimodal</em> function has at least two local minima which is highly common
 in practical optimization problems.</p>
 <p><em>Ill-conditioning</em> is another typical challenge in real-parameter
 optimization and, besides multimodality, probably the most common one.
-Conditioning of a function can be rigorously formalized in the
+In a general case, we can consider a function as ill-conditioned if for
+solution points from the same level-set &#8220;the minimal displacement [...] that
+produces a given function value improvement differs by
+orders of magnitude&#8221; <a class="reference internal" href="#han2011" id="id13">[HAN2011]</a>.
+Conditioning can be rigorously formalized in the
 case of convex quadratic functions,
 <img class="math" src="_images/math/207ef1deebcefe638d31f51b171054b128f9848b.png" alt="f(x) = \frac{1}{2} x^THx" style="vertical-align: -6px"/> where <img class="math" src="_images/math/4d632a8aa5526e4af2b2d8b604b5a6af9a5a04e2.png" alt="H" style="vertical-align: 0px"/> is a symmetric
 positive definite matrix, as the condition number of the Hessian matrix
 <img class="math" src="_images/math/4d632a8aa5526e4af2b2d8b604b5a6af9a5a04e2.png" alt="H" style="vertical-align: 0px"/>. Since contour lines associated to a convex quadratic function
 are ellipsoids, the condition number corresponds to the square root of
-the ratio between the largest axis of the ellipsoid and the shortest axis.
-In the more general case, we can consider a function as ill-conditioned if for
-solution points from the same level-set &#8220;the minimal displacement [...] that
-produces a given function value improvement differs by
-orders of magnitude&#8221; <a class="reference internal" href="#han2011" id="id9">[HAN2011]</a>.</p>
+the ratio between the largest axis of the ellipsoid and the shortest axis.</p>
 <p>The proposed <code class="docutils literal"><span class="pre">bbob-biobj</span></code> testbed contains ill-conditioned functions
 with a typical conditioning of <img class="math" src="_images/math/1add4bf11c8d6aa78f9b60799d818842f5257dd9.png" alt="10^6" style="vertical-align: -1px"/>. We believe this is a realistic
 requirement, while we have seen practical problems with conditioning
 as large as <img class="math" src="_images/math/ae7febea9bb52f37802fa9cf7598e70c51d0f43f.png" alt="10^{10}" style="vertical-align: -1px"/>.</p>
-<div class="section" id="bounded-or-unbounded-domain">
-<h4>Bounded or Unbounded Domain<a class="headerlink" href="#bounded-or-unbounded-domain" title="Permalink to this headline">¶</a></h4>
-<p>All bi-objective functions, provided in the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite are unbounded, i.e., defined
+</div>
+<div class="section" id="domain-bounds">
+<h3>Domain Bounds<a class="headerlink" href="#domain-bounds" title="Permalink to this headline">¶</a></h3>
+<p>All bi-objective functions provided in the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite are unbounded, i.e., defined
 on the entire real-valued space <img class="math" src="_images/math/414e585340b56b20cba4a1971dde4eaabcaaf515.png" alt="\mathbb{R}^D" style="vertical-align: 0px"/>.
 Nevertheless, they are designed such that the search domain of interest is <img class="math" src="_images/math/a800ac0a1f7f6bb4a3773a9327a9197b6df474d6.png" alt="[-5,5]^D" style="vertical-align: -5px"/>
-and bound-constraint methods are likely to be competitive. <a class="footnote-reference" href="#id11" id="id10">[2]</a></p>
-<p>While we believe that this domain contains the Pareto set, due to the nature
+and bound-constraint methods are likely to be competitive. <a class="footnote-reference" href="#id15" id="id14">[3]</a></p>
+<p>While we believe that this domain contains the Pareto set in most cases, due to the nature
 of the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> function definitions, there is no guarantee that this
-is the case &#8212; it is only guaranteed that the extremal solutions and their
+is always the case &#8212; it is only guaranteed that the extremal solutions and their
 neighborhood ball of radius one lie within this region.</p>
-<table class="docutils footnote" frame="void" id="id11" rules="none">
+<table class="docutils footnote" frame="void" id="id15" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[2]</a></td><td>The functions <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a4ea6c067adfa866b0179329fe9b7c458"><code class="docutils literal"><span class="pre">coco_problem_get_smallest_value_of_interest</span></code></a> and
+<tr><td class="label"><a class="fn-backref" href="#id14">[3]</a></td><td>The functions <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a4ea6c067adfa866b0179329fe9b7c458"><code class="docutils literal"><span class="pre">coco_problem_get_smallest_value_of_interest</span></code></a> and
 <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a29c89e039494ae8b4f8e520cba1eb154"><code class="docutils literal"><span class="pre">coco_problem_get_largest_value_of_interest</span></code></a>
-of the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> platform allows the optimizer
+of the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> platform allow the optimizer
 to retrieve the <em>search domain of interest</em> from the <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a408ba01b98c78bf5be3df36562d99478"><code class="docutils literal"><span class="pre">coco_problem_t</span></code></a>,
 for example to generate the initial search points.</td></tr>
 </tbody>
 </table>
-</div>
 </div>
 <div class="section" id="the-55-bbob-biobj-functions">
 <h3>The 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Functions<a class="headerlink" href="#the-55-bbob-biobj-functions" title="Permalink to this headline">¶</a></h3>
@@ -490,8 +635,8 @@ continuous domain.</p>
 </div>
 <div class="section" id="sphere-ellipsoid-separable">
 <span id="f2"></span><h4><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/>: Sphere/Ellipsoid separable<a class="headerlink" href="#sphere-ellipsoid-separable" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
+and the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objectives are unimodal and separable. While the first objective is
 truly convex-quadratic with a condition number of 1, the second
 objective is only globally quadratic with smooth local
@@ -501,8 +646,8 @@ about <img class="math" src="_images/math/1add4bf11c8d6aa78f9b60799d818842f5257d
 </div>
 <div class="section" id="sphere-attractive-sector">
 <span id="f3"></span><h4><img class="math" src="_images/math/66c25f7c2effbd670bfda337d7c2b412ce23364a.png" alt="f_3" style="vertical-align: -4px"/>: Sphere/Attractive sector<a class="headerlink" href="#sphere-attractive-sector" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
+and the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are unimodal, but only the first objective is
 separable and truly convex quadratic. The attractive sector
 function is highly asymmetric, where only one <em>hypercone</em> (with
@@ -513,8 +658,8 @@ of this cone.</p>
 </div>
 <div class="section" id="sphere-rosenbrock-original">
 <span id="f4"></span><h4><img class="math" src="_images/math/b4b6c96cec9e537e5434559abae6ffb30b5518af.png" alt="f_4" style="vertical-align: -4px"/>: Sphere/Rosenbrock original<a class="headerlink" href="#sphere-rosenbrock-original" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and original, i.e., unrotated Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
+and the original, i.e., unrotated Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>The first objective is separable and truly convex, the second
 objective is partially separable (tri-band structure). The first
 objective is unimodal while the second objective has a local
@@ -523,8 +668,8 @@ optimum with an attraction volume of about 25%.</p>
 </div>
 <div class="section" id="sphere-sharp-ridge">
 <span id="f5"></span><h4><img class="math" src="_images/math/47f46089b12e164160909577c53f672714afe52b.png" alt="f_5" style="vertical-align: -4px"/>: Sphere/Sharp ridge<a class="headerlink" href="#sphere-sharp-ridge" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
+and the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are unimodal.
 In addition to the simple, separable, and differentiable first
 objective, a sharp, i.e., non-differentiable ridge has to be
@@ -540,8 +685,8 @@ towards the ridge does not flatten out.</p>
 </div>
 <div class="section" id="sphere-sum-of-different-powers">
 <span id="f6"></span><h4><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/>: Sphere/Sum of different powers<a class="headerlink" href="#sphere-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and sum of different powers function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
+and the sum of different powers function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are unimodal. The first objective is
 separable, the second non-separable.
 When approaching the second objective&#8217;s optimum, the difference
@@ -551,8 +696,8 @@ increases unboundedly.</p>
 </div>
 <div class="section" id="sphere-rastrigin">
 <span id="f7"></span><h4><img class="math" src="_images/math/5b2d52472cf429875e533866e0c6e26db1bcd470.png" alt="f_7" style="vertical-align: -4px"/>: Sphere/Rastrigin<a class="headerlink" href="#sphere-rastrigin" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and Rastrigin function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
+and the Rastrigin function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>In addition to the simple sphere function, the prototypical highly
 multimodal Rastrigin function needs to be solved which has originally
 a very regular and symmetric structure for the placement of the optima.
@@ -565,8 +710,8 @@ about 10, and a large global amplitude compared to the local amplitudes.</p>
 </div>
 <div class="section" id="sphere-schaffer-f7-condition-10">
 <span id="f8"></span><h4><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/>: Sphere/Schaffer F7, condition 10<a class="headerlink" href="#sphere-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and Schaffer F7 function with condition number 10 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
+and the Schaffer F7 function with condition number 10 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>In addition to the simple sphere function, an asymmetric, non-separable,
 and highly multimodal function needs to be solved to approach the Pareto
 front/Pareto set where the frequency and amplitude of the modulation
@@ -576,8 +721,8 @@ and thus the entire bi-objective function is low.</p>
 </div>
 <div class="section" id="sphere-schwefel-x-sin-x">
 <span id="f9"></span><h4><img class="math" src="_images/math/4e05e8037bbde9a72f8f544fd9490be35ff88b77.png" alt="f_9" style="vertical-align: -4px"/>: Sphere/Schwefel x*sin(x)<a class="headerlink" href="#sphere-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
+and the Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>While the first objective function is separable and unimodal,
 the second objective function is partially separable and highly
 multimodal&#8212;having the most prominent <img class="math" src="_images/math/1e8afd6109650249e839ea4caa74290785d33d03.png" alt="2^D" style="vertical-align: 0px"/> minima located
@@ -586,8 +731,8 @@ comparatively close to the corners of the unpenalized search area.</p>
 </div>
 <div class="section" id="sphere-gallagher-101-peaks">
 <span id="f10"></span><h4><img class="math" src="_images/math/64f0fc305df2c557846d46b49c0b59b742e88330.png" alt="f_{10}" style="vertical-align: -4px"/>: Sphere/Gallagher 101 peaks<a class="headerlink" href="#sphere-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
+and the Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>While the first objective function is separable and unimodal,
 the second objective function is non-separable and consists
 of 101 optima with position and height being unrelated and
@@ -607,8 +752,8 @@ about <img class="math" src="_images/math/1add4bf11c8d6aa78f9b60799d818842f5257d
 </div>
 <div class="section" id="ellipsoid-separable-attractive-sector">
 <span id="f12"></span><h4><img class="math" src="_images/math/f18d3fb850b2ba1860c71d92e7f9327f4857bc34.png" alt="f_{12}" style="vertical-align: -4px"/>: Ellipsoid separable/Attractive sector<a class="headerlink" href="#ellipsoid-separable-attractive-sector" title="Permalink to this headline">¶</a></h4>
-<p>Combination of separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
+and the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are unimodal but only the first
 one is separable. The first objective function, in addition,
 is globally quadratic with smooth local irregularities, and
@@ -622,7 +767,7 @@ the tip of this cone.</p>
 </div>
 <div class="section" id="ellipsoid-separable-rosenbrock-original">
 <span id="f13"></span><h4><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/>: Ellipsoid separable/Rosenbrock original<a class="headerlink" href="#ellipsoid-separable-rosenbrock-original" title="Permalink to this headline">¶</a></h4>
-<p>Combination of separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and original, i.e., unrotated Rosenbrock function
+<p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the original, i.e., unrotated Rosenbrock function
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Only the first objective is separable and unimodal. The second
 objective is partially separable (tri-band structure) and has a local
@@ -635,7 +780,7 @@ highly ill-conditioned with a condition number of about
 </div>
 <div class="section" id="ellipsoid-separable-sharp-ridge">
 <span id="f14"></span><h4><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/>: Ellipsoid separable/Sharp ridge<a class="headerlink" href="#ellipsoid-separable-sharp-ridge" title="Permalink to this headline">¶</a></h4>
-<p>Combination of separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are unimodal but only the first one is
 separable.</p>
 <p>The first objective is globally quadratic but with smooth local
@@ -646,7 +791,7 @@ i.e., non-differentiable ridge has to be followed.</p>
 </div>
 <div class="section" id="ellipsoid-separable-sum-of-different-powers">
 <span id="f15"></span><h4><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/>: Ellipsoid separable/Sum of different powers<a class="headerlink" href="#ellipsoid-separable-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
-<p>Combination of separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and sum of different powers function
+<p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the sum of different powers function
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are unimodal but only the first one is
 separable.</p>
@@ -659,7 +804,7 @@ more and more different.</p>
 </div>
 <div class="section" id="ellipsoid-separable-rastrigin">
 <span id="f16"></span><h4><img class="math" src="_images/math/b77928da1c2b12fe46c45d8d57fb0b244dcc36f5.png" alt="f_{16}" style="vertical-align: -4px"/>: Ellipsoid separable/Rastrigin<a class="headerlink" href="#ellipsoid-separable-rastrigin" title="Permalink to this headline">¶</a></h4>
-<p>Combination of separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Rastrigin function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rastrigin function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>The objective functions show rather opposite properties.
 The first one is separable, the second not. The first one
 is unimodal, the second highly multimodal (roughly <img class="math" src="_images/math/3c8dbb87be20475f8038591088cea39cdb18c92d.png" alt="10^D" style="vertical-align: -1px"/> local
@@ -672,7 +817,7 @@ baseline functions.</p>
 </div>
 <div class="section" id="ellipsoid-separable-schaffer-f7-condition-10">
 <span id="f17"></span><h4><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/>: Ellipsoid separable/Schaffer F7, condition 10<a class="headerlink" href="#ellipsoid-separable-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
-<p>Combination of separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schaffer F7 function with condition number 10
+<p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schaffer F7 function with condition number 10
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Also here, both single objectives possess opposing properties.
 The first objective is unimodal, besides small local non-linearities symmetric,
@@ -682,7 +827,7 @@ multi-modal, asymmetric, and non-separable, with only a low conditioning.</p>
 </div>
 <div class="section" id="ellipsoid-separable-schwefel-x-sin-x">
 <span id="f18"></span><h4><img class="math" src="_images/math/bf047386154928e048cfa6322baf71905a012981.png" alt="f_{18}" style="vertical-align: -4px"/>: Ellipsoid separable/Schwefel x*sin(x)<a class="headerlink" href="#ellipsoid-separable-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
-<p>Combination of separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>The first objective is unimodal, separable and highly ill-conditioned.
 The second objective is partially separable and highly multimodal&#8212;having
 the most prominent <img class="math" src="_images/math/1e8afd6109650249e839ea4caa74290785d33d03.png" alt="2^D" style="vertical-align: 0px"/> minima located comparatively close to the
@@ -691,7 +836,7 @@ corners of the unpenalized search area.</p>
 </div>
 <div class="section" id="ellipsoid-separable-gallagher-101-peaks">
 <span id="f19"></span><h4><img class="math" src="_images/math/c3b024393e8783d73f22058a9b15bf9958320505.png" alt="f_{19}" style="vertical-align: -4px"/>: Ellipsoid separable/Gallagher 101 peaks<a class="headerlink" href="#ellipsoid-separable-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
-<p>Combination of separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>While the first objective function is separable, unimodal, and
 highly ill-conditioned (condition number of about <img class="math" src="_images/math/1add4bf11c8d6aa78f9b60799d818842f5257dd9.png" alt="10^6" style="vertical-align: -1px"/>),
 the second objective function is non-separable and consists
@@ -708,10 +853,11 @@ Both functions are unimodal and highly asymmetric, where only one
 <em>hypercone</em> (with angular base area) per objective with a volume of
 roughly <img class="math" src="_images/math/42af38926eb97a4210f9f8bb21628d447669fbda.png" alt="(1/2)^D" style="vertical-align: -5px"/> yields low function values. The objective
 functions&#8217; optima are located at the tips of those two cones.</p>
+<p>Contained in the <em>moderate - moderate</em> function class.</p>
 </div>
 <div class="section" id="attractive-sector-rosenbrock-original">
 <span id="f21"></span><h4><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/>: Attractive sector/Rosenbrock original<a class="headerlink" href="#attractive-sector-rosenbrock-original" title="Permalink to this headline">¶</a></h4>
-<p>Combination of attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>The first function is unimodal but highly asymmetric, where only one
 <em>hypercone</em> (with angular base area) with a volume of
 roughly <img class="math" src="_images/math/42af38926eb97a4210f9f8bb21628d447669fbda.png" alt="(1/2)^D" style="vertical-align: -5px"/> yields low function values (with the
@@ -722,7 +868,7 @@ optimum with an attraction volume of about 25%.</p>
 </div>
 <div class="section" id="attractive-sector-sharp-ridge">
 <span id="f22"></span><h4><img class="math" src="_images/math/cf68ecd0f621b52a78185cfa9a94b685da55d1f3.png" alt="f_{22}" style="vertical-align: -4px"/>: Attractive sector/Sharp ridge<a class="headerlink" href="#attractive-sector-sharp-ridge" title="Permalink to this headline">¶</a></h4>
-<p>Combination of attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are unimodal and non-separable. The
 first objective is highly asymmetric in the sense that only one
 <em>hypercone</em> (with angular base area) with a volume of
@@ -733,7 +879,7 @@ objective, a sharp, i.e., non-differentiable ridge has to be followed.</p>
 </div>
 <div class="section" id="attractive-sector-sum-of-different-powers">
 <span id="f23"></span><h4><img class="math" src="_images/math/a4287051cdc8118e825a4b3344a0bffbb28c8697.png" alt="f_{23}" style="vertical-align: -4px"/>: Attractive sector/Sum of different powers<a class="headerlink" href="#attractive-sector-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
-<p>Combination of attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and sum of different powers function
+<p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the sum of different powers function
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are unimodal and non-separable. The
 first objective is highly asymmetric in the sense that only one
@@ -746,7 +892,7 @@ rotated search space become more and more different.</p>
 </div>
 <div class="section" id="attractive-sector-rastrigin">
 <span id="f24"></span><h4><img class="math" src="_images/math/44d10304c873eb1e3b3529135533da8559dea4db.png" alt="f_{24}" style="vertical-align: -4px"/>: Attractive sector/Rastrigin<a class="headerlink" href="#attractive-sector-rastrigin" title="Permalink to this headline">¶</a></h4>
-<p>Combination of attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Rastrigin function
+<p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rastrigin function
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objectives are non-separable, and the second one
 is highly multi-modal (roughly <img class="math" src="_images/math/3c8dbb87be20475f8038591088cea39cdb18c92d.png" alt="10^D" style="vertical-align: -1px"/> local
@@ -757,7 +903,7 @@ assymetric and the second has a conditioning of about 10.</p>
 </div>
 <div class="section" id="attractive-sector-schaffer-f7-condition-10">
 <span id="f25"></span><h4><img class="math" src="_images/math/44eda1e43f2fe4a918bbfe744fb1fd439c00df1b.png" alt="f_{25}" style="vertical-align: -4px"/>: Attractive sector/Schaffer F7, condition 10<a class="headerlink" href="#attractive-sector-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
-<p>Combination of attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schaffer F7 function with condition number 10
+<p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schaffer F7 function with condition number 10
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objectives are non-separable and asymmetric.
 While the first objective is unimodal, the second one is
@@ -767,7 +913,7 @@ frequency and amplitude of the modulation vary.</p>
 </div>
 <div class="section" id="attractive-sector-schwefel-x-sin-x">
 <span id="f26"></span><h4><img class="math" src="_images/math/7f62ff9e3c23294889d2aed2c06f78fe0b974ed3.png" alt="f_{26}" style="vertical-align: -4px"/>: Attractive sector/Schwefel x*sin(x)<a class="headerlink" href="#attractive-sector-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
-<p>Combination of attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>The first objective is non-separable, unimodal, and asymmetric.
 The second objective is partially separable and highly multimodal&#8212;having
 the most prominent <img class="math" src="_images/math/1e8afd6109650249e839ea4caa74290785d33d03.png" alt="2^D" style="vertical-align: 0px"/> minima located comparatively close to the
@@ -776,7 +922,7 @@ corners of the unpenalized search area.</p>
 </div>
 <div class="section" id="attractive-sector-gallagher-101-peaks">
 <span id="f27"></span><h4><img class="math" src="_images/math/ac73a3f85e620937885761493000702abfa2b174.png" alt="f_{27}" style="vertical-align: -4px"/>: Attractive sector/Gallagher 101 peaks<a class="headerlink" href="#attractive-sector-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
-<p>Combination of attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable but only the first
 is unimodal. The first objective function is furthermore asymmetric.
 The second objective function has 101 optima with position and height
@@ -794,7 +940,8 @@ a local optimum with an attraction volume of about 25%.</p>
 </div>
 <div class="section" id="rosenbrock-original-sharp-ridge">
 <span id="f29"></span><h4><img class="math" src="_images/math/0944d60b959112fa790f20f22dc92f74e1a1bc60.png" alt="f_{29}" style="vertical-align: -4px"/>: Rosenbrock original/Sharp ridge<a class="headerlink" href="#rosenbrock-original-sharp-ridge" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Rosenbrock functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
+sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>The first objective function is partially separable (tri-band structure)
 and has a local optimum with an attraction volume of about 25%.
 The second objective is unimodal and non-separable and, for
@@ -803,7 +950,7 @@ optimizing it, a sharp, i.e., non-differentiable ridge has to be followed.</p>
 </div>
 <div class="section" id="rosenbrock-original-sum-of-different-powers">
 <span id="f30"></span><h4><img class="math" src="_images/math/e4f7f120c8443688d16463e841d04a736c939a3b.png" alt="f_{30}" style="vertical-align: -4px"/>: Rosenbrock original/Sum of different powers<a class="headerlink" href="#rosenbrock-original-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Rosenbrock functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and sum of different powers function
+<p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the sum of different powers function
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>The first objective function is partially separable (tri-band structure)
 and has a local optimum with an attraction volume of about 25%.
@@ -814,7 +961,7 @@ variables in the rotated search space become more and more different.</p>
 </div>
 <div class="section" id="rosenbrock-original-rastrigin">
 <span id="f31"></span><h4><img class="math" src="_images/math/8bfadd907993e6c9d9d585bd7640b86e8c464023.png" alt="f_{31}" style="vertical-align: -4px"/>: Rosenbrock original/Rastrigin<a class="headerlink" href="#rosenbrock-original-rastrigin" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Rosenbrock functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Rastrigin function
+<p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rastrigin function
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>The first objective function is partially separable (tri-band structure)
 and has a local optimum with an attraction volume of about 25%.
@@ -825,7 +972,8 @@ optima).</p>
 </div>
 <div class="section" id="rosenbrock-original-schaffer-f7-condition-10">
 <span id="f32"></span><h4><img class="math" src="_images/math/058f6317564772c4a1cbb967cea7992729295b89.png" alt="f_{32}" style="vertical-align: -4px"/>: Rosenbrock original/Schaffer F7, condition 10<a class="headerlink" href="#rosenbrock-original-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Rosenbrock functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schaffer F7 function with condition number 10
+<p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
+Schaffer F7 function with condition number 10
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>The first objective function is partially separable (tri-band structure)
 and has a local optimum with an attraction volume of about 25%.
@@ -836,7 +984,8 @@ frequency and amplitude of the modulation vary.</p>
 </div>
 <div class="section" id="rosenbrock-original-schwefel-x-sin-x">
 <span id="f33"></span><h4><img class="math" src="_images/math/3fee281e80df345871a4760b8ff74410e28761f2.png" alt="f_{33}" style="vertical-align: -4px"/>: Rosenbrock original/Schwefel x*sin(x)<a class="headerlink" href="#rosenbrock-original-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Rosenbrock functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
+Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are partially separable.
 While the first objective function has a local optimum with an attraction
 volume of about 25%, the second objective function is highly
@@ -846,7 +995,8 @@ comparatively close to the corners of its unpenalized search area.</p>
 </div>
 <div class="section" id="rosenbrock-original-gallagher-101-peaks">
 <span id="f34"></span><h4><img class="math" src="_images/math/17ca4140532357651ea6077fabc0e6107f580f18.png" alt="f_{34}" style="vertical-align: -4px"/>: Rosenbrock original/Gallagher 101 peaks<a class="headerlink" href="#rosenbrock-original-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Rosenbrock functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and
+the Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>The first objective function is partially separable, the second one
 non-separable. While the first objective function has a local optimum
 with an attraction volume of about 25%, the second objective function
@@ -866,7 +1016,8 @@ followed.</p>
 </div>
 <div class="section" id="sharp-ridge-sum-of-different-powers">
 <span id="f36"></span><h4><img class="math" src="_images/math/a75323821dc145c5a77e75b00d4fac5802611d0b.png" alt="f_{36}" style="vertical-align: -4px"/>: Sharp ridge/Sum of different powers<a class="headerlink" href="#sharp-ridge-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and sum of different powers function
+<p>Combination of the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
+sum of different powers function
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both functions are uni-modal and non-separable.
 For optimizing the first objective, a sharp, i.e., non-differentiable
@@ -877,7 +1028,7 @@ variables in the rotated search space become more and more different.</p>
 </div>
 <div class="section" id="sharp-ridge-rastrigin">
 <span id="f37"></span><h4><img class="math" src="_images/math/ef09c560da4a71f6afb110d8b9d5b768b7766f1e.png" alt="f_{37}" style="vertical-align: -4px"/>: Sharp ridge/Rastrigin<a class="headerlink" href="#sharp-ridge-rastrigin" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Rastrigin function
+<p>Combination of the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rastrigin function
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both functions are non-separable. While the first one
 is unimodal and non-differentiable at its ridge, the second objective
@@ -886,7 +1037,8 @@ function is highly multi-modal (roughly <img class="math" src="_images/math/3c8d
 </div>
 <div class="section" id="sharp-ridge-schaffer-f7-condition-10">
 <span id="f38"></span><h4><img class="math" src="_images/math/17deb8efcf1d8af9b0e5d61a153a0079daff720d.png" alt="f_{38}" style="vertical-align: -4px"/>: Sharp ridge/Schaffer F7, condition 10<a class="headerlink" href="#sharp-ridge-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schaffer F7 function with condition number 10
+<p>Combination of the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
+Schaffer F7 function with condition number 10
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both functions are non-separable. While the first one
 is unimodal and non-differentiable at its ridge, the second objective
@@ -896,7 +1048,8 @@ frequency and amplitude of the modulation vary.</p>
 </div>
 <div class="section" id="sharp-ridge-schwefel-x-sin-x">
 <span id="f39"></span><h4><img class="math" src="_images/math/920095e422c4bd2bf99b0940fe0f6d4bfc16a66a.png" alt="f_{39}" style="vertical-align: -4px"/>: Sharp ridge/Schwefel x*sin(x)<a class="headerlink" href="#sharp-ridge-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
+Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>While the first objective function is unimodal, non-separable, and
 non-differentiable at its ridge, the second objective function is highly
 multimodal&#8212;having the most prominent <img class="math" src="_images/math/1e8afd6109650249e839ea4caa74290785d33d03.png" alt="2^D" style="vertical-align: 0px"/> minima located
@@ -905,7 +1058,8 @@ comparatively close to the corners of its unpenalized search area.</p>
 </div>
 <div class="section" id="sharp-ridge-gallagher-101-peaks">
 <span id="f40"></span><h4><img class="math" src="_images/math/1cbf2d1e729e92cdd11ded4a8ace96238c7b6004.png" alt="f_{40}" style="vertical-align: -4px"/>: Sharp ridge/Gallagher 101 peaks<a class="headerlink" href="#sharp-ridge-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
+Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable.
 While the first objective function is unimodal and non-differentiable at
 its ridge, the second objective function
@@ -926,8 +1080,8 @@ when approaching the objectives&#8217; optima.</p>
 </div>
 <div class="section" id="sum-of-different-powers-rastrigin">
 <span id="f42"></span><h4><img class="math" src="_images/math/e36fc4671e3c215c7bf09d19361102b06f6e96c6.png" alt="f_{42}" style="vertical-align: -4px"/>: Sum of different powers/Rastrigin<a class="headerlink" href="#sum-of-different-powers-rastrigin" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sum of different powers functions
-(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Rastrigin function
+<p>Combination of the sum of different powers functions
+(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rastrigin function
 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable. While the first one
 is unimodal, the second objective
@@ -936,8 +1090,8 @@ function is highly multi-modal (roughly <img class="math" src="_images/math/3c8d
 </div>
 <div class="section" id="sum-of-different-powers-schaffer-f7-condition-10">
 <span id="f43"></span><h4><img class="math" src="_images/math/4017f032e9493dc5a6768f4a6af1ce3755bf7b3f.png" alt="f_{43}" style="vertical-align: -4px"/>: Sum of different powers/Schaffer F7, condition 10<a class="headerlink" href="#sum-of-different-powers-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sum of different powers functions
-(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schaffer F7 function with
+<p>Combination of the sum of different powers functions
+(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schaffer F7 function with
 condition number 10 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable. While the first one
 is unimodal with an increasing conditioning once the optimum is approached,
@@ -947,8 +1101,8 @@ low conditioning where frequency and amplitude of the modulation vary.</p>
 </div>
 <div class="section" id="sum-of-different-powers-schwefel-x-sin-x">
 <span id="f44"></span><h4><img class="math" src="_images/math/ecbf808846a11602513056c079cb622a5f8e40e8.png" alt="f_{44}" style="vertical-align: -4px"/>: Sum of different powers/Schwefel x*sin(x)<a class="headerlink" href="#sum-of-different-powers-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sum of different powers functions
-(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the sum of different powers functions
+(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objectives are non-separable.
 While the first objective function is unimodal,
 the second objective function is highly multimodal&#8212;having the most
@@ -958,8 +1112,8 @@ of its unpenalized search area.</p>
 </div>
 <div class="section" id="sum-of-different-powers-gallagher-101-peaks">
 <span id="f45"></span><h4><img class="math" src="_images/math/c969636adcbbe1e6896b4b87dc71eefd29b46519.png" alt="f_{45}" style="vertical-align: -4px"/>: Sum of different powers/Gallagher 101 peaks<a class="headerlink" href="#sum-of-different-powers-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
-<p>Combination of sum of different powers functions
-(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Gallagher function with
+<p>Combination of the sum of different powers functions
+(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Gallagher function with
 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable.
 While the first objective function is unimodal, the second objective function
@@ -979,16 +1133,16 @@ is about 30.</p>
 </div>
 <div class="section" id="rastrigin-schaffer-f7-condition-10">
 <span id="f47"></span><h4><img class="math" src="_images/math/69313751d47eb8bd04869032f67003cc9a97cdd2.png" alt="f_{47}" style="vertical-align: -4px"/>: Rastrigin/Schaffer F7, condition 10<a class="headerlink" href="#rastrigin-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Rastrigin function
-(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schaffer F7 function with
+<p>Combination of the Rastrigin function
+(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schaffer F7 function with
 condition number 10 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable and highly multi-modal.</p>
 <p>Contained in the <em>multi-modal - multi-modal</em> function class.</p>
 </div>
 <div class="section" id="rastrigin-schwefel-x-sin-x">
 <span id="f48"></span><h4><img class="math" src="_images/math/b059645c0b76a20343820275625e4c90343ab9c3.png" alt="f_{48}" style="vertical-align: -4px"/>: Rastrigin/Schwefel x*sin(x)<a class="headerlink" href="#rastrigin-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Rastrigin function
-(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+<p>Combination of the Rastrigin function
+(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable and highly multi-modal where
 the first has roughly <img class="math" src="_images/math/3c8dbb87be20475f8038591088cea39cdb18c92d.png" alt="10^D" style="vertical-align: -1px"/> local optima and the most prominent
 <img class="math" src="_images/math/1e8afd6109650249e839ea4caa74290785d33d03.png" alt="2^D" style="vertical-align: 0px"/> minima of the second objective function are located
@@ -997,8 +1151,8 @@ comparatively close to the corners of its unpenalized search area.</p>
 </div>
 <div class="section" id="rastrigin-gallagher-101-peaks">
 <span id="f49"></span><h4><img class="math" src="_images/math/83ff1ec68bcb6d01f7f7292b7f8be7972fd67784.png" alt="f_{49}" style="vertical-align: -4px"/>: Rastrigin/Gallagher 101 peaks<a class="headerlink" href="#rastrigin-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Rastrigin function
-(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Gallagher function with
+<p>Combination of the Rastrigin function
+(<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Gallagher function with
 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable and highly multi-modal where
 the first has roughly <img class="math" src="_images/math/3c8dbb87be20475f8038591088cea39cdb18c92d.png" alt="10^D" style="vertical-align: -1px"/> local optima and the second has
@@ -1015,9 +1169,9 @@ condition number 10 (<a class="reference external" href="http://coco.lri.fr/down
 </div>
 <div class="section" id="schaffer-f7-condition-10-schwefel-x-sin-x">
 <span id="f51"></span><h4><img class="math" src="_images/math/09cfc8e3f38a5289d9da256200c3f6175d16db65.png" alt="f_{51}" style="vertical-align: -4px"/>: Schaffer F7, condition 10/Schwefel x*sin(x)<a class="headerlink" href="#schaffer-f7-condition-10-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Schaffer F7 function with
+<p>Combination of the Schaffer F7 function with
 condition number 10 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
+and the Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable and highly multi-modal.
 While frequency and amplitude of the modulation vary in an almost
 regular fashion in the first objective function, the second objective
@@ -1026,9 +1180,9 @@ function posseses less global structure.</p>
 </div>
 <div class="section" id="schaffer-f7-condition-10-gallagher-101-peaks">
 <span id="f52"></span><h4><img class="math" src="_images/math/8ec1631d96c80c102957a733a5559e18bf5d641e.png" alt="f_{52}" style="vertical-align: -4px"/>: Schaffer F7, condition 10/Gallagher 101 peaks<a class="headerlink" href="#schaffer-f7-condition-10-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Schaffer F7 function with
+<p>Combination of the Schaffer F7 function with
 condition number 10 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
-and Gallagher function with
+and the Gallagher function with
 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable and highly multi-modal.
 While frequency and amplitude of the modulation vary in an almost
@@ -1050,7 +1204,7 @@ search space.</p>
 </div>
 <div class="section" id="schwefel-x-sin-x-gallagher-101-peaks">
 <span id="f54"></span><h4><img class="math" src="_images/math/601d5f27d34b75e3653513fb8fed5bf0044e6ba5.png" alt="f_{54}" style="vertical-align: -4px"/>: Schwefel x*sin(x)/Gallagher 101 peaks<a class="headerlink" href="#schwefel-x-sin-x-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
-<p>Combination of Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and Gallagher function with
+<p>Combination of the Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Gallagher function with
 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable and highly multi-modal.
 For the first objective function, the most prominent <img class="math" src="_images/math/1e8afd6109650249e839ea4caa74290785d33d03.png" alt="2^D" style="vertical-align: 0px"/> minima
@@ -1069,24 +1223,29 @@ Position and height of all 101 optima in each objective function
 are unrelated and randomly chosen and thus, no global structure
 is present.</p>
 <p>Contained in the <em>weakly-structured - weakly-structured</em> function class.</p>
-<H2>References</H2><table class="docutils citation" frame="void" id="bbo2016ex" rules="none">
+<H2>Acknowledgments</H2><p>This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
+of the French National Research Agency.</p>
+<H2>References</H2><table class="docutils citation" frame="void" id="bro2016biperf" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[BBO2016ex]</a></td><td>The BBOBies (2016). <a class="reference external" href="http://numbbo.github.io/coco-doc/experimental-setup/">COCO: Experimental Procedure</a>.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[BRO2016biperf]</a></td><td>D. Brockhoff, T. Tušar, D. Tušar, T. Wagner, N. Hansen, A. Auger, (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/bbob-biobj/perf-assessment">Biobjective Performance Assessment with the COCO Platform</a>. <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1605.01746">arXiv:1605.01746</a></td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="bth2015a" rules="none">
+<table class="docutils citation" frame="void" id="bro2015a" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[BTH2015a]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id8">2</a>)</em> D. Brockhoff, T.-D. Tran, and N. Hansen:
+<tr><td class="label">[BRO2015a]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id9">2</a>)</em> D. Brockhoff, T.-D. Tran, and N. Hansen (2015).
 Benchmarking Numerical Multiobjective Optimizers Revisited.
-GECCO 2015: 639-646</td></tr>
+GECCO 2015: 639-646.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="coco-2016" rules="none">
+<table class="docutils citation" frame="void" id="han2016co" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[COCO:2016]</a></td><td>The BBOBies (2016). <a class="reference external" href="http://numbbo.github.io/coco-doc/">COCO: A platform for Comparing Continuous Optimizers in a Black-Box Setting</a>.</td></tr>
+<tr><td class="label">[HAN2016co]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id12">2</a>)</em> N. Hansen, A. Auger, O. Mersmann, T. Tušar, D. Brockhoff (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/">COCO: A Platform for Comparing Continuous Optimizers in a Black-Box
+Setting</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1603.08785">arXiv:1603.08785</a>.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="han2009fun" rules="none">
@@ -1094,17 +1253,24 @@ GECCO 2015: 639-646</td></tr>
 <tbody valign="top">
 <tr><td class="label">[HAN2009fun]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
 <a class="reference external" href="http://coco.gforge.inria.fr/">Real-parameter black-box optimization benchmarking 2009: Noiseless
-functions definitions</a>. <a class="reference external" href="https://hal.inria.fr/inria-00362633">Technical Report RR-6829</a>, Inria, updated
+functions definitions</a>. <a class="reference external" href="https://hal.inria.fr/inria-00362633">Research Report RR-6829</a>, Inria, updated
 February 2010.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="han2011" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id9">[HAN2011]</a></td><td>N. Hansen, R. Ros, N. Mauny, M. Schoenauer, and A. Auger (2011).&nbsp;Impacts
+<tr><td class="label"><a class="fn-backref" href="#id13">[HAN2011]</a></td><td>N. Hansen, R. Ros, N. Mauny, M. Schoenauer, and A. Auger (2011).&nbsp;Impacts
 of Invariance in Search: When CMA-ES and PSO Face Ill-Conditioned and
-Non-Separable Problems. Applied Soft Computing. Vol. 11, pp. 5755-5769.
+Non-Separable Problems. <em>Applied Soft Computing</em>. Vol. 11, pp. 5755-5769.
 Elsevier.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="han2016ex" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[HAN2016ex]</a></td><td>N. Hansen, T. Tušar, A. Auger, D. Brockhoff, O. Mersmann (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/experimental-setup/">COCO: The Experimental Procedure</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1603.08776">arXiv:1603.08776</a>.</td></tr>
 </tbody>
 </table>
 </div>
@@ -1124,12 +1290,11 @@ Elsevier.</td></tr>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="#">COCO: The bbob-biobj Function Description</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">COCO: The Bi-objective Black-Box Optimization Benchmarking (bbob-biobj) Test Suite</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2015-2016, The BBOBies.
-      Last updated on Mar 17, 2016.
+      Last updated on May 13, 2016.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
