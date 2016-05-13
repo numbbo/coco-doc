@@ -46,7 +46,6 @@
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">COCO: Experimental Procedure</a><ul>
-<li><a class="reference internal" href="#chaptertitle">CHAPTERTITLE</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li><a class="reference internal" href="#terminology">Terminology</a></li>
 </ul>
@@ -59,8 +58,6 @@
 <li><a class="reference internal" href="#parameter-setting-and-tuning-of-algorithms">Parameter Setting and Tuning of Algorithms</a></li>
 <li><a class="reference internal" href="#recommendations">Recommendations</a></li>
 <li><a class="reference internal" href="#time-complexity-experiment">Time Complexity Experiment</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -95,8 +92,6 @@
             
   <div class="section" id="coco-experimental-procedure">
 <h1>COCO: Experimental Procedure<a class="headerlink" href="#coco-experimental-procedure" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="chaptertitle">
-<h2>CHAPTERTITLE<a class="headerlink" href="#chaptertitle" title="Permalink to this headline">¶</a></h2>
 See: <I>ArXiv e-prints</I>,
 <A HREF="http://arxiv.org/abs/1603.08776">arXiv:1603.08776</A>, 2016.<p>We present a budget-free experimental setup and procedure for benchmarking numerical
 optimization algorithms in a black-box scenario.
@@ -106,7 +101,7 @@ relevance of termination and restarts.
 We finally reconsider parameter tuning and the concept of recommendations for
 benchmarking with <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>.</p>
 <div class="section" id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Based on <a class="reference internal" href="#han2009" id="id4">[HAN2009]</a> and <a class="reference internal" href="#han2010" id="id5">[HAN2010]</a>, we describe a comparatively simple experimental
 set-up for <em>black-box optimization benchmarking</em>. We recommend to use this procedure
 within the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> platform <a class="reference internal" href="#han2016co" id="id6">[HAN2016co]</a>. <a class="footnote-reference" href="#id10" id="id7">[1]</a></p>
@@ -115,7 +110,7 @@ adapted, is the number of calls to the objective function to reach a
 certain solution quality (function value or <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-value or indicator
 value), also denoted as <em>runtime</em>.</p>
 <div class="section" id="terminology">
-<h4>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h4>
+<h3>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt><em>function</em></dt>
 <dd>We talk about an objective <em>function</em> <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/> as a parametrized mapping
@@ -155,7 +150,7 @@ the performance results after a post-processing is applied.</td></tr>
 </div>
 </div>
 <div class="section" id="conducting-the-experiment">
-<h3>Conducting the Experiment<a class="headerlink" href="#conducting-the-experiment" title="Permalink to this headline">¶</a></h3>
+<h2>Conducting the Experiment<a class="headerlink" href="#conducting-the-experiment" title="Permalink to this headline">¶</a></h2>
 <p>The optimization algorithm to be benchmarked is run on each problem of the
 given test suite once. On each problem, the very same algorithm with the same
 parameter setting, the same initialzation procedure, the same budget, the same
@@ -164,7 +159,7 @@ There is no prescribed minimal or maximally allowed budget. The longer the
 experiment, the more data are available to assess the performance accurately.
 See also Section <a class="reference internal" href="#sec-budget"><span>Budget, Termination Criteria, and Restarts</span></a>.</p>
 <div class="section" id="initialization-and-input-to-the-algorithm">
-<span id="sec-input"></span><h4>Initialization and Input to the Algorithm<a class="headerlink" href="#initialization-and-input-to-the-algorithm" title="Permalink to this headline">¶</a></h4>
+<span id="sec-input"></span><h3>Initialization and Input to the Algorithm<a class="headerlink" href="#initialization-and-input-to-the-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>An algorithm can use the following input information from each problem.
 At any time:</p>
 <dl class="docutils">
@@ -223,7 +218,7 @@ the convenience function might be used additionally.</td></tr>
 </table>
 </div>
 <div class="section" id="budget-termination-criteria-and-restarts">
-<span id="sec-budget"></span><h4>Budget, Termination Criteria, and Restarts<a class="headerlink" href="#budget-termination-criteria-and-restarts" title="Permalink to this headline">¶</a></h4>
+<span id="sec-budget"></span><h3>Budget, Termination Criteria, and Restarts<a class="headerlink" href="#budget-termination-criteria-and-restarts" title="Permalink to this headline">¶</a></h3>
 <p>We consider the budget, termination criteria, and restarts to be part of the
 benchmarked algorithm. Algorithms with any budget of function evaluations are
 eligible, our benchmarking setup is budget-free.
@@ -282,7 +277,7 @@ any of them.</td></tr>
 </div>
 </div>
 <div class="section" id="parameter-setting-and-tuning-of-algorithms">
-<span id="sec-tuning"></span><h3>Parameter Setting and Tuning of Algorithms<a class="headerlink" href="#parameter-setting-and-tuning-of-algorithms" title="Permalink to this headline">¶</a></h3>
+<span id="sec-tuning"></span><h2>Parameter Setting and Tuning of Algorithms<a class="headerlink" href="#parameter-setting-and-tuning-of-algorithms" title="Permalink to this headline">¶</a></h2>
 <p>Any tuning of algorithm parameters to the test suite should be described and
 <em>the approximate overall number of tested parameter settings or algorithm
 variants and the approximate overall invested budget should be given</em>.</p>
@@ -310,7 +305,7 @@ terminates too late by default.</td></tr>
 </table>
 </div>
 <div class="section" id="recommendations">
-<span id="sec-recommendations"></span><h3>Recommendations<a class="headerlink" href="#recommendations" title="Permalink to this headline">¶</a></h3>
+<span id="sec-recommendations"></span><h2>Recommendations<a class="headerlink" href="#recommendations" title="Permalink to this headline">¶</a></h2>
 <p>The performance assessment is based on a set of evaluation counts
 associated with the <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-value or -vector of a solution.
 By default, each evaluation count is associated with the respectively <em>evaluated</em>
@@ -339,7 +334,7 @@ evaluated.</td></tr>
 </table>
 </div>
 <div class="section" id="time-complexity-experiment">
-<h3>Time Complexity Experiment<a class="headerlink" href="#time-complexity-experiment" title="Permalink to this headline">¶</a></h3>
+<h2>Time Complexity Experiment<a class="headerlink" href="#time-complexity-experiment" title="Permalink to this headline">¶</a></h2>
 <p>In order to get a rough measurement of the time complexity of the algorithm, the
 wall-clock or CPU time should be measured when running the algorithm on the
 benchmark suite. The chosen setup should reflect a &#8220;realistic average
@@ -417,7 +412,6 @@ Conference on Uncertainty in Artificial Intelligence (UAI-98)</em>,
 pages 238-245, 1998.</td></tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 
