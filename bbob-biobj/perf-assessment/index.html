@@ -97,8 +97,8 @@
             
   <div class="section" id="biobjective-performance-assessment-with-the-coco-platform">
 <h1>Biobjective Performance Assessment with the COCO Platform<a class="headerlink" href="#biobjective-performance-assessment-with-the-coco-platform" title="Permalink to this headline">¶</a></h1>
-See: <I>ArXiv e-prints</I>,
-<A HREF="http://arxiv.org/abs/160x.xxxxx">arXiv:160x.xxxxx</A>, 2016.<p>This document details the rationales behind assessing the performance of
+See also: <I>ArXiv e-prints</I>,
+<A HREF="http://arxiv.org/abs/1605.01746">arXiv:1605.01746</A>, 2016.<p>This document details the rationales behind assessing the performance of
 numerical black-box optimizers on multi-objective problems within the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>
 platform and in particular on the biobjective test suite <a class="reference external" href="http://numbbo.github.io/coco-doc/bbob-biobj/functions"><code class="docutils literal"><span class="pre">bbob-biobj</span></code></a>.
 The evaluation is based on a hypervolume of all non-dominated solutions in the
@@ -146,8 +146,8 @@ consequently, runtime is measured in number of function evaluations.</td></tr>
 <p class="last">We call a problem <em>solved</em> by an optimization algorithm if the algorithm
 reaches a quality indicator value at least as good as the associated target value.
 The number of function evaluations needed to surpass the target value for the first time
-is <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>&#8216;s central performance measure. <a class="reference internal" href="#han2016co" id="id7">[HAN2016co]</a> In case a single
-quality indicator is used for all problems in a benchmark suite, we can drop the
+is <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>&#8216;s central performance measure <a class="reference internal" href="#han2016co" id="id7">[HAN2016co]</a>. Most often a single
+quality indicator is used for all problems in a benchmark suite, such we can drop the
 quality indicator and refer to a problem as a quadruple <img class="math" src="_images/math/3abf89ee01623782df7fc95d4cbeae065fe6318b.png" alt="f_\theta,\theta,n,I_{\rm target}" style="vertical-align: -6px"/>.
 Note that typically more than one problem for a <em>function instance</em> of
 <img class="math" src="_images/math/187252d73804432fb98bd38a5e42e868db86423d.png" alt="(f_\theta,\theta,n)" style="vertical-align: -4px"/> is defined by choosing more than one target value.</p>
@@ -255,7 +255,7 @@ is mapped to <img class="math" src="_images/math/d880034787de90d6bb07f5b92537df6
 <dd>We believe using an archive to keep all non-dominated solutions is relevant in practice
 in bi-objective real-world applications, in particular when function evaluations are
 expensive. Using an external archive for the performance assessment has the additional
-advantage that no populuation size needs to be prescribed and algorithms with different
+advantage that no population size needs to be prescribed and algorithms with different
 or even changing population sizes can be easily compared.</dd>
 <dt><em>Why hypervolume?</em></dt>
 <dd>Although, in principle, other quality indicators can be used in replacement of the
@@ -391,15 +391,15 @@ graphical output, <a class="reference external" href="https://github.com/numbbo/
 with the performance data during the benchmarking experiment and displays
 a version number in the plots generated that allows to retrieve the used reference
 values from the <a class="reference external" href="https://github.com/numbbo/coco">Github repository of COCO</a>.</p>
-<H2>Acknowledgements</H2><p>This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
-of the French National Research Agency.</p>
-<p>The authors would like to thank Thanh-Do Tran for his
+<H2>Acknowledgements</H2><p>The authors would like to thank Thanh-Do Tran for his
 contributions and assistance with the preliminary code of the bi-objective
 setting and for providing us with his extensive experimental data. We also thank
 Tobias Glasmachers, Oswin Krause, and Ilya Loshchilov for their bug reports, feature
 requests, code testing, and many valuable discussions. Special thanks go
 to Olaf Mersmann for the inital rewriting of the COCO platform without which
 the bi-objective extension of COCO would not have happened.</p>
+<p>This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
+of the French National Research Agency.</p>
 <H2>References</H2><table class="docutils citation" frame="void" id="beu2007" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
@@ -427,8 +427,8 @@ pp. 159-195.</td></tr>
 <table class="docutils citation" frame="void" id="han2016perf" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[HAN2016perf]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id12">2</a>, <a class="fn-backref" href="#id14">3</a>)</em> N. Hansen, A. Auger, D. Brockhoff, D. Tušar, T. Tušar
-(2016). <a class="reference external" href="http://numbbo.github.io/coco-doc/perf-assessment">COCO: Performance Assessment</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/160x.xxxxx">arXiv:160x.xxxxx</a>.</td></tr>
+<tr><td class="label">[HAN2016perf]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id12">2</a>, <a class="fn-backref" href="#id14">3</a>)</em> N. Hansen, A. Auger, D. Brockhoff, D. Tušar, T. Tušar (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/perf-assessment">COCO: Performance Assessment</a>. <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1605.03560">arXiv:1605.03560</a></td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="han2016co" rules="none">
@@ -511,7 +511,7 @@ Transactions on Evolutionary Computation</em>, 12(1), pp. 41-63.</td></tr>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on May 08, 2016.
+      Last updated on May 14, 2016.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
