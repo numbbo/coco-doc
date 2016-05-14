@@ -1,8 +1,8 @@
-.. title:: COCO: Experimental Procedure
+.. title:: COCO: The Experimental Procedure
 
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-COCO: Experimental Procedure
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+COCO: The Experimental Procedure
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 .. the next two lines are necessary in LaTeX. They will be automatically 
   replaced to put away the \chapter level as ^^^ and let the "current" level
@@ -21,7 +21,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 .. raw:: html
 
-   See: <I>ArXiv e-prints</I>,
+   See also: <I>ArXiv e-prints</I>,
    <A HREF="http://arxiv.org/abs/1603.08776">arXiv:1603.08776</A>, 2016.
 
 
@@ -123,10 +123,10 @@ Based on [HAN2009]_ and [HAN2010]_, we describe a comparatively simple experimen
 set-up for *black-box optimization benchmarking*. We recommend to use this procedure
 within the COCO_ platform [HAN2016co]_. [#]_ 
 
-Our central measure of performance, to which the experimental procedure is
+Our **central measure of performance**, to which the experimental procedure is
 adapted, is the number of calls to the objective function to reach a
 certain solution quality (function value or :math:`f`-value or indicator
-value), also denoted as *runtime*. 
+value), also denoted as runtime. 
 
 Terminology
 -----------
@@ -174,8 +174,9 @@ The optimization algorithm to be benchmarked is run on each problem of the
 given test suite once. On each problem, the very same algorithm with the same
 parameter setting, the same initialzation procedure, the same budget, the same
 termination and/or restart criteria etc. is used. 
-There is no prescribed minimal or maximally allowed budget. The longer the
-experiment, the more data are available to assess the performance accurately.
+There is no prescribed minimal or maximal allowed budget, the benchmarking approach is *budget-free*. 
+The longer the experiment, the more data are available to assess the performance
+accurately.
 See also Section :ref:`sec:budget`. 
 
 .. _sec:input:
@@ -257,11 +258,14 @@ termination of a stagnating run can improve the performance, as these evaluation
 can be used more effectively. [#]_
 
 To exploit a large number of function evaluations effectively, we encourage to
-use independent restarts [#]_, in particular for algorithms which terminate
-naturally within a comparatively small budget. Independent restarts do not
-change the central performance measure [#]_, however, they improve the reliability, comparability [#]_, precision, and "visibility" of the measured results. 
+use **independent restarts** [#]_, in particular for algorithms which terminate
+naturally within a comparatively small budget. 
+Independent restarts are a natural way to approach difficult optimization
+problems and do not change the central performance measure used in COCO_ (hence
+we call COCO_ *budget-free*), 
+however, they improve the reliability, comparability [#]_, precision, and "visibility" of the measured results. 
 
-Moreover, any multistart procedure (which relies on an interim termination of the algorithm) is encouraged. 
+Moreover, any **multistart procedure** (which relies on an interim termination of the algorithm) is encouraged. 
 Multistarts may not be independent as they can feature a parameter sweep (e.g., increasing population size [HAR1999]_ [AUG2005]_), can be based on the outcome of the previous starts, or feature a systematic change of the initial conditions for the algorithm. 
 
 After a multistart procedure has been established, a recommended procedure is
@@ -279,9 +283,7 @@ affecting the performance assessment, because there is no target left to hit.
   the most basic functions, like the sphere function :math:`f_1`, that is on the
   problems 0, 360, 720, 1080, 1440, and 1800 of the ``bbob`` suite.  
 
-.. [#] The COCO_ platform provides example code to implement independent restarts. 
-
-.. [#] Therefore we call the experimental approach budget-free. 
+.. [#] The COCO_ platform provides example code implementing independent restarts. 
 
 .. [#] Algorithms are only comparable up to the smallest budget given to 
   any of them. 
@@ -325,8 +327,8 @@ Any tuning of algorithm parameters to the test suite should be described and
 *the approximate overall number of tested parameter settings or algorithm
 variants and the approximate overall invested budget should be given*. 
 
-The only recommended tuning procedure is the verification that *termination
-conditions* of the algorithm are suited to the given testbed and, in case,
+The only recommended tuning procedure is the verification that **termination
+conditions** of the algorithm are suited to the given testbed and, in case,
 tuning of termination parameters. [#]_
 Too early or too late termination can be identified and adjusted comparatively 
 easy. 
