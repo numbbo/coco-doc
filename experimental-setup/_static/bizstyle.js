@@ -36,6 +36,6 @@ $(window).resize(function(){
         $("li.nav-item-0 a").text("Top");
     }
     else {
-        $("li.nav-item-0 a").text("COCO: Experimental Procedure");
+        $("li.nav-item-0 a").text("COCO: The Experimental Procedure");
     }
 });
