@@ -206,17 +206,18 @@ Overview of the Proposed ``bbob-biobj`` Test Suite
 The ``bbob-biobj`` test suite provides 55 bi-objective functions in six
 dimensions (2, 3, 5, 10, 20, and 40) with a large number of possible instances. 
 The 55 functions are derived from combining a subset of the 24 well-known
-single-objective functions of the ``bbob`` test suite [HAN2009fun]_ which
-has been used since 2009 in the `BBOB workshop series
-<http://numbbo.github.io/workshops/>`_ . While concrete details on each of
+single-objective functions of the ``bbob`` test suite [HAN2009]_ which
+has been used since 2009 in the `BBOB workshop series`__. 
+While concrete details on each of
 the 55 ``bbob-biobj`` functions are given in Section
 :ref:`sec-test-functions`, we will detail here the main rationale behind
 them together with their common properties.
 
+__ http://numbbo.github.io/workshops
 
 The Single-objective ``bbob`` Functions
 ---------------------------------------
-The ``bbob-biobj`` test suite is designed to be able to assess  performance of algorithms with respect to well-identified difficulties in optimization typically  occurring in real-world problems. A multi-objective problem being a combination of single-objective problems, one can obtain multi-objective problems with representative difficulties by simply combining single objective functions with representative difficulties observed in real-world problems. For this purpose we naturally use the single-objective ``bbob`` suite [HAN2009fun]_.
+The ``bbob-biobj`` test suite is designed to be able to assess  performance of algorithms with respect to well-identified difficulties in optimization typically  occurring in real-world problems. A multi-objective problem being a combination of single-objective problems, one can obtain multi-objective problems with representative difficulties by simply combining single objective functions with representative difficulties observed in real-world problems. For this purpose we naturally use the single-objective ``bbob`` suite [HAN2009]_.
 
 Combining all 24 ``bbob`` functions in pairs thereby results in
 :math:`24^2=576` bi-objective functions overall. We however assume that
@@ -238,7 +239,7 @@ is present results in :math:`24 + {24 \choose 2} = 24 + (24\times23)/2 = (24\tim
   and the second as ``bbob`` function *j* with *i* :math:`\leq` *j*,
   resulting in :math:`24+ {24 \choose 2} = 300` functions.
 
-Some first tests, e.g. in [BRO2015a]_, showed that having 300 functions is
+Some first tests, e.g. in [BRO2015]_, showed that having 300 functions is
 impracticable in terms of the overall running time of the benchmarking
 experiment.  We then decided to exploit the organization of the ``bbob``
 functions into classes to choose a subset of functions. More precisely, the 24
@@ -480,7 +481,7 @@ instead of instance-id 20.
 
 Exceptions to the above rule are, for historical reasons, the
 ``bbob-biobj`` instance-ids 1 and 2 in order to match the instance-ids
-1 to 5 with the ones proposed in [BRO2015a]_. The ``bbob-biobj``
+1 to 5 with the ones proposed in [BRO2015]_. The ``bbob-biobj``
 instance-id 1 contains the single-objective instance-ids 2 and 4 and
 the ``bbob-biobj`` instance-id 2 contains the two instance-ids 3 and 5.
 
@@ -687,15 +688,18 @@ as large as :math:`10^{10}`.
 
 Domain Bounds
 -------------
-All bi-objective functions provided in the ``bbob-biobj`` suite are unbounded, i.e., defined
-on the entire real-valued space :math:`\mathbb{R}^D`. 
-Nevertheless, they are designed such that the search domain of interest is :math:`[-5,5]^D`
-and bound-constraint methods are likely to be competitive. [#]_
+All bi-objective functions provided in the ``bbob-biobj`` suite are unbounded,
+i.e., defined on the entire real-valued space :math:`\mathbb{R}^D`. 
+The search domain of interest is defined as :math:`[-100,100]^D`, outside of 
+which non-dominated solutions are quite unlikely to be found. [#]_ The majority of non-dominated solutions are likely to lie even within :math:`[-5,5]^D`. 
 
-While we believe that this domain contains the Pareto set in most cases, due to the nature
-of the ``bbob-biobj`` function definitions, there is no guarantee that this
-is always the case --- it is only guaranteed that the extremal solutions and their
-neighborhood ball of radius one lie within this region.
+.. Nevertheless, they are designed such that and bound-constraint methods are likely to be competitive. 
+
+While we believe that the domain of interest contains the Pareto set, 
+due to the nature of the ``bbob-biobj`` function definitions, there is no
+guarantee that this is always the case. 
+However, the extremal solutions and their neighborhood ball of radius one
+are guaranteed to lie within :math:`[-5,5]^D`.
 
 .. [#] The functions |coco_problem_get_smallest_value_of_interest|_ and 
   |coco_problem_get_largest_value_of_interest|_ 
@@ -2008,13 +2012,14 @@ of the French National Research Agency.
    
 
 .. [BRO2016biperf] D. Brockhoff, T. Tušar, D. Tušar, T. Wagner, N. Hansen, A. Auger, (2016). 
-  `Biobjective Performance Assessment with the COCO Platform`__. *ArXiv e-prints*, `arXiv:1605.01746`__
+  `Biobjective Performance Assessment with the COCO Platform`__. *ArXiv e-prints*, `arXiv:1605.01746`__.
 .. __: http://numbbo.github.io/coco-doc/bbob-biobj/perf-assessment
 .. __: http://arxiv.org/abs/1605.01746
 
-.. [BRO2015a] D. Brockhoff, T.-D. Tran, and N. Hansen (2015).
-   Benchmarking Numerical Multiobjective Optimizers Revisited.
-   GECCO 2015: 639-646. 
+.. [BRO2015] D. Brockhoff, T.-D. Tran, and N. Hansen (2015).
+   Benchmarking Numerical Multiobjective Optimizers Revisited. In
+   Proceedings of the 2015 GECCO Genetic and Evolutionary Computation Conference, 
+   pp. 639-646, ACM. 
    
 .. [HAN2016co] N. Hansen, A. Auger, O. Mersmann, T. Tušar, D. Brockhoff (2016).
    `COCO: A Platform for Comparing Continuous Optimizers in a Black-Box 
@@ -2023,7 +2028,7 @@ of the French National Research Agency.
 .. __: http://arxiv.org/abs/1603.08785
 
 
-.. [HAN2009fun] N. Hansen, S. Finck, R. Ros, and A. Auger (2009). 
+.. [HAN2009] N. Hansen, S. Finck, R. Ros, and A. Auger (2009). 
    `Real-parameter black-box optimization benchmarking 2009: Noiseless
    functions definitions`__. `Research Report RR-6829`__, Inria, updated
    February 2010.

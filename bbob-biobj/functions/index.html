@@ -161,7 +161,7 @@ the well-known single-objective noiseless <code class="docutils literal"><span c
 the actual function definitions and presenting their (known) properties, this
 documentation also aims at giving the rationale behind our approach in terms
 of function groups, instances, and potential objective space normalization.</p>
-<div class="figure align-center" id="id24">
+<div class="figure align-center" id="id25">
 <a class="reference internal image-reference" href="_images/examples-bbob-biobj.png"><img alt="_images/examples-bbob-biobj.png" src="_images/examples-bbob-biobj.png" style="width: 539.4px; height: 444.6px;" /></a>
 <p class="caption"><span class="caption-text">Example plots of the Pareto front approximation, found by NSGA-II on
 selected <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions. In blue the non-dominated points at the
@@ -248,21 +248,22 @@ is, a single point in the search space maps to the global minimum)</p>
 <p>The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite provides 55 bi-objective functions in six
 dimensions (2, 3, 5, 10, 20, and 40) with a large number of possible instances.
 The 55 functions are derived from combining a subset of the 24 well-known
-single-objective functions of the <code class="docutils literal"><span class="pre">bbob</span></code> test suite <a class="reference internal" href="#han2009fun" id="id3">[HAN2009fun]</a> which
-has been used since 2009 in the <a class="reference external" href="http://numbbo.github.io/workshops/">BBOB workshop series</a> . While concrete details on each of
+single-objective functions of the <code class="docutils literal"><span class="pre">bbob</span></code> test suite <a class="reference internal" href="#han2009" id="id3">[HAN2009]</a> which
+has been used since 2009 in the <a class="reference external" href="http://numbbo.github.io/workshops">BBOB workshop series</a>.
+While concrete details on each of
 the 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions are given in Section
 <a class="reference internal" href="#sec-test-functions"><span>The bbob-biobj Test Functions and Their Properties</span></a>, we will detail here the main rationale behind
 them together with their common properties.</p>
 <div class="section" id="the-single-objective-bbob-functions">
 <h3>The Single-objective <code class="docutils literal"><span class="pre">bbob</span></code> Functions<a class="headerlink" href="#the-single-objective-bbob-functions" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite is designed to be able to assess  performance of algorithms with respect to well-identified difficulties in optimization typically  occurring in real-world problems. A multi-objective problem being a combination of single-objective problems, one can obtain multi-objective problems with representative difficulties by simply combining single objective functions with representative difficulties observed in real-world problems. For this purpose we naturally use the single-objective <code class="docutils literal"><span class="pre">bbob</span></code> suite <a class="reference internal" href="#han2009fun" id="id4">[HAN2009fun]</a>.</p>
+<p>The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite is designed to be able to assess  performance of algorithms with respect to well-identified difficulties in optimization typically  occurring in real-world problems. A multi-objective problem being a combination of single-objective problems, one can obtain multi-objective problems with representative difficulties by simply combining single objective functions with representative difficulties observed in real-world problems. For this purpose we naturally use the single-objective <code class="docutils literal"><span class="pre">bbob</span></code> suite <a class="reference internal" href="#han2009" id="id5">[HAN2009]</a>.</p>
 <p>Combining all 24 <code class="docutils literal"><span class="pre">bbob</span></code> functions in pairs thereby results in
 <img class="math" src="_images/math/7d037a6994a5defa2eb21beda04fed7ea01bfab0.png" alt="24^2=576" style="vertical-align: -1px"/> bi-objective functions overall. We however assume that
 multi-objective optimization algorithms are not sensitive to permutations of
 the objective functions such that combining the 24  <code class="docutils literal"><span class="pre">bbob</span></code> functions and
 taking out the function <img class="math" src="_images/math/e1260df3ecbabab7b38e99406d15465305d6e7c4.png" alt="(g_2,g_1)" style="vertical-align: -4px"/> if the function <img class="math" src="_images/math/6d30e7d4914e8e8471d1d45a0e5f23b667e3ef1f.png" alt="(g_1,g_2)" style="vertical-align: -4px"/>
 is present results in <img class="math" src="_images/math/09b8185a62c951077e23976d810caaae203194f3.png" alt="24 + {24 \choose 2} = 24 + (24\times23)/2 = (24\times25)/2 = 300" style="vertical-align: -6px"/> functions.</p>
-<p>Some first tests, e.g. in <a class="reference internal" href="#bro2015a" id="id5">[BRO2015a]</a>, showed that having 300 functions is
+<p>Some first tests, e.g. in <a class="reference internal" href="#bro2015" id="id6">[BRO2015]</a>, showed that having 300 functions is
 impracticable in terms of the overall running time of the benchmarking
 experiment.  We then decided to exploit the organization of the <code class="docutils literal"><span class="pre">bbob</span></code>
 functions into classes to choose a subset of functions. More precisely, the 24
@@ -349,17 +350,17 @@ different ranges. Typically, different orders of magnitude
 between the objective values can be observed.</p>
 <p>However, to facilitate comparison of algorithm performance over different functions,
 we normalize the objectives based on the ideal and nadir points
-before calculating the hypervolume indicator <a class="reference internal" href="#bro2016biperf" id="id6">[BRO2016biperf]</a>.
+before calculating the hypervolume indicator <a class="reference internal" href="#bro2016biperf" id="id7">[BRO2016biperf]</a>.
 Both points can be computed, because the global
 optimum is known and is unique for the 10 <code class="docutils literal"><span class="pre">bbob</span></code> base functions.
 In the black-box optimization benchmarking setup, however, the values of the
 ideal and nadir points are not accessible to the optimization algorithm
-<a class="reference internal" href="#han2016ex" id="id7">[HAN2016ex]</a>.</p>
+<a class="reference internal" href="#han2016ex" id="id8">[HAN2016ex]</a>.</p>
 </div>
 <div class="section" id="instances">
 <h3>Instances<a class="headerlink" href="#instances" title="Permalink to this headline">¶</a></h3>
 <p>Our test functions are parametrized and instances are instantiations of the
-underlying parameters (see <a class="reference internal" href="#han2016co" id="id8">[HAN2016co]</a>). The instances for the bi-objective
+underlying parameters (see <a class="reference internal" href="#han2016co" id="id9">[HAN2016co]</a>). The instances for the bi-objective
 functions are using instances of each single objective function composing the
 bi-objective one. In addition, we assert two conditions:</p>
 <blockquote>
@@ -388,17 +389,17 @@ first instance-id is 19 but for the second objective, instance-id 21 is chosen
 instead of instance-id 20.</p>
 <p>Exceptions to the above rule are, for historical reasons, the
 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> instance-ids 1 and 2 in order to match the instance-ids
-1 to 5 with the ones proposed in <a class="reference internal" href="#bro2015a" id="id9">[BRO2015a]</a>. The <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+1 to 5 with the ones proposed in <a class="reference internal" href="#bro2015" id="id10">[BRO2015]</a>. The <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
 instance-id 1 contains the single-objective instance-ids 2 and 4 and
 the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> instance-id 2 contains the two instance-ids 3 and 5.</p>
 <p>For each bi-objective function and given dimension, the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite
-contains 10 instances. <a class="footnote-reference" href="#id11" id="id10">[2]</a></p>
-<table class="docutils footnote" frame="void" id="id11" rules="none">
+contains 10 instances. <a class="footnote-reference" href="#id12" id="id11">[2]</a></p>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id10">[2]</a></td><td>In principle, as for the instance generation for the <code class="docutils literal"><span class="pre">bbob</span></code> suite,
+<tr><td class="label"><a class="fn-backref" href="#id11">[2]</a></td><td>In principle, as for the instance generation for the <code class="docutils literal"><span class="pre">bbob</span></code> suite,
 the number of possible instances for the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite is unlimited
-<a class="reference internal" href="#han2016co" id="id12">[HAN2016co]</a>.
+<a class="reference internal" href="#han2016co" id="id13">[HAN2016co]</a>.
 However, running some tests with too few instances will render the
 potential statistics and their interpretation problematic while even the
 tiniest observed difference can be made statistically significant with a
@@ -588,7 +589,7 @@ optimization and, besides multimodality, probably the most common one.
 In a general case, we can consider a function as ill-conditioned if for
 solution points from the same level-set &#8220;the minimal displacement [...] that
 produces a given function value improvement differs by
-orders of magnitude&#8221; <a class="reference internal" href="#han2011" id="id13">[HAN2011]</a>.
+orders of magnitude&#8221; <a class="reference internal" href="#han2011" id="id14">[HAN2011]</a>.
 Conditioning can be rigorously formalized in the
 case of convex quadratic functions,
 <img class="math" src="_images/math/207ef1deebcefe638d31f51b171054b128f9848b.png" alt="f(x) = \frac{1}{2} x^THx" style="vertical-align: -6px"/> where <img class="math" src="_images/math/4d632a8aa5526e4af2b2d8b604b5a6af9a5a04e2.png" alt="H" style="vertical-align: 0px"/> is a symmetric
@@ -603,18 +604,19 @@ as large as <img class="math" src="_images/math/ae7febea9bb52f37802fa9cf7598e70c
 </div>
 <div class="section" id="domain-bounds">
 <h3>Domain Bounds<a class="headerlink" href="#domain-bounds" title="Permalink to this headline">¶</a></h3>
-<p>All bi-objective functions provided in the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite are unbounded, i.e., defined
-on the entire real-valued space <img class="math" src="_images/math/414e585340b56b20cba4a1971dde4eaabcaaf515.png" alt="\mathbb{R}^D" style="vertical-align: 0px"/>.
-Nevertheless, they are designed such that the search domain of interest is <img class="math" src="_images/math/a800ac0a1f7f6bb4a3773a9327a9197b6df474d6.png" alt="[-5,5]^D" style="vertical-align: -5px"/>
-and bound-constraint methods are likely to be competitive. <a class="footnote-reference" href="#id15" id="id14">[3]</a></p>
-<p>While we believe that this domain contains the Pareto set in most cases, due to the nature
-of the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> function definitions, there is no guarantee that this
-is always the case &#8212; it is only guaranteed that the extremal solutions and their
-neighborhood ball of radius one lie within this region.</p>
-<table class="docutils footnote" frame="void" id="id15" rules="none">
+<p>All bi-objective functions provided in the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite are unbounded,
+i.e., defined on the entire real-valued space <img class="math" src="_images/math/414e585340b56b20cba4a1971dde4eaabcaaf515.png" alt="\mathbb{R}^D" style="vertical-align: 0px"/>.
+The search domain of interest is defined as <img class="math" src="_images/math/a5e2460d3c6c583cda95e494dabbe8f0e171a989.png" alt="[-100,100]^D" style="vertical-align: -5px"/>, outside of
+which non-dominated solutions are quite unlikely to be found. <a class="footnote-reference" href="#id16" id="id15">[3]</a> The majority of non-dominated solutions are likely to lie even within <img class="math" src="_images/math/a800ac0a1f7f6bb4a3773a9327a9197b6df474d6.png" alt="[-5,5]^D" style="vertical-align: -5px"/>.</p>
+<p>While we believe that the domain of interest contains the Pareto set,
+due to the nature of the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> function definitions, there is no
+guarantee that this is always the case.
+However, the extremal solutions and their neighborhood ball of radius one
+are guaranteed to lie within <img class="math" src="_images/math/a800ac0a1f7f6bb4a3773a9327a9197b6df474d6.png" alt="[-5,5]^D" style="vertical-align: -5px"/>.</p>
+<table class="docutils footnote" frame="void" id="id16" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id14">[3]</a></td><td>The functions <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a4ea6c067adfa866b0179329fe9b7c458"><code class="docutils literal"><span class="pre">coco_problem_get_smallest_value_of_interest</span></code></a> and
+<tr><td class="label"><a class="fn-backref" href="#id15">[3]</a></td><td>The functions <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a4ea6c067adfa866b0179329fe9b7c458"><code class="docutils literal"><span class="pre">coco_problem_get_smallest_value_of_interest</span></code></a> and
 <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a29c89e039494ae8b4f8e520cba1eb154"><code class="docutils literal"><span class="pre">coco_problem_get_largest_value_of_interest</span></code></a>
 of the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> platform allow the optimizer
 to retrieve the <em>search domain of interest</em> from the <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a408ba01b98c78bf5be3df36562d99478"><code class="docutils literal"><span class="pre">coco_problem_t</span></code></a>,
@@ -1228,30 +1230,31 @@ of the French National Research Agency.</p>
 <H2>References</H2><table class="docutils citation" frame="void" id="bro2016biperf" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[BRO2016biperf]</a></td><td>D. Brockhoff, T. Tušar, D. Tušar, T. Wagner, N. Hansen, A. Auger, (2016).
-<a class="reference external" href="http://numbbo.github.io/coco-doc/bbob-biobj/perf-assessment">Biobjective Performance Assessment with the COCO Platform</a>. <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1605.01746">arXiv:1605.01746</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id7">[BRO2016biperf]</a></td><td>D. Brockhoff, T. Tušar, D. Tušar, T. Wagner, N. Hansen, A. Auger, (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/bbob-biobj/perf-assessment">Biobjective Performance Assessment with the COCO Platform</a>. <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1605.01746">arXiv:1605.01746</a>.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="bro2015a" rules="none">
+<table class="docutils citation" frame="void" id="bro2015" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[BRO2015a]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id9">2</a>)</em> D. Brockhoff, T.-D. Tran, and N. Hansen (2015).
-Benchmarking Numerical Multiobjective Optimizers Revisited.
-GECCO 2015: 639-646.</td></tr>
+<tr><td class="label">[BRO2015]</td><td><em>(<a class="fn-backref" href="#id6">1</a>, <a class="fn-backref" href="#id10">2</a>)</em> D. Brockhoff, T.-D. Tran, and N. Hansen (2015).
+Benchmarking Numerical Multiobjective Optimizers Revisited. In
+Proceedings of the 2015 GECCO Genetic and Evolutionary Computation Conference,
+pp. 639-646, ACM.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="han2016co" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[HAN2016co]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id12">2</a>)</em> N. Hansen, A. Auger, O. Mersmann, T. Tušar, D. Brockhoff (2016).
+<tr><td class="label">[HAN2016co]</td><td><em>(<a class="fn-backref" href="#id9">1</a>, <a class="fn-backref" href="#id13">2</a>)</em> N. Hansen, A. Auger, O. Mersmann, T. Tušar, D. Brockhoff (2016).
 <a class="reference external" href="http://numbbo.github.io/coco-doc/">COCO: A Platform for Comparing Continuous Optimizers in a Black-Box
 Setting</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1603.08785">arXiv:1603.08785</a>.</td></tr>
 </tbody>
 </table>
-<table class="docutils citation" frame="void" id="han2009fun" rules="none">
+<table class="docutils citation" frame="void" id="han2009" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[HAN2009fun]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
+<tr><td class="label">[HAN2009]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
 <a class="reference external" href="http://coco.gforge.inria.fr/">Real-parameter black-box optimization benchmarking 2009: Noiseless
 functions definitions</a>. <a class="reference external" href="https://hal.inria.fr/inria-00362633">Research Report RR-6829</a>, Inria, updated
 February 2010.</td></tr>
@@ -1260,7 +1263,7 @@ February 2010.</td></tr>
 <table class="docutils citation" frame="void" id="han2011" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id13">[HAN2011]</a></td><td>N. Hansen, R. Ros, N. Mauny, M. Schoenauer, and A. Auger (2011).&nbsp;Impacts
+<tr><td class="label"><a class="fn-backref" href="#id14">[HAN2011]</a></td><td>N. Hansen, R. Ros, N. Mauny, M. Schoenauer, and A. Auger (2011).&nbsp;Impacts
 of Invariance in Search: When CMA-ES and PSO Face Ill-Conditioned and
 Non-Separable Problems. <em>Applied Soft Computing</em>. Vol. 11, pp. 5755-5769.
 Elsevier.</td></tr>
@@ -1269,7 +1272,7 @@ Elsevier.</td></tr>
 <table class="docutils citation" frame="void" id="han2016ex" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[HAN2016ex]</a></td><td>N. Hansen, T. Tušar, A. Auger, D. Brockhoff, O. Mersmann (2016).
+<tr><td class="label"><a class="fn-backref" href="#id8">[HAN2016ex]</a></td><td>N. Hansen, T. Tušar, A. Auger, D. Brockhoff, O. Mersmann (2016).
 <a class="reference external" href="http://numbbo.github.io/coco-doc/experimental-setup/">COCO: The Experimental Procedure</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1603.08776">arXiv:1603.08776</a>.</td></tr>
 </tbody>
 </table>
@@ -1294,7 +1297,7 @@ Elsevier.</td></tr>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on May 13, 2016.
+      Last updated on May 23, 2016.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
