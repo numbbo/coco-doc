@@ -51,7 +51,7 @@
 <li><a class="reference internal" href="#terminology">Terminology</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#functions-instances-problems-and-targets">Functions, Instances, Problems, and Targets</a></li>
+<li><a class="reference internal" href="#functions-instances-and-problems">Functions, Instances, and Problems</a></li>
 <li><a class="reference internal" href="#runtime-and-target-values">Runtime and Target Values</a><ul>
 <li><a class="reference internal" href="#restarts-and-simulated-restarts">Restarts and Simulated Restarts</a></li>
 <li><a class="reference internal" href="#aggregation">Aggregation</a></li>
@@ -93,8 +93,12 @@
             
   <div class="section" id="coco-a-platform-for-comparing-continuous-optimizers-in-a-black-box-setting">
 <h1>COCO: A platform for Comparing Continuous Optimizers in a Black-Box Setting<a class="headerlink" href="#coco-a-platform-for-comparing-continuous-optimizers-in-a-black-box-setting" title="Permalink to this headline">¶</a></h1>
-See also: <I>ArXiv e-prints</I>,
- <A HREF="http://arxiv.org/abs/1603.08785">arXiv:1603.08785</A>, 2016.<p><a class="reference external" href="https://github.com/numbbo/coco">COCO</a> is a platform for Comparing Continuous Optimizers in a black-box
+<I>To cite or access this document as <tt>pdf</tt>:</I><BR>
+N. Hansen, A. Auger, O. Mersmann, T. Tušar, and D. Brockhoff (2016).
+<A HREF="http://arxiv.org/pdf/1603.08785">
+COCO: A platform for Comparing Continuous Optimizers in a Black-Box Setting</A>.
+<I>ArXiv e-prints</I>,
+<A HREF="http://arxiv.org/abs/1603.08785">arXiv:1603.08785</A>.<p><a class="reference external" href="https://github.com/numbbo/coco">COCO</a> is a platform for Comparing Continuous Optimizers in a black-box
 setting.
 It aims at automatizing the tedious and repetitive task of
 benchmarking numerical optimization algorithms to the greatest possible
@@ -154,17 +158,23 @@ $ open ppdata/index.html           # browse results
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="ch">#!/usr/bin/env python</span>
 <span class="sd">&quot;&quot;&quot;Python script to benchmark fmin of scipy.optimize&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">rand</span>
 <span class="kn">import</span> <span class="nn">cocoex</span>
 <span class="k">try</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">cocopp</span>  <span class="c1"># new (future) name</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">bbob_pproc</span> <span class="kn">as</span> <span class="nn">cocopp</span>  <span class="c1"># old name</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fmin</span>
 
 <span class="n">suite</span> <span class="o">=</span> <span class="n">cocoex</span><span class="o">.</span><span class="n">Suite</span><span class="p">(</span><span class="s2">&quot;bbob&quot;</span><span class="p">,</span> <span class="s2">&quot;year: 2016&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">budget_multiply</span> <span class="o">=</span> <span class="mf">1e4</span>  <span class="c1"># use 1e1 or even 2 for a quick first test run</span>
 <span class="n">observer</span> <span class="o">=</span> <span class="n">cocoex</span><span class="o">.</span><span class="n">Observer</span><span class="p">(</span><span class="s2">&quot;bbob&quot;</span><span class="p">,</span> <span class="s2">&quot;result_folder: myoptimizer-on-bbob&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">suite</span><span class="p">:</span>  <span class="c1"># loop over all problems</span>
     <span class="n">observer</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  <span class="c1"># prepare logging of necessary data</span>
     <span class="n">fmin</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">initial_solution</span><span class="p">)</span>  <span class="c1"># disp=False would silence fmin output</span>
+    <span class="k">while</span> <span class="p">(</span><span class="ow">not</span> <span class="n">p</span><span class="o">.</span><span class="n">final_target_hit</span> <span class="ow">and</span>  <span class="c1"># apply restarts, if so desired</span>
+           <span class="n">p</span><span class="o">.</span><span class="n">evaluations</span> <span class="o">&lt;</span> <span class="n">p</span><span class="o">.</span><span class="n">dimension</span> <span class="o">*</span> <span class="n">budget_multiplier</span><span class="p">):</span>
+        <span class="n">fmin</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">lower_bounds</span> <span class="o">+</span> <span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">dimension</span><span class="p">)</span> <span class="o">+</span> <span class="n">rand</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">dimension</span><span class="p">))</span> <span class="o">*</span>
+                    <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">upper_bounds</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">lower_bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="n">cocopp</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="s1">&#39;exdata/myoptimizer-on-bbob&#39;</span><span class="p">)</span>  <span class="c1"># invoke data post-processing</span>
 </pre></div>
@@ -197,7 +207,7 @@ indication of <em>how much</em> better an algorithm is.
 That is, the results of benchmarking often provide no indication of
 <em>relevance</em>;
 the main output is often hundreds of tabulated numbers interpretable on
-an ordinal scale (ranking) only.
+an ordinal (ranking) scale only.
 Addressing a point of a common confusion, <em>statistical</em> significance is only
 a secondary and by no means sufficient condition for <em>relevance</em>.</td></tr>
 </tbody>
@@ -212,9 +222,7 @@ implementation details.</td></tr>
 <table class="docutils footnote" frame="void" id="id12" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[3]</a></td><td>In order to get even more insightful results on the comparatively
-difficult <code class="docutils literal"><span class="pre">bbob</span></code> benchmark suite, additionally randomized restarts are advisable.
-Example code is given in <a class="reference external" href="https://github.com/numbbo/coco/blob/master/code-experiments/build/python/example_experiment.py"><code class="docutils literal"><span class="pre">example_experiment.py</span></code></a> which runs
+<tr><td class="label"><a class="fn-backref" href="#id6">[3]</a></td><td>See also <a class="reference external" href="https://github.com/numbbo/coco/blob/master/code-experiments/build/python/example_experiment.py"><code class="docutils literal"><span class="pre">example_experiment.py</span></code></a> which runs
 out-of-the-box as a benchmarking Python script.</td></tr>
 </tbody>
 </table>
@@ -227,10 +235,10 @@ to the <a class="reference external" href="http://coco.gforge.inria.fr/doku.php?
 </table>
 <div class="section" id="why-coco">
 <h3>Why <a class="reference external" href="https://github.com/numbbo/coco">COCO</a>?<a class="headerlink" href="#why-coco" title="Permalink to this headline">¶</a></h3>
-<p>Appart from diminishing the burden (time) and the pitfalls, bugs
+<p>Appart from diminishing the time burden and the pitfalls, bugs
 or omissions of the repetitive coding task for experimenters, our aim is to
-provide a <em>conceptual guideline for better benchmarking</em>. Our guideline has
-the following defining features.</p>
+provide a <em>conceptual guideline for better benchmarking</em>. Our setup and
+guideline has the following defining features.</p>
 <ol class="arabic">
 <li><p class="first">Benchmark functions are</p>
 <ol class="arabic simple">
@@ -240,7 +248,7 @@ are explicitly known to the scientific community.</li>
 interpretation of performance results.</li>
 <li>difficult to &#8220;defeat&#8221;, that is, they do not
 have artificial regularities that can easily be (intentionally or unintentionally)
-exploited by an algorithm. <a class="footnote-reference" href="#id25" id="id18">[5]</a></li>
+exploited by an algorithm. <a class="footnote-reference" href="#id26" id="id18">[5]</a></li>
 <li>scalable with the input dimension <a class="reference internal" href="#whi1996" id="id19">[WHI1996]</a>.</li>
 </ol>
 </li>
@@ -248,24 +256,25 @@ exploited by an algorithm. <a class="footnote-reference" href="#id25" id="id18">
 experiment, the experimental procedure is <em>budget-free</em> <a class="reference internal" href="#han2016ex" id="id20">[HAN2016ex]</a>.</p>
 </li>
 <li><p class="first">A single performance measure is used &#8212; and thereafter aggregated and
-displayed in
-several ways &#8212; namely <strong>runtime</strong>, <em>measured in
+displayed in several ways &#8212;, namely <strong>runtime</strong>, <em>measured in
 number of</em> <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-<em>evaluations</em> <a class="reference internal" href="#han2016perf" id="id21">[HAN2016perf]</a>. This runtime measure has the
 advantages to</p>
 <ul class="simple">
 <li>be independent of the computational platform, language, compiler, coding
-styles, and other specific experimental conditions <a class="footnote-reference" href="#id27" id="id22">[6]</a></li>
+styles, and other specific experimental conditions <a class="footnote-reference" href="#id28" id="id22">[6]</a></li>
+<li>be independent, as a measurement, of the specific function on which it has
+been obtained</li>
 <li>be relevant, meaningful and easily interpretable without expert domain knowledge</li>
-<li>be quantitative on the ratio scale <a class="footnote-reference" href="#id29" id="id23">[7]</a> <a class="reference internal" href="#ste1946" id="id24">[STE1946]</a></li>
+<li>be quantitative on the ratio scale <a class="footnote-reference" href="#id30" id="id23">[7]</a> <a class="reference internal" href="#ste1946" id="id24">[STE1946]</a></li>
 <li>assume a wide range of values</li>
-<li>aggregate over a collection of values in a meaningful way.</li>
+<li>aggregate over a collection of values in a meaningful way <a class="footnote-reference" href="#id31" id="id25">[8]</a>.</li>
 </ul>
 <p>A <em>missing</em> runtime value is considered as possible outcome (see below).</p>
 </li>
 <li><p class="first">The display is as comprehensible, intuitive and informative as possible.
 We believe that the details matter.
-Aggregation over dimension is avoided, because dimension is an a priori
-known parameter that can and should be used for algorithm design decisions.
+Aggregation over dimension is avoided, because dimension is a parameter
+known in advance that can and should be used for algorithm design decisions.
 This is possible without significant drawbacks, because all functions are
 scalable in the dimension.</p>
 </li>
@@ -273,35 +282,42 @@ scalable in the dimension.</p>
 <p>We believe however that in the <em>process</em> of algorithm <em>design</em>, a benchmarking
 framework like <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> has its limitations.
 During the design phase, usually fewer benchmark functions should be used, the
-functions and measuring tools should be tailored to the given algorithm and the
-design question, and the overall procedure should often be rather informal and
+functions and measuring tools should be tailored to the given algorithm and
+design question, and the overall procedure should usually be rather informal and
 interactive with rapid iterations.
 A benchmarking framework then serves to conduct the formalized validation
 experiment of the design <em>outcome</em> and can be used for regression testing.</p>
-<table class="docutils footnote" frame="void" id="id25" rules="none">
+<table class="docutils footnote" frame="void" id="id26" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id18">[5]</a></td><td>For example, the optimum is not in all-zeros, optima are not placed
-on a regular grid, most functions are not separable <a class="reference internal" href="#whi1996" id="id26">[WHI1996]</a>. The
+on a regular grid, most functions are not separable <a class="reference internal" href="#whi1996" id="id27">[WHI1996]</a>. The
 objective to remain comprehensible makes it more challenging to design
 non-regular functions. Which regularities are common place in real-world
 optimization problems remains an open question.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id27" rules="none">
+<table class="docutils footnote" frame="void" id="id28" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id22">[6]</a></td><td>Runtimes measured in <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-evaluations are widely
 comparable and designed to stay. The experimental procedure
-<a class="reference internal" href="#han2016ex" id="id28">[HAN2016ex]</a> includes however a timing experiment which records the
+<a class="reference internal" href="#han2016ex" id="id29">[HAN2016ex]</a> includes however a timing experiment which records the
 internal computational effort of the algorithm in CPU or wall clock time.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id29" rules="none">
+<table class="docutils footnote" frame="void" id="id30" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id23">[7]</a></td><td>As opposed to a ranking of algorithms based on their solution quality
 achieved after a given budget.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id31" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id25">[8]</a></td><td>With the caveat that the <em>arithmetic average</em> is dominated by large values
+which can compromise its informative value.</td></tr>
 </tbody>
 </table>
 </div>
@@ -322,9 +338,10 @@ A problem
 can be evaluated and returns an <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-value or -vector and, in case,
 a <img class="math" src="_images/math/8f6db44bda25a42ce182b1b908fe26305168addc.png" alt="g" style="vertical-align: -4px"/>-vector.
 In the context of performance assessment, a target <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>- or
-indicator-value is added to define a problem.</dd>
+indicator-value is added to define a problem. A problem is considered as
+solved when the given or the most difficult available target is obtained.</dd>
 <dt><em>runtime</em></dt>
-<dd>We define <em>runtime</em>, or <em>run-length</em> <a class="reference internal" href="#hoo1998" id="id30">[HOO1998]</a> as the <em>number of
+<dd>We define <em>runtime</em>, or <em>run-length</em> <a class="reference internal" href="#hoo1998" id="id32">[HOO1998]</a> as the <em>number of
 evaluations</em> conducted on a given problem until a prescribed target value is
 hit, also referred to as number of <em>function</em> evaluations or <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-evaluations.
 Runtime is our central performance measure.</dd>
@@ -334,19 +351,22 @@ twenty and a hundred, where the number of objectives <img class="math" src="_ima
 </dl>
 </div>
 </div>
-<div class="section" id="functions-instances-problems-and-targets">
-<h2>Functions, Instances, Problems, and Targets<a class="headerlink" href="#functions-instances-problems-and-targets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="functions-instances-and-problems">
+<h2>Functions, Instances, and Problems<a class="headerlink" href="#functions-instances-and-problems" title="Permalink to this headline">¶</a></h2>
 <p>In the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> framework we consider <strong>functions</strong>, <img class="math" src="_images/math/79f3bb3d79a8de41a5a700d22d90d16bda92171d.png" alt="f_i" style="vertical-align: -4px"/>, for each suite
 distinguished by their identifier <img class="math" src="_images/math/4d7143c57d4cf8653a2aa6b4c3c6c97446fc1592.png" alt="i=1,2,\dots" style="vertical-align: -4px"/> .
-Functions are further
-<em>parametrized</em> by the (input) dimension, <img class="math" src="_images/math/273f486f7ce4023c108fff2c278487a34aaa6321.png" alt="n" style="vertical-align: 0px"/>, and the instance number, <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/>, <a class="footnote-reference" href="#id34" id="id31">[8]</a>
-that is, for a given <img class="math" src="_images/math/862c9e331021da02c140ce6caef6f1d6519f571c.png" alt="m" style="vertical-align: 0px"/> we have</p>
+Functions are further <em>parametrized</em> by the (input) dimension, <img class="math" src="_images/math/273f486f7ce4023c108fff2c278487a34aaa6321.png" alt="n" style="vertical-align: 0px"/>, and the
+instance number, <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/>.
+We can think of <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/> as an index to a continuous parameter vector setting, as it
+parametrizes, among others things, translations and rotations. In practice, <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/>
+is the discrete identifier for single instantiations of these parameters.
+For a given <img class="math" src="_images/math/862c9e331021da02c140ce6caef6f1d6519f571c.png" alt="m" style="vertical-align: 0px"/>, we then have</p>
 <div class="math">
 <p><img src="_images/math/870d97f75649775ba4ea7c242dd34e37f50be4c4.png" alt="\finstance_i \equiv f(n, i, j):\R^n \to \mathbb{R}^m \quad
 \x \mapsto \finstance_i (\x) = f(n, i, j)(\x)\enspace."/></p>
 </div><p>Varying <img class="math" src="_images/math/273f486f7ce4023c108fff2c278487a34aaa6321.png" alt="n" style="vertical-align: 0px"/> or <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/> leads to a variation of the same function
 <img class="math" src="_images/math/fc410bef70dece978b90fa5bb68c683360db785b.png" alt="i" style="vertical-align: 0px"/> of a given suite.
-By fixing <img class="math" src="_images/math/273f486f7ce4023c108fff2c278487a34aaa6321.png" alt="n" style="vertical-align: 0px"/> and <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/> for function <img class="math" src="_images/math/79f3bb3d79a8de41a5a700d22d90d16bda92171d.png" alt="f_i" style="vertical-align: -4px"/>, we define an optimization <strong>problem</strong>
+Fixing <img class="math" src="_images/math/273f486f7ce4023c108fff2c278487a34aaa6321.png" alt="n" style="vertical-align: 0px"/> and <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/> of function <img class="math" src="_images/math/79f3bb3d79a8de41a5a700d22d90d16bda92171d.png" alt="f_i" style="vertical-align: -4px"/> defines an optimization <strong>problem</strong>
 <img class="math" src="_images/math/6677d043e7a3bbb44f3c74922a5efc455f7f0730.png" alt="(n, i, j)\equiv(f_i, n, j)" style="vertical-align: -4px"/> that can be presented to the optimization algorithm. Each problem receives again
 an index in the suite, mapping the triple <img class="math" src="_images/math/558b03aade774fffd5caced4fd5e81fb9bcc8f1b.png" alt="(n, i, j)" style="vertical-align: -4px"/> to a single
 number.</p>
@@ -354,12 +374,12 @@ number.</p>
 and instance index is of purely semantic nature.
 This semantics however is important in how we display and
 interpret the results. We interpret <strong>varying the instance</strong> parameter as
-a natural randomization for experiments <a class="footnote-reference" href="#id35" id="id32">[9]</a> in order to</p>
+a natural randomization for experiments <a class="footnote-reference" href="#id35" id="id33">[9]</a> in order to</p>
 <blockquote>
 <div><ul>
 <li><p class="first">generate repetitions on a function and</p>
 </li>
-<li><p class="first">average away irrelevant aspects of the function thereby providing</p>
+<li><p class="first">average away irrelevant aspects of the function definition, thereby providing</p>
 <blockquote>
 <div><ul class="simple">
 <li>generality which alleviates the problem of overfitting, and</li>
@@ -372,20 +392,11 @@ irrelevant or artificial function properties.</li>
 </div></blockquote>
 <p>For example, we consider the absolute location of the optimum not a defining
 function feature. Consequently, in a typical <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> benchmark suite, instances
-with randomized search space translations are presented to the optimizer. <a class="footnote-reference" href="#id36" id="id33">[10]</a></p>
-<table class="docutils footnote" frame="void" id="id34" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id31">[8]</a></td><td>We can think of <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/> as an index to a continuous parameter vector setting,
-as it parametrizes, among others things, translations and rotations. In
-practice, <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/> is the discrete identifier for single instantiations of
-these parameters.</td></tr>
-</tbody>
-</table>
+with randomized search space translations are presented to the optimizer. <a class="footnote-reference" href="#id36" id="id34">[10]</a></p>
 <table class="docutils footnote" frame="void" id="id35" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id32">[9]</a></td><td>Changing or sweeping through a relevant feature of the problem class,
+<tr><td class="label"><a class="fn-backref" href="#id33">[9]</a></td><td>Changing or sweeping through a relevant feature of the problem class,
 systematically or randomized, is another possible usage of instance
 parametrization.</td></tr>
 </tbody>
@@ -393,7 +404,7 @@ parametrization.</td></tr>
 <table class="docutils footnote" frame="void" id="id36" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id33">[10]</a></td><td>Conducting either several trials on instances with randomized search space
+<tr><td class="label"><a class="fn-backref" href="#id34">[10]</a></td><td>Conducting either several trials on instances with randomized search space
 translations or with a randomized initial solution is equivalent, given
 that the optimizer behaves translation invariant (disregarding domain
 boundaries).</td></tr>
@@ -404,8 +415,8 @@ boundaries).</td></tr>
 <h2>Runtime and Target Values<a class="headerlink" href="#runtime-and-target-values" title="Permalink to this headline">¶</a></h2>
 <p>In order to measure the runtime of an algorithm on a problem, we
 establish a hitting time condition.
-We prescribe a <strong>target value</strong>, <img class="math" src="_images/math/dc02ab1d58825bc03d8f3711007c26c0beb55232.png" alt="t" style="vertical-align: 0px"/>, which is an <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>- or
-indicator-value <a class="reference internal" href="#han2016perf" id="id37">[HAN2016perf]</a> <a class="reference internal" href="#bro2016" id="id38">[BRO2016]</a>.
+We prescribe a <strong>target value</strong>, <img class="math" src="_images/math/dc02ab1d58825bc03d8f3711007c26c0beb55232.png" alt="t" style="vertical-align: 0px"/>, which is an <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>-value or more generally a
+quality indicator-value <a class="reference internal" href="#han2016perf" id="id37">[HAN2016perf]</a> <a class="reference internal" href="#bro2016" id="id38">[BRO2016]</a>.
 For a single run, when an algorithm reaches or surpasses the target value <img class="math" src="_images/math/dc02ab1d58825bc03d8f3711007c26c0beb55232.png" alt="t" style="vertical-align: 0px"/>
 on problem <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/>, we say it has <em>solved the problem</em> <img class="math" src="_images/math/6abd084e25cb7cb33a31d01b8f76f4382506956c.png" alt="(f_i, n, j, t)" style="vertical-align: -4px"/> &#8212; it was successful. <a class="footnote-reference" href="#id42" id="id39">[11]</a></p>
 <p>Now, the <strong>runtime</strong> is the evaluation count when the target value <img class="math" src="_images/math/dc02ab1d58825bc03d8f3711007c26c0beb55232.png" alt="t" style="vertical-align: 0px"/> was
@@ -427,8 +438,9 @@ restarts should be done <a class="reference internal" href="#han2016ex" id="id41
 <table class="docutils footnote" frame="void" id="id42" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id39">[11]</a></td><td>Note the use of the term <em>problem</em> in two meanings: as the problem the
-algorithm is benchmarked on, <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/>, and as the problem, <img class="math" src="_images/math/6abd084e25cb7cb33a31d01b8f76f4382506956c.png" alt="(f_i, n, j, t)" style="vertical-align: -4px"/>, an algorithm can
+<tr><td class="label"><a class="fn-backref" href="#id39">[11]</a></td><td>Reflecting the <em>anytime</em> aspect of the experimental setup,
+we use the term <em>problem</em> in two meanings: as the problem the
+algorithm is benchmarked on, <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/>, and as the problem, <img class="math" src="_images/math/6abd084e25cb7cb33a31d01b8f76f4382506956c.png" alt="(f_i, n, j, t)" style="vertical-align: -4px"/>, an algorithm may
 solve by hitting the target <img class="math" src="_images/math/dc02ab1d58825bc03d8f3711007c26c0beb55232.png" alt="t" style="vertical-align: 0px"/> with the runtime, <img class="math" src="_images/math/29a2a393300437c22847c898bec704867934d5e9.png" alt="\mathrm{RT}(f_i, n, j, t)" style="vertical-align: -4px"/>, or may fail to solve.
 Each problem <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/> gives raise to a collection of dependent problems <img class="math" src="_images/math/6abd084e25cb7cb33a31d01b8f76f4382506956c.png" alt="(f_i, n, j, t)" style="vertical-align: -4px"/>.
 Viewed as random variables, the events <img class="math" src="_images/math/29a2a393300437c22847c898bec704867934d5e9.png" alt="\mathrm{RT}(f_i, n, j, t)" style="vertical-align: -4px"/> given <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/> are not
@@ -439,10 +451,10 @@ independent events for different values of <img class="math" src="_images/math/d
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id40">[12]</a></td><td>Target values are directly linked to a problem, leaving the burden to
-properly define the targets with the designer of the benchmark suite.
-The alternative is to present final <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>- or indicator-values as results,
-leaving the (rather unsurmountable) burden to interpret these values to the
-reader.
+define the targets with the designer of the benchmark suite.
+The alternative, namely to present the obtained <img class="math" src="_images/math/f0307af130a9303d3def5b2c46714d19118bac36.png" alt="f" style="vertical-align: -4px"/>- or indicator-values as results,
+leaves the (rather unsurmountable) burden to interpret the meaning of these
+indicator values to the experimenter or the final audience.
 Fortunately, there is an automatized generic way to generate target values
 from observed runtimes, the so-called run-length based target values
 <a class="reference internal" href="#han2016perf" id="id44">[HAN2016perf]</a>.</td></tr>
@@ -451,39 +463,48 @@ from observed runtimes, the so-called run-length based target values
 <div class="section" id="restarts-and-simulated-restarts">
 <span id="sec-restarts"></span><h3>Restarts and Simulated Restarts<a class="headerlink" href="#restarts-and-simulated-restarts" title="Permalink to this headline">¶</a></h3>
 <p>An optimization algorithm is bound to terminate and, in the single-objective case, return a recommended
-solution, <img class="math" src="_images/math/d1304f0b7773d247ff0207c9e036d817d003555b.png" alt="\x" style="vertical-align: 0px"/>, for the problem, <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/>.
-It solves thereby all problems <img class="math" src="_images/math/6abd084e25cb7cb33a31d01b8f76f4382506956c.png" alt="(f_i, n, j, t)" style="vertical-align: -4px"/> for which <img class="math" src="_images/math/9132780939852d3f51a824c5ac4fecc302013d72.png" alt="f(\x)\le t" style="vertical-align: -4px"/>.
+solution, <img class="math" src="_images/math/d1304f0b7773d247ff0207c9e036d817d003555b.png" alt="\x" style="vertical-align: 0px"/>, for the problem, <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/>. <a class="footnote-reference" href="#id54" id="id45">[13]</a>
+The algorithm solves thereby all problems <img class="math" src="_images/math/6abd084e25cb7cb33a31d01b8f76f4382506956c.png" alt="(f_i, n, j, t)" style="vertical-align: -4px"/> for which <img class="math" src="_images/math/9132780939852d3f51a824c5ac4fecc302013d72.png" alt="f(\x)\le t" style="vertical-align: -4px"/>.
 Independent restarts from different, randomized initial solutions are a simple
-but powerful tool to increase the number of solved problems <a class="reference internal" href="#har1999" id="id45">[HAR1999]</a> &#8212; namely by increasing the number of <img class="math" src="_images/math/dc02ab1d58825bc03d8f3711007c26c0beb55232.png" alt="t" style="vertical-align: 0px"/>-values, for which the problem <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/>
-was solved. <a class="footnote-reference" href="#id53" id="id46">[13]</a>
+but powerful tool to increase the number of solved problems <a class="reference internal" href="#har1999" id="id46">[HAR1999]</a> &#8212; namely by increasing the number of <img class="math" src="_images/math/dc02ab1d58825bc03d8f3711007c26c0beb55232.png" alt="t" style="vertical-align: 0px"/>-values, for which the problem <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/>
+was solved. <a class="footnote-reference" href="#id55" id="id47">[14]</a>
 Independent restarts tend to increase the success rate, but they generally do
 not <em>change</em> the performance <em>assessment</em>, because the successes materialize at
-greater runtimes <a class="reference internal" href="#han2016perf" id="id47">[HAN2016perf]</a>.
+greater runtimes <a class="reference internal" href="#han2016perf" id="id48">[HAN2016perf]</a>.
 Therefore, we call our approach <em>budget-free</em>.
-Restarts however &#8220;<em>improve the reliability, comparability, precision, and &#8220;visibility&#8221; of the measured results</em>&#8221; <a class="reference internal" href="#han2016ex" id="id48">[HAN2016ex]</a>.</p>
-<p><em>Simulated restarts</em> <a class="reference internal" href="#han2010" id="id49">[HAN2010]</a> <a class="reference internal" href="#han2016perf" id="id50">[HAN2016perf]</a> are used to determine a runtime for unsuccessful runs. Semantically, this is only valid if we interpret different
-instances as random repetitions.
-Resembling the bootstrapping method <a class="reference internal" href="#efr1994" id="id51">[EFR1994]</a>, when we face an unsolved problem,
+Restarts however &#8220;<em>improve the reliability, comparability, precision, and &#8220;visibility&#8221; of the measured results</em>&#8221; <a class="reference internal" href="#han2016ex" id="id49">[HAN2016ex]</a>.</p>
+<p><em>Simulated restarts</em> <a class="reference internal" href="#han2010" id="id50">[HAN2010]</a> <a class="reference internal" href="#han2016perf" id="id51">[HAN2016perf]</a> are used to determine a runtime for unsuccessful runs.
+Semantically, <em>this is only valid if we can interpret different
+instances as random repetitions</em>.
+Resembling the bootstrapping method <a class="reference internal" href="#efr1994" id="id52">[EFR1994]</a>, when we face an unsolved problem,
 we draw uniformly at random a new <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/> until we find an instance such that <img class="math" src="_images/math/6abd084e25cb7cb33a31d01b8f76f4382506956c.png" alt="(f_i, n, j, t)" style="vertical-align: -4px"/>
-was solved. <a class="footnote-reference" href="#id54" id="id52">[14]</a>
+was solved. <a class="footnote-reference" href="#id56" id="id53">[15]</a>
 The evaluations done on the first unsolved problem and on all subsequently
 drawn unsolved problems are added to the runtime on the last problem and
-are considered as runtime on the original unsolved problem.
+are considered as runtime on the originally unsolved problem.
 This method is applied if a problem instance was not solved and is
 (only) available if at least one problem instance was solved.
 It allows to directly compare algorithms with different success probabilities.</p>
-<table class="docutils footnote" frame="void" id="id53" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id46">[13]</a></td><td>For a given problem <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/>, the number of acquired runtime values, <img class="math" src="_images/math/29a2a393300437c22847c898bec704867934d5e9.png" alt="\mathrm{RT}(f_i, n, j, t)" style="vertical-align: -4px"/>
-is monotonously increasing with the budget used. Considered as random
-variables, these runtimes are not independent.</td></tr>
-</tbody>
-</table>
 <table class="docutils footnote" frame="void" id="id54" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id52">[14]</a></td><td>More specifically, we consider the problems <img class="math" src="_images/math/ae95f31e6a988bc22c9d77572fc9468269b004f6.png" alt="(f_i, n, j, t(j))" style="vertical-align: -4px"/> for
+<tr><td class="label"><a class="fn-backref" href="#id45">[13]</a></td><td>More specifically, we use the anytime scenario where we consider
+at each evaluation the evolving quality indicator value.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id55" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id47">[14]</a></td><td>The quality indicator is always defined such that for a given problem <img class="math" src="_images/math/301c64935fc6bdae853a720871286bccf6cae341.png" alt="(f_i, n, j)" style="vertical-align: -4px"/> the
+number of acquired runtime values <img class="math" src="_images/math/29a2a393300437c22847c898bec704867934d5e9.png" alt="\mathrm{RT}(f_i, n, j, t)" style="vertical-align: -4px"/> (hitting a target indicator value <img class="math" src="_images/math/dc02ab1d58825bc03d8f3711007c26c0beb55232.png" alt="t" style="vertical-align: 0px"/>)
+is monotonously increasing with the used budget. Considered as random
+variables, these runtimes are not independent.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id56" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id53">[15]</a></td><td>More specifically, we consider the problems <img class="math" src="_images/math/ae95f31e6a988bc22c9d77572fc9468269b004f6.png" alt="(f_i, n, j, t(j))" style="vertical-align: -4px"/> for
 all benchmarked instances <img class="math" src="_images/math/82ae6a6921ae07dd0e556d8402502aaea53a96d4.png" alt="j" style="vertical-align: -4px"/>. The targets <img class="math" src="_images/math/bcfd2d20d1baefb0af5e251bb6f3e3a9e4e9a928.png" alt="t(j)" style="vertical-align: -4px"/> depend on the instance
 in a way to make the problems comparable.</td></tr>
 </tbody>
@@ -496,7 +517,7 @@ performance assessment. This means we consider at least <img class="math" src="_
 up to <img class="math" src="_images/math/16ec9066ffdaaab3f0437d90ad41128e491c406f.png" alt="100\times15\times100=150\,000" style="vertical-align: -1px"/> runtimes for the performance assessment.
 To make them amenable to the experimenter, we need to summarize these data.</p>
 <p>Our idea behind an aggregation is to make a statistical summary over a set or
-subset of <em>problems of interest</em> over which we assume a uniform distribution.
+subset of <em>problems of interest over which we assume a uniform distribution</em>.
 From a practical perspective this means to have no simple way to distinguish
 between these problems and to select an optimization algorithm accordingly &#8212; in
 which case an aggregation for a single algorithm would not be helpful &#8212;
@@ -506,14 +527,14 @@ should be used for algorithm selection.</p>
 <p>We have several ways to aggregate the resulting runtimes.</p>
 <blockquote>
 <div><ul class="simple">
-<li>Empirical distribution functions (ECDF). In the domain of
-optimization, ECDF are also known as <em>data profiles</em> <a class="reference internal" href="#mor2009" id="id55">[MOR2009]</a>. We
+<li>Empirical (cumulative) distribution functions (ECDF). In the domain of
+optimization, ECDF are also known as <em>data profiles</em> <a class="reference internal" href="#mor2009" id="id57">[MOR2009]</a>. We
 prefer the simple ECDF over the more innovative performance profiles
-<a class="reference internal" href="#mor2002" id="id56">[MOR2002]</a> for two reasons.
+<a class="reference internal" href="#mor2002" id="id58">[MOR2002]</a> for two reasons.
 ECDF (i) do not depend on other (presented) algorithms, that is, they are
 unconditionally comparable across different publications, and (ii) let us
-distinguish for the considered algorithm in a natural way easy problems from
-difficult problems. <a class="footnote-reference" href="#id58" id="id57">[15]</a>
+distinguish, for the considered algorithm, in a natural way easy problems from
+difficult problems. <a class="footnote-reference" href="#id60" id="id59">[16]</a>
 We usually display ECDF on the log scale, which makes the area
 above the curve and the <em>difference area</em> between two curves a meaningful
 conception.</li>
@@ -524,20 +545,20 @@ the values is similar.
 Otherwise, the average of log-runtimes, or <em>geometric</em> average,
 is recommended.</li>
 <li>Restarts and simulated restarts, see Section <a class="reference internal" href="#sec-restarts"><span>Restarts and Simulated Restarts</span></a>, do not
-literally aggregate runtimes (which are literally defined only when <img class="math" src="_images/math/dc02ab1d58825bc03d8f3711007c26c0beb55232.png" alt="t" style="vertical-align: 0px"/> was
-hit).  They aggregate, however, time data to eventually supplement missing runtime
-values.</li>
+aggregate runtimes in the literal meaning (they are literally defined only when <img class="math" src="_images/math/dc02ab1d58825bc03d8f3711007c26c0beb55232.png" alt="t" style="vertical-align: 0px"/> was
+hit).  They aggregate, however, time data to eventually supplement, if applicable,
+all missing runtime values.</li>
 </ul>
 </div></blockquote>
-<table class="docutils footnote" frame="void" id="id58" rules="none">
+<table class="docutils footnote" frame="void" id="id60" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id57">[15]</a></td><td>When reading a performance profile, a question immediately crossing ones
+<tr><td class="label"><a class="fn-backref" href="#id59">[16]</a></td><td>When reading a performance profile, a question immediately crossing ones
 mind is often whether a large runtime difference is observed mainly because
 one algorithm solves the problem very quickly.
 This question cannot be answered from the profile.
 The advantage (i) over data profiles disappears when using run-length based
-target values <a class="reference internal" href="#han2016perf" id="id59">[HAN2016perf]</a>.</td></tr>
+target values <a class="reference internal" href="#han2016perf" id="id61">[HAN2016perf]</a>.</td></tr>
 </tbody>
 </table>
 </div>
@@ -554,7 +575,7 @@ that outputs two files <code class="docutils literal"><span class="pre">coco.h</
 experiments within the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> framework.</dd>
 <dt>The <em>post-processing</em> part</dt>
 <dd>processes the data and displays the resulting runtimes. This part is
-entirely written in Python and heavily depends on <a class="reference external" href="http://matplotlib.org/"><code class="docutils literal"><span class="pre">matplotlib</span></code></a> <a class="reference internal" href="#hun2007" id="id61">[HUN2007]</a>.</dd>
+entirely written in Python and heavily depends on <a class="reference external" href="http://matplotlib.org/"><code class="docutils literal"><span class="pre">matplotlib</span></code></a> <a class="reference internal" href="#hun2007" id="id63">[HUN2007]</a>.</dd>
 </dl>
 </div>
 <div class="section" id="test-suites">
@@ -562,12 +583,12 @@ entirely written in Python and heavily depends on <a class="reference external" 
 <p>Currently, the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> framework provides three different test suites.</p>
 <dl class="docutils">
 <dt><code class="docutils literal"><span class="pre">bbob</span></code></dt>
-<dd>contains 24 functions in five subgroups <a class="reference internal" href="#han2009fun" id="id62">[HAN2009fun]</a>.</dd>
+<dd>contains 24 functions in five subgroups <a class="reference internal" href="#han2009fun" id="id64">[HAN2009fun]</a>.</dd>
 <dt><code class="docutils literal"><span class="pre">bbob-noisy</span></code></dt>
-<dd>contains 30 noisy problems in three subgroups <a class="reference internal" href="#han2009noi" id="id63">[HAN2009noi]</a>,
+<dd>contains 30 noisy problems in three subgroups <a class="reference internal" href="#han2009noi" id="id65">[HAN2009noi]</a>,
 currently only implemented in the <a class="reference external" href="http://coco.gforge.inria.fr/doku.php?id=downloads">old code basis</a>.</dd>
 <dt><code class="docutils literal"><span class="pre">bbob-biobj</span></code></dt>
-<dd>contains 55 bi-objective (<img class="math" src="_images/math/35a82f7fa7e77be3728336c5bd59dc655eb19b57.png" alt="m=2" style="vertical-align: 0px"/>) functions in 15 subgroups <a class="reference internal" href="#tus2016" id="id64">[TUS2016]</a>.</dd>
+<dd>contains 55 bi-objective (<img class="math" src="_images/math/35a82f7fa7e77be3728336c5bd59dc655eb19b57.png" alt="m=2" style="vertical-align: 0px"/>) functions in 15 subgroups <a class="reference internal" href="#tus2016" id="id66">[TUS2016]</a>.</dd>
 </dl>
 <H2>Acknowledgments</H2><p>The authors would like to thank Raymond Ros, Steffen Finck, Marc Schoenauer,
 Petr Posik and Dejan Tušar for their many invaluable contributions to this work.</p>
@@ -583,56 +604,56 @@ of the French National Research Agency.</p>
 <table class="docutils citation" frame="void" id="han2016perf" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[HAN2016perf]</td><td><em>(<a class="fn-backref" href="#id21">1</a>, <a class="fn-backref" href="#id37">2</a>, <a class="fn-backref" href="#id44">3</a>, <a class="fn-backref" href="#id47">4</a>, <a class="fn-backref" href="#id50">5</a>, <a class="fn-backref" href="#id59">6</a>)</em> N. Hansen, A. Auger, D. Brockhoff, D. Tušar, T. Tušar (2016).
+<tr><td class="label">[HAN2016perf]</td><td><em>(<a class="fn-backref" href="#id21">1</a>, <a class="fn-backref" href="#id37">2</a>, <a class="fn-backref" href="#id44">3</a>, <a class="fn-backref" href="#id48">4</a>, <a class="fn-backref" href="#id51">5</a>, <a class="fn-backref" href="#id61">6</a>)</em> N. Hansen, A. Auger, D. Brockhoff, D. Tušar, T. Tušar (2016).
 <a class="reference external" href="http://numbbo.github.io/coco-doc/perf-assessment">COCO: Performance Assessment</a>. <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1605.03560">arXiv:1605.03560</a>.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="han2010" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id49">[HAN2010]</a></td><td>N. Hansen, A. Auger, R. Ros, S. Finck, and P. Posik (2010).
+<tr><td class="label"><a class="fn-backref" href="#id50">[HAN2010]</a></td><td>N. Hansen, A. Auger, R. Ros, S. Finck, and P. Posik (2010).
 Comparing Results of 31 Algorithms from the Black-Box Optimization Benchmarking BBOB-2009. Workshop Proceedings of the GECCO Genetic and Evolutionary Computation Conference 2010, ACM, pp. 1689-1696.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="han2009fun" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id62">[HAN2009fun]</a></td><td>N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
+<tr><td class="label"><a class="fn-backref" href="#id64">[HAN2009fun]</a></td><td>N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
 <a class="reference external" href="http://coco.gforge.inria.fr/">Real-parameter black-box optimization benchmarking 2009: Noiseless functions definitions</a>. <a class="reference external" href="https://hal.inria.fr/inria-00362633">Research Report RR-6829</a>, Inria, updated February 2010.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="han2009noi" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id63">[HAN2009noi]</a></td><td>N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
+<tr><td class="label"><a class="fn-backref" href="#id65">[HAN2009noi]</a></td><td>N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
 <a class="reference external" href="http://coco.gforge.inria.fr/">Real-Parameter Black-Box Optimization Benchmarking 2009: Noisy Functions Definitions</a>. <a class="reference external" href="https://hal.inria.fr/inria-00369466">Research Report RR-6869</a>, Inria, updated February 2010.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="han2016ex" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[HAN2016ex]</td><td><em>(<a class="fn-backref" href="#id20">1</a>, <a class="fn-backref" href="#id28">2</a>, <a class="fn-backref" href="#id41">3</a>, <a class="fn-backref" href="#id48">4</a>)</em> N. Hansen, T. Tušar, A. Auger, D. Brockhoff, O. Mersmann (2016).
+<tr><td class="label">[HAN2016ex]</td><td><em>(<a class="fn-backref" href="#id20">1</a>, <a class="fn-backref" href="#id29">2</a>, <a class="fn-backref" href="#id41">3</a>, <a class="fn-backref" href="#id49">4</a>)</em> N. Hansen, T. Tušar, A. Auger, D. Brockhoff, O. Mersmann (2016).
 <a class="reference external" href="http://numbbo.github.io/coco-doc/experimental-setup/">COCO: The Experimental Procedure</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1603.08776">arXiv:1603.08776</a>.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="hun2007" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id61">[HUN2007]</a></td><td>J. D. Hunter (2007). <a class="reference external" href="http://matplotlib.org/">Matplotlib</a>: A 2D graphics environment,
+<tr><td class="label"><a class="fn-backref" href="#id63">[HUN2007]</a></td><td>J. D. Hunter (2007). <a class="reference external" href="http://matplotlib.org/">Matplotlib</a>: A 2D graphics environment,
 <em>Computing In Science &amp; Engineering</em>, 9(3): 90-95.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="efr1994" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id51">[EFR1994]</a></td><td>B. Efron and R. Tibshirani (1994). <em>An introduction to the
+<tr><td class="label"><a class="fn-backref" href="#id52">[EFR1994]</a></td><td>B. Efron and R. Tibshirani (1994). <em>An introduction to the
 bootstrap</em>. CRC Press.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="har1999" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id45">[HAR1999]</a></td><td>G. R. Harik and F. G. Lobo (1999). A parameter-less genetic
+<tr><td class="label"><a class="fn-backref" href="#id46">[HAR1999]</a></td><td>G. R. Harik and F. G. Lobo (1999). A parameter-less genetic
 algorithm. In <em>Proceedings of the Genetic and Evolutionary Computation
 Conference (GECCO)</em>, volume 1, pages 258-265. ACM.</td></tr>
 </tbody>
@@ -640,7 +661,7 @@ Conference (GECCO)</em>, volume 1, pages 258-265. ACM.</td></tr>
 <table class="docutils citation" frame="void" id="hoo1998" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id30">[HOO1998]</a></td><td>H. H. Hoos and T. Stützle (1998). Evaluating Las Vegas
+<tr><td class="label"><a class="fn-backref" href="#id32">[HOO1998]</a></td><td>H. H. Hoos and T. Stützle (1998). Evaluating Las Vegas
 algorithms: pitfalls and remedies. In <em>Proceedings of the Fourteenth
 Conference on Uncertainty in Artificial Intelligence (UAI-98)</em>,
 pages 238-245.</td></tr>
@@ -649,14 +670,14 @@ pages 238-245.</td></tr>
 <table class="docutils citation" frame="void" id="mor2009" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id55">[MOR2009]</a></td><td>J. Moré and S. Wild (2009).
+<tr><td class="label"><a class="fn-backref" href="#id57">[MOR2009]</a></td><td>J. Moré and S. Wild (2009).
 Benchmarking Derivative-Free Optimization Algorithms. <em>SIAM J. Optimization</em>, 20(1):172-191.</td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="mor2002" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id56">[MOR2002]</a></td><td>D. Dolan and J. J. Moré (2002).
+<tr><td class="label"><a class="fn-backref" href="#id58">[MOR2002]</a></td><td>D. Dolan and J. J. Moré (2002).
 Benchmarking Optimization Software with Performance Profiles. <em>Mathematical Programming</em>, 91:201-213.</td></tr>
 </tbody>
 </table>
@@ -670,7 +691,7 @@ On the theory of scales of measurement. <em>Science</em> 103(2684), pp. 677-680.
 <table class="docutils citation" frame="void" id="tus2016" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id64">[TUS2016]</a></td><td>T. Tušar, D. Brockhoff, N. Hansen, A. Auger (2016).
+<tr><td class="label"><a class="fn-backref" href="#id66">[TUS2016]</a></td><td>T. Tušar, D. Brockhoff, N. Hansen, A. Auger (2016).
 <a class="reference external" href="http://numbbo.github.io/coco-doc/bbob-biobj/functions/">COCO: The Bi-objective Black Box Optimization Benchmarking (bbob-biobj)
 Test Suite</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1604.00359">arXiv:1604.00359</a>.</td></tr>
 </tbody>
@@ -678,7 +699,7 @@ Test Suite</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="htt
 <table class="docutils citation" frame="void" id="whi1996" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[WHI1996]</td><td><em>(<a class="fn-backref" href="#id19">1</a>, <a class="fn-backref" href="#id26">2</a>)</em> D. Whitley, S. Rana, J. Dzubera, K. E. Mathias (1996).
+<tr><td class="label">[WHI1996]</td><td><em>(<a class="fn-backref" href="#id19">1</a>, <a class="fn-backref" href="#id27">2</a>)</em> D. Whitley, S. Rana, J. Dzubera, K. E. Mathias (1996).
 Evaluating evolutionary algorithms. <em>Artificial intelligence</em>, 85(1), 245-276.</td></tr>
 </tbody>
 </table>
@@ -701,7 +722,7 @@ Evaluating evolutionary algorithms. <em>Artificial intelligence</em>, 85(1), 245
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on May 23, 2016.
+      Last updated on Jul 28, 2016.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
