@@ -21,12 +21,12 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 .. raw:: html
 
-   <I>To cite or access this document as <tt>pdf</tt>:</I><BR>
+   <SMALL><I>To cite or access this document as <tt>pdf</tt>:</I><BR>
    N. Hansen, A. Auger, O. Mersmann, T. Tušar, and D. Brockhoff (2016). 
    <A HREF="http://arxiv.org/pdf/1603.08785">
    COCO: A platform for Comparing Continuous Optimizers in a Black-Box Setting</A>. 
    <I>ArXiv e-prints</I>, 
-   <A HREF="http://arxiv.org/abs/1603.08785">arXiv:1603.08785</A>.
+   <A HREF="http://arxiv.org/abs/1603.08785">arXiv:1603.08785</A>.</SMALL>
 
 .. raw:: latex
 
