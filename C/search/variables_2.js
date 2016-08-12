@@ -4,6 +4,7 @@ var searchData=
   ['coco_5flog_5flevel',['coco_log_level',['../coco__utilities_8c.html#ade0947aadeb56a32c006a0adbf482106',1,'coco_utilities.c']]],
   ['coco_5fpi',['coco_pi',['../coco_8h.html#a973742d29d384e21661bda90875ccf39',1,'coco.h']]],
   ['coco_5ftwo_5fpi',['coco_two_pi',['../coco_8h.html#ad13e23673e37cc257befd3695c218304',1,'coco.h']]],
+  ['coco_5fversion',['coco_version',['../coco_8h.html#a8be59288c776dfa2e3a5f9e4fa67463f',1,'coco.h']]],
   ['compute_5findicators',['compute_indicators',['../structlogger__biobj__data__t.html#aac36a09c28e342d5941b59535cb8db05',1,'logger_biobj_data_t::compute_indicators()'],['../structobserver__biobj__data__t.html#aac36a09c28e342d5941b59535cb8db05',1,'observer_biobj_data_t::compute_indicators()']]],
   ['count',['count',['../structcoco__option__keys__t.html#a76d971a3c552bc58ba9f0d5fceae9806',1,'coco_option_keys_t::count()'],['../structavl__node.html#a61b4b8d2ac3f4853727e2c2fcbec3503',1,'avl_node::count()']]],
   ['current_5fdim',['current_dim',['../structobserver__bbob__data__t.html#a900190acf50ce36ff33241b217d517bf',1,'observer_bbob_data_t']]],

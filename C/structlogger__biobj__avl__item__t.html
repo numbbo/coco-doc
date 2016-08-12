@@ -107,6 +107,9 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a7c3123a306a879fdcbf1b923fcccee07"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html#a7c3123a306a879fdcbf1b923fcccee07">y</a></td></tr>
 <tr class="memdesc:a7c3123a306a879fdcbf1b923fcccee07"><td class="mdescLeft">&#160;</td><td class="mdescRight">The values of objectives of this solution.  <a href="#a7c3123a306a879fdcbf1b923fcccee07">More...</a><br /></td></tr>
 <tr class="separator:a7c3123a306a879fdcbf1b923fcccee07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a033e629f4cc089a5ade030035ced29bf"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html#a033e629f4cc089a5ade030035ced29bf">normalized_y</a></td></tr>
+<tr class="memdesc:a033e629f4cc089a5ade030035ced29bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The values of normalized objectives of this solution.  <a href="#a033e629f4cc089a5ade030035ced29bf">More...</a><br /></td></tr>
+<tr class="separator:a033e629f4cc089a5ade030035ced29bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61a289ca40d7ee6a88804435585a91f0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlogger__biobj__avl__item__t.html#a61a289ca40d7ee6a88804435585a91f0">evaluation_number</a></td></tr>
 <tr class="memdesc:a61a289ca40d7ee6a88804435585a91f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The evaluation number of when the solution was created.  <a href="#a61a289ca40d7ee6a88804435585a91f0">More...</a><br /></td></tr>
 <tr class="separator:a61a289ca40d7ee6a88804435585a91f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,6 +122,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The type for the node's item in the AVL tree as used by the bi-objective logger. </p>
+<p>Contains information on the exact objective values (y) and their rounded normalized values (normalized_y). The exact values are used for output, while archive update and indicator computation use the normalized values. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a61a289ca40d7ee6a88804435585a91f0"></a>
 <div class="memitem">
@@ -145,6 +149,20 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The contribution of this solution to the overall indicator values. </p>
+
+</div>
+</div>
+<a class="anchor" id="a033e629f4cc089a5ade030035ced29bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* normalized_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The values of normalized objectives of this solution. </p>
 
 </div>
 </div>
@@ -191,7 +209,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/Users/tea/Work/GitHub/coco-ttusar/code-experiments/src/<a class="el" href="logger__biobj_8c.html">logger_biobj.c</a></li>
+<li>C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/<a class="el" href="logger__biobj_8c.html">logger_biobj.c</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->

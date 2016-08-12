@@ -3,6 +3,7 @@ var searchData=
   ['seed',['seed',['../structtransform__vars__x__hat__data__t.html#affb5f34f39f7103b999d198b18ffed8e',1,'transform_vars_x_hat_data_t']]],
   ['shifted_5fx',['shifted_x',['../structtransform__vars__shift__data__t.html#a8ea4beb5f82907d539abca4a9be29011',1,'transform_vars_shift_data_t']]],
   ['smallest_5fvalues_5fof_5finterest',['smallest_values_of_interest',['../structcoco__problem__s.html#a615012b0828bdd9c1173f6ce03198810',1,'coco_problem_s']]],
+  ['suite',['suite',['../structcoco__problem__s.html#a93ec847343f16e636310c8f36c37c289',1,'coco_problem_s']]],
   ['suite_5fbbob_2ec',['suite_bbob.c',['../suite__bbob_8c.html',1,'']]],
   ['suite_5fbbob2009_5fmax_5fdim',['SUITE_BBOB2009_MAX_DIM',['../suite__bbob__legacy__code_8c.html#a30f5ab8c8eebf32a5ef95bf3d5297c6d',1,'suite_bbob_legacy_code.c']]],
   ['suite_5fbbob_5fget_5finstances_5fby_5fyear',['suite_bbob_get_instances_by_year',['../suite__bbob_8c.html#ada4964cd28b2804f8fa51ac37d661ee2',1,'suite_bbob.c']]],

@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: /Users/tea/Work/GitHub/coco-ttusar/code-experiments/src/coco_string.c File Reference</title>
+        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/coco_string.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -141,6 +141,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a1e00c4de35dff100917c3c49db7dcd2a"><td class="memItemLeft" align="right" valign="top">static size_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#a1e00c4de35dff100917c3c49db7dcd2a">coco_string_parse_ranges</a> (const char *string, const size_t min, const size_t max, const char *name, const size_t max_count)</td></tr>
 <tr class="memdesc:a1e00c4de35dff100917c3c49db7dcd2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the numbers defined by the ranges.  <a href="#a1e00c4de35dff100917c3c49db7dcd2a">More...</a><br /></td></tr>
 <tr class="separator:a1e00c4de35dff100917c3c49db7dcd2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86aff0b1c28b4cf742bba04a8d6037ff"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#a86aff0b1c28b4cf742bba04a8d6037ff">coco_string_trim</a> (char *string)</td></tr>
+<tr class="memdesc:a86aff0b1c28b4cf742bba04a8d6037ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trims the given string (removes any leading and trailing spaces).  <a href="#a86aff0b1c28b4cf742bba04a8d6037ff">More...</a><br /></td></tr>
+<tr class="separator:a86aff0b1c28b4cf742bba04a8d6037ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions of functions that manipulate strings. </p>
@@ -448,6 +451,33 @@ Functions</h2></td></tr>
 
 <p>Splits a string based on the given delimiter. </p>
 <p>Returns a pointer to the resulting substrings with NULL as the last one. The caller is responsible for freeing the allocated memory using <a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f" title="Frees the allocated memory. ">coco_free_memory()</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a86aff0b1c28b4cf742bba04a8d6037ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* coco_string_trim </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trims the given string (removes any leading and trailing spaces). </p>
+<p>If the string contains any leading spaces, the contents are shifted so that if it was dynamically allocated, it can be still freed on the returned pointer. </p>
 
 </div>
 </div>

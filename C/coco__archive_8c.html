@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: /Users/tea/Work/GitHub/coco-ttusar/code-experiments/src/coco_archive.c File Reference</title>
+        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/coco_archive.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -118,12 +118,9 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a89d0eabd4cdf1e23b5cc7a196b188a68"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structcoco__archive__avl__item__t.html">coco_archive_avl_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__archive_8c.html#a89d0eabd4cdf1e23b5cc7a196b188a68">coco_archive_node_item_create</a> (const double f1, const double f2, const char *text)</td></tr>
-<tr class="memdesc:a89d0eabd4cdf1e23b5cc7a196b188a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns the information on the solution in the form of a node's item in the AVL tree.  <a href="#a89d0eabd4cdf1e23b5cc7a196b188a68">More...</a><br /></td></tr>
-<tr class="separator:a89d0eabd4cdf1e23b5cc7a196b188a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb7de4b63c17d827cabf98a1d6e4efcb"><td class="memItemLeft" align="right" valign="top">static double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__archive_8c.html#abb7de4b63c17d827cabf98a1d6e4efcb">coco_archive_node_item_get_vector</a> (<a class="el" href="structcoco__archive__avl__item__t.html">coco_archive_avl_item_t</a> *item)</td></tr>
-<tr class="memdesc:abb7de4b63c17d827cabf98a1d6e4efcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns f1 and f2 in a vector of two doubles. Memory needs to be freed by the caller.  <a href="#abb7de4b63c17d827cabf98a1d6e4efcb">More...</a><br /></td></tr>
-<tr class="separator:abb7de4b63c17d827cabf98a1d6e4efcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d070cbace4c785575383646ed21b316"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structcoco__archive__avl__item__t.html">coco_archive_avl_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__archive_8c.html#a4d070cbace4c785575383646ed21b316">coco_archive_node_item_create</a> (const double *y, const double *ideal, const double *nadir, const size_t num_obj, const char *text)</td></tr>
+<tr class="memdesc:a4d070cbace4c785575383646ed21b316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns the information on the solution in the form of a node's item in the AVL tree.  <a href="#a4d070cbace4c785575383646ed21b316">More...</a><br /></td></tr>
+<tr class="separator:a4d070cbace4c785575383646ed21b316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a772e464566e04a24d3baf5a199968b59"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__archive_8c.html#a772e464566e04a24d3baf5a199968b59">coco_archive_node_item_free</a> (<a class="el" href="structcoco__archive__avl__item__t.html">coco_archive_avl_item_t</a> *item, void *userdata)</td></tr>
 <tr class="memdesc:a772e464566e04a24d3baf5a199968b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the data of the given <a class="el" href="structcoco__archive__avl__item__t.html" title="The type for the node&#39;s item in the AVL tree used by the archive. ">coco_archive_avl_item_t</a>.  <a href="#a772e464566e04a24d3baf5a199968b59">More...</a><br /></td></tr>
 <tr class="separator:a772e464566e04a24d3baf5a199968b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,9 +133,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a70a55c00ed89c32eed64e39a9c96f571"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a526f33938345bc196c28cc9ffae0053d">coco_archive_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__archive_8c.html#a70a55c00ed89c32eed64e39a9c96f571">coco_archive</a> (const char *suite_name, const size_t function, const size_t dimension, const size_t instance)</td></tr>
 <tr class="memdesc:a70a55c00ed89c32eed64e39a9c96f571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a COCO archive.  <a href="#a70a55c00ed89c32eed64e39a9c96f571">More...</a><br /></td></tr>
 <tr class="separator:a70a55c00ed89c32eed64e39a9c96f571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ab3852b488ce064fa1c8fc568102dce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__archive_8c.html#a0ab3852b488ce064fa1c8fc568102dce">coco_archive_add_solution</a> (<a class="el" href="coco_8h.html#a526f33938345bc196c28cc9ffae0053d">coco_archive_t</a> *archive, const double f1, const double f2, const char *text)</td></tr>
-<tr class="memdesc:a0ab3852b488ce064fa1c8fc568102dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a solution with objectives (f1, f2) to the archive if none of the existing solutions in the archive dominates it. In this case, returns 1, otherwise the archive is not updated and the method returns 0.  <a href="#a0ab3852b488ce064fa1c8fc568102dce">More...</a><br /></td></tr>
-<tr class="separator:a0ab3852b488ce064fa1c8fc568102dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ced861776caf6b4f71a2e207499478"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__archive_8c.html#a98ced861776caf6b4f71a2e207499478">coco_archive_add_solution</a> (<a class="el" href="coco_8h.html#a526f33938345bc196c28cc9ffae0053d">coco_archive_t</a> *archive, const double y1, const double y2, const char *text)</td></tr>
+<tr class="memdesc:a98ced861776caf6b4f71a2e207499478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a solution with objectives (y1, y2) to the archive if none of the existing solutions in the archive dominates it. In this case, returns 1, otherwise the archive is not updated and the method returns 0.  <a href="#a98ced861776caf6b4f71a2e207499478">More...</a><br /></td></tr>
+<tr class="separator:a98ced861776caf6b4f71a2e207499478"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcfeffc2998c3c48de1caae8e8d5711b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__archive_8c.html#afcfeffc2998c3c48de1caae8e8d5711b">coco_archive_update</a> (<a class="el" href="coco_8h.html#a526f33938345bc196c28cc9ffae0053d">coco_archive_t</a> *archive)</td></tr>
 <tr class="memdesc:afcfeffc2998c3c48de1caae8e8d5711b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the archive fields returned by the getters.  <a href="#afcfeffc2998c3c48de1caae8e8d5711b">More...</a><br /></td></tr>
 <tr class="separator:afcfeffc2998c3c48de1caae8e8d5711b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,7 +197,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0ab3852b488ce064fa1c8fc568102dce"></a>
+<a class="anchor" id="a98ced861776caf6b4f71a2e207499478"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -214,13 +211,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>f1</em>, </td>
+          <td class="paramname"><em>y1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>f2</em>, </td>
+          <td class="paramname"><em>y2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -236,7 +233,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds a solution with objectives (f1, f2) to the archive if none of the existing solutions in the archive dominates it. In this case, returns 1, otherwise the archive is not updated and the method returns 0. </p>
+<p>Adds a solution with objectives (y1, y2) to the archive if none of the existing solutions in the archive dominates it. In this case, returns 1, otherwise the archive is not updated and the method returns 0. </p>
 
 </div>
 </div>
@@ -380,7 +377,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a89d0eabd4cdf1e23b5cc7a196b188a68"></a>
+<a class="anchor" id="a4d070cbace4c785575383646ed21b316"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -390,14 +387,26 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="structcoco__archive__avl__item__t.html">coco_archive_avl_item_t</a>* coco_archive_node_item_create </td>
           <td>(</td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>f1</em>, </td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>f2</em>, </td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>ideal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>nadir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>num_obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -455,32 +464,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Frees the data of the given <a class="el" href="structcoco__archive__avl__item__t.html" title="The type for the node&#39;s item in the AVL tree used by the archive. ">coco_archive_avl_item_t</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="abb7de4b63c17d827cabf98a1d6e4efcb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static double* coco_archive_node_item_get_vector </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structcoco__archive__avl__item__t.html">coco_archive_avl_item_t</a> *&#160;</td>
-          <td class="paramname"><em>item</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns f1 and f2 in a vector of two doubles. Memory needs to be freed by the caller. </p>
 
 </div>
 </div>
