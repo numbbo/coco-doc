@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: /Users/tea/Work/GitHub/coco-ttusar/code-experiments/src/mo_utilities.c File Reference</title>
+        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/mo_utilities.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -93,7 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">mo_utilities.c File Reference</div>  </div>
 </div><!--header-->
@@ -107,23 +108,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abdc6dfb57eb6921433dedf209d64dfaf"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#abdc6dfb57eb6921433dedf209d64dfaf">mo_get_dominance</a> (const double *objectives1, const double *objectives2, const size_t num_obj)</td></tr>
-<tr class="memdesc:abdc6dfb57eb6921433dedf209d64dfaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the dominance relation in the unconstrained minimization case between objectives1 and objectives2.  <a href="#abdc6dfb57eb6921433dedf209d64dfaf">More...</a><br /></td></tr>
-<tr class="separator:abdc6dfb57eb6921433dedf209d64dfaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4ff7557b4b78d0398b7d17a69fe8a20"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#ac4ff7557b4b78d0398b7d17a69fe8a20">mo_get_norm</a> (const double *first, const double *second, const size_t dim)</td></tr>
 <tr class="memdesc:ac4ff7557b4b78d0398b7d17a69fe8a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes and returns the Euclidean norm of two dim-dimensional points first and second.  <a href="#ac4ff7557b4b78d0398b7d17a69fe8a20">More...</a><br /></td></tr>
 <tr class="separator:ac4ff7557b4b78d0398b7d17a69fe8a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37432ae8569214ca61ea9ef6e3dbd13f"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#a37432ae8569214ca61ea9ef6e3dbd13f">mo_get_distance_to_ROI</a> (const double *y, const double *ideal, const double *nadir, const size_t dimension)</td></tr>
-<tr class="memdesc:a37432ae8569214ca61ea9ef6e3dbd13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes and returns the minimal normalized distance from the point y to the ROI.  <a href="#a37432ae8569214ca61ea9ef6e3dbd13f">More...</a><br /></td></tr>
-<tr class="separator:a37432ae8569214ca61ea9ef6e3dbd13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7236a1a1046f2cddfa22446c1d2d15c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#ae7236a1a1046f2cddfa22446c1d2d15c">mo_solution_is_within_ROI</a> (const double *y, const double *ideal, const double *nadir, const size_t dimension)</td></tr>
-<tr class="memdesc:ae7236a1a1046f2cddfa22446c1d2d15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes and returns whether the solution y is within the ROI.  <a href="#ae7236a1a1046f2cddfa22446c1d2d15c">More...</a><br /></td></tr>
-<tr class="separator:ae7236a1a1046f2cddfa22446c1d2d15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a8c93df497613a6578cfc114c543c9"><td class="memItemLeft" align="right" valign="top">static double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#aa3a8c93df497613a6578cfc114c543c9">mo_normalize</a> (const double *y, const double *ideal, const double *nadir, const size_t num_obj)</td></tr>
+<tr class="memdesc:aa3a8c93df497613a6578cfc114c543c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a rounded normalized version of the given solution w.r.t. the given ROI.  <a href="#aa3a8c93df497613a6578cfc114c543c9">More...</a><br /></td></tr>
+<tr class="separator:aa3a8c93df497613a6578cfc114c543c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad132cc5f482428475aad0b8d29860463"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#ad132cc5f482428475aad0b8d29860463">mo_get_dominance</a> (const double *normalized_y1, const double *normalized_y2, const size_t num_obj)</td></tr>
+<tr class="memdesc:ad132cc5f482428475aad0b8d29860463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the dominance relation in the unconstrained minimization case between two normalized solutions in the objective space.  <a href="#ad132cc5f482428475aad0b8d29860463">More...</a><br /></td></tr>
+<tr class="separator:ad132cc5f482428475aad0b8d29860463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4889bc7289253b6d92dddfab0e65f505"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#a4889bc7289253b6d92dddfab0e65f505">mo_is_within_ROI</a> (const double *normalized_y, const size_t num_obj)</td></tr>
+<tr class="memdesc:a4889bc7289253b6d92dddfab0e65f505"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the normalized solution is within [0, 1]^num_obj.  <a href="#a4889bc7289253b6d92dddfab0e65f505">More...</a><br /></td></tr>
+<tr class="separator:a4889bc7289253b6d92dddfab0e65f505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acee8efd5226cf6c9e12e811bf782fe18"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#acee8efd5226cf6c9e12e811bf782fe18">mo_get_distance_to_ROI</a> (const double *normalized_y, const size_t num_obj)</td></tr>
+<tr class="memdesc:acee8efd5226cf6c9e12e811bf782fe18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes and returns the minimal normalized distance of the point normalized_y from the ROI (equals 0 if within the ROI).  <a href="#acee8efd5226cf6c9e12e811bf782fe18">More...</a><br /></td></tr>
+<tr class="separator:acee8efd5226cf6c9e12e811bf782fe18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a51e1b3ffe514e06b45601b2f30d35414"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#a51e1b3ffe514e06b45601b2f30d35414">mo_precision</a> = 1e-13</td></tr>
+<tr class="memdesc:a51e1b3ffe514e06b45601b2f30d35414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precision used when comparing multi-objective solutions.  <a href="#a51e1b3ffe514e06b45601b2f30d35414">More...</a><br /></td></tr>
+<tr class="separator:a51e1b3ffe514e06b45601b2f30d35414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d1a3d1812584e62cf98daaf37ef465"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mo__utilities_8c.html#a54d1a3d1812584e62cf98daaf37ef465">mo_discretization</a> = 5 * 1e-13</td></tr>
+<tr class="memdesc:a54d1a3d1812584e62cf98daaf37ef465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discretization interval used for rounding normalized multi-objective solutions.  <a href="#a54d1a3d1812584e62cf98daaf37ef465">More...</a><br /></td></tr>
+<tr class="separator:a54d1a3d1812584e62cf98daaf37ef465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions of miscellaneous functions used for multi-objective problems. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a37432ae8569214ca61ea9ef6e3dbd13f"></a>
+<a class="anchor" id="acee8efd5226cf6c9e12e811bf782fe18"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -134,62 +147,7 @@ Functions</h2></td></tr>
           <td class="memname">static double mo_get_distance_to_ROI </td>
           <td>(</td>
           <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>ideal</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>nadir</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>dimension</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Computes and returns the minimal normalized distance from the point y to the ROI. </p>
-<dl class="section note"><dt>Note</dt><dd>Assumes the point is dominated by the ideal point and dimension equals 2. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="abdc6dfb57eb6921433dedf209d64dfaf"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static int mo_get_dominance </td>
-          <td>(</td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>objectives1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>objectives2</em>, </td>
+          <td class="paramname"><em>normalized_y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -210,11 +168,55 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Checks the dominance relation in the unconstrained minimization case between objectives1 and objectives2. </p>
-<dl class="section return"><dt>Returns</dt><dd>1 if objectives1 dominates objectives2 <br />
- 0 if objectives1 and objectives2 are non-dominated <br />
- -1 if objectives2 dominates objectives1 <br />
- -2 if objectives1 is identical to objectives2 </dd></dl>
+<p>Computes and returns the minimal normalized distance of the point normalized_y from the ROI (equals 0 if within the ROI). </p>
+<dl class="section note"><dt>Note</dt><dd>Assumes num_obj = 2 and normalized_y &gt;= 0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad132cc5f482428475aad0b8d29860463"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int mo_get_dominance </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>normalized_y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>normalized_y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>num_obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks the dominance relation in the unconstrained minimization case between two normalized solutions in the objective space. </p>
+<p>If two values are closer together than mo_precision, they are treated as equal.</p>
+<dl class="section return"><dt>Returns</dt><dd>1 if normalized_y1 dominates normalized_y2 <br />
+ 0 if normalized_y1 and normalized_y2 are non-dominated <br />
+ -1 if normalized_y2 dominates normalized_y1 <br />
+ -2 if normalized_y1 is identical to normalized_y2 </dd></dl>
 
 </div>
 </div>
@@ -260,7 +262,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae7236a1a1046f2cddfa22446c1d2d15c"></a>
+<a class="anchor" id="a4889bc7289253b6d92dddfab0e65f505"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -268,7 +270,43 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int mo_solution_is_within_ROI </td>
+          <td class="memname">static int mo_is_within_ROI </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>normalized_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>num_obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether the normalized solution is within [0, 1]^num_obj. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa3a8c93df497613a6578cfc114c543c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double* mo_normalize </td>
           <td>(</td>
           <td class="paramtype">const double *&#160;</td>
           <td class="paramname"><em>y</em>, </td>
@@ -289,7 +327,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>dimension</em>&#160;</td>
+          <td class="paramname"><em>num_obj</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -304,8 +342,56 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Computes and returns whether the solution y is within the ROI. </p>
-<dl class="section note"><dt>Note</dt><dd>Assumes the solution is dominated by the ideal point and dimension equals 2. </dd></dl>
+<p>Creates a rounded normalized version of the given solution w.r.t. the given ROI. </p>
+<p>If the solution seems to be better than the extremes it is corrected (2 objectives are assumed). The caller is responsible for freeing the allocated memory using <a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f" title="Frees the allocated memory. ">coco_free_memory()</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a54d1a3d1812584e62cf98daaf37ef465"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double mo_discretization = 5 * 1e-13</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Discretization interval used for rounding normalized multi-objective solutions. </p>
+<dl class="section note"><dt>Note</dt><dd>mo_discretization needs to be larger than mo_precision </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a51e1b3ffe514e06b45601b2f30d35414"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double mo_precision = 1e-13</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Precision used when comparing multi-objective solutions. </p>
+<p>Two solutions are considered equal in objective space when their normalized difference is smaller than mo_precision.</p>
+<dl class="section note"><dt>Note</dt><dd>mo_precision needs to be smaller than mo_discretization </dd></dl>
 
 </div>
 </div>

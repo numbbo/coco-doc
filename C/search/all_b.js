@@ -7,6 +7,7 @@ var searchData=
   ['nb_5fblocks',['nb_blocks',['../structtransform__vars__permblockdiag__t.html#a4ecbe1d9b8e4a0dd2e72ca6e5bed0acf',1,'transform_vars_permblockdiag_t']]],
   ['new_5finstances',['new_instances',['../structsuite__biobj__t.html#ab275a69f90e725718e3bb863d689463d',1,'suite_biobj_t']]],
   ['next',['next',['../structavl__node.html#a33a3bdb00e797090c3a8f176250e4539',1,'avl_node']]],
+  ['normalized_5fy',['normalized_y',['../structcoco__archive__avl__item__t.html#a033e629f4cc089a5ade030035ced29bf',1,'coco_archive_avl_item_t::normalized_y()'],['../structlogger__biobj__avl__item__t.html#a033e629f4cc089a5ade030035ced29bf',1,'logger_biobj_avl_item_t::normalized_y()']]],
   ['number_5fevaluation_5ftriggers',['number_evaluation_triggers',['../structcoco__observer__s.html#a1fec42375f536bbf471c3a70d57bf5d9',1,'coco_observer_s']]],
   ['number_5fof_5fconstraints',['number_of_constraints',['../structcoco__problem__s.html#a1ef156b2d1f34cd6dfb03625754097a1',1,'coco_problem_s']]],
   ['number_5fof_5fdimensions',['number_of_dimensions',['../structcoco__suite__s.html#ab41d3942d4dff05f08409650bb8c84b9',1,'coco_suite_s']]],

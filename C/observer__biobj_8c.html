@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: /Users/tea/Work/GitHub/coco-ttusar/code-experiments/src/observer_biobj.c File Reference</title>
+        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/observer_biobj.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -118,8 +118,9 @@ Data Structures</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:af7d3edad14e9bc80fda6ec29119888bd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bd">observer_biobj_log_nondom_e</a> { <a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bda5d97229518eadf597f361f33d5748b64">LOG_NONDOM_NONE</a>, 
 <a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bdabf0d04baf535f9b4d4aa4c3f2e0fcaff">LOG_NONDOM_FINAL</a>, 
-<a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bda78c0d9c657bb6249e933950263dd5407">LOG_NONDOM_ALL</a>
- }<tr class="memdesc:af7d3edad14e9bc80fda6ec29119888bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for denoting the way in which the nondominated solutions are logged.  <a href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bd">More...</a><br /></td></tr>
+<a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bda78c0d9c657bb6249e933950263dd5407">LOG_NONDOM_ALL</a>, 
+<a class="el" href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bda759f03e05375f1b3099fc4c2775b084c">LOG_NONDOM_READ</a>
+ }<tr class="memdesc:af7d3edad14e9bc80fda6ec29119888bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for denoting the way in which the nondominated solutions are treated.  <a href="observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bd">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:af7d3edad14e9bc80fda6ec29119888bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73c3917f4540c84782b4b0a341cfbe83"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83">observer_biobj_log_vars_e</a> { <a class="el" href="observer__biobj_8c.html#a73c3917f4540c84782b4b0a341cfbe83acb328dd94f94958b9dab19a0ee106f44">LOG_VARS_NEVER</a>, 
@@ -152,13 +153,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enum for denoting the way in which the nondominated solutions are logged. </p>
+<p>Enum for denoting the way in which the nondominated solutions are treated. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="af7d3edad14e9bc80fda6ec29119888bda5d97229518eadf597f361f33d5748b64"></a>LOG_NONDOM_NONE&#160;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="af7d3edad14e9bc80fda6ec29119888bdabf0d04baf535f9b4d4aa4c3f2e0fcaff"></a>LOG_NONDOM_FINAL&#160;</td><td class="fielddoc">
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="af7d3edad14e9bc80fda6ec29119888bda78c0d9c657bb6249e933950263dd5407"></a>LOG_NONDOM_ALL&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="af7d3edad14e9bc80fda6ec29119888bda759f03e05375f1b3099fc4c2775b084c"></a>LOG_NONDOM_READ&#160;</td><td class="fielddoc">
 </td></tr>
 </table>
 
@@ -286,7 +289,7 @@ Functions</h2></td></tr>
 <p>Initializes the bi-objective observer. </p>
 <p>Possible options:</p>
 <ul>
-<li>"log_nondominated: STRING" determines which nondominated solutions to log. STRING can take on the values "none" (don't log nondominated solutions), "final" (log only the final nondominated solutions) and "all" (log every solution that is nondominated at creation time). The default value is "all".</li>
+<li>"log_nondominated: STRING" determines how the nondominated solutions are handled. STRING can take on the values "none" (don't log nondominated solutions), "final" (log only the final nondominated solutions), "all" (log every solution that is nondominated at creation time) and "read" (the nondominated solutions are not logged, but are passed to the logger as input - this is a functionality needed in pre-processing of the data). The default value is "all".</li>
 <li>"log_decision_variables: STRING" determines whether the decision variables are to be logged in addition to the objective variables in the output of nondominated solutions. STRING can take on the values "none" (don't output decision variables), "low_dim"(output decision variables only for dimensions lower or equal to 5) and "all" (output all decision variables). The default value is "low_dim".</li>
 <li>"compute_indicators: VALUE" determines whether to compute and output performance indicators (1) or not (0). The default value is 1.</li>
 <li>"produce_all_data: VALUE" determines whether to produce all data required for the workshop. If set to 1, it overwrites some other options and is equivalent to setting "log_nondominated: all", "log_decision_variables: low_dim" and "compute_indicators: 1". If set to 0, it does not change the values of the other options. The default value is 0. </li>

@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: /Users/tea/Work/GitHub/coco-ttusar/code-experiments/src/coco.h File Reference</title>
+        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/coco.h File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -168,6 +168,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8456ba2ae830c1e4c15d39922ec18d18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a8456ba2ae830c1e4c15d39922ec18d18">coco_suite_get_problem</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t problem_index)</td></tr>
 <tr class="memdesc:a8456ba2ae830c1e4c15d39922ec18d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the problem of the suite defined by problem_index.  <a href="#a8456ba2ae830c1e4c15d39922ec18d18">More...</a><br /></td></tr>
 <tr class="separator:a8456ba2ae830c1e4c15d39922ec18d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dc45ab5f19defa0b1498eac64714a02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a4dc45ab5f19defa0b1498eac64714a02">coco_suite_get_problem_by_function_dimension_instance</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t function, const size_t dimension, const size_t instance)</td></tr>
+<tr class="memdesc:a4dc45ab5f19defa0b1498eac64714a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first problem of the suite defined by function, dimension and instance numbers.  <a href="#a4dc45ab5f19defa0b1498eac64714a02">More...</a><br /></td></tr>
+<tr class="separator:a4dc45ab5f19defa0b1498eac64714a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e34e34ffc1d99f1e9247426151741c5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a3e34e34ffc1d99f1e9247426151741c5">coco_suite_get_number_of_problems</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite)</td></tr>
 <tr class="memdesc:a3e34e34ffc1d99f1e9247426151741c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of problems in the given suite.  <a href="#a3e34e34ffc1d99f1e9247426151741c5">More...</a><br /></td></tr>
 <tr class="separator:a3e34e34ffc1d99f1e9247426151741c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -342,13 +345,13 @@ index | instance_idx | function_idx | dimension_idx
 <tr class="memitem:a8baacecb66a862689885d4e26ac26f62"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a8baacecb66a862689885d4e26ac26f62">coco_set_log_level</a> (const char *level)</td></tr>
 <tr class="memdesc:a8baacecb66a862689885d4e26ac26f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the COCO log level to the given value and returns the previous value of the log level.  <a href="#a8baacecb66a862689885d4e26ac26f62">More...</a><br /></td></tr>
 <tr class="separator:a8baacecb66a862689885d4e26ac26f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Methods regarding COCO archives (used when pre-processing MO data)</div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Methods regarding COCO archives and log files (used when pre-processing MO data)</div></td></tr>
 <tr class="memitem:a70a55c00ed89c32eed64e39a9c96f571"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a526f33938345bc196c28cc9ffae0053d">coco_archive_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a70a55c00ed89c32eed64e39a9c96f571">coco_archive</a> (const char *suite_name, const size_t function, const size_t dimension, const size_t instance)</td></tr>
 <tr class="memdesc:a70a55c00ed89c32eed64e39a9c96f571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a COCO archive.  <a href="#a70a55c00ed89c32eed64e39a9c96f571">More...</a><br /></td></tr>
 <tr class="separator:a70a55c00ed89c32eed64e39a9c96f571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ab3852b488ce064fa1c8fc568102dce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a0ab3852b488ce064fa1c8fc568102dce">coco_archive_add_solution</a> (<a class="el" href="coco_8h.html#a526f33938345bc196c28cc9ffae0053d">coco_archive_t</a> *archive, const double f1, const double f2, const char *text)</td></tr>
-<tr class="memdesc:a0ab3852b488ce064fa1c8fc568102dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a solution with objectives (f1, f2) to the archive if none of the existing solutions in the archive dominates it. In this case, returns 1, otherwise the archive is not updated and the method returns 0.  <a href="#a0ab3852b488ce064fa1c8fc568102dce">More...</a><br /></td></tr>
-<tr class="separator:a0ab3852b488ce064fa1c8fc568102dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ced861776caf6b4f71a2e207499478"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a98ced861776caf6b4f71a2e207499478">coco_archive_add_solution</a> (<a class="el" href="coco_8h.html#a526f33938345bc196c28cc9ffae0053d">coco_archive_t</a> *archive, const double y1, const double y2, const char *text)</td></tr>
+<tr class="memdesc:a98ced861776caf6b4f71a2e207499478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a solution with objectives (y1, y2) to the archive if none of the existing solutions in the archive dominates it. In this case, returns 1, otherwise the archive is not updated and the method returns 0.  <a href="#a98ced861776caf6b4f71a2e207499478">More...</a><br /></td></tr>
+<tr class="separator:a98ced861776caf6b4f71a2e207499478"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a206f7af9532f011ce826090acdc9ecd9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a206f7af9532f011ce826090acdc9ecd9">coco_archive_get_number_of_solutions</a> (<a class="el" href="coco_8h.html#a526f33938345bc196c28cc9ffae0053d">coco_archive_t</a> *archive)</td></tr>
 <tr class="memdesc:a206f7af9532f011ce826090acdc9ecd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of (non-dominated) solutions in the archive (computed first, if needed).  <a href="#a206f7af9532f011ce826090acdc9ecd9">More...</a><br /></td></tr>
 <tr class="separator:a206f7af9532f011ce826090acdc9ecd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,6 +364,9 @@ index | instance_idx | function_idx | dimension_idx
 <tr class="memitem:a372f41b24a5a18bd61074094d90777fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a372f41b24a5a18bd61074094d90777fd">coco_archive_free</a> (<a class="el" href="coco_8h.html#a526f33938345bc196c28cc9ffae0053d">coco_archive_t</a> *archive)</td></tr>
 <tr class="memdesc:a372f41b24a5a18bd61074094d90777fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the archive.  <a href="#a372f41b24a5a18bd61074094d90777fd">More...</a><br /></td></tr>
 <tr class="separator:a372f41b24a5a18bd61074094d90777fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf82d26b0e461bfa2aa4f6f8c69f7e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a2cf82d26b0e461bfa2aa4f6f8c69f7e3">coco_logger_biobj_feed_solution</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const size_t evaluation, const double *y)</td></tr>
+<tr class="memdesc:a2cf82d26b0e461bfa2aa4f6f8c69f7e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feeds the solution to the bi-objective logger for logger output reconstruction purposes.  <a href="#a2cf82d26b0e461bfa2aa4f6f8c69f7e3">More...</a><br /></td></tr>
+<tr class="separator:a2cf82d26b0e461bfa2aa4f6f8c69f7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Other useful methods</div></td></tr>
 <tr class="memitem:af079b44546733c5be1cd68e38a2b06fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#af079b44546733c5be1cd68e38a2b06fc">coco_remove_directory</a> (const char *path)</td></tr>
 <tr class="memdesc:af079b44546733c5be1cd68e38a2b06fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the given directory and all its contents.  <a href="#af079b44546733c5be1cd68e38a2b06fc">More...</a><br /></td></tr>
@@ -371,6 +377,10 @@ index | instance_idx | function_idx | dimension_idx
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a8be59288c776dfa2e3a5f9e4fa67463f"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a8be59288c776dfa2e3a5f9e4fa67463f">coco_version</a> [32] = &quot;$COCO_VERSION&quot;</td></tr>
+<tr class="memdesc:a8be59288c776dfa2e3a5f9e4fa67463f"><td class="mdescLeft">&#160;</td><td class="mdescRight">COCO's version.  <a href="#a8be59288c776dfa2e3a5f9e4fa67463f">More...</a><br /></td></tr>
+<tr class="separator:a8be59288c776dfa2e3a5f9e4fa67463f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a973742d29d384e21661bda90875ccf39"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a973742d29d384e21661bda90875ccf39">coco_pi</a> = 3.14159265358979323846</td></tr>
 <tr class="memdesc:a973742d29d384e21661bda90875ccf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">COCO's own pi constant. Simplifies the case, when the value of pi changes.  <a href="#a973742d29d384e21661bda90875ccf39">More...</a><br /></td></tr>
@@ -630,7 +640,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0ab3852b488ce064fa1c8fc568102dce"></a>
+<a class="anchor" id="a98ced861776caf6b4f71a2e207499478"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -644,13 +654,13 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>f1</em>, </td>
+          <td class="paramname"><em>y1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>f2</em>, </td>
+          <td class="paramname"><em>y2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -666,7 +676,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds a solution with objectives (f1, f2) to the archive if none of the existing solutions in the archive dominates it. In this case, returns 1, otherwise the archive is not updated and the method returns 0. </p>
+<p>Adds a solution with objectives (y1, y2) to the archive if none of the existing solutions in the archive dominates it. In this case, returns 1, otherwise the archive is not updated and the method returns 0. </p>
 
 </div>
 </div>
@@ -961,6 +971,51 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 <p>A function similar to coco_info but producing no additional text than the given message.</p>
 <p>The output is only produced if coco_log_level &gt;= COCO_INFO.</p>
 <p>A function similar to coco_info that prints only the given message without any prefix and without adding a new line. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2cf82d26b0e461bfa2aa4f6f8c69f7e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int coco_logger_biobj_feed_solution </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>evaluation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Feeds the solution to the bi-objective logger for logger output reconstruction purposes. </p>
+<p>Sets the number of evaluations, adds the objective vector to the archive and outputs information according to observer options (but does not output the archive).</p>
+<dl class="section note"><dt>Note</dt><dd>Vector y must point to a correctly sized allocated memory region and the given evaluation number must be larger than the existing one.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
+    <tr><td class="paramname">evaluation</td><td>The number of evaluations. </td></tr>
+    <tr><td class="paramname">y</td><td>The objective vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if archive was updated was done and 0 otherwise. </dd></dl>
 
 </div>
 </div>
@@ -1951,6 +2006,47 @@ x must point to a correctly sized allocated memory region.</dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="a4dc45ab5f19defa0b1498eac64714a02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* coco_suite_get_problem_by_function_dimension_instance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramname"><em>suite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>instance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the first problem of the suite defined by function, dimension and instance numbers. </p>
+<dl class="section note"><dt>Note</dt><dd>: While a suite can contain multiple problems with equal function, dimension and instance, this function always returns the first problem in the suite with the given function, dimension and instance values. If the given values don't correspond to a problem, the function returns NULL. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="adb3189475b296249e802e13ba412d504"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2039,6 +2135,29 @@ x must point to a correctly sized allocated memory region.</dd></dl>
 </div><div class="memdoc">
 
 <p>COCO's own pi constant. Simplifies the case, when the value of pi changes. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8be59288c776dfa2e3a5f9e4fa67463f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char coco_version[32] = &quot;$COCO_VERSION&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>COCO's version. </p>
+<p>Automatically updated by do.py. </p>
 
 </div>
 </div>

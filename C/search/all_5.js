@@ -1,8 +1,6 @@
 var searchData=
 [
   ['f0',['f0',['../structf__weierstrass__data__t.html#a21dc9c125e26e5af3ff2e487cf27cdcd',1,'f_weierstrass_data_t']]],
-  ['f1',['f1',['../structcoco__archive__avl__item__t.html#a11d54e4d4a8a4dfc36e4b5c8576a6079',1,'coco_archive_avl_item_t']]],
-  ['f2',['f2',['../structcoco__archive__avl__item__t.html#ac287bf324063285e92e9f3b9dfb8f408',1,'coco_archive_avl_item_t']]],
   ['f_5fattractive_5fsector_2ec',['f_attractive_sector.c',['../f__attractive__sector_8c.html',1,'']]],
   ['f_5fattractive_5fsector_5fallocate',['f_attractive_sector_allocate',['../f__attractive__sector_8c.html#aab7c8eb4fc6bd7768eda17fe53ad1dc6',1,'f_attractive_sector.c']]],
   ['f_5fattractive_5fsector_5fbbob_5fproblem_5fallocate',['f_attractive_sector_bbob_problem_allocate',['../f__attractive__sector_8c.html#a2323dae47ee71c1a548e6c324a2ed5da',1,'f_attractive_sector.c']]],
