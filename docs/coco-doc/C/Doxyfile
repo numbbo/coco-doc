@@ -59,7 +59,7 @@ PROJECT_LOGO           =
 # left blank the current directory will be used.
 
 #OUTPUT_DIRECTORY       = ./build
-OUTPUT_DIRECTORY       = ../../../../coco-doc/C
+OUTPUT_DIRECTORY       = ../../../C
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
@@ -782,7 +782,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = ../../../code-experiments/src
+INPUT                  = ../../../../coco/code-experiments/src
 INPUT                  += README.md
 
 # This tag can be used to specify the character encoding of the source files
@@ -865,7 +865,7 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = ../../../code-experiments/src/logger_biobj_avl_tree.c
+EXCLUDE                = ../../../../coco/code-experiments/src/logger_biobj_avl_tree.c
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
