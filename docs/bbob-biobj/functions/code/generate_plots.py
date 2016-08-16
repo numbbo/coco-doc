@@ -20,23 +20,18 @@ import paretofrontwrapper as pf # wrapper file and DLL must be in this folder
 
 def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
                    outputfolder="./", inputfolder=None, tofile=True, downsample=False):
-    ##############################################################
-    #                                                            #
-    # Objective Space of points on cut (log-scale).              #
-    #                                                            #
-    ##############################################################
-    
-    fig = plt.figure(1)
-    ax = fig.add_subplot(111)
-    
+
+    ###############################################
+    #  general settings and preparation of data   #
+    ###############################################    
     myc = ['g', 'b', 'r', 'y'] # colors for the different line directions
     myls = [':', '--', '-'] # line styles
     mylw = dict(lw=2, alpha=0.6) # line width # ALSO: mylw = {'lw':2, 'alpha':0.9}
     
-    
     # define lines as a + t*b
     tlim = 10 # 
     ngrid = 10001
+    nmeshgrid = 101
     t = np.linspace(-tlim, tlim, num=ngrid, endpoint=True)
     
     # Query the optimum from the benchmark to get a working objective function:
@@ -187,6 +182,176 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     for k in range(dim):    
         fgrid_opt_2_along_axes.append([f1.evaluate(xgrid_opt_2_along_axes[k]),
                                        f2.evaluate(xgrid_opt_2_along_axes[k])])                               
+
+
+
+
+    ##############################################################
+    #                                                            #
+    # Plot the same points in search space now, i.e.             #
+    # projections of them onto a randomly chosen plane through   #
+    # both single-objective optima                               #
+    #                                                            #
+    ##############################################################
+    fig = plt.figure(3)
+    ax = fig.add_subplot(111)
+    
+    ax.set_xlabel(r'direction of optima', fontsize=16)
+    ax.set_ylabel(r'perpendicular direction', fontsize=16)
+
+    origin = (xopt1+xopt2)/2 # origin of displayed coordinate system
+    x_vec = np.array(xopt2-xopt1)/np.linalg.norm(xopt2-xopt1)
+    
+    rand_direction = np.random.multivariate_normal(np.zeros(dim), np.identity(dim))
+    rand_direction = np.array([0.07626607,  0.39151837,  1.14256819, -1.33200262, -0.36448868,
+       -0.96652859, -0.44474225, -0.05023638,  0.70810655,  0.1890631 ,
+       -0.36979761,  1.34641201, -0.2714198 ,  0.48227747,  1.38238663,
+        0.63959268,  1.26060193,  0.60189583, -0.44309969,  0.63052018,
+        0.2074332 ,  0.26468975,  0.67309776,  0.61714646, -1.7872457 ,
+        0.19874498, -0.37236599,  1.8241336 ,  0.70387451, -1.56177289,
+        1.16724545,  0.79196237,  1.30471936,  0.1145699 , -0.59315046,
+        0.59619416, -0.39835885, -0.69599679, -0.2208986 ,  0.01633631])[0:dim]
+    # orthogonalize random vector to x_vec:
+    x_vec = x_vec/np.linalg.norm(x_vec)
+    rand_direction = rand_direction - np.dot(rand_direction, x_vec) * x_vec
+    y_vec = rand_direction/np.linalg.norm(rand_direction)
+    
+    # make grid for surfplot:
+    t = np.linspace(-tlim, tlim, num=nmeshgrid, endpoint=True)
+    X, Y = np.meshgrid(t,t)
+    F1 = np.zeros((len(X), len(Y)))
+    F2 = np.zeros((len(X), len(Y)))
+    for i in range(nmeshgrid):
+        for j in range(nmeshgrid):
+            F1[i,j] = f1.evaluate(origin + X[i,j]*x_vec + Y[i,j]*y_vec)
+            F2[i,j] = f2.evaluate(origin + X[i,j]*x_vec + Y[i,j]*y_vec)
+        
+    # surface plots for both objective functions:
+    #plt.contour(X, Y, F1, 25, cmap='Blues_r', alpha=0.9)
+    #plt.contour(X, Y, F2, 25, cmap='OrRd_r', alpha=0.9)
+    plt.contour(X, Y, F1, 40, cmap='YlGnBu_r', alpha=0.4)
+    plt.contour(X, Y, F2, 40, cmap='YlOrRd_r', alpha=0.4)
+    
+    # plot the single-objective optima:
+    proj_xopt1 = proj(xopt1-origin, x_vec, y_vec)  # project first
+    proj_xopt2 = proj(xopt2-origin, x_vec, y_vec)  # project first
+    
+    ax.plot(proj_xopt1[0], proj_xopt1[1], color='blue', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+    ax.plot(proj_xopt2[0], proj_xopt2[1], color='red', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+    
+#    # read and plot best Pareto set approximation
+#    if inputfolder:
+#        filename = "bbob-biobj_f%02d_i%02d_d%02d_nondominated.adat" % (f_id, inst_id, dim)
+#        C = []
+#        with open(inputfolder + filename) as f:
+#            for line in f:
+#                splitline = line.split()
+#                if len(splitline) == (dim + 3):  # has line x-values?
+#                    C.append(np.array(splitline[3:], dtype=np.float))
+#        C = np.array(C)
+#        C = C[C[:, second_variable].argsort(kind='mergesort')] # sort wrt x_{second_variable} first
+#        C = C[C[:, 0].argsort(kind='mergesort')] # now wrt x_1 to finally get a stable sort
+#        pareto_set_approx_size = C.shape[0]
+#
+#        # filter out all but one point per grid cell in the 
+#        # (x_1, x_{second_variable}) space
+#        if downsample:
+#            decimals=2
+#            X = np.around(C, decimals=decimals)
+#            # sort wrt x_{second_variable} first
+#            idx_1 = X[:, second_variable].argsort(kind='mergesort')
+#            X = X[idx_1] 
+#            # now wrt x_1 to finally get a stable sort
+#            idx_2 = X[:, 0].argsort(kind='mergesort')
+#            X = X[idx_2]
+#            xflag = np.array([False] * len(X), dtype=bool)
+#            xflag[0] = True # always take the first point
+#            for i in range(1, len(X)):
+#                if not (X[i,0] == X[i-1,0] and
+#                        X[i,second_variable] == X[i-1, second_variable]):
+#                    xflag[i] = True
+#            X = ((C[idx_1])[idx_2])[xflag]
+#
+#        pareto_set_sample_size = X.shape[0]
+#        
+#        paretosetlabel = ('reference set (%d of %d points)' %
+#                          (pareto_set_sample_size, pareto_set_approx_size))
+#        plt.plot(X[:, 0], X[:, second_variable], '.k', markersize=8,
+#                 label=paretosetlabel)
+#    # end of reading in and plotting best Pareto set approximation
+#
+#    for k in range(dim):    
+#        p6, = ax.plot(xgrid_opt_1_along_axes[k][:, 0],
+#                      xgrid_opt_1_along_axes[k][:, second_variable],
+#                      color=myc[1], ls=myls[0], lw=1, alpha=0.3)
+#    for k in range(dim):
+#        p7, = ax.plot(xgrid_opt_2_along_axes[k][:, 0],
+#                      xgrid_opt_2_along_axes[k][:, second_variable],
+#                      color=myc[1], ls=myls[0], lw=1, alpha=0.3)
+#
+#    p1, = ax.plot(xgrid_opt_1[:, 0], xgrid_opt_1[:, second_variable], color=myc[1], ls=myls[2],
+#                    label=r'cuts through single optima', **mylw)
+#
+#    p2, = ax.plot(xgrid_opt_2[:, 0], xgrid_opt_2[:, second_variable], color=myc[1], ls=myls[2],
+#                    **mylw)
+#
+#    p3, = ax.plot(xgrid_12[:, 0], xgrid_12[:, second_variable], color=myc[2], ls=myls[2],
+#                    label=r'cut through both optima', **mylw)
+#
+#    p4, = ax.plot(xgrid_rand_1[:, 0], xgrid_rand_1[:, second_variable], color=myc[3], ls=myls[2],
+#                    label=r'two random directions', **mylw)
+#
+#    p5, = ax.plot(xgrid_rand_2[:, 0], xgrid_rand_2[:, second_variable], color=myc[3], ls=myls[2],
+#                    **mylw)
+#
+#    # plot non-dominated points
+#    ax.plot(xgrid_opt_1[pfFlag_opt_1, 0], xgrid_opt_1[pfFlag_opt_1, second_variable], color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
+#                                 alpha=0.4)
+#    ax.plot(xgrid_opt_2[pfFlag_opt_2, 0], xgrid_opt_2[pfFlag_opt_2, second_variable], color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
+#                                 alpha=0.4)
+#    ax.plot(xgrid_12[pfFlag_12, 0], xgrid_12[pfFlag_12, second_variable], color=myc[2], ls='', marker='.', markersize=8, markeredgewidth=0,
+#                                 alpha=0.4)
+#    ax.plot(xgrid_rand_1[pfFlag_rand_1, 0], xgrid_rand_1[pfFlag_rand_1, second_variable], color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
+#                                 alpha=0.4)
+#    ax.plot(xgrid_rand_2[pfFlag_rand_2, 0], xgrid_rand_2[pfFlag_rand_2, second_variable], color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
+#                                 alpha=0.4)
+#
+#
+#    # highlight the region [-5,5]
+#    ax.add_patch(patches.Rectangle(
+#            (-5, -5), 10, 10,
+#            alpha=0.05,
+#            color='k'))
+#    
+    # beautify
+    ax.set_title("projection of decision space of bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
+    ax.legend(loc="best", framealpha=0.2, numpoints=1)
+    ax.axis('equal')
+    
+    # printing
+    if tofile:
+        if not os.path.exists(outputfolder):
+            os.makedirs(outputfolder)
+        filename = outputfolder + "directions-f%02d-i%02d-d%02d-searchspace" % (f_id, inst_id, dim)
+        saveFigure(filename, verbose=True)
+    else:        
+        plt.show(block=True)
+    
+    plt.close()
+    
+
+
+
+
+
+    ##############################################################
+    #                                                            #
+    # Objective Space of points on cut (log-scale).              #
+    #                                                            #
+    ##############################################################
+    
+    fig = plt.figure(1)
+    ax = fig.add_subplot(111)
     
     # plot reference sets if available:
     if inputfolder:
@@ -470,7 +635,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     # (or x1, x2 in the case of not enough variables).           #
     #                                                            #
     ##############################################################
-    fig = plt.figure(3)
+    fig = plt.figure(4)
     ax = fig.add_subplot(111)
     
     # plot reference sets if available:
@@ -663,3 +828,11 @@ def plot_ticks(linepoints, numticks, nadir, ideal, ax, mylw, myc, logscale=False
                     [linepoints[1][t_idx[i]] + direction[1]*0.2, linepoints[1][t_idx[i]] + direction[1]*1.1],
                     color=myc, ls='-', **mylw)
     return ax
+    
+def proj(w, u1, u2):
+    ''' projects vector w into the plane, spanned by u1 and u2
+        (i.e. np.dot(w, u1) * u1 + np.dot(w, u2) * u2).
+        
+        Returns the corresponding scalar values in the new coordinate system.
+    '''
+    return [np.dot(w, u1), np.dot(w, u2)]

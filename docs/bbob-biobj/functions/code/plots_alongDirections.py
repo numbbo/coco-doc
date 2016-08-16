@@ -27,13 +27,15 @@ import generate_plots
 # parameters to play with:
 dims = (5,)
 functions = range(1,56)
+functions = [52,]
 #functions = (1,2,3,10,20,30,54,55)
 instances = (1,)
 # Note: in single-objective bbobdocfunctions.pdf documentation, '0' seems to be the instance used
-#inputfolderforParetoFronts = 'archives/before_workshop/archives/'
-inputfolderforParetoFronts = 'F:/5D-archives-from-Tea/after_workshop/archives/'
-outputfolder = 'plots/after_workshop/'
-tofile = True # if True: files are written; if False: no files but screen output
+inputfolderforParetoFronts = 'archives/before_workshop/archives/'
+#inputfolderforParetoFronts = 'F:/5D-archives-from-Tea/after_workshop/archives/'
+outputfolder = 'plots/before_workshop/'
+#outputfolder = 'plots/after_workshop/'
+tofile = False # if True: files are written; if False: no files but screen output
 ###########################################
 
 
