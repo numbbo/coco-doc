@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 import numpy as np  # "pip install numpy" installs numpy
 import os
 import sys
+import copy # needed for getAllCornersOfHyperrectangle(...)
+from scipy.spatial import ConvexHull
 
 from bbob_pproc.ppfig import saveFigure
 
@@ -227,10 +229,8 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             F2[i,j] = f2.evaluate(origin + X[i,j]*x_vec + Y[i,j]*y_vec)
         
     # surface plots for both objective functions:
-    #plt.contour(X, Y, F1, 25, cmap='Blues_r', alpha=0.9)
-    #plt.contour(X, Y, F2, 25, cmap='OrRd_r', alpha=0.9)
-    plt.contour(X, Y, F1, 40, cmap='YlGnBu_r', alpha=0.4)
-    plt.contour(X, Y, F2, 40, cmap='YlOrRd_r', alpha=0.4)
+    plt.contour(X, Y, F1, 40, cmap='YlGnBu_r', alpha=0.2)
+    plt.contour(X, Y, F2, 40, cmap='YlOrRd_r', alpha=0.2)
     
     # plot the single-objective optima:
     proj_xopt1 = proj(xopt1-origin, x_vec, y_vec)  # project first
@@ -278,55 +278,87 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
 #                          (pareto_set_sample_size, pareto_set_approx_size))
 #        plt.plot(X[:, 0], X[:, second_variable], '.k', markersize=8,
 #                 label=paretosetlabel)
-#    # end of reading in and plotting best Pareto set approximation
-#
-#    for k in range(dim):    
-#        p6, = ax.plot(xgrid_opt_1_along_axes[k][:, 0],
-#                      xgrid_opt_1_along_axes[k][:, second_variable],
-#                      color=myc[1], ls=myls[0], lw=1, alpha=0.3)
-#    for k in range(dim):
-#        p7, = ax.plot(xgrid_opt_2_along_axes[k][:, 0],
-#                      xgrid_opt_2_along_axes[k][:, second_variable],
-#                      color=myc[1], ls=myls[0], lw=1, alpha=0.3)
-#
+#    # end of reading in and plotting best Pareto set approximation#
+
+    # plots along original coordinate system through the two optima:
+    for k in range(dim):
+        prof_xgrid_opt_1_along_axes = []
+        prof_xgrid_opt_2_along_axes = []
+        for i in range(len(xgrid_opt_1_along_axes[k])):
+            prof_xgrid_opt_1_along_axes.append(proj(xgrid_opt_1_along_axes[k][i,:]-origin,
+                                                    x_vec, y_vec))
+            prof_xgrid_opt_2_along_axes.append(proj(xgrid_opt_2_along_axes[k][i,:]-origin,
+                                                    x_vec, y_vec))
+                                                    
+        prof_xgrid_opt_1_along_axes = np.array(prof_xgrid_opt_1_along_axes)
+        prof_xgrid_opt_2_along_axes = np.array(prof_xgrid_opt_2_along_axes)
+        p6, = ax.plot(prof_xgrid_opt_1_along_axes[:, 0],
+                      prof_xgrid_opt_1_along_axes[:, 1],
+                      color=myc[1], ls=myls[0], lw=1, alpha=0.3)
+        p7, = ax.plot(prof_xgrid_opt_2_along_axes[:, 0],
+                      prof_xgrid_opt_2_along_axes[:, 1],
+                      color=myc[1], ls=myls[0], lw=1, alpha=0.3)
+                      
+                      
+        
 #    p1, = ax.plot(xgrid_opt_1[:, 0], xgrid_opt_1[:, second_variable], color=myc[1], ls=myls[2],
 #                    label=r'cuts through single optima', **mylw)
 #
 #    p2, = ax.plot(xgrid_opt_2[:, 0], xgrid_opt_2[:, second_variable], color=myc[1], ls=myls[2],
 #                    **mylw)
 #
-#    p3, = ax.plot(xgrid_12[:, 0], xgrid_12[:, second_variable], color=myc[2], ls=myls[2],
-#                    label=r'cut through both optima', **mylw)
-#
+
+
+    proj_xgrid_12 = []
+    for i in range(len(xgrid_12)):
+        proj_xgrid_12.append(proj(xgrid_12[i,:]-origin, x_vec, y_vec))
+    proj_xgrid_12 = np.array(proj_xgrid_12)
+    p3, = ax.plot(proj_xgrid_12[:, 0], proj_xgrid_12[:, 1], color=myc[2], ls=myls[2],
+                    label=r'cut through both optima', **mylw)
+
 #    p4, = ax.plot(xgrid_rand_1[:, 0], xgrid_rand_1[:, second_variable], color=myc[3], ls=myls[2],
 #                    label=r'two random directions', **mylw)
 #
 #    p5, = ax.plot(xgrid_rand_2[:, 0], xgrid_rand_2[:, second_variable], color=myc[3], ls=myls[2],
 #                    **mylw)
-#
-#    # plot non-dominated points
+
+    # plot non-dominated points
 #    ax.plot(xgrid_opt_1[pfFlag_opt_1, 0], xgrid_opt_1[pfFlag_opt_1, second_variable], color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
 #                                 alpha=0.4)
 #    ax.plot(xgrid_opt_2[pfFlag_opt_2, 0], xgrid_opt_2[pfFlag_opt_2, second_variable], color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
 #                                 alpha=0.4)
-#    ax.plot(xgrid_12[pfFlag_12, 0], xgrid_12[pfFlag_12, second_variable], color=myc[2], ls='', marker='.', markersize=8, markeredgewidth=0,
-#                                 alpha=0.4)
+    objs = np.vstack((fgrid_12[0], fgrid_12[1])).transpose()
+    pfFlag_12 = pf.callParetoFront(objs)
+    ax.plot(proj_xgrid_12[pfFlag_12, 0], proj_xgrid_12[pfFlag_12, 1], color=myc[2], ls='', marker='.', markersize=8, markeredgewidth=0,
+                                 alpha=0.4)
 #    ax.plot(xgrid_rand_1[pfFlag_rand_1, 0], xgrid_rand_1[pfFlag_rand_1, second_variable], color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
 #                                 alpha=0.4)
 #    ax.plot(xgrid_rand_2[pfFlag_rand_2, 0], xgrid_rand_2[pfFlag_rand_2, second_variable], color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
 #                                 alpha=0.4)
 #
-#
-#    # highlight the region [-5,5]
-#    ax.add_patch(patches.Rectangle(
-#            (-5, -5), 10, 10,
-#            alpha=0.05,
-#            color='k'))
-#    
+
+    # highlight the region [-5,5]
+    corners = getAllCornersOfHyperrectangle(dim, 5)
+    proj_corners = []
+    for c in corners:
+        proj_corners.append(proj(c - origin, x_vec, y_vec))
+    proj_corners = np.array(proj_corners)
+    # plot only convex hull here:
+    plt.plot(proj_corners[:,0], proj_corners[:,1], '.k', alpha=0.05)
+    hull = ConvexHull(proj_corners)    
+    hull_points = np.array([proj_corners[hull.vertices,0], proj_corners[hull.vertices,1]]).T
+    ax.add_patch(patches.Polygon(hull_points, closed=True,
+            alpha=0.05,
+            color='k'))
+            
+            
+    
     # beautify
     ax.set_title("projection of decision space of bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
     ax.legend(loc="best", framealpha=0.2, numpoints=1)
     ax.axis('equal')
+    ax.set_xlim([-8, 8])
+    ax.set_ylim([-8, 8])
     
     # printing
     if tofile:
@@ -836,3 +868,22 @@ def proj(w, u1, u2):
         Returns the corresponding scalar values in the new coordinate system.
     '''
     return [np.dot(w, u1), np.dot(w, u2)]
+
+
+
+def getAllCornersOfHyperrectangle(n, b):
+    ''' returns all corners of a hyperrectangle [-b,b]^n
+    '''
+    if (n == 1):
+        s = [[-b],[b]]
+    else:
+        tmp = getAllCornersOfHyperrectangle(n-1, b)
+        s = []
+        for t in tmp:
+            s1 = copy.deepcopy(t)
+            s1.append(-b)
+            s2 = copy.deepcopy(t)
+            s2.append(b)
+            s.append(s1)
+            s.append(s2)
+    return s
