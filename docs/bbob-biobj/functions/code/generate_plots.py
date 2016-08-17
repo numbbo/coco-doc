@@ -300,42 +300,66 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
                       color=myc[1], ls=myls[0], lw=1, alpha=0.3)
                       
                       
-        
-#    p1, = ax.plot(xgrid_opt_1[:, 0], xgrid_opt_1[:, second_variable], color=myc[1], ls=myls[2],
-#                    label=r'cuts through single optima', **mylw)
-#
-#    p2, = ax.plot(xgrid_opt_2[:, 0], xgrid_opt_2[:, second_variable], color=myc[1], ls=myls[2],
-#                    **mylw)
-#
+    proj_xgrid_opt_1 = []
+    for i in range(len(xgrid_opt_1)):
+        proj_xgrid_opt_1.append(proj(xgrid_opt_1[i,:]-origin, x_vec, y_vec))
+    proj_xgrid_opt_1 = np.array(proj_xgrid_opt_1)
+    p1, = ax.plot(proj_xgrid_opt_1[:, 0], proj_xgrid_opt_1[:, 1], color=myc[1],
+                  ls=myls[2], label=r'cuts through single optima', **mylw)
 
+    proj_xgrid_opt_2 = []
+    for i in range(len(xgrid_opt_2)):
+        proj_xgrid_opt_2.append(proj(xgrid_opt_2[i,:]-origin, x_vec, y_vec))
+    proj_xgrid_opt_2 = np.array(proj_xgrid_opt_2)
+    p2, = ax.plot(proj_xgrid_opt_2[:, 0], proj_xgrid_opt_2[:, 1], color=myc[1],
+                  ls=myls[2], **mylw)
 
     proj_xgrid_12 = []
     for i in range(len(xgrid_12)):
         proj_xgrid_12.append(proj(xgrid_12[i,:]-origin, x_vec, y_vec))
     proj_xgrid_12 = np.array(proj_xgrid_12)
-    p3, = ax.plot(proj_xgrid_12[:, 0], proj_xgrid_12[:, 1], color=myc[2], ls=myls[2],
-                    label=r'cut through both optima', **mylw)
+    p3, = ax.plot(proj_xgrid_12[:, 0], proj_xgrid_12[:, 1], color=myc[2],
+                  ls=myls[2], label=r'cut through both optima', **mylw)
 
-#    p4, = ax.plot(xgrid_rand_1[:, 0], xgrid_rand_1[:, second_variable], color=myc[3], ls=myls[2],
-#                    label=r'two random directions', **mylw)
-#
-#    p5, = ax.plot(xgrid_rand_2[:, 0], xgrid_rand_2[:, second_variable], color=myc[3], ls=myls[2],
-#                    **mylw)
+    proj_xgrid_rand_1 = []
+    for i in range(len(xgrid_rand_1)):
+        proj_xgrid_rand_1.append(proj(xgrid_rand_1[i,:]-origin, x_vec, y_vec))
+    proj_xgrid_rand_1 = np.array(proj_xgrid_rand_1)
+    p4, = ax.plot(proj_xgrid_rand_1[:, 0], proj_xgrid_rand_1[:, 1], color=myc[3],
+                  ls=myls[2], label=r'two random directions', **mylw)
 
-    # plot non-dominated points
-#    ax.plot(xgrid_opt_1[pfFlag_opt_1, 0], xgrid_opt_1[pfFlag_opt_1, second_variable], color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
-#                                 alpha=0.4)
-#    ax.plot(xgrid_opt_2[pfFlag_opt_2, 0], xgrid_opt_2[pfFlag_opt_2, second_variable], color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
-#                                 alpha=0.4)
+    proj_xgrid_rand_2 = []
+    for i in range(len(xgrid_rand_2)):
+        proj_xgrid_rand_2.append(proj(xgrid_rand_2[i,:]-origin, x_vec, y_vec))
+    proj_xgrid_rand_2 = np.array(proj_xgrid_rand_2)
+    p5, = ax.plot(proj_xgrid_rand_2[:, 0], proj_xgrid_rand_2[:, 1],
+                  color=myc[3], ls=myls[2], **mylw)
+
+    # plot non-dominated points along the lines:
+    objs = np.vstack((fgrid_opt_1[0], fgrid_opt_1[1])).transpose()
+    pfFlag_opt_1 = pf.callParetoFront(objs)
+    ax.plot(proj_xgrid_opt_1[pfFlag_opt_1, 0], proj_xgrid_opt_1[pfFlag_opt_1, 1],
+            color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
+            alpha=0.4)
+    objs = np.vstack((fgrid_opt_2[0], fgrid_opt_2[1])).transpose()
+    pfFlag_opt_2 = pf.callParetoFront(objs)
+    ax.plot(proj_xgrid_opt_2[pfFlag_opt_2, 0], proj_xgrid_opt_2[pfFlag_opt_2, 1],
+            color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
+            alpha=0.4)
     objs = np.vstack((fgrid_12[0], fgrid_12[1])).transpose()
     pfFlag_12 = pf.callParetoFront(objs)
     ax.plot(proj_xgrid_12[pfFlag_12, 0], proj_xgrid_12[pfFlag_12, 1], color=myc[2], ls='', marker='.', markersize=8, markeredgewidth=0,
                                  alpha=0.4)
-#    ax.plot(xgrid_rand_1[pfFlag_rand_1, 0], xgrid_rand_1[pfFlag_rand_1, second_variable], color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
-#                                 alpha=0.4)
-#    ax.plot(xgrid_rand_2[pfFlag_rand_2, 0], xgrid_rand_2[pfFlag_rand_2, second_variable], color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
-#                                 alpha=0.4)
-#
+    objs = np.vstack((fgrid_rand_1[0], fgrid_rand_1[1])).transpose()
+    pfFlag_rand_1 = pf.callParetoFront(objs)
+    ax.plot(proj_xgrid_rand_1[pfFlag_rand_1, 0], proj_xgrid_rand_1[pfFlag_rand_1, 1],
+            color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
+            alpha=0.4)
+    objs = np.vstack((fgrid_rand_2[0], fgrid_rand_2[1])).transpose()
+    pfFlag_rand_2 = pf.callParetoFront(objs)
+    ax.plot(proj_xgrid_rand_2[pfFlag_rand_2, 0], proj_xgrid_rand_2[pfFlag_rand_2, 1],
+            color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
+            alpha=0.4)
 
     # highlight the region [-5,5]
     corners = getAllCornersOfHyperrectangle(dim, 5)
@@ -351,8 +375,6 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             alpha=0.05,
             color='k'))
             
-            
-    
     # beautify
     ax.set_title("projection of decision space of bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
     ax.legend(loc="best", framealpha=0.2, numpoints=1)
