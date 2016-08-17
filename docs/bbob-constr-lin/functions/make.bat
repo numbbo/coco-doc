@@ -6,9 +6,9 @@ if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
 set BUILDDIR=build
-set HTMLBUILDDIR=../../../bbob-constr-lin/functions
-set PDF=bbob-constr-lin-functions.pdf
-set TEX=bbob-constr-lin-functions.tex
+set HTMLBUILDDIR=../../../bbob-constrained/functions
+set PDF=bbob-constrained-functions.pdf
+set TEX=bbob-constrained-functions.tex
 set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS% source
 set I18NSPHINXOPTS=%SPHINXOPTS% source
 if NOT "%PAPER%" == "" (
@@ -22,7 +22,7 @@ if "%1" == "help" (
 	:help
 	echo.Please use `make ^<target^>` where ^<target^> is one of
 	echo.  html           to make standalone HTML files
-	echo.  html-topublish to make HTML files in the repository ../../../bbob-constr-lin/functions"
+	echo.  html-topublish to make HTML files in the repository ../../../bbob-constrained/functions"
 	echo.  latexpdf       to make LaTeX files and pdf in ../
 	echo.  dirhtml        to make HTML files named index.html in directories
 	echo.  singlehtml     to make a single large HTML file
@@ -140,9 +140,9 @@ if "%1" == "qthelp" (
 	echo.
 	echo.Build finished; now you can run "qcollectiongenerator" with the ^
 .qhcp project file in %BUILDDIR%/qthelp, like this:
-	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\constr-lin-functions.qhcp
+	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\constrained-functions.qhcp
 	echo.To view the help file:
-	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\constr-lin-functions.ghc
+	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\constrained-functions.ghc
 	goto end
 )
 

@@ -6,9 +6,9 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
-HTMLBUILDDIR  = ../../../bbob-constr-lin/functions
-PDF           = bbob-constr-lin-functions.pdf
-TEX           = bbob-constr-lin-functions.tex
+HTMLBUILDDIR  = ../../../bbob-constrained/functions
+PDF           = bbob-constrained-functions.pdf
+TEX           = bbob-constrained-functions.tex
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
@@ -27,7 +27,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  html       to make standalone HTML files"
-	@echo "  html-topublish to make standalone HTML files in the repository ../../../bbob-constr-lin/functions"
+	@echo "  html-topublish to make standalone HTML files in the repository ../../../bbob-constrained/functions"
 	@echo "  latexpdf   to make LaTeX files and pdf in ../"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
@@ -96,9 +96,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/constr-lin-functions.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/constrained-functions.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/constr-lin-functions.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/constrained-functions.qhc"
 
 applehelp:
 	$(SPHINXBUILD) -b applehelp $(ALLSPHINXOPTS) $(BUILDDIR)/applehelp
@@ -113,8 +113,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/constr-lin-functions"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/constr-lin-functions"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/constrained-functions"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/constrained-functions"
 	@echo "# devhelp"
 
 epub:
