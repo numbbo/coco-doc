@@ -240,45 +240,53 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     ax.plot(proj_xopt2[0], proj_xopt2[1], color='red', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
     
 #    # read and plot best Pareto set approximation
-#    if inputfolder:
-#        filename = "bbob-biobj_f%02d_i%02d_d%02d_nondominated.adat" % (f_id, inst_id, dim)
-#        C = []
-#        with open(inputfolder + filename) as f:
-#            for line in f:
-#                splitline = line.split()
-#                if len(splitline) == (dim + 3):  # has line x-values?
-#                    C.append(np.array(splitline[3:], dtype=np.float))
-#        C = np.array(C)
-#        C = C[C[:, second_variable].argsort(kind='mergesort')] # sort wrt x_{second_variable} first
-#        C = C[C[:, 0].argsort(kind='mergesort')] # now wrt x_1 to finally get a stable sort
-#        pareto_set_approx_size = C.shape[0]
-#
-#        # filter out all but one point per grid cell in the 
-#        # (x_1, x_{second_variable}) space
-#        if downsample:
-#            decimals=2
-#            X = np.around(C, decimals=decimals)
-#            # sort wrt x_{second_variable} first
-#            idx_1 = X[:, second_variable].argsort(kind='mergesort')
-#            X = X[idx_1] 
-#            # now wrt x_1 to finally get a stable sort
-#            idx_2 = X[:, 0].argsort(kind='mergesort')
-#            X = X[idx_2]
-#            xflag = np.array([False] * len(X), dtype=bool)
-#            xflag[0] = True # always take the first point
-#            for i in range(1, len(X)):
-#                if not (X[i,0] == X[i-1,0] and
-#                        X[i,second_variable] == X[i-1, second_variable]):
-#                    xflag[i] = True
-#            X = ((C[idx_1])[idx_2])[xflag]
-#
-#        pareto_set_sample_size = X.shape[0]
-#        
-#        paretosetlabel = ('reference set (%d of %d points)' %
-#                          (pareto_set_sample_size, pareto_set_approx_size))
-#        plt.plot(X[:, 0], X[:, second_variable], '.k', markersize=8,
-#                 label=paretosetlabel)
-#    # end of reading in and plotting best Pareto set approximation#
+    if inputfolder:
+        filename = "bbob-biobj_f%02d_i%02d_d%02d_nondominated.adat" % (f_id, inst_id, dim)
+        C = []
+        with open(inputfolder + filename) as f:
+            for line in f:
+                splitline = line.split()
+                if len(splitline) == (dim + 3):  # has line x-values?
+                    C.append(np.array(splitline[3:], dtype=np.float))
+        C = np.array(C)
+        D = []
+        for c in C:
+            D.append(proj(c - origin, x_vec, y_vec))
+        D = np.array(D)
+        
+        D = D[D[:, 1].argsort(kind='mergesort')] # sort wrt second coordinate first
+        D = D[D[:, 0].argsort(kind='mergesort')] # now wrt first coordinate
+        pareto_set_approx_size = D.shape[0]
+
+        # filter out all but one point per grid cell in the 
+        # coordinate system of (x_vec, y_vec):
+        if downsample:
+            decimals=2
+            X = np.around(D, decimals=decimals)
+            # sort wrt second coordinate first
+            idx_1 = X[:, 1].argsort(kind='mergesort')
+            X = X[idx_1]
+            # now wrt first coordinate
+            idx_2 = X[:, 0].argsort(kind='mergesort')
+            X = X[idx_2]
+            xflag = np.array([False] * len(X), dtype=bool)
+            xflag[0] = True # always take the first point
+            for i in range(1, len(X)):
+                if not (X[i,0] == X[i-1,0] and
+                        X[i,1] == X[i-1,1]):
+                    xflag[i] = True
+            X = ((D[idx_1])[idx_2])[xflag]
+
+        pareto_set_sample_size = X.shape[0]
+        
+        plt.plot(D[:, 0], D[:, 1], '.b', markersize=10)
+        
+        
+        paretosetlabel = ('reference set (%d of %d points)' %
+                          (pareto_set_sample_size, pareto_set_approx_size))
+        plt.plot(X[:, 0], X[:, 1], '.k', markersize=8,
+                 label=paretosetlabel)
+    # end of reading in and plotting best Pareto set approximation#
 
     # plots along original coordinate system through the two optima:
     for k in range(dim):

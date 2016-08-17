@@ -27,7 +27,6 @@ import generate_plots
 # parameters to play with:
 dims = (5,)
 functions = range(1,56)
-functions = [52,]
 #functions = (1,2,3,10,20,30,54,55)
 instances = (1,)
 # Note: in single-objective bbobdocfunctions.pdf documentation, '0' seems to be the instance used
@@ -35,7 +34,7 @@ inputfolderforParetoFronts = 'archives/before_workshop/archives/'
 #inputfolderforParetoFronts = 'F:/5D-archives-from-Tea/after_workshop/archives/'
 outputfolder = 'plots/before_workshop/'
 #outputfolder = 'plots/after_workshop/'
-tofile = False # if True: files are written; if False: no files but screen output
+tofile = True # if True: files are written; if False: no files but screen output
 ###########################################
 
 
@@ -58,7 +57,7 @@ for problem_index, problem in enumerate(suite):
     
     if ((i not in instances) or (f not in functions)
                              or (d not in dims)):
-        print("skipping %s..." % problem.id)
+        #print("skipping %s..." % problem.id)
         continue
     else:
         print("processing %s..." % problem.id)
