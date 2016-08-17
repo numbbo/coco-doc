@@ -219,27 +219,20 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     y_vec = rand_direction/np.linalg.norm(rand_direction)
     
     # make grid for surfplot:
-    t = np.linspace(-tlim, tlim, num=nmeshgrid, endpoint=True)
-    X, Y = np.meshgrid(t,t)
+    tmesh = np.linspace(-tlim, tlim, num=nmeshgrid, endpoint=True)
+    X, Y = np.meshgrid(tmesh, tmesh)
     F1 = np.zeros((len(X), len(Y)))
     F2 = np.zeros((len(X), len(Y)))
     for i in range(nmeshgrid):
         for j in range(nmeshgrid):
             F1[i,j] = f1.evaluate(origin + X[i,j]*x_vec + Y[i,j]*y_vec)
             F2[i,j] = f2.evaluate(origin + X[i,j]*x_vec + Y[i,j]*y_vec)
-        
+
     # surface plots for both objective functions:
     plt.contour(X, Y, F1, 40, cmap='YlGnBu_r', alpha=0.2)
     plt.contour(X, Y, F2, 40, cmap='YlOrRd_r', alpha=0.2)
-    
-    # plot the single-objective optima:
-    proj_xopt1 = proj(xopt1-origin, x_vec, y_vec)  # project first
-    proj_xopt2 = proj(xopt2-origin, x_vec, y_vec)  # project first
-    
-    ax.plot(proj_xopt1[0], proj_xopt1[1], color='blue', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
-    ax.plot(proj_xopt2[0], proj_xopt2[1], color='red', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
-    
-#    # read and plot best Pareto set approximation
+   
+    # read and plot best Pareto set approximation
     if inputfolder:
         filename = "bbob-biobj_f%02d_i%02d_d%02d_nondominated.adat" % (f_id, inst_id, dim)
         C = []
@@ -276,12 +269,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
                         X[i,1] == X[i-1,1]):
                     xflag[i] = True
             X = ((D[idx_1])[idx_2])[xflag]
-
         pareto_set_sample_size = X.shape[0]
-        
-        plt.plot(D[:, 0], D[:, 1], '.b', markersize=10)
-        
-        
         paretosetlabel = ('reference set (%d of %d points)' %
                           (pareto_set_sample_size, pareto_set_approx_size))
         plt.plot(X[:, 0], X[:, 1], '.k', markersize=8,
@@ -294,7 +282,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         prof_xgrid_opt_2_along_axes = []
         for i in range(len(xgrid_opt_1_along_axes[k])):
             prof_xgrid_opt_1_along_axes.append(proj(xgrid_opt_1_along_axes[k][i,:]-origin,
-                                                    x_vec, y_vec))
+                                                    x_vec, y_vec))                                            
             prof_xgrid_opt_2_along_axes.append(proj(xgrid_opt_2_along_axes[k][i,:]-origin,
                                                     x_vec, y_vec))
                                                     
@@ -369,6 +357,38 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
             alpha=0.4)
 
+    # plot random line within the new coordinate system (x_vec, y_vec)
+    rand_proj = -4+8*np.random.rand(2)
+    #rand_proj = np.array([-1.88985397,  0.28416559])
+    rand_dir_proj = np.random.multivariate_normal(np.zeros(2), np.identity(2))
+    #rand_dir_proj = np.array([0.31871261,  0.11848941])
+    rand_dir_proj = rand_dir_proj/np.linalg.norm(rand_dir_proj)
+    xgrid_rand_proj = np.array(np.tile(rand_proj, (ngrid, 1))
+                   + np.dot(t.reshape(ngrid,1), np.array([rand_dir_proj])))
+    p6, = ax.plot(xgrid_rand_proj[:, 0], xgrid_rand_proj[:, 1],
+                  color='g', ls=myls[2], lw=2, alpha=0.8,
+                  label=r'random cut in plane through optima')
+    # ...and plot the corresponding non-dominated points
+    xgrid_rand_unprojected = []
+    for x in xgrid_rand_proj:
+        xgrid_rand_unprojected.append(origin + x[0]*x_vec + x[1]*y_vec)
+    fgrid_rand_unprojected = [f1.evaluate(xgrid_rand_unprojected),
+                              f2.evaluate(xgrid_rand_unprojected)]
+    xgrid_rand_unprojected = np.array(xgrid_rand_unprojected)
+        
+    objs = np.vstack((fgrid_rand_unprojected[0],
+                      fgrid_rand_unprojected[1])).transpose()
+    pfFlag_rand_unprojected = pf.callParetoFront(objs)
+    ax.plot(xgrid_rand_proj[pfFlag_rand_unprojected, 0],
+            xgrid_rand_proj[pfFlag_rand_unprojected, 1],
+            color='g', ls='', marker='.', markersize=8, markeredgewidth=0,
+            alpha=0.6)
+    
+
+
+
+
+
     # highlight the region [-5,5]
     corners = getAllCornersOfHyperrectangle(dim, 5)
     proj_corners = []
@@ -376,16 +396,22 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         proj_corners.append(proj(c - origin, x_vec, y_vec))
     proj_corners = np.array(proj_corners)
     # plot only convex hull here:
-    plt.plot(proj_corners[:,0], proj_corners[:,1], '.k', alpha=0.05)
+    plt.plot(proj_corners[:,0], proj_corners[:,1], '.k', alpha=0.1)
     hull = ConvexHull(proj_corners)    
     hull_points = np.array([proj_corners[hull.vertices,0], proj_corners[hull.vertices,1]]).T
     ax.add_patch(patches.Polygon(hull_points, closed=True,
             alpha=0.05,
             color='k'))
-            
+
+    # plot the single-objective optima:
+    proj_xopt1 = proj(xopt1-origin, x_vec, y_vec)  # project first
+    proj_xopt2 = proj(xopt2-origin, x_vec, y_vec)  # project first
+    ax.plot(proj_xopt1[0], proj_xopt1[1], color='blue', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+    ax.plot(proj_xopt2[0], proj_xopt2[1], color='red', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+
     # beautify
     ax.set_title("projection of decision space of bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
-    ax.legend(loc="best", framealpha=0.2, numpoints=1)
+    ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
     ax.axis('equal')
     ax.set_xlim([-8, 8])
     ax.set_ylim([-8, 8])
@@ -394,7 +420,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     if tofile:
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
-        filename = outputfolder + "directions-f%02d-i%02d-d%02d-searchspace" % (f_id, inst_id, dim)
+        filename = outputfolder + "directions-f%02d-i%02d-d%02d-searchspace-projection" % (f_id, inst_id, dim)
         saveFigure(filename, verbose=True)
     else:        
         plt.show(block=True)
