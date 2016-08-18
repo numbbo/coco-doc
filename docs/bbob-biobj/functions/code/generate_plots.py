@@ -385,10 +385,6 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             alpha=0.6)
     
 
-
-
-
-
     # highlight the region [-5,5]
     corners = getAllCornersOfHyperrectangle(dim, 5)
     proj_corners = []
@@ -529,7 +525,15 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
                     label=r'two random directions', **mylw)
     p5, = ax.loglog((fgrid_rand_2[0]-f1opt)/nf[0], (fgrid_rand_2[1]-f2opt)/nf[1],
                     color=myc[3], ls=myls[2], **mylw)
-        
+            
+    p6, = ax.plot((fgrid_rand_unprojected[0]-f1opt)/nf[0],
+                  (fgrid_rand_unprojected[1]-f2opt)/nf[1],
+                  color='g', ls=myls[2], lw=2, alpha=0.8,
+                  label=r'random cut in plane through optima')
+    ax.plot((fgrid_rand_unprojected[0][pfFlag_rand_unprojected]-f1opt)/nf[0],
+            (fgrid_rand_unprojected[1][pfFlag_rand_unprojected]-f2opt)/nf[1],
+            color='g', ls='', marker='.', markersize=8, markeredgewidth=0,
+            alpha=0.6)
     
 
     # print 'ticks' along the axes in equidistant t space:
@@ -539,6 +543,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     plot_ticks([fgrid_12[0], fgrid_12[1]], numticks, nadir, ideal, ax, mylw, myc[2], logscale=True)
     plot_ticks([fgrid_rand_1[0], fgrid_rand_1[1]], numticks, nadir, ideal, ax, mylw, myc[3], logscale=True)
     plot_ticks([fgrid_rand_2[0], fgrid_rand_2[1]], numticks, nadir, ideal, ax, mylw, myc[3], logscale=True)
+    plot_ticks([fgrid_rand_unprojected[0], fgrid_rand_unprojected[1]], numticks, nadir, ideal, ax, mylw, 'g', logscale=True)    
     
     # Get Pareto front from vectors of objective values obtained
     objs = np.vstack((fgrid_opt_1[0], fgrid_opt_1[1])).transpose()
@@ -651,6 +656,16 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     p4, = ax.plot(fgrid_rand_2[0], fgrid_rand_2[1], color=myc[3], ls=myls[2],
                     **mylw)
         
+    p6, = ax.plot(fgrid_rand_unprojected[0],
+                  fgrid_rand_unprojected[1],
+                  color='g', ls=myls[2], lw=2, alpha=0.8,
+                  label=r'random cut in plane through optima')
+    ax.plot(fgrid_rand_unprojected[0][pfFlag_rand_unprojected],
+            fgrid_rand_unprojected[1][pfFlag_rand_unprojected],
+            color='g', ls='', marker='.', markersize=8, markeredgewidth=0,
+            alpha=0.6)
+        
+        
     # plot a few ticks along directions, equi-distant in search space:
     numticks = 11
     plot_ticks(fgrid_opt_1, numticks, nadir, ideal, ax, mylw, 'b')
@@ -658,7 +673,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     plot_ticks(fgrid_12, numticks, nadir, ideal, ax, mylw, 'r')
     plot_ticks(fgrid_rand_1, numticks, nadir, ideal, ax, mylw, 'y')
     plot_ticks(fgrid_rand_2, numticks, nadir, ideal, ax, mylw, 'y')
-
+    plot_ticks(fgrid_rand_unprojected, numticks, nadir, ideal, ax, mylw, 'g')
     
     
     # plot non-dominated points
@@ -803,6 +818,15 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
 
     p5, = ax.plot(xgrid_rand_2[:, 0], xgrid_rand_2[:, second_variable], color=myc[3], ls=myls[2],
                     **mylw)
+
+    p6, = ax.plot(xgrid_rand_unprojected[:, 0], xgrid_rand_unprojected[:, second_variable],
+                  color='g', ls=myls[2], lw=2, alpha=0.8,
+                  label=r'random cut in plane through optima')
+    ax.plot(xgrid_rand_unprojected[pfFlag_rand_unprojected, 0],
+            xgrid_rand_unprojected[pfFlag_rand_unprojected, second_variable],
+            color='g', ls='', marker='.', markersize=8, markeredgewidth=0,
+            alpha=0.6)
+    
 
     # plot non-dominated points
     ax.plot(xgrid_opt_1[pfFlag_opt_1, 0], xgrid_opt_1[pfFlag_opt_1, second_variable], color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
