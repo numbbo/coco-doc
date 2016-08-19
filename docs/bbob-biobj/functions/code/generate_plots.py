@@ -698,7 +698,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
 
     # plot extremes    
     ax.plot(f_xopt1[0], f_xopt1[1], color='blue', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
-    ax.plot(f_xopt2[0], f_xopt2[1], color='blue', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+    ax.plot(f_xopt2[0], f_xopt2[1], color='red', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
     
     
     # beautify:
@@ -839,6 +839,11 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
                                  alpha=0.4)
     ax.plot(xgrid_rand_2[pfFlag_rand_2, 0], xgrid_rand_2[pfFlag_rand_2, second_variable], color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
                                  alpha=0.4)
+
+
+    # plot the single-objective optima:
+    ax.plot(xopt1[0], xopt1[second_variable], color='blue', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+    ax.plot(xopt2[0], xopt2[second_variable], color='red', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
 
 
     # highlight the region [-5,5]

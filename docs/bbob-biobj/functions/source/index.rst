@@ -83,7 +83,7 @@ of function groups, instances, and potential objective space normalization.
   For the time being, this documentation is under development and might not 
   contain all final data.
 
-.. figure:: _figs/examples-bbob-biobj.png
+.. figure:: _figs/examples-bbob-biobj.*
    :scale: 60
    :align: center
 
@@ -764,6 +764,24 @@ Contained in the *separable - separable* function class.
 .. .. rubric:: Information gained from this function:
 
 .. * What is the optimal convergence rate of a bi-objective algorithm?
+
+
+.. list-table:: Illustration of search space (first row) and objective space (second row) for ``bbob-biobj`` function |f1| in dimension 5 for the first instance.
+   :widths: 50 50
+   :header-rows: 0
+  
+   * - |f01-i01-d05-searchspace|
+     - |f01-i01-d05-searchspace-projected| 
+   * - |f01-i01-d05-logobjspace|
+     - |f01-i01-d05-objspace|
+
+
+.. |f01-i01-d05-searchspace| image:: ../code/plots/after_workshop/directions-f01-i01-d05-searchspace.*
+.. |f01-i01-d05-searchspace-projected| image:: ../code/plots/after_workshop/directions-f01-i01-d05-searchspace-projection.*
+.. |f01-i01-d05-logobjspace| image:: ../code/plots/after_workshop/directions-f01-i01-d05-logobjspace.*
+.. |f01-i01-d05-objspace| image:: ../code/plots/after_workshop/directions-f01-i01-d05-objspace.*
+
+	
 
 
 .. _f2:

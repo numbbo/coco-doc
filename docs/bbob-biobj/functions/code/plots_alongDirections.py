@@ -31,7 +31,6 @@ functions = range(1,56)
 instances = (1,)
 # Note: in single-objective bbobdocfunctions.pdf documentation, '0' seems to be the instance used
 #inputfolderforParetoFronts = 'archives/before_workshop/archives/'
-#inputfolderforParetoFronts = 'F:/5D-archives-from-Tea/after_workshop/archives/'
 inputfolderforParetoFronts = 'F:/5D-archives-from-Tea/after_workshop/archives/'
 #outputfolder = 'plots/before_workshop/'
 outputfolder = 'plots/after_workshop/'
