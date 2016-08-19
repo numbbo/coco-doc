@@ -512,14 +512,6 @@ The ``bbob-biobj`` Test Functions and Their Properties
 In the following, we detail all 55 ``bbob-biobj`` functions
 and their properties.
 
-.. .. todo::
-   Eventually, the following shall be provided for each function:
-
-   - plots of the best known approximations of the Pareto set and the Pareto front
-   - potentially the outcomes of example algorithms
-   - plots (in objective space) of randomly sampled search points
-   - potentially function value distributions along cuts through the search space 
-
 The following table gives an overview and quick access to the functions,
 inner cell IDs refer to the ``bbob-biobj`` functions, outer column and row
 annotations refer to the single-objective ``bbob`` functions.
@@ -712,6 +704,46 @@ are guaranteed to lie within :math:`[-5,5]^n`.
 .. |coco_problem_get_smallest_value_of_interest| replace:: ``coco_problem_get_smallest_value_of_interest``
 .. _coco_problem_get_smallest_value_of_interest: http://numbbo.github.io/coco-doc/C/coco_8h.html#a4ea6c067adfa866b0179329fe9b7c458
 
+
+Provided Search Space and Objective Space Plots
+-----------------------------------------------
+In order to better understand the properties of the 55 ``bbob-biobj`` functions, we display for each of them plots
+of the best known Pareto front approximation in objective space in original scaling (as seen by the algorithm) and in
+log-scale, normalized such that the ideal point is at :math:`[0,0]` and the nadir point is at :math:`[1,1]`. We
+also provide plots illustrating the best known Pareto set approximation in search space (all depicted in black).
+For the latter, two different plots are provided: a plot showing the projection onto a coordinate-axes-parallel cut
+defined by two variables and a plot that projects all points onto a random cutting plane which contains both 
+single-objective optima and that also shows the contour lines of both objective functions on this plane.
+
+In addition to the best Pareto set/Pareto front approximations, cuts through the search space are shown along
+(i) random lines through each optimum (in blue),
+(ii) lines along each coordinate axis through each optimum (blue dotted lines),
+(iii) the line through both optima (in red),
+(iv) two fully random lines [#]_ (in yellow), and
+(v) a random line in the random projection plane going through both optima [#]_ (in green).
+
+All lines are normalized (of length 10 with the support vector in the middle). Ticks along the lines in the
+objective space plots indicate the ends of line segments of the same length in search space. Thicker points on the lines
+depict solutions that are non-dominated with respect to all points on the same line.
+Furthermore, the search space plots highlight the projected region :math:`[-5,5]^n` as gray-shaded area while
+the gray-shaded area in the objective space plots highlight the region of interest between ideal (:math:`+`) and
+nadir point (:math:`\times`). Note that, to keep the plots to a manageable size, the Pareto set and Pareto front
+approximations are carefully downsampled such that only one solution per grid point is shown---with the
+precision of 2 decimals for the search space plots and 3 decimals for the objective space plots to define
+the grid. The number of considered and actually displayed solutions is indicated in the search space plots'
+legends. All plots are provided for one instance here only and for dimension 5 for the moment.
+
+.. TODO: ...but are provided online at \url{TODO} for all instances 1..10
+
+.. TODO: provide also the plots for 2-D (and maybe 20-D instead/on top of 5-D?)
+
+
+.. [#] of random direction and with a support vector, drawn uniformly at random in :math:`[-4,4]^n`
+
+.. [#] with a random direction within the plane and a support vector, drawn uniformly at random in :math:`[-4,4]`
+       in the coordinate system of the cutting plane`
+
+	   
 The 55 ``bbob-biobj`` Functions
 -------------------------------
 
