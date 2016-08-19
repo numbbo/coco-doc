@@ -417,7 +417,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-searchspace-projection" % (f_id, inst_id, dim)
-        saveFigure(filename, verbose=True)
+        saveFigure(filename)
     else:        
         plt.show(block=True)
     
@@ -609,7 +609,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-logobjspace" % (f_id, inst_id, dim)
-        saveFigure(filename, verbose=True)
+        saveFigure(filename)
     else:   
         plt.show(block=True)
         
@@ -724,7 +724,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-objspace" % (f_id, inst_id, dim)
-        saveFigure(filename, verbose=True)
+        saveFigure(filename)
     else:        
         plt.show(block=True)
     
@@ -862,7 +862,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-searchspace" % (f_id, inst_id, dim)
-        saveFigure(filename, verbose=True)
+        saveFigure(filename)
     else:        
         plt.show(block=True)
     
