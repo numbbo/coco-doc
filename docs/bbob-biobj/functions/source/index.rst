@@ -743,6 +743,10 @@ legends. All plots are provided for one instance here only and for dimension 5 f
 .. [#] with a random direction within the plane and a support vector, drawn uniformly at random in :math:`[-4,4]`
        in the coordinate system of the cutting plane`
 
+
+.. raw:: latex
+
+    \pagebreak
 	   
 The 55 ``bbob-biobj`` Functions
 -------------------------------
@@ -766,22 +770,40 @@ Contained in the *separable - separable* function class.
 .. * What is the optimal convergence rate of a bi-objective algorithm?
 
 
-.. list-table:: Illustration of search space (first row) and objective space (second row) for ``bbob-biobj`` function |f1| in dimension 5 for the first instance.
-   :widths: 50 50
-   :header-rows: 0
-  
-   * - |f01-i01-d05-searchspace|
-     - |f01-i01-d05-searchspace-projected| 
-   * - |f01-i01-d05-logobjspace|
-     - |f01-i01-d05-objspace|
+|f01-i01-d05-searchspace| |f01-i01-d05-searchspace-projected|
 
+.. raw:: latex
+
+   Illustration of search space for \code{bbob-biobj} function $f_1$ in dimension 5 for the first instance.\\[1em]
+
+|f01-i01-d05-logobjspace| |f01-i01-d05-objspace| 
+
+.. raw:: html
+   
+   Illustration of search space (first row) and objective space (second row) for
+   <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+   function 1 in dimension 5 for the first instance.
+
+.. raw:: latex
+ 
+  Illustration of objective space for \code{bbob-biobj} function $f_1$ in dimension 5 for the
+  first instance (left: normalized in log-scale; right: original scaling).
+   
 
 .. |f01-i01-d05-searchspace| image:: ../code/plots/after_workshop/directions-f01-i01-d05-searchspace.*
+   :width: 49%
 .. |f01-i01-d05-searchspace-projected| image:: ../code/plots/after_workshop/directions-f01-i01-d05-searchspace-projection.*
+   :width: 49%
 .. |f01-i01-d05-logobjspace| image:: ../code/plots/after_workshop/directions-f01-i01-d05-logobjspace.*
+   :width: 49%
 .. |f01-i01-d05-objspace| image:: ../code/plots/after_workshop/directions-f01-i01-d05-objspace.*
+   :width: 49%
 
+.. raw:: latex
+
+    \pagebreak
 	
+
 
 
 .. _f2:

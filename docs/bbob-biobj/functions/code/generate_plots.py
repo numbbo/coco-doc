@@ -14,7 +14,7 @@ import sys
 import copy # needed for getAllCornersOfHyperrectangle(...)
 from scipy.spatial import ConvexHull
 
-from bbob_pproc.ppfig import saveFigure
+from bbob_pproc import ppfig
 
 import bbobbenchmarks as bm
 import paretofrontwrapper as pf # wrapper file and DLL must be in this folder
@@ -29,6 +29,9 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     myc = ['g', 'b', 'r', 'y'] # colors for the different line directions
     myls = [':', '--', '-'] # line styles
     mylw = dict(lw=2, alpha=0.6) # line width # ALSO: mylw = {'lw':2, 'alpha':0.9}
+    
+    ppfig.bbox_inches_choices['png'] = 'tight'
+    ppfig.bbox_inches_choices['pdf'] = 'tight'
     
     # define lines as a + t*b
     tlim = 10 # 
@@ -417,7 +420,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-searchspace-projection" % (f_id, inst_id, dim)
-        saveFigure(filename)
+        ppfig.saveFigure(filename)
     else:        
         plt.show(block=True)
     
@@ -587,7 +590,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     # beautify:
     ax.set_xlabel(r'$f_1 - f_1^\mathsf{opt}$ (normalized)', fontsize=16)
     ax.set_ylabel(r'$f_2 - f_2^\mathsf{opt}$ (normalized)', fontsize=16)
-    ax.legend(loc="best", framealpha=0.2)
+    ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
     ax.set_title("bbob-biobj $f_{%d}$ along linear search space directions (%d-D, instance %d)" % (f_id, dim, inst_id))
     [line.set_zorder(3) for line in ax.lines]
     [line.set_zorder(3) for line in ax.lines]
@@ -609,7 +612,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-logobjspace" % (f_id, inst_id, dim)
-        saveFigure(filename)
+        ppfig.saveFigure(filename)
     else:   
         plt.show(block=True)
         
@@ -704,7 +707,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     # beautify:
     ax.set_xlabel(r'first objective', fontsize=16)
     ax.set_ylabel(r'second objective', fontsize=16)
-    ax.legend(loc="best", framealpha=0.2)
+    ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
     ax.set_title("bbob-biobj $f_{%d}$ along linear search space directions (%d-D, instance %d)" % (f_id, dim, inst_id))    
     [line.set_zorder(3) for line in ax.lines]
     [line.set_zorder(3) for line in ax.lines]
@@ -724,7 +727,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-objspace" % (f_id, inst_id, dim)
-        saveFigure(filename)
+        ppfig.saveFigure(filename)
     else:        
         plt.show(block=True)
     
@@ -859,7 +862,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         ax.set_title("decision space of bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
     else:
         ax.set_title("projection of decision space for bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
-    ax.legend(loc="best", framealpha=0.2, numpoints=1)
+    ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
     fig.subplots_adjust(left=0.1) # more room for the y-axis label    
     
     # printing
@@ -867,7 +870,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-searchspace" % (f_id, inst_id, dim)
-        saveFigure(filename)
+        ppfig.saveFigure(filename)
     else:        
         plt.show(block=True)
     
