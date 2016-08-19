@@ -770,13 +770,19 @@ Contained in the *separable - separable* function class.
 .. * What is the optimal convergence rate of a bi-objective algorithm?
 
 
-|f01-i01-d05-searchspace| |f01-i01-d05-searchspace-projected|
+.. image:: ../code/plots/after_workshop/directions-f01-i01-d05-searchspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f01-i01-d05-searchspace-projection.*
+   :width: 49%
 
 .. raw:: latex
 
    Illustration of search space for \code{bbob-biobj} function $f_1$ in dimension 5 for the first instance.\\[1em]
 
-|f01-i01-d05-logobjspace| |f01-i01-d05-objspace| 
+.. image:: ../code/plots/after_workshop/directions-f01-i01-d05-logobjspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f01-i01-d05-objspace.*
+   :width: 49%
 
 .. raw:: html
    
@@ -788,21 +794,8 @@ Contained in the *separable - separable* function class.
  
   Illustration of objective space for \code{bbob-biobj} function $f_1$ in dimension 5 for the
   first instance (left: normalized in log-scale; right: original scaling).
-   
+  \pagebreak
 
-.. |f01-i01-d05-searchspace| image:: ../code/plots/after_workshop/directions-f01-i01-d05-searchspace.*
-   :width: 49%
-.. |f01-i01-d05-searchspace-projected| image:: ../code/plots/after_workshop/directions-f01-i01-d05-searchspace-projection.*
-   :width: 49%
-.. |f01-i01-d05-logobjspace| image:: ../code/plots/after_workshop/directions-f01-i01-d05-logobjspace.*
-   :width: 49%
-.. |f01-i01-d05-objspace| image:: ../code/plots/after_workshop/directions-f01-i01-d05-objspace.*
-   :width: 49%
-
-.. raw:: latex
-
-    \pagebreak
-	
 
 
 
@@ -825,6 +818,33 @@ Contained in the *separable - separable* function class.
 .. .. rubric:: Information gained from this function:
 
 .. * In comparison to :math:`f_1`: Is symmetry exploited?
+
+.. image:: ../code/plots/after_workshop/directions-f02-i01-d05-searchspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f02-i01-d05-searchspace-projection.*
+   :width: 49%
+
+.. raw:: latex
+
+   Illustration of search space for \code{bbob-biobj} function $f_2$ in dimension 5 for the first instance.\\[1em]
+
+.. image:: ../code/plots/after_workshop/directions-f02-i01-d05-logobjspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f02-i01-d05-objspace.*
+   :width: 49%
+
+.. raw:: html
+   
+   Illustration of search space (first row) and objective space (second row) for
+   <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+   function 2 in dimension 5 for the first instance.
+
+.. raw:: latex
+ 
+  Illustration of objective space for \code{bbob-biobj} function $f_2$ in dimension 5 for the
+  first instance (left: normalized in log-scale; right: original scaling).
+  \pagebreak
+
 
 
 .. _f3:
@@ -850,6 +870,32 @@ Contained in the *separable - moderate* function class.
   effect of a highly asymmetric landscape in both or one
   objective?
 
+.. image:: ../code/plots/after_workshop/directions-f03-i01-d05-searchspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f03-i01-d05-searchspace-projection.*
+   :width: 49%
+
+.. raw:: latex
+
+   Illustration of search space for \code{bbob-biobj} function $f_3$ in dimension 5 for the first instance.\\[1em]
+
+.. image:: ../code/plots/after_workshop/directions-f03-i01-d05-logobjspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f03-i01-d05-objspace.*
+   :width: 49%
+
+.. raw:: html
+   
+   Illustration of search space (first row) and objective space (second row) for
+   <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+   function 3 in dimension 5 for the first instance.
+
+.. raw:: latex
+ 
+  Illustration of objective space for \code{bbob-biobj} function $f_3$ in dimension 5 for the
+  first instance (left: normalized in log-scale; right: original scaling).
+  \pagebreak
+
 
   
 .. _f4:
@@ -874,6 +920,31 @@ Contained in the *separable - moderate* function class.
   the direction when it approaches one of the extremes of the
   Pareto front/Pareto set?
 
+.. image:: ../code/plots/after_workshop/directions-f01-i01-d05-searchspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f01-i01-d05-searchspace-projection.*
+   :width: 49%
+
+.. raw:: latex
+
+   Illustration of search space for \code{bbob-biobj} function $f_1$ in dimension 5 for the first instance.\\[1em]
+
+.. image:: ../code/plots/after_workshop/directions-f01-i01-d05-logobjspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f01-i01-d05-objspace.*
+   :width: 49%
+
+.. raw:: html
+   
+   Illustration of search space (first row) and objective space (second row) for
+   <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+   function 1 in dimension 5 for the first instance.
+
+.. raw:: latex
+ 
+  Illustration of objective space for \code{bbob-biobj} function $f_1$ in dimension 5 for the
+  first instance (left: normalized in log-scale; right: original scaling).
+  \pagebreak
 
 
 
@@ -907,6 +978,34 @@ Contained in the *separable - ill-conditioned* function class.
 .. * What is the effect of having a non-smooth, non-differentiable
   function to optimize?
 
+  
+.. image:: ../code/plots/after_workshop/directions-f05-i01-d05-searchspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f05-i01-d05-searchspace-projection.*
+   :width: 49%
+
+.. raw:: latex
+
+   Illustration of search space for \code{bbob-biobj} function $f_5$ in dimension 5 for the first instance.\\[1em]
+
+.. image:: ../code/plots/after_workshop/directions-f05-i01-d05-logobjspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f05-i01-d05-objspace.*
+   :width: 49%
+
+.. raw:: html
+   
+   Illustration of search space (first row) and objective space (second row) for
+   <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+   function 5 in dimension 5 for the first instance.
+
+.. raw:: latex
+ 
+  Illustration of objective space for \code{bbob-biobj} function $f_5$ in dimension 5 for the
+  first instance (left: normalized in log-scale; right: original scaling).
+  \pagebreak
+
+  
 
 .. _f6:
 
@@ -930,6 +1029,35 @@ Contained in the *separable - ill-conditioned* function class.
 
 .. .. rubric:: Information gained from this function:
    
+   
+.. image:: ../code/plots/after_workshop/directions-f06-i01-d05-searchspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f06-i01-d05-searchspace-projection.*
+   :width: 49%
+
+.. raw:: latex
+
+   Illustration of search space for \code{bbob-biobj} function $f_6$ in dimension 5 for the first instance.\\[1em]
+
+.. image:: ../code/plots/after_workshop/directions-f06-i01-d05-logobjspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f06-i01-d05-objspace.*
+   :width: 49%
+
+.. raw:: html
+   
+   Illustration of search space (first row) and objective space (second row) for
+   <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+   function 6 in dimension 5 for the first instance.
+
+.. raw:: latex
+ 
+  Illustration of objective space for \code{bbob-biobj} function $f_6$ in dimension 5 for the
+  first instance (left: normalized in log-scale; right: original scaling).
+  \pagebreak
+
+  
+  
 
 .. _f7:
 
@@ -957,6 +1085,34 @@ Contained in the *separable - multi-modal* function class.
   multimodality?
 
   
+.. image:: ../code/plots/after_workshop/directions-f07-i01-d05-searchspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f07-i01-d05-searchspace-projection.*
+   :width: 49%
+
+.. raw:: latex
+
+   Illustration of search space for \code{bbob-biobj} function $f_7$ in dimension 5 for the first instance.\\[1em]
+
+.. image:: ../code/plots/after_workshop/directions-f07-i01-d05-logobjspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f07-i01-d05-objspace.*
+   :width: 49%
+
+.. raw:: html
+   
+   Illustration of search space (first row) and objective space (second row) for
+   <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+   function 7 in dimension 5 for the first instance.
+
+.. raw:: latex
+ 
+  Illustration of objective space for \code{bbob-biobj} function $f_7$ in dimension 5 for the
+  first instance (left: normalized in log-scale; right: original scaling).
+  \pagebreak
+
+  
+  
 .. _f8:
 
 :math:`f_8`: Sphere/Schaffer F7, condition 10
@@ -979,6 +1135,34 @@ Contained in the *separable - multi-modal* function class.
 .. * In comparison to :math:`f_7` and :math:`f_{50}`:  What is the
   effect of multimodality on a less regular function?
 
+  
+.. image:: ../code/plots/after_workshop/directions-f08-i01-d05-searchspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f08-i01-d05-searchspace-projection.*
+   :width: 49%
+
+.. raw:: latex
+
+   Illustration of search space for \code{bbob-biobj} function $f_8$ in dimension 5 for the first instance.\\[1em]
+
+.. image:: ../code/plots/after_workshop/directions-f08-i01-d05-logobjspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f08-i01-d05-objspace.*
+   :width: 49%
+
+.. raw:: html
+   
+   Illustration of search space (first row) and objective space (second row) for
+   <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+   function 8 in dimension 5 for the first instance.
+
+.. raw:: latex
+ 
+  Illustration of objective space for \code{bbob-biobj} function $f_8$ in dimension 5 for the
+  first instance (left: normalized in log-scale; right: original scaling).
+  \pagebreak
+
+  
 
 .. _f9:
 
@@ -1000,6 +1184,34 @@ Contained in the *separable - weakly-structured* function class.
 .. * In comparison to e.g. :math:`f_8`: What is the effect of a weak
   global structure?
 
+  
+.. image:: ../code/plots/after_workshop/directions-f09-i01-d05-searchspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f09-i01-d05-searchspace-projection.*
+   :width: 49%
+
+.. raw:: latex
+
+   Illustration of search space for \code{bbob-biobj} function $f_9$ in dimension 5 for the first instance.\\[1em]
+
+.. image:: ../code/plots/after_workshop/directions-f09-i01-d05-logobjspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f09-i01-d05-objspace.*
+   :width: 49%
+
+.. raw:: html
+   
+   Illustration of search space (first row) and objective space (second row) for
+   <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+   function 9 in dimension 5 for the first instance.
+
+.. raw:: latex
+ 
+  Illustration of objective space for \code{bbob-biobj} function $f_9$ in dimension 5 for the
+  first instance (left: normalized in log-scale; right: original scaling).
+  \pagebreak
+
+  
   
 .. _f10:
 
@@ -1023,6 +1235,34 @@ Contained in the *separable - weakly-structured* function class.
 
 .. * Is the search effective without any global structure?
 
+
+.. image:: ../code/plots/after_workshop/directions-f10-i01-d05-searchspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f10-i01-d05-searchspace-projection.*
+   :width: 49%
+
+.. raw:: latex
+
+   Illustration of search space for \code{bbob-biobj} function $f_{10}$ in dimension 5 for the first instance.\\[1em]
+
+.. image:: ../code/plots/after_workshop/directions-f10-i01-d05-logobjspace.*
+   :width: 49%
+.. image:: ../code/plots/after_workshop/directions-f10-i01-d05-objspace.*
+   :width: 49%
+
+.. raw:: html
+   
+   Illustration of search space (first row) and objective space (second row) for
+   <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+   function 10 in dimension 5 for the first instance.
+
+.. raw:: latex
+ 
+  Illustration of objective space for \code{bbob-biobj} function $f_{10}$ in dimension 5 for the
+  first instance (left: normalized in log-scale; right: original scaling).
+  \pagebreak
+
+  
 
 .. _f11:
 
