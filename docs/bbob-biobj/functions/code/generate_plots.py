@@ -591,7 +591,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     ax.set_xlabel(r'$f_1 - f_1^\mathsf{opt}$ (normalized)', fontsize=16)
     ax.set_ylabel(r'$f_2 - f_2^\mathsf{opt}$ (normalized)', fontsize=16)
     ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
-    ax.set_title("bbob-biobj $f_{%d}$ along linear search space directions (%d-D, instance %d)" % (f_id, dim, inst_id))
+    ax.set_title("normalized objective space for bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))
     [line.set_zorder(3) for line in ax.lines]
     [line.set_zorder(3) for line in ax.lines]
     fig.subplots_adjust(left=0.1) # more room for the y-axis label
@@ -708,7 +708,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     ax.set_xlabel(r'first objective', fontsize=16)
     ax.set_ylabel(r'second objective', fontsize=16)
     ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
-    ax.set_title("bbob-biobj $f_{%d}$ along linear search space directions (%d-D, instance %d)" % (f_id, dim, inst_id))    
+    ax.set_title("unscaled objective space for bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
     [line.set_zorder(3) for line in ax.lines]
     [line.set_zorder(3) for line in ax.lines]
     fig.subplots_adjust(left=0.1) # more room for the y-axis label
