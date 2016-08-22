@@ -25,11 +25,9 @@ import shlex
 authors = "The BBOBies"
 # WHEN CHANGING THIS CHANGE ALSO the abstract in index.rst accordingly
 abstract = """(this abstract might be outdated, see index.rst)
-The ``bbob-constr-lin`` test suite contains 48 constrained functions in continuous domain 
-which are derived from combining functions of the well-known single-objective noiseless
-``bbob`` test suite with randomly-generated linear constraints. This document aims to define 
-those constrained functions as well as the approach used to build the linear constraints. 
-It also describes how instances, targets and runtime are considered in the constrained case.
+The ``bbob-constrained`` test suite contains 48 constrained functions in continuous domain which are derived from combining functions of the well-known single-objective noiseless
+``bbob`` test suite with randomly-generated linear constraints perturbed by nonlinear transformations. This document aims to define those constrained functions as well as the 
+approach used to build the linear constraints. It also describes how instances, targets and runtime are considered in the constrained case.
 """
 
 numfig = True
@@ -88,7 +86,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'bbob-constr-lin-functions-doc'
+project = u'bbob-constrained-functions-doc'
 copyright = u'2016, The BBOBies'
 author = u'The BBOBies'
 
@@ -169,7 +167,7 @@ html_theme = 'bizstyle'  # white/blue, quite good, too blue on the start page
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'COCO: The Linearly-Constrained Black-Box Optimization Benchmarking (bbob-constr-lin) Test Suite'
+html_title = 'COCO: The Constrained Black-Box Optimization Benchmarking (bbob-constrained) Test Suite'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -249,7 +247,7 @@ html_show_copyright = False
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'bbob-constr-lin-functions-doc'
+htmlhelp_basename = 'bbob-constrained-functions-doc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -290,7 +288,7 @@ latex_elements = {# The paper size ('letterpaper' or 'a4paper').
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'bbob-constr-lin-functions.tex', u'COCO: The Black Box Optimization Benchmarking (bbob-constr-lin) Test Suite',
+  (master_doc, 'bbob-constrained-functions.tex', u'COCO: The Constrained Black Box Optimization Benchmarking (bbob-constrained) Test Suite',
   r"""
       Phillipe Rodrigues Sampaio$^2$,
       Tea Tu\v{s}ar$^1$, 
@@ -335,7 +333,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'bbob-constr-lin-functions-doc', u'PLEASE CHANGE Function Documentation of the bbob-biobj Test Suite',
+    (master_doc, 'bbob-constrained-functions-doc', u'PLEASE CHANGE Function Documentation of the bbob-biobj Test Suite',
      [author], 1)
 ]
 
@@ -349,8 +347,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'bbob-constr-lin-functions-doc', u'Function Documentation of the bbob-constr-lin Test Suite',
-   author, 'bbob-constr-lin-functions-doc', 'Documents all functions of the bbob-constr-lin test suite.',
+  (master_doc, 'bbob-constrained-functions-doc', u'Function Documentation of the bbob-constrained Test Suite',
+   author, 'bbob-constrained-functions-doc', 'Documents all functions of the bbob-constrained test suite.',
    'Miscellaneous'),
 ]
 
