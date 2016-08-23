@@ -358,7 +358,7 @@ Without loss of generality, consider the minimization of a constrained function 
    \end{array}
    \end{eqnarray*}
 
-Let :math:`t:\mathbb{R}^n \rightarrow \mathbb{R}^n` be an bijective transformation function.  By "applying" :math:`t` to :eq:`cons_prob_trans1`, we obtain
+Let :math:`t:\mathbb{R}^n \rightarrow \mathbb{R}^n` be a bijective transformation function.  By "applying" :math:`t` to :eq:`cons_prob_trans1`, we obtain
 
 .. math:: 
    :nowrap:
@@ -404,7 +404,7 @@ In total, there are 8 different objective functions, and each one is tested with
 
 The number of constraints, :math:`l`, in a constrained function :math:`f_i` can be easily obtained through the formula :math:`((i-1) \bmod 6) + 1`. For instance, consider the constrained function :math:`f_7` which is the ellipsoid function subject to 1 constraint. We can know that is has 1 constraint by its identifier by computing :math:`((7-1) \bmod 6) + 1 = (6 \bmod 6 ) + 1 = 1`.
 
-We separate the 48 constrained functions into groups with respect to their objective function, thereby having 8 groups. Each group contains 6 different constrained functions as each objective function is tested with 6 different numbers of constraints. We list the groups below with some properties of the objective fuctions that define them. As described in the Subsection :ref:`subsec-defining-the-constrained-functions`, by translating the objective function and the constraints with the use of the randomly-generated point :math:`x^{\textrm{opt}}`, we define :math:`x^{\textrm{opt}}` as the optimal solution. On the other hand, by translating the objective function only with the use of the randomy-generated point :math:`x^{\textrm{uopt}}`, we guarantee that the constrained optimal solution, :math:`x^{\textrm{opt}}`, is different from the unconstrained optimal solution, :math:`x^{\textrm{uopt}}`.
+We separate the 48 constrained functions into groups with respect to their objective function, thereby having 8 groups. Each group contains 6 different constrained functions as each objective function is tested with 6 different numbers of constraints. We list the groups below with some properties of the objective functions that define them. As described in the Subsection :ref:`subsec-defining-the-constrained-functions`, by translating the objective function and the constraints with the use of the randomly-generated point :math:`x^{\textrm{opt}}`, we define :math:`x^{\textrm{opt}}` as the optimal solution. On the other hand, by translating the objective function only with the use of the randomy-generated point :math:`x^{\textrm{uopt}}`, we guarantee that the constrained optimal solution, :math:`x^{\textrm{opt}}`, is different from the unconstrained optimal solution, :math:`x^{\textrm{uopt}}`.
 
 **Group 1 - Constrained Sphere function:** :math:`f_1` -- :math:`f_6`
 
@@ -601,8 +601,8 @@ of the French National Research Agency.
 .. __: http://coco.gforge.inria.fr/
 .. __: https://hal.inria.fr/inria-00362633
 
-.. [BAZ2013] M. S. Bazaraa, H. D Sherali, R. Ros, and C. M Shetty (2013). 
-   `Nonlinear programming: Theory and Algorithms`__. 3rd Edition, Wiley Publishing, 2013.
+.. [BAZ2013] M. S. Bazaraa, H. D Sherali, and C. M Shetty (2013). 
+   `Nonlinear programming: Theory and Algorithms`__, 3rd Edition, Wiley Publishing, 2013.
 .. __: http://eu.wiley.com/WileyCDA/WileyTitle/productCd-0471486000.html
 
   
