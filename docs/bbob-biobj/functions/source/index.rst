@@ -32,10 +32,19 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   % \tableofcontents TOC is automatic with sphinx and moved behind abstract by swap...py
   \begin{abstract}
 
-The ``bbob-biobj`` test suite contains 55 bi-objective 
-functions in continuous domain which are derived from combining functions of
-the well-known single-objective noiseless ``bbob`` test suite. Besides giving
-the actual function definitions and presenting their (known) properties, this
+  
+Several test function suites for numerical benchmarking of multiobjective
+optimization algorithms have been proposed in recent years. While having
+desirable properties like well-understood Pareto sets and Pareto fronts with shapes
+of various kinds, most of the currently used functions posess properties
+which are arguably under-represented in real-world problems. Those properties
+mainly stem from the easier construction of such problems---overrepresenting
+properties such as no dependencies between variables, Pareto sets exactly located at
+the bound constraints, or the differentiation between position and distance
+variables. Here, we propose an alternative way and define the ``bbob-biobj`` test suite
+with 55 bi-objective functions in continuous domain which are derived from
+combining functions of the well-known single-objective noiseless ``bbob`` test suite.
+Besides giving the actual function definitions and presenting their (known) properties, this
 documentation also aims at giving the rationale behind our approach in terms
 of function groups, instances, and potential objective space normalization.
 
@@ -78,10 +87,6 @@ of function groups, instances, and potential objective space normalization.
 .. summarizing the state-of-the-art in multi-objective black-box benchmarking, at 
 .. and at providing a simple tutorial on how to use these functions for actual benchmarking within the COCO_ framework.
 
-.. .. Note::
-  
-  For the time being, this documentation is under development and might not 
-  contain all final data.
 
 .. figure:: _figs/examples-bbob-biobj.*
    :scale: 60
@@ -99,9 +104,14 @@ of function groups, instances, and potential objective space normalization.
 .. #################################################################################
 
 
-
 Introduction
 ============
+.. todo:: will contain the argumentation in favor of a ``bbob-biobj`` test suite
+   and an extensive review of the state-of-the art in multiobjective test functions
+
+
+Preliminaries, Definitions, and Scope
+=====================================
 
 In the following, we consider bi-objective, unconstrained
 **minimization** problems of the form
@@ -139,11 +149,12 @@ as possible and (ii) has |f|-values as close to the Pareto front as possible. [#
    it is. It will increase their incentive to check out the next section more
    carefully. 1/3 of the readers won't get anything and move on. 
 
+.. TODO: we should change this footnote if we, as planned, provide the nadir to the
+   optimization algorithms!
+   
 .. |f| replace:: :math:`f`
 
-Definitions and Terminology
----------------------------
-We remind in this section different definitions.
+In the following, we remind useful definitions.
 
 *function instance, problem*
  Each function :math:`f^\theta: \mathbb{R}^n \to \mathbb{R}^m` within COCO_ is parametrized 
