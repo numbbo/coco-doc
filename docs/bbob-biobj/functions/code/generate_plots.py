@@ -702,8 +702,18 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     # plot extremes    
     ax.plot(f_xopt1[0], f_xopt1[1], color='blue', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
     ax.plot(f_xopt2[0], f_xopt2[1], color='red', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
-    
-    
+
+
+    # zoom into Pareto front:
+    ax.set_xlim((ideal[0]-0.05*(nadir[0] - ideal[0]), nadir[0] + (nadir[0] - ideal[0])))
+    ax.set_ylim([ideal[1]-0.05*(nadir[1] - ideal[1]), nadir[1] + (nadir[1] - ideal[1])])
+
+    # add rectangle as ROI
+    ax.add_patch(patches.Rectangle(
+            (ideal[0], ideal[1]), nadir[0]-ideal[0], nadir[1]-ideal[1],
+            alpha=0.05,
+            color='k'))
+
     # beautify:
     ax.set_xlabel(r'first objective', fontsize=16)
     ax.set_ylabel(r'second objective', fontsize=16)
@@ -713,15 +723,6 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     [line.set_zorder(3) for line in ax.lines]
     fig.subplots_adjust(left=0.1) # more room for the y-axis label
     
-    # zoom into Pareto front:
-    ax.set_xlim((ideal[0]-0.05*(nadir[0] - ideal[0]), nadir[0] + (nadir[0] - ideal[0])))
-    ax.set_ylim([ideal[1]-0.05*(nadir[1] - ideal[1]), nadir[1] + (nadir[1] - ideal[1])])
-    
-    # add rectangle as ROI
-    ax.add_patch(patches.Rectangle(
-            (ideal[0], ideal[1]), nadir[0]-ideal[0], nadir[1]-ideal[1],
-            alpha=0.05,
-            color='k'))
     
     if tofile:
         if not os.path.exists(outputfolder):
@@ -856,14 +857,20 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             color='k'))
     
     # beautify
-    ax.set_xlim([-6, 6])
-    ax.set_ylim([-6, 6])
+    #ax.set_xlim([-6, 6])
+    #ax.set_ylim([-6, 6])
+    
     if dim == 2:
         ax.set_title("decision space of bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
     else:
         ax.set_title("projection of decision space for bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
     ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
-    fig.subplots_adjust(left=0.1) # more room for the y-axis label    
+    #fig.subplots_adjust(left=0.1) # more room for the y-axis label    
+    ax.axis('equal')
+    ax.set_xlim([-8, 8])
+    ax.set_ylim([-8, 8])
+        
+    
     
     # printing
     if tofile:

@@ -25,12 +25,20 @@ import shlex
 authors = "The BBOBies"
 # WHEN CHANGING THIS CHANGE ALSO the abstract in index.rst accordingly
 abstract = """(this abstract might be outdated, see index.rst)
-The ``bbob-biobj`` test suite contains 55 bi-objective functions
-in continuous domain which are derived from combining functions of the
-well-known single-objective noiseless ``bbob`` test suite. Besides giving the
-actual function definitions and presenting their (known) properties, this
-documentation also aims at giving the rationale behind our approach in terms of
-function groups, instances, and potential objective space normalization.
+Several test function suites for numerical benchmarking of multiobjective
+optimization algorithms have been proposed in recent years. While having
+desirable properties like well-understood Pareto set and Pareto front shapes
+of various kind, most of the currently used functions posess properties
+which are arguably under-represented in real-world problems. Those properties
+mainly stem from the easier construction of such problems overrepresenting
+properties such as no dependencies between variables, Pareto sets exactly located at
+the bound constraints, or the differentiation between position and distance
+variables. Here, we propose another way and define the ``bbob-biobj`` test suite
+with 55 bi-objective functions in continuous domain which are derived from
+combining functions of the well-known single-objective noiseless ``bbob`` test suite.
+Besides giving the actual function definitions and presenting their (known) properties, this
+documentation also aims at giving the rationale behind our approach in terms
+of function groups, instances, and potential objective space normalization.
 """
 
 # If your documentation needs a minimal Sphinx version, state it here.

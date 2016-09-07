@@ -60,6 +60,7 @@
 <li><a class="reference internal" href="#the-bbob-biobj-test-functions-and-their-properties">The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Test Functions and Their Properties</a><ul>
 <li><a class="reference internal" href="#some-function-properties">Some Function Properties</a></li>
 <li><a class="reference internal" href="#domain-bounds">Domain Bounds</a></li>
+<li><a class="reference internal" href="#provided-search-space-and-objective-space-plots">Provided Search Space and Objective Space Plots</a></li>
 <li><a class="reference internal" href="#the-55-bbob-biobj-functions">The 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Functions</a><ul>
 <li><a class="reference internal" href="#sphere-sphere"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/>: Sphere/Sphere</a></li>
 <li><a class="reference internal" href="#sphere-ellipsoid-separable"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/>: Sphere/Ellipsoid separable</a></li>
@@ -161,7 +162,7 @@ the well-known single-objective noiseless <code class="docutils literal"><span c
 the actual function definitions and presenting their (known) properties, this
 documentation also aims at giving the rationale behind our approach in terms
 of function groups, instances, and potential objective space normalization.</p>
-<div class="figure align-center" id="id25">
+<div class="figure align-center" id="id29">
 <a class="reference internal image-reference" href="_images/examples-bbob-biobj.png"><img alt="_images/examples-bbob-biobj.png" src="_images/examples-bbob-biobj.png" style="width: 539.4px; height: 444.6px;" /></a>
 <p class="caption"><span class="caption-text">Example plots of the Pareto front approximation, found by NSGA-II on
 selected <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions. In blue the non-dominated points at the
@@ -624,6 +625,45 @@ for example to generate the initial search points.</td></tr>
 </tbody>
 </table>
 </div>
+<div class="section" id="provided-search-space-and-objective-space-plots">
+<h3>Provided Search Space and Objective Space Plots<a class="headerlink" href="#provided-search-space-and-objective-space-plots" title="Permalink to this headline">¶</a></h3>
+<p>In order to better understand the properties of the 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions, we display for each of them plots
+of the best known Pareto front approximation in objective space in original scaling (as seen by the algorithm) and in
+log-scale, normalized such that the ideal point is at <img class="math" src="_images/math/e1d7cf451b8a9c31ffc352e7fa721d47f89d407a.png" alt="[0,0]" style="vertical-align: -5px"/> and the nadir point is at <img class="math" src="_images/math/a37a372116e17fc2274a2aa1a764eb67977aa614.png" alt="[1,1]" style="vertical-align: -5px"/>. We
+also provide plots illustrating the best known Pareto set approximation in search space (all depicted in black).
+For the latter, two different plots are provided: a plot showing the projection onto a coordinate-axes-parallel cut
+defined by two variables and a plot that projects all points onto a random cutting plane which contains both
+single-objective optima and that also shows the contour lines of both objective functions on this plane.</p>
+<p>In addition to the best Pareto set/Pareto front approximations, cuts through the search space are shown along
+(i) random lines through each optimum (in blue),
+(ii) lines along each coordinate axis through each optimum (blue dotted lines),
+(iii) the line through both optima (in red),
+(iv) two fully random lines <a class="footnote-reference" href="#id19" id="id17">[4]</a> (in yellow), and
+(v) a random line in the random projection plane going through both optima <a class="footnote-reference" href="#id20" id="id18">[5]</a> (in green).</p>
+<p>All lines are normalized (of length 10 with the support vector in the middle). Ticks along the lines in the
+objective space plots indicate the ends of line segments of the same length in search space. Thicker points on the lines
+depict solutions that are non-dominated with respect to all points on the same line.
+Furthermore, the search space plots highlight the projected region <img class="math" src="_images/math/fe94a75a96efaf48e46f485ca27526b62616927b.png" alt="[-5,5]^n" style="vertical-align: -5px"/> as gray-shaded area while
+the gray-shaded area in the objective space plots highlight the region of interest between ideal (<img class="math" src="_images/math/5f04c34b291e94b6dc6fdb5414f7114fb275af5a.png" alt="+" style="vertical-align: -2px"/>) and
+nadir point (<img class="math" src="_images/math/3548f59db502750ad458b3433c0299089f1ded3c.png" alt="\times" style="vertical-align: 0px"/>). Note that, to keep the plots to a manageable size, the Pareto set and Pareto front
+approximations are carefully downsampled such that only one solution per grid point is shown&#8212;with the
+precision of 2 decimals for the search space plots and 3 decimals for the objective space plots to define
+the grid. The number of considered and actually displayed solutions is indicated in the search space plots&#8217;
+legends. All plots are provided for one instance here only and for dimension 5 for the moment.</p>
+<table class="docutils footnote" frame="void" id="id19" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id17">[4]</a></td><td>of random direction and with a support vector, drawn uniformly at random in <img class="math" src="_images/math/ff172ccfd6e0dce2f77184379115f47635d04f12.png" alt="[-4,4]^n" style="vertical-align: -5px"/></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id20" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id18">[5]</a></td><td>with a random direction within the plane and a support vector, drawn uniformly at random in <img class="math" src="_images/math/fb06e472590b5d95650edab9619a8f9958139d06.png" alt="[-4,4]" style="vertical-align: -5px"/>
+in the coordinate system of the cutting plane`</td></tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="the-55-bbob-biobj-functions">
 <h3>The 55 <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Functions<a class="headerlink" href="#the-55-bbob-biobj-functions" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="sphere-sphere">
@@ -634,7 +674,11 @@ invariant. The Pareto set is known to be a straight line and the Pareto
 front is convex. Considered as the simplest bi-objective problem in
 continuous domain.</p>
 <p>Contained in the <em>separable - separable</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f01-i01-d05-searchspace.png"><img alt="f01-i01-d05-searchspace" src="_images/directions-f01-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f01-i01-d05-searchspace-projection.png"><img alt="f01-i01-d05-searchspace-projected" src="_images/directions-f01-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f01-i01-d05-logobjspace.png"><img alt="f01-i01-d05-logobjspace" src="_images/directions-f01-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f01-i01-d05-objspace.png"><img alt="f01-i01-d05-objspace" src="_images/directions-f01-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 1 in dimension 5 for the first instance.</div>
 <div class="section" id="sphere-ellipsoid-separable">
 <span id="f2"></span><h4><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/>: Sphere/Ellipsoid separable<a class="headerlink" href="#sphere-ellipsoid-separable" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
@@ -645,7 +689,11 @@ objective is only globally quadratic with smooth local
 irregularities and highly ill-conditioned with a condition number of
 about <img class="math" src="_images/math/1add4bf11c8d6aa78f9b60799d818842f5257dd9.png" alt="10^6" style="vertical-align: -1px"/>.</p>
 <p>Contained in the <em>separable - separable</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f02-i01-d05-searchspace.png"><img alt="f02-i01-d05-searchspace" src="_images/directions-f02-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f02-i01-d05-searchspace-projection.png"><img alt="f02-i01-d05-searchspace-projected" src="_images/directions-f02-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f02-i01-d05-logobjspace.png"><img alt="f02-i01-d05-logobjspace" src="_images/directions-f02-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f02-i01-d05-objspace.png"><img alt="f02-i01-d05-objspace" src="_images/directions-f02-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 2 in dimension 5 for the first instance.</div>
 <div class="section" id="sphere-attractive-sector">
 <span id="f3"></span><h4><img class="math" src="_images/math/66c25f7c2effbd670bfda337d7c2b412ce23364a.png" alt="f_3" style="vertical-align: -4px"/>: Sphere/Attractive sector<a class="headerlink" href="#sphere-attractive-sector" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
@@ -657,7 +705,11 @@ angular base area) with a volume of roughly <img class="math" src="_images/math/
 yields low function values. The optimum of it is located at the tip
 of this cone.</p>
 <p>Contained in the <em>separable - moderate</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f03-i01-d05-searchspace.png"><img alt="f03-i01-d05-searchspace" src="_images/directions-f03-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f03-i01-d05-searchspace-projection.png"><img alt="f03-i01-d05-searchspace-projected" src="_images/directions-f03-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f03-i01-d05-logobjspace.png"><img alt="f03-i01-d05-logobjspace" src="_images/directions-f03-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f03-i01-d05-objspace.png"><img alt="f03-i01-d05-objspace" src="_images/directions-f03-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 3 in dimension 5 for the first instance.</div>
 <div class="section" id="sphere-rosenbrock-original">
 <span id="f4"></span><h4><img class="math" src="_images/math/b4b6c96cec9e537e5434559abae6ffb30b5518af.png" alt="f_4" style="vertical-align: -4px"/>: Sphere/Rosenbrock original<a class="headerlink" href="#sphere-rosenbrock-original" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
@@ -667,7 +719,11 @@ objective is partially separable (tri-band structure). The first
 objective is unimodal while the second objective has a local
 optimum with an attraction volume of about 25%.</p>
 <p>Contained in the <em>separable - moderate</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f04-i01-d05-searchspace.png"><img alt="f04-i01-d05-searchspace" src="_images/directions-f04-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f04-i01-d05-searchspace-projection.png"><img alt="f04-i01-d05-searchspace-projected" src="_images/directions-f04-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f04-i01-d05-logobjspace.png"><img alt="f04-i01-d05-logobjspace" src="_images/directions-f04-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f04-i01-d05-objspace.png"><img alt="f04-i01-d05-objspace" src="_images/directions-f04-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 4 in dimension 5 for the first instance.</div>
 <div class="section" id="sphere-sharp-ridge">
 <span id="f5"></span><h4><img class="math" src="_images/math/47f46089b12e164160909577c53f672714afe52b.png" alt="f_5" style="vertical-align: -4px"/>: Sphere/Sharp ridge<a class="headerlink" href="#sphere-sharp-ridge" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
@@ -684,7 +740,11 @@ to its optimum.  The necessary change in <em>search behavior</em> close to
 the ridge is difficult to diagnose, because the gradient
 towards the ridge does not flatten out.</p>
 <p>Contained in the <em>separable - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f05-i01-d05-searchspace.png"><img alt="f05-i01-d05-searchspace" src="_images/directions-f05-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f05-i01-d05-searchspace-projection.png"><img alt="f05-i01-d05-searchspace-projected" src="_images/directions-f05-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f05-i01-d05-logobjspace.png"><img alt="f05-i01-d05-logobjspace" src="_images/directions-f05-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f05-i01-d05-objspace.png"><img alt="f05-i01-d05-objspace" src="_images/directions-f05-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 5 in dimension 5 for the first instance.</div>
 <div class="section" id="sphere-sum-of-different-powers">
 <span id="f6"></span><h4><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/>: Sphere/Sum of different powers<a class="headerlink" href="#sphere-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
@@ -695,7 +755,11 @@ When approaching the second objective&#8217;s optimum, the difference
 in sensitivity between different directions in search space
 increases unboundedly.</p>
 <p>Contained in the <em>separable - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f06-i01-d05-searchspace.png"><img alt="f06-i01-d05-searchspace" src="_images/directions-f06-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f06-i01-d05-searchspace-projection.png"><img alt="f06-i01-d05-searchspace-projected" src="_images/directions-f06-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f06-i01-d05-logobjspace.png"><img alt="f06-i01-d05-logobjspace" src="_images/directions-f06-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f06-i01-d05-objspace.png"><img alt="f06-i01-d05-objspace" src="_images/directions-f06-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 6 in dimension 5 for the first instance.</div>
 <div class="section" id="sphere-rastrigin">
 <span id="f7"></span><h4><img class="math" src="_images/math/5b2d52472cf429875e533866e0c6e26db1bcd470.png" alt="f_7" style="vertical-align: -4px"/>: Sphere/Rastrigin<a class="headerlink" href="#sphere-rastrigin" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
@@ -709,7 +773,11 @@ the original symmetry and regularity in the second objective.</p>
 multimodality (roughly <img class="math" src="_images/math/a67e3aa3f4b353b89e4d13aa9ffcbdecf1ea5f7b.png" alt="10^n" style="vertical-align: -1px"/> local optima), a conditioning of
 about 10, and a large global amplitude compared to the local amplitudes.</p>
 <p>Contained in the <em>separable - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f07-i01-d05-searchspace.png"><img alt="f07-i01-d05-searchspace" src="_images/directions-f07-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f07-i01-d05-searchspace-projection.png"><img alt="f07-i01-d05-searchspace-projected" src="_images/directions-f07-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f07-i01-d05-logobjspace.png"><img alt="f07-i01-d05-logobjspace" src="_images/directions-f07-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f07-i01-d05-objspace.png"><img alt="f07-i01-d05-objspace" src="_images/directions-f07-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 7 in dimension 5 for the first instance.</div>
 <div class="section" id="sphere-schaffer-f7-condition-10">
 <span id="f8"></span><h4><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/>: Sphere/Schaffer F7, condition 10<a class="headerlink" href="#sphere-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
@@ -720,7 +788,11 @@ front/Pareto set where the frequency and amplitude of the modulation
 in the second objective vary. The conditioning of the second objective
 and thus the entire bi-objective function is low.</p>
 <p>Contained in the <em>separable - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f08-i01-d05-searchspace.png"><img alt="f08-i01-d05-searchspace" src="_images/directions-f08-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f08-i01-d05-searchspace-projection.png"><img alt="f08-i01-d05-searchspace-projected" src="_images/directions-f08-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f08-i01-d05-logobjspace.png"><img alt="f08-i01-d05-logobjspace" src="_images/directions-f08-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f08-i01-d05-objspace.png"><img alt="f08-i01-d05-objspace" src="_images/directions-f08-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 8 in dimension 5 for the first instance.</div>
 <div class="section" id="sphere-schwefel-x-sin-x">
 <span id="f9"></span><h4><img class="math" src="_images/math/4e05e8037bbde9a72f8f544fd9490be35ff88b77.png" alt="f_9" style="vertical-align: -4px"/>: Sphere/Schwefel x*sin(x)<a class="headerlink" href="#sphere-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
@@ -730,7 +802,11 @@ the second objective function is partially separable and highly
 multimodal&#8212;having the most prominent <img class="math" src="_images/math/bff055d44a7cf1d15d931d07a990de2bb060aac0.png" alt="2^n" style="vertical-align: 0px"/> minima located
 comparatively close to the corners of the unpenalized search area.</p>
 <p>Contained in the <em>separable - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f09-i01-d05-searchspace.png"><img alt="f09-i01-d05-searchspace" src="_images/directions-f09-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f09-i01-d05-searchspace-projection.png"><img alt="f09-i01-d05-searchspace-projected" src="_images/directions-f09-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f09-i01-d05-logobjspace.png"><img alt="f09-i01-d05-logobjspace" src="_images/directions-f09-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f09-i01-d05-objspace.png"><img alt="f09-i01-d05-objspace" src="_images/directions-f09-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 9 in dimension 5 for the first instance.</div>
 <div class="section" id="sphere-gallagher-101-peaks">
 <span id="f10"></span><h4><img class="math" src="_images/math/64f0fc305df2c557846d46b49c0b59b742e88330.png" alt="f_{10}" style="vertical-align: -4px"/>: Sphere/Gallagher 101 peaks<a class="headerlink" href="#sphere-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sphere function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
@@ -742,7 +818,11 @@ randomly chosen (different for each instantiation of the function).
 The conditioning around the global optimum of the second
 objective function is about 30.</p>
 <p>Contained in the <em>separable - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f10-i01-d05-searchspace.png"><img alt="f10-i01-d05-searchspace" src="_images/directions-f10-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f10-i01-d05-searchspace-projection.png"><img alt="f10-i01-d05-searchspace-projected" src="_images/directions-f10-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f10-i01-d05-logobjspace.png"><img alt="f10-i01-d05-logobjspace" src="_images/directions-f10-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f10-i01-d05-objspace.png"><img alt="f10-i01-d05-objspace" src="_images/directions-f10-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 10 in dimension 5 for the first instance.</div>
 <div class="section" id="ellipsoid-separable-ellipsoid-separable">
 <span id="f11"></span><h4><img class="math" src="_images/math/9fc74cecc6e80f183bbcd097ff6cb4245e3bc185.png" alt="f_{11}" style="vertical-align: -4px"/>: Ellipsoid separable/Ellipsoid separable<a class="headerlink" href="#ellipsoid-separable-ellipsoid-separable" title="Permalink to this headline">¶</a></h4>
 <p>Combination of two separable ellipsoid functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -751,7 +831,11 @@ quadratic with smooth local irregularities, and highly
 ill-conditioned with a condition number of
 about <img class="math" src="_images/math/1add4bf11c8d6aa78f9b60799d818842f5257dd9.png" alt="10^6" style="vertical-align: -1px"/>.</p>
 <p>Contained in the <em>separable - separable</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f11-i01-d05-searchspace.png"><img alt="f11-i01-d05-searchspace" src="_images/directions-f11-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f11-i01-d05-searchspace-projection.png"><img alt="f11-i01-d05-searchspace-projected" src="_images/directions-f11-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f11-i01-d05-logobjspace.png"><img alt="f11-i01-d05-logobjspace" src="_images/directions-f11-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f11-i01-d05-objspace.png"><img alt="f11-i01-d05-objspace" src="_images/directions-f11-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 11 in dimension 5 for the first instance.</div>
 <div class="section" id="ellipsoid-separable-attractive-sector">
 <span id="f12"></span><h4><img class="math" src="_images/math/f18d3fb850b2ba1860c71d92e7f9327f4857bc34.png" alt="f_{12}" style="vertical-align: -4px"/>: Ellipsoid separable/Attractive sector<a class="headerlink" href="#ellipsoid-separable-attractive-sector" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>)
@@ -766,7 +850,11 @@ angular base area) with a volume of roughly <img class="math" src="_images/math/
 yields low function values. The optimum of it is located at
 the tip of this cone.</p>
 <p>Contained in the <em>separable - moderate</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f12-i01-d05-searchspace.png"><img alt="f12-i01-d05-searchspace" src="_images/directions-f12-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f12-i01-d05-searchspace-projection.png"><img alt="f12-i01-d05-searchspace-projected" src="_images/directions-f12-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f12-i01-d05-logobjspace.png"><img alt="f12-i01-d05-logobjspace" src="_images/directions-f12-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f12-i01-d05-objspace.png"><img alt="f12-i01-d05-objspace" src="_images/directions-f12-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 12 in dimension 5 for the first instance.</div>
 <div class="section" id="ellipsoid-separable-rosenbrock-original">
 <span id="f13"></span><h4><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/>: Ellipsoid separable/Rosenbrock original<a class="headerlink" href="#ellipsoid-separable-rosenbrock-original" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the original, i.e., unrotated Rosenbrock function
@@ -779,7 +867,11 @@ irregularities from a globally convex quadratic function and is
 highly ill-conditioned with a condition number of about
 <img class="math" src="_images/math/1add4bf11c8d6aa78f9b60799d818842f5257dd9.png" alt="10^6" style="vertical-align: -1px"/>.</p>
 <p>Contained in the <em>separable - moderate</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f13-i01-d05-searchspace.png"><img alt="f13-i01-d05-searchspace" src="_images/directions-f13-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f13-i01-d05-searchspace-projection.png"><img alt="f13-i01-d05-searchspace-projected" src="_images/directions-f13-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f13-i01-d05-logobjspace.png"><img alt="f13-i01-d05-logobjspace" src="_images/directions-f13-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f13-i01-d05-objspace.png"><img alt="f13-i01-d05-objspace" src="_images/directions-f13-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 13 in dimension 5 for the first instance.</div>
 <div class="section" id="ellipsoid-separable-sharp-ridge">
 <span id="f14"></span><h4><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/>: Ellipsoid separable/Sharp ridge<a class="headerlink" href="#ellipsoid-separable-sharp-ridge" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -790,7 +882,11 @@ irregularities and highly ill-conditioned with a condition number of
 about <img class="math" src="_images/math/1add4bf11c8d6aa78f9b60799d818842f5257dd9.png" alt="10^6" style="vertical-align: -1px"/>. For optimizing the second objective, a sharp,
 i.e., non-differentiable ridge has to be followed.</p>
 <p>Contained in the <em>separable - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f14-i01-d05-searchspace.png"><img alt="f14-i01-d05-searchspace" src="_images/directions-f14-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f14-i01-d05-searchspace-projection.png"><img alt="f14-i01-d05-searchspace-projected" src="_images/directions-f14-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f14-i01-d05-logobjspace.png"><img alt="f14-i01-d05-logobjspace" src="_images/directions-f14-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f14-i01-d05-objspace.png"><img alt="f14-i01-d05-objspace" src="_images/directions-f14-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 14 in dimension 5 for the first instance.</div>
 <div class="section" id="ellipsoid-separable-sum-of-different-powers">
 <span id="f15"></span><h4><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/>: Ellipsoid separable/Sum of different powers<a class="headerlink" href="#ellipsoid-separable-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the sum of different powers function
@@ -803,7 +899,11 @@ about <img class="math" src="_images/math/1add4bf11c8d6aa78f9b60799d818842f5257d
 the sensitivies of the variables in the rotated search space become
 more and more different.</p>
 <p>Contained in the <em>separable - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f15-i01-d05-searchspace.png"><img alt="f15-i01-d05-searchspace" src="_images/directions-f15-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f15-i01-d05-searchspace-projection.png"><img alt="f15-i01-d05-searchspace-projected" src="_images/directions-f15-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f15-i01-d05-logobjspace.png"><img alt="f15-i01-d05-logobjspace" src="_images/directions-f15-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f15-i01-d05-objspace.png"><img alt="f15-i01-d05-objspace" src="_images/directions-f15-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 15 in dimension 5 for the first instance.</div>
 <div class="section" id="ellipsoid-separable-rastrigin">
 <span id="f16"></span><h4><img class="math" src="_images/math/b77928da1c2b12fe46c45d8d57fb0b244dcc36f5.png" alt="f_{16}" style="vertical-align: -4px"/>: Ellipsoid separable/Rastrigin<a class="headerlink" href="#ellipsoid-separable-rastrigin" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rastrigin function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -816,7 +916,11 @@ non-linear transformations are performed in both objective functions
 to alleviate the original symmetry and regularity of the two
 baseline functions.</p>
 <p>Contained in the <em>separable - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f16-i01-d05-searchspace.png"><img alt="f16-i01-d05-searchspace" src="_images/directions-f16-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f16-i01-d05-searchspace-projection.png"><img alt="f16-i01-d05-searchspace-projected" src="_images/directions-f16-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f16-i01-d05-logobjspace.png"><img alt="f16-i01-d05-logobjspace" src="_images/directions-f16-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f16-i01-d05-objspace.png"><img alt="f16-i01-d05-objspace" src="_images/directions-f16-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 16 in dimension 5 for the first instance.</div>
 <div class="section" id="ellipsoid-separable-schaffer-f7-condition-10">
 <span id="f17"></span><h4><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/>: Ellipsoid separable/Schaffer F7, condition 10<a class="headerlink" href="#ellipsoid-separable-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schaffer F7 function with condition number 10
@@ -826,7 +930,11 @@ The first objective is unimodal, besides small local non-linearities symmetric,
 separable and highly ill-conditioned while the second objective is highly
 multi-modal, asymmetric, and non-separable, with only a low conditioning.</p>
 <p>Contained in the <em>separable - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f17-i01-d05-searchspace.png"><img alt="f17-i01-d05-searchspace" src="_images/directions-f17-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f17-i01-d05-searchspace-projection.png"><img alt="f17-i01-d05-searchspace-projected" src="_images/directions-f17-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f17-i01-d05-logobjspace.png"><img alt="f17-i01-d05-logobjspace" src="_images/directions-f17-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f17-i01-d05-objspace.png"><img alt="f17-i01-d05-objspace" src="_images/directions-f17-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 17 in dimension 5 for the first instance.</div>
 <div class="section" id="ellipsoid-separable-schwefel-x-sin-x">
 <span id="f18"></span><h4><img class="math" src="_images/math/bf047386154928e048cfa6322baf71905a012981.png" alt="f_{18}" style="vertical-align: -4px"/>: Ellipsoid separable/Schwefel x*sin(x)<a class="headerlink" href="#ellipsoid-separable-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -835,7 +943,10 @@ The second objective is partially separable and highly multimodal&#8212;having
 the most prominent <img class="math" src="_images/math/bff055d44a7cf1d15d931d07a990de2bb060aac0.png" alt="2^n" style="vertical-align: 0px"/> minima located comparatively close to the
 corners of the unpenalized search area.</p>
 <p>Contained in the <em>separable - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f18-i01-d05-logobjspace.png"><img alt="f18-i01-d05-logobjspace" src="_images/directions-f18-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f18-i01-d05-objspace.png"><img alt="f18-i01-d05-objspace" src="_images/directions-f18-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 18 in dimension 5 for the first instance.</div>
 <div class="section" id="ellipsoid-separable-gallagher-101-peaks">
 <span id="f19"></span><h4><img class="math" src="_images/math/c3b024393e8783d73f22058a9b15bf9958320505.png" alt="f_{19}" style="vertical-align: -4px"/>: Ellipsoid separable/Gallagher 101 peaks<a class="headerlink" href="#ellipsoid-separable-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the separable ellipsoid function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -847,7 +958,11 @@ randomly chosen (different for each instantiation of the function).
 The conditioning around the global optimum of the second
 objective function is about 30.</p>
 <p>Contained in the <em>separable - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f19-i01-d05-searchspace.png"><img alt="f19-i01-d05-searchspace" src="_images/directions-f19-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f19-i01-d05-searchspace-projection.png"><img alt="f19-i01-d05-searchspace-projected" src="_images/directions-f19-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f19-i01-d05-logobjspace.png"><img alt="f19-i01-d05-logobjspace" src="_images/directions-f19-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f19-i01-d05-objspace.png"><img alt="f19-i01-d05-objspace" src="_images/directions-f19-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 19 in dimension 5 for the first instance.</div>
 <div class="section" id="attractive-sector-attractive-sector">
 <span id="f20"></span><h4><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/>: Attractive sector/Attractive sector<a class="headerlink" href="#attractive-sector-attractive-sector" title="Permalink to this headline">¶</a></h4>
 <p>Combination of two attractive sector functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).
@@ -856,7 +971,11 @@ Both functions are unimodal and highly asymmetric, where only one
 roughly <img class="math" src="_images/math/364884d68cc93e321d1c550b0f8a3f04a0bd8537.png" alt="(1/2)^n" style="vertical-align: -5px"/> yields low function values. The objective
 functions&#8217; optima are located at the tips of those two cones.</p>
 <p>Contained in the <em>moderate - moderate</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f20-i01-d05-searchspace.png"><img alt="f20-i01-d05-searchspace" src="_images/directions-f20-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f20-i01-d05-searchspace-projection.png"><img alt="f20-i01-d05-searchspace-projected" src="_images/directions-f20-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f20-i01-d05-logobjspace.png"><img alt="f20-i01-d05-logobjspace" src="_images/directions-f20-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f20-i01-d05-objspace.png"><img alt="f20-i01-d05-objspace" src="_images/directions-f20-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 20 in dimension 5 for the first instance.</div>
 <div class="section" id="attractive-sector-rosenbrock-original">
 <span id="f21"></span><h4><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/>: Attractive sector/Rosenbrock original<a class="headerlink" href="#attractive-sector-rosenbrock-original" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -867,7 +986,11 @@ optimum at the tip of the cone). The second
 objective is partially separable (tri-band structure) and has a local
 optimum with an attraction volume of about 25%.</p>
 <p>Contained in the <em>moderate - moderate</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f21-i01-d05-searchspace.png"><img alt="f21-i01-d05-searchspace" src="_images/directions-f21-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f21-i01-d05-searchspace-projection.png"><img alt="f21-i01-d05-searchspace-projected" src="_images/directions-f21-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f21-i01-d05-logobjspace.png"><img alt="f21-i01-d05-logobjspace" src="_images/directions-f21-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f21-i01-d05-objspace.png"><img alt="f21-i01-d05-objspace" src="_images/directions-f21-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 21 in dimension 5 for the first instance.</div>
 <div class="section" id="attractive-sector-sharp-ridge">
 <span id="f22"></span><h4><img class="math" src="_images/math/cf68ecd0f621b52a78185cfa9a94b685da55d1f3.png" alt="f_{22}" style="vertical-align: -4px"/>: Attractive sector/Sharp ridge<a class="headerlink" href="#attractive-sector-sharp-ridge" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -878,7 +1001,11 @@ roughly <img class="math" src="_images/math/364884d68cc93e321d1c550b0f8a3f04a0bd
 optimum at the tip of the cone). For optimizing the second
 objective, a sharp, i.e., non-differentiable ridge has to be followed.</p>
 <p>Contained in the <em>moderate - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f22-i01-d05-searchspace.png"><img alt="f22-i01-d05-searchspace" src="_images/directions-f22-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f22-i01-d05-searchspace-projection.png"><img alt="f22-i01-d05-searchspace-projected" src="_images/directions-f22-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f22-i01-d05-logobjspace.png"><img alt="f22-i01-d05-logobjspace" src="_images/directions-f22-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f22-i01-d05-objspace.png"><img alt="f22-i01-d05-objspace" src="_images/directions-f22-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 22 in dimension 5 for the first instance.</div>
 <div class="section" id="attractive-sector-sum-of-different-powers">
 <span id="f23"></span><h4><img class="math" src="_images/math/a4287051cdc8118e825a4b3344a0bffbb28c8697.png" alt="f_{23}" style="vertical-align: -4px"/>: Attractive sector/Sum of different powers<a class="headerlink" href="#attractive-sector-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the sum of different powers function
@@ -891,7 +1018,11 @@ optimum at the tip of the cone). When approaching the second
 objective&#8217;s optimum, the sensitivies of the variables in the
 rotated search space become more and more different.</p>
 <p>Contained in the <em>moderate - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f23-i01-d05-searchspace.png"><img alt="f23-i01-d05-searchspace" src="_images/directions-f23-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f23-i01-d05-searchspace-projection.png"><img alt="f23-i01-d05-searchspace-projected" src="_images/directions-f23-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f23-i01-d05-logobjspace.png"><img alt="f23-i01-d05-logobjspace" src="_images/directions-f23-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f23-i01-d05-objspace.png"><img alt="f23-i01-d05-objspace" src="_images/directions-f23-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 23 in dimension 5 for the first instance.</div>
 <div class="section" id="attractive-sector-rastrigin">
 <span id="f24"></span><h4><img class="math" src="_images/math/44d10304c873eb1e3b3529135533da8559dea4db.png" alt="f_{24}" style="vertical-align: -4px"/>: Attractive sector/Rastrigin<a class="headerlink" href="#attractive-sector-rastrigin" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rastrigin function
@@ -902,7 +1033,11 @@ optima) while the first one is unimodal. Further
 properties are that the first objective is highly
 assymetric and the second has a conditioning of about 10.</p>
 <p>Contained in the <em>moderate - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f24-i01-d05-searchspace.png"><img alt="f24-i01-d05-searchspace" src="_images/directions-f24-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f24-i01-d05-searchspace-projection.png"><img alt="f24-i01-d05-searchspace-projected" src="_images/directions-f24-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f24-i01-d05-logobjspace.png"><img alt="f24-i01-d05-logobjspace" src="_images/directions-f24-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f24-i01-d05-objspace.png"><img alt="f24-i01-d05-objspace" src="_images/directions-f24-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 24 in dimension 5 for the first instance.</div>
 <div class="section" id="attractive-sector-schaffer-f7-condition-10">
 <span id="f25"></span><h4><img class="math" src="_images/math/44eda1e43f2fe4a918bbfe744fb1fd439c00df1b.png" alt="f_{25}" style="vertical-align: -4px"/>: Attractive sector/Schaffer F7, condition 10<a class="headerlink" href="#attractive-sector-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schaffer F7 function with condition number 10
@@ -912,7 +1047,11 @@ While the first objective is unimodal, the second one is
 a highly multi-modal function with a low conditioning where
 frequency and amplitude of the modulation vary.</p>
 <p>Contained in the <em>moderate - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f25-i01-d05-searchspace.png"><img alt="f25-i01-d05-searchspace" src="_images/directions-f25-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f25-i01-d05-searchspace-projection.png"><img alt="f25-i01-d05-searchspace-projected" src="_images/directions-f25-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f25-i01-d05-logobjspace.png"><img alt="f25-i01-d05-logobjspace" src="_images/directions-f25-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f25-i01-d05-objspace.png"><img alt="f25-i01-d05-objspace" src="_images/directions-f25-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 25 in dimension 5 for the first instance.</div>
 <div class="section" id="attractive-sector-schwefel-x-sin-x">
 <span id="f26"></span><h4><img class="math" src="_images/math/7f62ff9e3c23294889d2aed2c06f78fe0b974ed3.png" alt="f_{26}" style="vertical-align: -4px"/>: Attractive sector/Schwefel x*sin(x)<a class="headerlink" href="#attractive-sector-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -921,7 +1060,11 @@ The second objective is partially separable and highly multimodal&#8212;having
 the most prominent <img class="math" src="_images/math/bff055d44a7cf1d15d931d07a990de2bb060aac0.png" alt="2^n" style="vertical-align: 0px"/> minima located comparatively close to the
 corners of the unpenalized search area.</p>
 <p>Contained in the <em>moderate - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f26-i01-d05-searchspace.png"><img alt="f26-i01-d05-searchspace" src="_images/directions-f26-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f26-i01-d05-searchspace-projection.png"><img alt="f26-i01-d05-searchspace-projected" src="_images/directions-f26-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f26-i01-d05-logobjspace.png"><img alt="f26-i01-d05-logobjspace" src="_images/directions-f26-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f26-i01-d05-objspace.png"><img alt="f26-i01-d05-objspace" src="_images/directions-f26-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 26 in dimension 5 for the first instance.</div>
 <div class="section" id="attractive-sector-gallagher-101-peaks">
 <span id="f27"></span><h4><img class="math" src="_images/math/ac73a3f85e620937885761493000702abfa2b174.png" alt="f_{27}" style="vertical-align: -4px"/>: Attractive sector/Gallagher 101 peaks<a class="headerlink" href="#attractive-sector-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the attractive sector function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Gallagher function with 101 peaks (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -932,14 +1075,22 @@ being unrelated and randomly chosen (different for each instantiation
 of the function). The conditioning around the global optimum of the second
 objective function is about 30.</p>
 <p>Contained in the <em>moderate - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f27-i01-d05-searchspace.png"><img alt="f27-i01-d05-searchspace" src="_images/directions-f27-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f27-i01-d05-searchspace-projection.png"><img alt="f27-i01-d05-searchspace-projected" src="_images/directions-f27-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f27-i01-d05-logobjspace.png"><img alt="f27-i01-d05-logobjspace" src="_images/directions-f27-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f27-i01-d05-objspace.png"><img alt="f27-i01-d05-objspace" src="_images/directions-f27-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 27 in dimension 5 for the first instance.</div>
 <div class="section" id="rosenbrock-original-rosenbrock-original">
 <span id="f28"></span><h4><img class="math" src="_images/math/2a9c093c5b34c3d4815fdf193465311bb1065d9b.png" alt="f_{28}" style="vertical-align: -4px"/>: Rosenbrock original/Rosenbrock original<a class="headerlink" href="#rosenbrock-original-rosenbrock-original" title="Permalink to this headline">¶</a></h4>
 <p>Combination of two Rosenbrock functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objectives are partially separable (tri-band structure) and have
 a local optimum with an attraction volume of about 25%.</p>
 <p>Contained in the <em>moderate - moderate</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f28-i01-d05-searchspace.png"><img alt="f28-i01-d05-searchspace" src="_images/directions-f28-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f28-i01-d05-searchspace-projection.png"><img alt="f28-i01-d05-searchspace-projected" src="_images/directions-f28-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f28-i01-d05-logobjspace.png"><img alt="f28-i01-d05-logobjspace" src="_images/directions-f28-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f28-i01-d05-objspace.png"><img alt="f28-i01-d05-objspace" src="_images/directions-f28-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 28 in dimension 5 for the first instance.</div>
 <div class="section" id="rosenbrock-original-sharp-ridge">
 <span id="f29"></span><h4><img class="math" src="_images/math/0944d60b959112fa790f20f22dc92f74e1a1bc60.png" alt="f_{29}" style="vertical-align: -4px"/>: Rosenbrock original/Sharp ridge<a class="headerlink" href="#rosenbrock-original-sharp-ridge" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
@@ -949,7 +1100,11 @@ and has a local optimum with an attraction volume of about 25%.
 The second objective is unimodal and non-separable and, for
 optimizing it, a sharp, i.e., non-differentiable ridge has to be followed.</p>
 <p>Contained in the <em>moderate - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f29-i01-d05-searchspace.png"><img alt="f29-i01-d05-searchspace" src="_images/directions-f29-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f29-i01-d05-searchspace-projection.png"><img alt="f29-i01-d05-searchspace-projected" src="_images/directions-f29-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f29-i01-d05-logobjspace.png"><img alt="f29-i01-d05-logobjspace" src="_images/directions-f29-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f29-i01-d05-objspace.png"><img alt="f29-i01-d05-objspace" src="_images/directions-f29-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 29 in dimension 5 for the first instance.</div>
 <div class="section" id="rosenbrock-original-sum-of-different-powers">
 <span id="f30"></span><h4><img class="math" src="_images/math/e4f7f120c8443688d16463e841d04a736c939a3b.png" alt="f_{30}" style="vertical-align: -4px"/>: Rosenbrock original/Sum of different powers<a class="headerlink" href="#rosenbrock-original-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the sum of different powers function
@@ -960,7 +1115,11 @@ The second objective function is unimodal and non-separable. When
 approaching the second objective&#8217;s optimum, the sensitivies of the
 variables in the rotated search space become more and more different.</p>
 <p>Contained in the <em>moderate - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f30-i01-d05-searchspace.png"><img alt="f30-i01-d05-searchspace" src="_images/directions-f30-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f30-i01-d05-searchspace-projection.png"><img alt="f30-i01-d05-searchspace-projected" src="_images/directions-f30-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f30-i01-d05-logobjspace.png"><img alt="f30-i01-d05-logobjspace" src="_images/directions-f30-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f30-i01-d05-objspace.png"><img alt="f30-i01-d05-objspace" src="_images/directions-f30-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 30 in dimension 5 for the first instance.</div>
 <div class="section" id="rosenbrock-original-rastrigin">
 <span id="f31"></span><h4><img class="math" src="_images/math/8bfadd907993e6c9d9d585bd7640b86e8c464023.png" alt="f_{31}" style="vertical-align: -4px"/>: Rosenbrock original/Rastrigin<a class="headerlink" href="#rosenbrock-original-rastrigin" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rastrigin function
@@ -971,7 +1130,11 @@ The second objective function is non-separable and
 highly multi-modal (roughly <img class="math" src="_images/math/a67e3aa3f4b353b89e4d13aa9ffcbdecf1ea5f7b.png" alt="10^n" style="vertical-align: -1px"/> local
 optima).</p>
 <p>Contained in the <em>moderate - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f31-i01-d05-searchspace.png"><img alt="f31-i01-d05-searchspace" src="_images/directions-f31-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f31-i01-d05-searchspace-projection.png"><img alt="f31-i01-d05-searchspace-projected" src="_images/directions-f31-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f31-i01-d05-logobjspace.png"><img alt="f31-i01-d05-logobjspace" src="_images/directions-f31-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f31-i01-d05-objspace.png"><img alt="f31-i01-d05-objspace" src="_images/directions-f31-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 31 in dimension 5 for the first instance.</div>
 <div class="section" id="rosenbrock-original-schaffer-f7-condition-10">
 <span id="f32"></span><h4><img class="math" src="_images/math/058f6317564772c4a1cbb967cea7992729295b89.png" alt="f_{32}" style="vertical-align: -4px"/>: Rosenbrock original/Schaffer F7, condition 10<a class="headerlink" href="#rosenbrock-original-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
@@ -983,7 +1146,11 @@ The second objective function is non-separable, asymmetric, and
 highly multi-modal with a low conditioning where
 frequency and amplitude of the modulation vary.</p>
 <p>Contained in the <em>moderate - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f32-i01-d05-searchspace.png"><img alt="f32-i01-d05-searchspace" src="_images/directions-f32-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f32-i01-d05-searchspace-projection.png"><img alt="f32-i01-d05-searchspace-projected" src="_images/directions-f32-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f32-i01-d05-logobjspace.png"><img alt="f32-i01-d05-logobjspace" src="_images/directions-f32-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f32-i01-d05-objspace.png"><img alt="f32-i01-d05-objspace" src="_images/directions-f32-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 32 in dimension 5 for the first instance.</div>
 <div class="section" id="rosenbrock-original-schwefel-x-sin-x">
 <span id="f33"></span><h4><img class="math" src="_images/math/3fee281e80df345871a4760b8ff74410e28761f2.png" alt="f_{33}" style="vertical-align: -4px"/>: Rosenbrock original/Schwefel x*sin(x)<a class="headerlink" href="#rosenbrock-original-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
@@ -994,7 +1161,11 @@ volume of about 25%, the second objective function is highly
 multimodal&#8212;having the most prominent <img class="math" src="_images/math/bff055d44a7cf1d15d931d07a990de2bb060aac0.png" alt="2^n" style="vertical-align: 0px"/> minima located
 comparatively close to the corners of its unpenalized search area.</p>
 <p>Contained in the <em>moderate - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f33-i01-d05-searchspace.png"><img alt="f33-i01-d05-searchspace" src="_images/directions-f33-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f33-i01-d05-searchspace-projection.png"><img alt="f33-i01-d05-searchspace-projected" src="_images/directions-f33-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f33-i01-d05-logobjspace.png"><img alt="f33-i01-d05-logobjspace" src="_images/directions-f33-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f33-i01-d05-objspace.png"><img alt="f33-i01-d05-objspace" src="_images/directions-f33-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 33 in dimension 5 for the first instance.</div>
 <div class="section" id="rosenbrock-original-gallagher-101-peaks">
 <span id="f34"></span><h4><img class="math" src="_images/math/17ca4140532357651ea6077fabc0e6107f580f18.png" alt="f_{34}" style="vertical-align: -4px"/>: Rosenbrock original/Gallagher 101 peaks<a class="headerlink" href="#rosenbrock-original-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Rosenbrock function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and
@@ -1007,7 +1178,11 @@ chosen (different for each instantiation of the function). The
 conditioning around the global optimum of the second objective function
 is about 30.</p>
 <p>Contained in the <em>moderate - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f34-i01-d05-searchspace.png"><img alt="f34-i01-d05-searchspace" src="_images/directions-f34-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f34-i01-d05-searchspace-projection.png"><img alt="f34-i01-d05-searchspace-projected" src="_images/directions-f34-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f34-i01-d05-logobjspace.png"><img alt="f34-i01-d05-logobjspace" src="_images/directions-f34-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f34-i01-d05-objspace.png"><img alt="f34-i01-d05-objspace" src="_images/directions-f34-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 34 in dimension 5 for the first instance.</div>
 <div class="section" id="sharp-ridge-sharp-ridge">
 <span id="f35"></span><h4><img class="math" src="_images/math/0406b0cd2768d9282a83a18795774b84feac8229.png" alt="f_{35}" style="vertical-align: -4px"/>: Sharp ridge/Sharp ridge<a class="headerlink" href="#sharp-ridge-sharp-ridge" title="Permalink to this headline">¶</a></h4>
 <p>Combination of two sharp ridge functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -1015,7 +1190,11 @@ is about 30.</p>
 optimizing them, two sharp, i.e., non-differentiable ridges have to be
 followed.</p>
 <p>Contained in the <em>ill-conditioned - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f35-i01-d05-searchspace.png"><img alt="f35-i01-d05-searchspace" src="_images/directions-f35-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f35-i01-d05-searchspace-projection.png"><img alt="f35-i01-d05-searchspace-projected" src="_images/directions-f35-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f35-i01-d05-logobjspace.png"><img alt="f35-i01-d05-logobjspace" src="_images/directions-f35-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f35-i01-d05-objspace.png"><img alt="f35-i01-d05-objspace" src="_images/directions-f35-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 35 in dimension 5 for the first instance.</div>
 <div class="section" id="sharp-ridge-sum-of-different-powers">
 <span id="f36"></span><h4><img class="math" src="_images/math/a75323821dc145c5a77e75b00d4fac5802611d0b.png" alt="f_{36}" style="vertical-align: -4px"/>: Sharp ridge/Sum of different powers<a class="headerlink" href="#sharp-ridge-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
@@ -1027,7 +1206,11 @@ ridge has to be followed.
 When approaching the second objective&#8217;s optimum, the sensitivies of the
 variables in the rotated search space become more and more different.</p>
 <p>Contained in the <em>ill-conditioned - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f36-i01-d05-searchspace.png"><img alt="f36-i01-d05-searchspace" src="_images/directions-f36-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f36-i01-d05-searchspace-projection.png"><img alt="f36-i01-d05-searchspace-projected" src="_images/directions-f36-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f36-i01-d05-logobjspace.png"><img alt="f36-i01-d05-logobjspace" src="_images/directions-f36-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f36-i01-d05-objspace.png"><img alt="f36-i01-d05-objspace" src="_images/directions-f36-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 36 in dimension 5 for the first instance.</div>
 <div class="section" id="sharp-ridge-rastrigin">
 <span id="f37"></span><h4><img class="math" src="_images/math/ef09c560da4a71f6afb110d8b9d5b768b7766f1e.png" alt="f_{37}" style="vertical-align: -4px"/>: Sharp ridge/Rastrigin<a class="headerlink" href="#sharp-ridge-rastrigin" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Rastrigin function
@@ -1036,7 +1219,11 @@ variables in the rotated search space become more and more different.</p>
 is unimodal and non-differentiable at its ridge, the second objective
 function is highly multi-modal (roughly <img class="math" src="_images/math/a67e3aa3f4b353b89e4d13aa9ffcbdecf1ea5f7b.png" alt="10^n" style="vertical-align: -1px"/> local optima).</p>
 <p>Contained in the <em>ill-conditioned - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f37-i01-d05-searchspace.png"><img alt="f37-i01-d05-searchspace" src="_images/directions-f37-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f37-i01-d05-searchspace-projection.png"><img alt="f37-i01-d05-searchspace-projected" src="_images/directions-f37-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f37-i01-d05-logobjspace.png"><img alt="f37-i01-d05-logobjspace" src="_images/directions-f37-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f37-i01-d05-objspace.png"><img alt="f37-i01-d05-objspace" src="_images/directions-f37-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 37 in dimension 5 for the first instance.</div>
 <div class="section" id="sharp-ridge-schaffer-f7-condition-10">
 <span id="f38"></span><h4><img class="math" src="_images/math/17deb8efcf1d8af9b0e5d61a153a0079daff720d.png" alt="f_{38}" style="vertical-align: -4px"/>: Sharp ridge/Schaffer F7, condition 10<a class="headerlink" href="#sharp-ridge-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
@@ -1047,7 +1234,11 @@ is unimodal and non-differentiable at its ridge, the second objective
 function is asymmetric and highly multi-modal with a low conditioning where
 frequency and amplitude of the modulation vary.</p>
 <p>Contained in the <em>ill-conditioned - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f38-i01-d05-searchspace.png"><img alt="f38-i01-d05-searchspace" src="_images/directions-f38-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f38-i01-d05-searchspace-projection.png"><img alt="f38-i01-d05-searchspace-projected" src="_images/directions-f38-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f38-i01-d05-logobjspace.png"><img alt="f38-i01-d05-logobjspace" src="_images/directions-f38-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f38-i01-d05-objspace.png"><img alt="f38-i01-d05-objspace" src="_images/directions-f38-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 38 in dimension 5 for the first instance.</div>
 <div class="section" id="sharp-ridge-schwefel-x-sin-x">
 <span id="f39"></span><h4><img class="math" src="_images/math/920095e422c4bd2bf99b0940fe0f6d4bfc16a66a.png" alt="f_{39}" style="vertical-align: -4px"/>: Sharp ridge/Schwefel x*sin(x)<a class="headerlink" href="#sharp-ridge-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
@@ -1057,7 +1248,11 @@ non-differentiable at its ridge, the second objective function is highly
 multimodal&#8212;having the most prominent <img class="math" src="_images/math/bff055d44a7cf1d15d931d07a990de2bb060aac0.png" alt="2^n" style="vertical-align: 0px"/> minima located
 comparatively close to the corners of its unpenalized search area.</p>
 <p>Contained in the <em>ill-conditioned - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f39-i01-d05-searchspace.png"><img alt="f39-i01-d05-searchspace" src="_images/directions-f39-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f39-i01-d05-searchspace-projection.png"><img alt="f39-i01-d05-searchspace-projected" src="_images/directions-f39-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f39-i01-d05-logobjspace.png"><img alt="f39-i01-d05-logobjspace" src="_images/directions-f39-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f39-i01-d05-objspace.png"><img alt="f39-i01-d05-objspace" src="_images/directions-f39-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 39 in dimension 5 for the first instance.</div>
 <div class="section" id="sharp-ridge-gallagher-101-peaks">
 <span id="f40"></span><h4><img class="math" src="_images/math/1cbf2d1e729e92cdd11ded4a8ace96238c7b6004.png" alt="f_{40}" style="vertical-align: -4px"/>: Sharp ridge/Gallagher 101 peaks<a class="headerlink" href="#sharp-ridge-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sharp ridge function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the
@@ -1070,7 +1265,11 @@ chosen (different for each instantiation of the function). The
 conditioning around the global optimum of the second objective function
 is about 30.</p>
 <p>Contained in the <em>ill-conditioned - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f40-i01-d05-searchspace.png"><img alt="f40-i01-d05-searchspace" src="_images/directions-f40-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f40-i01-d05-searchspace-projection.png"><img alt="f40-i01-d05-searchspace-projected" src="_images/directions-f40-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f40-i01-d05-logobjspace.png"><img alt="f40-i01-d05-logobjspace" src="_images/directions-f40-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f40-i01-d05-objspace.png"><img alt="f40-i01-d05-objspace" src="_images/directions-f40-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 40 in dimension 5 for the first instance.</div>
 <div class="section" id="sum-of-different-powers-sum-of-different-powers">
 <span id="f41"></span><h4><img class="math" src="_images/math/96c3ffb4ac055a8c56f6bb792dfdb14acc9efeeb.png" alt="f_{41}" style="vertical-align: -4px"/>: Sum of different powers/Sum of different powers<a class="headerlink" href="#sum-of-different-powers-sum-of-different-powers" title="Permalink to this headline">¶</a></h4>
 <p>Combination of two sum of different powers functions
@@ -1079,7 +1278,11 @@ is about 30.</p>
 the variables in the rotated search space become more and more different
 when approaching the objectives&#8217; optima.</p>
 <p>Contained in the <em>ill-conditioned - ill-conditioned</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f41-i01-d05-searchspace.png"><img alt="f41-i01-d05-searchspace" src="_images/directions-f41-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f41-i01-d05-searchspace-projection.png"><img alt="f41-i01-d05-searchspace-projected" src="_images/directions-f41-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f41-i01-d05-logobjspace.png"><img alt="f41-i01-d05-logobjspace" src="_images/directions-f41-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f41-i01-d05-objspace.png"><img alt="f41-i01-d05-objspace" src="_images/directions-f41-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 41 in dimension 5 for the first instance.</div>
 <div class="section" id="sum-of-different-powers-rastrigin">
 <span id="f42"></span><h4><img class="math" src="_images/math/e36fc4671e3c215c7bf09d19361102b06f6e96c6.png" alt="f_{42}" style="vertical-align: -4px"/>: Sum of different powers/Rastrigin<a class="headerlink" href="#sum-of-different-powers-rastrigin" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sum of different powers functions
@@ -1089,7 +1292,11 @@ when approaching the objectives&#8217; optima.</p>
 is unimodal, the second objective
 function is highly multi-modal (roughly <img class="math" src="_images/math/a67e3aa3f4b353b89e4d13aa9ffcbdecf1ea5f7b.png" alt="10^n" style="vertical-align: -1px"/> local optima).</p>
 <p>Contained in the <em>ill-conditioned - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f42-i01-d05-searchspace.png"><img alt="f42-i01-d05-searchspace" src="_images/directions-f42-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f42-i01-d05-searchspace-projection.png"><img alt="f42-i01-d05-searchspace-projected" src="_images/directions-f42-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f42-i01-d05-logobjspace.png"><img alt="f42-i01-d05-logobjspace" src="_images/directions-f42-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f42-i01-d05-objspace.png"><img alt="f42-i01-d05-objspace" src="_images/directions-f42-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 42 in dimension 5 for the first instance.</div>
 <div class="section" id="sum-of-different-powers-schaffer-f7-condition-10">
 <span id="f43"></span><h4><img class="math" src="_images/math/4017f032e9493dc5a6768f4a6af1ce3755bf7b3f.png" alt="f_{43}" style="vertical-align: -4px"/>: Sum of different powers/Schaffer F7, condition 10<a class="headerlink" href="#sum-of-different-powers-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sum of different powers functions
@@ -1100,7 +1307,11 @@ is unimodal with an increasing conditioning once the optimum is approached,
 the second objective function is asymmetric and highly multi-modal with a
 low conditioning where frequency and amplitude of the modulation vary.</p>
 <p>Contained in the <em>ill-conditioned - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f43-i01-d05-searchspace.png"><img alt="f43-i01-d05-searchspace" src="_images/directions-f43-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f43-i01-d05-searchspace-projection.png"><img alt="f43-i01-d05-searchspace-projected" src="_images/directions-f43-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f43-i01-d05-logobjspace.png"><img alt="f43-i01-d05-logobjspace" src="_images/directions-f43-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f43-i01-d05-objspace.png"><img alt="f43-i01-d05-objspace" src="_images/directions-f43-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 43 in dimension 5 for the first instance.</div>
 <div class="section" id="sum-of-different-powers-schwefel-x-sin-x">
 <span id="f44"></span><h4><img class="math" src="_images/math/ecbf808846a11602513056c079cb622a5f8e40e8.png" alt="f_{44}" style="vertical-align: -4px"/>: Sum of different powers/Schwefel x*sin(x)<a class="headerlink" href="#sum-of-different-powers-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sum of different powers functions
@@ -1111,7 +1322,11 @@ the second objective function is highly multimodal&#8212;having the most
 prominent <img class="math" src="_images/math/bff055d44a7cf1d15d931d07a990de2bb060aac0.png" alt="2^n" style="vertical-align: 0px"/> minima located comparatively close to the corners
 of its unpenalized search area.</p>
 <p>Contained in the <em>ill-conditioned - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f44-i01-d05-searchspace.png"><img alt="f44-i01-d05-searchspace" src="_images/directions-f44-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f44-i01-d05-searchspace-projection.png"><img alt="f44-i01-d05-searchspace-projected" src="_images/directions-f44-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f44-i01-d05-logobjspace.png"><img alt="f44-i01-d05-logobjspace" src="_images/directions-f44-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f44-i01-d05-objspace.png"><img alt="f44-i01-d05-objspace" src="_images/directions-f44-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 44 in dimension 5 for the first instance.</div>
 <div class="section" id="sum-of-different-powers-gallagher-101-peaks">
 <span id="f45"></span><h4><img class="math" src="_images/math/c969636adcbbe1e6896b4b87dc71eefd29b46519.png" alt="f_{45}" style="vertical-align: -4px"/>: Sum of different powers/Gallagher 101 peaks<a class="headerlink" href="#sum-of-different-powers-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the sum of different powers functions
@@ -1124,7 +1339,11 @@ chosen (different for each instantiation of the function). The
 conditioning around the global optimum of the second objective function
 is about 30.</p>
 <p>Contained in the <em>ill-conditioned - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f45-i01-d05-searchspace.png"><img alt="f45-i01-d05-searchspace" src="_images/directions-f45-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f45-i01-d05-searchspace-projection.png"><img alt="f45-i01-d05-searchspace-projected" src="_images/directions-f45-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f45-i01-d05-logobjspace.png"><img alt="f45-i01-d05-logobjspace" src="_images/directions-f45-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f45-i01-d05-objspace.png"><img alt="f45-i01-d05-objspace" src="_images/directions-f45-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 45 in dimension 5 for the first instance.</div>
 <div class="section" id="rastrigin-rastrigin">
 <span id="f46"></span><h4><img class="math" src="_images/math/203c5dcb4ff0a4586154afe5c65cf6053a1484e5.png" alt="f_{46}" style="vertical-align: -4px"/>: Rastrigin/Rastrigin<a class="headerlink" href="#rastrigin-rastrigin" title="Permalink to this headline">¶</a></h4>
 <p>Combination of two Rastrigin functions
@@ -1132,7 +1351,11 @@ is about 30.</p>
 <p>Both objective functions are non-separable and highly multi-modal
 (roughly <img class="math" src="_images/math/a67e3aa3f4b353b89e4d13aa9ffcbdecf1ea5f7b.png" alt="10^n" style="vertical-align: -1px"/> local optima).</p>
 <p>Contained in the <em>multi-modal - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f46-i01-d05-searchspace.png"><img alt="f46-i01-d05-searchspace" src="_images/directions-f46-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f46-i01-d05-searchspace-projection.png"><img alt="f46-i01-d05-searchspace-projected" src="_images/directions-f46-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f46-i01-d05-logobjspace.png"><img alt="f46-i01-d05-logobjspace" src="_images/directions-f46-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f46-i01-d05-objspace.png"><img alt="f46-i01-d05-objspace" src="_images/directions-f46-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 46 in dimension 5 for the first instance.</div>
 <div class="section" id="rastrigin-schaffer-f7-condition-10">
 <span id="f47"></span><h4><img class="math" src="_images/math/69313751d47eb8bd04869032f67003cc9a97cdd2.png" alt="f_{47}" style="vertical-align: -4px"/>: Rastrigin/Schaffer F7, condition 10<a class="headerlink" href="#rastrigin-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Rastrigin function
@@ -1140,7 +1363,11 @@ is about 30.</p>
 condition number 10 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable and highly multi-modal.</p>
 <p>Contained in the <em>multi-modal - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f47-i01-d05-searchspace.png"><img alt="f47-i01-d05-searchspace" src="_images/directions-f47-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f47-i01-d05-searchspace-projection.png"><img alt="f47-i01-d05-searchspace-projected" src="_images/directions-f47-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f47-i01-d05-logobjspace.png"><img alt="f47-i01-d05-logobjspace" src="_images/directions-f47-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f47-i01-d05-objspace.png"><img alt="f47-i01-d05-objspace" src="_images/directions-f47-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 47 in dimension 5 for the first instance.</div>
 <div class="section" id="rastrigin-schwefel-x-sin-x">
 <span id="f48"></span><h4><img class="math" src="_images/math/b059645c0b76a20343820275625e4c90343ab9c3.png" alt="f_{48}" style="vertical-align: -4px"/>: Rastrigin/Schwefel x*sin(x)<a class="headerlink" href="#rastrigin-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Rastrigin function
@@ -1150,7 +1377,11 @@ the first has roughly <img class="math" src="_images/math/a67e3aa3f4b353b89e4d13
 <img class="math" src="_images/math/bff055d44a7cf1d15d931d07a990de2bb060aac0.png" alt="2^n" style="vertical-align: 0px"/> minima of the second objective function are located
 comparatively close to the corners of its unpenalized search area.</p>
 <p>Contained in the <em>multi-modal - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f48-i01-d05-searchspace.png"><img alt="f48-i01-d05-searchspace" src="_images/directions-f48-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f48-i01-d05-searchspace-projection.png"><img alt="f48-i01-d05-searchspace-projected" src="_images/directions-f48-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f48-i01-d05-logobjspace.png"><img alt="f48-i01-d05-logobjspace" src="_images/directions-f48-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f48-i01-d05-objspace.png"><img alt="f48-i01-d05-objspace" src="_images/directions-f48-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 48 in dimension 5 for the first instance.</div>
 <div class="section" id="rastrigin-gallagher-101-peaks">
 <span id="f49"></span><h4><img class="math" src="_images/math/83ff1ec68bcb6d01f7f7292b7f8be7972fd67784.png" alt="f_{49}" style="vertical-align: -4px"/>: Rastrigin/Gallagher 101 peaks<a class="headerlink" href="#rastrigin-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Rastrigin function
@@ -1161,14 +1392,22 @@ the first has roughly <img class="math" src="_images/math/a67e3aa3f4b353b89e4d13
 101 optima with position and height being unrelated and randomly
 chosen (different for each instantiation of the function).</p>
 <p>Contained in the <em>multi-modal - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f49-i01-d05-searchspace.png"><img alt="f49-i01-d05-searchspace" src="_images/directions-f49-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f49-i01-d05-searchspace-projection.png"><img alt="f49-i01-d05-searchspace-projected" src="_images/directions-f49-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f49-i01-d05-logobjspace.png"><img alt="f49-i01-d05-logobjspace" src="_images/directions-f49-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f49-i01-d05-objspace.png"><img alt="f49-i01-d05-objspace" src="_images/directions-f49-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 49 in dimension 5 for the first instance.</div>
 <div class="section" id="schaffer-f7-condition-10-schaffer-f7-condition-10">
 <span id="f50"></span><h4><img class="math" src="_images/math/5bc40e41da5d8e1f11b0d6181b28a03cbd4f1183.png" alt="f_{50}" style="vertical-align: -4px"/>: Schaffer F7, condition 10/Schaffer F7, condition 10<a class="headerlink" href="#schaffer-f7-condition-10-schaffer-f7-condition-10" title="Permalink to this headline">¶</a></h4>
 <p>Combination of two Schaffer F7 functions with
 condition number 10 (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objective functions are non-separable and highly multi-modal.</p>
 <p>Contained in the <em>multi-modal - multi-modal</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f50-i01-d05-searchspace.png"><img alt="f50-i01-d05-searchspace" src="_images/directions-f50-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f50-i01-d05-searchspace-projection.png"><img alt="f50-i01-d05-searchspace-projected" src="_images/directions-f50-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f50-i01-d05-logobjspace.png"><img alt="f50-i01-d05-logobjspace" src="_images/directions-f50-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f50-i01-d05-objspace.png"><img alt="f50-i01-d05-objspace" src="_images/directions-f50-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 50 in dimension 5 for the first instance.</div>
 <div class="section" id="schaffer-f7-condition-10-schwefel-x-sin-x">
 <span id="f51"></span><h4><img class="math" src="_images/math/09cfc8e3f38a5289d9da256200c3f6175d16db65.png" alt="f_{51}" style="vertical-align: -4px"/>: Schaffer F7, condition 10/Schwefel x*sin(x)<a class="headerlink" href="#schaffer-f7-condition-10-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Schaffer F7 function with
@@ -1179,7 +1418,11 @@ While frequency and amplitude of the modulation vary in an almost
 regular fashion in the first objective function, the second objective
 function posseses less global structure.</p>
 <p>Contained in the <em>multi-modal - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f51-i01-d05-searchspace.png"><img alt="f51-i01-d05-searchspace" src="_images/directions-f51-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f51-i01-d05-searchspace-projection.png"><img alt="f51-i01-d05-searchspace-projected" src="_images/directions-f51-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f51-i01-d05-logobjspace.png"><img alt="f51-i01-d05-logobjspace" src="_images/directions-f51-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f51-i01-d05-objspace.png"><img alt="f51-i01-d05-objspace" src="_images/directions-f51-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 51 in dimension 5 for the first instance.</div>
 <div class="section" id="schaffer-f7-condition-10-gallagher-101-peaks">
 <span id="f52"></span><h4><img class="math" src="_images/math/8ec1631d96c80c102957a733a5559e18bf5d641e.png" alt="f_{52}" style="vertical-align: -4px"/>: Schaffer F7, condition 10/Gallagher 101 peaks<a class="headerlink" href="#schaffer-f7-condition-10-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Schaffer F7 function with
@@ -1192,7 +1435,11 @@ regular fashion in the first objective function, the second has
 101 optima with position and height being unrelated and randomly
 chosen (different for each instantiation of the function).</p>
 <p>Contained in the <em>multi-modal - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f52-i01-d05-searchspace.png"><img alt="f52-i01-d05-searchspace" src="_images/directions-f52-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f52-i01-d05-searchspace-projection.png"><img alt="f52-i01-d05-searchspace-projected" src="_images/directions-f52-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f52-i01-d05-logobjspace.png"><img alt="f52-i01-d05-logobjspace" src="_images/directions-f52-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f52-i01-d05-objspace.png"><img alt="f52-i01-d05-objspace" src="_images/directions-f52-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 52 in dimension 5 for the first instance.</div>
 <div class="section" id="schwefel-x-sin-x-schwefel-x-sin-x">
 <span id="f53"></span><h4><img class="math" src="_images/math/debeee23dcf49ecb455e20f7c584150692c95089.png" alt="f_{53}" style="vertical-align: -4px"/>: Schwefel x*sin(x)/Schwefel x*sin(x)<a class="headerlink" href="#schwefel-x-sin-x-schwefel-x-sin-x" title="Permalink to this headline">¶</a></h4>
 <p>Combination of two Schwefel functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
@@ -1203,7 +1450,11 @@ Due to the combinatorial nature of the Schwefel function, it is likely
 in low dimensions that the Pareto set goes through the origin of the
 search space.</p>
 <p>Contained in the <em>weakly-structured - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f53-i01-d05-searchspace.png"><img alt="f53-i01-d05-searchspace" src="_images/directions-f53-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f53-i01-d05-searchspace-projection.png"><img alt="f53-i01-d05-searchspace-projected" src="_images/directions-f53-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f53-i01-d05-logobjspace.png"><img alt="f53-i01-d05-logobjspace" src="_images/directions-f53-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f53-i01-d05-objspace.png"><img alt="f53-i01-d05-objspace" src="_images/directions-f53-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 53 in dimension 5 for the first instance.</div>
 <div class="section" id="schwefel-x-sin-x-gallagher-101-peaks">
 <span id="f54"></span><h4><img class="math" src="_images/math/601d5f27d34b75e3653513fb8fed5bf0044e6ba5.png" alt="f_{54}" style="vertical-align: -4px"/>: Schwefel x*sin(x)/Gallagher 101 peaks<a class="headerlink" href="#schwefel-x-sin-x-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
 <p>Combination of the Schwefel function (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>) and the Gallagher function with
@@ -1215,7 +1466,11 @@ area. For the second objective, position and height of all
 101 optima are unrelated and randomly
 chosen (different for each instantiation of the function).</p>
 <p>Contained in the <em>weakly-structured - weakly-structured</em> function class.</p>
-</div>
+<p><a class="reference internal" href="_images/directions-f54-i01-d05-searchspace.png"><img alt="f54-i01-d05-searchspace" src="_images/directions-f54-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f54-i01-d05-searchspace-projection.png"><img alt="f54-i01-d05-searchspace-projected" src="_images/directions-f54-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f54-i01-d05-logobjspace.png"><img alt="f54-i01-d05-logobjspace" src="_images/directions-f54-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f54-i01-d05-objspace.png"><img alt="f54-i01-d05-objspace" src="_images/directions-f54-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 54 in dimension 5 for the first instance.</div>
 <div class="section" id="gallagher-101-peaks-gallagher-101-peaks">
 <span id="f55"></span><h4><img class="math" src="_images/math/7f888d9179f943871e9520bc083c90bc23b1ad67.png" alt="f_{55}" style="vertical-align: -4px"/>: Gallagher 101 peaks/Gallagher 101 peaks<a class="headerlink" href="#gallagher-101-peaks-gallagher-101-peaks" title="Permalink to this headline">¶</a></h4>
 <p>Combination of two Gallagher functions with
@@ -1225,7 +1480,11 @@ Position and height of all 101 optima in each objective function
 are unrelated and randomly chosen and thus, no global structure
 is present.</p>
 <p>Contained in the <em>weakly-structured - weakly-structured</em> function class.</p>
-<H2>Acknowledgments</H2><p>This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
+<p><a class="reference internal" href="_images/directions-f55-i01-d05-searchspace.png"><img alt="f55-i01-d05-searchspace" src="_images/directions-f55-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f55-i01-d05-searchspace-projection.png"><img alt="f55-i01-d05-searchspace-projected" src="_images/directions-f55-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
+<p><a class="reference internal" href="_images/directions-f55-i01-d05-logobjspace.png"><img alt="f55-i01-d05-logobjspace" src="_images/directions-f55-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f55-i01-d05-objspace.png"><img alt="f55-i01-d05-objspace" src="_images/directions-f55-i01-d05-objspace.png" style="width: 49%;" /></a></p>
+Illustration of search space (first row) and objective space (second row) for
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code>
+function 55 in dimension 5 for the first instance.<H2>Acknowledgments</H2><p>This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
 of the French National Research Agency.</p>
 <H2>References</H2><table class="docutils citation" frame="void" id="bro2016biperf" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -1297,7 +1556,7 @@ Elsevier.</td></tr>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Jul 01, 2016.
+      Last updated on Aug 23, 2016.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
