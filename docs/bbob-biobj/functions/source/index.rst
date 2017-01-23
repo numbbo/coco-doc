@@ -42,7 +42,8 @@ mainly stem from the easier construction of such problems---overrepresenting
 properties such as no dependencies between variables, Pareto sets exactly located at
 the bound constraints, or the differentiation between position and distance
 variables. Here, we propose an alternative way and define the ``bbob-biobj`` test suite
-with 55 bi-objective functions in continuous domain which are derived from
+with 55 bi-objective functions and its extended ``bbob-biobj-ext`` version with
+92 bi-objective functions in continuous domain which are both derived from
 combining functions of the well-known single-objective noiseless ``bbob`` test suite.
 Besides giving the actual function definitions and presenting their (known) properties, this
 documentation also aims at giving the rationale behind our approach in terms
@@ -234,7 +235,7 @@ Combining all 24 ``bbob`` functions in pairs thereby results in
 multi-objective optimization algorithms are not sensitive to permutations of
 the objective functions such that combining the 24  ``bbob`` functions and
 taking out the function :math:`(g_2,g_1)` if the function :math:`(g_1,g_2)`
-is present results in :math:`24 + {24 \choose 2} = 24 + (24\times23)/2 = (24\times25)/2 = 300` functions.
+is present results in :math:`24 + {24 \choose 2} = 24 + (24\times 23)/2 = (24\times 25)/2 = 300` functions.
 
 .. Given that most (if not all) multi-objective optimization algorithms are
 .. invariant to permutations of the objective functions, a bi-objective
@@ -439,7 +440,12 @@ ideal and nadir points are not accessible to the optimization algorithm
    that information about ideal and nadir points, scaling etc. is not
    provided to the algorithm.
 
+   
+.. note::
 
+  What is available to the algorithm, however, is an upper bound on the region of interest in objective space, in other words, COCO_ provides the reference point of its hypervolume calculation (non-normalized in objective space) as this upper bound [BRO2016biperf]_.
+
+  
 Instances
 ---------
 Our test functions are parametrized and instances are instantiations of the
@@ -3708,7 +3714,198 @@ Contained in the *weakly-structured - weakly-structured* function class.
 .. |f55-i01-d05-objspace| image:: ../code/plots/after_workshop/directions-f55-i01-d05-objspace.*
    :width: 49%
 
+   
+The Extended ``bbob-biobj-ext`` Test Suite and Its Functions
+============================================================
+Having all combinations of only a subset of the single-objective ``bbob`` functions in a test suite
+like the above ``bbob-biobj`` one has
+advantages but also a few disadvantages. Using only a subet of the 24 `bbob` functions 
+introduces a bias towards the chosen functions and reduces the amount of different difficulties,
+a bi-objective algorithm is exposed to in the benchmarking exercise. Allowing all combinations of
+``bbob`` functions increases the percentage of problems for which both objectives are from different
+``bbob`` function groups while, in practice, it can often be assumed that both objective functions 
+come from a similar "function domain".
 
+The rationale behind the following extended ``bbob-biobj`` test suite, denoted as `bbob-biobj-ext``
+is to reduce the mentioned effects. To this end, we add all within-group combinations of ``bbob``
+functions which are not already in the ``bbob-biobj`` suite and which do not combine a function
+with itself. For technical reasons, we also remove the Weierstrass functions (|fb16|_ in the 
+``bbob`` suite) because the optimum is not necessarily unique and computing the nadir point
+therefore technically more challenging than for the other functions.
+This extension adds :math:`3*(4+3+2+1-1) + 2*(3+2+1-1) = 3*9+2*5=37` functions, resulting in
+92 functions overall.
+
+The following table details which single-objective ``bbob`` functions are contained in the
+92 ``bbob-biobj-ext`` functions (outer column and row annotations) and indicates their IDs.
+Note that the IDs of the first 55 ``bbob0biobj-ext`` functions is the same than for the
+``bbob-biobj`` test suite for compatibility reasons.
+
+
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|       ||fb1|_ ||fb2|_ ||fb3|_ ||fb4|_ ||fb5|_ ||fb6|_ ||fb7|_ ||fb8|_ ||fb9|_ ||fb10|_||fb11|_||fb12|_||fb13|_||fb14|_||fb15|_||fb16|_||fb17|_||fb18|_||fb19|_||fb20|_||fb21|_||fb22|_||fb23|_||fb24|_|
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb1|_ | |f1|  | |f2|  | |f56| | |f57| | |f58| | |f3|  |       | |f4|  |       |       |       |       | |f5|  | |f6|  | |f7|  |       | |f8|  |       |       | |f9|  | |f10| |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb2|_ |       | |f11| | |f59| | |f60| | |f61| | |f12| |       | |f13| |       |       |       |       | |f14| | |f15| | |f16| |       | |f17| |       |       | |f18| | |f19| |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb3|_ |       |       |       | |f62| | |f63| |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb4|_ |       |       |       |       | |f64| |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb5|_ |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb6|_ |       |       |       |       |       | |f20| | |f65| | |f21| | |f66| |       |       |       | |f22| | |f23| | |f24| |       | |f25| |       |       | |f26| | |f27| |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb7|_ |       |       |       |       |       |       |       | |f67| | |f68| |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb8|_ |       |       |       |       |       |       |       | |f28| | |f69| |       |       |       | |f29| | |f30| | |f31| |       | |f32| |       |       | |f33| | |f34| |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb9|_ |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb10|_|       |       |       |       |       |       |       |       |       |       | |f70| | |f71| | |f72| | |f73| |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb11|_|       |       |       |       |       |       |       |       |       |       |       | |f74| | |f75| | |f76| |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb12|_|       |       |       |       |       |       |       |       |       |       |       |       | |f77| | |f78| |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb13|_|       |       |       |       |       |       |       |       |       |       |       |       | |f35| | |f36| | |f37| |       | |f38| |       |       | |f39| | |f40| |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb14|_|       |       |       |       |       |       |       |       |       |       |       |       |       | |f41| | |f42| |       | |f43| |       |       | |f44| | |f45| |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb15|_|       |       |       |       |       |       |       |       |       |       |       |       |       |       | |f46| |       | |f47| | |f79| | |f80| | |f48| | |f49| |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb16|_|       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb17|_|       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       | |f50| | |f81| | |f82| | |f51| | |f52| |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb18|_|       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       | |f83| |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb19|_|       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb20|_|       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       | |f53| | |f54| | |f84| | |f85| | |f86| |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb21|_|       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       | |f55| | |f87| | |f88| | |f89| |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb22|_|       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       | |f90| | |f91| |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb23|_|       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       | |f92| |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+||fb24|_|       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
+   The 92 functions of the ``bbob-biobj-ext`` test suite and their IDs (in the table cells) together with the information about which single-objective ``bbob`` functions are used
+   to define them (outer column and row annotations).
+
+
+.. |fb3| replace:: :math:`f_3`
+.. _fb3: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=15
+.. |fb4| replace:: :math:`f_4`
+.. _fb4: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=20
+.. |fb5| replace:: :math:`f_5`
+.. _fb5: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=25
+.. |fb7| replace:: :math:`f_7`
+.. _fb7: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=35
+.. |fb9| replace:: :math:`f_9`
+.. _fb9: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=45
+.. |fb10| replace:: :math:`f_{10}`
+.. _fb10: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=50
+.. |fb11| replace:: :math:`f_{11}`
+.. _fb11: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=55
+.. |fb12| replace:: :math:`f_{12}`
+.. _fb12: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=60
+.. |fb16| replace:: :math:`f_{16}`
+.. _fb16: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=80
+.. |fb18| replace:: :math:`f_{18}`
+.. _fb18: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=90
+.. |fb19| replace:: :math:`f_{19}`
+.. _fb19: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=95
+.. |fb22| replace:: :math:`f_{22}`
+.. _fb22: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=110
+.. |fb23| replace:: :math:`f_{23}`
+.. _fb23: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=115
+.. |fb24| replace:: :math:`f_{24}`
+.. _fb24: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=120
+
+.. |f56| replace:: f56
+.. |f57| replace:: f57
+.. |f58| replace:: f58
+.. |f59| replace:: f59
+.. |f60| replace:: f60
+.. |f61| replace:: f61
+.. |f62| replace:: f62
+.. |f63| replace:: f63
+.. |f64| replace:: f64
+.. |f65| replace:: f65
+.. |f66| replace:: f66
+.. |f67| replace:: f67
+.. |f68| replace:: f68
+.. |f69| replace:: f69
+.. |f70| replace:: f70
+.. |f71| replace:: f71
+.. |f72| replace:: f72
+.. |f73| replace:: f73
+.. |f74| replace:: f74
+.. |f75| replace:: f75
+.. |f76| replace:: f76
+.. |f77| replace:: f77
+.. |f78| replace:: f78
+.. |f79| replace:: f79
+.. |f80| replace:: f80
+.. |f81| replace:: f81
+.. |f82| replace:: f82
+.. |f83| replace:: f83
+.. |f84| replace:: f84
+.. |f85| replace:: f85
+.. |f86| replace:: f86
+.. |f87| replace:: f87
+.. |f88| replace:: f88
+.. |f89| replace:: f89
+.. |f90| replace:: f90
+.. |f91| replace:: f91
+.. |f92| replace:: f92
+
+
+
+
+Function Groups
+---------------------------------------------------------------
+
+Like for the ``bbob-biobj`` test suite, we obtain 15 function
+classes to structure the 92 bi-objective functions of the ``bbob-biobj-ext`` test
+suite. Depending on whether a function class combines functions from the same or
+from different ``bbob`` function classes, each function class contains 
+8, 12 or just four functions. We are listing
+below the function classes and in parenthesis  the functions that belong to
+the respective class:
+
+ 1. separable - separable (12 functions: f1, f2, f11, f56-64)
+ 2. separable - moderate (f3, f4, f12, f13)
+ 3. separable - ill-conditioned (f5, f6, f14, f15)
+ 4. separable - multi-modal (f7, f8, f16, f17)
+ 5. separable - weakly-structured (f9, f10, f18, f19)
+ 6. moderate - moderate (8 functions: f20, f21, f28, f65-f69)
+ 7. moderate - ill-conditioned (f22, f23, f29, f30)
+ 8. moderate - multi-modal (f24, f25, f31, f32)
+ 9. moderate - weakly-structured (f26, f27, f33, f34)
+ 10. ill-conditioned - ill-conditioned (12 functions: f35, f36, f41, f70-78)
+ 11. ill-conditioned - multi-modal (f37, f38, f42, f43)
+ 12. ill-conditioned - weakly-structured (f39, f40, f44, f45)
+ 13. multi-modal - multi-modal (8 functions: f46, f47, f50, f79-83)
+ 14. multi-modal - weakly structured (f48, f49, f51, f52)
+ 15. weakly structured - weakly structured (12 functions: f53-55, f84-92)
+
+
+
+Normalization and Instances
+---------------------------
+Normalization of the objectives and instances are handled for the ``bbob-biobj-ext`` in the
+same manner as for the ``bbob-biobj`` suite, i.e., no normalization of the objective
+functions is taking place for the algorithm benchmarking and 15 instances are prescribed for
+a typical experiment.
+   
+   
+   
 
 .. _`Coco framework`: https://github.com/numbbo/coco
 
@@ -3722,7 +3919,8 @@ Contained in the *weakly-structured - weakly-structured* function class.
     \section*{Acknowledgments}
 
 This work was supported by the grant ANR-12-MONU-0009 (NumBBO) 
-of the French National Research Agency.
+of the French National Research Agency. We also thank Ilya Loshchilov and Oswin Krause for their
+initial suggestions on how to extend the ``bbob-biobj`` test suite.
 
  
 .. ############################# References #########################################
