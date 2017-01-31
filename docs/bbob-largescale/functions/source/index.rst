@@ -32,11 +32,11 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   % \tableofcontents TOC is automatic with sphinx and moved behind abstract by swap...py
   \begin{abstract}
 
-The ``bbob-largescale`` test suite, containing 24 single objective
+The ``bbob-largescale`` test suite, containing 24 single-objective
 functions in continuous domain, is an extension of the well-known
 single-objective noiseless ``bbob`` test suite [HAN2009]_, which has been used since 2009 in
 the `BBOB workshop series`_, in large dimension. The core idea is to make rotational
-transformations :math:`\textbf{R}`, \textbf{Q}` in search space that
+transformations :math:`\textbf{R}, \textbf{Q}` in search space that
 appear in the ``bbob`` test suite cheaper while retaining some desired
 properties. This documentation presents our approach where the rotational transformation will
 be replaced by the combination of a block-diagonal matrix with two
@@ -100,11 +100,11 @@ Terminology
     :math:`\mathbb{R}^n\to\mathbb{R}` with scalable input space, that is,
     :math:`n` is not (yet) determined. Functions are parametrized such that
     different *instances* of the "same" function are available, e.g. translated
-    or shifted versions.
+    or rotated versions.
 
 *problem*
     We talk about a *problem*, |coco_problem_t|_, as a specific *function
-    instance* on which the optimization algorithm is run. Specifically, a problem
+    instance* on which an optimization algorithm is run. Specifically, a problem
     can be described as the triple ``(dimension, function, instance)``. A problem
     can be evaluated and returns an :math:`f`-value. In the context of performance
     assessment, a target :math:`f`- or indicator-value is attached to each problem.
