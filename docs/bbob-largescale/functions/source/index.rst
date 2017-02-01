@@ -237,6 +237,8 @@ a translation by using the vector :math:`\mathbf{x}^{\text{opt}}` to get the rel
 a translation in objective space by using :math:`\mathbf{f}_{\text{opt}}` to obtain the final
 function in the testbed:
 
+.. Dimo: the above paragraph explains things in the wrong order, isn't it?
+
 .. math::
     f_{13}(\mathbf{x}) = f_{\text{raw}}^{\text{Sharp Ridge}}(\mathbf{z}) + \mathbf{f}_{\text{opt}}.
 
@@ -248,7 +250,7 @@ There are two reasons behind the use of transformations here:
 
 
 Rotational transformations are one type of linear transformation which is used to avoid
-separability and coordinate system independence in the test functions. The rotational transformation consists in applying
+separability and thus coordinate system dependence in the test functions. The rotational transformation consists in applying
 an orthogonal matrix to the search space: :math:`x \rightarrow z = \textbf{R}x`, where :math:`\textbf{R}` is an
 orthogonal matrix. While the other transformations used in the ``bbob`` test suite could be naturally extended to
 the large scale setting due to their linear complexity, the rotational transformation has quadratic time and
@@ -287,6 +289,8 @@ and :math:`\sum_{i=1}^{n_b}s_i = n`. In this case, the matrices
 :math:`B_i, 1 \leq i \leq n_b` are all orthogonal. Thus, the matrix :math:`B`
 is also an orthogonal matrix.
 
+.. Dimo: such a matrix will not exist in all dimensions, right? What for example if :math:`n` is prime? We should be more careful in the definition here (e.g. restricting the potential dimensions or allowing :math:`B_{n_b}` to be smaller than :math:`s_ \times s_i`).
+
 This representation allows the rotational transformation :math:`\textbf{R}` to satisfy three
 desired properties:
 
@@ -312,19 +316,23 @@ The parameter of this procedure includes:
 
 Generating the permutation matrices :math:`P`
 ---------------------------------------------
-For generating a permutation matrix :math:`P`, we use the technique called *truncated uniform swaps*.
-Here, the second swap variable is chosen uniformly among the variables
-that are within a fixed range :math:`r_s` of the first swap variable. Let :math:`i` be the index of the first
-variable to be swapped and :math:`j` be that of the second swap variable, then
+For generating a permutation matrix :math:`P`, we start from the identity matrix and apply successively a set of so-called *truncated uniform swaps*. Thereby, a first row/column is chosen uniformly at random in the matrix. A second row/column is then chosen uniformly among the rows/columns
+that are within a fixed range :math:`r_s` of the first choice. Finally, the two chosen rows/column are swapped.
+
+.. Dimo: can someone please check whether the above paragraph is okay and/or improve on it?
+
+Let :math:`i` be the index of the first
+variable/row/column to be swapped and :math:`j` be the index of the second swap variable. Then
 
 .. math::
     j \sim U(\{l_b(i), l_b(i) + 1, \dots, u_b(i)\} \backslash \{i\}),
 
 where :math:`U(S)` is the uniform distribution over the set :math:`S` and :math:`l_b(i) = \max(1,i-r_s)`
-and :math:`l_b(i) = \min(n,i+r_s)`.
+and :math:`l_b(i) = \min(n,i+r_s)` with :math:`r_s` a parameter of the approach.
 If :math:`r_s \leq (d-1)/2`, the average distance between
-the first and the second swap variable ranges from :math:`(\sqrt{2}-1)r_s + 1/2` to
-:math:`r_s/2 + 1/2`. It is maximal when the first swap variable is at least :math:`r_s`
+the first and the second swap variable ranges from :math:`(\sqrt{2}-1)r_s + 1/2` (in the case of an
+asymmetric choice for :math:`j`, i.e. when :math:`i` is chosen closer to :math:`1` or :math:`n` than :math:`r_s`) to
+:math:`r_s/2 + 1/2` (in the case of a symmetric choice for :math:`j`). It is maximal when the first swap variable is at least :math:`r_s`
 away from both extremes or is one of them.
 
 .. Dimo: What is `d` here? Shouldn't it be `n`? And why is it `(d-1)/2` and not `n/2`?
