@@ -82,11 +82,11 @@ of the form
 .. math::
     \min_{x \in \mathbb{R}^n} \ f(x),
 
-where the number of variables :math:`n` are 20, 40, 80, 160, 320, 640.
+with problem dimensions :math:`n \in \{20, 40, 80, 160, 320, 640\}.`
 
 The objective is to find, as quickly as possible, one or several solutions :math:`x` in the search
 space :math:`\mathbb{R}^n` with *small* value(s) of :math:`f(x)\in\mathbb{R}`. We
-generally consider *time* to be the number of calls to the function :math:`f`.
+generally measure the *time* of an optimization run as the number of calls to (queries of) the objective function :math:`f`.
 
 We remind in the next sections some notations and definitions.
 
@@ -155,13 +155,13 @@ establish a hitting time condition.
 We prescribe a **target value**, |t|, which is an |f|- or
 indicator-value [HAN2016perf]_ [BRO2016]_.
 For a single run, when an algorithm reaches or surpasses the target value |t|
-on problem |p|, we say it has *solved the problem* |pt| --- it was successful. [#]_
+on problem |p|, we say that it has *solved the problem* |pt| --- it was successful. [#]_
 
-Now, the **runtime** is the evaluation count when the target value |t| was
+The **runtime** is, then, the evaluation count when the target value |t| was
 reached or surpassed for the first time.
-That is, runtime is the number of |f|-evaluations needed to solve the problem
+That is, the runtime is the number of |f|-evaluations needed to solve the problem
 |pt|. [#]_
-*Measured runtimes are the only way how we assess the performance of an
+*Measured runtimes are the only way we assess the performance of an
 algorithm.*
 Observed success rates are generally translated into runtimes on a subset of
 problems.
@@ -170,11 +170,11 @@ problems.
 .. _Recommendations: https://www.github.com
 
 
-If an algorithm does not hit the target in a single run, this runtime remains
-undefined --- while it has been bounded from below by the number of evaluations
+If an algorithm does not hit the target in a single run, its runtime remains
+undefined --- while, then, this runtime is bounded from below by the number of evaluations
 in this unsuccessful run.
 The number of available runtime values depends on the budget the
-algorithm has explored.
+algorithm has explored (the larger the budget, the more likely the target-values are reached).
 Therefore, larger budgets are preferable --- however they should not come at
 the expense of abandoning reasonable termination conditions. Instead,
 restarts should be done [HAN2016ex]_.
@@ -204,10 +204,10 @@ restarts should be done [HAN2016ex]_.
 
 Overview of the Proposed ``bbob-largescale`` Test Suite
 =======================================================
-The ``bbob-largescale`` test suite provides 24 functions in six dimensions (20, 40, 80, 160, 320, and 640) within
-the COCO framework. It is derived from the existing single-objective, unconstrained ``bbob`` test suite with slight
-modifications in order to be able to benchmark algorithms efficiently also in higher dimension. We will explain
-in this section how the ``bbob-largescale`` test suite is built.
+The ``bbob-largescale`` test suite provides 24 functions in six dimensions (20, 40, 80, 160, 320 and 640) within
+the COCO framework. It is derived from the existing single-objective, unconstrained ``bbob`` test suite with
+modifications that allow the user to benchmark algorithms on high dimensional problems efficiently.
+We will explain in this section how the ``bbob-largescale`` test suite is built.
 
 
 The single-objective ``bbob`` functions
@@ -228,7 +228,7 @@ is derived from a raw function defined as follows:
 
 Then one applies a sequence of transformations: a
 rotational transformation :math:`\mathbf{Q}`; then a scaling transformation
-:math:`\mathbf{\Lambda}^{10}`; then a rotational transformation :math:`\mathbf{R}`; then
+:math:`\mathbf{\Lambda}^{10}`; then another rotational transformation :math:`\mathbf{R}`; then
 a translation by using the vector :math:`\mathbf{x}^{\text{opt}}` to get the relationship
 :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{10}\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`; and finally
 a translation in objective space by using :math:`\mathbf{f}_{\text{opt}}` to obtain the final
@@ -240,19 +240,19 @@ function in the testbed:
     f_{13}(\mathbf{x}) = f_{\text{raw}}^{\text{Sharp Ridge}}(\mathbf{z}) + \mathbf{f}_{\text{opt}}.
 
 
-There are two reasons behind the use of transformations here:
+There are two main reasons behind the use of transformations here:
 
 (i) provide non-trivial problems that cannot be solved by simply exploiting some of their properties (separability, optimum at fixed position, ...) and
 (ii) allow to generate different instances, ideally of similar difficulty, of the same problem by using different (pseudo-)random transformations.
 
 
-Rotational transformations are one type of linear transformation which is used to avoid
-separability and thus coordinate system dependence in the test functions. The rotational transformation consists in applying
-an orthogonal matrix to the search space: :math:`x \rightarrow z = \textbf{R}x`, where :math:`\textbf{R}` is an
-orthogonal matrix. While the other transformations used in the ``bbob`` test suite could be naturally extended to
-the large scale setting due to their linear complexity, the rotational transformation has quadratic time and
-space complexities. Thus, we need to reduce the complexity of this transformation in the large scale setting to
-make benchmarking experiments in significantly larger dimensions possible.
+Rotational transformations are used to avoid separability and thus coordinate system dependence in the test functions.
+The rotational transformations consist in applying
+an orthogonal matrix to the search space: :math:`x \rightarrow z = \textbf{R}x`, where :math:`\textbf{R}` is the
+orthogonal matrix.
+While the other transformations used in the ``bbob`` test suite could be naturally extended to
+the large scale setting due to their linear complexity, rotational transformations have quadratic time and
+space complexities. Thus, we need to reduce the complexity of these transformations in order for them to be usable, in practice, in the large scale setting.
 
 Extension to large scale setting
 --------------------------------
