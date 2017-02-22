@@ -411,7 +411,7 @@ as follows:
         problem = transform_vars_blockrotation(problem, B, n, s, n_b);
         problem = transform_vars_permutation(problem, P1, n);
         
-.. Wassim: the output of the above is not correct, the sentence is displayed inside the code-block
+.. Wassim: the output of the above is not correct, the sentence is displayed inside the code-block. And the phrasing in kinda weird
 
 Here, :math:`n` is again the problem dimension, :math:`s` the size of the blocks in :math:`B`, :math:`n_b:`
 the number of blocks, :math:`n_s:` the number of swaps, and :math:`r_s:` the swap range as presented previously.
@@ -426,12 +426,12 @@ Functions in ``bbob-largescale`` test suite
 The table below presents the definition of all 24 functions of the ``bbob-largescale`` test suite in detail. Beside the important
 modification on rotational transformations, we also make two changes to the raw functions in the ``bbob`` test suite.
 
-- All functions, except for the Schwefel function, are normalized by the parameter :math:`\gamma(n) = \min(1, 40/n)` to have uniform target values that are comparable over a wide range of dimensions.
+- All functions, except for the Schwefel function, are normalized by the parameter :math:`\gamma(n) = \min(1, 40/n)` to have uniform target values that are comparable, in difficulty, over a wide range of dimensions.
 
-- The Discus, Bent Cigar, and Sharp Ridge functions are generalized such that they have a constant proportion of distinct axes that remain consistent with the ``bbob`` test suite.
+- The Discus, Bent Cigar and Sharp Ridge functions are generalized such that they have a constant proportion of distinct axes that remain consistent with the ``bbob`` test suite.
 
-To deeply understand the properties of those functions and for the definitions
-of the used transformations and abbreviations, we refer to the original
+For a better understanding of the properties of these functions and for the definitions
+of the used transformations and abbreviations, we refer the reader to the original
 ``bbob`` `function documention`__ for details.
 
 .. _bbobfunctiondoc: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf
