@@ -235,6 +235,7 @@ a translation in objective space by using :math:`\mathbf{f}_{\text{opt}}` to obt
 function in the testbed:
 
 .. Dimo: the above paragraph explains things in the wrong order, isn't it?
+.. Wassim: Right, the transformations are applied in the reverse order
 
 .. math::
     f_{13}(\mathbf{x}) = f_{\text{raw}}^{\text{Sharp Ridge}}(\mathbf{z}) + \mathbf{f}_{\text{opt}}.
@@ -256,11 +257,12 @@ space complexities. Thus, we need to reduce the complexity of these transformati
 
 Extension to large scale setting
 --------------------------------
-Our objective is to construct a large scale test suite such that the cost of a function call is
-acceptable with the dimensions of interest while preserving the main characteristics of the original functions in the ``bbob``
-test suite. To this end, we will replace the full orthogonal matrices of the rotational transformations,
-which would be too expensive in our large scale setting, with another orthogonal transformation
-that has (almost) linear complexity: *permuted orthogonal block-diagonal matrices* ([AIT2016]_).
+Our objective is to construct a large scale test suite where the cost of a function call is
+acceptable in the higher dimensions while preserving the main characteristics of the original functions in the ``bbob``
+test suite.
+To this end, we will replace the full orthogonal matrices of the rotational transformations,
+which would be too expensive in our large scale setting, with orthogonal transformations
+that have linear complexity in the problem dimension: *permuted orthogonal block-diagonal matrices* ([AIT2016]_).
 
 Specifically, the matrix of a rotational transformation :math:`\textbf{R}`
 will be represented as:
@@ -287,36 +289,40 @@ and :math:`\sum_{i=1}^{n_b}s_i = n`. In this case, the matrices
 is also an orthogonal matrix.
 
 .. Dimo: such a matrix will not exist in all dimensions, right? What for example if :math:`n` is prime? We should be more careful in the definition here (e.g. restricting the potential dimensions or allowing :math:`B_{n_b}` to be smaller than :math:`s_ \times s_i`).
+.. Wassim: I don’t see how :math:`n` being a prime would be a problem. Up to this point, we only require the sum of the block-sizes to be equal to :math:`n`; later, we will define the values of these block-sizes and then, I agree, we should mention that the last block can be, in theory, smaller (all dimensions larger than 40 are multiples of 40 in our case)
 
 This representation allows the rotational transformation :math:`\textbf{R}` to satisfy three
 desired properties:
 
-1. Have (almost) linear cost (due to the block structure of :math:`B`).
+1. Have linear cost (due to the block structure of :math:`B`) in the problem dimension.
 2. Introduce non-separability.
 3. Preserve the eigenvalues and therefore the condition number of the original function when it is convex quadratic (since :math:`\textbf{R}` is orthogonal).
 
-.. [#] A *permutation matrix* is a square binary matrix that has exactly one entry of
+.. [#] A *permutation matrix* is a square binary matrix that has exactly one entry at
     1 in each row and each column and 0s elsewhere.
 
 Generating the orthogonal block matrix :math:`B`
 ------------------------------------------------
-The sub-matrices :math:`B_i, i=1,2,...,n_b` will be uniformly distributed in the set of
-orthogonal matrices of the same size. To this end, we firstly generate square matrices with
+The block-matrices :math:`B_i, i=1,2,...,n_b` will be uniformly distributed in the set of
+orthogonal matrices of the same size. To this end, we first generate square matrices with
 sizes :math:`s_i` (`i=1,2,...,n_b`) whose entries are i.i.d. standard normally distributed.
 Then we apply the Gram-Schmidt process to orthogonalize these matrices.
 
-The parameter of this procedure includes:
+The parameters of this procedure include:
 
-- the dimension of a problem :math:`n`,
-- the block sizes :math:`s_1, \dots, s_{n_b}`, where :math:`n_b` is the number of blocks. In this test suite, we set :math:`s_i = s := \min\{n, 40\} \forall i=1,2,...,n_b` and thus :math:`n_b = \lceil n/s \rceil`.
+- the dimension of the problem :math:`n`,
+- the block sizes :math:`s_1, \dots, s_{n_b}`, where :math:`n_b` is the number of blocks. In this test suite, we set :math:`s_i = s := \min\{n, 40\} \forall i=1,2,...,n_b` (except, maybe, for the last block which can be smaller) [#]_ and thus :math:`n_b = \lceil n/s \rceil`.
 
+.. [#] This setting allows to have the problems in dimensions 20 and 40 overlap between the ``bbob`` test suite and its large-scale extension since in these dimensions, the block sizes coincide with the problem dimensions.
 
 Generating the permutation matrices :math:`P`
 ---------------------------------------------
-For generating a permutation matrix :math:`P`, we start from the identity matrix and apply successively a set of so-called *truncated uniform swaps*. Thereby, a first row/column is chosen uniformly at random in the matrix. A second row/column is then chosen uniformly among the rows/columns
-that are within a fixed range :math:`r_s` of the first choice. Finally, the two chosen rows/column are swapped.
+In order to generate the permutation matrix :math:`P`, we start from the identity matrix and apply, successively, a set of so-called *truncated uniform swaps*.
+Each row/column (up to a maximum number of swaps) is swapped with a row/column chosen uniformly from the set of rows/columns within a fixed range :math:`r_s`.
+A random order of the rows/columns is generated to avoid biases towards the first rows/columns.
 
 .. Dimo: can someone please check whether the above paragraph is okay and/or improve on it?
+.. Wassim: the rows/columns are selected without replacement so it’s not correct
 
 Let :math:`i` be the index of the first
 variable/row/column to be swapped and :math:`j` be the index of the second swap variable. Then
@@ -333,7 +339,9 @@ asymmetric choice for :math:`j`, i.e. when :math:`i` is chosen closer to :math:`
 away from both extremes or is one of them.
 
 .. Dimo: What is `d` here? Shouldn't it be `n`? And why is it `(d-1)/2` and not `n/2`?
+.. Wassim: yes, it should be `n` and `n-1` is because the variable itself is not included
 .. Dimo: I have to say, I don't fully understand the second sentence here...
+.. Wassim: the original paper should probably be referenced and I don’t think the explanation needs to be included here anyway
 
 **Algorithm 1** below describes the process of generating a permutation using a
 series of truncated uniform swaps with the following parameters:
