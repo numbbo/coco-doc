@@ -401,7 +401,7 @@ as follows:
 
     .. code-block:: c
 
-    problem = transform_vars_affine(problem, R, b, n);
+    	problem = transform_vars_affine(problem, R, b, n);
 
     to make a rotational transformation, then in the ``bbob-largescale`` test suite, we replace it with the three transformations
 
@@ -410,6 +410,8 @@ as follows:
         problem = transform_vars_permutation(problem, P2, n);
         problem = transform_vars_blockrotation(problem, B, n, s, n_b);
         problem = transform_vars_permutation(problem, P1, n);
+        
+.. Wassim: the output of the above is not correct, the sentence is displayed inside the code-block
 
 Here, :math:`n` is again the problem dimension, :math:`s` the size of the blocks in :math:`B`, :math:`n_b:`
 the number of blocks, :math:`n_s:` the number of swaps, and :math:`r_s:` the swap range as presented previously.
