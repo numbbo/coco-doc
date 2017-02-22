@@ -380,16 +380,16 @@ dimensions 20, 40, 80, 160, 320, and 640 of the ``bbob-largescale`` test suite.
 
 Implementation
 --------------
-Now, we describe how to implement the replacement of the rotational transformations in the
-``bbob`` test suite with the realizations of :math:`P_{\text{left}}BP_{\text{right}}`. This will be illustrated through an example
-on the Ellipsoidal function (rotated) :math:`f_{10}(\mathbf{x})` (see Table in the next section), which is defined by
+Now, we describe how these changes to the rotational transformations are implemented.
+This will be illustrated through an example
+on the Ellipsoidal function (rotated) :math:`f_{10}(\mathbf{x})` (see the table in the next section), which is defined by
 
 .. math::
     f_{10}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2  + \mathbf{f}_{\text{opt}}, \text{with } \mathbf{z} = T_{\text{osz}} (\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})), \mathbf{R} = P_{1}BP_{2},
 
 as follows:
 
-(i) Firstly, we locate three matrices :math:`B, P_1, P_2` using the procedures:
+(i) First, we the three matrices needed for the transformation,:math:`B, P_1, P_2`, are obtained as follows:
 
     .. code-block:: c
 
@@ -401,7 +401,7 @@ as follows:
 
     .. code-block:: c
 
-        problem = transform_vars_affine(problem, R, b, n);
+    problem = transform_vars_affine(problem, R, b, n);
 
     to make a rotational transformation, then in the ``bbob-largescale`` test suite, we replace it with the three transformations
 
@@ -411,11 +411,13 @@ as follows:
         problem = transform_vars_blockrotation(problem, B, n, s, n_b);
         problem = transform_vars_permutation(problem, P1, n);
 
-Here, :math:`n:` is again the problem dimension, :math:`s:` the size of the blocks in :math:`B`, :math:`n_b:`
-their number, :math:`n_s:` the number of swaps, and :math:`r_s:` the swap range as presented in the previous sections.
+Here, :math:`n` is again the problem dimension, :math:`s` the size of the blocks in :math:`B`, :math:`n_b:`
+the number of blocks, :math:`n_s:` the number of swaps, and :math:`r_s:` the swap range as presented previously.
 
 **Important remark:** Although the complexity of ``bbob`` test suite is reduced considerably by the above replacement of
 rotational transformations, we recommend running the experiment on the ``bbob-largescale`` test suite in parallel.
+
+.. Wassim: I’m not sure this is the appropriate place for this remark, it’s more a general remark on the use of this test suite, and any test suite for that matter. It’s always preferable to run independent experiments in parallel
 
 Functions in ``bbob-largescale`` test suite
 =============================================
