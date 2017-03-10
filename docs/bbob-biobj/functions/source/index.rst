@@ -105,10 +105,11 @@ of function groups, instances, and potential objective space normalization.
 .. #################################################################################
 
 
-Introduction
-============
-.. todo:: will contain the argumentation in favor of a ``bbob-biobj`` test suite
-   and an extensive review of the state-of-the art in multiobjective test functions
+.. Introduction
+   
+   ============
+   .. todo:: will contain the argumentation in favor of a ``bbob-biobj`` test suite
+      and an extensive review of the state-of-the art in multiobjective test functions
 
 
 Preliminaries, Definitions, and Scope
@@ -441,7 +442,7 @@ ideal and nadir points are not accessible to the optimization algorithm
    provided to the algorithm.
 
    
-.. note::
+.. .. note:: TODO: put back in once this is implemented!!!
 
   What is available to the algorithm, however, is an upper bound on the region of interest in objective space, in other words, COCO_ provides the reference point of its hypervolume calculation (non-normalized in objective space) as this upper bound [BRO2016biperf]_.
 
@@ -776,7 +777,12 @@ Combination of two sphere functions (|f`1` in the bbob suite|_).
 
 Both objectives are unimodal, highly symmetric, rotational and scale
 invariant. The Pareto set is known to be a straight line and the Pareto 
-front is convex. Considered as the simplest bi-objective problem in
+front is convex. Furthermore, the normalized hypervolume value of the
+entire Pareto front with respect to the nadir point as reference point
+can be computed analytically as the integral 
+:math:`1-\int_{0}^{1} (1-\sqrt{x})^2dx = -\frac{1}{2}+\frac{4}{3}=0.833333\ldots`.
+
+Considered as the simplest bi-objective problem in
 continuous domain.
 
 Contained in the *separable - separable* function class.
@@ -3719,14 +3725,14 @@ The Extended ``bbob-biobj-ext`` Test Suite and Its Functions
 ============================================================
 Having all combinations of only a subset of the single-objective ``bbob`` functions in a test suite
 like the above ``bbob-biobj`` one has
-advantages but also a few disadvantages. Using only a subet of the 24 `bbob` functions 
+advantages but also a few disadvantages. Using only a subet of the 24 ``bbob`` functions 
 introduces a bias towards the chosen functions and reduces the amount of different difficulties,
 a bi-objective algorithm is exposed to in the benchmarking exercise. Allowing all combinations of
 ``bbob`` functions increases the percentage of problems for which both objectives are from different
 ``bbob`` function groups while, in practice, it can often be assumed that both objective functions 
 come from a similar "function domain".
 
-The rationale behind the following extended ``bbob-biobj`` test suite, denoted as `bbob-biobj-ext``
+The rationale behind the following extended ``bbob-biobj`` test suite, denoted as ``bbob-biobj-ext``,
 is to reduce the mentioned effects. To this end, we add all within-group combinations of ``bbob``
 functions which are not already in the ``bbob-biobj`` suite and which do not combine a function
 with itself. For technical reasons, we also remove the Weierstrass functions (|fb16|_ in the 
@@ -3737,7 +3743,7 @@ This extension adds :math:`3*(4+3+2+1-1) + 2*(3+2+1-1) = 3*9+2*5=37` functions, 
 
 The following table details which single-objective ``bbob`` functions are contained in the
 92 ``bbob-biobj-ext`` functions (outer column and row annotations) and indicates their IDs.
-Note that the IDs of the first 55 ``bbob0biobj-ext`` functions is the same than for the
+Note that the IDs of the first 55 ``bbob0biobj-ext`` functions are the same than for the
 ``bbob-biobj`` test suite for compatibility reasons.
 
 

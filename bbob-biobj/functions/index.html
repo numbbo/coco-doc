@@ -46,10 +46,7 @@
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">COCO: The Bi-objective Black-Box Optimization Benchmarking (<code class="docutils literal"><span class="pre">bbob-biobj</span></code>) Test Suite</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a><ul>
-<li><a class="reference internal" href="#definitions-and-terminology">Definitions and Terminology</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#preliminaries-definitions-and-scope">Preliminaries, Definitions, and Scope</a></li>
 <li><a class="reference internal" href="#overview-of-the-proposed-bbob-biobj-test-suite">Overview of the Proposed <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Test Suite</a><ul>
 <li><a class="reference internal" href="#the-single-objective-bbob-functions">The Single-objective <code class="docutils literal"><span class="pre">bbob</span></code> Functions</a></li>
 <li><a class="reference internal" href="#function-groups">Function Groups</a></li>
@@ -121,6 +118,11 @@
 </li>
 </ul>
 </li>
+<li><a class="reference internal" href="#the-extended-bbob-biobj-ext-test-suite-and-its-functions">The Extended <code class="docutils literal"><span class="pre">bbob-biobj-ext</span></code> Test Suite and Its Functions</a><ul>
+<li><a class="reference internal" href="#id21">Function Groups</a></li>
+<li><a class="reference internal" href="#normalization-and-instances">Normalization and Instances</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -156,21 +158,30 @@
   <div class="section" id="coco-the-bi-objective-black-box-optimization-benchmarking-bbob-biobj-test-suite">
 <h1>COCO: The Bi-objective Black-Box Optimization Benchmarking (<code class="docutils literal"><span class="pre">bbob-biobj</span></code>) Test Suite<a class="headerlink" href="#coco-the-bi-objective-black-box-optimization-benchmarking-bbob-biobj-test-suite" title="Permalink to this headline">¶</a></h1>
 See also: <I>ArXiv e-prints</I>,
-<A HREF="http://arxiv.org/abs/1604.00359">arXiv:1604.00359</A>, 2016.<p>The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite contains 55 bi-objective
-functions in continuous domain which are derived from combining functions of
-the well-known single-objective noiseless <code class="docutils literal"><span class="pre">bbob</span></code> test suite. Besides giving
-the actual function definitions and presenting their (known) properties, this
+<A HREF="http://arxiv.org/abs/1604.00359">arXiv:1604.00359</A>, 2016.<p>Several test function suites for numerical benchmarking of multiobjective
+optimization algorithms have been proposed in recent years. While having
+desirable properties like well-understood Pareto sets and Pareto fronts with shapes
+of various kinds, most of the currently used functions posess properties
+which are arguably under-represented in real-world problems. Those properties
+mainly stem from the easier construction of such problems&#8212;overrepresenting
+properties such as no dependencies between variables, Pareto sets exactly located at
+the bound constraints, or the differentiation between position and distance
+variables. Here, we propose an alternative way and define the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite
+with 55 bi-objective functions and its extended <code class="docutils literal"><span class="pre">bbob-biobj-ext</span></code> version with
+92 bi-objective functions in continuous domain which are both derived from
+combining functions of the well-known single-objective noiseless <code class="docutils literal"><span class="pre">bbob</span></code> test suite.
+Besides giving the actual function definitions and presenting their (known) properties, this
 documentation also aims at giving the rationale behind our approach in terms
 of function groups, instances, and potential objective space normalization.</p>
-<div class="figure align-center" id="id29">
+<div class="figure align-center" id="id30">
 <a class="reference internal image-reference" href="_images/examples-bbob-biobj.png"><img alt="_images/examples-bbob-biobj.png" src="_images/examples-bbob-biobj.png" style="width: 539.4px; height: 444.6px;" /></a>
 <p class="caption"><span class="caption-text">Example plots of the Pareto front approximation, found by NSGA-II on
 selected <code class="docutils literal"><span class="pre">bbob-biobj</span></code> functions. In blue the non-dominated points at the
 end of different independent runs, in red the points that are
 non-dominated over all runs.</span></p>
 </div>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="preliminaries-definitions-and-scope">
+<h2>Preliminaries, Definitions, and Scope<a class="headerlink" href="#preliminaries-definitions-and-scope" title="Permalink to this headline">¶</a></h2>
 <p>In the following, we consider bi-objective, unconstrained
 <strong>minimization</strong> problems of the form</p>
 <div class="math">
@@ -199,9 +210,7 @@ have in each coordinate distance one. Neither of these points is however
 freely accessible to the optimization algorithm.</td></tr>
 </tbody>
 </table>
-<div class="section" id="definitions-and-terminology">
-<h3>Definitions and Terminology<a class="headerlink" href="#definitions-and-terminology" title="Permalink to this headline">¶</a></h3>
-<p>We remind in this section different definitions.</p>
+<p>In the following, we remind useful definitions.</p>
 <dl class="docutils">
 <dt><em>function instance, problem</em></dt>
 <dd><p class="first">Each function <img class="math" src="_images/math/edfefb1b838bd77f0775f6be6672cc6646e49bd5.png" alt="f^\theta: \mathbb{R}^n \to \mathbb{R}^m" style="vertical-align: -4px"/> within <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> is parametrized
@@ -243,7 +252,6 @@ is, a single point in the search space maps to the global minimum)</p>
 </dd>
 </dl>
 </div>
-</div>
 <div class="section" id="overview-of-the-proposed-bbob-biobj-test-suite">
 <h2>Overview of the Proposed <code class="docutils literal"><span class="pre">bbob-biobj</span></code> Test Suite<a class="headerlink" href="#overview-of-the-proposed-bbob-biobj-test-suite" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite provides 55 bi-objective functions in six
@@ -263,7 +271,7 @@ them together with their common properties.</p>
 multi-objective optimization algorithms are not sensitive to permutations of
 the objective functions such that combining the 24  <code class="docutils literal"><span class="pre">bbob</span></code> functions and
 taking out the function <img class="math" src="_images/math/e1260df3ecbabab7b38e99406d15465305d6e7c4.png" alt="(g_2,g_1)" style="vertical-align: -4px"/> if the function <img class="math" src="_images/math/6d30e7d4914e8e8471d1d45a0e5f23b667e3ef1f.png" alt="(g_1,g_2)" style="vertical-align: -4px"/>
-is present results in <img class="math" src="_images/math/09b8185a62c951077e23976d810caaae203194f3.png" alt="24 + {24 \choose 2} = 24 + (24\times23)/2 = (24\times25)/2 = 300" style="vertical-align: -6px"/> functions.</p>
+is present results in <img class="math" src="_images/math/fe3cc4311fd3d9e8755695ba361df1e4bed51f67.png" alt="24 + {24 \choose 2} = 24 + (24\times 23)/2 = (24\times 25)/2 = 300" style="vertical-align: -6px"/> functions.</p>
 <p>Some first tests, e.g. in <a class="reference internal" href="#bro2015" id="id6">[BRO2015]</a>, showed that having 300 functions is
 impracticable in terms of the overall running time of the benchmarking
 experiment.  We then decided to exploit the organization of the <code class="docutils literal"><span class="pre">bbob</span></code>
@@ -671,7 +679,11 @@ in the coordinate system of the cutting plane`</td></tr>
 <p>Combination of two sphere functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/> in the <code class="docutils literal"><span class="pre">bbob</span></code> suite</a>).</p>
 <p>Both objectives are unimodal, highly symmetric, rotational and scale
 invariant. The Pareto set is known to be a straight line and the Pareto
-front is convex. Considered as the simplest bi-objective problem in
+front is convex. Furthermore, the normalized hypervolume value of the
+entire Pareto front with respect to the nadir point as reference point
+can be computed analytically as the integral
+<img class="math" src="_images/math/f14dca685d2fbde017fe1f28a257a3d7d3e07125.png" alt="1-\int_{0}^{1} (1-\sqrt{x})^2dx = -\frac{1}{2}+\frac{4}{3}=0.833333\ldots" style="vertical-align: -6px"/>.</p>
+<p>Considered as the simplest bi-objective problem in
 continuous domain.</p>
 <p>Contained in the <em>separable - separable</em> function class.</p>
 <p><a class="reference internal" href="_images/directions-f01-i01-d05-searchspace.png"><img alt="f01-i01-d05-searchspace" src="_images/directions-f01-i01-d05-searchspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f01-i01-d05-searchspace-projection.png"><img alt="f01-i01-d05-searchspace-projected" src="_images/directions-f01-i01-d05-searchspace-projection.png" style="width: 49%;" /></a></p>
@@ -1484,8 +1496,753 @@ is present.</p>
 <p><a class="reference internal" href="_images/directions-f55-i01-d05-logobjspace.png"><img alt="f55-i01-d05-logobjspace" src="_images/directions-f55-i01-d05-logobjspace.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/directions-f55-i01-d05-objspace.png"><img alt="f55-i01-d05-objspace" src="_images/directions-f55-i01-d05-objspace.png" style="width: 49%;" /></a></p>
 Illustration of search space (first row) and objective space (second row) for
 <code class="docutils literal"><span class="pre">bbob-biobj</span></code>
-function 55 in dimension 5 for the first instance.<H2>Acknowledgments</H2><p>This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
-of the French National Research Agency.</p>
+function 55 in dimension 5 for the first instance.</div>
+</div>
+</div>
+<div class="section" id="the-extended-bbob-biobj-ext-test-suite-and-its-functions">
+<h2>The Extended <code class="docutils literal"><span class="pre">bbob-biobj-ext</span></code> Test Suite and Its Functions<a class="headerlink" href="#the-extended-bbob-biobj-ext-test-suite-and-its-functions" title="Permalink to this headline">¶</a></h2>
+<p>Having all combinations of only a subset of the single-objective <code class="docutils literal"><span class="pre">bbob</span></code> functions in a test suite
+like the above <code class="docutils literal"><span class="pre">bbob-biobj</span></code> one has
+advantages but also a few disadvantages. Using only a subet of the 24 <code class="docutils literal"><span class="pre">bbob</span></code> functions
+introduces a bias towards the chosen functions and reduces the amount of different difficulties,
+a bi-objective algorithm is exposed to in the benchmarking exercise. Allowing all combinations of
+<code class="docutils literal"><span class="pre">bbob</span></code> functions increases the percentage of problems for which both objectives are from different
+<code class="docutils literal"><span class="pre">bbob</span></code> function groups while, in practice, it can often be assumed that both objective functions
+come from a similar &#8220;function domain&#8221;.</p>
+<p>The rationale behind the following extended <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite, denoted as <code class="docutils literal"><span class="pre">bbob-biobj-ext</span></code>,
+is to reduce the mentioned effects. To this end, we add all within-group combinations of <code class="docutils literal"><span class="pre">bbob</span></code>
+functions which are not already in the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite and which do not combine a function
+with itself. For technical reasons, we also remove the Weierstrass functions (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=80"><img class="math" src="_images/math/b77928da1c2b12fe46c45d8d57fb0b244dcc36f5.png" alt="f_{16}" style="vertical-align: -4px"/></a> in the
+<code class="docutils literal"><span class="pre">bbob</span></code> suite) because the optimum is not necessarily unique and computing the nadir point
+therefore technically more challenging than for the other functions.
+This extension adds <img class="math" src="_images/math/2aca3dd16d915eb9802e85c416798bced29e8563.png" alt="3*(4+3+2+1-1) + 2*(3+2+1-1) = 3*9+2*5=37" style="vertical-align: -4px"/> functions, resulting in
+92 functions overall.</p>
+<p>The following table details which single-objective <code class="docutils literal"><span class="pre">bbob</span></code> functions are contained in the
+92 <code class="docutils literal"><span class="pre">bbob-biobj-ext</span></code> functions (outer column and row annotations) and indicates their IDs.
+Note that the IDs of the first 55 <code class="docutils literal"><span class="pre">bbob0biobj-ext</span></code> functions are the same than for the
+<code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite for compatibility reasons.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&nbsp;</td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=15"><img class="math" src="_images/math/66c25f7c2effbd670bfda337d7c2b412ce23364a.png" alt="f_3" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=20"><img class="math" src="_images/math/b4b6c96cec9e537e5434559abae6ffb30b5518af.png" alt="f_4" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=25"><img class="math" src="_images/math/47f46089b12e164160909577c53f672714afe52b.png" alt="f_5" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=35"><img class="math" src="_images/math/5b2d52472cf429875e533866e0c6e26db1bcd470.png" alt="f_7" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=45"><img class="math" src="_images/math/4e05e8037bbde9a72f8f544fd9490be35ff88b77.png" alt="f_9" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=50"><img class="math" src="_images/math/64f0fc305df2c557846d46b49c0b59b742e88330.png" alt="f_{10}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=55"><img class="math" src="_images/math/9fc74cecc6e80f183bbcd097ff6cb4245e3bc185.png" alt="f_{11}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=60"><img class="math" src="_images/math/f18d3fb850b2ba1860c71d92e7f9327f4857bc34.png" alt="f_{12}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=80"><img class="math" src="_images/math/b77928da1c2b12fe46c45d8d57fb0b244dcc36f5.png" alt="f_{16}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=90"><img class="math" src="_images/math/bf047386154928e048cfa6322baf71905a012981.png" alt="f_{18}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=95"><img class="math" src="_images/math/c3b024393e8783d73f22058a9b15bf9958320505.png" alt="f_{19}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=110"><img class="math" src="_images/math/cf68ecd0f621b52a78185cfa9a94b685da55d1f3.png" alt="f_{22}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=115"><img class="math" src="_images/math/a4287051cdc8118e825a4b3344a0bffbb28c8697.png" alt="f_{23}" style="vertical-align: -4px"/></a></td>
+<td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=120"><img class="math" src="_images/math/44d10304c873eb1e3b3529135533da8559dea4db.png" alt="f_{24}" style="vertical-align: -4px"/></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5"><img class="math" src="_images/math/32f0d9da4470914afa0d5ee26b95e81f059e8587.png" alt="f_1" style="vertical-align: -4px"/></a></td>
+<td><a class="reference internal" href="#f1"><span>f1</span></a></td>
+<td><a class="reference internal" href="#f2"><span>f2</span></a></td>
+<td>f56</td>
+<td>f57</td>
+<td>f58</td>
+<td><a class="reference internal" href="#f3"><span>f3</span></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f4"><span>f4</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f5"><span>f5</span></a></td>
+<td><a class="reference internal" href="#f6"><span>f6</span></a></td>
+<td><a class="reference internal" href="#f7"><span>f7</span></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f8"><span>f8</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f9"><span>f9</span></a></td>
+<td><a class="reference internal" href="#f10"><span>f10</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=10"><img class="math" src="_images/math/adcf3ddadaa7b139443beed536186f98a9034733.png" alt="f_2" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f11"><span>f11</span></a></td>
+<td>f59</td>
+<td>f60</td>
+<td>f61</td>
+<td><a class="reference internal" href="#f12"><span>f12</span></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f13"><span>f13</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f14"><span>f14</span></a></td>
+<td><a class="reference internal" href="#f15"><span>f15</span></a></td>
+<td><a class="reference internal" href="#f16"><span>f16</span></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f17"><span>f17</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f18"><span>f18</span></a></td>
+<td><a class="reference internal" href="#f19"><span>f19</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=15"><img class="math" src="_images/math/66c25f7c2effbd670bfda337d7c2b412ce23364a.png" alt="f_3" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>f62</td>
+<td>f63</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=20"><img class="math" src="_images/math/b4b6c96cec9e537e5434559abae6ffb30b5518af.png" alt="f_4" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>f64</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=25"><img class="math" src="_images/math/47f46089b12e164160909577c53f672714afe52b.png" alt="f_5" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=30"><img class="math" src="_images/math/17879bbc0085682dbeafdc31cdef5e3f9cb0f0b2.png" alt="f_6" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f20"><span>f20</span></a></td>
+<td>f65</td>
+<td><a class="reference internal" href="#f21"><span>f21</span></a></td>
+<td>f66</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f22"><span>f22</span></a></td>
+<td><a class="reference internal" href="#f23"><span>f23</span></a></td>
+<td><a class="reference internal" href="#f24"><span>f24</span></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f25"><span>f25</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f26"><span>f26</span></a></td>
+<td><a class="reference internal" href="#f27"><span>f27</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=35"><img class="math" src="_images/math/5b2d52472cf429875e533866e0c6e26db1bcd470.png" alt="f_7" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>f67</td>
+<td>f68</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=40"><img class="math" src="_images/math/7287e68c96125b4964bddd3a5591f09be5dfd24d.png" alt="f_8" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f28"><span>f28</span></a></td>
+<td>f69</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f29"><span>f29</span></a></td>
+<td><a class="reference internal" href="#f30"><span>f30</span></a></td>
+<td><a class="reference internal" href="#f31"><span>f31</span></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f32"><span>f32</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f33"><span>f33</span></a></td>
+<td><a class="reference internal" href="#f34"><span>f34</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=45"><img class="math" src="_images/math/4e05e8037bbde9a72f8f544fd9490be35ff88b77.png" alt="f_9" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=50"><img class="math" src="_images/math/64f0fc305df2c557846d46b49c0b59b742e88330.png" alt="f_{10}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>f70</td>
+<td>f71</td>
+<td>f72</td>
+<td>f73</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=55"><img class="math" src="_images/math/9fc74cecc6e80f183bbcd097ff6cb4245e3bc185.png" alt="f_{11}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>f74</td>
+<td>f75</td>
+<td>f76</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=60"><img class="math" src="_images/math/f18d3fb850b2ba1860c71d92e7f9327f4857bc34.png" alt="f_{12}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>f77</td>
+<td>f78</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65"><img class="math" src="_images/math/9e2f0263e44d57c6a2d2ec30541c0566dfda1997.png" alt="f_{13}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f35"><span>f35</span></a></td>
+<td><a class="reference internal" href="#f36"><span>f36</span></a></td>
+<td><a class="reference internal" href="#f37"><span>f37</span></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f38"><span>f38</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f39"><span>f39</span></a></td>
+<td><a class="reference internal" href="#f40"><span>f40</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=70"><img class="math" src="_images/math/04efbe1e8bcf9ae248d055bccb5fe47a15a53bd1.png" alt="f_{14}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f41"><span>f41</span></a></td>
+<td><a class="reference internal" href="#f42"><span>f42</span></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f43"><span>f43</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f44"><span>f44</span></a></td>
+<td><a class="reference internal" href="#f45"><span>f45</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=75"><img class="math" src="_images/math/781108c7c02e788921c9048cbae601631a719bf9.png" alt="f_{15}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f46"><span>f46</span></a></td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f47"><span>f47</span></a></td>
+<td>f79</td>
+<td>f80</td>
+<td><a class="reference internal" href="#f48"><span>f48</span></a></td>
+<td><a class="reference internal" href="#f49"><span>f49</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=80"><img class="math" src="_images/math/b77928da1c2b12fe46c45d8d57fb0b244dcc36f5.png" alt="f_{16}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=85"><img class="math" src="_images/math/b1120a4dd2c4247dbf9758c9e560b6a2146130be.png" alt="f_{17}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f50"><span>f50</span></a></td>
+<td>f81</td>
+<td>f82</td>
+<td><a class="reference internal" href="#f51"><span>f51</span></a></td>
+<td><a class="reference internal" href="#f52"><span>f52</span></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=90"><img class="math" src="_images/math/bf047386154928e048cfa6322baf71905a012981.png" alt="f_{18}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>f83</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=95"><img class="math" src="_images/math/c3b024393e8783d73f22058a9b15bf9958320505.png" alt="f_{19}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=100"><img class="math" src="_images/math/03563b4669a1f1a599fd91d169d9daedea5cf48c.png" alt="f_{20}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f53"><span>f53</span></a></td>
+<td><a class="reference internal" href="#f54"><span>f54</span></a></td>
+<td>f84</td>
+<td>f85</td>
+<td>f86</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=105"><img class="math" src="_images/math/e130601cbf678959e209a547562457e1c6cc7be7.png" alt="f_{21}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference internal" href="#f55"><span>f55</span></a></td>
+<td>f87</td>
+<td>f88</td>
+<td>f89</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=110"><img class="math" src="_images/math/cf68ecd0f621b52a78185cfa9a94b685da55d1f3.png" alt="f_{22}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>f90</td>
+<td>f91</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=115"><img class="math" src="_images/math/a4287051cdc8118e825a4b3344a0bffbb28c8697.png" alt="f_{23}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>f92</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=120"><img class="math" src="_images/math/44d10304c873eb1e3b3529135533da8559dea4db.png" alt="f_{24}" style="vertical-align: -4px"/></a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div>The 92 functions of the <code class="docutils literal"><span class="pre">bbob-biobj-ext</span></code> test suite and their IDs (in the table cells) together with the information about which single-objective <code class="docutils literal"><span class="pre">bbob</span></code> functions are used
+to define them (outer column and row annotations).</div></blockquote>
+<div class="section" id="id21">
+<h3>Function Groups<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>Like for the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite, we obtain 15 function
+classes to structure the 92 bi-objective functions of the <code class="docutils literal"><span class="pre">bbob-biobj-ext</span></code> test
+suite. Depending on whether a function class combines functions from the same or
+from different <code class="docutils literal"><span class="pre">bbob</span></code> function classes, each function class contains
+8, 12 or just four functions. We are listing
+below the function classes and in parenthesis  the functions that belong to
+the respective class:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>separable - separable (12 functions: f1, f2, f11, f56-64)</li>
+<li>separable - moderate (f3, f4, f12, f13)</li>
+<li>separable - ill-conditioned (f5, f6, f14, f15)</li>
+<li>separable - multi-modal (f7, f8, f16, f17)</li>
+<li>separable - weakly-structured (f9, f10, f18, f19)</li>
+<li>moderate - moderate (8 functions: f20, f21, f28, f65-f69)</li>
+<li>moderate - ill-conditioned (f22, f23, f29, f30)</li>
+<li>moderate - multi-modal (f24, f25, f31, f32)</li>
+<li>moderate - weakly-structured (f26, f27, f33, f34)</li>
+<li>ill-conditioned - ill-conditioned (12 functions: f35, f36, f41, f70-78)</li>
+<li>ill-conditioned - multi-modal (f37, f38, f42, f43)</li>
+<li>ill-conditioned - weakly-structured (f39, f40, f44, f45)</li>
+<li>multi-modal - multi-modal (8 functions: f46, f47, f50, f79-83)</li>
+<li>multi-modal - weakly structured (f48, f49, f51, f52)</li>
+<li>weakly structured - weakly structured (12 functions: f53-55, f84-92)</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="normalization-and-instances">
+<h3>Normalization and Instances<a class="headerlink" href="#normalization-and-instances" title="Permalink to this headline">¶</a></h3>
+<p>Normalization of the objectives and instances are handled for the <code class="docutils literal"><span class="pre">bbob-biobj-ext</span></code> in the
+same manner as for the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> suite, i.e., no normalization of the objective
+functions is taking place for the algorithm benchmarking and 15 instances are prescribed for
+a typical experiment.</p>
+<H2>Acknowledgments</H2><p>This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
+of the French National Research Agency. We also thank Ilya Loshchilov and Oswin Krause for their
+initial suggestions on how to extend the <code class="docutils literal"><span class="pre">bbob-biobj</span></code> test suite.</p>
 <H2>References</H2><table class="docutils citation" frame="void" id="bro2016biperf" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
@@ -1538,7 +2295,6 @@ Elsevier.</td></tr>
 </div>
 </div>
 </div>
-</div>
 
 
           </div>
@@ -1556,7 +2312,7 @@ Elsevier.</td></tr>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Aug 23, 2016.
+      Last updated on Mar 10, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
     </div>
   </body>
