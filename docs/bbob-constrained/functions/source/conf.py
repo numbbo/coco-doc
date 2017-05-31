@@ -44,8 +44,9 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
-#    'sphinx.ext.mathjax',
-    'sphinx.ext.pngmath'
+    'sphinx.ext.mathjax',  # always compatible? 
+#    'sphinx.ext.pngmath',  # depreciated
+#    'sphinx.ext.imgmath',  # alternative to pngmath
 ]
 
 
@@ -69,6 +70,7 @@ latex_commands = r"""
 """
 
 pngmath_latex_preamble = latex_commands
+imgmath_latex_preamble = latex_commands
 
 
 # Add any paths that contain templates here, relative to this directory.

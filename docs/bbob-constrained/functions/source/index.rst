@@ -601,8 +601,12 @@ of the French National Research Agency.
 .. __: http://coco.gforge.inria.fr/
 .. __: https://hal.inria.fr/inria-00362633
 
+
 .. [BAZ2013] M. S. Bazaraa, H. D Sherali, and C. M Shetty (2013). 
-   `Nonlinear programming: Theory and Algorithms`__, 3rd Edition, Wiley Publishing, 2013.
+   `Nonlinear programming: Theory and Algorithms`__, 3rd Edition, Wiley 
+   Publishing, 2013.
 .. __: http://eu.wiley.com/WileyCDA/WileyTitle/productCd-0471486000.html
 
+.. [end]
+  
   
