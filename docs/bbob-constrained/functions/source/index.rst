@@ -280,7 +280,7 @@ The final generic algorithm for defining the constrained functions is given belo
 
 4. Define the first constraint function :math:`g_1(x)` by setting its gradient to :math:`a_1 = -p`.
 
-5. Generate the other constraints randomly using a normal distribution while making sure that :math:`p` remais feasible for each one.
+5. Generate the other constraints randomly using a normal distribution while making sure that :math:`p` remains feasible for each one.
 
 6. Apply to the whole constrained function (objective function + constraints) the nonlinear transformations that were removed from the objective function in Step 2.
 
@@ -400,7 +400,96 @@ The ``bbob-constrained`` constrained functions and their properties
 
 We now detail the 48 ``bbob-constrained`` constrained functions and the common properties of the objective functions composing them.
 
-In total, there are 8 different objective functions, and each one is tested with 6 different numbers of constraints: :math:`1`, :math:`2`, :math:`10`, :math:`n/2`, :math:`n-1` and :math:`n+1`. The first objective function in the suite is given by the sphere function. The first constrained function, :math:`f_1`, is thus defined by the sphere function subject to 1 constraint. The second constrained function, :math:`f_2`, is defined by the sphere function subject to 2 constraints. The third cosntrained function, :math:`f_3`, is defined by the shpere function subject to 10 constraints, and so on. The 7th constrained function, :math:`f_7`, is then defined by the ellipsoidal function (the second objective function) subject to 1 constraint, and the same process repeats. 
+In total, there are 8 different objective functions, and each one is tested with 6 different numbers of constraints: :math:`1`, :math:`2`, :math:`10`, :math:`n/2`, :math:`n-1` and :math:`n+1`. The first objective function in the suite is given by the sphere function. The first constrained function, :math:`f_1`, is thus defined by the sphere function subject to 1 constraint. The second constrained function, :math:`f_2`, is defined by the sphere function subject to 2 constraints. The third constrained function, :math:`f_3`, is defined by the sphere function subject to 10 constraints, and so on. The 7th constrained function, :math:`f_7`, is then defined by the ellipsoidal function (the second objective function) subject to 1 constraint, and the same process repeats. The 48 constrained problems are summarized in the table below, where the inner cell IDs refer to the ``bbob-constrained`` problems, the outer row and column respectively denote the numbers of constraints and the single-objective ``bbob`` functions.
+
++-------+-------+-------+-------+-------+-------+-------+
+|       |1      |2      |10     ||n/2|  ||n-1|  ||n+1|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb1|_ ||f1|   ||f2|   ||f3|   ||f4|   ||f5|   ||f6|   |
++-------+-------+-------+-------+-------+-------+-------+
+||fb2|_ ||f7|   ||f8|   ||f9|   ||f10|  ||f11|  ||f12|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb5|_ ||f13|  ||f14|  ||f15|  ||f16|  ||f17|  ||f18|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb10|_||f19|  ||f20|  ||f21|  ||f22|  ||f23|  ||f24|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb11|_||f25|  ||f26|  ||f27|  ||f28|  ||f29|  ||f30|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb12|_||f31|  ||f32|  ||f33|  ||f34|  ||f35|  ||f36|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb14|_||f37|  ||f38|  ||f39|  ||f40|  ||f41|  ||f42|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb3|_ ||f43|  ||f44|  ||f45|  ||f46|  ||f47|  ||f48|  |
++-------+-------+-------+-------+-------+-------+-------+
+
+.. |fb1| replace:: :math:`f_1`
+.. |fb2| replace:: :math:`f_2`
+.. |fb3| replace:: :math:`f_3`
+.. |fb5| replace:: :math:`f_5`
+.. |fb10| replace:: :math:`f_{10}`
+.. |fb11| replace:: :math:`f_{11}`
+.. |fb12| replace:: :math:`f_{12}`
+.. |fb14| replace:: :math:`f_{14}`
+.. |f1| replace:: f1
+.. |f2| replace:: f2
+.. |f3| replace:: f3
+.. |f4| replace:: f4
+.. |f5| replace:: f5
+.. |f6| replace:: f6
+.. |f7| replace:: f7
+.. |f8| replace:: f8
+.. |f9| replace:: f9
+.. |f10| replace:: f10
+.. |f11| replace:: f11
+.. |f12| replace:: f12
+.. |f13| replace:: f13
+.. |f14| replace:: f14
+.. |f15| replace:: f15
+.. |f16| replace:: f16
+.. |f17| replace:: f17
+.. |f18| replace:: f18
+.. |f19| replace:: f19
+.. |f20| replace:: f20
+.. |f21| replace:: f21
+.. |f22| replace:: f22
+.. |f23| replace:: f23
+.. |f24| replace:: f24
+.. |f25| replace:: f25
+.. |f26| replace:: f26
+.. |f27| replace:: f27
+.. |f28| replace:: f28
+.. |f29| replace:: f29
+.. |f30| replace:: f30
+.. |f31| replace:: f31
+.. |f32| replace:: f32
+.. |f33| replace:: f33
+.. |f34| replace:: f34
+.. |f35| replace:: f35
+.. |f36| replace:: f36
+.. |f37| replace:: f37
+.. |f38| replace:: f38
+.. |f39| replace:: f39
+.. |f40| replace:: f40
+.. |f41| replace:: f41
+.. |f42| replace:: f42
+.. |f43| replace:: f43
+.. |f44| replace:: f44
+.. |f45| replace:: f45
+.. |f46| replace:: f46
+.. |f47| replace:: f47
+.. |f48| replace:: f48
+.. |n/2| replace:: :math:`n/2`
+.. |n-1| replace:: :math:`n - 1`
+.. |n+1| replace:: :math:`n + 1`
+.. _fb1: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5
+.. _fb2: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=9
+.. _fb3: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=13
+.. _fb5: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=21
+.. _fb10: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=41
+.. _fb11: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=45
+.. _fb12: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=49
+.. _fb14: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=57
+
 
 The number of constraints, :math:`l`, in a constrained function :math:`f_i` can be easily obtained through the formula :math:`((i-1) \bmod 6) + 1`. For instance, consider the constrained function :math:`f_7` which is the ellipsoid function subject to 1 constraint. We can know that is has 1 constraint by its identifier by computing :math:`((7-1) \bmod 6) + 1 = (6 \bmod 6 ) + 1 = 1`.
 
@@ -543,7 +632,7 @@ where :math:`v = T_{\textrm{asy}}^{0.5}\,(x-x^{\textrm{opt}})` and :math:`z = R\
 
 where :math:`v = x-x^{\textrm{opt}}` and :math:`z = R\,(v-x^{\textrm{uopt}})`.
 
-* Due to the different exponents the sensitivies of the :math:`z_i` variables become more and more different when approaching the unconstrained optimal solution.
+* Due to the different exponents the sensitivities of the :math:`z_i` variables become more and more different when approaching the unconstrained optimal solution.
 
 * Unimodal, small solution volume and rotated.
 
