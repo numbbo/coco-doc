@@ -280,7 +280,7 @@ The final generic algorithm for defining the constrained functions is given belo
 
 4. Define the first constraint function :math:`g_1(x)` by setting its gradient to :math:`a_1 = -p`.
 
-5. Generate the other constraints randomly using a normal distribution while making sure that :math:`p` remais feasible for each one.
+5. Generate the other constraints randomly using a normal distribution while making sure that :math:`p` remains feasible for each one.
 
 6. Apply to the whole constrained function (objective function + constraints) the nonlinear transformations that were removed from the objective function in Step 2.
 
@@ -400,11 +400,102 @@ The ``bbob-constrained`` constrained functions and their properties
 
 We now detail the 48 ``bbob-constrained`` constrained functions and the common properties of the objective functions composing them.
 
-In total, there are 8 different objective functions, and each one is tested with 6 different numbers of constraints: :math:`1`, :math:`2`, :math:`10`, :math:`n/2`, :math:`n-1` and :math:`n+1`. The first objective function in the suite is given by the sphere function. The first constrained function, :math:`f_1`, is thus defined by the sphere function subject to 1 constraint. The second constrained function, :math:`f_2`, is defined by the sphere function subject to 2 constraints. The third cosntrained function, :math:`f_3`, is defined by the shpere function subject to 10 constraints, and so on. The 7th constrained function, :math:`f_7`, is then defined by the ellipsoidal function (the second objective function) subject to 1 constraint, and the same process repeats. 
+In total, there are 8 different objective functions, and each one is tested with 6 different numbers of constraints: :math:`1`, :math:`2`, :math:`10`, :math:`n/2`, :math:`n-1` and :math:`n+1`. The first objective function in the suite is given by the sphere function. The first constrained function, :math:`f_1`, is thus defined by the sphere function subject to 1 constraint. The second constrained function, :math:`f_2`, is defined by the sphere function subject to 2 constraints. The third constrained function, :math:`f_3`, is defined by the sphere function subject to 10 constraints, and so on. The 7th constrained function, :math:`f_7`, is then defined by the ellipsoidal function (the second objective function) subject to 1 constraint, and the same process repeats. The 48 constrained problems are summarized in the table below, where the inner cell IDs refer to the ``bbob-constrained`` problems, the outer row and column respectively denote the numbers of constraints and the single-objective ``bbob`` functions.
+
++-------+-------+-------+-------+-------+-------+-------+
+|       |1      |2      |10     ||n/2|  ||n-1|  ||n+1|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb1|_ ||f1|   ||f2|   ||f3|   ||f4|   ||f5|   ||f6|   |
++-------+-------+-------+-------+-------+-------+-------+
+||fb2|_ ||f7|   ||f8|   ||f9|   ||f10|  ||f11|  ||f12|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb5|_ ||f13|  ||f14|  ||f15|  ||f16|  ||f17|  ||f18|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb10|_||f19|  ||f20|  ||f21|  ||f22|  ||f23|  ||f24|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb11|_||f25|  ||f26|  ||f27|  ||f28|  ||f29|  ||f30|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb12|_||f31|  ||f32|  ||f33|  ||f34|  ||f35|  ||f36|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb14|_||f37|  ||f38|  ||f39|  ||f40|  ||f41|  ||f42|  |
++-------+-------+-------+-------+-------+-------+-------+
+||fb3|_ ||f43|  ||f44|  ||f45|  ||f46|  ||f47|  ||f48|  |
++-------+-------+-------+-------+-------+-------+-------+
+
+.. |fb1| replace:: :math:`f_1`
+.. |fb2| replace:: :math:`f_2`
+.. |fb3| replace:: :math:`f_3`
+.. |fb5| replace:: :math:`f_5`
+.. |fb10| replace:: :math:`f_{10}`
+.. |fb11| replace:: :math:`f_{11}`
+.. |fb12| replace:: :math:`f_{12}`
+.. |fb14| replace:: :math:`f_{14}`
+.. |f1| replace:: :ref:`f1 <sphere>`
+.. |f2| replace:: :ref:`f2 <sphere>`
+.. |f3| replace:: :ref:`f3 <sphere>`
+.. |f4| replace:: :ref:`f4 <sphere>`
+.. |f5| replace:: :ref:`f5 <sphere>`
+.. |f6| replace:: :ref:`f6 <sphere>`
+.. |f7| replace:: :ref:`f7 <ellipsoid>`
+.. |f8| replace:: :ref:`f8 <ellipsoid>`
+.. |f9| replace:: :ref:`f9 <ellipsoid>`
+.. |f10| replace:: :ref:`f10 <ellipsoid>`
+.. |f11| replace:: :ref:`f11 <ellipsoid>`
+.. |f12| replace:: :ref:`f12 <ellipsoid>`
+.. |f13| replace:: :ref:`f13 <linear>`
+.. |f14| replace:: :ref:`f14 <linear>`
+.. |f15| replace:: :ref:`f15 <linear>`
+.. |f16| replace:: :ref:`f16 <linear>`
+.. |f17| replace:: :ref:`f17 <linear>`
+.. |f18| replace:: :ref:`f18 <linear>`
+.. |f19| replace:: :ref:`f19 <rotatedEllipsoid>`
+.. |f20| replace:: :ref:`f20 <rotatedEllipsoid>`
+.. |f21| replace:: :ref:`f21 <rotatedEllipsoid>`
+.. |f22| replace:: :ref:`f22 <rotatedEllipsoid>`
+.. |f23| replace:: :ref:`f23 <rotatedEllipsoid>`
+.. |f24| replace:: :ref:`f24 <rotatedEllipsoid>`
+.. |f25| replace:: :ref:`f25 <discus>`
+.. |f26| replace:: :ref:`f26 <discus>`
+.. |f27| replace:: :ref:`f27 <discus>`
+.. |f28| replace:: :ref:`f28 <discus>`
+.. |f29| replace:: :ref:`f29 <discus>`
+.. |f30| replace:: :ref:`f30 <discus>`
+.. |f31| replace:: :ref:`f31 <bentCigar>`
+.. |f32| replace:: :ref:`f32 <bentCigar>`
+.. |f33| replace:: :ref:`f33 <bentCigar>`
+.. |f34| replace:: :ref:`f34 <bentCigar>`
+.. |f35| replace:: :ref:`f35 <bentCigar>`
+.. |f36| replace:: :ref:`f36 <bentCigar>`
+.. |f37| replace:: :ref:`f37 <differentPowers>`
+.. |f38| replace:: :ref:`f38 <differentPowers>`
+.. |f39| replace:: :ref:`f39 <differentPowers>`
+.. |f40| replace:: :ref:`f40 <differentPowers>`
+.. |f41| replace:: :ref:`f41 <differentPowers>`
+.. |f42| replace:: :ref:`f42 <differentPowers>`
+.. |f43| replace:: :ref:`f43 <rastrigin>`
+.. |f44| replace:: :ref:`f44 <rastrigin>`
+.. |f45| replace:: :ref:`f45 <rastrigin>`
+.. |f46| replace:: :ref:`f46 <rastrigin>`
+.. |f47| replace:: :ref:`f47 <rastrigin>`
+.. |f48| replace:: :ref:`f48 <rastrigin>`
+.. |n/2| replace:: :math:`n/2`
+.. |n-1| replace:: :math:`n - 1`
+.. |n+1| replace:: :math:`n + 1`
+.. _fb1: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5
+.. _fb2: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=9
+.. _fb3: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=13
+.. _fb5: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=21
+.. _fb10: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=41
+.. _fb11: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=45
+.. _fb12: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=49
+.. _fb14: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=57
+
 
 The number of constraints, :math:`l`, in a constrained function :math:`f_i` can be easily obtained through the formula :math:`((i-1) \bmod 6) + 1`. For instance, consider the constrained function :math:`f_7` which is the ellipsoid function subject to 1 constraint. We can know that is has 1 constraint by its identifier by computing :math:`((7-1) \bmod 6) + 1 = (6 \bmod 6 ) + 1 = 1`.
 
 We separate the 48 constrained functions into groups with respect to their objective function, thereby having 8 groups. Each group contains 6 different constrained functions as each objective function is tested with 6 different numbers of constraints. We list the groups below with some properties of the objective functions that define them. As described in Subsection :ref:`subsec-defining-the-constrained-functions`, by translating the objective function and the constraints with the use of the randomly-generated point :math:`x^{\textrm{opt}}`, we define :math:`x^{\textrm{opt}}` as the optimal solution. Furthermore, the unconstrained optimal solution moves from :math:`x^{\textrm{uopt}}` to :math:`x^{\textrm{uopt}}+x^{\textrm{opt}}`.
+
+.. _sphere:
 
 **Group 1 - Constrained Sphere function:** :math:`f_1` -- :math:`f_6`
 
@@ -428,6 +519,8 @@ where :math:`v = x-x^{\textrm{opt}}` and :math:`z = v-x^{\textrm{uopt}}`.
 
 * Convex quadratic objective function, purely linear constraints.
 
+.. _ellipsoid:
+
 **Group 2 - Constrained Separable Ellipsoid:** :math:`f_7` -- :math:`f_{12}`
 
 .. math::
@@ -448,6 +541,8 @@ where :math:`v = T_{\textrm{osz}}(x-x^{\textrm{opt}})` and :math:`z = v-x^{\text
 
 * Unimodal, separable and conditioning about :math:`10^6`.
 
+.. _linear:
+
 **Group 3 - Constrained Linear Slope:** :math:`f_{13}` -- :math:`f_{18}`
 
 .. math::
@@ -466,6 +561,8 @@ where :math:`v = x-x^{\textrm{opt}}`, :math:`s_i=\textrm{sign}(x^{\textrm{uopt}}
 :math:`z_i = x^{\textrm{uopt}}_i` otherwise, for  :math:`i = 1, \dots, n`.
 
 * Purely linear function.
+
+.. _rotatedEllipsoid:
 
 **Group 4 - Constrained Rotated Ellipsoid:** :math:`f_{19}` -- :math:`f_{24}`
 
@@ -487,6 +584,8 @@ where :math:`v = T_{\textrm{osz}}(x-x^{\textrm{opt}})` and :math:`z = R\,(v-x^{\
 
 * Unimodal, conditioning about :math:`10^6` and non-separable.
 
+.. _discus:
+
 **Group 5 - Constrained Discus function:** :math:`f_{25}` -- :math:`f_{30}`
 
 .. math::
@@ -506,6 +605,8 @@ where :math:`v = T_{\textrm{osz}}(x-x^{\textrm{opt}})` and :math:`z = R\,(v-x^{\
 * Globally quadratic function with local irregularities. A single direction in search space is a thousand times more sensitive than all others.
 
 * Conditioning is about :math:`10^6`.
+
+.. _bentCigar:
 
 **Group 6 - Constrained Bent Cigar function:** :math:`f_{31}` -- :math:`f_{36}`
 
@@ -527,6 +628,8 @@ where :math:`v = T_{\textrm{asy}}^{0.5}\,(x-x^{\textrm{opt}})` and :math:`z = R\
 
 * Conditioning is about :math:`10^6`, rotated and unimodal.
 
+.. _differentPowers:
+
 **Group 7 - Constrained Different Powers function:** :math:`f_{37}` -- :math:`f_{42}`
 
 .. math::
@@ -543,9 +646,11 @@ where :math:`v = T_{\textrm{asy}}^{0.5}\,(x-x^{\textrm{opt}})` and :math:`z = R\
 
 where :math:`v = x-x^{\textrm{opt}}` and :math:`z = R\,(v-x^{\textrm{uopt}})`.
 
-* Due to the different exponents the sensitivies of the :math:`z_i` variables become more and more different when approaching the unconstrained optimal solution.
+* Due to the different exponents the sensitivities of the :math:`z_i` variables become more and more different when approaching the unconstrained optimal solution.
 
 * Unimodal, small solution volume and rotated.
+
+.. _rastrigin:
 
 **Group 8 - Constrained Separable Rastrigin function:** :math:`f_{43}` -- :math:`f_{48}`
 
