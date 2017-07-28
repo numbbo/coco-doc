@@ -26,20 +26,21 @@ import generate_plots
 ###########################################
 # parameters to play with:
 dims = (5,)
-functions = range(1,56)
+functions = range(1,93)  # might take a while...
 #functions = (1,2,3,10,20,30,54,55)
 instances = (1,)
 # Note: in single-objective bbobdocfunctions.pdf documentation, '0' seems to be the instance used
 #inputfolderforParetoFronts = 'archives/before_workshop/archives/'
-inputfolderforParetoFronts = 'F:/5D-archives-from-Tea/after_workshop/archives/'
+#inputfolderforParetoFronts = 'F:/5D-archives-from-Tea/after_workshop/archives/'
+inputfolderforParetoFronts = 'G:/beforeBBOB2017/merged_archives/merged01till04with05-06-07-08with09and10-fcts1-55withTea/'
 #outputfolder = 'plots/before_workshop/'
-outputfolder = 'plots/after_workshop/'
+outputfolder = 'plots/2017/'
 tofile = True # if True: files are written; if False: no files but screen output
 ###########################################
 
 
-suite_name = "bbob-biobj"
-suite_instance = "year:2016"
+suite_name = "bbob-biobj-ext"
+suite_instance = ""
 suite_options = "dimensions: 2,3,5,10,20,40"
 suite = Suite(suite_name, suite_instance, suite_options)
 

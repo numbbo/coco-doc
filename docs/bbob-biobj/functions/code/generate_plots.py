@@ -14,7 +14,7 @@ import sys
 import copy # needed for getAllCornersOfHyperrectangle(...)
 from scipy.spatial import ConvexHull
 
-from bbob_pproc import ppfig
+from cocopp import ppfig
 
 import bbobbenchmarks as bm
 import paretofrontwrapper as pf # wrapper file and DLL must be in this folder
@@ -420,7 +420,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-searchspace-projection" % (f_id, inst_id, dim)
-        ppfig.saveFigure(filename)
+        ppfig.save_figure(filename)
     else:        
         plt.show(block=True)
     
@@ -588,8 +588,8 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     
     
     # beautify:
-    ax.set_xlabel(r'$f_1 - f_1^\mathsf{opt}$ (normalized)', fontsize=16)
-    ax.set_ylabel(r'$f_2 - f_2^\mathsf{opt}$ (normalized)', fontsize=16)
+    ax.set_xlabel(r'$f_{\alpha} - f_{\alpha}^\mathsf{opt}$ (normalized)', fontsize=16)
+    ax.set_ylabel(r'$f_{\beta} - f_{\beta}^\mathsf{opt}$ (normalized)', fontsize=16)
     ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
     ax.set_title("normalized objective space for bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))
     [line.set_zorder(3) for line in ax.lines]
@@ -612,7 +612,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-logobjspace" % (f_id, inst_id, dim)
-        ppfig.saveFigure(filename)
+        ppfig.save_figure(filename)
     else:   
         plt.show(block=True)
         
@@ -728,7 +728,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-objspace" % (f_id, inst_id, dim)
-        ppfig.saveFigure(filename)
+        ppfig.save_figure(filename)
     else:        
         plt.show(block=True)
     
@@ -877,7 +877,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-searchspace" % (f_id, inst_id, dim)
-        ppfig.saveFigure(filename)
+        ppfig.save_figure(filename)
     else:        
         plt.show(block=True)
     
