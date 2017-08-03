@@ -52,7 +52,8 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
     'sphinx.ext.todo',
-    'sphinx.ext.pngmath',  # low resolution
+    # 'sphinx.ext.pngmath',  # depreciated, low resolution
+    'sphinx.ext.imgmath',  
 #    'sphinx.ext.jsmath',  # javascript, older than mathjax, needs jsmath_path set
 #    'sphinx.ext.mathjax',
 #    'matplotlib.sphinxext.mathmpl',  # low resolution
@@ -78,7 +79,8 @@ latex_commands = r"""
   \newcommand{\finstance}{\ensuremath{f^j}}
 """
 
-pngmath_latex_preamble = latex_commands
+pngmath_latex_preamble = latex_commands  # not necessary anymore?
+imgmath_latex_preamble = latex_commands
 
 
 # Add any paths that contain templates here, relative to this directory.
