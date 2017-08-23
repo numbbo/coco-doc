@@ -52,6 +52,26 @@ hypervolume value succeeds prescribed target values.
 .. |Iref| replace:: :math:`I_\mathrm{ref}`
 
 
+
+.. Argumentation for final (SIAM J. Opt.?) paper:
+   * argue that multiobjective performance assessment is important (mention also e.g. Bayesian optimation)
+   * More Wild paper builds the basis of current quantative performance assessment
+     (opposed to displaying function values at arbitrary budgets))
+   * natural generalization for multiobjective opt.: via indicator
+     - argue that we look at algorithms that aim at approximating the whole Pareto front/set
+       hence, we consider the archive of all non-dominated solutions found so far
+   * this allows to make quantative statements by fixing a target
+     - e.g. via aRT or data profiles (explain aRT, refer to aRTA plots)
+   * still a few things, we shall be careful about
+     - making things comparable by normalization
+     - aggregating over functions (but not over dimension)
+   * provide the whole functionality in COCO for easy, automated benchmarking
+   * finally, we showcase our methodology by presenting results of 16 multiobjective optimizers that have been submitted to the BBOB workshops in 2016 and 2017
+     
+
+.. todo:: show some example output from BBOB-2016-17
+
+
 Introduction
 =============
 
