@@ -144,7 +144,9 @@ Instances and problems
 
   Translations and rotations of linear constraints result in different linear constraints. Therefore, different instances of a constraint in the ``bbob-constrained`` test suite result in different constraints. 
 
-  Each objective function is tested with 6 different numbers of constraints: :math:`1`, :math:`2`, :math:`10`, :math:`n/2`, :math:`n-1` and :math:`n+1`. Each composition results in a different constrained function with a different identifier |i|. One then may wonder what happens when :math:`n\leq 10`; for instance, when :math:`n=2`. In this case, there will be 6 constrained functions containing :math:`1`, :math:`2`, :math:`10`, :math:`n/2=1`, :math:`n-1=1` and :math:`n+1=3` constraints. This implies that 3 constrained functions will have the same objective funtion and the same number of constraints. However, since they have different identifiers |i|, which are used in the formula :math:`\textrm{seed} = i + 10000 * j + 50000 * k` to build the instances of the constraints, they have also different constraints.
+  Each objective function is tested with 6 different numbers of constraints: :math:`1`, :math:`2`, :math:`6`, :math:`6 + \lfloor n/2 \rfloor`, :math:`6 + n` and :math:`6 + 3n`. Each composition results in a different constrained function with a different identifier |i|. Reasons for our choice of the number of constraints are that we have three dimension-independent numbers (:math:`1, 2, 6`) and three dimension-depending numbers (:math:`6 + \lfloor n/2 \rfloor`, :math:`6 + n` and :math:`6 + 3n`) without duplicates and increasing from small to large for all dimensions. Note that the number of dimension-depending constraints can also be written as :math:`6+\lfloor k\cdot n/2\rfloor` with :math:`k\in \{1,2,6\}`.
+  
+  .. One then may wonder what happens when :math:`n\leq 10`; for instance, when :math:`n=2`. In this case, there will be 6 constrained functions containing :math:`1`, :math:`2`, :math:`10`, :math:`n/2=1`, :math:`n-1=1` and :math:`n+1=3` constraints. This implies that 3 constrained functions will have the same objective funtion and the same number of constraints. However, since they have different identifiers |i|, which are used in the formula :math:`\textrm{seed} = i + 10000 * j + 50000 * k` to build the instances of the constraints, they have also different constraints.
 
 *problem*
   We talk about a *problem*, |coco_problem_t|_, as a specific *constrained function instance* on which an optimization algorithm is run. A problem can be evaluated and returns an |f|-value or -vector and, in case, a |g|-vector. In the context of performance assessment, a target :math:`f`-value is added to define a problem. 
@@ -175,7 +177,7 @@ Linear transformations, by definition, do not change some properties of the func
 Overview of the proposed ``bbob-constrained`` test suite
 ========================================================
 
-The ``bbob-constrained`` test suite provides 48 constrained functions in six dimensions (2, 3, 5, 10, 20, and 40) with an arbitrary number of possible instances. The 48 functions are derived from combining 8 single-objective ``bbob`` functions with 6 different numbers of constraints: 1, 2, 10, :math:`n/2`, :math:`n-1` and :math:`n+1`. The constrained functions are built by picking up a ``bbob`` function satisfying some properties to be the objective function and building the constraints in a way such that we can keep control of the optimal solution. This process is explained in Subsection :ref:`subsec-defining-the-constrained-functions`.
+The ``bbob-constrained`` test suite provides 48 constrained functions in six dimensions (2, 3, 5, 10, 20, and 40) with an arbitrary number of possible instances. The 48 functions are derived from combining 8 single-objective ``bbob`` functions with 6 different numbers of constraints: :math:`1`, :math:`2`, :math:`6`, :math:`6+\lfloor n/2\rfloor`, :math:`6 + n` and :math:`6+3n`. The constrained functions are built by picking up a ``bbob`` function satisfying some properties to be the objective function and building the constraints in a way such that we can keep control of the optimal solution. This process is explained in Subsection :ref:`subsec-defining-the-constrained-functions`.
 
 While concrete details on each of the 48 ``bbob-constrained`` constrained functions are given in Section :ref:`sec-test-constrained-functions`, we will detail here the main rationale behind them together with their common properties.
 
@@ -198,7 +200,7 @@ We summarize below the main features of the constrained functions in the ``bbob-
 
 * Uses functions from ``bbob`` as objective functions;
 
-* Different number of constraints: :math:`1`, :math:`2`, :math:`10`, :math:`n/2`, :math:`n-1`, :math:`n+1`;
+* Different number of constraints, three dimension independent and three dimension-dependent ones: :math:`1`, :math:`2`, :math:`6`, :math:`6+\lfloor n/2\rfloor`, :math:`6+n`, :math:`6+3n`;
 
 * The constraints are randomly generated.
 
@@ -400,10 +402,10 @@ The ``bbob-constrained`` constrained functions and their properties
 
 We now detail the 48 ``bbob-constrained`` constrained functions and the common properties of the objective functions composing them.
 
-In total, there are 8 different objective functions, and each one is tested with 6 different numbers of constraints: :math:`1`, :math:`2`, :math:`10`, :math:`n/2`, :math:`n-1` and :math:`n+1`. The first objective function in the suite is given by the sphere function. The first constrained function, :math:`f_1`, is thus defined by the sphere function subject to 1 constraint. The second constrained function, :math:`f_2`, is defined by the sphere function subject to 2 constraints. The third constrained function, :math:`f_3`, is defined by the sphere function subject to 10 constraints, and so on. The 7th constrained function, :math:`f_7`, is then defined by the ellipsoidal function (the second objective function) subject to 1 constraint, and the same process repeats. The 48 constrained problems are summarized in the table below, where the inner cell IDs refer to the ``bbob-constrained`` problems, the outer row and column respectively denote the numbers of constraints and the single-objective ``bbob`` functions.
+In total, there are 8 different objective functions, and each one is tested with 6 different numbers of constraints: :math:`1`, :math:`2`, :math:`6`, :math:`6+\lfloor n/2\rfloor`, :math:`6 + n` and :math:`6 + 3n`. The first objective function in the suite is given by the sphere function. The first constrained function, :math:`f_1`, is thus defined by the sphere function subject to 1 constraint. The second constrained function, :math:`f_2`, is defined by the sphere function subject to 2 constraints. The third constrained function, :math:`f_3`, is defined by the sphere function subject to 6 constraints, and so on. The 7th constrained function, :math:`f_7`, is then defined by the ellipsoidal function (the second objective function) subject to 1 constraint, and the same process repeats. The 48 constrained problems are summarized in the table below, where the inner cell IDs refer to the ``bbob-constrained`` problems, the outer row and column respectively denote the numbers of constraints and the single-objective ``bbob`` functions.
 
 +-------+-------+-------+-------+-------+-------+-------+
-|       |1      |2      |10     ||n/2|  ||n-1|  ||n+1|  |
+|       ||1|    ||2|    ||6|    ||6+n/2|||6+n|  ||6+3n| |
 +-------+-------+-------+-------+-------+-------+-------+
 ||fb1|_ ||f1|   ||f2|   ||f3|   ||f4|   ||f5|   ||f6|   |
 +-------+-------+-------+-------+-------+-------+-------+
@@ -478,9 +480,12 @@ In total, there are 8 different objective functions, and each one is tested with
 .. |f46| replace:: :ref:`f46 <rastrigin>`
 .. |f47| replace:: :ref:`f47 <rastrigin>`
 .. |f48| replace:: :ref:`f48 <rastrigin>`
-.. |n/2| replace:: :math:`n/2`
-.. |n-1| replace:: :math:`n - 1`
-.. |n+1| replace:: :math:`n + 1`
+.. |1| replace:: :math:`1`
+.. |2| replace:: :math:`2`
+.. |6| replace:: :math:`6`
+.. |6+n/2| replace:: :math:`6+\lfloor n/2 \rfloor`
+.. |6+n| replace:: :math:`6 + n`
+.. |6+3n| replace:: :math:`6 + 3n`
 .. _fb1: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=5
 .. _fb2: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=9
 .. _fb3: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=13
@@ -491,7 +496,7 @@ In total, there are 8 different objective functions, and each one is tested with
 .. _fb14: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=57
 
 
-The number of constraints, :math:`l`, in a constrained function :math:`f_i` can be easily obtained through the formula :math:`((i-1) \bmod 6) + 1`. For instance, consider the constrained function :math:`f_7` which is the ellipsoid function subject to 1 constraint. We can know that is has 1 constraint by its identifier by computing :math:`((7-1) \bmod 6) + 1 = (6 \bmod 6 ) + 1 = 1`.
+The number of constraints, :math:`l`, in a constrained function :math:`f_i` can be obtained via the index formula :math:`I=((i-1) \bmod 6) + 1`. The index :math:`I` can then be used to index into the list of all possible number of constraints :math:`N = (1, 2, 6, 6+\lfloor n/2 \rfloor, 6+n, 6+3n)` to get the final number as :math:`l=N(I)`. Take, for instance, the constrained function :math:`f_11` which is the ellipsoid function subject to :math:`6+n` constraints. We first compute the corresponding index as :math:`((11-1) \bmod 6) + 1 = (10 \bmod 6 ) + 1 = 5` which then can be used to look up the number of constraints as :math:`N(5)=6+n`.
 
 We separate the 48 constrained functions into groups with respect to their objective function, thereby having 8 groups. Each group contains 6 different constrained functions as each objective function is tested with 6 different numbers of constraints. We list the groups below with some properties of the objective functions that define them. As described in Subsection :ref:`subsec-defining-the-constrained-functions`, by translating the objective function and the constraints with the use of the randomly-generated point :math:`x^{\textrm{opt}}`, we define :math:`x^{\textrm{opt}}` as the optimal solution. Furthermore, the unconstrained optimal solution moves from :math:`x^{\textrm{uopt}}` to :math:`x^{\textrm{uopt}}+x^{\textrm{opt}}`.
 
