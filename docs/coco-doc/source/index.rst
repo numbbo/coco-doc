@@ -34,13 +34,12 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   \begin{abstract}
 
 
-COCO_ is a platform for Comparing Continuous Optimizers in a black-box
-setting. 
-It aims at automatizing the tedious and repetitive task of
+We introduce COCO_, a platform for Comparing Continuous Optimizers in a black-box setting. 
+COCO_ aims at automatizing the tedious and repetitive task of
 benchmarking numerical optimization algorithms to the greatest possible
 extent. 
-We present the rationals behind the development of the platform
-as a general proposition for a guideline towards better benchmarking. 
+We present the rationals behind the (decade-long) development of the platform 
+as a general proposition for guidelines towards better benchmarking. 
 We detail underlying fundamental concepts of 
 COCO_ such as the definition of
 a problem, the idea of instances, the relevance of target values, and runtime
@@ -163,11 +162,11 @@ query with solutions :math:`\x\in\mathbb{R}^n` to get the respective values
 From these prerequisits, benchmarking optimization algorithms seems to be a
 rather simple and straightforward task. We run an algorithm on a collection of
 problems and display the results. However, under closer inspection,
-benchmarking turns out to be surprisingly tedious, and it appears to be
+benchmarking turns out to be surprisingly tedious on the one hand. On the other hand it appears to be
 difficult to get results that can be meaningfully interpreted beyond the
-standard claim that one algorithm is better than another on some problems. [#]_ 
-Here, we offer a conceptual guideline for benchmarking
-continuous optimization algorithms which tries to address this challenge and
+standard claim that on some problems one algorithm "is better" than another. [#]_ 
+In the work, we offer a conceptual guideline for benchmarking
+continuous optimization algorithms which tries to address these challenges and
 has been implemented within the COCO_ framework. [#]_ 
 
 The COCO_ framework provides the practical means for an automatized
@@ -196,33 +195,45 @@ in Python, becomes as simple [#]_ as
 
    $ ### (optional) run an example from the shell
    $ cp code-experiments/build/python/example_experiment.py .
-   $ python example_experiment.py     # run the current "default" experiment
-   $ python -m bbob_pproc exdata/...  # run the post-processing
-   $ open ppdata/index.html           # browse results
+   $ python example_experiment.py  # run the current "default" experiment
+   $ python -m cocopp exdata/...   # run the post-processing
+   $ open ppdata/index.html        # browse results
 
 .. code:: python
 
    #!/usr/bin/env python
    """Python script to benchmark fmin of scipy.optimize"""
-   from numpy.random import rand
-   import cocoex 
-   try: import cocopp  # new (future) name
-   except ImportError: import bbob_pproc as cocopp  # old name
-   from scipy.optimize import fmin
- 
-   suite = cocoex.Suite("bbob", "year: 2016", "")
-   budget_multiply = 1e4  # use 1e1 or even 2 for a quick first test run
-   observer = cocoex.Observer("bbob", "result_folder: myoptimizer-on-bbob")
-    
-   for p in suite:  # loop over all problems
-       observer.observe(p)  # prepare logging of necessary data
-       fmin(p, p.initial_solution)  # disp=False would silence fmin output
-       while (not p.final_target_hit and  # apply restarts, if so desired
-              p.evaluations < p.dimension * budget_multiplier):
-           fmin(p, p.lower_bounds + (rand(p.dimension) + rand(p.dimension)) * 
-                       (p.upper_bounds - p.lower_bounds) / 2)
-     
-   cocopp.main('exdata/myoptimizer-on-bbob')  # invoke data post-processing
+   from __future__ import division  # it is like this in Python 3 anyway
+   import cocoex, cocopp  # experimentation and post-processing modules
+   import scipy.optimize  # to define the solver to be benchmarked
+   from numpy.random import rand  # for randomised restarts
+   import os, webbrowser  # to show post-processed results in the browser
+
+   ### input
+   suite_name = "bbob"
+   output_folder = "scipy-optimize-fmin"
+   fmin = scipy.optimize.fmin
+   budget_multiplier = 2  # increase to 10, 100, ...
+
+   ### prepare
+   suite = cocoex.Suite(suite_name, "", "")
+   observer = cocoex.Observer(suite_name, "result_folder: " + output_folder)
+
+   ### go
+   for problem in suite:  # this loop will take several minutes or longer
+       problem.observe_with(observer)  # generates the data for cocopp post-processing
+       x0 = problem.initial_solution
+       # apply restarts while neither the problem is solved nor the budget is exhausted
+       while (problem.evaluations < problem.dimension * budget_multiplier
+              and not problem.final_target_hit):
+           fmin(problem, x0)  # here we assume that `fmin` evaluates the final/returned solution
+           x0 = problem.lower_bounds + ((rand(problem.dimension) + rand(problem.dimension)) *
+                       (problem.upper_bounds - problem.lower_bounds) / 2)
+
+   ### post-process data
+   cocopp.main(observer.result_folder)  # re-run folders look like "...-001" etc
+   webbrowser.open("file://" + os.getcwd() + "/ppdata/index.html")
+
 
 .. raw:: latex 
 
@@ -230,11 +241,26 @@ in Python, becomes as simple [#]_ as
     Shell code for installation of \COCO\ (above), and Python code to benchmark 
     \texttt{fmin} on the \texttt{bbob} suite (below).
     
-After the Python script has been executed, the file ``ppdata/index.html`` can be used 
-to browse the resulting data.
+The last line of the Python script opens the file ``ppdata/index.html`` 
+to browse and visually investigate the resulting data as shown in the 
+next figure.
 
 .. raw:: latex 
 
+    }
+    \end{figure}
+
+.. raw:: latex
+
+    \begin{figure} %\begin{minipage}{\textwidth}
+
+.. figure:: index-html.png
+   :align: center
+   :width: 78%
+
+.. raw:: latex 
+
+    \caption[Benmarking output]{Benchmarking output homepage in the browser.
     }
     \end{figure}
 
@@ -255,12 +281,12 @@ over years or even decades can be effortlessly compared. [#]_
 So far, the framework has been successfully used to benchmark far over a
 hundred different algorithms by dozens of researchers.  
 
-.. [#] One common major flaw is to get no
-   indication of *how much* better an algorithm is. 
-   That is, the results of benchmarking often provide no indication of 
+.. [#] A common major flaw is to have no
+   indication of *how much* better the better algorithm is. 
+   That is, benchmarking results often provide no indication of 
    *relevance*;
    the main output is often hundreds of tabulated numbers interpretable on
-   an ordinal (ranking) scale only. 
+   a ranking (ordinal) scale only. 
    Addressing a point of a common confusion, *statistical* significance is only
    a secondary and by no means sufficient condition for *relevance*. 
    
@@ -273,12 +299,11 @@ __ http://numbbo.github.io/coco-doc/C/
 .. [#] See also |example_experiment.py|_ which runs
    out-of-the-box as a benchmarking Python script.  
 
-.. [#] For example, see here__, here__ or here__ to access all data submitted 
+.. [#] For example, see here__ or here__ to access all data submitted 
    to the `BBOB 2009 GECCO workshop`__. 
 
 __ http://coco.gforge.inria.fr/doku.php?id=bbob-2009-algorithms
 __ http://coco.gforge.inria.fr/data-archive
-__ http://coco.lri.fr/BBOB2009
 __ http://coco.gforge.inria.fr/doku.php?id=bbob-2009
 
 .. left to the reader to
@@ -327,9 +352,9 @@ guideline has the following defining features.
    A *missing* runtime value is considered as possible outcome (see below).
     
 #. The display is as comprehensible, intuitive and informative as possible. 
-   We believe that the details matter. 
+   We believe that details matter. 
    Aggregation over dimension is avoided, because dimension is a parameter 
-   known in advance that can and should be used for algorithm design decisions. 
+   known in advance that can and should be used for algorithm selection or design decisions. 
    This is possible without significant drawbacks, because all functions are 
    scalable in the dimension. 
    
