@@ -170,7 +170,7 @@ Its unconstrained optimal solution is at the origin and its unconstrained optima
 
 where the vector :math:`x^{\textrm{uopt}}` and the scalar :math:`f_{\textrm{uopt}}` are constants whose values depend on the function identifier and instance number. These constants determine the unconstrained optimal solution and the unconstrained optimal function value of the problem, respectively.
 
-Linear transformations, by definition, do not change some properties of the functions to which they are applied to, such as symmetry. In order to make the functions less regular, Coco_ makes use of two nonlinear transformations, namely, :math:`T_{\textrm{asy}}^{\beta}` and :math:`T_{\textrm{osz}}` [HAN2009]_. The former is a symmetry breaking transformation while the latter introduces small, smooth but clearly visible irregularities. These nonlinear transformations can transform convex raw functions into nonconvex functions, for instance.
+Linear transformations, by definition, do not change some properties of the functions to which they are applied, such as symmetry. In order to make the functions less regular, Coco_ makes use of two nonlinear transformations, namely, :math:`T_{\textrm{asy}}^{\beta}` and :math:`T_{\textrm{osz}}` [HAN2009]_. The former is a symmetry breaking transformation while the latter introduces small, smooth but clearly visible irregularities. These nonlinear transformations can transform convex raw functions into nonconvex functions, for instance.
 
 .. _sec-overview-test-suite:
 
@@ -226,7 +226,7 @@ The algorithm above ensures a feasible half-line defined by :math:`\{\alpha p\,|
 Defining the constrained functions
 ----------------------------------
 
-The constrained functions are defined in a way such that their optimal solutions are different from the optimal solutions of their unconstrained counterparts. The reason for this choice lies in the fact that if both optimal solutions were equal, the constraints would have no major impact in the difficulty of the problem in the sense that an algorithm for unconstrained optimization could be run and could obtain the optimal solution without considering any constraint.
+The constrained functions are defined in a way such that their optimal solutions are different from the optimal solutions of their unconstrained counterparts. The reason for this choice lies in the fact that if both optimal solutions were equal, the constraints would have no major impact on the difficulty of the problem in the sense that an algorithm for unconstrained optimization could be run and could obtain the optimal solution without considering any constraint.
 
 Before describing how we define a point as an optimal solution to a constrained function, we introduce some conditions for a solution to be optimal called the *Karush-Kuhn-Tucker* conditions, or, simply, the KKT conditions. Such conditions are first-order necessary conditions for optimality given that the problem satisfies some regularity conditions. 
 
@@ -270,7 +270,7 @@ The point :math:`p=\nabla f(\mathbf{0})` defined in Step 2 is used in the defini
 
 Seven out of the eight objective functions composing the constrained functions in ``bbob-constrained`` are convex or pseudoconvex without considering the nonlinear transformations, which together with the fact that every linear constraint is also quasiconvex implies that a KKT point is also a global optimal solution to these constrained functions. The exception is the Rastrigin function, which is handled differently and detailed below.
 
-If the ``bbob`` function, chosen in Step 2, includes nonlinear transformations, the algorithm above cannot ensure that the origin is the optimal solution due to the lack of pseudoconvexity of the objective function, which was used to guarantee the sufficiency of the KKT conditions for optimality. To solve this issue, we add a new step between Step 1 and Step 2 where we remove the nonlinear transformations applied to the search space in the ``bbob`` function. The nonlinear transformations are applied to the whole constrained function (:math:`f` and :math:`g_i`) only after the constraints have been built and the origin has been defined as the optimal solution. As we show in Subsection :ref:`subsec-applying-nonlinear-transformations`, the application of the Coco_ nonlinear transformations to a constrained function whose optimal solution is at the origin does not change its optimal solution. 
+If the ``bbob`` function, chosen in Step 1, includes nonlinear transformations, the algorithm above cannot ensure that the origin is the optimal solution due to the lack of pseudoconvexity of the objective function, which was used to guarantee the sufficiency of the KKT conditions for optimality. To solve this issue, we add a new step between Step 1 and Step 2 where we remove the nonlinear transformations applied to the search space in the ``bbob`` function. The nonlinear transformations are applied to the whole constrained function (:math:`f` and :math:`g_i`) only after the constraints have been built and the origin has been defined as the optimal solution. As we show in Subsection :ref:`subsec-applying-nonlinear-transformations`, the application of the Coco_ nonlinear transformations to a constrained function whose optimal solution is at the origin does not change its optimal solution. 
 
 The final generic algorithm for defining the constrained functions is given below. As it can be seen, we also added a new step to move the optimal solution away from the origin in the end.
 
@@ -345,7 +345,7 @@ Next, all the other linear constraints are randomly generated while care is take
 Applying nonlinear transformations
 ----------------------------------
 
-As we mentioned in the previous subsection, we initially do not consider the nonlinear transformations in the building process of the constrained functions. Those transformations are applied after defining the origin as the optimal solution. The application of nonlinear transformations to the constrained functions, however, do not affect the location of the optimal solution already defined as we show next.
+As we mentioned in the previous subsection, we initially do not consider the nonlinear transformations in the building process of the constrained functions. Those transformations are applied after defining the origin as the optimal solution. The application of nonlinear transformations to the constrained functions, however, does not affect the location of the optimal solution already defined as we show next.
 
 Without loss of generality, consider the minimization of a constrained function with one single linear constraint:
 
@@ -496,7 +496,7 @@ In total, there are 8 different objective functions, and each one is tested with
 .. _fb14: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=57
 
 
-The number of constraints, :math:`l`, in a constrained function :math:`f_i` can be obtained via the index formula :math:`I=((i-1) \bmod 6) + 1`. The index :math:`I` can then be used to index into the list of all possible number of constraints :math:`N = (1, 2, 6, 6+\lfloor n/2 \rfloor, 6+n, 6+3n)` to get the final number as :math:`l=N(I)`. Take, for instance, the constrained function :math:`f_11` which is the ellipsoid function subject to :math:`6+n` constraints. We first compute the corresponding index as :math:`((11-1) \bmod 6) + 1 = (10 \bmod 6 ) + 1 = 5` which then can be used to look up the number of constraints as :math:`N(5)=6+n`.
+The number of constraints, :math:`l`, in a constrained function :math:`f_i` can be obtained via the index formula :math:`I=((i-1) \bmod 6) + 1`. The index :math:`I` can then be used to index into the list of all possible number of constraints :math:`N = (1, 2, 6, 6+\lfloor n/2 \rfloor, 6+n, 6+3n)` to get the final number as :math:`l=N(I)`. Take, for instance, the constrained function :math:`f_{11}` which is the ellipsoid function subject to :math:`6+n` constraints. We first compute the corresponding index as :math:`((11-1) \bmod 6) + 1 = (10 \bmod 6 ) + 1 = 5` which then can be used to look up the number of constraints as :math:`N(5)=6+n`.
 
 We separate the 48 constrained functions into groups with respect to their objective function, thereby having 8 groups. Each group contains 6 different constrained functions as each objective function is tested with 6 different numbers of constraints. We list the groups below with some properties of the objective functions that define them. As described in Subsection :ref:`subsec-defining-the-constrained-functions`, by translating the objective function and the constraints with the use of the randomly-generated point :math:`x^{\textrm{opt}}`, we define :math:`x^{\textrm{opt}}` as the optimal solution. Furthermore, the unconstrained optimal solution moves from :math:`x^{\textrm{uopt}}` to :math:`x^{\textrm{uopt}}+x^{\textrm{opt}}`.
 
