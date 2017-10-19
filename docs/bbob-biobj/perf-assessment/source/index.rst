@@ -386,6 +386,9 @@ For the ``bbob-biobj`` suite, the postprocessing part of COCO_ displays currentl
 default only 5 out of the 10 instances from each function-dimension pair.
 
 
+.. todo:: acknowledge that there might be (relatively large) differences between instances and the fact that we assume that the instances are of similar difficulty (whatever that might mean)
+
+
 Data Storage and Future Recalculations of Indicator Values
 ==========================================================
 Having a good approximation of the Pareto set/Pareto front is crucial in assessing
