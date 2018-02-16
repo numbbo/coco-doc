@@ -454,7 +454,7 @@ __ bbobfunctiondoc_
        - :math:`f_3(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right) + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{\Lambda}^{10} T_{\text{asy}}^{0.2} \left( T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right) \right)`
 
-    *  - Büche-Rastrigin Function
+    *  - Bueche-Rastrigin Function
        - :math:`f_4(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right) +` \\ :math:`+ 100f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`z_i = s_i T_{\text{osz}}\left(x_i - x_i^{\text{opt}}\right), \text{for } i = 1,\dots, n`\\ :math:`s_i = \begin{cases} 10 \times 10^{\frac{1}{2} \ \frac{i-1}{n - 1}} & \text{if } z_i >0 \text{ and } i \text{ odd}\\ 10^{\frac{1}{2} \ \frac{i - 1}{n - 1}} & \text{otherwise} \end{cases}` \\ :math:`\text{ \ \ \ \ \ \ for } i = 1,\dots, n`
 
@@ -538,13 +538,13 @@ __ bbobfunctiondoc_
        - :math:`f_{20}(\mathbf{x}) = -\dfrac{1}{n} \sum_{i=1}^{n} z_i\sin\left(\sqrt{\vert z_i\vert}\right) + 4.189828872724339 +` \\ :math:`+ 100f_{pen}(\mathbf{z}/100)+\mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{\hat{x}} = 2 \times \mathbf{1}_{-}^{+} \otimes \mathbf{x},` \\ :math:`\hat{z}_1 = \hat{x}_1, \hat{z}_{i+1}=\hat{x}_{i+1} + 0.25 \left(\hat{x}_{i} - 2\left|x_i^{\text{opt}}\right|\right),` \\ :math:`\text{ \ \ \ \ \ \ for } i=1, \dots, n-1,` \\ :math:`\mathbf{z} = 100 \left(\mathbf{\Lambda}^{10} \left(\mathbf{\hat{z}} - 2\left|\mathbf{x}^{\text{opt}}\right|\right) + 2\left|\mathbf{x}^{\text{opt}}\right|\right),` \\ :math:`\mathbf{x}^{\text{opt}} = 4.2096874633/2 \mathbf{1}_{-}^{+}`
 
-    *  - Gallagher’s Gaussian 101-me Peaks Function
+    *  - Gallagher's Gaussian 101-me Peaks Function
        - :math:`f_{21}(\mathbf{x}) = \gamma(n)\times\left(10 - \max_{i=1}^{101} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T\mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2 +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{99} & \text{for } 2 \leq i \leq 101\\ 10 & \text{for } i = 1 \end{cases}`\\ :math:`\mathbf{B} \text{ is a block-diagonal matrix without}` \\ :math:`\text{permuations of the variables.}`\\ :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` \\ :math:`\text{but with randomly permuted diagonal elements.}` \\ :math:`\text{For } i=1,\dots, 101, \alpha_i \text{ is drawn uniformly}` \\ :math:`\text{from the set } \left\{1000^{2\frac{j}{99}}, j = 0,\dots, 99 \right\} \text{without}` \\ :math:`\text{replacement, and } \alpha_i = 1000 \text{ for } i = 1.` \\ :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` \\ :math:`\text{from the domain } [-5,5]^n \text{ for }` \\ :math:`i = 2,...,101 \text{ and } \mathbf{y}_1 \in [-4,4]^n.` \\ :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
+       - :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{99} & \text{for } 2 \leq i \leq 101\\ 10 & \text{for } i = 1 \end{cases}`\\ :math:`\mathbf{B} \text{ is a block-diagonal matrix without}` \\ :math:`\text{permuations of the variables.}`\\ :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` \\ :math:`\text{but with randomly permuted diagonal elements.}` \\ :math:`\text{For } i=1,\dots, 101, \alpha_i \text{ is drawn uniformly}` \\ :math:`\text{from the set } \left\{1000^{2\frac{j}{99}}, j = 0,\dots, 99 \right\} \text{without}` \\ :math:`\text{replacement, and } \alpha_i = 1000 \text{ for } i = 1.` \\ :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` \\ :math:`\text{from the domain } [-5,5]^n \text{ for }` \\ :math:`i = 2,...,101 \text{ and } \mathbf{y}_1 \in [-4,4]^n.` \\ :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
 
-    *  - Gallagher’s Gaussian 21-hi Peaks Function
+    *  - Gallagher's Gaussian 21-hi Peaks Function
        - :math:`f_{22}(\mathbf{x}) = \gamma(n)\times\left(10 - \max_{i=1}^{21} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T \mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2 +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{19} & \text{for } 2 \leq i \leq 21\\ 10 & \text{for } i = 1 \end{cases}` \\ :math:`\mathbf{B} \text{ is a block-diagonal matrix without}` \\ :math:`\text{permuations of the variables.}`\\ :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` \\ :math:`\text{but with randomly permuted diagonal elements.}` \\ :math:`\text{For } i=1,\dots, 21, \alpha_i \text{ is drawn uniformly}` \\ :math:`\text{from the set } \left\{1000^{2\frac{j}{19}}, j = 0,\dots, 19 \right\} \text{without}` \\ :math:`\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1.` \\ :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` \\ :math:`\text{from the domain } [-4.9,4.9]^n \text{ for }` \\ :math:`i = 2,...,21 \text{ and } \mathbf{y}_1 \in [-3.92,3.92]^n.`  \\ :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
+       - :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{19} & \text{for } 2 \leq i \leq 21\\ 10 & \text{for } i = 1 \end{cases}` \\ :math:`\mathbf{B} \text{ is a block-diagonal matrix without}` \\ :math:`\text{permuations of the variables.}`\\ :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` \\ :math:`\text{but with randomly permuted diagonal elements.}` \\ :math:`\text{For } i=1,\dots, 21, \alpha_i \text{ is drawn uniformly}` \\ :math:`\text{from the set } \left\{1000^{2\frac{j}{19}}, j = 0,\dots, 19 \right\} \text{without}` \\ :math:`\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1.` \\ :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` \\ :math:`\text{from the domain } [-4.9,4.9]^n \text{ for }` \\ :math:`i = 2,...,21 \text{ and } \mathbf{y}_1 \in [-3.92,3.92]^n.`  \\ :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
 
     *  - Katsuura Function
        - :math:`f_{23}(\mathbf{x}) = \gamma(n)\times\left(\dfrac{10}{n^2} \prod_{i=1}^{n} \left( 1 + i \sum_{j=1}^{32} \dfrac{\vert 2^j z_i - [2^j z_i]\vert}{2^j}\right)^{10/n^{1.2}} - \dfrac{10}{n^2}\right) +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
@@ -581,12 +581,12 @@ of the French National Research Agency.
     
     <H2>References</H2>
 
-.. [AIT2016] O. Ait Elhara, A. Auger, N. Hansen (2016). `Permuted Orthogonal Block-Diagonal
+.. [AIT2016] O. Ait Elhara, A. Auger, N. Hansen (2016). `Permuted Orthogonal Block-Diagonal
     Transformation Matrices for Large Scale Optimization Benchmarking`__. GECCO 2016, Jul 2016, Denver,
     United States.
 .. __: https://hal.inria.fr/hal-01308566
 
-.. [BRO2016] D. Brockhoff, T. Tušar, D. Tušar, T. Wagner, N. Hansen, A. Auger, (2016).
+.. [BRO2016] D. Brockhoff, T. Tusar, D. Tusar, T. Wagner, N. Hansen, A. Auger, (2016).
     `Biobjective Performance Assessment with the COCO Platform`__. *ArXiv e-prints*, `arXiv:1605.01746`__.
 ..  __: http://numbbo.github.io/coco-doc/bbob-biobj/perf-assessment
 ..  __: http://arxiv.org/abs/1605.01746
@@ -600,13 +600,13 @@ of the French National Research Agency.
 .. __: https://hal.inria.fr/inria-00362633
 
 
-.. [HAN2016ex] N. Hansen, T. Tušar, A. Auger, D. Brockhoff, O. Mersmann (2016). 
+.. [HAN2016ex] N. Hansen, T. Tusar, A. Auger, D. Brockhoff, O. Mersmann (2016). 
   `COCO: The Experimental Procedure`__, *ArXiv e-prints*, `arXiv:1603.08776`__. 
 .. __: http://numbbo.github.io/coco-doc/experimental-setup/
 .. __: http://arxiv.org/abs/1603.08776
 
 
-.. [HAN2016perf] N. Hansen, A. Auger, D. Brockhoff, D. Tušar, T. Tušar (2016).
+.. [HAN2016perf] N. Hansen, A. Auger, D. Brockhoff, D. Tusar, T. Tusar (2016).
     `COCO: Performance Assessment`__. *ArXiv e-prints*, `arXiv:1605.03560`__.
 ..  __: http://numbbo.github.io/coco-doc/perf-assessment
 ..  __: http://arxiv.org/abs/1605.03560
