@@ -56,7 +56,7 @@ def main(old, new, *files):
         if os.path.isfile(tfilename):
             os.remove(tfilename) # deal with rename on windows
         os.rename(filename, tfilename)
-        with open(filename, 'a') as fp: # a is just in case
+        with open(filename, 'at') as fp: # a is just in case
             for line in open(tfilename):
                 if condition(old, line):
                     found += 1

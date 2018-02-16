@@ -37,6 +37,11 @@ def change2(line, old, new):
 condition = condition1
 change = change1
 
+def open_(*args, **kwargs):
+    if sys.version_info[0] > 2:
+        kwargs.update(encoding='utf-8')
+    return open(*args, **kwargs)
+
 def git_revision():
     nb_commits = check_output('git rev-list --count --first-parent HEAD'.split())
     last_commit_id = check_output('git describe --always'.split())
@@ -44,7 +49,7 @@ def git_revision():
 
 def replace(old, new, file):
     """replace all occurences of `old: str` with `new: str` in `file: str`"""
-    with open(file, 'r') as f:
+    with open_(file, 'r') as f:
         s = f.read(int(1e9))  # no more than 1GB
     s = s.replace(old, new)
     # make backup
@@ -53,7 +58,7 @@ def replace(old, new, file):
     if os.path.isfile(filebackup):
             os.remove(filebackup) # deal with rename on windows
     os.rename(file, filebackup)
-    with open(file, 'w') as f:
+    with open_(file, 'w') as f:
         f.write(s)
 
 def main(old, new, *files):
@@ -79,8 +84,8 @@ def main(old, new, *files):
         if os.path.isfile(tfilename):
             os.remove(tfilename) # deal with rename on windows
         os.rename(filename, tfilename)
-        with open(filename, 'a') as fp: # a is just in case
-            for line in open(tfilename):
+        with open_(filename, 'a') as fp: # a is just in case
+            for line in open_(tfilename):
                 if condition(old, line):
                     found += 1
                 fp.write(change(line, old, new))
@@ -102,8 +107,9 @@ if __name__ == "__main__":
             rev = ""
         
         main(r'\tableofcontents', r'%\tableofcontents ' + rev, file)
+        main(r'\sphinxtableofcontents', r'%\sphinxtableofcontents ' + rev, file)
         # main(r'%%\tableofcontents', r'%\tableofcontents', file)
-        main(r'\end{abstract}', r'\end{abstract}\tableofcontents ' + rev, file)
+        main(r'\end{abstract}', r'\end{abstract}\sphinxtableofcontents ' + rev, file)
         # main(r'\tableofcontents%\tableofcontents', r'\tableofcontents', file)
         main(r'\author{', r'\date{\vspace{-1ex}}\author{', file)
         replace(r' \footnote', r'\footnote', file)
@@ -119,7 +125,7 @@ if __name__ == "__main__":
                                         #env=os.environ, 
                                         #universal_newlines=True)
                 # print(output)
-                if len(sys.argv) > 2 and i in (0, 2):
+                if 22 < 3 and len(sys.argv) > 2 and i in (0, 2):
                     try:
                         copyfile(filename[:-4] + '.pdf ', 
                             os.path.join(oldwd, sys.argv[2]))
