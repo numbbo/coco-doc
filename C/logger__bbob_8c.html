@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/logger_bbob.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/coco/code-experiments/src/logger_bbob.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ca73a05c4b023b5871f1b1fe6b22bd68.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_db4c2c2b0591d2c9da84b74c3100c07a.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e62b2abd58afdef76620298b400749c4.html">coco</a></li><li class="navelem"><a class="el" href="dir_4f256c55888967b51357a8d5bf5c3028.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_09caa823605772b3182ebe656054ec51.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -123,8 +123,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa1e6fced9fe8f542ae76c518b07ccfc1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#aa1e6fced9fe8f542ae76c518b07ccfc1">logger_bbob_write_data</a> (FILE *target_file, size_t number_of_evaluations, double fvalue, double best_fvalue, double best_value, const double *x, size_t number_of_variables)</td></tr>
-<tr class="separator:aa1e6fced9fe8f542ae76c518b07ccfc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17f91a2b9d268fed9b2f768854d812e9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a17f91a2b9d268fed9b2f768854d812e9">logger_bbob_write_data</a> (FILE *target_file, size_t number_of_f_evaluations, size_t number_of_cons_evaluations, double fvalue, double best_fvalue, double best_value, const double *x, size_t number_of_variables)</td></tr>
+<tr class="separator:a17f91a2b9d268fed9b2f768854d812e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2fb59dbf4d708d1eab420546378d30f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#ac2fb59dbf4d708d1eab420546378d30f">logger_bbob_error_io</a> (FILE *path, int errnum)</td></tr>
 <tr class="separator:ac2fb59dbf4d708d1eab420546378d30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45b719d37e38be6b89382f77590dd072"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a45b719d37e38be6b89382f77590dd072">logger_bbob_open_dataFile</a> (FILE **target_file, const char *path, const char *dataFile_path, const char *file_extension)</td></tr>
@@ -142,14 +142,20 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a47e9de2188f36ed8a42354981651223b"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a47e9de2188f36ed8a42354981651223b">fvalue_logged_for_infinite</a> = 3e21</td></tr>
+<tr class="separator:a47e9de2188f36ed8a42354981651223b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3769a5879d0136ff58bb1b095899e136"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a3769a5879d0136ff58bb1b095899e136">fvalue_logged_for_nan</a> = 2e21</td></tr>
+<tr class="separator:a3769a5879d0136ff58bb1b095899e136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614b24dcfcd1c97aa687e4e2a309db46"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a614b24dcfcd1c97aa687e4e2a309db46">fvalue_logged_for_infeasible</a> = 1e21</td></tr>
+<tr class="separator:a614b24dcfcd1c97aa687e4e2a309db46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8b3b7e38c70637a5384a53c99203fc9"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#aa8b3b7e38c70637a5384a53c99203fc9">bbob_current_dim</a> = 0</td></tr>
 <tr class="separator:aa8b3b7e38c70637a5384a53c99203fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af034c3b70dd5da9886fa8a63f06a2994"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#af034c3b70dd5da9886fa8a63f06a2994">bbob_current_funId</a> = 0</td></tr>
 <tr class="separator:af034c3b70dd5da9886fa8a63f06a2994"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accb68f50c1ab1099301d6f282eb37d37"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#accb68f50c1ab1099301d6f282eb37d37">bbob_infoFile_firstInstance</a> = 0</td></tr>
 <tr class="separator:accb68f50c1ab1099301d6f282eb37d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4024d48d91a536f2b3dcc3b6fc8648a4"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a4024d48d91a536f2b3dcc3b6fc8648a4">bbob_infoFile_firstInstance_char</a> [3]</td></tr>
-<tr class="separator:a4024d48d91a536f2b3dcc3b6fc8648a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7390b6503837bda09a02c49758645ce"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#ac7390b6503837bda09a02c49758645ce">bbob_infoFile_firstInstance_char</a></td></tr>
+<tr class="separator:ac7390b6503837bda09a02c49758645ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5c923fd7aae5813438cb2291e9441cc"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#ae5c923fd7aae5813438cb2291e9441cc">bbob_number_of_dimensions</a> = 6</td></tr>
 <tr class="separator:ae5c923fd7aae5813438cb2291e9441cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada4f6e1f4c98e64d831bfe2665dc9f66"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#ada4f6e1f4c98e64d831bfe2665dc9f66">bbob_dimensions_in_current_infoFile</a> [6] = { 0, 0, 0, 0, 0, 0 }</td></tr>
@@ -158,6 +164,10 @@ Variables</h2></td></tr>
 <tr class="separator:a9f9e6dfa86b0b33756e9d68fcc14927e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ec699d0dec0a8b379f8c62c44d6afbf"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a8ec699d0dec0a8b379f8c62c44d6afbf">bbob_file_header_str</a></td></tr>
 <tr class="separator:a8ec699d0dec0a8b379f8c62c44d6afbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59c176698129e91d99b897b351de6f8a"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a59c176698129e91d99b897b351de6f8a">logger_name</a> = &quot;bbob&quot;</td></tr>
+<tr class="separator:a59c176698129e91d99b897b351de6f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06c7cd0ff85783f9da16a8ac3de8ba08"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a06c7cd0ff85783f9da16a8ac3de8ba08">data_format</a> = &quot;bbob-new&quot;</td></tr>
+<tr class="separator:a06c7cd0ff85783f9da16a8ac3de8ba08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the bbob logger. </p>
@@ -445,7 +455,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa1e6fced9fe8f542ae76c518b07ccfc1"></a>
+<a class="anchor" id="a17f91a2b9d268fed9b2f768854d812e9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -462,7 +472,13 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>number_of_evaluations</em>, </td>
+          <td class="paramname"><em>number_of_f_evaluations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>number_of_cons_evaluations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -588,7 +604,7 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="stringliteral">&quot;%% function evaluation | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;noise-free fitness - Fopt (%13.12e) | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;best noise-free fitness - Fopt | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;measured fitness | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;best measured fitness | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;x1 | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;x2...\n&quot;</span></div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">= <span class="stringliteral">&quot;%% &quot;</span></div><div class="line">    <span class="stringliteral">&quot;f evaluations | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;g evaluations | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;best noise-free fitness - Fopt | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;noise-free fitness - Fopt (%13.12e) | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;measured fitness | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;best measured fitness | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;x1 | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;x2...\n&quot;</span></div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="accb68f50c1ab1099301d6f282eb37d37"></a>
@@ -611,12 +627,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4024d48d91a536f2b3dcc3b6fc8648a4"></a>
+<a class="anchor" id="ac7390b6503837bda09a02c49758645ce"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char bbob_infoFile_firstInstance_char[3]</td>
+          <td class="memname">char* bbob_infoFile_firstInstance_char</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -652,6 +668,106 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const int bbob_number_of_dimensions = 6</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a06c7cd0ff85783f9da16a8ac3de8ba08"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* data_format = &quot;bbob-new&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a614b24dcfcd1c97aa687e4e2a309db46"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double fvalue_logged_for_infeasible = 1e21</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a47e9de2188f36ed8a42354981651223b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double fvalue_logged_for_infinite = 3e21</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3769a5879d0136ff58bb1b095899e136"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double fvalue_logged_for_nan = 2e21</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a59c176698129e91d99b897b351de6f8a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* logger_name = &quot;bbob&quot;</td>
         </tr>
       </table>
   </td>

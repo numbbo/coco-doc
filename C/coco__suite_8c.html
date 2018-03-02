@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/coco_suite.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/coco/code-experiments/src/coco_suite.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ca73a05c4b023b5871f1b1fe6b22bd68.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_db4c2c2b0591d2c9da84b74c3100c07a.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e62b2abd58afdef76620298b400749c4.html">coco</a></li><li class="navelem"><a class="el" href="dir_4f256c55888967b51357a8d5bf5c3028.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_09caa823605772b3182ebe656054ec51.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -108,8 +108,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="coco__utilities_8c.html">coco_utilities.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__bbob_8c.html">suite_bbob.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__biobj_8c.html">suite_biobj.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="suite__biobj__ext_8c.html">suite_biobj_ext.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__toy_8c.html">suite_toy.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__largescale_8c.html">suite_largescale.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="suite__cons__bbob_8c.html">suite_cons_bbob.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
@@ -240,16 +242,18 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a COCO suite. </p>
-<p>Currently, four suites are supported:</p><ul>
+<p>Currently, six suites are supported:</p><ul>
 <li>"bbob" contains 24 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
 <li>"bbob-biobj" contains 55 <a href="http://numbbo.github.io/coco-doc/bbob-biobj/functions">bi-objective functions</a> in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
+<li>"bbob-biobj-ext" as an extension of "bbob-biobj" contains 92 <a href="http://numbbo.github.io/coco-doc/bbob-biobj/functions">bi-objective functions</a> in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
 <li>"bbob-largescale" contains 24 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 6 large dimensions (40, 80, 160, 320, 640, 1280)</li>
+<li>"bbob-constrained" contains 48 linearly-constrained problems, which are combinations of 8 single objective functions with 6 different numbers of linear constraints (1, 2, 10, dimension/2, dimension-1, dimension+1), in 6 dimensions (2, 3, 5, 10, 20, 40).</li>
 <li>"toy" contains 6 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 5 dimensions (2, 3, 5, 10, 20)</li>
 </ul>
 <p>Only the suite_name parameter needs to be non-empty. The suite_instance and suite_options can be "" or NULL. In this case, default values are taken (default instances of a suite are those used in the last year and the suite is not filtered by default).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">suite_name</td><td>A string containing the name of the suite. Currently supported suite names are "bbob", "bbob-biobj", "bbob-largescale" and "toy". </td></tr>
+    <tr><td class="paramname">suite_name</td><td>A string containing the name of the suite. Currently supported suite names are "bbob", "bbob-biobj", "bbob-biobj-ext", "bbob-largescale", "bbob-constrained", and "toy". </td></tr>
     <tr><td class="paramname">suite_instance</td><td>A string used for defining the suite instances. Two ways are supported:<ul>
 <li>"year: YEAR", where YEAR is the year of the BBOB workshop, includes the instances (to be) used in that year's workshop;</li>
 <li>"instances: VALUES", where VALUES are instance numbers from 1 on written as a comma-separated list or a range m-n. </li>

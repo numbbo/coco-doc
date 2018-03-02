@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/coco_problem.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/coco/code-experiments/src/coco_problem.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -88,10 +88,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ca73a05c4b023b5871f1b1fe6b22bd68.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_db4c2c2b0591d2c9da84b74c3100c07a.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e62b2abd58afdef76620298b400749c4.html">coco</a></li><li class="navelem"><a class="el" href="dir_4f256c55888967b51357a8d5bf5c3028.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_09caa823605772b3182ebe656054ec51.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">coco_problem.c File Reference</div>  </div>
 </div><!--header-->
@@ -106,6 +108,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a60d18631c9ed76c5a09725f0881eb91d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a60d18631c9ed76c5a09725f0881eb91d">bbob_problem_best_parameter_print</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="separator:a60d18631c9ed76c5a09725f0881eb91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Methods regarding the basic COCO problem</div></td></tr>
 <tr class="memitem:aabbc02b57084ab069c37e1c27426b95c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#aabbc02b57084ab069c37e1c27426b95c">coco_evaluate_function</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
 <tr class="memdesc:aabbc02b57084ab069c37e1c27426b95c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the problem function in point x and save the result in y.  <a href="#aabbc02b57084ab069c37e1c27426b95c">More...</a><br /></td></tr>
@@ -113,8 +117,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ab5cce904e394349ec1be1bcdc35967fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#ab5cce904e394349ec1be1bcdc35967fa">coco_evaluate_constraint</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
 <tr class="memdesc:ab5cce904e394349ec1be1bcdc35967fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the problem constraints in point x and save the result in y.  <a href="#ab5cce904e394349ec1be1bcdc35967fa">More...</a><br /></td></tr>
 <tr class="separator:ab5cce904e394349ec1be1bcdc35967fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a084ccbe7be0bbc44dd3e8e430bb70e27"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a084ccbe7be0bbc44dd3e8e430bb70e27">bbob_evaluate_gradient</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="separator:a084ccbe7be0bbc44dd3e8e430bb70e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd76a19eddd49fb78c22563390437df2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#afd76a19eddd49fb78c22563390437df2">coco_recommend_solution</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x)</td></tr>
-<tr class="memdesc:afd76a19eddd49fb78c22563390437df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recommends a solution as the current best guesses to the problem.  <a href="#afd76a19eddd49fb78c22563390437df2">More...</a><br /></td></tr>
+<tr class="memdesc:afd76a19eddd49fb78c22563390437df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recommends a solution as the current best guesses to the problem. Not implemented yet.  <a href="#afd76a19eddd49fb78c22563390437df2">More...</a><br /></td></tr>
 <tr class="separator:afd76a19eddd49fb78c22563390437df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af79bb357a64fe255d54ad2fdd824ddd2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#af79bb357a64fe255d54ad2fdd824ddd2">coco_problem_allocate</a> (const size_t number_of_variables, const size_t number_of_objectives, const size_t number_of_constraints)</td></tr>
 <tr class="memdesc:af79bb357a64fe255d54ad2fdd824ddd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a new coco_problem_t for the given number of variables, number of objectives and number of constraints.  <a href="#af79bb357a64fe255d54ad2fdd824ddd2">More...</a><br /></td></tr>
@@ -141,8 +147,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a5f344b82757fa7863d8472e839eb04d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the problem_type using formatted printing (as in printf).  <a href="#a5f344b82757fa7863d8472e839eb04d7">More...</a><br /></td></tr>
 <tr class="separator:a5f344b82757fa7863d8472e839eb04d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ad88cdba2ffd15847346d594974067f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a6ad88cdba2ffd15847346d594974067f">coco_problem_get_evaluations</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
-<tr class="memdesc:a6ad88cdba2ffd15847346d594974067f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of evaluations done on the problem.  <a href="#a6ad88cdba2ffd15847346d594974067f">More...</a><br /></td></tr>
+<tr class="memdesc:a6ad88cdba2ffd15847346d594974067f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of objective function evaluations done on the problem.  <a href="#a6ad88cdba2ffd15847346d594974067f">More...</a><br /></td></tr>
 <tr class="separator:a6ad88cdba2ffd15847346d594974067f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc28e83d0da0f08f82a087c36b0683e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#afdc28e83d0da0f08f82a087c36b0683e">coco_problem_get_evaluations_constraints</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:afdc28e83d0da0f08f82a087c36b0683e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of constraint function evaluations done on the problem.  <a href="#afdc28e83d0da0f08f82a087c36b0683e">More...</a><br /></td></tr>
+<tr class="separator:afdc28e83d0da0f08f82a087c36b0683e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfa3704f5842708439127a08a93790fe"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#acfa3704f5842708439127a08a93790fe">coco_problem_best_parameter_not_zero</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:acfa3704f5842708439127a08a93790fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if the best parameter is not (close to) zero and 0 otherwise.  <a href="#acfa3704f5842708439127a08a93790fe">More...</a><br /></td></tr>
 <tr class="separator:acfa3704f5842708439127a08a93790fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,6 +161,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a7295173033f50d6409c85cdc2b1d6989"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a7295173033f50d6409c85cdc2b1d6989">coco_problem_get_best_observed_fvalue1</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:a7295173033f50d6409c85cdc2b1d6989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the best observed value for the first objective.  <a href="#a7295173033f50d6409c85cdc2b1d6989">More...</a><br /></td></tr>
 <tr class="separator:a7295173033f50d6409c85cdc2b1d6989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3768df3bd562d307b3a7934dda6983"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a8b3768df3bd562d307b3a7934dda6983">coco_problem_get_best_value</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a8b3768df3bd562d307b3a7934dda6983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the optimal function value of the problem.  <a href="#a8b3768df3bd562d307b3a7934dda6983">More...</a><br /></td></tr>
+<tr class="separator:a8b3768df3bd562d307b3a7934dda6983"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3267a901e5846174962a988399ea397"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#ab3267a901e5846174962a988399ea397">coco_problem_get_final_target_fvalue1</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="separator:ab3267a901e5846174962a988399ea397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fbb83591242a6767d3ca5bbe8597321"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a3fbb83591242a6767d3ca5bbe8597321">coco_problem_get_name</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
@@ -178,15 +190,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a29c89e039494ae8b4f8e520cba1eb154"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a29c89e039494ae8b4f8e520cba1eb154">coco_problem_get_largest_values_of_interest</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:a29c89e039494ae8b4f8e520cba1eb154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector of size 'dimension' with upper bounds of the region of interest in the decision space.  <a href="#a29c89e039494ae8b4f8e520cba1eb154">More...</a><br /></td></tr>
 <tr class="separator:a29c89e039494ae8b4f8e520cba1eb154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab63d4ff2d2318f34575fbb9ace9c7d64"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#ab63d4ff2d2318f34575fbb9ace9c7d64">coco_problem_get_largest_fvalues_of_interest</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:ab63d4ff2d2318f34575fbb9ace9c7d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">For multi-objective problems, returns a vector of largest values of interest in each objective. Currently, this equals the nadir point. For single-objective problems it raises an error.  <a href="#ab63d4ff2d2318f34575fbb9ace9c7d64">More...</a><br /></td></tr>
+<tr class="separator:ab63d4ff2d2318f34575fbb9ace9c7d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5a44845acfadd7c5cccb9900a566b32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#ac5a44845acfadd7c5cccb9900a566b32">coco_problem_get_initial_solution</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, double *initial_solution)</td></tr>
 <tr class="memdesc:ac5a44845acfadd7c5cccb9900a566b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an initial solution, i.e. a feasible variable setting, to the problem.  <a href="#ac5a44845acfadd7c5cccb9900a566b32">More...</a><br /></td></tr>
 <tr class="separator:ac5a44845acfadd7c5cccb9900a566b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41cc14902a31233ed039db4d9218380e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a41cc14902a31233ed039db4d9218380e">coco_problem_get_suite</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:a41cc14902a31233ed039db4d9218380e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the problem function in point x and save the result in y.  <a href="#a41cc14902a31233ed039db4d9218380e">More...</a><br /></td></tr>
 <tr class="separator:a41cc14902a31233ed039db4d9218380e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf9aa8bfd0c9a34d58015d94e9a8569c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#aaf9aa8bfd0c9a34d58015d94e9a8569c">coco_problem_set_suite</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite)</td></tr>
-<tr class="memdesc:aaf9aa8bfd0c9a34d58015d94e9a8569c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the problem function in point x and save the result in y.  <a href="#aaf9aa8bfd0c9a34d58015d94e9a8569c">More...</a><br /></td></tr>
-<tr class="separator:aaf9aa8bfd0c9a34d58015d94e9a8569c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addebf9cda66250981d586c7ca2c7c07f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#addebf9cda66250981d586c7ca2c7c07f">coco_problem_set_suite</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite)</td></tr>
+<tr class="memdesc:addebf9cda66250981d586c7ca2c7c07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the problem function in point x and save the result in y.  <a href="#addebf9cda66250981d586c7ca2c7c07f">More...</a><br /></td></tr>
+<tr class="separator:addebf9cda66250981d586c7ca2c7c07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abab668e00fbf089cf887324ee83d7b20"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#abab668e00fbf089cf887324ee83d7b20">coco_problem_get_suite_dep_index</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:abab668e00fbf089cf887324ee83d7b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the problem_index of the problem in its current suite.  <a href="#abab668e00fbf089cf887324ee83d7b20">More...</a><br /></td></tr>
 <tr class="separator:abab668e00fbf089cf887324ee83d7b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,6 +224,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad7df2be069303e86f62361562a9e4496"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#ad7df2be069303e86f62361562a9e4496">coco_problem_transformed_evaluate_constraint</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
 <tr class="memdesc:ad7df2be069303e86f62361562a9e4496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the coco_evaluate_constraint function on the inner problem.  <a href="#ad7df2be069303e86f62361562a9e4496">More...</a><br /></td></tr>
 <tr class="separator:ad7df2be069303e86f62361562a9e4496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ce93e2bb7265c3136cb6b9aa7471645"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a0ce93e2bb7265c3136cb6b9aa7471645">bbob_problem_transformed_evaluate_gradient</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a0ce93e2bb7265c3136cb6b9aa7471645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the data of the transformed problem.  <a href="#a0ce93e2bb7265c3136cb6b9aa7471645">More...</a><br /></td></tr>
+<tr class="separator:a0ce93e2bb7265c3136cb6b9aa7471645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c538e38441ef85dc693d0861986ce79"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a4c538e38441ef85dc693d0861986ce79">coco_problem_transformed_recommend_solution</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x)</td></tr>
 <tr class="memdesc:a4c538e38441ef85dc693d0861986ce79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the coco_recommend_solution function on the inner problem.  <a href="#a4c538e38441ef85dc693d0861986ce79">More...</a><br /></td></tr>
 <tr class="separator:a4c538e38441ef85dc693d0861986ce79"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -238,6 +256,113 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions of functions regarding COCO problems. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a084ccbe7be0bbc44dd3e8e430bb70e27"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bbob_evaluate_gradient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Both x and y must point to correctly sized allocated memory regions.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
+    <tr><td class="paramname">x</td><td>The decision vector. </td></tr>
+    <tr><td class="paramname">y</td><td>The gradient of the function evaluated at the point x. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a60d18631c9ed76c5a09725f0881eb91d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bbob_problem_best_parameter_print </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0ce93e2bb7265c3136cb6b9aa7471645"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bbob_problem_transformed_evaluate_gradient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the data of the transformed problem. </p>
+
+</div>
+</div>
 <a class="anchor" id="ab5cce904e394349ec1be1bcdc35967fa"></a>
 <div class="memitem">
 <div class="memproto">
@@ -269,9 +394,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Evaluates the problem constraints in point x and save the result in y. </p>
-<dl class="section note"><dt>Note</dt><dd>None of the problems implement this function yet! </dd>
-<dd>
-Both x and y must point to correctly sized allocated memory regions.</dd></dl>
+<p>Evaluates the problem constraint.</p>
+<dl class="section note"><dt>Note</dt><dd>Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
@@ -543,6 +667,24 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="a8b3768df3bd562d307b3a7934dda6983"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double coco_problem_get_best_value </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the optimal function value of the problem. </p>
+
+</div>
+</div>
 <a class="anchor" id="a0dabf3e4f5630d08077530a1341f13ab"></a>
 <div class="memitem">
 <div class="memproto">
@@ -575,7 +717,25 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the number of evaluations done on the problem. </p>
+<p>Returns the number of objective function evaluations done on the problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="afdc28e83d0da0f08f82a087c36b0683e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t coco_problem_get_evaluations_constraints </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of constraint function evaluations done on the problem. </p>
 
 </div>
 </div>
@@ -642,13 +802,32 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 </div><div class="memdoc">
 
 <p>Returns an initial solution, i.e. a feasible variable setting, to the problem. </p>
-<p>If a special method for setting an initial solution to the problem does not exist, the center of the problem's region of interest is the initial solution. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Copies problem-&gt;initial_solution into initial_solution if not null, otherwise the center of the problem's region of interest is the initial solution.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
     <tr><td class="paramname">initial_solution</td><td>The pointer to the initial solution being set by this method. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ab63d4ff2d2318f34575fbb9ace9c7d64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double* coco_problem_get_largest_fvalues_of_interest </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>For multi-objective problems, returns a vector of largest values of interest in each objective. Currently, this equals the nadir point. For single-objective problems it raises an error. </p>
 
 </div>
 </div>
@@ -1020,7 +1199,7 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aaf9aa8bfd0c9a34d58015d94e9a8569c"></a>
+<a class="anchor" id="addebf9cda66250981d586c7ca2c7c07f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1036,7 +1215,7 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
           <td class="paramname"><em>suite</em>&#160;</td>
         </tr>
         <tr>
@@ -1154,7 +1333,7 @@ Both x and y must point to correctly sized allocated memory regions.</dd></dl>
 </div><div class="memdoc">
 
 <p>Allocates a problem constructed by stacking two COCO problems. </p>
-<p>This is particularly useful for generating multi-objective problems, e.g. a bi-objective problem from two single-objective problems. The stacked problem must behave like a normal COCO problem accepting the same input. The region of interest in the decision space is defined by parameters smallest_values_of_interest and largest_values_of_interest, which are two arrays of size equal to the dimensionality of both problems.</p>
+<p>This is particularly useful for generating multi-objective problems, e.g. a bi-objective problem from two single-objective problems. The stacked problem must behave like a normal COCO problem accepting the same input.</p>
 <dl class="section note"><dt>Note</dt><dd>Regions of interest in the decision space must either agree or at least one of them must be NULL. </dd>
 <dd>
 Best parameter becomes somewhat meaningless, but the nadir value make sense now. </dd></dl>
@@ -1569,7 +1748,7 @@ Best parameter becomes somewhat meaningless, but the nadir value make sense now.
       </table>
 </div><div class="memdoc">
 
-<p>Recommends a solution as the current best guesses to the problem. </p>
+<p>Recommends a solution as the current best guesses to the problem. Not implemented yet. </p>
 <p>Evaluates and logs the given solution (as the coco_evaluate_function), but does not return the evaluated value.</p>
 <dl class="section note"><dt>Note</dt><dd>None of the observers implements this function yet! </dd>
 <dd>

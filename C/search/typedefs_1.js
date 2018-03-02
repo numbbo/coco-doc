@@ -3,7 +3,6 @@ var searchData=
   ['coco_5farchive_5ft',['coco_archive_t',['../coco_8h.html#a526f33938345bc196c28cc9ffae0053d',1,'coco.h']]],
   ['coco_5fdata_5ffree_5ffunction_5ft',['coco_data_free_function_t',['../coco__internal_8h.html#ae21082955b28c4e6e0d3d3a397e4bf10',1,'coco_internal.h']]],
   ['coco_5fevaluate_5ffunction_5ft',['coco_evaluate_function_t',['../coco__internal_8h.html#aa71050eb9d8a6e13d2f46b54a37ae9d5',1,'coco_internal.h']]],
-  ['coco_5finitial_5fsolution_5ffunction_5ft',['coco_initial_solution_function_t',['../coco__internal_8h.html#a9067d3ad907f5b818be42b63591395c8',1,'coco_internal.h']]],
   ['coco_5flogger_5fallocate_5ffunction_5ft',['coco_logger_allocate_function_t',['../coco__internal_8h.html#aa7305390f20860fa6e7913da253e4416',1,'coco_internal.h']]],
   ['coco_5flogger_5ffree_5ffunction_5ft',['coco_logger_free_function_t',['../coco__internal_8h.html#a9e23993ad9b71c438ed1bd5a31afe4af',1,'coco_internal.h']]],
   ['coco_5fobserver_5ft',['coco_observer_t',['../coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5',1,'coco.h']]],

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['within_5froi',['within_ROI',['../structlogger__biobj__avl__item__t.html#a4671185829104d65a7910b5ccf0183c4',1,'logger_biobj_avl_item_t']]],
-  ['written_5flast_5feval',['written_last_eval',['../structlogger__bbob__data__t.html#a1d232119493fd47022ab84d99a44cd5c',1,'logger_bbob_data_t']]]
+  ['value',['value',['../structcoco__observer__targets__t.html#aee90379adb0307effb138f4871edbc5c',1,'coco_observer_targets_t::value()'],['../structf__gallagher__permutation__t.html#aee90379adb0307effb138f4871edbc5c',1,'f_gallagher_permutation_t::value()']]],
+  ['value1',['value1',['../structcoco__observer__evaluations__t.html#a32f52905e5dd75cc584db8b2ec58969b',1,'coco_observer_evaluations_t']]],
+  ['value2',['value2',['../structcoco__observer__evaluations__t.html#a6b4a87ff4afb22dfa7636a87e0a02c2f',1,'coco_observer_evaluations_t']]]
 ];

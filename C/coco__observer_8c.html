@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/coco_observer.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/coco/code-experiments/src/coco_observer.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ca73a05c4b023b5871f1b1fe6b22bd68.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_db4c2c2b0591d2c9da84b74c3100c07a.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e62b2abd58afdef76620298b400749c4.html">coco</a></li><li class="navelem"><a class="el" href="dir_4f256c55888967b51357a8d5bf5c3028.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_09caa823605772b3182ebe656054ec51.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -144,6 +144,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aac58e5039567090d6303b81f58532213"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#aac58e5039567090d6303b81f58532213">coco_problem_remove_observer</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer)</td></tr>
 <tr class="memdesc:aac58e5039567090d6303b81f58532213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an observer from the given problem.  <a href="#aac58e5039567090d6303b81f58532213">More...</a><br /></td></tr>
 <tr class="separator:aac58e5039567090d6303b81f58532213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07949a7fb4551fc0d4c5df1c0b47d591"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a07949a7fb4551fc0d4c5df1c0b47d591">coco_observer_get_result_folder</a> (const <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer)</td></tr>
+<tr class="memdesc:a07949a7fb4551fc0d4c5df1c0b47d591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns result folder name, where logger output is written.  <a href="#a07949a7fb4551fc0d4c5df1c0b47d591">More...</a><br /></td></tr>
+<tr class="separator:a07949a7fb4551fc0d4c5df1c0b47d591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Methods regarding triggers based on target values</div></td></tr>
 <tr class="memitem:a4fdd05cce82ebcc91e275c870bb9f4ec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structcoco__observer__targets__t.html">coco_observer_targets_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a4fdd05cce82ebcc91e275c870bb9f4ec">coco_observer_targets</a> (const size_t number_of_targets, const double precision)</td></tr>
 <tr class="memdesc:a4fdd05cce82ebcc91e275c870bb9f4ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a structure containing information on targets.  <a href="#a4fdd05cce82ebcc91e275c870bb9f4ec">More...</a><br /></td></tr>
@@ -525,6 +528,32 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Frees the given observer. </p>
+
+</div>
+</div>
+<a class="anchor" id="a07949a7fb4551fc0d4c5df1c0b47d591"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* coco_observer_get_result_folder </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *&#160;</td>
+          <td class="paramname"><em>observer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns result folder name, where logger output is written. </p>
+<p>Get the result folder name, which is a unique folder name constructed from the result_folder option.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">observer</td><td>The COCO observer, whose logger may be wrapping a problem.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result folder name, where the logger writes its output. </dd></dl>
 
 </div>
 </div>

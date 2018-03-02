@@ -75,5 +75,5 @@ The C code in the code-experiments/src/ folder of the numbbo/coco repository for
 in the C/ subfolder of this `gh-pages` branch of the numbbo/coco-doc repository with the help of the doxygen tool
 (www.doxygen.org/). After installing doxygen, and having a clone of the `master` or `development` branch of the
 numbbo/coco github repository in the same folder than your numbbo/coco-doc checkout, you can create the html output
-in this directory by simply typing `doxygen` in the docs/coco-documentation/C/ folder. Afterwards, commit and push
+in this directory by simply typing `doxygen` in the docs/coco-doc/C/ folder. Afterwards, commit and push
 of this repository will again update the web page directly as described above.

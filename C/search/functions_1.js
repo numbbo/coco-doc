@@ -11,5 +11,8 @@ var searchData=
   ['bbob2009_5fgauss',['bbob2009_gauss',['../suite__bbob__legacy__code_8c.html#a2700b811e474cdd1983c8b771c657d34',1,'suite_bbob_legacy_code.c']]],
   ['bbob2009_5freshape',['bbob2009_reshape',['../suite__bbob__legacy__code_8c.html#a7e9082b766cfc5fea331b89eb278012f',1,'suite_bbob_legacy_code.c']]],
   ['bbob2009_5fround',['bbob2009_round',['../suite__bbob__legacy__code_8c.html#aa419105fb5ab1a7d1eca3d036e1db642',1,'suite_bbob_legacy_code.c']]],
-  ['bbob2009_5funif',['bbob2009_unif',['../suite__bbob__legacy__code_8c.html#aab67433e81f23d1aa989b1866c93378c',1,'suite_bbob_legacy_code.c']]]
+  ['bbob2009_5funif',['bbob2009_unif',['../suite__bbob__legacy__code_8c.html#aab67433e81f23d1aa989b1866c93378c',1,'suite_bbob_legacy_code.c']]],
+  ['bbob_5fevaluate_5fgradient',['bbob_evaluate_gradient',['../coco__internal_8h.html#a084ccbe7be0bbc44dd3e8e430bb70e27',1,'bbob_evaluate_gradient(coco_problem_t *problem, const double *x, double *y):&#160;coco_internal.h'],['../coco__problem_8c.html#a084ccbe7be0bbc44dd3e8e430bb70e27',1,'bbob_evaluate_gradient(coco_problem_t *problem, const double *x, double *y):&#160;coco_problem.c']]],
+  ['bbob_5fproblem_5fbest_5fparameter_5fprint',['bbob_problem_best_parameter_print',['../coco__internal_8h.html#a60d18631c9ed76c5a09725f0881eb91d',1,'bbob_problem_best_parameter_print(const coco_problem_t *problem):&#160;coco_problem.c'],['../coco__problem_8c.html#a60d18631c9ed76c5a09725f0881eb91d',1,'bbob_problem_best_parameter_print(const coco_problem_t *problem):&#160;coco_problem.c']]],
+  ['bbob_5fproblem_5ftransformed_5fevaluate_5fgradient',['bbob_problem_transformed_evaluate_gradient',['../coco__problem_8c.html#a0ce93e2bb7265c3136cb6b9aa7471645',1,'coco_problem.c']]]
 ];

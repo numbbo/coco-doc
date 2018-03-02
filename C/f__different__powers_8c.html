@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/f_different_powers.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/coco/code-experiments/src/f_different_powers.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ca73a05c4b023b5871f1b1fe6b22bd68.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_db4c2c2b0591d2c9da84b74c3100c07a.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e62b2abd58afdef76620298b400749c4.html">coco</a></li><li class="navelem"><a class="el" href="dir_4f256c55888967b51357a8d5bf5c3028.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_09caa823605772b3182ebe656054ec51.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -118,6 +118,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ad6eda097f32081b091b08d6877772fa8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__different__powers_8c.html#ad6eda097f32081b091b08d6877772fa8">f_different_powers_evaluate</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
 <tr class="memdesc:ad6eda097f32081b091b08d6877772fa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the raw function to evaluate the COCO problem.  <a href="#ad6eda097f32081b091b08d6877772fa8">More...</a><br /></td></tr>
 <tr class="separator:ad6eda097f32081b091b08d6877772fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f3cba07aa75b7320ae8bd6c0aeac498"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__different__powers_8c.html#a8f3cba07aa75b7320ae8bd6c0aeac498">sign</a> (double x)</td></tr>
+<tr class="memdesc:a8f3cba07aa75b7320ae8bd6c0aeac498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the sign function.  <a href="#a8f3cba07aa75b7320ae8bd6c0aeac498">More...</a><br /></td></tr>
+<tr class="separator:a8f3cba07aa75b7320ae8bd6c0aeac498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c598e73d44081b36bf506b40b2f953"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__different__powers_8c.html#a94c598e73d44081b36bf506b40b2f953">f_different_powers_evaluate_gradient</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a94c598e73d44081b36bf506b40b2f953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the gradient of the function "different powers".  <a href="#a94c598e73d44081b36bf506b40b2f953">More...</a><br /></td></tr>
+<tr class="separator:a94c598e73d44081b36bf506b40b2f953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a895f64729b70d30fda3a4fa126986794"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__different__powers_8c.html#a895f64729b70d30fda3a4fa126986794">f_different_powers_allocate</a> (const size_t number_of_variables)</td></tr>
 <tr class="memdesc:a895f64729b70d30fda3a4fa126986794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic different powers problem.  <a href="#a895f64729b70d30fda3a4fa126986794">More...</a><br /></td></tr>
 <tr class="separator:a895f64729b70d30fda3a4fa126986794"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -256,6 +262,48 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a94c598e73d44081b36bf506b40b2f953"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void f_different_powers_evaluate_gradient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates the gradient of the function "different powers". </p>
+
+</div>
+</div>
 <a class="anchor" id="a07e97eb1fda8cb3084b1f8137eea284d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -289,6 +337,24 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements the different powers function without connections to any COCO structures. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8f3cba07aa75b7320ae8bd6c0aeac498"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double sign </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements the sign function. </p>
 
 </div>
 </div>

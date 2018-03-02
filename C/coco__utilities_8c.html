@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/coco_utilities.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/coco/code-experiments/src/coco_utilities.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ca73a05c4b023b5871f1b1fe6b22bd68.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_db4c2c2b0591d2c9da84b74c3100c07a.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e62b2abd58afdef76620298b400749c4.html">coco</a></li><li class="navelem"><a class="el" href="dir_4f256c55888967b51357a8d5bf5c3028.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_09caa823605772b3182ebe656054ec51.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -109,6 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__internal_8h_source.html">coco_internal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__string_8c.html">coco_string.c</a>&quot;</code><br />
@@ -129,13 +130,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a58008b6b418e88e5423d2b1c88e23fe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given file exists.  <a href="#a58008b6b418e88e5423d2b1c88e23fe4">More...</a><br /></td></tr>
 <tr class="separator:a58008b6b418e88e5423d2b1c88e23fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4f880a6b80f7c0b6e3e357054c65d56"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#af4f880a6b80f7c0b6e3e357054c65d56">coco_mkdir</a> (const char *path)</td></tr>
-<tr class="memdesc:af4f880a6b80f7c0b6e3e357054c65d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the right mkdir() method (depending on the platform).  <a href="#af4f880a6b80f7c0b6e3e357054c65d56">More...</a><br /></td></tr>
+<tr class="memdesc:af4f880a6b80f7c0b6e3e357054c65d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the right mkdir() method (depending on the platform) with full privileges for the user. If the created directory has not existed before, returns 0, otherwise returns 1. If the directory has not been created, a coco_error is raised.  <a href="#af4f880a6b80f7c0b6e3e357054c65d56">More...</a><br /></td></tr>
 <tr class="separator:af4f880a6b80f7c0b6e3e357054c65d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fc6d54ab5ce66fd844bf19faf7b8a61"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a9fc6d54ab5ce66fd844bf19faf7b8a61">coco_create_directory</a> (const char *path)</td></tr>
-<tr class="memdesc:a9fc6d54ab5ce66fd844bf19faf7b8a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a directory with full privileges for the user.  <a href="#a9fc6d54ab5ce66fd844bf19faf7b8a61">More...</a><br /></td></tr>
-<tr class="separator:a9fc6d54ab5ce66fd844bf19faf7b8a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad82b9c7c9044e9bde8a76c6b2784e17a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ad82b9c7c9044e9bde8a76c6b2784e17a">coco_create_directory</a> (const char *path)</td></tr>
+<tr class="memdesc:ad82b9c7c9044e9bde8a76c6b2784e17a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a directory (possibly having to create nested directories). If the last created directory has not existed before, returns 0, otherwise returns 1.  <a href="#ad82b9c7c9044e9bde8a76c6b2784e17a">More...</a><br /></td></tr>
+<tr class="separator:ad82b9c7c9044e9bde8a76c6b2784e17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02dbbc607281c5186c6e3920a6a714b0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a02dbbc607281c5186c6e3920a6a714b0">coco_create_unique_directory</a> (char **path)</td></tr>
-<tr class="memdesc:a02dbbc607281c5186c6e3920a6a714b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a unique directory from the given path.  <a href="#a02dbbc607281c5186c6e3920a6a714b0">More...</a><br /></td></tr>
+<tr class="memdesc:a02dbbc607281c5186c6e3920a6a714b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a directory that has not existed before.  <a href="#a02dbbc607281c5186c6e3920a6a714b0">More...</a><br /></td></tr>
 <tr class="separator:a02dbbc607281c5186c6e3920a6a714b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af079b44546733c5be1cd68e38a2b06fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#af079b44546733c5be1cd68e38a2b06fc">coco_remove_directory</a> (const char *path)</td></tr>
 <tr class="memdesc:af079b44546733c5be1cd68e38a2b06fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the given directory and all its contents.  <a href="#af079b44546733c5be1cd68e38a2b06fc">More...</a><br /></td></tr>
@@ -191,7 +192,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a6ae35ce9d2acf83672f7d7a16affe193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a string from options using the form "name1: value1 name2: value2".  <a href="#a6ae35ce9d2acf83672f7d7a16affe193">More...</a><br /></td></tr>
 <tr class="separator:a6ae35ce9d2acf83672f7d7a16affe193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4627c6e63ca741a5cb29a792f98adf52"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a4627c6e63ca741a5cb29a792f98adf52">coco_options_read_values</a> (const char *options, const char *name, char *pointer)</td></tr>
-<tr class="memdesc:a4627c6e63ca741a5cb29a792f98adf52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads (possibly delimited) values from options using the form "name1: value1,value2,value3 name2: value4", i.e. reads all characters from the corresponding name up to the next whitespace or end of string.  <a href="#a4627c6e63ca741a5cb29a792f98adf52">More...</a><br /></td></tr>
+<tr class="memdesc:a4627c6e63ca741a5cb29a792f98adf52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads (possibly delimited) values from options using the form "name1: value1,value2,value3 name2: value4", i.e. reads all characters from the corresponding name up to the next alphabetic character or end of string, ignoring white-space characters.  <a href="#a4627c6e63ca741a5cb29a792f98adf52">More...</a><br /></td></tr>
 <tr class="separator:a4627c6e63ca741a5cb29a792f98adf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Methods implementing functions on double values not contained in C89 standard</div></td></tr>
 <tr class="memitem:a00aacc69bb9d58319585e613e4561073"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a00aacc69bb9d58319585e613e4561073">coco_double_round</a> (const double number)</td></tr>
@@ -222,6 +223,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a6c0917f5a4fcbdb9a55938c363e09e61"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a6c0917f5a4fcbdb9a55938c363e09e61">coco_is_inf</a> (const double x)</td></tr>
 <tr class="memdesc:a6c0917f5a4fcbdb9a55938c363e09e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if x is INFINITY and 0 otherwise.  <a href="#a6c0917f5a4fcbdb9a55938c363e09e61">More...</a><br /></td></tr>
 <tr class="separator:a6c0917f5a4fcbdb9a55938c363e09e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa971f9940eccda79ff45f0436ed32e51"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#aa971f9940eccda79ff45f0436ed32e51">coco_vector_isfinite</a> (const double *x, const size_t dim)</td></tr>
+<tr class="memdesc:aa971f9940eccda79ff45f0436ed32e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if the input vector of dimension dim contains no NaN of inf values, and 0 otherwise.  <a href="#aa971f9940eccda79ff45f0436ed32e51">More...</a><br /></td></tr>
+<tr class="separator:aa971f9940eccda79ff45f0436ed32e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7be2b217b6fec64f7372a55fb2cd0cf"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ae7be2b217b6fec64f7372a55fb2cd0cf">coco_is_feasible</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *constraint_values)</td></tr>
+<tr class="memdesc:ae7be2b217b6fec64f7372a55fb2cd0cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if the point x is feasible, and 0 otherwise.  <a href="#ae7be2b217b6fec64f7372a55fb2cd0cf">More...</a><br /></td></tr>
+<tr class="separator:ae7be2b217b6fec64f7372a55fb2cd0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Miscellaneous methods</div></td></tr>
 <tr class="memitem:a05580bc3a9e7eadf579b4ec4e7253eb8"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a05580bc3a9e7eadf579b4ec4e7253eb8">coco_current_time_get_string</a> (void)</td></tr>
 <tr class="memdesc:a05580bc3a9e7eadf579b4ec4e7253eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current time as a string.  <a href="#a05580bc3a9e7eadf579b4ec4e7253eb8">More...</a><br /></td></tr>
@@ -229,6 +236,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a205a3c5648321013d5f1918b838e9ebf"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a205a3c5648321013d5f1918b838e9ebf">coco_count_numbers</a> (const size_t *numbers, const size_t max_count, const char *name)</td></tr>
 <tr class="memdesc:a205a3c5648321013d5f1918b838e9ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of positive numbers pointed to by numbers (the count stops when the first 0 is encountered of max_count numbers have been read).  <a href="#a205a3c5648321013d5f1918b838e9ebf">More...</a><br /></td></tr>
 <tr class="separator:a205a3c5648321013d5f1918b838e9ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6568e11255876a31380dde1f6772e98c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a6568e11255876a31380dde1f6772e98c">coco_scale_vector</a> (double *x, size_t dimension, double alpha)</td></tr>
+<tr class="memdesc:a6568e11255876a31380dde1f6772e98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes vector x and multiplies each componenent by alpha.  <a href="#a6568e11255876a31380dde1f6772e98c">More...</a><br /></td></tr>
+<tr class="separator:a6568e11255876a31380dde1f6772e98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -388,7 +398,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9fc6d54ab5ce66fd844bf19faf7b8a61"></a>
+<a class="anchor" id="ad82b9c7c9044e9bde8a76c6b2784e17a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -396,7 +406,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void coco_create_directory </td>
+          <td class="memname">static int coco_create_directory </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>path</em></td><td>)</td>
@@ -410,14 +420,14 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a directory with full privileges for the user. </p>
-<dl class="section note"><dt>Note</dt><dd>Should work cross-platform.</dd></dl>
+<p>Creates a directory (possibly having to create nested directories). If the last created directory has not existed before, returns 0, otherwise returns 1. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>The directory path. </td></tr>
+    <tr><td class="paramname">path</td><td>The directory path.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the created directory has not existed before and 1 otherwise. </dd></dl>
 
 </div>
 </div>
@@ -443,8 +453,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a unique directory from the given path. </p>
-<p>If the given path does not yet exit, it is left as is, otherwise it is changed(!) by appending a number to it. If path already exists, path-01 will be tried. If this one exists as well, path-02 will be tried, and so on. If path-99 exists as well, the function throws an error. </p>
+<p>Creates a directory that has not existed before. </p>
+<p>If the given path does not yet exit, it is left as is, otherwise it is changed(!) by appending a number to it. If path already exists, path-001 will be tried. If this one exists as well, path-002 will be tried, and so on. If path-999 exists as well, an error is raised. </p>
 
 </div>
 </div>
@@ -745,6 +755,59 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae7be2b217b6fec64f7372a55fb2cd0cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_is_feasible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>constraint_values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns 1 if the point x is feasible, and 0 otherwise. </p>
+<p>Allows constraint_values == NULL, otherwise constraint_values must be a valid double* pointer and contains the g-values of x on "return".</p>
+<p>Any point x containing NaN or inf values is considered infeasible.</p>
+<p>This function is (and should be) used internally only, and does not increase the counter of constraint function evaluations.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
+    <tr><td class="paramname">x</td><td>Decision vector. </td></tr>
+    <tr><td class="paramname">constraint_values</td><td>Vector of contraints values resulting from evaluation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a6c0917f5a4fcbdb9a55938c363e09e61"></a>
 <div class="memitem">
 <div class="memproto">
@@ -878,14 +941,14 @@ Should work cross-platform.</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Calls the right mkdir() method (depending on the platform). </p>
+<p>Calls the right mkdir() method (depending on the platform) with full privileges for the user. If the created directory has not existed before, returns 0, otherwise returns 1. If the directory has not been created, a coco_error is raised. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The directory path.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on successful completion, and -1 on error. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the created directory has not existed before and 1 otherwise. </dd></dl>
 
 </div>
 </div>
@@ -1366,8 +1429,10 @@ Should work cross-platform.</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Reads (possibly delimited) values from options using the form "name1: value1,value2,value3 name2: value4", i.e. reads all characters from the corresponding name up to the next whitespace or end of string. </p>
+<p>Reads (possibly delimited) values from options using the form "name1: value1,value2,value3 name2: value4", i.e. reads all characters from the corresponding name up to the next alphabetic character or end of string, ignoring white-space characters. </p>
 <p>Formatting requirements:</p><ul>
+<li>names have to start with alphabetic characters</li>
+<li>values cannot include alphabetic characters</li>
 <li>name and value need to be separated by a colon (spaces are optional)</li>
 </ul>
 <dl class="section return"><dt>Returns</dt><dd>The number of successful assignments. </dd></dl>
@@ -1392,6 +1457,48 @@ Should work cross-platform.</dd></dl>
 <p>The method should work across different platforms/compilers.</p>
 <p>The path to the directory</p>
 <dl class="section return"><dt>Returns</dt><dd>0 on successful completion, and -1 on error. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6568e11255876a31380dde1f6772e98c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void coco_scale_vector </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>alpha</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Normalizes vector x and multiplies each componenent by alpha. </p>
 
 </div>
 </div>
@@ -1460,6 +1567,42 @@ Should work cross-platform.</dd></dl>
 </div><div class="memdoc">
 
 <p>Returns 1 if the input vector of dimension dim contains any NAN values and 0 otherwise. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa971f9940eccda79ff45f0436ed32e51"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_vector_isfinite </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns 1 if the input vector of dimension dim contains no NaN of inf values, and 0 otherwise. </p>
 
 </div>
 </div>

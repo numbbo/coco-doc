@@ -1,22 +1,7 @@
 var searchData=
 [
-  ['nadir',['nadir',['../structcoco__archive__s.html#ad1200f3a671ea6658e0e37baf9cbd003',1,'coco_archive_s']]],
-  ['nadir_5fvalue',['nadir_value',['../structcoco__problem__s.html#a8bb911a22fd54fce34addcaca9809aab',1,'coco_problem_s']]],
-  ['name',['name',['../structlogger__biobj__indicator__t.html#a5ac083a645d964373f022d03df4849c8',1,'logger_biobj_indicator_t']]],
-  ['nb_5fblocks',['nb_blocks',['../structtransform__vars__permblockdiag__t.html#a4ecbe1d9b8e4a0dd2e72ca6e5bed0acf',1,'transform_vars_permblockdiag_t']]],
-  ['new_5finstances',['new_instances',['../structsuite__biobj__t.html#ab275a69f90e725718e3bb863d689463d',1,'suite_biobj_t']]],
-  ['next',['next',['../structavl__node.html#a33a3bdb00e797090c3a8f176250e4539',1,'avl_node']]],
-  ['normalized_5fy',['normalized_y',['../structcoco__archive__avl__item__t.html#a033e629f4cc089a5ade030035ced29bf',1,'coco_archive_avl_item_t::normalized_y()'],['../structlogger__biobj__avl__item__t.html#a033e629f4cc089a5ade030035ced29bf',1,'logger_biobj_avl_item_t::normalized_y()']]],
-  ['number_5fevaluation_5ftriggers',['number_evaluation_triggers',['../structcoco__observer__s.html#a1fec42375f536bbf471c3a70d57bf5d9',1,'coco_observer_s']]],
-  ['number_5fof_5fconstraints',['number_of_constraints',['../structcoco__problem__s.html#a1ef156b2d1f34cd6dfb03625754097a1',1,'coco_problem_s']]],
-  ['number_5fof_5fdimensions',['number_of_dimensions',['../structcoco__suite__s.html#ab41d3942d4dff05f08409650bb8c84b9',1,'coco_suite_s']]],
-  ['number_5fof_5fevaluations',['number_of_evaluations',['../structlogger__bbob__data__t.html#a7ab1b88adaf2073e4894ca098e0f0c44',1,'logger_bbob_data_t::number_of_evaluations()'],['../structlogger__biobj__data__t.html#a7ab1b88adaf2073e4894ca098e0f0c44',1,'logger_biobj_data_t::number_of_evaluations()'],['../structlogger__toy__data__t.html#a7ab1b88adaf2073e4894ca098e0f0c44',1,'logger_toy_data_t::number_of_evaluations()']]],
-  ['number_5fof_5ffunctions',['number_of_functions',['../structcoco__suite__s.html#a3bc667b1a99ba99e3126a711de6b1bb7',1,'coco_suite_s']]],
-  ['number_5fof_5finstances',['number_of_instances',['../structcoco__suite__s.html#a6fe6ab761715fd279e0a5a6d329242cd',1,'coco_suite_s']]],
-  ['number_5fof_5fobjectives',['number_of_objectives',['../structcoco__archive__s.html#aa7f5522e84358e9b7a4ab06d60d442db',1,'coco_archive_s::number_of_objectives()'],['../structcoco__problem__s.html#aa7f5522e84358e9b7a4ab06d60d442db',1,'coco_problem_s::number_of_objectives()'],['../structlogger__biobj__data__t.html#aa7f5522e84358e9b7a4ab06d60d442db',1,'logger_biobj_data_t::number_of_objectives()']]],
-  ['number_5fof_5fpeaks',['number_of_peaks',['../structf__gallagher__data__t.html#a8280b4414c93a06f2e96d2c40315a005',1,'f_gallagher_data_t']]],
-  ['number_5fof_5fsolutions',['number_of_solutions',['../structcoco__archive__s.html#aa5f178d5d3e4a467e25faf89be42fb77',1,'coco_archive_s']]],
-  ['number_5fof_5ftriggers',['number_of_triggers',['../structcoco__observer__targets__t.html#a033eb92ee61b7185db47c03540cad44e',1,'coco_observer_targets_t::number_of_triggers()'],['../structcoco__observer__evaluations__t.html#a033eb92ee61b7185db47c03540cad44e',1,'coco_observer_evaluations_t::number_of_triggers()']]],
-  ['number_5fof_5fvariables',['number_of_variables',['../structcoco__problem__s.html#af6b20eee35eaa31d0f1879c15a3806e3',1,'coco_problem_s::number_of_variables()'],['../structlogger__bbob__data__t.html#af6b20eee35eaa31d0f1879c15a3806e3',1,'logger_bbob_data_t::number_of_variables()'],['../structlogger__biobj__data__t.html#af6b20eee35eaa31d0f1879c15a3806e3',1,'logger_biobj_data_t::number_of_variables()']]],
-  ['number_5ftarget_5ftriggers',['number_target_triggers',['../structcoco__observer__s.html#aa32aa8861674f051afa1ec13b0b695dc',1,'coco_observer_s']]]
+  ['m',['M',['../structtransform__vars__affine__data__t.html#af4ef18c0b46094d107c637eb21461bd5',1,'transform_vars_affine_data_t']]],
+  ['max_5fnew_5finstances',['max_new_instances',['../structsuite__biobj__t.html#a3287cc0f1cd46fe5a1a542f98237b51d',1,'suite_biobj_t::max_new_instances()'],['../structsuite__biobj__ext__t.html#a3287cc0f1cd46fe5a1a542f98237b51d',1,'suite_biobj_ext_t::max_new_instances()']]],
+  ['mo_5fdiscretization',['mo_discretization',['../mo__utilities_8c.html#a54d1a3d1812584e62cf98daaf37ef465',1,'mo_utilities.c']]],
+  ['mo_5fprecision',['mo_precision',['../mo__utilities_8c.html#a51e1b3ffe514e06b45601b2f30d35414',1,'mo_utilities.c']]]
 ];

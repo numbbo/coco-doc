@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>coco-doc-C: C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/logger_biobj.c File Reference</title>
+        <title>coco-doc-C: C:/Users/dimo/Desktop/numbbo-github/coco/code-experiments/src/logger_biobj.c File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_ca73a05c4b023b5871f1b1fe6b22bd68.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_db4c2c2b0591d2c9da84b74c3100c07a.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e62b2abd58afdef76620298b400749c4.html">coco</a></li><li class="navelem"><a class="el" href="dir_4f256c55888967b51357a8d5bf5c3028.html">code-experiments</a></li><li class="navelem"><a class="el" href="dir_09caa823605772b3182ebe656054ec51.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -195,7 +195,9 @@ Variables</h2></td></tr>
 <li>The "tdat" files contain function evaluation and indicator values for every predefined evaluation number as well as for the last evaluation. One .tdat file is created for each problem function and dimension (and indicator type) and contains information for all instances of that problem (and indicator type).</li>
 <li>The "adat" files are archive files that contain function evaluations, 2 objectives and dim variables for every nondominated solution. Whether these files are created, at what point in time the logger writes nondominated solutions to the archive and whether the decision variables are output or not depends on the values of log_nondom_mode and log_nondom_mode. See the bi-objective observer constructor <a class="el" href="observer__biobj_8c.html#a9dcda55e6db04c1148e80d0296cb601c" title="Initializes the bi-objective observer. ">observer_biobj()</a> for more information. One .adat file is created for each problem function, dimension and instance.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>Whenever in this file a ROI is mentioned, it means the (normalized) region of interest in the objective space. The non-normalized ROI is a rectangle with the ideal and nadir points as its two opposite vertices, while the normalized ROI is the square [0, 1]^2. If not specifically mentioned, the normalized ROI is assumed. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Whenever in this file a ROI is mentioned, it means the (normalized) region of interest in the objective space. The non-normalized ROI is a rectangle with the ideal and nadir points as its two opposite vertices, while the normalized ROI is the square [0, 1]^2. If not specifically mentioned, the normalized ROI is assumed.</dd>
+<dd>
+This logger can handle both the original bbob-biobj test suite with 55 and the extended bbob-biobj-ext test suite with 96 functions. </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="abd9abc1d315bd613942dbe8855f11b7c"></a>
 <div class="memitem">

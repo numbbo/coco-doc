@@ -103,15 +103,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a55d88ab42e1b89dcfd74111130999305"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco__internal_8h.html#a9067d3ad907f5b818be42b63591395c8">coco_initial_solution_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#a55d88ab42e1b89dcfd74111130999305">initial_solution</a></td></tr>
-<tr class="memdesc:a55d88ab42e1b89dcfd74111130999305"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function for creating an initial solution.  <a href="#a55d88ab42e1b89dcfd74111130999305">More...</a><br /></td></tr>
-<tr class="separator:a55d88ab42e1b89dcfd74111130999305"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb00667693292e840959971f5b430211"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco__internal_8h.html#aa71050eb9d8a6e13d2f46b54a37ae9d5">coco_evaluate_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#acb00667693292e840959971f5b430211">evaluate_function</a></td></tr>
 <tr class="memdesc:acb00667693292e840959971f5b430211"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function for evaluating the problem.  <a href="#acb00667693292e840959971f5b430211">More...</a><br /></td></tr>
 <tr class="separator:acb00667693292e840959971f5b430211"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7e3d695914938d8f43cf6e624bf8822"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco__internal_8h.html#aa71050eb9d8a6e13d2f46b54a37ae9d5">coco_evaluate_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#ac7e3d695914938d8f43cf6e624bf8822">evaluate_constraint</a></td></tr>
 <tr class="memdesc:ac7e3d695914938d8f43cf6e624bf8822"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function for evaluating the constraints.  <a href="#ac7e3d695914938d8f43cf6e624bf8822">More...</a><br /></td></tr>
 <tr class="separator:ac7e3d695914938d8f43cf6e624bf8822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afec966815b9054d42b7f69295a5e3f63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco__internal_8h.html#aa71050eb9d8a6e13d2f46b54a37ae9d5">coco_evaluate_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#afec966815b9054d42b7f69295a5e3f63">evaluate_gradient</a></td></tr>
+<tr class="memdesc:afec966815b9054d42b7f69295a5e3f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function for evaluating the constraints.  <a href="#afec966815b9054d42b7f69295a5e3f63">More...</a><br /></td></tr>
+<tr class="separator:afec966815b9054d42b7f69295a5e3f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb0ea8d9805277c569b498722153f5bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco__internal_8h.html#a5aef4f47b68e572fbe2e9e59e14dc726">coco_recommend_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#adb0ea8d9805277c569b498722153f5bb">recommend_solution</a></td></tr>
 <tr class="memdesc:adb0ea8d9805277c569b498722153f5bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function for recommending a solution.  <a href="#adb0ea8d9805277c569b498722153f5bb">More...</a><br /></td></tr>
 <tr class="separator:adb0ea8d9805277c569b498722153f5bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,6 +133,9 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a821b08daf840db95cd3be6ba31a7a588"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#a821b08daf840db95cd3be6ba31a7a588">largest_values_of_interest</a></td></tr>
 <tr class="memdesc:a821b08daf840db95cd3be6ba31a7a588"><td class="mdescLeft">&#160;</td><td class="mdescRight">The upper bounds of the ROI in the decision space.  <a href="#a821b08daf840db95cd3be6ba31a7a588">More...</a><br /></td></tr>
 <tr class="separator:a821b08daf840db95cd3be6ba31a7a588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a784c493e6bc1eea553c6a2a989957280"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#a784c493e6bc1eea553c6a2a989957280">initial_solution</a></td></tr>
+<tr class="memdesc:a784c493e6bc1eea553c6a2a989957280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial feasible solution.  <a href="#a784c493e6bc1eea553c6a2a989957280">More...</a><br /></td></tr>
+<tr class="separator:a784c493e6bc1eea553c6a2a989957280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a07a4305f85eb196c5a389a62eaacdf"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#a1a07a4305f85eb196c5a389a62eaacdf">best_value</a></td></tr>
 <tr class="memdesc:a1a07a4305f85eb196c5a389a62eaacdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimal (smallest) function value.  <a href="#a1a07a4305f85eb196c5a389a62eaacdf">More...</a><br /></td></tr>
 <tr class="separator:a1a07a4305f85eb196c5a389a62eaacdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,8 +155,11 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:a333fe8225776412beb2cf06b8155b65e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Problem type.  <a href="#a333fe8225776412beb2cf06b8155b65e">More...</a><br /></td></tr>
 <tr class="separator:a333fe8225776412beb2cf06b8155b65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a8028ea852625bf63c525d7b21f240e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#a9a8028ea852625bf63c525d7b21f240e">evaluations</a></td></tr>
-<tr class="memdesc:a9a8028ea852625bf63c525d7b21f240e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of evaluations performed on the problem.  <a href="#a9a8028ea852625bf63c525d7b21f240e">More...</a><br /></td></tr>
+<tr class="memdesc:a9a8028ea852625bf63c525d7b21f240e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of objective function evaluations performed on the problem.  <a href="#a9a8028ea852625bf63c525d7b21f240e">More...</a><br /></td></tr>
 <tr class="separator:a9a8028ea852625bf63c525d7b21f240e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd8a67e673efe7f8bfc56fbf0839f81"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#aafd8a67e673efe7f8bfc56fbf0839f81">evaluations_constraints</a></td></tr>
+<tr class="memdesc:aafd8a67e673efe7f8bfc56fbf0839f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of constraint function evaluations performed on the problem.  <a href="#aafd8a67e673efe7f8bfc56fbf0839f81">More...</a><br /></td></tr>
+<tr class="separator:aafd8a67e673efe7f8bfc56fbf0839f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8ed81b7e3bd0f65122ba4ba8ab3af85"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#af8ed81b7e3bd0f65122ba4ba8ab3af85">final_target_delta</a> [1]</td></tr>
 <tr class="memdesc:af8ed81b7e3bd0f65122ba4ba8ab3af85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Final target delta.  <a href="#af8ed81b7e3bd0f65122ba4ba8ab3af85">More...</a><br /></td></tr>
 <tr class="separator:af8ed81b7e3bd0f65122ba4ba8ab3af85"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -282,6 +288,20 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="afec966815b9054d42b7f69295a5e3f63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="coco__internal_8h.html#aa71050eb9d8a6e13d2f46b54a37ae9d5">coco_evaluate_function_t</a> evaluate_gradient</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function for evaluating the constraints. </p>
+
+</div>
+</div>
 <a class="anchor" id="a9a8028ea852625bf63c525d7b21f240e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +312,21 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Number of evaluations performed on the problem. </p>
+<p>Number of objective function evaluations performed on the problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="aafd8a67e673efe7f8bfc56fbf0839f81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t evaluations_constraints</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of constraint function evaluations performed on the problem. </p>
 
 </div>
 </div>
@@ -310,17 +344,17 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a55d88ab42e1b89dcfd74111130999305"></a>
+<a class="anchor" id="a784c493e6bc1eea553c6a2a989957280"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="coco__internal_8h.html#a9067d3ad907f5b818be42b63591395c8">coco_initial_solution_function_t</a> initial_solution</td>
+          <td class="memname">double* initial_solution</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The function for creating an initial solution. </p>
+<p>Initial feasible solution. </p>
 
 </div>
 </div>
@@ -535,7 +569,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>C:/Users/Tea/Documents/Work/GitHub/coco-ttusar/code-experiments/src/<a class="el" href="coco__internal_8h_source.html">coco_internal.h</a></li>
+<li>C:/Users/dimo/Desktop/numbbo-github/coco/code-experiments/src/<a class="el" href="coco__internal_8h_source.html">coco_internal.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
