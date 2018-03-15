@@ -79,8 +79,11 @@ in this directory by simply typing `doxygen` in the docs/coco-doc/C/ folder. Aft
 of this repository will again update the web page directly as described above.
 
 To create and publish the documentation of the cocoex and cocopp modules as well as the example_experiment.py,
-use pydoctor and copy the resulting files to the coco GForge repository at apidocs-cocoex/, apidocs-cocopp/,
-and apidocs-example_experiment/ respectively. For the `cocopp` module, it should be sufficient to call
+use pydoctor and copy the resulting files to the coco GForge repository at 
+`/home/groups/coco/htdocs/apidocs-cocoex/`, 
+`/home/groups/coco/htdocs/apidocs-cocopp/`, and 
+`/home/groups/coco/htdocs/apidocs-example_experiment/`
+respectively. For the `cocopp` module, it should be sufficient to call
 
 `pydoctor --docformat=restructuredtext --make-html cocopp`
 
