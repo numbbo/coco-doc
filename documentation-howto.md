@@ -77,3 +77,18 @@ in the C/ subfolder of this `gh-pages` branch of the numbbo/coco-doc repository 
 numbbo/coco github repository in the same folder than your numbbo/coco-doc checkout, you can create the html output
 in this directory by simply typing `doxygen` in the docs/coco-doc/C/ folder. Afterwards, commit and push
 of this repository will again update the web page directly as described above.
+
+To create and publish the documentation of the cocoex and cocopp modules as well as the example_experiment.py,
+use pydoctor and copy the resulting files to the coco GForge repository at apidocs-cocoex/, apidocs-cocopp/,
+and apidocs-example_experiment/ respectively. For the `cocopp` module, it should be sufficient to call
+
+`pydoctor --docformat=restructuredtext --make-html cocopp`
+
+within the `code-postprocessing/` folder. For the `cocoex` module, you have to copy/rename the
+`code-experiments/build/python/python/` folder to `cocoex` and then run
+
+`pydoctor --docformat=restructuredtext --make-html cocoex`
+
+within the folder where this new `cocoex` folder lies. For the `example_experiment.py` documentation, run
+
+`pydoctor --docformat=restructuredtext --make-html example_experiment.py`
