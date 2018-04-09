@@ -6,8 +6,11 @@
 # adapted by Dimo Brockhoff 2016
 
 from __future__ import absolute_import, division, print_function, unicode_literals
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import patches
 import matplotlib.pyplot as plt
+from matplotlib import path
 import numpy as np  # "pip install numpy" installs numpy
 import os
 import sys
@@ -15,13 +18,29 @@ import copy # needed for getAllCornersOfHyperrectangle(...)
 from scipy.spatial import ConvexHull
 
 from cocopp import ppfig
+from cocopp import genericsettings
 
 import bbobbenchmarks as bm
 import paretofrontwrapper as pf # wrapper file and DLL must be in this folder
 
+from matplotlib import rcParams # tried out to get better bounding boxes
+
+# set cocopp parameters to our wishes regarding the png output:
+genericsettings.figure_file_formats = ['png']
+genericsettings.in_a_hurry = 0
+
+
 
 def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
                    outputfolder="./", inputfolder=None, tofile=True, downsample=False):
+
+
+    rcParams.update({'figure.autolayout': True}) # tried out to get better bounding boxes
+
+    # save file space by removing invisible parts when saving:
+    path.simplify = True
+    path.simplify_threshold = 1.0
+
 
     ###############################################
     #  general settings and preparation of data   #
@@ -30,8 +49,8 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     myls = [':', '--', '-'] # line styles
     mylw = dict(lw=2, alpha=0.6) # line width # ALSO: mylw = {'lw':2, 'alpha':0.9}
     
-    ppfig.bbox_inches_choices['png'] = 'tight'
-    ppfig.bbox_inches_choices['pdf'] = 'tight'
+    #ppfig.bbox_inches_choices['png'] = 'tight'
+    #ppfig.bbox_inches_choices['pdf'] = 'tight'
     
     # define lines as a + t*b
     tlim = 10 # 
@@ -76,25 +95,25 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
            -1.77536414,  1.92731362,  2.38098092, -0.23789751, -0.02411066,
            -0.37445709,  0.43547281,  0.32148583, -0.4257802 ,  0.15550121])[0:dim]
     rand_dir_2 = rand_dir_2/np.linalg.norm(rand_dir_2)
-    rand_dir_3 = np.random.multivariate_normal(np.zeros(dim), np.identity(dim))
-#    rand_dir_3 = np.array([0.27274996,  0.09450028,  0.23123471, -0.17268026, -0.19352246,
-#            0.11116155,  1.91171592, -0.77188094,  0.50033182, -2.93726319,
-#           -0.0444466 , -0.83483599, -1.05971685,  0.35220208,  0.67446614,
-#           -0.66144976,  0.15873096,  0.63002013, -0.75455445,  0.11553671,
-#            0.53268058, -0.17107212, -2.68158842,  1.76162118, -1.10528215,
-#           -1.3174873 , -0.56827552,  0.8938743 , -1.40129273,  1.24724136,
-#            0.32995442,  1.64754152, -0.23038488, -0.1996612 ,  0.7423728 ,
-#            0.41590582, -0.49735973, -0.16317831,  0.14116915,  0.33144299])[0:dim]
-#    rand_dir_3 = rand_dir_3/np.linalg.norm(rand_dir_3)    
-    rand_dir_4 = np.random.multivariate_normal(np.zeros(dim), np.identity(dim))
-#    rand_dir_4 = np.array([-1.64810074,  0.06035188, -1.08343971,  0.69871916, -1.57870908,
-#            -0.39555544,  1.15952858,  0.82573846, -1.00821565,  0.46347426,
-#            0.46817715, -0.70617468, -0.56754204, -1.77903594, -0.15184591,
-#            2.10968445,  0.53652335, -0.03221351, -0.34664564,  1.69246492,
-#            1.26043695,  0.20284844,  1.90425762, -0.43203046,  0.33297092,
-#           -0.43151518, -0.27561938, -0.64456918, -1.52515793,  0.16840333,
-#           -1.44740417, -0.07328904, -0.74026773,  0.02869038, -0.65416703,
-#            0.55212071, -1.13507935, -1.18781606,  0.42888208, -1.47626463])[0:dim]
+    #rand_dir_3 = np.random.multivariate_normal(np.zeros(dim), np.identity(dim))
+    rand_dir_3 = np.array([0.27274996,  0.09450028,  0.23123471, -0.17268026, -0.19352246,
+            0.11116155,  1.91171592, -0.77188094,  0.50033182, -2.93726319,
+           -0.0444466 , -0.83483599, -1.05971685,  0.35220208,  0.67446614,
+           -0.66144976,  0.15873096,  0.63002013, -0.75455445,  0.11553671,
+            0.53268058, -0.17107212, -2.68158842,  1.76162118, -1.10528215,
+           -1.3174873 , -0.56827552,  0.8938743 , -1.40129273,  1.24724136,
+            0.32995442,  1.64754152, -0.23038488, -0.1996612 ,  0.7423728 ,
+            0.41590582, -0.49735973, -0.16317831,  0.14116915,  0.33144299])[0:dim]
+    rand_dir_3 = rand_dir_3/np.linalg.norm(rand_dir_3)
+#    rand_dir_4 = np.random.multivariate_normal(np.zeros(dim), np.identity(dim))
+    rand_dir_4 = np.array([-1.64810074,  0.06035188, -1.08343971,  0.69871916, -1.57870908,
+            -0.39555544,  1.15952858,  0.82573846, -1.00821565,  0.46347426,
+            0.46817715, -0.70617468, -0.56754204, -1.77903594, -0.15184591,
+            2.10968445,  0.53652335, -0.03221351, -0.34664564,  1.69246492,
+            1.26043695,  0.20284844,  1.90425762, -0.43203046,  0.33297092,
+           -0.43151518, -0.27561938, -0.64456918, -1.52515793,  0.16840333,
+           -1.44740417, -0.07328904, -0.74026773,  0.02869038, -0.65416703,
+            0.55212071, -1.13507935, -1.18781606,  0.42888208, -1.47626463])[0:dim]
     rand_dir_4 = rand_dir_4/np.linalg.norm(rand_dir_4)
         
     
@@ -193,16 +212,19 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
 
     ##############################################################
     #                                                            #
-    # Plot the same points in search space now, i.e.             #
+    # Plot the above points in search space now, i.e.            #
     # projections of them onto a randomly chosen plane through   #
     # both single-objective optima                               #
     #                                                            #
     ##############################################################
+    xylim = [-8, 8]
+
     fig = plt.figure(3)
     ax = fig.add_subplot(111)
     
-    ax.set_xlabel(r'direction of optima', fontsize=16)
-    ax.set_ylabel(r'perpendicular direction', fontsize=16)
+    plt.xlabel(r'direction of optima', fontsize=14)
+    plt.ylabel(r'perpendicular direction', fontsize=14)
+    #plt.tight_layout()
 
     origin = (xopt1+xopt2)/2 # origin of displayed coordinate system
     x_vec = np.array(xopt2-xopt1)/np.linalg.norm(xopt2-xopt1)
@@ -234,14 +256,14 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     # surface plots for both objective functions:
     plt.contour(X, Y, F1, 40, cmap='YlGnBu_r', alpha=0.2)
     plt.contour(X, Y, F2, 40, cmap='YlOrRd_r', alpha=0.2)
-   
+
     # read and plot best Pareto set approximation
-    if inputfolder:
+    if inputfolder and dim < 10:
         filename = "bbob-biobj_f%02d_i%02d_d%02d_nondominated.adat" % (f_id, inst_id, dim)
         C = []
         with open(inputfolder + filename) as f:
             for line in f:
-                splitline = line.split()
+                splitline = line.split()		
                 if len(splitline) == (dim + 3):  # has line x-values?
                     C.append(np.array(splitline[3:], dtype=np.float))
         C = np.array(C)
@@ -249,12 +271,12 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         for c in C:
             D.append(proj(c - origin, x_vec, y_vec))
         D = np.array(D)
-        
+
         D = D[D[:, 1].argsort(kind='mergesort')] # sort wrt second coordinate first
         D = D[D[:, 0].argsort(kind='mergesort')] # now wrt first coordinate
         pareto_set_approx_size = D.shape[0]
 
-        # filter out all but one point per grid cell in the 
+        # filter out all but one point per grid cell in the
         # coordinate system of (x_vec, y_vec):
         if downsample:
             decimals=2
@@ -272,9 +294,11 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
                         X[i,1] == X[i-1,1]):
                     xflag[i] = True
             X = ((D[idx_1])[idx_2])[xflag]
-        pareto_set_sample_size = X.shape[0]
+
+        pareto_set_sample_size = (((xylim[0] < X) * (X < xylim[1])).all(1)).shape[0]
         paretosetlabel = ('reference set (%d of %d points)' %
                           (pareto_set_sample_size, pareto_set_approx_size))
+
         plt.plot(X[:, 0], X[:, 1], '.k', markersize=8,
                  label=paretosetlabel)
     # end of reading in and plotting best Pareto set approximation#
@@ -285,78 +309,78 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         prof_xgrid_opt_2_along_axes = []
         for i in range(len(xgrid_opt_1_along_axes[k])):
             prof_xgrid_opt_1_along_axes.append(proj(xgrid_opt_1_along_axes[k][i,:]-origin,
-                                                    x_vec, y_vec))                                            
+                                                    x_vec, y_vec))
             prof_xgrid_opt_2_along_axes.append(proj(xgrid_opt_2_along_axes[k][i,:]-origin,
                                                     x_vec, y_vec))
-                                                    
+
         prof_xgrid_opt_1_along_axes = np.array(prof_xgrid_opt_1_along_axes)
         prof_xgrid_opt_2_along_axes = np.array(prof_xgrid_opt_2_along_axes)
-        p6, = ax.plot(prof_xgrid_opt_1_along_axes[:, 0],
+        p6, = plt.plot(prof_xgrid_opt_1_along_axes[:, 0],
                       prof_xgrid_opt_1_along_axes[:, 1],
                       color=myc[1], ls=myls[0], lw=1, alpha=0.3)
-        p7, = ax.plot(prof_xgrid_opt_2_along_axes[:, 0],
+        p7, = plt.plot(prof_xgrid_opt_2_along_axes[:, 0],
                       prof_xgrid_opt_2_along_axes[:, 1],
                       color=myc[1], ls=myls[0], lw=1, alpha=0.3)
-                      
-                      
+
+
     proj_xgrid_opt_1 = []
     for i in range(len(xgrid_opt_1)):
         proj_xgrid_opt_1.append(proj(xgrid_opt_1[i,:]-origin, x_vec, y_vec))
     proj_xgrid_opt_1 = np.array(proj_xgrid_opt_1)
-    p1, = ax.plot(proj_xgrid_opt_1[:, 0], proj_xgrid_opt_1[:, 1], color=myc[1],
+    p1, = plt.plot(proj_xgrid_opt_1[:, 0], proj_xgrid_opt_1[:, 1], color=myc[1],
                   ls=myls[2], label=r'cuts through single optima', **mylw)
 
     proj_xgrid_opt_2 = []
     for i in range(len(xgrid_opt_2)):
         proj_xgrid_opt_2.append(proj(xgrid_opt_2[i,:]-origin, x_vec, y_vec))
     proj_xgrid_opt_2 = np.array(proj_xgrid_opt_2)
-    p2, = ax.plot(proj_xgrid_opt_2[:, 0], proj_xgrid_opt_2[:, 1], color=myc[1],
+    p2, = plt.plot(proj_xgrid_opt_2[:, 0], proj_xgrid_opt_2[:, 1], color=myc[1],
                   ls=myls[2], **mylw)
 
     proj_xgrid_12 = []
     for i in range(len(xgrid_12)):
         proj_xgrid_12.append(proj(xgrid_12[i,:]-origin, x_vec, y_vec))
     proj_xgrid_12 = np.array(proj_xgrid_12)
-    p3, = ax.plot(proj_xgrid_12[:, 0], proj_xgrid_12[:, 1], color=myc[2],
+    p3, = plt.plot(proj_xgrid_12[:, 0], proj_xgrid_12[:, 1], color=myc[2],
                   ls=myls[2], label=r'cut through both optima', **mylw)
 
     proj_xgrid_rand_1 = []
     for i in range(len(xgrid_rand_1)):
         proj_xgrid_rand_1.append(proj(xgrid_rand_1[i,:]-origin, x_vec, y_vec))
     proj_xgrid_rand_1 = np.array(proj_xgrid_rand_1)
-    p4, = ax.plot(proj_xgrid_rand_1[:, 0], proj_xgrid_rand_1[:, 1], color=myc[3],
+    p4, = plt.plot(proj_xgrid_rand_1[:, 0], proj_xgrid_rand_1[:, 1], color=myc[3],
                   ls=myls[2], label=r'two random directions', **mylw)
 
     proj_xgrid_rand_2 = []
     for i in range(len(xgrid_rand_2)):
         proj_xgrid_rand_2.append(proj(xgrid_rand_2[i,:]-origin, x_vec, y_vec))
     proj_xgrid_rand_2 = np.array(proj_xgrid_rand_2)
-    p5, = ax.plot(proj_xgrid_rand_2[:, 0], proj_xgrid_rand_2[:, 1],
+    p5, = plt.plot(proj_xgrid_rand_2[:, 0], proj_xgrid_rand_2[:, 1],
                   color=myc[3], ls=myls[2], **mylw)
 
     # plot non-dominated points along the lines:
     objs = np.vstack((fgrid_opt_1[0], fgrid_opt_1[1])).transpose()
     pfFlag_opt_1 = pf.callParetoFront(objs)
-    ax.plot(proj_xgrid_opt_1[pfFlag_opt_1, 0], proj_xgrid_opt_1[pfFlag_opt_1, 1],
+    plt.plot(proj_xgrid_opt_1[pfFlag_opt_1, 0], proj_xgrid_opt_1[pfFlag_opt_1, 1],
             color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
             alpha=0.4)
     objs = np.vstack((fgrid_opt_2[0], fgrid_opt_2[1])).transpose()
     pfFlag_opt_2 = pf.callParetoFront(objs)
-    ax.plot(proj_xgrid_opt_2[pfFlag_opt_2, 0], proj_xgrid_opt_2[pfFlag_opt_2, 1],
+    plt.plot(proj_xgrid_opt_2[pfFlag_opt_2, 0], proj_xgrid_opt_2[pfFlag_opt_2, 1],
             color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
             alpha=0.4)
     objs = np.vstack((fgrid_12[0], fgrid_12[1])).transpose()
     pfFlag_12 = pf.callParetoFront(objs)
-    ax.plot(proj_xgrid_12[pfFlag_12, 0], proj_xgrid_12[pfFlag_12, 1], color=myc[2], ls='', marker='.', markersize=8, markeredgewidth=0,
+    plt.plot(proj_xgrid_12[pfFlag_12, 0], proj_xgrid_12[pfFlag_12, 1], color=myc[2], ls='', marker='.', markersize=8, markeredgewidth=0,
                                  alpha=0.4)
     objs = np.vstack((fgrid_rand_1[0], fgrid_rand_1[1])).transpose()
     pfFlag_rand_1 = pf.callParetoFront(objs)
-    ax.plot(proj_xgrid_rand_1[pfFlag_rand_1, 0], proj_xgrid_rand_1[pfFlag_rand_1, 1],
+    plt.plot(proj_xgrid_rand_1[pfFlag_rand_1, 0], proj_xgrid_rand_1[pfFlag_rand_1, 1],
             color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
             alpha=0.4)
     objs = np.vstack((fgrid_rand_2[0], fgrid_rand_2[1])).transpose()
     pfFlag_rand_2 = pf.callParetoFront(objs)
-    ax.plot(proj_xgrid_rand_2[pfFlag_rand_2, 0], proj_xgrid_rand_2[pfFlag_rand_2, 1],
+    plt.plot(proj_xgrid_rand_2[pfFlag_rand_2, 0], proj_xgrid_rand_2[pfFlag_rand_2, 1],
             color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
             alpha=0.4)
 
@@ -368,9 +392,9 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     rand_dir_proj = rand_dir_proj/np.linalg.norm(rand_dir_proj)
     xgrid_rand_proj = np.array(np.tile(rand_proj, (ngrid, 1))
                    + np.dot(t.reshape(ngrid,1), np.array([rand_dir_proj])))
-    p6, = ax.plot(xgrid_rand_proj[:, 0], xgrid_rand_proj[:, 1],
-                  color='g', ls=myls[2], lw=2, alpha=0.8,
-                  label=r'random cut in plane through optima')
+    p6, = plt.plot(xgrid_rand_proj[:, 0], xgrid_rand_proj[:, 1],
+                   color='g', ls=myls[2], lw=2, alpha=0.8,
+                   label=r'random cut in plane through optima')
     # ...and plot the corresponding non-dominated points
     xgrid_rand_unprojected = []
     for x in xgrid_rand_proj:
@@ -378,15 +402,15 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     fgrid_rand_unprojected = [f1.evaluate(xgrid_rand_unprojected),
                               f2.evaluate(xgrid_rand_unprojected)]
     xgrid_rand_unprojected = np.array(xgrid_rand_unprojected)
-        
+
     objs = np.vstack((fgrid_rand_unprojected[0],
                       fgrid_rand_unprojected[1])).transpose()
     pfFlag_rand_unprojected = pf.callParetoFront(objs)
-    ax.plot(xgrid_rand_proj[pfFlag_rand_unprojected, 0],
+    plt.plot(xgrid_rand_proj[pfFlag_rand_unprojected, 0],
             xgrid_rand_proj[pfFlag_rand_unprojected, 1],
             color='g', ls='', marker='.', markersize=8, markeredgewidth=0,
             alpha=0.6)
-    
+
 
     # highlight the region [-5,5]
     corners = getAllCornersOfHyperrectangle(dim, 5)
@@ -396,7 +420,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     proj_corners = np.array(proj_corners)
     # plot only convex hull here:
     plt.plot(proj_corners[:,0], proj_corners[:,1], '.k', alpha=0.1)
-    hull = ConvexHull(proj_corners)    
+    hull = ConvexHull(proj_corners)
     hull_points = np.array([proj_corners[hull.vertices,0], proj_corners[hull.vertices,1]]).T
     ax.add_patch(patches.Polygon(hull_points, closed=True,
             alpha=0.05,
@@ -405,30 +429,48 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     # plot the single-objective optima:
     proj_xopt1 = proj(xopt1-origin, x_vec, y_vec)  # project first
     proj_xopt2 = proj(xopt2-origin, x_vec, y_vec)  # project first
-    ax.plot(proj_xopt1[0], proj_xopt1[1], color='blue', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
-    ax.plot(proj_xopt2[0], proj_xopt2[1], color='red', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+    plt.plot(proj_xopt1[0], proj_xopt1[1], color='blue', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+    plt.plot(proj_xopt2[0], proj_xopt2[1], color='red', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+
+    # print 'ticks' along the axes in equidistant t space:
+    numticks = 11
+    plot_ticks_search_space(np.array([proj_xgrid_opt_1[:, 0],
+                                      proj_xgrid_opt_1[:, 1]]),
+                            numticks, ax, mylw, myc[1])
+    plot_ticks_search_space(np.array([proj_xgrid_opt_2[:, 0],
+                                      proj_xgrid_opt_2[:, 1]]),
+                            numticks, ax, mylw, myc[1])
+    plot_ticks_search_space(np.array([proj_xgrid_12[:, 0],
+                                      proj_xgrid_12[:, 1]]),
+                            numticks, ax, mylw, myc[2])
+    plot_ticks_search_space(np.array([proj_xgrid_rand_1[:, 0],
+                                      proj_xgrid_rand_1[:, 1]]),
+                            numticks, ax, mylw, myc[3])
+    plot_ticks_search_space(np.array([proj_xgrid_rand_2[:, 0],
+                                      proj_xgrid_rand_2[:, 1]]),
+                            numticks, ax, mylw, myc[3])
+    plot_ticks_search_space(np.array([xgrid_rand_proj[:, 0],
+                                      xgrid_rand_proj[:, 1]]),
+                            numticks, ax, mylw, 'g')
 
     # beautify
-    ax.set_title("projection of decision space of bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
+    ax.set_title("projection of decision space of $F_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))
     ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
-    ax.axis('equal')
-    ax.set_xlim([-8, 8])
-    ax.set_ylim([-8, 8])
-    
+    ax.set_aspect('equal',adjustable='box')
+    ax.set_xlim(xylim)
+    ax.set_ylim(xylim)
+    plt.tight_layout()
+
     # printing
     if tofile:
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-searchspace-projection" % (f_id, inst_id, dim)
         ppfig.save_figure(filename)
-    else:        
+    else:
         plt.show(block=True)
-    
+
     plt.close()
-    
-
-
-
 
 
     ##############################################################
@@ -436,12 +478,14 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     # Objective Space of points on cut (log-scale).              #
     #                                                            #
     ##############################################################
-    
+
+    xymin = 1e-5 # minimal value displayed in log plot
+
     fig = plt.figure(1)
     ax = fig.add_subplot(111)
-    
+
     # plot reference sets if available:
-    if inputfolder:
+    if inputfolder and dim < 10:
         filename = "bbob-biobj_f%02d_i%02d_d%02d_nondominated.adat" % (f_id, inst_id, dim)
         try:
             A = np.array(np.loadtxt(inputfolder + filename, comments='%', usecols = (1,2)))
@@ -450,7 +494,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             e = sys.exc_info()[0]
             print("   Error: %s" % e)
 
-        
+
         if downsample:
             # normalize A wrt ideal and nadir (and take care of having no inf
             # in data by adding the constant 1e-15 before the log10):
@@ -460,7 +504,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             decimals=3
             B = np.around(B, decimals=decimals)
             Blog = np.around(Blog, decimals=decimals)
-            
+
             if 11<3: # filter out dominated points (and doubles)
                 pfFlag = pf.callParetoFront(B)
                 pfFlaglog = pf.callParetoFront(Blog)
@@ -489,33 +533,36 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             pfFlag[0] = True
             pfFlaglog[0] = True
             pfFlag[1] = True
-            pfFlaglog[1] = True            
+            pfFlaglog[1] = True
             Alog = A[pfFlaglog]
             A = A[pfFlag]
             # finally sort wrt f_1 axis:
             Alog = Alog[Alog[:,0].argsort(kind='mergesort')]
             A = A[A[:,0].argsort(kind='mergesort')]
-            
+
 
         # normalized plot, such that ideal and nadir are mapped to
         # 0 and 1 respectively; add 1e-15 for numerical reasons (to not have
-        # inf in the data to plot)
-        plt.loglog((Alog[:,0] - ideal[0])/(nadir[0]-ideal[0]) + 1e-15,
-                   (Alog[:,1] - ideal[1])/(nadir[1]-ideal[1]) + 1e-15,
-                   '.k', markersize=8)
-        
+        # inf in the data to plot) and cut all points smaller than xymin:
+        Alog_normalized = np.array([(Alog[:, 0] - ideal[0]) / (nadir[0] - ideal[0]) + 1e-15,
+                                    (Alog[:, 1] - ideal[1]) / (nadir[1] - ideal[1]) + 1e-15])
+        pareto_set_sample_size = sum((Alog_normalized > xymin).all(0))
+        paretosetlabel = ('reference set (%d of %d points)' %
+                          (pareto_set_sample_size, pareto_set_approx_size))
+        plt.loglog(Alog_normalized[0,:], Alog_normalized[1,:], '.k',
+                   markersize=8, label=paretosetlabel)
+
     # plot actual solutions along directions:
-    numticks = 5
     nf = nadir-ideal # normalization factor used very often now
-    for k in range(dim):    
+    for k in range(dim):
         p6, = ax.loglog(((fgrid_opt_1_along_axes[k])[0]-f1opt)/nf[0],
                         ((fgrid_opt_1_along_axes[k])[1]-f2opt)/nf[1],
                         color=myc[1], ls=myls[0], lw=1, alpha=0.3)
-    for k in range(dim):    
+    for k in range(dim):
         p7, = ax.loglog(((fgrid_opt_2_along_axes[k])[0]-f1opt)/nf[0],
                         ((fgrid_opt_2_along_axes[k])[1]-f2opt)/nf[1],
                         color=myc[1], ls=myls[0], lw=1, alpha=0.3)
-            
+
     p1, = ax.loglog((fgrid_opt_1[0]-f1opt)/nf[0], (fgrid_opt_1[1]-f2opt)/nf[1], color=myc[1], ls=myls[2],
                     label=r'cuts through single optima', **mylw)
     p2, = ax.loglog((fgrid_opt_2[0]-f1opt)/nf[0], (fgrid_opt_2[1]-f2opt)/nf[1], color=myc[1], ls=myls[2],
@@ -528,7 +575,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
                     label=r'two random directions', **mylw)
     p5, = ax.loglog((fgrid_rand_2[0]-f1opt)/nf[0], (fgrid_rand_2[1]-f2opt)/nf[1],
                     color=myc[3], ls=myls[2], **mylw)
-            
+
     p6, = ax.plot((fgrid_rand_unprojected[0]-f1opt)/nf[0],
                   (fgrid_rand_unprojected[1]-f2opt)/nf[1],
                   color='g', ls=myls[2], lw=2, alpha=0.8,
@@ -537,7 +584,7 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             (fgrid_rand_unprojected[1][pfFlag_rand_unprojected]-f2opt)/nf[1],
             color='g', ls='', marker='.', markersize=8, markeredgewidth=0,
             alpha=0.6)
-    
+
 
     # print 'ticks' along the axes in equidistant t space:
     numticks = 11
@@ -546,8 +593,8 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     plot_ticks([fgrid_12[0], fgrid_12[1]], numticks, nadir, ideal, ax, mylw, myc[2], logscale=True)
     plot_ticks([fgrid_rand_1[0], fgrid_rand_1[1]], numticks, nadir, ideal, ax, mylw, myc[3], logscale=True)
     plot_ticks([fgrid_rand_2[0], fgrid_rand_2[1]], numticks, nadir, ideal, ax, mylw, myc[3], logscale=True)
-    plot_ticks([fgrid_rand_unprojected[0], fgrid_rand_unprojected[1]], numticks, nadir, ideal, ax, mylw, 'g', logscale=True)    
-    
+    plot_ticks([fgrid_rand_unprojected[0], fgrid_rand_unprojected[1]], numticks, nadir, ideal, ax, mylw, 'g', logscale=True)
+
     # Get Pareto front from vectors of objective values obtained
     objs = np.vstack((fgrid_opt_1[0], fgrid_opt_1[1])).transpose()
     pfFlag_opt_1 = pf.callParetoFront(objs)
@@ -579,96 +626,98 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
               (fgrid_rand_2[1][pfFlag_rand_2]-f2opt)/nf[1],
               color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
               alpha=0.4)
-    
-    
+
+
     # plot nadir:
     ax.loglog((nadir[0]-f1opt)/nf[0], (nadir[1]-f2opt)/nf[1],
               color='k', ls='', marker='+', markersize=9, markeredgewidth=1.5,
               alpha=0.9)
-    
-    
+
+
     # beautify:
-    ax.set_xlabel(r'$f_{\alpha} - f_{\alpha}^\mathsf{opt}$ (normalized)', fontsize=16)
-    ax.set_ylabel(r'$f_{\beta} - f_{\beta}^\mathsf{opt}$ (normalized)', fontsize=16)
+    ax.set_xlabel(r'$f_{\alpha} - f_{\alpha}^\mathsf{opt}$ (normalized)', fontsize=14)
+    ax.set_ylabel(r'$f_{\beta} - f_{\beta}^\mathsf{opt}$ (normalized)', fontsize=14)
     ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
-    ax.set_title("normalized objective space for bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))
+    ax.set_title("normalized objective space for $F_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))
+    ax.set_aspect('equal', adjustable='box')
+
     [line.set_zorder(3) for line in ax.lines]
     [line.set_zorder(3) for line in ax.lines]
-    fig.subplots_adjust(left=0.1) # more room for the y-axis label
-    
+    fig.subplots_adjust(left=0.2) # more room for the y-axis label
+
     # we might want to zoom in a bit:
-    ax.set_xlim((1e-3, plt.xlim()[1]))
-    ax.set_ylim((1e-3, plt.ylim()[1]))
+    xymax = max(plt.xlim()[1], plt.ylim()[1])
+    ax.set_xlim((xymin, xymax))
+    ax.set_ylim((xymin, xymax))
     #    ax.set_ylim((0, 2*(nadir[1] - f2opt)))
-    
+
     # add rectangle as ROI
-    ax.add_patch(patches.Rectangle(
+    fig = ax.add_patch(patches.Rectangle(
             ((ideal[0]-f1opt)/nf[0] + 1e-16, (ideal[1]-f2opt)/nf[1] + 1e-16),
              (nadir[0]-ideal[0])/nf[0], (nadir[1]-ideal[1])/nf[1],
              alpha=0.05,
              color='k'))
-    
+
     if tofile:
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-logobjspace" % (f_id, inst_id, dim)
         ppfig.save_figure(filename)
-    else:   
+    else:
         plt.show(block=True)
-        
-    plt.close()    
-    
-    
-    
-    
-    
+
+    plt.close()
+
+
     ##############################################################
     #                                                            #
     # Plot the same, but not in log-scale.                       #
     #                                                            #
     ##############################################################
-    
+
     fig = plt.figure(2)
     ax = fig.add_subplot(111)
-    
+
     # plot reference sets if available:
-    if inputfolder:
-        plt.plot(A[:,0], A[:,1], '.k', markersize=8)
-    
-    
-    for k in range(dim):    
-        p6, = ax.plot((fgrid_opt_1_along_axes[k])[0],
-                      (fgrid_opt_1_along_axes[k])[1],
-                      color=myc[1], ls=myls[0], lw=1, alpha=0.3)
-    for k in range(dim):    
-        p7, = ax.plot((fgrid_opt_2_along_axes[k])[0],
-                      (fgrid_opt_2_along_axes[k])[1],
-                      color=myc[1], ls=myls[0], lw=1, alpha=0.3)    
-    p1, = ax.plot(fgrid_opt_1[0], fgrid_opt_1[1], color=myc[1], ls=myls[2],
-                    label=r'cuts through single optima', **mylw)
-    
-    p2, = ax.plot(fgrid_opt_2[0], fgrid_opt_2[1], color=myc[1], ls=myls[2],
-                    **mylw)
-    
-    p3, = ax.plot(fgrid_12[0], fgrid_12[1], color=myc[2], ls=myls[2],
-                    label=r'cut through both optima', **mylw)
-    
-    p4, = ax.plot(fgrid_rand_1[0], fgrid_rand_1[1], color=myc[3], ls=myls[2],
-                    label=r'two random directions', **mylw)
-    
-    p4, = ax.plot(fgrid_rand_2[0], fgrid_rand_2[1], color=myc[3], ls=myls[2],
-                    **mylw)
-        
-    p6, = ax.plot(fgrid_rand_unprojected[0],
-                  fgrid_rand_unprojected[1],
-                  color='g', ls=myls[2], lw=2, alpha=0.8,
-                  label=r'random cut in plane through optima')
-    ax.plot(fgrid_rand_unprojected[0][pfFlag_rand_unprojected],
-            fgrid_rand_unprojected[1][pfFlag_rand_unprojected],
-            color='g', ls='', marker='.', markersize=8, markeredgewidth=0,
-            alpha=0.6)
-        
-        
+    if inputfolder and dim < 10:
+        pareto_set_sample_size = A.shape[0]
+        paretosetlabel = ('reference set (%d of %d points)' %
+                          (pareto_set_sample_size, pareto_set_approx_size))
+        plt.plot(A[:,0], A[:,1], '.k', markersize=8, label=paretosetlabel)
+
+    for k in range(dim):
+        p6, = plt.plot((fgrid_opt_1_along_axes[k])[0],
+                       (fgrid_opt_1_along_axes[k])[1],
+                       color=myc[1], ls=myls[0], lw=1, alpha=0.3)
+    for k in range(dim):
+        p7, = plt.plot((fgrid_opt_2_along_axes[k])[0],
+                       (fgrid_opt_2_along_axes[k])[1],
+                       color=myc[1], ls=myls[0], lw=1, alpha=0.3)
+    p1, = plt.plot(fgrid_opt_1[0], fgrid_opt_1[1], color=myc[1], ls=myls[2],
+                   label=r'cuts through single optima', **mylw)
+
+    p2, = plt.plot(fgrid_opt_2[0], fgrid_opt_2[1], color=myc[1], ls=myls[2],
+                   **mylw)
+
+    p3, = plt.plot(fgrid_12[0], fgrid_12[1], color=myc[2], ls=myls[2],
+                   label=r'cut through both optima', **mylw)
+
+    p4, = plt.plot(fgrid_rand_1[0], fgrid_rand_1[1], color=myc[3], ls=myls[2],
+                   label=r'two random directions', **mylw)
+
+    p5, = plt.plot(fgrid_rand_2[0], fgrid_rand_2[1], color=myc[3], ls=myls[2],
+                   **mylw)
+
+    p6, = plt.plot(fgrid_rand_unprojected[0],
+                   fgrid_rand_unprojected[1],
+                   color='g', ls=myls[2], lw=2, alpha=0.8,
+                   label=r'random cut in plane through optima')
+    plt.plot(fgrid_rand_unprojected[0][pfFlag_rand_unprojected],
+             fgrid_rand_unprojected[1][pfFlag_rand_unprojected],
+             color='g', ls='', marker='.', markersize=8, markeredgewidth=0,
+             alpha=0.6)
+
+
     # plot a few ticks along directions, equi-distant in search space:
     numticks = 11
     plot_ticks(fgrid_opt_1, numticks, nadir, ideal, ax, mylw, 'b')
@@ -677,31 +726,33 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     plot_ticks(fgrid_rand_1, numticks, nadir, ideal, ax, mylw, 'y')
     plot_ticks(fgrid_rand_2, numticks, nadir, ideal, ax, mylw, 'y')
     plot_ticks(fgrid_rand_unprojected, numticks, nadir, ideal, ax, mylw, 'g')
-    
-    
+
+
     # plot non-dominated points
-    ax.plot(fgrid_opt_1[0][pfFlag_opt_1], fgrid_opt_1[1][pfFlag_opt_1], color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
-                                 alpha=0.4)
-    ax.plot(fgrid_opt_2[0][pfFlag_opt_2], fgrid_opt_2[1][pfFlag_opt_2], color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
-                                 alpha=0.4)
-    ax.plot(fgrid_12[0][pfFlag_12], fgrid_12[1][pfFlag_12], color=myc[2], ls='', marker='.', markersize=8, markeredgewidth=0,
-                                 alpha=0.4)
-    ax.plot(fgrid_rand_1[0][pfFlag_rand_1], fgrid_rand_1[1][pfFlag_rand_1], color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
-                                 alpha=0.4)
-    ax.plot(fgrid_rand_2[0][pfFlag_rand_2], fgrid_rand_2[1][pfFlag_rand_2], color=myc[3], ls='', marker='.', markersize=8, markeredgewidth=0,
-                                 alpha=0.4)
-        
+    ax.plot(fgrid_opt_1[0][pfFlag_opt_1], fgrid_opt_1[1][pfFlag_opt_1], color=myc[1],
+            ls='', marker='.', markersize=8, markeredgewidth=0, alpha=0.4)
+    ax.plot(fgrid_opt_2[0][pfFlag_opt_2], fgrid_opt_2[1][pfFlag_opt_2], color=myc[1],
+            ls='', marker='.', markersize=8, markeredgewidth=0, alpha=0.4)
+    ax.plot(fgrid_12[0][pfFlag_12], fgrid_12[1][pfFlag_12], color=myc[2],
+            ls='', marker='.', markersize=8, markeredgewidth=0, alpha=0.4)
+    ax.plot(fgrid_rand_1[0][pfFlag_rand_1], fgrid_rand_1[1][pfFlag_rand_1], color=myc[3],
+            ls='', marker='.', markersize=8, markeredgewidth=0, alpha=0.4)
+    ax.plot(fgrid_rand_2[0][pfFlag_rand_2], fgrid_rand_2[1][pfFlag_rand_2], color=myc[3],
+            ls='', marker='.', markersize=8, markeredgewidth=0, alpha=0.4)
+
 
     # plot nadir:
-    ax.plot(nadir[0], nadir[1], color='k', ls='', marker='+', markersize=9, markeredgewidth=1.5,
-                                 alpha=0.9)
+    ax.plot(nadir[0], nadir[1], color='k', ls='', marker='+',
+            markersize=9, markeredgewidth=1.5, alpha=0.9)
     # plot ideal:
-    ax.plot(ideal[0], ideal[1], color='k', ls='', marker='x', markersize=8, markeredgewidth=1.5,
-                                 alpha=0.9)
+    ax.plot(ideal[0], ideal[1], color='k', ls='', marker='x',
+            markersize=8, markeredgewidth=1.5, alpha=0.9)
 
-    # plot extremes    
-    ax.plot(f_xopt1[0], f_xopt1[1], color='blue', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
-    ax.plot(f_xopt2[0], f_xopt2[1], color='red', ls='', marker='*', markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+    # plot extremes
+    ax.plot(f_xopt1[0], f_xopt1[1], color='blue', ls='', marker='*',
+            markersize=8, markeredgewidth=0.5, markeredgecolor='black')
+    ax.plot(f_xopt2[0], f_xopt2[1], color='red', ls='', marker='*',
+            markersize=8, markeredgewidth=0.5, markeredgecolor='black')
 
 
     # zoom into Pareto front:
@@ -710,28 +761,33 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
 
     # add rectangle as ROI
     ax.add_patch(patches.Rectangle(
-            (ideal[0], ideal[1]), nadir[0]-ideal[0], nadir[1]-ideal[1],
-            alpha=0.05,
-            color='k'))
+                 (ideal[0], ideal[1]), nadir[0]-ideal[0], nadir[1]-ideal[1],
+                  alpha=0.05, color='k'))
 
     # beautify:
-    ax.set_xlabel(r'first objective', fontsize=16)
-    ax.set_ylabel(r'second objective', fontsize=16)
+    ax.set_xlabel(r'first objective', fontsize=14)
+    ax.set_ylabel(r'second objective', fontsize=14)
     ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
-    ax.set_title("unscaled objective space for bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
+    ax.set_title("unscaled objective space for $F_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))
+
     [line.set_zorder(3) for line in ax.lines]
     [line.set_zorder(3) for line in ax.lines]
     fig.subplots_adjust(left=0.1) # more room for the y-axis label
-    
-    
+
+    # ax.set_aspect('equal', adjustable='box') # does not work here because of absolute numbers, rather do:
+    xmin, xmax = ax.get_xlim()
+    ymin, ymax = ax.get_ylim()
+    asp = abs((xmax - xmin) / (ymax - ymin))
+    ax.set_aspect(asp)
+
     if tofile:
         if not os.path.exists(outputfolder):
             os.makedirs(outputfolder)
         filename = outputfolder + "directions-f%02d-i%02d-d%02d-objspace" % (f_id, inst_id, dim)
         ppfig.save_figure(filename)
-    else:        
+    else:
         plt.show(block=True)
-    
+
     plt.close()
     
     
@@ -742,6 +798,8 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     # (or x1, x2 in the case of not enough variables).           #
     #                                                            #
     ##############################################################
+    xylim = [-8, 8]
+
     fig = plt.figure(4)
     ax = fig.add_subplot(111)
     
@@ -749,17 +807,17 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
     #if inputfolder:
     #    plt.plot(A[:,0], A[:,1], '.k', markersize=8)
     
-    ax.set_xlabel(r'$x_1$', fontsize=16)
+    ax.set_xlabel(r'$x_1$', fontsize=14)
     # fix second variable in addition to x_1:
     if dim > 2:
         second_variable = -2
-        ax.set_ylabel(r'$x_{%d}$' % (dim-1), fontsize=16)
+        ax.set_ylabel(r'$x_{%d}$' % (dim-1), fontsize=14)
     else:
         second_variable = 1
-        ax.set_ylabel(r'$x_{%d}$' % dim, fontsize=16)
+        ax.set_ylabel(r'$x_{%d}$' % dim, fontsize=14)
     
     # read and plot best Pareto set approximation
-    if inputfolder:
+    if inputfolder and dim < 10:
         filename = "bbob-biobj_f%02d_i%02d_d%02d_nondominated.adat" % (f_id, inst_id, dim)
         C = []
         with open(inputfolder + filename) as f:
@@ -791,15 +849,15 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
                     xflag[i] = True
             X = ((C[idx_1])[idx_2])[xflag]
 
-        pareto_set_sample_size = X.shape[0]
-        
+        pareto_set_sample_size = (((xylim[0] < X) * (X < xylim[1])).all(1)).shape[0]
+
         paretosetlabel = ('reference set (%d of %d points)' %
                           (pareto_set_sample_size, pareto_set_approx_size))
         plt.plot(X[:, 0], X[:, second_variable], '.k', markersize=8,
                  label=paretosetlabel)
     # end of reading in and plotting best Pareto set approximation
 
-    for k in range(dim):    
+    for k in range(dim):
         p6, = ax.plot(xgrid_opt_1_along_axes[k][:, 0],
                       xgrid_opt_1_along_axes[k][:, second_variable],
                       color=myc[1], ls=myls[0], lw=1, alpha=0.3)
@@ -830,7 +888,28 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             xgrid_rand_unprojected[pfFlag_rand_unprojected, second_variable],
             color='g', ls='', marker='.', markersize=8, markeredgewidth=0,
             alpha=0.6)
-    
+
+    # print 'ticks' along the axes in equidistant t space:
+    numticks = 11
+    plot_ticks_search_space(np.array([xgrid_opt_1[:, 0],
+                                      xgrid_opt_1[:, second_variable]]),
+                            numticks, ax, mylw, myc[1])
+    plot_ticks_search_space(np.array([xgrid_opt_2[:, 0],
+                                      xgrid_opt_2[:, second_variable]]),
+                            numticks, ax, mylw, myc[1])
+    plot_ticks_search_space(np.array([xgrid_12[:, 0],
+                                      xgrid_12[:, second_variable]]),
+                            numticks, ax, mylw, myc[2])
+    plot_ticks_search_space(np.array([xgrid_rand_1[:, 0],
+                                      xgrid_rand_1[:, second_variable]]),
+                            numticks, ax, mylw, myc[3])
+    plot_ticks_search_space(np.array([xgrid_rand_2[:, 0],
+                                      xgrid_rand_2[:, second_variable]]),
+                            numticks, ax, mylw, myc[3])
+    plot_ticks_search_space(np.array([xgrid_rand_unprojected[:, 0],
+                                      xgrid_rand_unprojected[:, second_variable]]),
+                            numticks, ax, mylw, 'g')
+
 
     # plot non-dominated points
     ax.plot(xgrid_opt_1[pfFlag_opt_1, 0], xgrid_opt_1[pfFlag_opt_1, second_variable], color=myc[1], ls='', marker='.', markersize=8, markeredgewidth=0,
@@ -857,19 +936,16 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
             color='k'))
     
     # beautify
-    #ax.set_xlim([-6, 6])
-    #ax.set_ylim([-6, 6])
-    
     if dim == 2:
-        ax.set_title("decision space of bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
+        ax.set_title("decision space of $F_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))
     else:
-        ax.set_title("projection of decision space for bbob-biobj $f_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))    
+        ax.set_title("projection of decision space for $F_{%d}$ (%d-D, instance %d)" % (f_id, dim, inst_id))
     ax.legend(loc="best", framealpha=0.2, numpoints=1, fontsize='medium')
     #fig.subplots_adjust(left=0.1) # more room for the y-axis label    
-    ax.axis('equal')
-    ax.set_xlim([-8, 8])
-    ax.set_ylim([-8, 8])
-        
+    ax.set_aspect('equal', adjustable='box')
+    ax.set_xlim(xylim)
+    ax.set_ylim(xylim)
+    plt.tight_layout()
     
     
     # printing
@@ -882,11 +958,33 @@ def generate_plots(f_id, dim, inst_id, f1_id, f2_id, f1_instance, f2_instance,
         plt.show(block=True)
     
     plt.close()
-    
-    
-    
-    
-    
+
+
+def plot_ticks_search_space(linepoints, numticks, ax, mylw, myc):
+    """
+    Plots numticks equi-distant ticks perpendicular to the (straight) line defined by
+    linepoints. The parameter ax gives the subplot to plot in and 
+    mylw and myc the line width and color parameters respectively.
+    """
+
+    t_idx = np.linspace(0, len(linepoints[0]) - 1, num=numticks, endpoint=True, dtype=int)
+    for i in range(1, numticks - 1):  # don't put ticks on extremes of the lines
+        before = np.array([linepoints[0][t_idx[i] - 1], linepoints[1][t_idx[i] - 1]])
+        after = np.array([linepoints[0][t_idx[i] + 1], linepoints[1][t_idx[i] + 1]])
+        first = np.array([linepoints[0][0], linepoints[1][0]])
+        last = np.array([linepoints[0][-1], linepoints[1][-1]])
+
+        # rotation by 90 degrees to get direction
+        direction = np.dot(after - before, np.array([[0, -1], [1, 0]]))
+        direction = direction / np.linalg.norm(direction)
+        length_of_line = np.linalg.norm(first - last)
+        ax.plot([linepoints[0][t_idx[i]] + direction[0] * 0.02, linepoints[0][t_idx[i]] + direction[0] * length_of_line/25.0],
+                [linepoints[1][t_idx[i]] + direction[1] * 0.02, linepoints[1][t_idx[i]] + direction[1] * length_of_line/25.0],
+                color=myc, ls='-', **mylw)
+
+    return ax
+
+
 def plot_ticks(linepoints, numticks, nadir, ideal, ax, mylw, myc, logscale=False):
     """
     Plots numticks equi-distant ticks perpendicular to the line defined by
@@ -908,25 +1006,27 @@ def plot_ticks(linepoints, numticks, nadir, ideal, ax, mylw, myc, logscale=False
         after = np.array([linepoints[0][t_idx[i]+1], linepoints[1][t_idx[i]+1]])                            
   
         if logscale:
+            rel_tick_length = 0.11
             # rotation by 90 degrees to get direction in log-scale
             if abs((after-before)[0]) < 1e-15:
                 # handle case by hand where log might not work:
                 if abs((after-before)[1]) + (after-before)[1] > 0:
                     # rotated direction is negative
-                    direction = np.array([-0.1,0])
+                    direction = np.array([-1,0])
                 else:
-                    direction = np.array([0.1, 0])
+                    direction = np.array([1, 0])
             elif abs((after-before)[1]) < 1e-15:
                 # handle the opposite case by hand where log might not work:
                 if abs((after-before)[0]) + (after-before)[0] > 0:
                     # rotated direction is positive
-                    direction = np.array([0, 0.1])
+                    direction = np.array([0, 1])
                 else:
-                    direction = np.array([0, -0.1])
+                    direction = np.array([0, -1])
             else:
                 direction = np.dot(np.log10(after)-np.log10(before), np.array([[0, -1], [1, 0]]))
-                # normalize length
-                direction = 0.1 * direction / np.linalg.norm(direction)
+
+            # normalize length
+            direction = rel_tick_length * direction / np.linalg.norm(direction)
 
             if (linepoints[0][t_idx[i]] <=0) or (linepoints[1][t_idx[i]] <=0):
                 continue
@@ -949,7 +1049,7 @@ def plot_ticks(linepoints, numticks, nadir, ideal, ax, mylw, myc, logscale=False
             # rotation by 90 degrees to get direction
             direction = np.dot((after-before)/(nadir-ideal), np.array([[0, -1], [1, 0]]))
             # normalize length and scale again to full objective space
-            direction = 0.02 * direction / np.linalg.norm(direction)
+            direction = 0.03 * direction / np.linalg.norm(direction)
             direction = direction * (nadir-ideal)
             ax.plot([linepoints[0][t_idx[i]] + direction[0]*0.2, linepoints[0][t_idx[i]] + direction[0]*1.1],
                     [linepoints[1][t_idx[i]] + direction[1]*0.2, linepoints[1][t_idx[i]] + direction[1]*1.1],

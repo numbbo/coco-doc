@@ -5,11 +5,14 @@
 # for the bbob-biobj functions together with some reference sets if available.
 #
 # Prerequisites:
-# * COCO postprocessing is installed (run `python do.py install-postprocessing`)
+# * the cocoex module is installed (run `python do.py build-python`)
+# * the cocopp module is installed (run `python do.py install-postprocessing`)
+#    - choose png and pdf as output format
+#    - use in_a_hurry = 0 in genericsettings.py to get the right dpi for the pngs
 # * the archive/reference sets are available in the specified folder
 #
 # based on code by Thanh-Do Tran 2012--2015
-# adapted by Dimo Brockhoff 2016
+# adapted by Dimo Brockhoff 2016--2018
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 try: range = xrange  # let range always be an iterator
@@ -25,16 +28,14 @@ import generate_plots
 
 ###########################################
 # parameters to play with:
-dims = (5,)
+dims = (2,3,5,10,20)
 functions = range(1,93)  # might take a while...
 #functions = (1,2,3,10,20,30,54,55)
-instances = (1,)
+instances = (1,2,3)
+
 # Note: in single-objective bbobdocfunctions.pdf documentation, '0' seems to be the instance used
-#inputfolderforParetoFronts = 'archives/before_workshop/archives/'
-#inputfolderforParetoFronts = 'F:/5D-archives-from-Tea/after_workshop/archives/'
-inputfolderforParetoFronts = 'G:/beforeBBOB2017/merged_archives/merged01till04with05-06-07-08with09and10-fcts1-55withTea/'
+inputfolderforParetoFronts = 'F:/afterBBOB2017/merged_archives_current_data-Jan2018/'
 #outputfolder = 'plots/before_workshop/'
-outputfolder = 'plots/2017/'
 tofile = True # if True: files are written; if False: no files but screen output
 ###########################################
 
@@ -45,11 +46,14 @@ suite_options = "dimensions: 2,3,5,10,20,40"
 suite = Suite(suite_name, suite_instance, suite_options)
 
 for problem_index, problem in enumerate(suite):
-    
+
     f = int(problem.id.lower().split('_f')[1].split('_')[0])
     d = int(problem.id.lower().split('_d')[1].split('_')[0])
     i = int(problem.id.lower().split('_i')[1].split('_')[0])
-    
+
+    #inputfolderforParetoFronts = 'archiveFeb2018/d{0:02d}i{1:02d}/'.format(d,i)
+    outputfolder = 'plots/plots-d{0:02d}-i{1:02d}-Feb2018/'.format(d, i)
+
     f1_id = int(problem.name.lower().split('_f')[1].split('_')[0])
     f2_id = int(problem.name.lower().split('_f')[2].split('_')[0])
     

@@ -3,39 +3,35 @@
 
 """BBOB noiseless testbed.
 
-The optimisation test functions are represented as classes
-:py:class:`F1` to :py:class:`F24` and :py:class:`F101` to
-:py:class:`F130`.
-Each of these classes has an _evalfull method which expects as argument
-an array of row vectors and returns a 'noisy' and a 'noiseless' float
-values.
+The optimisation test functions are represented as classes `F1` to
+`F24` (and `F101` to `F130`).
 
-This module implements the class :py:class:`BBOBFunction` and
+This module implements the class `BBOBFunction` and
 sub-classes:
 
-* :py:class:`BBOBNfreeFunction` which have all the methods common to the
-  classes :py:class:`F1` to :py:class:`F24`
-* :py:class:`BBOBGaussFunction`, :py:class:`BBOBCauchyFunction`, 
-  :py:class:`BBOBUniformFunction` which have methods in classes from
-  :py:class:`F101` to :py:class:`F130`
+* class `BBOBNfreeFunction` which have all the methods common to the
+  classes `F1` to `F24`
+* classes `BBOBGaussFunction`, `BBOBCauchyFunction`,
+  `BBOBUniformFunction` which have methods in classes from
+  `F101` to `F130`
 
-Module attributes: 
+Module attributes:
 
-* :py:data:`dictbbob` is a dictionary such that dictbbob[2] contains
+* `dictbbob` is a dictionary such that dictbbob[2] contains
   the test function class F2 and f2 = dictbbob[2]() returns
-  the instance 0 of the test function that can be 
-  called as f2([1,2,3]). 
-* :py:data:`nfreeIDs` == range(1,25) indices for the noiseless functions that can be 
+  the instance 0 of the test function that can be
+  called as f2([1,2,3]).
+* `nfreeIDs` == range(1,25) indices for the noiseless functions that can be
   found in dictbbob
-* :py:data:`noisyIDs` == range(101, 131) indices for the noisy functions that can be 
+* `noisyIDs` == range(101, 131) indices for the noisy functions that can be
   found in dictbbob. We have nfreeIDs + noisyIDs == sorted(dictbbob.keys())
-* :py:data:`nfreeinfos` function infos
+* `nfreeinfos` function infos
 
 Examples:
 
->>> import bbobbenchmarks as bn
+>>> from cma import bbobbenchmarks as bn
 >>> for s in bn.nfreeinfos:
-...    print s
+...    print(s)
 1: Noise-free Sphere function
 2: Separable ellipsoid with monotone transformation
 <BLANKLINE>
@@ -68,24 +64,50 @@ Examples:
     in PPSN 2008, Rastrigin part rotated and scaled
 <BLANKLINE>
 <BLANKLINE>
->>> f3 = bn.F3(13)  # instantiate function 3 on instance 13
->>> f3.evaluate([0, 1, 2]) # also: f3([0, 1, 2])
-59.87335291
->>> f3.evaluate([[0, 1, 2], [3, 4, 5]])
-array([  59.87335291,  441.17409304])
->>> print bn.instantiate(5)[1] # returns evaluation function and target
+>>> f3 = bn.F3(13)  # instantiate instance 13 of function f3
+>>> f3([0, 1, 2]) # short-cut for f3.evaluate([0, 1, 2]) # doctest:+ELLIPSIS
+59.8733529...
+>>> print(bn.instantiate(5)[1])  # returns function instance and optimal f-value
 51.53
->>> print bn.nfreeIDs # list noise-free functions 
+>>> print(bn.nfreeIDs) # list noise-free functions
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 >>> for i in bn.nfreeIDs: # evaluate all noiseless functions once
-...    print bn.instantiate(i)[0]([0., 0., 0., 0.]),
--77.27454592 6180022.82173 92.9877507529 92.9877507529 140.510117618 70877.9554128 -72.5505202195 33355.7924722 -339.94 4374717.49343 15631566.3487 4715481.0865 550.599783901 -17.2991756229 27.3633128519 -227.827833529 -24.3305918781 131.420159348 40.7103737427 6160.81782924 376.746889545 107.830426761 220.482266557 106.094767386
+...    print(bn.instantiate(i)[0]([0., 0., 0., 0.])) # doctest:+ELLIPSIS
+-77.2745459...
+6180022.8217...
+92.987750752...
+92.987750752...
+140.51011761...
+70877.955412...
+-72.550520219...
+33355.792472...
+-339.94
+4374717.4934...
+15631566.348...
+4715481.086...
+550.59978390...
+-17.299175622...
+27.363312851...
+-227.82783352...
+-24.330591878...
+131.42015934...
+40.710373742...
+6160.8178292...
+376.74688954...
+107.83042676...
+220.48226655...
+106.09476738...
 
 """
 
 # TODO: define interface for this module.
 # TODO: funId is expected to be a number since it is used as rseed.
 
+from __future__ import print_function
+try:
+    xrange
+except NameError:
+    xrange = range
 import warnings
 from pdb import set_trace
 import numpy as np
@@ -97,29 +119,29 @@ from numpy.random import random as _rand # TODO: may bring confusion
 """
 % VAL = BENCHMARKS(X, FUNCID)
 % VAL = BENCHMARKS(X, STRFUNC)
-%    Input: 
+%    Input:
 %       X -- solution column vector or matrix of column vectors
 %       FUNCID -- number of function to be executed with X as input,
-%                 by default 8. 
+%                 by default 8.
 %       STRFUNC -- function as string to be executed with X as input
 %    Output: function value(s) of solution(s)
-%    Examples: 
-%      F = BENCHMARKS([1 2 3]', 17); 
-%      F = BENCHMARKS([1 2 3]', 'f1'); 
-% 
-% NBS = BENCHMARKS() 
-% NBS = BENCHMARKS('FunctionIndices') 
-%    Output: 
-%      NBS -- array of valid benchmark function numbers, 
+%    Examples:
+%      F = BENCHMARKS([1 2 3]', 17);
+%      F = BENCHMARKS([1 2 3]', 'f1');
+%
+% NBS = BENCHMARKS()
+% NBS = BENCHMARKS('FunctionIndices')
+%    Output:
+%      NBS -- array of valid benchmark function numbers,
 %             presumably 1:24
 %
 % FHS = BENCHMARKS('handles')
-%    Output: 
+%    Output:
 %      FHS -- cell array of function handles
 %    Examples:
-%      FHS = BENCHMARKS('handles');  
+%      FHS = BENCHMARKS('handles');
 %      f = FHS{1}(x);  % evaluates x on the sphere function f1
-%      f = feval(FHS{1}, x);  % ditto 
+%      f = feval(FHS{1}, x);  % ditto
 %
 % see also: functions FGENERIC, BENCHMARKINFOS, BENCHMARKSNOISY
 
@@ -146,7 +168,7 @@ from numpy.random import random as _rand # TODO: may bring confusion
 %     FOPT -- function value at optimum
 %     STRFUNCTION -- not yet implemented: function description string, ID before first whitespace
 % [FOPT STRFUNCTION] = FUNC('any_even_empty_string', DIM, NTRIAL)
-%   Sets rotation matrices and xopt depending on NTRIAL (by changing the random seed). 
+%   Sets rotation matrices and xopt depending on NTRIAL (by changing the random seed).
 %   Output:
 %     FOPT -- function value at optimum
 %     STRFUNCTION -- not yet implemented: function description string, ID before first whitespace
@@ -157,7 +179,7 @@ from numpy.random import random as _rand # TODO: may bring confusion
 % [FOPT, MATRIX] = FUNC('linearTF', DIM)  % might vanish in future
 %   Output:
 %     FOPT -- function value at optimum XOPT
-%     MATRIX -- used transformation matrix 
+%     MATRIX -- used transformation matrix
 
 """
 
@@ -165,23 +187,18 @@ from numpy.random import random as _rand # TODO: may bring confusion
 
 def compute_xopt(rseed, dim):
     """Generate a random vector used as optimum argument.
-    
+
     Rounded by four digits, but never to zero.
 
     """
-    xopt = 8 * np.floor(1e4 * unif(dim, rseed))/1e4 - 4
+    xopt = 8 * np.floor(1e4 * unif(dim, rseed)) / 1e4 - 4
     idx = (xopt == 0)
     xopt[idx] = -1e-5
     return xopt
 
 def compute_rotation(seed, dim):
-    """Returns an orthogonal basis. 
-    
-    The rotation is used in several ways and in combination with
-    non-linear transformations. Search space rotation invariant 
-    algorithms are not expected to be invariant under this rotation. 
-    
-    """
+    """Returns an orthogonal basis."""
+
     B = np.reshape(gauss(dim * dim, seed), (dim, dim))
     for i in range(dim):
         for j in range(0, i):
@@ -197,20 +214,20 @@ def monotoneTFosc(f):
     if np.isscalar(f):
         if f > 0.:
             f = np.log(f) / 0.1
-            f = np.exp(f + 0.49*(np.sin(f) + np.sin(0.79*f))) ** 0.1
+            f = np.exp(f + 0.49 * (np.sin(f) + np.sin(0.79 * f))) ** 0.1
         elif f < 0.:
             f = np.log(-f) / 0.1
-            f = -np.exp(f + 0.49*(np.sin(0.55*f) + np.sin(0.31*f))) ** 0.1
+            f = -np.exp(f + 0.49 * (np.sin(0.55 * f) + np.sin(0.31 * f))) ** 0.1
         return f
     else:
         f = np.asarray(f)
         g = f.copy()
         idx = (f > 0)
         g[idx] = np.log(f[idx]) / 0.1
-        g[idx] = np.exp(g[idx] + 0.49*(np.sin(g[idx]) + np.sin(0.79*g[idx]))) ** 0.1
+        g[idx] = np.exp(g[idx] + 0.49 * (np.sin(g[idx]) + np.sin(0.79 * g[idx])))**0.1
         idx = (f < 0)
         g[idx] = np.log(-f[idx]) / 0.1
-        g[idx] = -np.exp(g[idx] + 0.49*(np.sin(0.55*g[idx]) + np.sin(0.31*g[idx]))) ** 0.1
+        g[idx] = -np.exp(g[idx] + 0.49 * (np.sin(0.55 * g[idx]) + np.sin(0.31 * g[idx])))**0.1
         return g
 
 def defaultboundaryhandling(x, fac):
@@ -224,7 +241,7 @@ def gauss(N, seed):
     being the same for a given seed
 
     """
-    r = unif(2*N, seed)
+    r = unif(2 * N, seed)
     g = np.sqrt(-2 * np.log(r[:N])) * np.cos(2 * np.pi * r[N:2*N])
     if np.any(g == 0.):
         g[g == 0] = 1e-99
@@ -241,7 +258,7 @@ def unif(N, inseed):
     rgrand = 32 * [0.]
     aktseed = inseed
     for i in xrange(39, -1, -1):
-        tmp = floor(aktseed/127773.)
+        tmp = floor(aktseed / 127773.)
         aktseed = 16807. * (aktseed - tmp * 127773.) - 2836. * tmp
         if aktseed < 0:
             aktseed = aktseed + 2147483647.
@@ -252,7 +269,7 @@ def unif(N, inseed):
     # sample numbers
     r = int(N) * [0.]
     for i in xrange(int(N)):
-        tmp = floor(aktseed/127773.)
+        tmp = floor(aktseed / 127773.)
         aktseed = 16807. * (aktseed - tmp * 127773.) - 2836. * tmp
         if aktseed < 0:
             aktseed = aktseed + 2147483647.
@@ -262,21 +279,21 @@ def unif(N, inseed):
         r[i] = aktrand / 2.147483647e9
     r = np.asarray(r)
     if (r == 0).any():
-        warning.warn('zero sampled(?), set to 1e-99')
+        warnings.warn('zero sampled(?), set to 1e-99')
         r[r == 0] = 1e-99
     return r
 
-# for testing and comparing to other implementations, 
-#   myrand and myrandn are used only for sampling the noise 
+# for testing and comparing to other implementations,
+#   myrand and myrandn are used only for sampling the noise
 #   Rename to myrand and myrandn to rand and randn and
 #   comment lines 24 and 25.
 
 _randomnseed = 30. # warning this is a global variable...
 def _myrandn(size):
     """Normal random distribution sampling.
-    
+
     For testing and comparing purpose.
-    
+
     """
 
     global _randomnseed
@@ -289,16 +306,16 @@ def _myrandn(size):
 _randomseed = 30. # warning this is a global variable...
 def _myrand(size):
     """Uniform random distribution sampling.
-    
+
     For testing and comparing purpose.
-    
+
     """
 
     global _randomseed
     _randomseed = _randomseed + 1
     if _randomseed > 1e9:
         _randomseed = 1
-    res = np.reshape(unif(np.prod(size), _randomseed), size) 
+    res = np.reshape(unif(np.prod(size), _randomseed), size)
     return res
 
 def fGauss(ftrue, beta):
@@ -311,7 +328,7 @@ def fGauss(ftrue, beta):
     idx = ftrue < tol
     try:
         fval[idx] = ftrue[idx]
-    except IndexError: # fval is a scalar
+    except (IndexError, TypeError): # fval is a scalar
         if idx:
             fval = ftrue
     return fval
@@ -327,14 +344,14 @@ def fUniform(ftrue, alpha, beta):
     idx = ftrue < tol
     try:
         fval[idx] = ftrue[idx]
-    except IndexError: # fval is a scalar
+    except (IndexError, TypeError): # fval is a scalar
         if idx:
             fval = ftrue
     return fval
 
 def fCauchy(ftrue, alpha, p):
     """Returns Cauchy model noisy value
-    
+
     Cauchy with median 1e3*alpha and with p=0.2, zero otherwise
 
     P(Cauchy > 1,10,100,1000) = 0.25, 0.032, 0.0032, 0.00032
@@ -349,40 +366,40 @@ def fCauchy(ftrue, alpha, p):
     idx = ftrue < tol
     try:
         fval[idx] = ftrue[idx]
-    except IndexError: # fval is a scalar
+    except (IndexError, TypeError): # fval is a scalar
         if idx:
             fval = ftrue
     return fval
 
 ### CLASS DEFINITION ###
 
-class AbstractTestFunction():
+class AbstractTestFunction(object):
     """Abstract class for test functions.
-    
+
     Defines methods to be implemented in test functions which are to be
     provided to method setfun of class Logger.
     In particular, (a) the attribute fopt and (b) the method _evalfull.
-    
-    The _evalfull method returns two values, the possibly noisy value and 
-    the noise-free value. The latter is only meant to be for recording purpose. 
+
+    The _evalfull method returns two values, the possibly noisy value and
+    the noise-free value. The latter is only meant to be for recording purpose.
 
     """
     def __call__(self, x): # makes the instances callable
-        """Returns the objective function value of argument x. 
-        
+        """Returns the objective function value of argument x.
+
         Example:
 
-            >>> import bbobbenchmarks as bn
+            >>> from cma import bbobbenchmarks as bn
             >>> f3 = bn.F3(13) # instantiate function 3 on instance 13
-            >>> f3([0, 1, 2])  # call f3, same as f3.evaluate([0, 1, 2])
-            59.87335291
+            >>> 59.8733529 < f3([0, 1, 2]) < 59.87335292 # call f3, same as f3.evaluate([0, 1, 2])
+            True
 
         """
         return self.evaluate(x)
 
     def evaluate(self, x):
         """Returns the objective function value (in case noisy).
-        
+
         """
         return self._evalfull(x)[0]
     # TODO: is it better to leave evaluate out and check for hasattr('evaluate') in ExpLogger?
@@ -393,7 +410,7 @@ class AbstractTestFunction():
 
     def getfopt(self):
         """Returns the best function value of this instance of the function."""
-        # TODO: getfopt error: 
+        # TODO: getfopt error:
         # import bbobbenchmarks as bb
         # bb.instantiate(1)[0].getfopt()
         # AttributeError: F1 instance has no attribute '_fopt'
@@ -446,12 +463,12 @@ class BBOBFunction(AbstractTestFunction):
         if zerof:
             self.fopt = 0.
         else:
-            self.fopt = min(1000, max(-1000, (np.round(100*100*gauss(1, self.rseed)[0]/gauss(1, self.rseed+1)[0])/100)))
+            self.fopt = min(1000, max(-1000, (np.round(100 * 100 * gauss(1, self.rseed)[0] / gauss(1, self.rseed + 1)[0]) / 100)))
         self.iinstance = iinstance
         self.dim = None
         self.lastshape = None
         self.param = param
-        for i, v in kwargs.iteritems():
+        for i, v in kwargs.items():
             setattr(self, i, v)
         self._xopt = None
 
@@ -544,6 +561,8 @@ class BBOBFunction(AbstractTestFunction):
 
 #    rotation = property(getrotation)
 
+
+
 class BBOBNfreeFunction(BBOBFunction):
     """Class of the noise-free functions of BBOB."""
 
@@ -556,7 +575,7 @@ class BBOBGaussFunction(BBOBFunction):
     """Class of the Gauss noise functions of BBOB.
 
     Attribute gaussbeta needs to be defined by inheriting classes.
-    
+
     """
 
     # gaussbeta = None
@@ -571,10 +590,10 @@ class BBOBGaussFunction(BBOBFunction):
 
 class BBOBUniformFunction(BBOBFunction, object):
     """Class of the uniform noise functions of BBOB.
-    
+
     Attributes unifalphafac and unifbeta need to be defined by inheriting
     classes.
-    
+
     """
     # unifalphafac = None
     # unifbeta = None
@@ -607,9 +626,9 @@ class BBOBCauchyFunction(BBOBFunction):
 
 class _FSphere(BBOBFunction):
     """Abstract Sphere function.
-    
+
     Method boundaryhandling needs to be defined.
-    
+
     """
     rrseed = 1
 
@@ -692,7 +711,7 @@ class F109(_FSphere, BBOBCauchyFunction):
 
 class F2(BBOBNfreeFunction):
     """Separable ellipsoid with monotone transformation
-    
+
     Parameter: condition number (default 1e6)
 
     """
@@ -881,7 +900,7 @@ class F5(BBOBNfreeFunction):
         # BOUNDARY HANDLING
         # move "too" good coordinates back into domain
         x = np.array(x) # convert x and make a copy of x.
-        #The following may modify x directly.
+        # The following may modify x directly.
         idx_out_of_bounds = (x * self.arrxopt) > 25 # 25 == 5 * 5
         x[idx_out_of_bounds] = sign(x[idx_out_of_bounds]) * 5
 
@@ -915,7 +934,7 @@ class F6(BBOBNfreeFunction):
             self.linearTF = dot(compute_rotation(self.rseed, dim), diag(self.scales))
             # decouple scaling from function definition
             self.linearTF = dot(self.linearTF, self.rotation)
-        
+
         # DIM- and POPSI-dependent initialisations of DIM*POPSI matrices
         if self.lastshape != curshape:
             self.dim = dim
@@ -965,7 +984,7 @@ class _FStepEllipsoid(BBOBFunction):
             self.rotation = compute_rotation(self.rseed + 1e6, dim)
             self.scales = self.condition ** linspace(0, 1, dim)
             self.linearTF = dot(compute_rotation(self.rseed, dim),
-                                diag(((self.condition/10.)**.5) ** linspace(0, 1, dim)))
+                                diag(((self.condition / 10.)**.5) ** linspace(0, 1, dim)))
 
         # DIM- and POPSI-dependent initialisations of DIM*POPSI matrices
         if self.lastshape != curshape:
@@ -993,7 +1012,7 @@ class _FStepEllipsoid(BBOBFunction):
             x1 = x[0]
         idx = np.abs(x) > .5
         x[idx] = np.round(x[idx])
-        x[np.negative(idx)] = np.round(self.alpha * x[np.negative(idx)]) / self.alpha
+        x[~idx] = np.round(self.alpha * x[~idx]) / self.alpha
         x = dot(x, self.rotation)
 
         # COMPUTATION core
@@ -1030,9 +1049,9 @@ class F115(_FStepEllipsoid, BBOBCauchyFunction):
 
 class _FRosenbrock(BBOBFunction):
     """Abstract Rosenbrock, non-rotated
-    
+
     Method boundaryhandling needs to be defined.
-    
+
     """
     rrseed = 8
 
@@ -1171,9 +1190,9 @@ class F9(BBOBNfreeFunction):
 
 class _FEllipsoid(BBOBFunction):
     """Abstract Ellipsoid with monotone transformation.
-    
+
     Method boundaryhandling needs to be defined.
-    
+
     """
     rrseed = 10
     condition = 1e6
@@ -1338,9 +1357,9 @@ class F12(BBOBNfreeFunction):
 
         # COMPUTATION core
         try:
-            ftrue = self.condition * np.sum(x**2, -1) + (1 - self.condition) * x[:, 0] ** 2
+            ftrue = self.condition * np.sum(x**2, -1) + (1 - self.condition) * x[:, 0]**2
         except IndexError:
-            ftrue = self.condition * np.sum(x**2) + (1 - self.condition) * x[0] ** 2
+            ftrue = self.condition * np.sum(x**2) + (1 - self.condition) * x[0]**2
         fval = self.noise(ftrue)
 
         # FINALIZE
@@ -1361,7 +1380,7 @@ class F13(BBOBNfreeFunction):
                 self.xopt = zeros(dim)
             else:
                 self.xopt = compute_xopt(self.rseed, dim)
-            self.rotation = compute_rotation(self.rseed +  1e6, dim)
+            self.rotation = compute_rotation(self.rseed + 1e6, dim)
             self.scales = (self.condition ** .5) ** linspace(0, 1, dim)
             self.linearTF = dot(compute_rotation(self.rseed, dim), diag(self.scales))
             self.linearTF = dot(self.linearTF, self.rotation)
@@ -1400,9 +1419,9 @@ class F13(BBOBNfreeFunction):
 
 class _FDiffPow(BBOBFunction):
     """Abstract Sum of different powers, between x^2 and x^6.
-    
+
     Method boundaryhandling needs to be defined.
-    
+
     """
     alpha = 4.
     rrseed = 14
@@ -1592,9 +1611,9 @@ class F16(BBOBNfreeFunction):
 
 class _FSchaffersF7(BBOBFunction):
     """Abstract Schaffers F7 with asymmetric non-linear transformation, condition 10
-    
+
     Class attribute condition and method boundaryhandling need to be defined.
-    
+
     """
     rrseed = 17
     condition = None
@@ -1685,9 +1704,9 @@ class F124(_FSchaffersF7, BBOBCauchyFunction): # TODO: check boundary handling
 
 class _F8F2(BBOBFunction):
     """Abstract F8F2 sum of Griewank-Rosenbrock 2-D blocks
-    
+
     Class attribute facftrue and method boundaryhandling need to be defined.
-    
+
     """
     facftrue = None
     rrseed = 19
@@ -1697,9 +1716,9 @@ class _F8F2(BBOBFunction):
         if self.dim != dim:
             scale = max(1, dim ** .5 / 8.)
             self.linearTF = scale * compute_rotation(self.rseed, dim)
-            #if self.zerox:
+            # if self.zerox:
             #    self.xopt = zeros(dim) # does not work here
-            #else:
+            # else:
             # TODO: clean this line
             self.xopt = np.hstack(dot(self.linearTF, 0.5 * np.ones((dim, 1)) / scale ** 2))
 
@@ -1817,10 +1836,10 @@ class F20(BBOBNfreeFunction):
 
 class _FGallagher(BBOBFunction):
     """Abstract Gallagher with nhighpeaks Gaussian peaks, condition up to 1000, one global rotation
-    
+
     Attribute fac2, nhighpeaks, highpeakcond and method boundary
     handling need to be defined.
-    
+
     """
     rrseed = 21
     maxcondition = 1000.
@@ -1842,7 +1861,7 @@ class _FGallagher(BBOBFunction):
                 idx = np.argsort(unif(dim, self.rseed + 1e3 * i)) # permutation instead of rotation
                 self.arrscales.append(s[idx]) # this is inverse Cov
             self.arrscales = np.vstack(self.arrscales)
-            # compute peak values, 10 is global optimum 
+            # compute peak values, 10 is global optimum
             self.peakvalues = np.insert(linspace(self.fitvalues[0], self.fitvalues[1], self.nhighpeaks - 1), 0, 10.)
 
         # DIM- and POPSI-dependent initialisations of DIM*POPSI matrices
@@ -1947,7 +1966,7 @@ class F23(BBOBNfreeFunction):
     """Katsuura function"""
     funId = 23
     condition = 100.
-    arr2k = np.reshape(2. ** (np.arange(1, 33)), (1, 32))  # bug-fix for 32-bit (NH): 2 -> 2. (relevance is minor)
+    arr2k = np.reshape(2. ** (np.arange(1, 33)), (1, 32)) # bug-fix for 32-bit (NH): 2 -> 2. (relevance is minor)
 
     def initwithsize(self, curshape, dim):
         # DIM-dependent initialization
@@ -2032,7 +2051,7 @@ class F24(BBOBNfreeFunction):
         if self.lastshape != curshape:
             self.dim = dim
             self.lastshape = curshape
-            #self.arrxopt = resize(self.xopt, curshape)
+            # self.arrxopt = resize(self.xopt, curshape)
             self.arrscales = resize(2. * sign(self.xopt), curshape) # makes up for xopt
 
     def _evalfull(self, x):
@@ -2052,7 +2071,7 @@ class F24(BBOBNfreeFunction):
         x = self.arrscales * x
 
         # COMPUTATION core
-        s = 1 - .5 / ((dim + 20) ** .5 - 4.1) # tested up to DIM = 160 p in [0.25,0.33] 
+        s = 1 - .5 / ((dim + 20)**0.5 - 4.1) # tested up to DIM = 160 p in [0.25,0.33]
         d = 1 # shift [1,3], smaller is more difficult
         mu2 = -((self._mu1 ** 2 - d) / s) ** .5
         ftrue = np.minimum(np.sum((x - self._mu1) ** 2, -1),
@@ -2065,7 +2084,7 @@ class F24(BBOBNfreeFunction):
         fval += fadd
         return fval, ftrue
 
-#dictbbob = {'sphere': F1, 'ellipsoid': F2, 'Rastrigin': F3}
+# dictbbob = {'sphere': F1, 'ellipsoid': F2, 'Rastrigin': F3}
 nfreefunclasses = (F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14,
                    F15, F16, F17, F18, F19, F20, F21, F22, F23, F24) # hard coded
 noisyfunclasses = (F101, F102, F103, F104, F105, F106, F107, F108, F109, F110,
@@ -2081,7 +2100,7 @@ noisyIDs = sorted(dictbbobnoisy.keys())  # was noisynames
 funclasses = list(nfreefunclasses) + list(noisyfunclasses)
 dictbbob = dict((i.funId, i) for i in funclasses)
 
-#TODO: pb xopt f9, 21, 22
+# TODO: pb xopt f9, 21, 22
 class _FTemplate(BBOBNfreeFunction):
     """Template based on F1"""
 
@@ -2127,8 +2146,9 @@ class _FTemplate(BBOBNfreeFunction):
         return fval, ftrue
 
 def instantiate(ifun, iinstance=0, param=None, **kwargs):
-    """Returns test function ifun, by default instance 0."""
-    res = dictbbob[ifun](iinstance=iinstance, param=param, **kwargs)  # calling BBOBFunction.__init__(iinstance, param,...)
+    """Returns test function ifun, by default instance 0,
+    and its optimal f-value."""
+    res = dictbbob[ifun](iinstance = iinstance, param = param, **kwargs) # calling BBOBFunction.__init__(iinstance, param,...)
     return res, res.fopt
 
 def get_param(ifun):
@@ -2136,9 +2156,8 @@ def get_param(ifun):
     try:
         return dictbbob[ifun].paramValues
     except AttributeError:
-        return (None, )
+        return (None,)
 
 if __name__ == "__main__":
     import doctest
-    doctest.testmod()  # run all doctests in this module
-    
+    doctest.testmod() # run all doctests in this module
