@@ -472,15 +472,15 @@ __ bbobfunctiondoc_
 
     *  - Step Ellipsoidal Function
        - :math:`f_7(\mathbf{x}) = \gamma(n) \times 0.1 \max\left(\vert \hat{z}_1\vert/10^4, \sum_{i=1}^{n}10^{2\frac{i - 1}{n - 1}}z_i^2\right) + f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{\hat{z}} = \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x}-\mathbf{x}^{\text{opt}})  \text{ with }\mathbf{R} = P_{11}B_1P_{12},`\\ :math:``\tilde{z}_i= \begin{cases} \lfloor 0.5 + \hat{z}_i \rfloor & \text{if }  |\hat{z}_i| > 0.5 \\ \lfloor 0.5 + 10 \hat{z}_i \rfloor /10 & \text{otherwise} \end{cases}` \\ :math:`\text{ \ \ \ \ \ \ for } i=1,\dots, n,` \\ :math:`\mathbf{z} = \mathbf{Q} \mathbf{\tilde{z}} \text{ with } \mathbf{Q} = P_{21}B_2P_{22}`
+       - :math:`\mathbf{\hat{z}} = \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x}-\mathbf{x}^{\text{opt}})  \text{ with }\mathbf{R} = P_{11}B_1P_{12},`\\ :math:`\tilde{z}_i= \begin{cases} \lfloor 0.5 + \hat{z}_i \rfloor & \text{if }  |\hat{z}_i| > 0.5 \\ \lfloor 0.5 + 10 \hat{z}_i \rfloor /10 & \text{otherwise} \end{cases}` \\ :math:`\text{ \ \ \ \ \ \ for } i=1,\dots, n,` \\ :math:`\mathbf{z} = \mathbf{Q} \mathbf{\tilde{z}} \text{ with } \mathbf{Q} = P_{21}B_2P_{22}`
 
     *  - Rosenbrock Function, original
        - :math:`f_8(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{n}}{8}\right)(\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1},`\\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)(\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1},`\\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
 
     *  - Rosenbrock Function, rotated
        - :math:`f_9(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{n}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2} \text{ with }\mathbf{R} = P_{1}BP_{2},`\\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2} \text{ with }\mathbf{R} = P_{1}BP_{2},`\\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
 
     *  -  **Group 3: Functions with high conditioning and unimodal**
        -
