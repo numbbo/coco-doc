@@ -206,6 +206,11 @@ nadir point :math:`(z_{\text{nadir}, \alpha}, z_{\text{nadir},\beta})` as refere
 	
 is the smallest (normalized) Euclidean distance between a solution in the archive and the region of interest, see also the figures below for an illustration.
 
+.. todo:: Dimo: Note that the computation of the nadir point is not possible from the single objective's optima anymore in the case of more than two objective functions. What we propose instead is to use the poor-man's nadir point estimation :math:`z^{\hat}_{\text{nadir}}` instead, i.e. the maximum value of all *extreme* points in that objective instead of the infimum value of all *Pareto-optimal* solutions.
+
+
+
+
 .. figure:: pics/IHDoutside.*
    :align: center
    :width: 60%
