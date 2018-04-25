@@ -48,7 +48,8 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
 #    'sphinx.ext.mathjax',
-    'sphinx.ext.pngmath'
+#    'sphinx.ext.pngmath',
+    'sphinx.ext.imgmath',
 ]
 
 

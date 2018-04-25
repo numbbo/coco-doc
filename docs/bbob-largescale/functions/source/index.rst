@@ -480,7 +480,7 @@ __ bbobfunctiondoc_
 
     *  - Rosenbrock Function, rotated
        - :math:`f_9(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2} \text{ with }\mathbf{R} = P_{1}BP_{2},`\\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1}` \\ :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},`\\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
 
     *  -  **Group 3: Functions with high conditioning and unimodal**
        -
@@ -528,7 +528,7 @@ __ bbobfunctiondoc_
 
     *  - Composite Griewank-Rosenbrock Function F8F2
        - :math:`f_{19}(\mathbf{x}) = \gamma(n)\times\left(\dfrac{10}{n-1} \sum_{i=1}^{n-1} \left( \dfrac{s_i}{4000} - \cos\left(s_i \right)\right) + 10 \right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{n}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2}` \\ :math:`\text{ \ \ \ \ \ \ with }\mathbf{R} = P_{1}BP_{2},` \\ :math:`s_i= 100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2,` \\ :math:`\text{ \ \ \ \ \ \ for } i=1,\dots, n-1,` \\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2}` \\ :math:`\text{ \ \ \ \ \ \ with }\mathbf{R} = P_{1}BP_{2},` \\ :math:`s_i= 100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2,` \\ :math:`\text{ \ \ \ \ \ \ for } i=1,\dots, n-1,` \\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
 
     *  -  **Group 5: Multi-modal functions with weak global structure**
        -
