@@ -547,7 +547,7 @@ __ bbobfunctiondoc_
        - :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{19} & \text{for } 2 \leq i \leq 21\\ 10 & \text{for } i = 1 \end{cases}` \\ :math:`\mathbf{B} \text{ is a block-diagonal matrix without}` \\ :math:`\text{permuations of the variables.}`\\ :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` \\ :math:`\text{but with randomly permuted diagonal elements.}` \\ :math:`\text{For } i=1,\dots, 21, \alpha_i \text{ is drawn uniformly}` \\ :math:`\text{from the set } \left\{1000^{2\frac{j}{19}}, j = 0,\dots, 19 \right\} \text{without}` \\ :math:`\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1.` \\ :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` \\ :math:`\text{from the domain } [-4.9,4.9]^n \text{ for }` \\ :math:`i = 2,...,21 \text{ and } \mathbf{y}_1 \in [-3.92,3.92]^n.`  \\ :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
 
     *  - Katsuura Function
-       - :math:`f_{23}(\mathbf{x}) = \gamma(n)\times\left(\dfrac{10}{n^2} \prod_{i=1}^{n} \left( 1 + i \sum_{j=1}^{32} \dfrac{\vert 2^j z_i - [2^j z_i]\vert}{2^j}\right)^{10/n^{1.2}} - \dfrac{10}{n^2}\right) +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+       - :math:`f_{23}(\mathbf{x}) = \left(\dfrac{10}{n^2} \prod_{i=1}^{n} \left( 1 + i \sum_{j=1}^{32} \dfrac{\vert 2^j z_i - [2^j z_i]\vert}{2^j}\right)^{10/n^{1.2}} - \dfrac{10}{n^2}\right) +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`\\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
 
 
