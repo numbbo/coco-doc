@@ -4,9 +4,9 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 COCO: The Large Scale Black-Box Optimization Benchmarking (``bbob-largescale``) Test Suite
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-.. the next two lines are necessary in LaTeX. They will be automatically 
+.. the next two lines are necessary in LaTeX. They will be automatically
   replaced to put away the \chapter level as ??? and let the "current" level
-  become \section. 
+  become \section.
 .. CHAPTERTITLE
 .. CHAPTERUNDERLINE
 
@@ -14,7 +14,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 .. |
 .. .. sectnum::
   :depth: 3
-  
+
 
   :numbered:
 .. .. contents:: Table of Contents
@@ -53,7 +53,7 @@ the problem dimension).
 .. _`BBOB workshop series`: http://numbbo.github.io/workshops
 .. _COCO: https://github.com/numbbo/coco
 .. _COCOold: http://coco.gforge.inria.fr
-.. |coco_problem_t| replace:: 
+.. |coco_problem_t| replace::
   ``coco_problem_t``
 .. _coco_problem_t: http://numbbo.github.io/coco-doc/C/coco_8h.html#a408ba01b98c78bf5be3df36562d99478
 
@@ -467,7 +467,7 @@ __ bbobfunctiondoc_
        -
 
     *  - Attractive Sector Function
-       - :math:`f_6(\mathbf{x}) = \gamma(n) \times T_{\text{osz}}\left(\sum_{i=1}^{n}\left( s_i z_i\right)^2 \right)^{0.9} + \mathbf{f}_{\text{opt}}`
+       - :math:`f_6(\mathbf{x}) = T_{\text{osz}}\left(\gamma(n) \times \sum_{i=1}^{n}\left( s_i z_i\right)^2 \right)^{0.9} + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{Q} \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},` \\ :math:`s_i = \begin{cases} 10^2 & \text{if } z_i \times x_i^{\mathrm{opt}} > 0\\ 1 & \text{otherwise}\end{cases}` \\ :math:`\text{ \ \ \ \ \ \ for } i=1,\dots, n`
 
     *  - Step Ellipsoidal Function
@@ -550,7 +550,7 @@ __ bbobfunctiondoc_
        - :math:`f_{23}(\mathbf{x}) = \gamma(n)\times\left(\dfrac{10}{n^2} \prod_{i=1}^{n} \left( 1 + i \sum_{j=1}^{32} \dfrac{\vert 2^j z_i - [2^j z_i]\vert}{2^j}\right)^{10/n^{1.2}} - \dfrac{10}{n^2}\right) +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`\\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
 
-    
+
     *  - Lunacek bi-Rastrigin Function
        - :math:`f_{24}(\mathbf{x}) = \gamma(n)\times\Big(\min\big( \sum_{i=1}^{n} (\hat{x}_i - \mu_0)^2, n + s\sum_{i=1}^{n}(\hat{x}_i - \mu_1)^2\big) +` \\ :math:`+ 10 \big(n - \sum_{i=1}^{n}\cos(2\pi z_i) \big)\Big) + 10^{4}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{\hat{x}} = 2 \text{sign}(\mathbf{x}^{\text{opt}}) \otimes \mathbf{x}, \mathbf{x}^{\text{opt}} = \mu_0 \mathbf{1}_{-}^{+}` \\ :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100}\mathbf{R}(\mathbf{\hat{x}} - \mu_0\mathbf{1})` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`\\ :math:`\mu_0 = 2.5, \mu_1 = -\sqrt{\dfrac{\mu_0^{2} - 1}{s}},` \\ :math:`s = 1 - \dfrac{1}{2\sqrt{n + 20} - 8.2}`
@@ -559,26 +559,26 @@ __ bbobfunctiondoc_
 .. _`Coco framework`: https://github.com/numbbo/coco
 
 
-   
+
 
 
 .. raw:: html
-    
+
     <H2>Acknowledgments</H2>
 
 .. raw:: latex
 
     \section*{Acknowledgments}
 
-This work was supported by the grant ANR-12-MONU-0009 (NumBBO) 
+This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
 of the French National Research Agency.
 
 
 
- 
+
 .. ############################# References #########################################
 .. raw:: html
-    
+
     <H2>References</H2>
 
 .. [AIT2016] O. Ait Elhara, A. Auger, N. Hansen (2016). `Permuted Orthogonal Block-Diagonal
@@ -600,8 +600,8 @@ of the French National Research Agency.
 .. __: https://hal.inria.fr/inria-00362633
 
 
-.. [HAN2016ex] N. Hansen, T. Tusar, A. Auger, D. Brockhoff, O. Mersmann (2016). 
-  `COCO: The Experimental Procedure`__, *ArXiv e-prints*, `arXiv:1603.08776`__. 
+.. [HAN2016ex] N. Hansen, T. Tusar, A. Auger, D. Brockhoff, O. Mersmann (2016).
+  `COCO: The Experimental Procedure`__, *ArXiv e-prints*, `arXiv:1603.08776`__.
 .. __: http://numbbo.github.io/coco-doc/experimental-setup/
 .. __: http://arxiv.org/abs/1603.08776
 
