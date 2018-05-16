@@ -519,11 +519,11 @@ __ bbobfunctiondoc_
        - :math:`\mathbf{z} = \mathbf{R}\mathbf{\Lambda}^{1/100}\mathbf{Q}T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`\\ :math:`f_0= \sum_{k=0}^{11} \dfrac{1}{2^k} \cos(\pi 3^k)`
 
     *  - Schaffers F7 Function
-       - :math:`f_{17}(\mathbf{x}) = \gamma(n) \times\left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2 +` \\ :math:`+ 10f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+       - :math:`f_{17}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2 +` \\ :math:`+ 10f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},` \\ :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
 
     *  - Schaffers F7 Function, moderately ill-conditioned
-       - :math:`f_{18}(\mathbf{x}) = \gamma(n) \times\left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2 +` \\ :math:`+ 10f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+       - :math:`f_{18}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2 +` \\ :math:`+ 10f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{\Lambda}^{1000} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`\\ :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
 
     *  - Composite Griewank-Rosenbrock Function F8F2
