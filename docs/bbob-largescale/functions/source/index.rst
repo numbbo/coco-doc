@@ -4,9 +4,9 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 COCO: The Large Scale Black-Box Optimization Benchmarking (``bbob-largescale``) Test Suite
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-.. the next two lines are necessary in LaTeX. They will be automatically 
+.. the next two lines are necessary in LaTeX. They will be automatically
   replaced to put away the \chapter level as ??? and let the "current" level
-  become \section. 
+  become \section.
 .. CHAPTERTITLE
 .. CHAPTERUNDERLINE
 
@@ -14,7 +14,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 .. |
 .. .. sectnum::
   :depth: 3
-  
+
 
   :numbered:
 .. .. contents:: Table of Contents
@@ -53,7 +53,7 @@ the problem dimension).
 .. _`BBOB workshop series`: http://numbbo.github.io/workshops
 .. _COCO: https://github.com/numbbo/coco
 .. _COCOold: http://coco.gforge.inria.fr
-.. |coco_problem_t| replace:: 
+.. |coco_problem_t| replace::
   ``coco_problem_t``
 .. _coco_problem_t: http://numbbo.github.io/coco-doc/C/coco_8h.html#a408ba01b98c78bf5be3df36562d99478
 
@@ -467,7 +467,7 @@ __ bbobfunctiondoc_
        -
 
     *  - Attractive Sector Function
-       - :math:`f_6(\mathbf{x}) = \gamma(n) \times T_{\text{osz}}\left(\sum_{i=1}^{n}\left( s_i z_i\right)^2 \right)^{0.9} + \mathbf{f}_{\text{opt}}`
+       - :math:`f_6(\mathbf{x}) = T_{\text{osz}}\left(\gamma(n) \times \sum_{i=1}^{n}\left( s_i z_i\right)^2 \right)^{0.9} + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{Q} \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},` \\ :math:`s_i = \begin{cases} 10^2 & \text{if } z_i \times x_i^{\mathrm{opt}} > 0\\ 1 & \text{otherwise}\end{cases}` \\ :math:`\text{ \ \ \ \ \ \ for } i=1,\dots, n`
 
     *  - Step Ellipsoidal Function
@@ -515,15 +515,15 @@ __ bbobfunctiondoc_
        - :math:`\mathbf{z} = \mathbf{R} \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.2} \left(T_{\text{osz}} \left(\mathbf{R}\left(\mathbf{x} - \mathbf{x}^{\text{opt}} \right) \right) \right)` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
 
     *  - Weierstrass Function
-       - :math:`f_{16}(\mathbf{x}) = \gamma(n) \times 10\left( \dfrac{1}{n} \sum_{i=1}^{n} \sum_{k=0}^{11} \dfrac{1}{2^k} \cos \left( 2\pi 3^k \left( z_i + 1/2\right) \right) - f_0\right)^3 +` \\ :math:`+\dfrac{10}{n}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+       - :math:`f_{16}(\mathbf{x}) = 10\left( \dfrac{1}{n} \sum_{i=1}^{n} \sum_{k=0}^{11} \dfrac{1}{2^k} \cos \left( 2\pi 3^k \left( z_i + 1/2\right) \right) - f_0\right)^3 +` \\ :math:`+\dfrac{10}{n}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{R}\mathbf{\Lambda}^{1/100}\mathbf{Q}T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`\\ :math:`f_0= \sum_{k=0}^{11} \dfrac{1}{2^k} \cos(\pi 3^k)`
 
     *  - Schaffers F7 Function
-       - :math:`f_{17}(\mathbf{x}) = \gamma(n) \times\left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2 +` \\ :math:`+ 10f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+       - :math:`f_{17}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2 +` \\ :math:`+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},` \\ :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
 
     *  - Schaffers F7 Function, moderately ill-conditioned
-       - :math:`f_{18}(\mathbf{x}) = \gamma(n) \times\left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2 +` \\ :math:`+ 10f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+       - :math:`f_{18}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2 +` \\ :math:`+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{\Lambda}^{1000} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`\\ :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
 
     *  - Composite Griewank-Rosenbrock Function F8F2
@@ -539,46 +539,46 @@ __ bbobfunctiondoc_
        - :math:`\mathbf{\hat{x}} = 2 \times \mathbf{1}_{-}^{+} \otimes \mathbf{x},` \\ :math:`\hat{z}_1 = \hat{x}_1, \hat{z}_{i+1}=\hat{x}_{i+1} + 0.25 \left(\hat{x}_{i} - 2\left|x_i^{\text{opt}}\right|\right),` \\ :math:`\text{ \ \ \ \ \ \ for } i=1, \dots, n-1,` \\ :math:`\mathbf{z} = 100 \left(\mathbf{\Lambda}^{10} \left(\mathbf{\hat{z}} - 2\left|\mathbf{x}^{\text{opt}}\right|\right) + 2\left|\mathbf{x}^{\text{opt}}\right|\right),` \\ :math:`\mathbf{x}^{\text{opt}} = 4.2096874633/2 \mathbf{1}_{-}^{+}`
 
     *  - Gallagher's Gaussian 101-me Peaks Function
-       - :math:`f_{21}(\mathbf{x}) = \gamma(n)\times\left(10 - \max_{i=1}^{101} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T\mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2 +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+       - :math:`f_{21}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{101} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T\mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2 +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{99} & \text{for } 2 \leq i \leq 101\\ 10 & \text{for } i = 1 \end{cases}`\\ :math:`\mathbf{B} \text{ is a block-diagonal matrix without}` \\ :math:`\text{permuations of the variables.}`\\ :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` \\ :math:`\text{but with randomly permuted diagonal elements.}` \\ :math:`\text{For } i=1,\dots, 101, \alpha_i \text{ is drawn uniformly}` \\ :math:`\text{from the set } \left\{1000^{2\frac{j}{99}}, j = 0,\dots, 99 \right\} \text{without}` \\ :math:`\text{replacement, and } \alpha_i = 1000 \text{ for } i = 1.` \\ :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` \\ :math:`\text{from the domain } [-5,5]^n \text{ for }` \\ :math:`i = 2,...,101 \text{ and } \mathbf{y}_1 \in [-4,4]^n.` \\ :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
 
     *  - Gallagher's Gaussian 21-hi Peaks Function
-       - :math:`f_{22}(\mathbf{x}) = \gamma(n)\times\left(10 - \max_{i=1}^{21} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T \mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2 +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+       - :math:`f_{22}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{21} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T \mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2 +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{19} & \text{for } 2 \leq i \leq 21\\ 10 & \text{for } i = 1 \end{cases}` \\ :math:`\mathbf{B} \text{ is a block-diagonal matrix without}` \\ :math:`\text{permuations of the variables.}`\\ :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` \\ :math:`\text{but with randomly permuted diagonal elements.}` \\ :math:`\text{For } i=1,\dots, 21, \alpha_i \text{ is drawn uniformly}` \\ :math:`\text{from the set } \left\{1000^{2\frac{j}{19}}, j = 0,\dots, 19 \right\} \text{without}` \\ :math:`\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1.` \\ :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` \\ :math:`\text{from the domain } [-4.9,4.9]^n \text{ for }` \\ :math:`i = 2,...,21 \text{ and } \mathbf{y}_1 \in [-3.92,3.92]^n.`  \\ :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
 
     *  - Katsuura Function
-       - :math:`f_{23}(\mathbf{x}) = \gamma(n)\times\left(\dfrac{10}{n^2} \prod_{i=1}^{n} \left( 1 + i \sum_{j=1}^{32} \dfrac{\vert 2^j z_i - [2^j z_i]\vert}{2^j}\right)^{10/n^{1.2}} - \dfrac{10}{n^2}\right) +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+       - :math:`f_{23}(\mathbf{x}) = \left(\dfrac{10}{n^2} \prod_{i=1}^{n} \left( 1 + i \sum_{j=1}^{32} \dfrac{\vert 2^j z_i - [2^j z_i]\vert}{2^j}\right)^{10/n^{1.2}} - \dfrac{10}{n^2}\right) +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
        - :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`\\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
 
-    
+
     *  - Lunacek bi-Rastrigin Function
        - :math:`f_{24}(\mathbf{x}) = \gamma(n)\times\Big(\min\big( \sum_{i=1}^{n} (\hat{x}_i - \mu_0)^2, n + s\sum_{i=1}^{n}(\hat{x}_i - \mu_1)^2\big) +` \\ :math:`+ 10 \big(n - \sum_{i=1}^{n}\cos(2\pi z_i) \big)\Big) + 10^{4}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{\hat{x}} = 2 \text{sign}(\mathbf{x}^{\text{opt}}) \otimes \mathbf{x}, \mathbf{x}^{\text{opt}} = \mu_0 \mathbf{1}_{-}^{+}` \\ :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100}\mathbf{R}(\mathbf{\hat{x}} - \mu_0\mathbf{1})` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`\\ :math:`\mu_0 = 2.5, \mu_1 = -\sqrt{\dfrac{\mu_0^{2} - 1}{s}},` \\ :math:`s = 1 - \dfrac{1}{2\sqrt{n + 20} - 8.2}`
+       - :math:`\mathbf{\hat{x}} = 2 \text{sign}(\mathbf{x}^{\text{opt}}) \otimes \mathbf{x}, \mathbf{x}^{\text{opt}} = 0.5 \mu_0 \mathbf{1}_{-}^{+}` \\ :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100}\mathbf{R}(\mathbf{\hat{x}} - \mu_0\mathbf{1})` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`\\ :math:`\mu_0 = 2.5, \mu_1 = -\sqrt{\dfrac{\mu_0^{2} - 1}{s}},` \\ :math:`s = 1 - \dfrac{1}{2\sqrt{n + 20} - 8.2}`
 
 
 .. _`Coco framework`: https://github.com/numbbo/coco
 
 
-   
+
 
 
 .. raw:: html
-    
+
     <H2>Acknowledgments</H2>
 
 .. raw:: latex
 
     \section*{Acknowledgments}
 
-This work was supported by the grant ANR-12-MONU-0009 (NumBBO) 
+This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
 of the French National Research Agency.
 
 
 
- 
+
 .. ############################# References #########################################
 .. raw:: html
-    
+
     <H2>References</H2>
 
 .. [AIT2016] O. Ait Elhara, A. Auger, N. Hansen (2016). `Permuted Orthogonal Block-Diagonal
@@ -600,8 +600,8 @@ of the French National Research Agency.
 .. __: https://hal.inria.fr/inria-00362633
 
 
-.. [HAN2016ex] N. Hansen, T. Tusar, A. Auger, D. Brockhoff, O. Mersmann (2016). 
-  `COCO: The Experimental Procedure`__, *ArXiv e-prints*, `arXiv:1603.08776`__. 
+.. [HAN2016ex] N. Hansen, T. Tusar, A. Auger, D. Brockhoff, O. Mersmann (2016).
+  `COCO: The Experimental Procedure`__, *ArXiv e-prints*, `arXiv:1603.08776`__.
 .. __: http://numbbo.github.io/coco-doc/experimental-setup/
 .. __: http://arxiv.org/abs/1603.08776
 
