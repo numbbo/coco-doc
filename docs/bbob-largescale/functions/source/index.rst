@@ -33,15 +33,12 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   \begin{abstract}
 
 The ``bbob-largescale`` test suite, containing 24 single-objective
-functions in continuous domain, is an extension of the well-known
+functions in continuous domain, extends the well-known
 single-objective noiseless ``bbob`` test suite [HAN2009]_, which has been used since 2009 in
-the `BBOB workshop series`_, in large dimension. The core idea is to make rotational
+the `BBOB workshop series`_, to large dimension. The core idea is to make the rotational
 transformations :math:`\textbf{R}, \textbf{Q}` in search space that
-appear in the ``bbob`` test suite cheaper while retaining some desired
-properties. This documentation presents our approach where the rotational transformation will
-be replaced by the combination of a block-diagonal matrix with two
-permutation matrices in order to construct test functions in almost linear time (in terms of
-the problem dimension).
+appear in the ``bbob`` test suite computationally cheaper while retaining some desired
+properties. This documentation presents an approach that replaces a full rotational transformation with a combinations of a block-diagonal matrix and two permutation matrices in order to construct test functions whose computational and memory costs scale linearly in the dimension of the problem.
 
 .. raw:: latex
 
@@ -85,11 +82,11 @@ of the form
 .. math::
     \min_{x \in \mathbb{R}^n} \ f(x),
 
-where the number of variables :math:`n` are 20, 40, 80, 160, 320, 640.
+with problem dimensions :math:`n \in \{20, 40, 80, 160, 320, 640\}.`
 
 The objective is to find, as quickly as possible, one or several solutions :math:`x` in the search
 space :math:`\mathbb{R}^n` with *small* value(s) of :math:`f(x)\in\mathbb{R}`. We
-generally consider *time* to be the number of calls to the function :math:`f`.
+generally measure the *time* of an optimization run as the number of calls to (queries of) the objective function :math:`f`.
 
 We remind in the next sections some notations and definitions.
 
@@ -158,11 +155,11 @@ establish a hitting time condition.
 We prescribe a **target value**, |t|, which is an |f|- or
 indicator-value [HAN2016perf]_ [BRO2016]_.
 For a single run, when an algorithm reaches or surpasses the target value |t|
-on problem |p|, we say it has *solved the problem* |pt| --- it was successful. [#]_
+on problem |p|, we say that it has *solved the problem* |pt| --- it was successful. [#]_
 
-Now, the **runtime** is the evaluation count when the target value |t| was
+The **runtime** is, then, the evaluation count when the target value |t| was
 reached or surpassed for the first time.
-That is, runtime is the number of |f|-evaluations needed to solve the problem
+That is, the runtime is the number of |f|-evaluations needed to solve the problem
 |pt|. [#]_
 *Measured runtimes are the only way how we assess the performance of an
 algorithm.*
@@ -173,11 +170,11 @@ problems.
 .. _Recommendations: https://www.github.com
 
 
-If an algorithm does not hit the target in a single run, this runtime remains
-undefined --- while it has been bounded from below by the number of evaluations
+If an algorithm does not hit the target in a single run, its runtime remains
+undefined --- while, then, this runtime is bounded from below by the number of evaluations
 in this unsuccessful run.
 The number of available runtime values depends on the budget the
-algorithm has explored.
+algorithm has explored (the larger the budget, the more likely the target-values are reached).
 Therefore, larger budgets are preferable --- however they should not come at
 the expense of abandoning reasonable termination conditions. Instead,
 restarts should be done [HAN2016ex]_.
@@ -207,10 +204,10 @@ restarts should be done [HAN2016ex]_.
 
 Overview of the Proposed ``bbob-largescale`` Test Suite
 =======================================================
-The ``bbob-largescale`` test suite provides 24 functions in six dimensions (20, 40, 80, 160, 320, and 640) within
-the COCO framework. It is derived from the existing single-objective, unconstrained ``bbob`` test suite with slight
-modifications in order to be able to benchmark algorithms efficiently also in higher dimension. We will explain
-in this section how the ``bbob-largescale`` test suite is built.
+The ``bbob-largescale`` test suite provides 24 functions in six dimensions (20, 40, 80, 160, 320 and 640) within
+the COCO framework. It is derived from the existing single-objective, unconstrained ``bbob`` test suite with
+modifications that allow the user to benchmark algorithms on high dimensional problems efficiently.
+We will explain in this section how the ``bbob-largescale`` test suite is built.
 
 
 The single-objective ``bbob`` functions
@@ -229,41 +226,44 @@ is derived from a raw function defined as follows:
 .. math::
     f_{\text{raw}}^{\text{Sharp Ridge}}(\mathbf{z}) = z_1^2 + 100\sqrt{\sum_{i=2}^{n}z_i^2}.
 
-Then one applies a sequence of transformations: a
-rotational transformation :math:`\mathbf{Q}`; then a scaling transformation
-:math:`\mathbf{\Lambda}^{10}`; then a rotational transformation :math:`\mathbf{R}`; then
-a translation by using the vector :math:`\mathbf{x}^{\text{opt}}` to get the relationship
+Then one applies a sequence of transformations:
+a translation by using the vector :math:`\mathbf{x}^{\text{opt}}`;
+then a rotational transformation :math:`\mathbf{R}`; then a scaling transformation
+:math:`\mathbf{\Lambda}^{10}`; then another rotational transformation :math:`\mathbf{Q}`
+to get the relationship
 :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{10}\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`; and finally
 a translation in objective space by using :math:`\mathbf{f}_{\text{opt}}` to obtain the final
 function in the testbed:
 
 .. Dimo: the above paragraph explains things in the wrong order, isn't it?
+.. Wassim: Right, the transformations are applied in the reverse order
 
 .. math::
     f_{13}(\mathbf{x}) = f_{\text{raw}}^{\text{Sharp Ridge}}(\mathbf{z}) + \mathbf{f}_{\text{opt}}.
 
 
-There are two reasons behind the use of transformations here:
+There are two main reasons behind the use of transformations here:
 
 (i) provide non-trivial problems that cannot be solved by simply exploiting some of their properties (separability, optimum at fixed position, ...) and
 (ii) allow to generate different instances, ideally of similar difficulty, of the same problem by using different (pseudo-)random transformations.
 
 
-Rotational transformations are one type of linear transformation which is used to avoid
-separability and thus coordinate system dependence in the test functions. The rotational transformation consists in applying
-an orthogonal matrix to the search space: :math:`x \rightarrow z = \textbf{R}x`, where :math:`\textbf{R}` is an
-orthogonal matrix. While the other transformations used in the ``bbob`` test suite could be naturally extended to
-the large scale setting due to their linear complexity, the rotational transformation has quadratic time and
-space complexities. Thus, we need to reduce the complexity of this transformation in the large scale setting to
-make benchmarking experiments in significantly larger dimensions possible.
+Rotational transformations are used to avoid separability and thus coordinate system dependence in the test functions.
+The rotational transformations consist in applying
+an orthogonal matrix to the search space: :math:`x \rightarrow z = \textbf{R}x`, where :math:`\textbf{R}` is the
+orthogonal matrix.
+While the other transformations used in the ``bbob`` test suite could be naturally extended to
+the large scale setting due to their linear complexity, rotational transformations have quadratic time and
+space complexities. Thus, we need to reduce the complexity of these transformations in order for them to be usable, in practice, in the large scale setting.
 
 Extension to large scale setting
 --------------------------------
-Our objective is to construct a large scale test suite such that the cost of a function call is
-acceptable with the dimensions of interest while preserving the main characteristics of the original functions in the ``bbob``
-test suite. To this end, we will replace the full orthogonal matrices of the rotational transformations,
-which would be too expensive in our large scale setting, with another orthogonal transformation
-that has (almost) linear complexity: *permuted orthogonal block-diagonal matrices* ([AIT2016]_).
+Our objective is to construct a large scale test suite where the cost of a function call is
+acceptable in higher dimensions while preserving the main characteristics of the original functions in the ``bbob``
+test suite.
+To this end, we will replace the full orthogonal matrices of the rotational transformations,
+which would be too expensive in our large scale setting, with orthogonal transformations
+that have linear complexity in the problem dimension: *permuted orthogonal block-diagonal matrices* ([AIT2016]_).
 
 Specifically, the matrix of a rotational transformation :math:`\textbf{R}`
 will be represented as:
@@ -290,6 +290,7 @@ and :math:`\sum_{i=1}^{n_b}s_i = n`. In this case, the matrices
 is also an orthogonal matrix.
 
 .. Dimo: such a matrix will not exist in all dimensions, right? What for example if :math:`n` is prime? We should be more careful in the definition here (e.g. restricting the potential dimensions or allowing :math:`B_{n_b}` to be smaller than :math:`s_ \times s_i`).
+.. Wassim: I don’t see how :math:`n` being a prime would be a problem. Up to this point, we only require the sum of the block-sizes to be equal to :math:`n`; later, we will define the values of these block-sizes and then, I agree, we should mention that the last block can be, in theory, smaller (all dimensions larger than 40 are multiples of 40 in our case)
 
 This representation allows the rotational transformation :math:`\textbf{R}` to satisfy three
 desired properties:
@@ -303,23 +304,26 @@ desired properties:
 
 Generating the orthogonal block matrix :math:`B`
 ------------------------------------------------
-The sub-matrices :math:`B_i, i=1,2,...,n_b` will be uniformly distributed in the set of
-orthogonal matrices of the same size. To this end, we firstly generate square matrices with
+The block-matrices :math:`B_i, i=1,2,...,n_b` will be uniformly distributed in the set of
+orthogonal matrices of the same size. To this end, we first generate square matrices with
 sizes :math:`s_i` (`i=1,2,...,n_b`) whose entries are i.i.d. standard normally distributed.
 Then we apply the Gram-Schmidt process to orthogonalize these matrices.
 
-The parameter of this procedure includes:
+The parameters of this procedure include:
 
-- the dimension of a problem :math:`n`,
-- the block sizes :math:`s_1, \dots, s_{n_b}`, where :math:`n_b` is the number of blocks. In this test suite, we set :math:`s_i = s := \min\{n, 40\} \forall i=1,2,...,n_b` and thus :math:`n_b = \lceil n/s \rceil`.
+- the dimension of the problem :math:`n`,
+- the block sizes :math:`s_1, \dots, s_{n_b}`, where :math:`n_b` is the number of blocks. In this test suite, we set :math:`s_i = s := \min\{n, 40\} \forall i=1,2,...,n_b` (except, maybe, for the last block which can be smaller) [#]_ and thus :math:`n_b = \lceil n/s \rceil`.
 
+.. [#] This setting allows to have the problems in dimensions 20 and 40 overlap between the ``bbob`` test suite and its large-scale extension since in these dimensions, the block sizes coincide with the problem dimensions.
 
 Generating the permutation matrices :math:`P`
 ---------------------------------------------
-For generating a permutation matrix :math:`P`, we start from the identity matrix and apply successively a set of so-called *truncated uniform swaps*. Thereby, a first row/column is chosen uniformly at random in the matrix. A second row/column is then chosen uniformly among the rows/columns
-that are within a fixed range :math:`r_s` of the first choice. Finally, the two chosen rows/column are swapped.
+In order to generate the permutation matrix :math:`P`, we start from the identity matrix and apply, successively, a set of so-called *truncated uniform swaps*.
+Each row/column (up to a maximum number of swaps) is swapped with a row/column chosen uniformly from the set of rows/columns within a fixed range :math:`r_s`.
+A random order of the rows/columns is generated to avoid biases towards the first rows/columns.
 
 .. Dimo: can someone please check whether the above paragraph is okay and/or improve on it?
+.. Wassim: the rows/columns are selected without replacement so it’s not correct
 
 Let :math:`i` be the index of the first
 variable/row/column to be swapped and :math:`j` be the index of the second swap variable. Then
@@ -337,6 +341,7 @@ away from both extremes or is one of them.
 
 .. Dimo: What is `d` here? Shouldn't it be `n`? And why is it `(d-1)/2` and not `n/2`?
 .. Dimo: I have to say, I don't fully understand the second sentence here...
+.. Wassim: the original paper should probably be referenced and I don’t think the explanation needs to be included here anyway
 
 **Algorithm 1** below describes the process of generating a permutation using a
 series of truncated uniform swaps with the following parameters:
@@ -375,16 +380,17 @@ dimensions 20, 40, 80, 160, 320, and 640 of the ``bbob-largescale`` test suite.
 
 Implementation
 --------------
-Now, we describe how to implement the replacement of the rotational transformations in the
-``bbob`` test suite with the realizations of :math:`P_{\text{left}}BP_{\text{right}}`. This will be illustrated through an example
-on the Ellipsoidal function (rotated) :math:`f_{10}(\mathbf{x})` (see Table in the next section), which is defined by
+Now, we describe how these changes to the rotational transformations are implemented.
+This will be illustrated through an example
+on the Ellipsoidal function (rotated) :math:`f_{10}(\mathbf{x})` (see the table in the next section), which is defined by
 
 .. math::
     f_{10}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2  + \mathbf{f}_{\text{opt}}, \text{with } \mathbf{z} = T_{\text{osz}} (\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})), \mathbf{R} = P_{1}BP_{2},
 
 as follows:
 
-(i) Firstly, we locate three matrices :math:`B, P_1, P_2` using the procedures:
+(i) First, we obtain the three matrices needed for the transformation, :math:`B, P_1, P_2`, 
+as follows:
 
     .. code-block:: c
 
@@ -405,24 +411,29 @@ as follows:
         problem = transform_vars_permutation(problem, P2, n);
         problem = transform_vars_blockrotation(problem, B, n, s, n_b);
         problem = transform_vars_permutation(problem, P1, n);
+        
+.. Wassim: the output of the above is not correct, the sentence is displayed inside the code-block. And the phrasing in kinda weird
 
-Here, :math:`n:` is again the problem dimension, :math:`s:` the size of the blocks in :math:`B`, :math:`n_b:`
-their number, :math:`n_s:` the number of swaps, and :math:`r_s:` the swap range as presented in the previous sections.
+Here, :math:`n` is again the problem dimension, :math:`s` the size of the blocks in :math:`B`, :math:`n_b:`
+the number of blocks, :math:`n_s:` the number of swaps, and :math:`r_s:` the swap range as presented previously.
 
 **Important remark:** Although the complexity of ``bbob`` test suite is reduced considerably by the above replacement of
 rotational transformations, we recommend running the experiment on the ``bbob-largescale`` test suite in parallel.
+
+.. Wassim: I’m not sure this is the appropriate place for this remark, it’s more a general remark on the use of this test suite, and any test suite for that matter. It’s always preferable to run independent experiments in parallel
+
 
 Functions in ``bbob-largescale`` test suite
 =============================================
 The table below presents the definition of all 24 functions of the ``bbob-largescale`` test suite in detail. Beside the important
 modification on rotational transformations, we also make two changes to the raw functions in the ``bbob`` test suite.
 
-- All functions, except for the Schwefel function, are normalized by the parameter :math:`\gamma(n) = \min(1, 40/n)` to have uniform target values that are comparable over a wide range of dimensions.
+- All functions, except for the Schwefel function, are normalized by the parameter :math:`\gamma(n) = \min(1, 40/n)` to have uniform target values that are comparable, in difficulty, over a wide range of dimensions.
 
-- The Discus, Bent Cigar, and Sharp Ridge functions are generalized such that they have a constant proportion of distinct axes that remain consistent with the ``bbob`` test suite.
+- The Discus, Bent Cigar and Sharp Ridge functions are generalized such that they have a constant proportion of distinct axes that remain consistent with the ``bbob`` test suite.
 
-To deeply understand the properties of those functions and for the definitions
-of the used transformations and abbreviations, we refer to the original
+For a better understanding of the properties of these functions and for the definitions
+of the used transformations and abbreviations, we refer the reader to the original
 ``bbob`` `function documention`__ for details.
 
 .. _bbobfunctiondoc: http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf
