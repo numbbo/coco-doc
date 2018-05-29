@@ -289,9 +289,6 @@ and :math:`\sum_{i=1}^{n_b}s_i = n`. In this case, the matrices
 :math:`B_i, 1 \leq i \leq n_b` are all orthogonal. Thus, the matrix :math:`B`
 is also an orthogonal matrix.
 
-.. Dimo: such a matrix will not exist in all dimensions, right? What for example if :math:`n` is prime? We should be more careful in the definition here (e.g. restricting the potential dimensions or allowing :math:`B_{n_b}` to be smaller than :math:`s_ \times s_i`).
-.. Wassim: I don’t see how :math:`n` being a prime would be a problem. Up to this point, we only require the sum of the block-sizes to be equal to :math:`n`; later, we will define the values of these block-sizes and then, I agree, we should mention that the last block can be, in theory, smaller (all dimensions larger than 40 are multiples of 40 in our case)
-
 This representation allows the rotational transformation :math:`\textbf{R}` to satisfy three
 desired properties:
 
@@ -333,7 +330,7 @@ variable/row/column to be swapped and :math:`j` be the index of the second swap 
 
 where :math:`U(S)` is the uniform distribution over the set :math:`S` and :math:`l_b(i) = \max(1,i-r_s)`
 and :math:`l_b(i) = \min(n,i+r_s)` with :math:`r_s` a parameter of the approach.
-If :math:`r_s \leq (d-1)/2`, the average distance between
+If :math:`r_s \leq (n-1)/2`, the average distance between
 the first and the second swap variable ranges from :math:`(\sqrt{2}-1)r_s + 1/2` (in the case of an
 asymmetric choice for :math:`j`, i.e. when :math:`i` is chosen closer to :math:`1` or :math:`n` than :math:`r_s`) to
 :math:`r_s/2 + 1/2` (in the case of a symmetric choice for :math:`j`). It is maximal when the first swap variable is at least :math:`r_s`
@@ -380,7 +377,8 @@ dimensions 20, 40, 80, 160, 320, and 640 of the ``bbob-largescale`` test suite.
 
 Implementation
 --------------
-Now, we describe how these changes to the rotational transformations are implemented.
+Now, we describe how these changes to the rotational transformations are implemented
+with the realizations of :math:`P_{\text{left}}BP_{\text{right}}`.
 This will be illustrated through an example
 on the Ellipsoidal function (rotated) :math:`f_{10}(\mathbf{x})` (see the table in the next section), which is defined by
 
