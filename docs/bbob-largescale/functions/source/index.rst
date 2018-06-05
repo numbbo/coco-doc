@@ -7,8 +7,11 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 .. the next two lines are necessary in LaTeX. They will be automatically
   replaced to put away the \chapter level as ??? and let the "current" level
   become \section.
+
 .. CHAPTERTITLE
 .. CHAPTERUNDERLINE
+
+
 
 .. |
 .. |
@@ -426,7 +429,7 @@ Functions in ``bbob-largescale`` test suite
 The table below presents the definition of all 24 functions of the ``bbob-largescale`` test suite in detail. Beside the important
 modification on rotational transformations, we also make two changes to the raw functions in the ``bbob`` test suite.
 
-- All functions, except for the Schwefel function, are normalized by the parameter :math:`\gamma(n) = \min(1, 40/n)` to have uniform target values that are comparable, in difficulty, over a wide range of dimensions.
+- All functions, except for the Schwefel, Schaffer, Weierstrass, Gallagher, and Katsuura functions, are normalized by the parameter :math:`\gamma(n) = \min(1, 40/n)` to have uniform target values that are comparable, in difficulty, over a wide range of dimensions.
 
 - The Discus, Bent Cigar and Sharp Ridge functions are generalized such that they have a constant proportion of distinct axes that remain consistent with the ``bbob`` test suite.
 
@@ -438,135 +441,348 @@ of the used transformations and abbreviations, we refer the reader to the origin
 
 __ bbobfunctiondoc_
 
-.. list-table::
-    :header-rows: 1
-    :widths: 3 9 6
-    :stub-columns: 0
 
-    *  -
-       -  Formulation
-       -  Transformations
+.. raw:: latex
 
-    *  -  **Group 1: Separable functions**
-       -
-       -
+    \begin{sidewaystable}
+        \centering
+        \caption{Function descriptions of the separable, moderate, and ill-conditioned function groups of the {\ttfamily bbob-largescale} test suite.}
+        \scriptsize
 
-    *  - Sphere Function
-       - :math:`f_1(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} z_i^2 + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{x} - \mathbf{x}^{\text{opt}}`
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}| 
 
-    *  - Ellipsoidal Function
-       - :math:`f_2(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2+ \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right)`
+.. table::
+    :widths: 20 50 30
+    
+    
+    +----------------------------------+------------------+------------------+
+    |                                  | Formulation      | Transformations  |
+    +==================================+==================+==================+
+    | **Group 1: Separable functions**                                       |
+    +----------------------------------+------------------+------------------+
+    | Sphere Function                  | |def-f1|         | |trafo-f1|       |
+    +----------------------------------+------------------+------------------+
+    | Ellipsoidal Function             | |def-f2|         | |trafo-f2|       |
+    +----------------------------------+------------------+------------------+
+    | Rastrigin Function               | |def-f3|         | |trafo-f3|       |
+    +----------------------------------+------------------+------------------+
+    | Bueche-Rastrigin Function        | |def-f4-1|       | |trafo-f4-1|     |
+    |                                  | |def-f4-2|       | |trafo-f4-2|     |
+    |                                  |                  | |trafo-f4-3|     |
+    +----------------------------------+------------------+------------------+
+    | Linear Slope                     | |def-f5|         | |trafo-f5-1|     |
+    |                                  |                  | |trafo-f5-2|     |
+    |                                  |                  | |trafo-f5-3|     |
+    |                                  |                  | |trafo-f5-4|     |
+    +----------------------------------+------------------+------------------+
+    
 
-    *  - Rastrigin Function
-       - :math:`f_3(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{\Lambda}^{10} T_{\text{asy}}^{0.2} \left( T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right) \right)`
-
-    *  - Bueche-Rastrigin Function
-       - :math:`f_4(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right) +` \\ :math:`+ 100f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`z_i = s_i T_{\text{osz}}\left(x_i - x_i^{\text{opt}}\right), \text{for } i = 1,\dots, n`\\ :math:`s_i = \begin{cases} 10 \times 10^{\frac{1}{2} \ \frac{i-1}{n - 1}} & \text{if } z_i >0 \text{ and } i \text{ odd}\\ 10^{\frac{1}{2} \ \frac{i - 1}{n - 1}} & \text{otherwise} \end{cases}` \\ :math:`\text{ \ \ \ \ \ \ for } i = 1,\dots, n`
-
-    *  - Linear Slope
-       - :math:`f_5(\mathbf{x}) = \gamma(n)\times \sum_{i=1}^{n}\left( 5 \vert s_i \vert - s_i z_i \right) + \mathbf{f}_{\text{opt}}`
-       - :math:`z_i = \begin{cases} x_i & \text{if } x_i^{\mathrm{opt}}x_i < 5^2 \\ x_i^{\mathrm{opt}} & \text{otherwise} \end{cases}` \\ :math:`\text{ \ \ \ \ \ \ for } i=1, \dots, n,` \\ :math:`s_i = \text{sign} \left(x_i^{\text{opt}}\right) 10^{\frac{i-1}{n-1}}, \text{ for } i=1, \dots, n,` \\ :math:`\mathbf{x}^{\text{opt}} = \mathbf{z}^{\text{opt}} = 5\times \mathbf{1}_{-}^+`
-
-    *  -  **Group 2: Functions with low or moderate conditioning**
-       -
-       -
-
-    *  - Attractive Sector Function
-       - :math:`f_6(\mathbf{x}) = T_{\text{osz}}\left(\gamma(n) \times \sum_{i=1}^{n}\left( s_i z_i\right)^2 \right)^{0.9} + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{Q} \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},` \\ :math:`s_i = \begin{cases} 10^2 & \text{if } z_i \times x_i^{\mathrm{opt}} > 0\\ 1 & \text{otherwise}\end{cases}` \\ :math:`\text{ \ \ \ \ \ \ for } i=1,\dots, n`
-
-    *  - Step Ellipsoidal Function
-       - :math:`f_7(\mathbf{x}) = \gamma(n) \times 0.1 \max\left(\vert \hat{z}_1\vert/10^4, \sum_{i=1}^{n}10^{2\frac{i - 1}{n - 1}}z_i^2\right) + f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{\hat{z}} = \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x}-\mathbf{x}^{\text{opt}})  \text{ with }\mathbf{R} = P_{11}B_1P_{12},`\\ :math:`\tilde{z}_i= \begin{cases} \lfloor 0.5 + \hat{z}_i \rfloor & \text{if }  |\hat{z}_i| > 0.5 \\ \lfloor 0.5 + 10 \hat{z}_i \rfloor /10 & \text{otherwise} \end{cases}` \\ :math:`\text{ \ \ \ \ \ \ for } i=1,\dots, n,` \\ :math:`\mathbf{z} = \mathbf{Q} \mathbf{\tilde{z}} \text{ with } \mathbf{Q} = P_{21}B_2P_{22}`
-
-    *  - Rosenbrock Function, original
-       - :math:`f_8(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)(\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1},`\\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
-
-    *  - Rosenbrock Function, rotated
-       - :math:`f_9(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1}` \\ :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},`\\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
-
-    *  -  **Group 3: Functions with high conditioning and unimodal**
-       -
-       -
-
-    *  - Ellipsoidal Function
-       - :math:`f_{10}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2  + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = T_{\text{osz}} (\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}`
-
-    *  - Discus Function
-       - :math:`f_{11}(\mathbf{x}) = \gamma(n) \times\left(10^6\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + \sum_{i=\lceil n/40 \rceil+1}^{n}z_i^2\right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}`
-
-    *  - Bent Cigar Function
-       - :math:`f_{12}(\mathbf{x}) = \gamma(n) \times\left(\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + 10^6\sum_{i=\lceil n/40 \rceil + 1}^{n}z_i^2 \right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{R} T_{\text{asy}}^{0.5}(\mathbf{R}((\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}`
-
-    *  - Sharp Ridge Function
-       - :math:`f_{13}(\mathbf{x}) = \gamma(n) \times\left(\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + 100\sqrt{\sum_{i=\lceil n/40 \rceil + 1}^{n}z_i^2} \right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{10}\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
-
-    *  - Different Powers Function
-       - :math:`f_{14}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \vert z_i\vert ^{\left(2 + 4 \times \frac{i-1}{n- 1}\right)} + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}) \text{ with }\mathbf{R} = P_{1}BP_{2}`
-
-    *  -  **Group 4: Multi-modal functions with adequate global structure**
-       -
-       -
-
-    *  - Rastrigin Function
-       - :math:`f_{15}(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||\mathbf{z}||^2\right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{R} \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.2} \left(T_{\text{osz}} \left(\mathbf{R}\left(\mathbf{x} - \mathbf{x}^{\text{opt}} \right) \right) \right)` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
-
-    *  - Weierstrass Function
-       - :math:`f_{16}(\mathbf{x}) = 10\left( \dfrac{1}{n} \sum_{i=1}^{n} \sum_{k=0}^{11} \dfrac{1}{2^k} \cos \left( 2\pi 3^k \left( z_i + 1/2\right) \right) - f_0\right)^3 +` \\ :math:`+\dfrac{10}{n}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{R}\mathbf{\Lambda}^{1/100}\mathbf{Q}T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`\\ :math:`f_0= \sum_{k=0}^{11} \dfrac{1}{2^k} \cos(\pi 3^k)`
-
-    *  - Schaffers F7 Function
-       - :math:`f_{17}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2 +` \\ :math:`+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},` \\ :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
-
-    *  - Schaffers F7 Function, moderately ill-conditioned
-       - :math:`f_{18}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2 +` \\ :math:`+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{\Lambda}^{1000} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`\\ :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
-
-    *  - Composite Griewank-Rosenbrock Function F8F2
-       - :math:`f_{19}(\mathbf{x}) = \gamma(n)\times\left(\dfrac{10}{n-1} \sum_{i=1}^{n-1} \left( \dfrac{s_i}{4000} - \cos\left(s_i \right)\right) + 10 \right) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2}` \\ :math:`\text{ \ \ \ \ \ \ with }\mathbf{R} = P_{1}BP_{2},` \\ :math:`s_i= 100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2,` \\ :math:`\text{ \ \ \ \ \ \ for } i=1,\dots, n-1,` \\ :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
-
-    *  -  **Group 5: Multi-modal functions with weak global structure**
-       -
-       -
-
-    *  - Schwefel Function
-       - :math:`f_{20}(\mathbf{x}) = -\dfrac{1}{n} \sum_{i=1}^{n} z_i\sin\left(\sqrt{\vert z_i\vert}\right) + 4.189828872724339 +` \\ :math:`+ 100f_{pen}(\mathbf{z}/100)+\mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{\hat{x}} = 2 \times \mathbf{1}_{-}^{+} \otimes \mathbf{x},` \\ :math:`\hat{z}_1 = \hat{x}_1, \hat{z}_{i+1}=\hat{x}_{i+1} + 0.25 \left(\hat{x}_{i} - 2\left|x_i^{\text{opt}}\right|\right),` \\ :math:`\text{ \ \ \ \ \ \ for } i=1, \dots, n-1,` \\ :math:`\mathbf{z} = 100 \left(\mathbf{\Lambda}^{10} \left(\mathbf{\hat{z}} - 2\left|\mathbf{x}^{\text{opt}}\right|\right) + 2\left|\mathbf{x}^{\text{opt}}\right|\right),` \\ :math:`\mathbf{x}^{\text{opt}} = 4.2096874633/2 \mathbf{1}_{-}^{+}`
-
-    *  - Gallagher's Gaussian 101-me Peaks Function
-       - :math:`f_{21}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{101} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T\mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2 +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{99} & \text{for } 2 \leq i \leq 101\\ 10 & \text{for } i = 1 \end{cases}`\\ :math:`\mathbf{B} \text{ is a block-diagonal matrix without}` \\ :math:`\text{permuations of the variables.}`\\ :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` \\ :math:`\text{but with randomly permuted diagonal elements.}` \\ :math:`\text{For } i=1,\dots, 101, \alpha_i \text{ is drawn uniformly}` \\ :math:`\text{from the set } \left\{1000^{2\frac{j}{99}}, j = 0,\dots, 99 \right\} \text{without}` \\ :math:`\text{replacement, and } \alpha_i = 1000 \text{ for } i = 1.` \\ :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` \\ :math:`\text{from the domain } [-5,5]^n \text{ for }` \\ :math:`i = 2,...,101 \text{ and } \mathbf{y}_1 \in [-4,4]^n.` \\ :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
-
-    *  - Gallagher's Gaussian 21-hi Peaks Function
-       - :math:`f_{22}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{21} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T \mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2 +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{19} & \text{for } 2 \leq i \leq 21\\ 10 & \text{for } i = 1 \end{cases}` \\ :math:`\mathbf{B} \text{ is a block-diagonal matrix without}` \\ :math:`\text{permuations of the variables.}`\\ :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` \\ :math:`\text{but with randomly permuted diagonal elements.}` \\ :math:`\text{For } i=1,\dots, 21, \alpha_i \text{ is drawn uniformly}` \\ :math:`\text{from the set } \left\{1000^{2\frac{j}{19}}, j = 0,\dots, 19 \right\} \text{without}` \\ :math:`\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1.` \\ :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` \\ :math:`\text{from the domain } [-4.9,4.9]^n \text{ for }` \\ :math:`i = 2,...,21 \text{ and } \mathbf{y}_1 \in [-3.92,3.92]^n.`  \\ :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
-
-    *  - Katsuura Function
-       - :math:`f_{23}(\mathbf{x}) = \left(\dfrac{10}{n^2} \prod_{i=1}^{n} \left( 1 + i \sum_{j=1}^{32} \dfrac{\vert 2^j z_i - [2^j z_i]\vert}{2^j}\right)^{10/n^{1.2}} - \dfrac{10}{n^2}\right) +` \\ :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`\\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
+.. |def-f1| replace:: :math:`f_1(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} z_i^2 + \mathbf{f}_{\text{opt}}`
+.. |trafo-f1| replace:: :math:`\mathbf{z} = \mathbf{x} - \mathbf{x}^{\text{opt}}`
+.. |def-f2| replace:: :math:`f_2(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2+ \mathbf{f}_{\text{opt}}`   
+.. |trafo-f2| replace:: :math:`\mathbf{z} = T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right)`
+.. |def-f3| replace:: :math:`f_3(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f3| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{10} T_{\text{asy}}^{0.2} \left( T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right) \right)`
+.. |def-f4-1| replace:: :math:`f_4(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right)`
+.. |def-f4-2| replace:: :math:`+ 100f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}` 
+.. |trafo-f4-1| replace:: :math:`z_i = s_i T_{\text{osz}}\left(x_i - x_i^{\text{opt}}\right) \text{for } i = 1,\dots, n\hspace{6cm}`
+.. |trafo-f4-2| replace:: :math:`s_i = \begin{cases} 10 \times 10^{\frac{1}{2} \frac{i-1}{n-1}} & \text{if } z_i >0 \text{ and } i \text{ odd} \\ 10^{\frac{1}{2} \frac{i-1}{n-1}} & \text{otherwise} \end{cases}`
+.. |trafo-f4-3| replace:: :math:`\text{ for } i = 1,\dots, n`
+.. |def-f5| replace:: :math:`f_5(\mathbf{x}) = \gamma(n)\times \sum_{i=1}^{n}\left( 5 \vert s_i \vert - s_i z_i \right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f5-1| replace:: :math:`z_i = \begin{cases} x_i & \text{if } x_i^{\mathrm{opt}}x_i < 5^2 \\ x_i^{\mathrm{opt}} & \text{otherwise} \end{cases}`
+.. |trafo-f5-2| replace:: :math:`\text{ for } i=1, \dots, n,\hspace{3.5cm}`
+.. |trafo-f5-3| replace:: :math:`s_i = \text{sign} \left(x_i^{\text{opt}}\right) 10^{\frac{i-1}{n-1}} \text{ for } i=1, \dots, n,\hspace{4cm}`
+.. |trafo-f5-4| replace:: :math:`\mathbf{x}^{\text{opt}} = \mathbf{z}^{\text{opt}} = 5\times \mathbf{1}_{-}^+`
 
 
-    *  - Lunacek bi-Rastrigin Function
-       - :math:`f_{24}(\mathbf{x}) = \gamma(n)\times\Big(\min\big( \sum_{i=1}^{n} (\hat{x}_i - \mu_0)^2, n + s\sum_{i=1}^{n}(\hat{x}_i - \mu_1)^2\big) +` \\ :math:`+ 10 \big(n - \sum_{i=1}^{n}\cos(2\pi z_i) \big)\Big) + 10^{4}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-       - :math:`\mathbf{\hat{x}} = 2 \text{sign}(\mathbf{x}^{\text{opt}}) \otimes \mathbf{x}, \mathbf{x}^{\text{opt}} = 0.5 \mu_0 \mathbf{1}_{-}^{+}` \\ :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100}\mathbf{R}(\mathbf{\hat{x}} - \mu_0\mathbf{1})` \\ :math:`\text{ \ \ \ \ \ \ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`\\ :math:`\mu_0 = 2.5, \mu_1 = -\sqrt{\dfrac{\mu_0^{2} - 1}{s}},` \\ :math:`s = 1 - \dfrac{1}{2\sqrt{n + 20} - 8.2}`
+.. .. raw:: latex
 
+    \end{sidewaystable}
+
+    \begin{sidewaystable}
+        \centering
+        \caption{Your caption here}
+        \scriptsize
+
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}| 
+
+.. table::
+    :widths: 20 50 30
+    
+    
+    +----------------------------------+------------------+------------------+
+    | **Group 2: Functions with low or moderate conditioning**               |
+    +----------------------------------+------------------+------------------+
+    | Attractive Sector Function       | |def-f6|         | |trafo-f6-1|     |
+    |                                  |                  | |trafo-f6-2|     |
+    |                                  |                  | |trafo-f6-3|     |
+    |                                  |                  | |trafo-f6-4|     |
+    +----------------------------------+------------------+------------------+
+    | Step Ellipsoidal Function        | |def-f7|         | |trafo-f7-1|     |
+    |                                  |                  | |trafo-f7-2|     |
+    |                                  |                  | |trafo-f7-3|     |
+    |                                  |                  | |trafo-f7-4|     |
+    +----------------------------------+------------------+------------------+
+    | Rosenbrock Function, original    | |def-f8|         | |trafo-f8-1|     |
+    |                                  |                  | |trafo-f8-2|     |
+    +----------------------------------+------------------+------------------+
+    | Rosenbrock Function, rotated     | |def-f9|         | |trafo-f9-1|     |
+    |                                  |                  | |trafo-f9-2|     |
+    |                                  |                  | |trafo-f9-3|     |
+    +----------------------------------+------------------+------------------+
+    
+    
+    
+.. |def-f6| replace:: :math:`f_6(\mathbf{x}) = T_{\text{osz}}\left(\gamma(n) \times \sum_{i=1}^{n}\left( s_i z_i\right)^2 \right)^{0.9} + \mathbf{f}_{\text{opt}}`
+.. |trafo-f6-1| replace:: :math:`\mathbf{z} = \mathbf{Q} \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})` 
+.. |trafo-f6-2| replace:: :math:`\hspace{0.2cm} \text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{1.5cm}` 
+.. |trafo-f6-3| replace:: :math:`s_i = \begin{cases} 10^2 & \text{if } z_i \times x_i^{\mathrm{opt}} > 0\\ 1 & \text{otherwise}\end{cases}` 
+.. |trafo-f6-4| replace:: :math:`\text{ for } i=1,\dots, n`
+.. |def-f7| replace:: :math:`f_7(\mathbf{x}) = \gamma(n) \times 0.1 \max\left(\vert \hat{z}_1\vert/10^4, \sum_{i=1}^{n}10^{2\frac{i - 1}{n - 1}}z_i^2\right) + f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f7-1| replace:: :math:`\mathbf{\hat{z}} = \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x}-\mathbf{x}^{\text{opt}})  \text{ with }\mathbf{R} = P_{11}B_1P_{12},\hspace{4.5cm}`
+.. |trafo-f7-2| replace:: :math:`\tilde{z}_i= \begin{cases} \lfloor 0.5 + \hat{z}_i \rfloor & \text{if }  |\hat{z}_i| > 0.5 \\ \lfloor 0.5 + 10 \hat{z}_i \rfloor /10 & \text{otherwise} \end{cases}`
+.. |trafo-f7-3| replace:: :math:`\text{ for } i=1,\dots, n,\hspace{1.5cm}` 
+.. |trafo-f7-4| replace:: :math:`\mathbf{z} = \mathbf{Q} \mathbf{\tilde{z}} \text{ with } \mathbf{Q} = P_{21}B_2P_{22}`
+.. |def-f8| replace:: :math:`f_8(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f8-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)(\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1},`
+.. |trafo-f8-2| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+.. |def-f9| replace:: :math:`f_9(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f9-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1}`
+.. |trafo-f9-2| replace:: :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},`
+.. |trafo-f9-3| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+
+.. .. raw:: latex
+
+    \end{sidewaystable}
+
+    \begin{sidewaystable}
+        \centering
+        \caption{Your caption here}
+        \scriptsize
+
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}| 
+
+.. table::
+    :widths: 20 50 30
+    
+    +----------------------------------+------------------+------------------+
+    | **Group 3: Functions with high conditioning and unimodal**             |
+    +----------------------------------+------------------+------------------+
+    | Ellipsoidal Function             | |def-f10|        | |trafo-f10|      |
+    +----------------------------------+------------------+------------------+
+    | Discus Function                  | |def-f11|        | |trafo-f11|      |
+    +----------------------------------+------------------+------------------+
+    | Bent Cigar Function              | |def-f12|        | |trafo-f12|      |
+    +----------------------------------+------------------+------------------+
+    | Sharp Ridge Function             | |def-f13|        | |trafo-f13-1|    |
+    |                                  |                  | |trafo-f13-2|    |
+    +----------------------------------+------------------+------------------+
+    | Different Powers Function        | |def-f14|        | |trafo-f14|      |
+    +----------------------------------+------------------+------------------+
+    
+    
+    
+.. |def-f10| replace:: :math:`f_{10}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2  + \mathbf{f}_{\text{opt}}`
+.. |trafo-f10| replace:: :math:`\mathbf{z} = T_{\text{osz}} (\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}`
+.. |def-f11| replace:: :math:`f_{11}(\mathbf{x}) = \gamma(n) \times\left(10^6\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + \sum_{i=\lceil n/40 \rceil+1}^{n}z_i^2\right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f11| replace:: :math:`\mathbf{z} = T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}`
+.. |def-f12| replace:: :math:`f_{12}(\mathbf{x}) = \gamma(n) \times\left(\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + 10^6\sum_{i=\lceil n/40 \rceil + 1}^{n}z_i^2 \right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f12| replace:: :math:`\mathbf{z} = \mathbf{R} T_{\text{asy}}^{0.5}(\mathbf{R}((\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}`
+.. |def-f13| replace:: :math:`f_{13}(\mathbf{x}) = \gamma(n) \times\left(\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + 100\sqrt{\sum_{i=\lceil n/40 \rceil + 1}^{n}z_i^2} \right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f13-1| replace:: :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{10}\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`
+.. |trafo-f13-2| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
+.. |def-f14| replace:: :math:`f_{14}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \vert z_i\vert ^{\left(2 + 4 \times \frac{i-1}{n- 1}\right)} + \mathbf{f}_{\text{opt}}`
+.. |trafo-f14| replace:: :math:`\mathbf{z} = \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}) \text{ with }\mathbf{R} = P_{1}BP_{2}`
+
+
+
+.. raw:: latex
+
+    \end{sidewaystable}
+
+    \begin{sidewaystable}
+        \centering
+        \caption{Function descriptions of the multi-modal function group with adequate global structure of the {\ttfamily bbob-largescale} test suite.}
+        \scriptsize
+
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}| 
+
+.. table::
+    :widths: 20 50 30
+    
+    +----------------------------------+------------------+------------------+
+    |                                  | Formulation      | Transformations  |
+    +==================================+==================+==================+
+    | **Group 4: Multi-modal functions with adequate global structure**      |
+    +----------------------------------+------------------+------------------+
+    | Rastrigin Function               | |def-f15|        | |trafo-f15-1|    |
+    |                                  |                  | |trafo-f15-2|    |
+    +----------------------------------+------------------+------------------+
+    | Weierstrass Function             | |def-f16-1|      | |trafo-f16-1|    |
+    |                                  | |def-f16-2|      | |trafo-f16-2|    |
+    |                                  |                  | |trafo-f16-3|    |
+    +----------------------------------+------------------+------------------+
+    | Schaffers F7 Function            | |def-f17-1|      | |trafo-f17-1|    |
+    |                                  | |def-f17-2|      | |trafo-f17-2|    |
+    |                                  |                  | |trafo-f17-3|    |
+    +----------------------------------+------------------+------------------+
+    | Schaffers F7 Function,           | |def-f18-1|      | |trafo-f18-1|    |
+    | moderately ill-conditioned       | |def-f18-2|      | |trafo-f18-2|    |
+    |                                  |                  | |trafo-f18-3|    |
+    +----------------------------------+------------------+------------------+
+    | Composite Griewank-Rosenbrock    | |def-f19|        | |trafo-f19-1|    |
+    | Function F8F2                    |                  | |trafo-f19-2|    |
+    |                                  |                  | |trafo-f19-3|    |
+    |                                  |                  | |trafo-f19-4|    |
+    |                                  |                  | |trafo-f19-5|    |
+    +----------------------------------+------------------+------------------+
+    
+   
+    
+.. |def-f15| replace:: :math:`f_{15}(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||\mathbf{z}||^2\right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f15-1| replace:: :math:`\mathbf{z} = \mathbf{R} \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.2} \left(T_{\text{osz}} \left(\mathbf{R}\left(\mathbf{x} - \mathbf{x}^{\text{opt}} \right) \right) \right) \hspace{5cm}` 
+.. |trafo-f15-2| replace:: :math:`\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
+.. |def-f16-1| replace:: :math:`f_{16}(\mathbf{x}) = 10\left( \dfrac{1}{n} \sum_{i=1}^{n} \sum_{k=0}^{11} \dfrac{1}{2^k} \cos \left( 2\pi 3^k \left( z_i + 1/2\right) \right) - f_0\right)^3`
+.. |def-f16-2| replace:: :math:`+\dfrac{10}{n}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f16-1| replace:: :math:`\mathbf{z} = \mathbf{R}\mathbf{\Lambda}^{1/100}\mathbf{Q}T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))\hspace{6cm}`
+.. |trafo-f16-2| replace:: :math:`\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{5.8cm}`
+.. |trafo-f16-3| replace:: :math:`f_0= \sum_{k=0}^{11} \dfrac{1}{2^k} \cos(\pi 3^k)`
+.. |def-f17-1| replace:: :math:`f_{17}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2` 
+.. |def-f17-2| replace:: :math:`+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f17-1| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))`
+.. |trafo-f17-2| replace:: :math:`\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{1cm}` 
+.. |trafo-f17-3| replace:: :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
+.. |def-f18-1| replace:: :math:`f_{18}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2`
+.. |def-f18-2| replace:: :math:`+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f18-1| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{1000} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` 
+.. |trafo-f18-2| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{0.5cm}`
+.. |trafo-f18-3| replace:: :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
+.. |def-f19| replace:: :math:`f_{19}(\mathbf{x}) = \gamma(n)\times\left(\dfrac{10}{n-1} \sum_{i=1}^{n-1} \left( \dfrac{s_i}{4000} - \cos\left(s_i \right)\right) + 10 \right) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f19-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2}`
+.. |trafo-f19-2| replace:: :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},\hspace{3.4cm}` 
+.. |trafo-f19-3| replace:: :math:`s_i= 100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2,` 
+.. |trafo-f19-4| replace:: :math:`\text{ for } i=1,\dots, n-1,` 
+.. |trafo-f19-5| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+   
+
+
+.. raw:: latex
+
+    \end{sidewaystable}
+
+    \begin{sidewaystable}
+        \centering
+        \caption{Function descriptions of the multi-modal function group with weak global structure of the {\ttfamily bbob-largescale} test suite.}
+        \scriptsize
+
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}| 
+
+.. table::
+    :widths: 20 50 30
+
+    +----------------------------------+------------------+------------------+
+    |                                  | Formulation      | Transformations  |
+    +==================================+==================+==================+
+    | **Group 5: Multi-modal functions with weak global structure**          |
+    +----------------------------------+------------------+------------------+
+    | Schwefel Function                | |def-f20-1|      | |trafo-f20-1|    |
+    |                                  | |def-f20-2|      | |trafo-f20-2|    |
+    |                                  |                  | |trafo-f20-3|    |
+    |                                  |                  | |trafo-f20-4|    |
+    |                                  |                  | |trafo-f20-5|    |
+    +----------------------------------+------------------+------------------+
+    | Gallagher's Gaussian             | |def-f21-1|      | |trafo-f21-01|   |
+    | 101-me Peaks Function            | |def-f21-2|      | |trafo-f21-02|   |
+    |                                  |                  | |trafo-f21-03|   |
+    |                                  |                  | |trafo-f21-04|   |
+    |                                  |                  | |trafo-f21-05|   |
+    |                                  |                  | |trafo-f21-06|   |
+    |                                  |                  | |trafo-f21-07|   |
+    |                                  |                  | |trafo-f21-08|   |
+    |                                  |                  | |trafo-f21-09|   |
+    |                                  |                  | |trafo-f21-10|   |
+    |                                  |                  | |trafo-f21-11|   |
+    |                                  |                  | |trafo-f21-12|   |
+    +----------------------------------+------------------+------------------+
+    | Gallagher's Gaussian             | |def-f22-1|      | |trafo-f22-01|   |
+    | 21-hi Peaks Function             | |def-f22-2|      | |trafo-f22-02|   |
+    |                                  |                  | |trafo-f22-03|   |
+    |                                  |                  | |trafo-f22-04|   |
+    |                                  |                  | |trafo-f22-05|   |
+    |                                  |                  | |trafo-f22-06|   |
+    |                                  |                  | |trafo-f22-07|   |
+    |                                  |                  | |trafo-f22-08|   |
+    |                                  |                  | |trafo-f22-09|   |
+    |                                  |                  | |trafo-f22-10|   |
+    |                                  |                  | |trafo-f22-11|   |
+    |                                  |                  | |trafo-f22-12|   |
+    +----------------------------------+------------------+------------------+
+    | Katsuura Function                | |def-f23-1|      | |trafo-f23-1|    |
+    |                                  | |def-f23-2|      | |trafo-f23-2|    |
+    +----------------------------------+------------------+------------------+
+    | Lunacek bi-Rastrigin Function    | |def-f24-1|      | |trafo-f24-1|    |
+    |                                  | |def-f24-2|      | |trafo-f24-2|    |
+    |                                  |                  | |trafo-f24-3|    |
+    |                                  |                  | |trafo-f24-4|    |
+    |                                  |                  | |trafo-f24-5|    |
+    +----------------------------------+------------------+------------------+
+    
+    
+.. |def-f20-1| replace:: :math:`f_{20}(\mathbf{x}) = -\dfrac{1}{n} \sum_{i=1}^{n} z_i\sin\left(\sqrt{\vert z_i\vert}\right) + 4.189828872724339` 
+.. |def-f20-2| replace:: :math:`+ 100f_{pen}(\mathbf{z}/100)+\mathbf{f}_{\text{opt}}`
+.. |trafo-f20-1| replace:: :math:`\mathbf{\hat{x}} = 2 \times \mathbf{1}_{-}^{+} \otimes \mathbf{x},` 
+.. |trafo-f20-2| replace:: :math:`\hat{z}_1 = \hat{x}_1, \hat{z}_{i+1}=\hat{x}_{i+1} + 0.25 \left(\hat{x}_{i} - 2\left|x_i^{\text{opt}}\right|\right),`
+.. |trafo-f20-3| replace:: :math:`\text{ for } i=1, \dots, n-1,` 
+.. |trafo-f20-4| replace:: :math:`\mathbf{z} = 100 \left(\mathbf{\Lambda}^{10} \left(\mathbf{\hat{z}} - 2\left|\mathbf{x}^{\text{opt}}\right|\right) + 2\left|\mathbf{x}^{\text{opt}}\right|\right),`
+.. |trafo-f20-5| replace:: :math:`\mathbf{x}^{\text{opt}} = 4.2096874633/2 \mathbf{1}_{-}^{+}`
+.. |def-f21-1| replace:: :math:`f_{21}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{101} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T\mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2`
+.. |def-f21-2| replace:: :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f21-01| replace:: :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{99} & \text{for } 2 \leq i \leq 101\\ 10 & \text{for } i = 1 \end{cases}`
+.. |trafo-f21-02| replace:: :math:`\mathbf{B} \text{ is a block-diagonal matrix without}`
+.. |trafo-f21-03| replace:: :math:`\text{permuations of the variables.}`
+.. |trafo-f21-04| replace:: :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` 
+.. |trafo-f21-05| replace:: :math:`\text{but with randomly permuted diagonal elements.}`
+.. |trafo-f21-06| replace:: :math:`\text{For } i=1,\dots, 101, \alpha_i \text{ is drawn uniformly}` 
+.. |trafo-f21-07| replace:: :math:`\text{from the set } \left\{1000^{2\frac{j}{99}}, j = 0,\dots, 99 \right\} \text{without}` 
+.. |trafo-f21-08| replace:: :math:`\text{replacement, and } \alpha_i = 1000 \text{ for } i = 1.` 
+.. |trafo-f21-09| replace:: :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` 
+.. |trafo-f21-10| replace:: :math:`\text{from the domain } [-5,5]^n \text{ for }` 
+.. |trafo-f21-11| replace:: :math:`i = 2,...,101 \text{ and } \mathbf{y}_1 \in [-4,4]^n.`
+.. |trafo-f21-12| replace:: :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
+.. |def-f22-1| replace:: :math:`f_{22}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{21} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T \mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2`
+.. |def-f22-2| replace:: :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f22-01| replace:: :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{19} & \text{for } 2 \leq i \leq 21\\ 10 & \text{for } i = 1 \end{cases}`
+.. |trafo-f22-02| replace:: :math:`\mathbf{B} \text{ is a block-diagonal matrix without}`
+.. |trafo-f22-03| replace:: :math:`\text{permuations of the variables.}`
+.. |trafo-f22-04| replace:: :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` 
+.. |trafo-f22-05| replace:: :math:`\text{but with randomly permuted diagonal elements.}` 
+.. |trafo-f22-06| replace:: :math:`\text{For } i=1,\dots, 21, \alpha_i \text{ is drawn uniformly}` 
+.. |trafo-f22-07| replace:: :math:`\text{from the set } \left\{1000^{2\frac{j}{19}}, j = 0,\dots, 19 \right\} \text{without}`
+.. |trafo-f22-08| replace:: :math:`\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1.` 
+.. |trafo-f22-09| replace:: :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` 
+.. |trafo-f22-10| replace:: :math:`\text{from the domain } [-4.9,4.9]^n \text{ for }`
+.. |trafo-f22-11| replace:: :math:`i = 2,...,21 \text{ and } \mathbf{y}_1 \in [-3.92,3.92]^n.`
+.. |trafo-f22-12| replace:: :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
+.. |def-f23-1| replace:: :math:`f_{23}(\mathbf{x}) = \left(\dfrac{10}{n^2} \prod_{i=1}^{n} \left( 1 + i \sum_{j=1}^{32} \dfrac{\vert 2^j z_i - [2^j z_i]\vert}{2^j}\right)^{10/n^{1.2}} - \dfrac{10}{n^2}\right)`
+.. |def-f23-2| replace:: :math:`+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f23-1| replace:: :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`
+.. |trafo-f23-2| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
+.. |def-f24-1| replace:: :math:`f_{24}(\mathbf{x}) = \gamma(n)\times\Big(\min\big( \sum_{i=1}^{n} (\hat{x}_i - \mu_0)^2, n + s\sum_{i=1}^{n}(\hat{x}_i - \mu_1)^2\big)`
+.. |def-f24-2| replace:: :math:`+ 10 \big(n - \sum_{i=1}^{n}\cos(2\pi z_i) \big)\Big) + 10^{4}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
+.. |trafo-f24-1| replace:: :math:`\mathbf{\hat{x}} = 2 \text{sign}(\mathbf{x}^{\text{opt}}) \otimes \mathbf{x}, \mathbf{x}^{\text{opt}} = 0.5 \mu_0 \mathbf{1}_{-}^{+}`
+.. |trafo-f24-2| replace:: :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100}\mathbf{R}(\mathbf{\hat{x}} - \mu_0\mathbf{1})`
+.. |trafo-f24-3| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`
+.. |trafo-f24-4| replace:: :math:`\mu_0 = 2.5, \mu_1 = -\sqrt{\dfrac{\mu_0^{2} - 1}{s}},`
+.. |trafo-f24-5| replace:: :math:`s = 1 - \dfrac{1}{2\sqrt{n + 20} - 8.2}`
+      
+    
+.. raw:: latex
+
+    \end{sidewaystable}
+    
+    
 
 .. _`Coco framework`: https://github.com/numbbo/coco
-
 
 
 
@@ -580,7 +796,8 @@ __ bbobfunctiondoc_
     \section*{Acknowledgments}
 
 This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
-of the French National Research Agency.
+of the French National Research Agency. 
+This work was further supported by a public grant as part of the Investissement d'avenir project, reference ANR-11-LABX-0056-LMH, LabEx LMH, in a joint call with Gaspard Monge Program for optimization, operations research and their interactions with data sciences.
 
 
 

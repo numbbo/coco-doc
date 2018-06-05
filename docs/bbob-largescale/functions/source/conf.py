@@ -265,6 +265,7 @@ latex_elements = {# The paper size ('letterpaper' or 'a4paper').
 'preamble': r"""
   \usepackage{amssymb}
   \pagestyle{plain}
+  \usepackage{rotating}
   \newcommand{\chapter}[1]{}  % hack to be able to use article documentclass
   \newcommand{\ignore}[1]{}  % never used
   \newcommand{\COCO}{\href{https://githum.com/numbbo/coco}{COCO}}
@@ -294,18 +295,19 @@ latex_elements = {# The paper size ('letterpaper' or 'a4paper').
 latex_documents = [
   (master_doc, 'bbob-largescale-functions.tex', u'COCO: The Large Scale Black-Box Optimization Benchmarking (bbob-largescale) Test Suite',
   r"""
-      Ouassim Ait Elhara$^3$,
-      Duc Manh Nguyen$^{2,3}$,
-      Tea Tu\v{s}ar$^1$,
+      Ouassim Ait Elhara$^1$,
+      Konstantinos Varelas$^1$,
+      Duc Manh Nguyen$^2$,
+      Tea Tu\v{s}ar$^3$,\\
       Dimo Brockhoff$^1$,
-      Nikolaus Hansen$^{2,3}$, 
-      Anne Auger$^{2,3}$ 
+      Nikolaus Hansen$^1$, 
+      Anne Auger$^1$ 
   \\
-    $^1$Inria, research centre Lille, France
+    $^1$RandOpt team, Inria research centre Saclay and CMAP, Ecole Polytechnique, France
   \\
-    $^2$Inria, research centre Saclay, France
+    $^2$Hanoi National University of Education, Vietnam
   \\
-    $^3$Universit\'e Paris-Saclay, LRI, France
+    $^3$Jozef Stefan Institute (JSI), Slovenia
     """, 
    'article'  # 'manual'
    ),
