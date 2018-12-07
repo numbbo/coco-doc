@@ -107,6 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__bbob__legacy__code_8c.html">suite_bbob_legacy_code.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="coco__utilities_8c.html">coco_utilities.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="transform__vars__conditioning_8c.html">transform_vars_conditioning.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="transform__vars__asymmetric_8c.html">transform_vars_asymmetric.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="transform__vars__oscillate_8c.html">transform_vars_oscillate.c</a>&quot;</code><br />
@@ -122,6 +123,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9d8c7ccc68426823c63620e5f6f03a90"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#a9d8c7ccc68426823c63620e5f6f03a90">f_rastrigin_evaluate</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
 <tr class="memdesc:a9d8c7ccc68426823c63620e5f6f03a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the raw function to evaluate the COCO problem.  <a href="#a9d8c7ccc68426823c63620e5f6f03a90">More...</a><br /></td></tr>
 <tr class="separator:a9d8c7ccc68426823c63620e5f6f03a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7958f3594497969b9127fbc944248ee"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#af7958f3594497969b9127fbc944248ee">f_rastrigin_evaluate_gradient</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:af7958f3594497969b9127fbc944248ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the gradient of the raw Rastrigin function.  <a href="#af7958f3594497969b9127fbc944248ee">More...</a><br /></td></tr>
+<tr class="separator:af7958f3594497969b9127fbc944248ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f1a0bbdc7efe1bc4869f59d2fb08840"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#a4f1a0bbdc7efe1bc4869f59d2fb08840">f_rastrigin_allocate</a> (const size_t number_of_variables)</td></tr>
 <tr class="memdesc:a4f1a0bbdc7efe1bc4869f59d2fb08840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic Rastrigin problem.  <a href="#a4f1a0bbdc7efe1bc4869f59d2fb08840">More...</a><br /></td></tr>
 <tr class="separator:a4f1a0bbdc7efe1bc4869f59d2fb08840"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,6 +135,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af00e833080e849ba9794027d439ce5a0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#af00e833080e849ba9794027d439ce5a0">f_rastrigin_rotated_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="memdesc:af00e833080e849ba9794027d439ce5a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB rotated Rastrigin problem.  <a href="#af00e833080e849ba9794027d439ce5a0">More...</a><br /></td></tr>
 <tr class="separator:af00e833080e849ba9794027d439ce5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4bcd9480445afc8835a9612ec241263"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#ad4bcd9480445afc8835a9612ec241263">f_rastrigin_cons_compute_xopt</a> (double *xopt, const long rseed, const size_t dim)</td></tr>
+<tr class="memdesc:ad4bcd9480445afc8835a9612ec241263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes xopt for constrained Rastrigin (alternative to <a class="el" href="suite__bbob__legacy__code_8c.html#a846ff6057c95af39d5193b09af5f264b" title="Randomly computes the location of the global optimum. ">bbob2009_compute_xopt()</a>) xopt is a vector of dim uniform random integers.  <a href="#ad4bcd9480445afc8835a9612ec241263">More...</a><br /></td></tr>
+<tr class="separator:ad4bcd9480445afc8835a9612ec241263"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22cbee9f5f8eedd52c5349d4fa9c991e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__rastrigin_8c.html#a22cbee9f5f8eedd52c5349d4fa9c991e">f_rastrigin_cons_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="memdesc:a22cbee9f5f8eedd52c5349d4fa9c991e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the Rastrigin problem for the constrained BBOB suite.  <a href="#a22cbee9f5f8eedd52c5349d4fa9c991e">More...</a><br /></td></tr>
 <tr class="separator:a22cbee9f5f8eedd52c5349d4fa9c991e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -284,6 +291,48 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad4bcd9480445afc8835a9612ec241263"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void f_rastrigin_cons_compute_xopt </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>xopt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const long&#160;</td>
+          <td class="paramname"><em>rseed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes xopt for constrained Rastrigin (alternative to <a class="el" href="suite__bbob__legacy__code_8c.html#a846ff6057c95af39d5193b09af5f264b" title="Randomly computes the location of the global optimum. ">bbob2009_compute_xopt()</a>) xopt is a vector of dim uniform random integers. </p>
+
+</div>
+</div>
 <a class="anchor" id="a9d8c7ccc68426823c63620e5f6f03a90"></a>
 <div class="memitem">
 <div class="memproto">
@@ -323,6 +372,48 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Uses the raw function to evaluate the COCO problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="af7958f3594497969b9127fbc944248ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void f_rastrigin_evaluate_gradient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluates the gradient of the raw Rastrigin function. </p>
 
 </div>
 </div>

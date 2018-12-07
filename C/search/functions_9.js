@@ -1,6 +1,7 @@
 var searchData=
 [
   ['sign',['sign',['../f__different__powers_8c.html#a8f3cba07aa75b7320ae8bd6c0aeac498',1,'f_different_powers.c']]],
+  ['single_5fdigit_5fconstraint_5fvalue',['single_digit_constraint_value',['../logger__bbob_8c.html#afe45f75ed868bcf5d1db82b7dc1e8fc9',1,'logger_bbob.c']]],
   ['suite_5fbbob_5fget_5finstances_5fby_5fyear',['suite_bbob_get_instances_by_year',['../suite__bbob_8c.html#ada4964cd28b2804f8fa51ac37d661ee2',1,'suite_bbob.c']]],
   ['suite_5fbbob_5fget_5fproblem',['suite_bbob_get_problem',['../suite__bbob_8c.html#a71765f9be366338cfd5565715feb0600',1,'suite_bbob.c']]],
   ['suite_5fbbob_5finitialize',['suite_bbob_initialize',['../suite__bbob_8c.html#aeb868034f07438b8f03ff532367fdf2d',1,'suite_bbob.c']]],

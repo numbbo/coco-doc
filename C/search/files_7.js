@@ -3,6 +3,7 @@ var searchData=
   ['transform_5fobj_5foscillate_2ec',['transform_obj_oscillate.c',['../transform__obj__oscillate_8c.html',1,'']]],
   ['transform_5fobj_5fpenalize_2ec',['transform_obj_penalize.c',['../transform__obj__penalize_8c.html',1,'']]],
   ['transform_5fobj_5fpower_2ec',['transform_obj_power.c',['../transform__obj__power_8c.html',1,'']]],
+  ['transform_5fobj_5fscale_2ec',['transform_obj_scale.c',['../transform__obj__scale_8c.html',1,'']]],
   ['transform_5fobj_5fshift_2ec',['transform_obj_shift.c',['../transform__obj__shift_8c.html',1,'']]],
   ['transform_5fvars_5faffine_2ec',['transform_vars_affine.c',['../transform__vars__affine_8c.html',1,'']]],
   ['transform_5fvars_5fasymmetric_2ec',['transform_vars_asymmetric.c',['../transform__vars__asymmetric_8c.html',1,'']]],

@@ -173,7 +173,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a7d31b340e2f1290191965d8411608ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ID of the problem.  <a href="#a7d31b340e2f1290191965d8411608ea4">More...</a><br /></td></tr>
 <tr class="separator:a7d31b340e2f1290191965d8411608ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c59189104915a6bfe7cd6630e5995da"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a1c59189104915a6bfe7cd6630e5995da">coco_problem_get_type</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
-<tr class="memdesc:a1c59189104915a6bfe7cd6630e5995da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the problem function in point x and save the result in y.  <a href="#a1c59189104915a6bfe7cd6630e5995da">More...</a><br /></td></tr>
+<tr class="memdesc:a1c59189104915a6bfe7cd6630e5995da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the problem.  <a href="#a1c59189104915a6bfe7cd6630e5995da">More...</a><br /></td></tr>
 <tr class="separator:a1c59189104915a6bfe7cd6630e5995da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dabf3e4f5630d08077530a1341f13ab"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__problem_8c.html#a0dabf3e4f5630d08077530a1341f13ab">coco_problem_get_dimension</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:a0dabf3e4f5630d08077530a1341f13ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of variables i.e. the dimension of the problem.  <a href="#a0dabf3e4f5630d08077530a1341f13ab">More...</a><br /></td></tr>
@@ -1062,17 +1062,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Evaluates the problem function in point x and save the result in y. </p>
-<p>Evaluates the problem function, increases the number of evaluations and updates the best observed value and the best observed evaluation number.</p>
-<dl class="section note"><dt>Note</dt><dd>Both x and y must point to correctly sized allocated memory regions.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
-    <tr><td class="paramname">x</td><td>The decision vector. </td></tr>
-    <tr><td class="paramname">y</td><td>The objective vector that is the result of the evaluation (in single-objective problems only the first vector item is being set). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Returns the type of the problem. </p>
 
 </div>
 </div>

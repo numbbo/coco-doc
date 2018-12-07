@@ -18,6 +18,7 @@ var searchData=
   ['f_5fbueche_5frastrigin_5fraw',['f_bueche_rastrigin_raw',['../f__bueche__rastrigin_8c.html#a35bd9387311cc6ab916727a38ef047ac',1,'f_bueche_rastrigin.c']]],
   ['f_5fcompare_5fdoubles_5ffor_5frandom_5fpermutation',['f_compare_doubles_for_random_permutation',['../large__scale__transformations_8c.html#a41ba51df6a3238bac4a39a0a67c5272f',1,'large_scale_transformations.c']]],
   ['f_5fdifferent_5fpowers_5fallocate',['f_different_powers_allocate',['../f__different__powers_8c.html#a895f64729b70d30fda3a4fa126986794',1,'f_different_powers.c']]],
+  ['f_5fdifferent_5fpowers_5fbbob_5fconstrained_5fproblem_5fallocate',['f_different_powers_bbob_constrained_problem_allocate',['../f__different__powers_8c.html#a4acbbbce8f95c92355ff12553a78c679',1,'f_different_powers.c']]],
   ['f_5fdifferent_5fpowers_5fbbob_5fproblem_5fallocate',['f_different_powers_bbob_problem_allocate',['../f__different__powers_8c.html#a21914c221359fb486cdd6f46aee664cd',1,'f_different_powers.c']]],
   ['f_5fdifferent_5fpowers_5fc_5flinear_5fcons_5fbbob_5fproblem_5fallocate',['f_different_powers_c_linear_cons_bbob_problem_allocate',['../suite__cons__bbob__problems_8c.html#adc24f01b0420b1b032210aa962b4f432',1,'suite_cons_bbob_problems.c']]],
   ['f_5fdifferent_5fpowers_5fevaluate',['f_different_powers_evaluate',['../f__different__powers_8c.html#ad6eda097f32081b091b08d6877772fa8',1,'f_different_powers.c']]],
@@ -68,7 +69,9 @@ var searchData=
   ['f_5frastrigin_5fbbob_5fproblem_5fallocate',['f_rastrigin_bbob_problem_allocate',['../f__rastrigin_8c.html#ab85eedbec721f366c1392de80bf482eb',1,'f_rastrigin.c']]],
   ['f_5frastrigin_5fc_5flinear_5fcons_5fbbob_5fproblem_5fallocate',['f_rastrigin_c_linear_cons_bbob_problem_allocate',['../suite__cons__bbob__problems_8c.html#ab44acad881b62c201baf58447928f15a',1,'suite_cons_bbob_problems.c']]],
   ['f_5frastrigin_5fcons_5fbbob_5fproblem_5fallocate',['f_rastrigin_cons_bbob_problem_allocate',['../f__rastrigin_8c.html#a22cbee9f5f8eedd52c5349d4fa9c991e',1,'f_rastrigin.c']]],
+  ['f_5frastrigin_5fcons_5fcompute_5fxopt',['f_rastrigin_cons_compute_xopt',['../f__rastrigin_8c.html#ad4bcd9480445afc8835a9612ec241263',1,'f_rastrigin.c']]],
   ['f_5frastrigin_5fevaluate',['f_rastrigin_evaluate',['../f__rastrigin_8c.html#a9d8c7ccc68426823c63620e5f6f03a90',1,'f_rastrigin.c']]],
+  ['f_5frastrigin_5fevaluate_5fgradient',['f_rastrigin_evaluate_gradient',['../f__rastrigin_8c.html#af7958f3594497969b9127fbc944248ee',1,'f_rastrigin.c']]],
   ['f_5frastrigin_5fraw',['f_rastrigin_raw',['../f__rastrigin_8c.html#a7185995f580bb346172f6463d012cb12',1,'f_rastrigin.c']]],
   ['f_5frastrigin_5frotated_5fbbob_5fproblem_5fallocate',['f_rastrigin_rotated_bbob_problem_allocate',['../f__rastrigin_8c.html#af00e833080e849ba9794027d439ce5a0',1,'f_rastrigin.c']]],
   ['f_5frosenbrock_5fallocate',['f_rosenbrock_allocate',['../f__rosenbrock_8c.html#ac619b7e321a3bd5bf3673b8cbf2c70ed',1,'f_rosenbrock.c']]],
@@ -101,5 +104,6 @@ var searchData=
   ['f_5fweierstrass_5fallocate',['f_weierstrass_allocate',['../f__weierstrass_8c.html#a6516fe9db3ced7fb4cce26f2bc86b23a',1,'f_weierstrass.c']]],
   ['f_5fweierstrass_5fbbob_5fproblem_5fallocate',['f_weierstrass_bbob_problem_allocate',['../f__weierstrass_8c.html#a83276efb2c6287a1e53096263b53f2c8',1,'f_weierstrass.c']]],
   ['f_5fweierstrass_5fevaluate',['f_weierstrass_evaluate',['../f__weierstrass_8c.html#afa75a574f44b0cad99a4c64c1db66cd7',1,'f_weierstrass.c']]],
-  ['f_5fweierstrass_5fraw',['f_weierstrass_raw',['../f__weierstrass_8c.html#a1d1c4a1f14e2c8dd60890a48eb531feb',1,'f_weierstrass.c']]]
+  ['f_5fweierstrass_5fraw',['f_weierstrass_raw',['../f__weierstrass_8c.html#a1d1c4a1f14e2c8dd60890a48eb531feb',1,'f_weierstrass.c']]],
+  ['feasible_5fdirection_5fset_5flength',['feasible_direction_set_length',['../suite__cons__bbob__problems_8c.html#a03c789f7fe12b94e1a4448b85e041446',1,'suite_cons_bbob_problems.c']]]
 ];

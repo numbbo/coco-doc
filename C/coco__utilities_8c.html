@@ -236,12 +236,24 @@ Functions</h2></td></tr>
 <tr class="memitem:a205a3c5648321013d5f1918b838e9ebf"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a205a3c5648321013d5f1918b838e9ebf">coco_count_numbers</a> (const size_t *numbers, const size_t max_count, const char *name)</td></tr>
 <tr class="memdesc:a205a3c5648321013d5f1918b838e9ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of positive numbers pointed to by numbers (the count stops when the first 0 is encountered of max_count numbers have been read).  <a href="#a205a3c5648321013d5f1918b838e9ebf">More...</a><br /></td></tr>
 <tr class="separator:a205a3c5648321013d5f1918b838e9ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6568e11255876a31380dde1f6772e98c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a6568e11255876a31380dde1f6772e98c">coco_scale_vector</a> (double *x, size_t dimension, double alpha)</td></tr>
-<tr class="memdesc:a6568e11255876a31380dde1f6772e98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes vector x and multiplies each componenent by alpha.  <a href="#a6568e11255876a31380dde1f6772e98c">More...</a><br /></td></tr>
-<tr class="separator:a6568e11255876a31380dde1f6772e98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a136ffc40e26e13c8d05789ac5ca13eeb"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a136ffc40e26e13c8d05789ac5ca13eeb">coco_vector_scale</a> (double *x, size_t dimension, double nom, double denom)</td></tr>
+<tr class="memdesc:a136ffc40e26e13c8d05789ac5ca13eeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">multiply each componenent by nom/denom or by nom if denom == 0.  <a href="#a136ffc40e26e13c8d05789ac5ca13eeb">More...</a><br /></td></tr>
+<tr class="separator:a136ffc40e26e13c8d05789ac5ca13eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad40f614eef5db6b7b55f42b9ea290fd7"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ad40f614eef5db6b7b55f42b9ea290fd7">coco_vector_norm</a> (const double *x, size_t dimension)</td></tr>
+<tr class="memdesc:ad40f614eef5db6b7b55f42b9ea290fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">return norm of vector x.  <a href="#ad40f614eef5db6b7b55f42b9ea290fd7">More...</a><br /></td></tr>
+<tr class="separator:ad40f614eef5db6b7b55f42b9ea290fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7727a3e3ab86c270bd653948edc8547a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a7727a3e3ab86c270bd653948edc8547a">coco_is_orthogonal</a> (const double *M, const size_t nb_rows, const size_t nb_columns)</td></tr>
+<tr class="memdesc:a7727a3e3ab86c270bd653948edc8547a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given matrix M is orthogonal by (partially) computing M * M^T. If M is a square matrix and M * M^T is close enough to the identity matrix (up to a chosen precision), the function returns 1. Otherwise, it returns 0. The matrix M must be represented as an array of doubles.  <a href="#a7727a3e3ab86c270bd653948edc8547a">More...</a><br /></td></tr>
+<tr class="separator:a7727a3e3ab86c270bd653948edc8547a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d7277895dae4bb9b1020c52518d0aed"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a4d7277895dae4bb9b1020c52518d0aed">coco_vector_is_zero</a> (const double *x, const size_t dim)</td></tr>
+<tr class="memdesc:a4d7277895dae4bb9b1020c52518d0aed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if the input vector x is (close to) zero and 0 otherwise.  <a href="#a4d7277895dae4bb9b1020c52518d0aed">More...</a><br /></td></tr>
+<tr class="separator:a4d7277895dae4bb9b1020c52518d0aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a02331fac34bd0e0cfbfc115957f9c1a5"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a02331fac34bd0e0cfbfc115957f9c1a5">chosen_precision</a> = 1e-9</td></tr>
+<tr class="memdesc:a02331fac34bd0e0cfbfc115957f9c1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the constant chosen_precision to 1e-9.  <a href="#a02331fac34bd0e0cfbfc115957f9c1a5">More...</a><br /></td></tr>
+<tr class="separator:a02331fac34bd0e0cfbfc115957f9c1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade0947aadeb56a32c006a0adbf482106"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a91ec58921a2cd0ccb3d2d3aff43f647a">coco_log_level_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ade0947aadeb56a32c006a0adbf482106">coco_log_level</a> = <a class="el" href="coco_8h.html#a91ec58921a2cd0ccb3d2d3aff43f647aa31c8cf7bf4d921ee5c68a536428645b2">COCO_INFO</a></td></tr>
 <tr class="memdesc:ade0947aadeb56a32c006a0adbf482106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the logging level to COCO_INFO.  <a href="#ade0947aadeb56a32c006a0adbf482106">More...</a><br /></td></tr>
 <tr class="separator:ade0947aadeb56a32c006a0adbf482106"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -860,6 +872,48 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7727a3e3ab86c270bd653948edc8547a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_is_orthogonal </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>M</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>nb_rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>nb_columns</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a given matrix M is orthogonal by (partially) computing M * M^T. If M is a square matrix and M * M^T is close enough to the identity matrix (up to a chosen precision), the function returns 1. Otherwise, it returns 0. The matrix M must be represented as an array of doubles. </p>
+
+</div>
+</div>
 <a class="anchor" id="adacc4f9fa4da46f934b1ef4ee67e2d64"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1460,48 +1514,6 @@ Should work cross-platform.</dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a6568e11255876a31380dde1f6772e98c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void coco_scale_vector </td>
-          <td>(</td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>dimension</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>alpha</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Normalizes vector x and multiplies each componenent by alpha. </p>
-
-</div>
-</div>
 <a class="anchor" id="a32cc25cb4049f949c45d2895f24f54bf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1570,6 +1582,42 @@ Should work cross-platform.</dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="a4d7277895dae4bb9b1020c52518d0aed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_vector_is_zero </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns 1 if the input vector x is (close to) zero and 0 otherwise. </p>
+
+</div>
+</div>
 <a class="anchor" id="aa971f9940eccda79ff45f0436ed32e51"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1603,6 +1651,92 @@ Should work cross-platform.</dd></dl>
 </div><div class="memdoc">
 
 <p>Returns 1 if the input vector of dimension dim contains no NaN of inf values, and 0 otherwise. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad40f614eef5db6b7b55f42b9ea290fd7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double coco_vector_norm </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return norm of vector x. </p>
+
+</div>
+</div>
+<a class="anchor" id="a136ffc40e26e13c8d05789ac5ca13eeb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double coco_vector_scale </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>denom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>multiply each componenent by nom/denom or by nom if denom == 0. </p>
+<p>return used scaling factor, usually nom/denom.</p>
+<p>Example: coco_vector_scale(x, dimension, 1, coco_vector_norm(x, dimension)); </p>
 
 </div>
 </div>
@@ -1643,6 +1777,28 @@ Should work cross-platform.</dd></dl>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a02331fac34bd0e0cfbfc115957f9c1a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double chosen_precision = 1e-9</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the constant chosen_precision to 1e-9. </p>
+
+</div>
+</div>
 <a class="anchor" id="ade0947aadeb56a32c006a0adbf482106"></a>
 <div class="memitem">
 <div class="memproto">

@@ -2,6 +2,7 @@ var searchData=
 [
   ['transform_5fobj_5fpenalize_5fdata_5ft',['transform_obj_penalize_data_t',['../structtransform__obj__penalize__data__t.html',1,'']]],
   ['transform_5fobj_5fpower_5fdata_5ft',['transform_obj_power_data_t',['../structtransform__obj__power__data__t.html',1,'']]],
+  ['transform_5fobj_5fscale_5fdata_5ft',['transform_obj_scale_data_t',['../structtransform__obj__scale__data__t.html',1,'']]],
   ['transform_5fobj_5fshift_5fdata_5ft',['transform_obj_shift_data_t',['../structtransform__obj__shift__data__t.html',1,'']]],
   ['transform_5fvars_5faffine_5fdata_5ft',['transform_vars_affine_data_t',['../structtransform__vars__affine__data__t.html',1,'']]],
   ['transform_5fvars_5fasymmetric_5fdata_5ft',['transform_vars_asymmetric_data_t',['../structtransform__vars__asymmetric__data__t.html',1,'']]],

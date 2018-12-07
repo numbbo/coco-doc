@@ -3,6 +3,7 @@ var searchData=
   ['seed',['seed',['../structtransform__vars__x__hat__data__t.html#affb5f34f39f7103b999d198b18ffed8e',1,'transform_vars_x_hat_data_t']]],
   ['shifted_5fx',['shifted_x',['../structtransform__vars__shift__data__t.html#a8ea4beb5f82907d539abca4a9be29011',1,'transform_vars_shift_data_t']]],
   ['sign',['sign',['../f__different__powers_8c.html#a8f3cba07aa75b7320ae8bd6c0aeac498',1,'f_different_powers.c']]],
+  ['single_5fdigit_5fconstraint_5fvalue',['single_digit_constraint_value',['../logger__bbob_8c.html#afe45f75ed868bcf5d1db82b7dc1e8fc9',1,'logger_bbob.c']]],
   ['smallest_5fvalues_5fof_5finterest',['smallest_values_of_interest',['../structcoco__problem__s.html#a615012b0828bdd9c1173f6ce03198810',1,'coco_problem_s']]],
   ['suite',['suite',['../structcoco__problem__s.html#a93ec847343f16e636310c8f36c37c289',1,'coco_problem_s']]],
   ['suite_5fbbob_2ec',['suite_bbob.c',['../suite__bbob_8c.html',1,'']]],

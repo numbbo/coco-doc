@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['chosen_5fprecision',['chosen_precision',['../coco__utilities_8c.html#a02331fac34bd0e0cfbfc115957f9c1a5',1,'coco_utilities.c']]],
   ['cmpitem',['cmpitem',['../structavl__tree.html#aa352615ae3765bfa4095f861732f2570',1,'avl_tree']]],
   ['coco_5flog_5flevel',['coco_log_level',['../coco__utilities_8c.html#ade0947aadeb56a32c006a0adbf482106',1,'coco_utilities.c']]],
   ['coco_5fpi',['coco_pi',['../coco_8h.html#a973742d29d384e21661bda90875ccf39',1,'coco.h']]],

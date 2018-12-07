@@ -26,7 +26,7 @@ var searchData=
   ['logger_5fbbob_5finitialize',['logger_bbob_initialize',['../logger__bbob_8c.html#a7eef79b720cad041a3f139b1fee8d081',1,'logger_bbob.c']]],
   ['logger_5fbbob_5fopen_5fdatafile',['logger_bbob_open_dataFile',['../logger__bbob_8c.html#a45b719d37e38be6b89382f77590dd072',1,'logger_bbob.c']]],
   ['logger_5fbbob_5fopenindexfile',['logger_bbob_openIndexFile',['../logger__bbob_8c.html#ad74a6bbe7bd71ef5eecc1c1713310403',1,'logger_bbob.c']]],
-  ['logger_5fbbob_5fwrite_5fdata',['logger_bbob_write_data',['../logger__bbob_8c.html#a17f91a2b9d268fed9b2f768854d812e9',1,'logger_bbob.c']]],
+  ['logger_5fbbob_5fwrite_5fdata',['logger_bbob_write_data',['../logger__bbob_8c.html#a131e9d7c760317c731419c3c17a3e67f',1,'logger_bbob.c']]],
   ['logger_5fbiobj',['logger_biobj',['../logger__biobj_8c.html#a4b5844795e3257a17c7558381f46dca4',1,'logger_biobj(coco_observer_t *observer, coco_problem_t *inner_problem):&#160;logger_biobj.c'],['../observer__biobj_8c.html#a41469dac8832863a7b013e919cb59f04',1,'logger_biobj(coco_observer_t *observer, coco_problem_t *problem):&#160;observer_biobj.c']]],
   ['logger_5fbiobj_2ec',['logger_biobj.c',['../logger__biobj_8c.html',1,'']]],
   ['logger_5fbiobj_5favl_5fitem_5ft',['logger_biobj_avl_item_t',['../structlogger__biobj__avl__item__t.html',1,'']]],

@@ -123,8 +123,11 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a17f91a2b9d268fed9b2f768854d812e9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a17f91a2b9d268fed9b2f768854d812e9">logger_bbob_write_data</a> (FILE *target_file, size_t number_of_f_evaluations, size_t number_of_cons_evaluations, double fvalue, double best_fvalue, double best_value, const double *x, size_t number_of_variables)</td></tr>
-<tr class="separator:a17f91a2b9d268fed9b2f768854d812e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe45f75ed868bcf5d1db82b7dc1e8fc9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#afe45f75ed868bcf5d1db82b7dc1e8fc9">single_digit_constraint_value</a> (const double c)</td></tr>
+<tr class="memdesc:afe45f75ed868bcf5d1db82b7dc1e8fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discretized constraint value, ~8 + log10(c), in a single digit.  <a href="#afe45f75ed868bcf5d1db82b7dc1e8fc9">More...</a><br /></td></tr>
+<tr class="separator:afe45f75ed868bcf5d1db82b7dc1e8fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131e9d7c760317c731419c3c17a3e67f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a131e9d7c760317c731419c3c17a3e67f">logger_bbob_write_data</a> (FILE *target_file, size_t number_of_f_evaluations, size_t number_of_cons_evaluations, double fvalue, double best_fvalue, double best_value, const double *x, size_t number_of_variables, const double *constraints, size_t number_of_constraints)</td></tr>
+<tr class="separator:a131e9d7c760317c731419c3c17a3e67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2fb59dbf4d708d1eab420546378d30f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#ac2fb59dbf4d708d1eab420546378d30f">logger_bbob_error_io</a> (FILE *path, int errnum)</td></tr>
 <tr class="separator:ac2fb59dbf4d708d1eab420546378d30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45b719d37e38be6b89382f77590dd072"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a45b719d37e38be6b89382f77590dd072">logger_bbob_open_dataFile</a> (FILE **target_file, const char *path, const char *dataFile_path, const char *file_extension)</td></tr>
@@ -146,8 +149,8 @@ Variables</h2></td></tr>
 <tr class="separator:a47e9de2188f36ed8a42354981651223b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3769a5879d0136ff58bb1b095899e136"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a3769a5879d0136ff58bb1b095899e136">fvalue_logged_for_nan</a> = 2e21</td></tr>
 <tr class="separator:a3769a5879d0136ff58bb1b095899e136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a614b24dcfcd1c97aa687e4e2a309db46"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a614b24dcfcd1c97aa687e4e2a309db46">fvalue_logged_for_infeasible</a> = 1e21</td></tr>
-<tr class="separator:a614b24dcfcd1c97aa687e4e2a309db46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af199478e4b716fc7987234470f6ca6ba"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#af199478e4b716fc7987234470f6ca6ba">weight_constraints</a> = 1e0</td></tr>
+<tr class="separator:af199478e4b716fc7987234470f6ca6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8b3b7e38c70637a5384a53c99203fc9"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#aa8b3b7e38c70637a5384a53c99203fc9">bbob_current_dim</a> = 0</td></tr>
 <tr class="separator:aa8b3b7e38c70637a5384a53c99203fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af034c3b70dd5da9886fa8a63f06a2994"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#af034c3b70dd5da9886fa8a63f06a2994">bbob_current_funId</a> = 0</td></tr>
@@ -166,7 +169,7 @@ Variables</h2></td></tr>
 <tr class="separator:a8ec699d0dec0a8b379f8c62c44d6afbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59c176698129e91d99b897b351de6f8a"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a59c176698129e91d99b897b351de6f8a">logger_name</a> = &quot;bbob&quot;</td></tr>
 <tr class="separator:a59c176698129e91d99b897b351de6f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06c7cd0ff85783f9da16a8ac3de8ba08"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a06c7cd0ff85783f9da16a8ac3de8ba08">data_format</a> = &quot;bbob-new&quot;</td></tr>
+<tr class="memitem:a06c7cd0ff85783f9da16a8ac3de8ba08"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a06c7cd0ff85783f9da16a8ac3de8ba08">data_format</a> = &quot;bbob-new2&quot;</td></tr>
 <tr class="separator:a06c7cd0ff85783f9da16a8ac3de8ba08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -451,11 +454,11 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Creates the index file fileName_prefix+problem_id+file_extension in folde_path </p>
+<p>Creates the index file fileName_prefix+problem_id+file_extension in folder_path </p>
 
 </div>
 </div>
-<a class="anchor" id="a17f91a2b9d268fed9b2f768854d812e9"></a>
+<a class="anchor" id="a131e9d7c760317c731419c3c17a3e67f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -508,7 +511,19 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>number_of_variables</em>&#160;</td>
+          <td class="paramname"><em>number_of_variables</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>constraints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>number_of_constraints</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -523,6 +538,33 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>adds a formated line to a data file </p>
+
+</div>
+</div>
+<a class="anchor" id="afe45f75ed868bcf5d1db82b7dc1e8fc9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int single_digit_constraint_value </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Discretized constraint value, ~8 + log10(c), in a single digit. </p>
+<p>-..0 -&gt; 0 0..1e-7 -&gt; 1 1e-7..1e-6 -&gt; 2 ... 1e-1..1 -&gt; 8 &gt;1 -&gt; 9 </p>
 
 </div>
 </div>
@@ -604,7 +646,7 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <span class="stringliteral">&quot;%% &quot;</span></div><div class="line">    <span class="stringliteral">&quot;f evaluations | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;g evaluations | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;best noise-free fitness - Fopt | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;noise-free fitness - Fopt (%13.12e) | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;measured fitness | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;best measured fitness | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;x1 | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;x2...\n&quot;</span></div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">= <span class="stringliteral">&quot;%% &quot;</span></div><div class="line">    <span class="stringliteral">&quot;f evaluations | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;g evaluations | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;best noise-free fitness - Fopt (%13.12e) + sum g_i+ | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;measured fitness | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;best measured fitness or single-digit g-values | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;x1 | &quot;</span></div><div class="line">    <span class="stringliteral">&quot;x2...\n&quot;</span></div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="accb68f50c1ab1099301d6f282eb37d37"></a>
@@ -687,27 +729,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* data_format = &quot;bbob-new&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a614b24dcfcd1c97aa687e4e2a309db46"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double fvalue_logged_for_infeasible = 1e21</td>
+          <td class="memname">const char* data_format = &quot;bbob-new2&quot;</td>
         </tr>
       </table>
   </td>
@@ -768,6 +790,26 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const char* logger_name = &quot;bbob&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af199478e4b716fc7987234470f6ca6ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double weight_constraints = 1e0</td>
         </tr>
       </table>
   </td>

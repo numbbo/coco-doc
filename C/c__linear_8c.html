@@ -136,12 +136,9 @@ Functions</h2></td></tr>
 <tr class="memitem:adffdb723e65f5068d543cb6f9bc9297e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__linear_8c.html#adffdb723e65f5068d543cb6f9bc9297e">c_linear_transform</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *inner_problem, const double *gradient)</td></tr>
 <tr class="memdesc:adffdb723e65f5068d543cb6f9bc9297e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a linear constraint with all-ones gradient into a linear constraint whose gradient is passed as argument.  <a href="#adffdb723e65f5068d543cb6f9bc9297e">More...</a><br /></td></tr>
 <tr class="separator:adffdb723e65f5068d543cb6f9bc9297e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3055d221d66acd60652987e0c914b9d1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__linear_8c.html#a3055d221d66acd60652987e0c914b9d1">c_linear_shuffle</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem_c, <a class="el" href="structlinear__constraint__data__t.html">linear_constraint_data_t</a> *data_c1)</td></tr>
-<tr class="memdesc:a3055d221d66acd60652987e0c914b9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchange the first constraint for another one, if any, by exchanging their gradients.  <a href="#a3055d221d66acd60652987e0c914b9d1">More...</a><br /></td></tr>
-<tr class="separator:a3055d221d66acd60652987e0c914b9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac81a4a50f74a946211eb8c3283cf12ce"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__linear_8c.html#ac81a4a50f74a946211eb8c3283cf12ce">c_linear_single_cons_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const size_t number_of_linear_constraints, const size_t constraint_number, const double factor1, const char *problem_id_template, const char *problem_name_template, double *gradient, const double *feasible_direction)</td></tr>
-<tr class="memdesc:ac81a4a50f74a946211eb8c3283cf12ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a coco_problem_t containing one single linear constraint.  <a href="#ac81a4a50f74a946211eb8c3283cf12ce">More...</a><br /></td></tr>
-<tr class="separator:ac81a4a50f74a946211eb8c3283cf12ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2474c0264bf4474710a1b36c050b7f4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__linear_8c.html#af2474c0264bf4474710a1b36c050b7f4">c_linear_single_cons_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const size_t constraint_number, const double factor1, const char *problem_id_template, const char *problem_name_template, double *gradient, const double *feasible_direction)</td></tr>
+<tr class="memdesc:af2474c0264bf4474710a1b36c050b7f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a coco_problem_t containing one single linear constraint.  <a href="#af2474c0264bf4474710a1b36c050b7f4">More...</a><br /></td></tr>
+<tr class="separator:af2474c0264bf4474710a1b36c050b7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae33db1c9ea3b4a6327ed97cbbbb00b20"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__linear_8c.html#ae33db1c9ea3b4a6327ed97cbbbb00b20">c_linear_cons_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const size_t number_of_linear_constraints, const char *problem_id_template, const char *problem_name_template, const double *feasible_direction)</td></tr>
 <tr class="memdesc:ae33db1c9ea3b4a6327ed97cbbbb00b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a coco_problem_t containing all the linear constraints by stacking them all.  <a href="#ae33db1c9ea3b4a6327ed97cbbbb00b20">More...</a><br /></td></tr>
 <tr class="separator:ae33db1c9ea3b4a6327ed97cbbbb00b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -249,7 +246,7 @@ Functions</h2></td></tr>
 
 <p>Builds a coco_problem_t containing all the linear constraints by stacking them all. </p>
 <p>The constraints' gradients are randomly generated with distribution 10**U[0,1] * N_i(0, I) * 10**U_i[0,2], where U[a, b] is uniform in [a,b] and only U_i is drawn for each constraint individually. The exception is the first constraint, whose gradient is given by 10**U[0,1] * (-feasible_direction) * 10**U_i[0,2].</p>
-<p>Each constraint is built by calling the function <a class="el" href="c__linear_8c.html#ac81a4a50f74a946211eb8c3283cf12ce" title="Builds a coco_problem_t containing one single linear constraint. ">c_linear_single_cons_bbob_problem_allocate()</a>, which returns a coco_problem_t object that defines the constraint. The resulting coco_problem_t objects are then stacked together into one single coco_problem_t object that is returned by the function. </p>
+<p>Each constraint is built by calling the function <a class="el" href="c__linear_8c.html#af2474c0264bf4474710a1b36c050b7f4" title="Builds a coco_problem_t containing one single linear constraint. ">c_linear_single_cons_bbob_problem_allocate()</a>, which returns a coco_problem_t object that defines the constraint. The resulting coco_problem_t objects are then stacked together into one single coco_problem_t object that is returned by the function. </p>
 
 </div>
 </div>
@@ -279,44 +276,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3055d221d66acd60652987e0c914b9d1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> * c_linear_shuffle </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
-          <td class="paramname"><em>problem_c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structlinear__constraint__data__t.html">linear_constraint_data_t</a> *&#160;</td>
-          <td class="paramname"><em>data_c1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Exchange the first constraint for another one, if any, by exchanging their gradients. </p>
-<p>It picks a random constraint number different from one and runs through the stack of constraints until the chosen constraint is found. Then it extracts the gradient from it and exchange it for the first constraint's. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac81a4a50f74a946211eb8c3283cf12ce"></a>
+<a class="anchor" id="af2474c0264bf4474710a1b36c050b7f4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -340,12 +300,6 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>instance</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>number_of_linear_constraints</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -397,7 +351,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Builds a coco_problem_t containing one single linear constraint. </p>
-<p>This function is called by <a class="el" href="c__linear_8c.html#ae33db1c9ea3b4a6327ed97cbbbb00b20" title="Builds a coco_problem_t containing all the linear constraints by stacking them all. ">c_linear_cons_bbob_problem_allocate()</a>, the central function that stacks all the constraints built by <a class="el" href="c__linear_8c.html#ac81a4a50f74a946211eb8c3283cf12ce" title="Builds a coco_problem_t containing one single linear constraint. ">c_linear_single_cons_bbob_problem_allocate()</a> into one single coco_problem_t object. </p>
+<p>This function is called by <a class="el" href="c__linear_8c.html#ae33db1c9ea3b4a6327ed97cbbbb00b20" title="Builds a coco_problem_t containing all the linear constraints by stacking them all. ">c_linear_cons_bbob_problem_allocate()</a>, the central function that stacks all the constraints built by <a class="el" href="c__linear_8c.html#af2474c0264bf4474710a1b36c050b7f4" title="Builds a coco_problem_t containing one single linear constraint. ">c_linear_single_cons_bbob_problem_allocate()</a> into one single coco_problem_t object. </p>
 
 </div>
 </div>
