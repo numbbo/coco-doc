@@ -41,7 +41,7 @@ single-objective noiseless ``bbob`` test suite [HAN2009]_, which has been used s
 the `BBOB workshop series`_, to large dimension. The core idea is to make the rotational
 transformations :math:`\textbf{R}, \textbf{Q}` in search space that
 appear in the ``bbob`` test suite computationally cheaper while retaining some desired
-properties. This documentation presents an approach that replaces a full rotational transformation with a combinations of a block-diagonal matrix and two permutation matrices in order to construct test functions whose computational and memory costs scale linearly in the dimension of the problem.
+properties. This documentation presents an approach that replaces a full rotational transformation with a combination of a block-diagonal matrix and two permutation matrices in order to construct test functions whose computational and memory costs scale linearly in the dimension of the problem.
 
 .. raw:: latex
 
@@ -119,7 +119,7 @@ Terminology
 
 *suite*
     A test- or benchmark-suite is a collection of problems, typically between
-    twenty and a hundred, where the number of objectives :math:`m` is fixed.
+    twenty and a hundred.
 
 
 .. |n| replace:: :math:`n`
@@ -155,8 +155,8 @@ Runtime and Target Values
 
 In order to measure the runtime of an algorithm on a problem, we
 establish a hitting time condition.
-We prescribe a **target value**, |t|, which is an |f|- or
-indicator-value [HAN2016perf]_ [BRO2016]_.
+For a given problem |p|, we prescribe a **target value** |t| as a specific |f|-value 
+of interest [HAN2016perf]_.
 For a single run, when an algorithm reaches or surpasses the target value |t|
 on problem |p|, we say that it has *solved the problem* |pt| --- it was successful. [#]_
 
@@ -191,7 +191,7 @@ restarts should be done [HAN2016ex]_.
 
 .. [#] Target values are directly linked to a problem, leaving the burden to
     properly define the targets with the designer of the benchmark suite.
-    The alternative is to present final |f|- or indicator-values as results,
+    The alternative is to present final |f|-values as results,
     leaving the (rather unsurmountable) burden to interpret these values to the
     reader.
     Fortunately, there is an automatized generic way to generate target values
@@ -208,7 +208,7 @@ restarts should be done [HAN2016ex]_.
 Overview of the Proposed ``bbob-largescale`` Test Suite
 =======================================================
 The ``bbob-largescale`` test suite provides 24 functions in six dimensions (20, 40, 80, 160, 320 and 640) within
-the COCO framework. It is derived from the existing single-objective, unconstrained ``bbob`` test suite with
+the COCO_ framework [HAN2016co]_. It is derived from the existing single-objective, unconstrained ``bbob`` test suite with
 modifications that allow the user to benchmark algorithms on high dimensional problems efficiently.
 We will explain in this section how the ``bbob-largescale`` test suite is built.
 
@@ -836,3 +836,10 @@ This work was further supported by a public grant as part of the Investissement 
     `COCO: Performance Assessment`__. *ArXiv e-prints*, `arXiv:1605.03560`__.
 ..  __: http://numbbo.github.io/coco-doc/perf-assessment
 ..  __: http://arxiv.org/abs/1605.03560
+
+
+.. [HAN2016co] Nikolaus Hansen, Anne Auger, Olaf Mersmann, Tea Tušar, and Dimo Brockhoff (2016).
+   `COCO: A Platform for Comparing Continuous Optimizers in a Black-Box
+   Setting`__, *ArXiv e-prints*, `arXiv:1603.08785`__.
+.. __: http://numbbo.github.io/coco-doc/
+.. __: http://arxiv.org/abs/1603.08785
