@@ -16,6 +16,11 @@ from __future__ import absolute_import, print_function
 import os, sys
 from subprocess import call, check_output, CalledProcessError
 
+def open_(*args, **kwargs):
+    if sys.version_info[0] > 2:
+        kwargs.update(encoding='utf-8')
+        kwargs.update(errors='replace')
+    return open(*args, **kwargs)
 
 def condition1(old, line):
     return old in line
@@ -56,8 +61,8 @@ def main(old, new, *files):
         if os.path.isfile(tfilename):
             os.remove(tfilename) # deal with rename on windows
         os.rename(filename, tfilename)
-        with open(filename, 'at') as fp: # a is just in case
-            for line in open(tfilename):
+        with open_(filename, 'at') as fp: # a is just in case
+            for line in open_(tfilename, 'rt'): # the problem is the s it Tusar
                 if condition(old, line):
                     found += 1
                 fp.write(change(line, old, new))
