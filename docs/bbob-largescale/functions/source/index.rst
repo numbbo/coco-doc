@@ -543,10 +543,10 @@ __ bbobfunctiondoc_
 .. |trafo-f7-2| replace:: :math:`\tilde{z}_i= \begin{cases} \lfloor 0.5 + \hat{z}_i \rfloor & \text{if }  |\hat{z}_i| > 0.5 \\ \lfloor 0.5 + 10 \hat{z}_i \rfloor /10 & \text{otherwise} \end{cases}`
 .. |trafo-f7-3| replace:: :math:`\text{ for } i=1,\dots, n,\hspace{1.5cm}` 
 .. |trafo-f7-4| replace:: :math:`\mathbf{z} = \mathbf{Q} \mathbf{\tilde{z}} \text{ with } \mathbf{Q} = P_{21}B_2P_{22}`
-.. |def-f8| replace:: :math:`f_8(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
+.. |def-f8| replace:: :math:`f_8(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n-1} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
 .. |trafo-f8-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)(\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1},`
 .. |trafo-f8-2| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
-.. |def-f9| replace:: :math:`f_9(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
+.. |def-f9| replace:: :math:`f_9(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n-1} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
 .. |trafo-f9-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1}`
 .. |trafo-f9-2| replace:: :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},`
 .. |trafo-f9-3| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
