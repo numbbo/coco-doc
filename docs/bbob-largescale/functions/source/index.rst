@@ -742,7 +742,7 @@ __ bbobfunctiondoc_
 .. |trafo-f21-03| replace:: :math:`\text{permuations of the variables.}`
 .. |trafo-f21-04| replace:: :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}`
 .. |trafo-f21-05| replace:: :math:`\text{but with randomly permuted diagonal elements.}`
-.. |trafo-f21-06| replace:: :math:`\text{For } i=1,\dots, 101, \alpha_i \text{ is drawn uniformly}`
+.. |trafo-f21-06| replace:: :math:`\text{For } i=2,\dots, 101, \alpha_i \text{ is drawn uniformly}`
 .. |trafo-f21-07| replace:: :math:`\text{from the set } \left\{1000^{2\frac{j}{99}}, j = 0,\dots, 99 \right\} \text{without}`
 .. |trafo-f21-08| replace:: :math:`\text{replacement, and } \alpha_i = 1000 \text{ for } i = 1.`
 .. |trafo-f21-09| replace:: :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}`
@@ -756,7 +756,7 @@ __ bbobfunctiondoc_
 .. |trafo-f22-03| replace:: :math:`\text{permuations of the variables.}`
 .. |trafo-f22-04| replace:: :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}`
 .. |trafo-f22-05| replace:: :math:`\text{but with randomly permuted diagonal elements.}`
-.. |trafo-f22-06| replace:: :math:`\text{For } i=1,\dots, 21, \alpha_i \text{ is drawn uniformly}`
+.. |trafo-f22-06| replace:: :math:`\text{For } i=2,\dots, 21, \alpha_i \text{ is drawn uniformly}`
 .. |trafo-f22-07| replace:: :math:`\text{from the set } \left\{1000^{2\frac{j}{19}}, j = 0,\dots, 19 \right\} \text{without}`
 .. |trafo-f22-08| replace:: :math:`\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1.`
 .. |trafo-f22-09| replace:: :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}`
