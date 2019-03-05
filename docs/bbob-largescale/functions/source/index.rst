@@ -155,7 +155,7 @@ Runtime and Target Values
 
 In order to measure the runtime of an algorithm on a problem, we
 establish a hitting time condition.
-For a given problem |p|, we prescribe a **target value** |t| as a specific |f|-value 
+For a given problem |p|, we prescribe a **target value** |t| as a specific |f|-value
 of interest [HAN2016perf]_.
 For a single run, when an algorithm reaches or surpasses the target value |t|
 on problem |p|, we say that it has *solved the problem* |pt| --- it was successful. [#]_
@@ -390,7 +390,7 @@ on the Ellipsoidal function (rotated) :math:`f_{10}(\mathbf{x})` (see the table 
 
 as follows:
 
-(i) First, we obtain the three matrices needed for the transformation, :math:`B, P_1, P_2`, 
+(i) First, we obtain the three matrices needed for the transformation, :math:`B, P_1, P_2`,
 as follows:
 
     .. code-block:: c
@@ -412,7 +412,7 @@ as follows:
         problem = transform_vars_permutation(problem, P2, n);
         problem = transform_vars_blockrotation(problem, B, n, s, n_b);
         problem = transform_vars_permutation(problem, P1, n);
-        
+
 .. Wassim: the output of the above is not correct, the sentence is displayed inside the code-block. And the phrasing in kinda weird
 
 Here, :math:`n` is again the problem dimension, :math:`s` the size of the blocks in :math:`B`, :math:`n_b:`
@@ -449,12 +449,12 @@ __ bbobfunctiondoc_
         \caption{Function descriptions of the separable, moderate, and ill-conditioned function groups of the {\ttfamily bbob-largescale} test suite.}
         \scriptsize
 
-.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}| 
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}|
 
 .. table::
     :widths: 20 50 30
-    
-    
+
+
     +----------------------------------+------------------+------------------+
     |                                  | Formulation      | Transformations  |
     +==================================+==================+==================+
@@ -475,16 +475,16 @@ __ bbobfunctiondoc_
     |                                  |                  | |trafo-f5-3|     |
     |                                  |                  | |trafo-f5-4|     |
     +----------------------------------+------------------+------------------+
-    
+
 
 .. |def-f1| replace:: :math:`f_1(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} z_i^2 + \mathbf{f}_{\text{opt}}`
 .. |trafo-f1| replace:: :math:`\mathbf{z} = \mathbf{x} - \mathbf{x}^{\text{opt}}`
-.. |def-f2| replace:: :math:`f_2(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2+ \mathbf{f}_{\text{opt}}`   
+.. |def-f2| replace:: :math:`f_2(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2+ \mathbf{f}_{\text{opt}}`
 .. |trafo-f2| replace:: :math:`\mathbf{z} = T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right)`
 .. |def-f3| replace:: :math:`f_3(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right) + \mathbf{f}_{\text{opt}}`
 .. |trafo-f3| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{10} T_{\text{asy}}^{0.2} \left( T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right) \right)`
 .. |def-f4-1| replace:: :math:`f_4(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right)`
-.. |def-f4-2| replace:: :math:`+ 100f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}` 
+.. |def-f4-2| replace:: :math:`+ 100f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
 .. |trafo-f4-1| replace:: :math:`z_i = s_i T_{\text{osz}}\left(x_i - x_i^{\text{opt}}\right) \text{for } i = 1,\dots, n\hspace{6cm}`
 .. |trafo-f4-2| replace:: :math:`s_i = \begin{cases} 10 \times 10^{\frac{1}{2} \frac{i-1}{n-1}} & \text{if } z_i >0 \text{ and } i \text{ odd} \\ 10^{\frac{1}{2} \frac{i-1}{n-1}} & \text{otherwise} \end{cases}`
 .. |trafo-f4-3| replace:: :math:`\text{ for } i = 1,\dots, n`
@@ -504,12 +504,12 @@ __ bbobfunctiondoc_
         \caption{Your caption here}
         \scriptsize
 
-.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}| 
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}|
 
 .. table::
     :widths: 20 50 30
-    
-    
+
+
     +----------------------------------+------------------+------------------+
     | **Group 2: Functions with low or moderate conditioning**               |
     +----------------------------------+------------------+------------------+
@@ -530,26 +530,26 @@ __ bbobfunctiondoc_
     |                                  |                  | |trafo-f9-2|     |
     |                                  |                  | |trafo-f9-3|     |
     +----------------------------------+------------------+------------------+
-    
-    
-    
+
+
+
 .. |def-f6| replace:: :math:`f_6(\mathbf{x}) = T_{\text{osz}}\left(\gamma(n) \times \sum_{i=1}^{n}\left( s_i z_i\right)^2 \right)^{0.9} + \mathbf{f}_{\text{opt}}`
-.. |trafo-f6-1| replace:: :math:`\mathbf{z} = \mathbf{Q} \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})` 
-.. |trafo-f6-2| replace:: :math:`\hspace{0.2cm} \text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{1.5cm}` 
-.. |trafo-f6-3| replace:: :math:`s_i = \begin{cases} 10^2 & \text{if } z_i \times x_i^{\mathrm{opt}} > 0\\ 1 & \text{otherwise}\end{cases}` 
+.. |trafo-f6-1| replace:: :math:`\mathbf{z} = \mathbf{Q} \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})`
+.. |trafo-f6-2| replace:: :math:`\hspace{0.2cm} \text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{1.5cm}`
+.. |trafo-f6-3| replace:: :math:`s_i = \begin{cases} 10^2 & \text{if } z_i \times x_i^{\mathrm{opt}} > 0\\ 1 & \text{otherwise}\end{cases}`
 .. |trafo-f6-4| replace:: :math:`\text{ for } i=1,\dots, n`
 .. |def-f7| replace:: :math:`f_7(\mathbf{x}) = \gamma(n) \times 0.1 \max\left(\vert \hat{z}_1\vert/10^4, \sum_{i=1}^{n}10^{2\frac{i - 1}{n - 1}}z_i^2\right) + f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
 .. |trafo-f7-1| replace:: :math:`\mathbf{\hat{z}} = \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x}-\mathbf{x}^{\text{opt}})  \text{ with }\mathbf{R} = P_{11}B_1P_{12},\hspace{4.5cm}`
 .. |trafo-f7-2| replace:: :math:`\tilde{z}_i= \begin{cases} \lfloor 0.5 + \hat{z}_i \rfloor & \text{if }  |\hat{z}_i| > 0.5 \\ \lfloor 0.5 + 10 \hat{z}_i \rfloor /10 & \text{otherwise} \end{cases}`
-.. |trafo-f7-3| replace:: :math:`\text{ for } i=1,\dots, n,\hspace{1.5cm}` 
+.. |trafo-f7-3| replace:: :math:`\text{ for } i=1,\dots, n,\hspace{1.5cm}`
 .. |trafo-f7-4| replace:: :math:`\mathbf{z} = \mathbf{Q} \mathbf{\tilde{z}} \text{ with } \mathbf{Q} = P_{21}B_2P_{22}`
 .. |def-f8| replace:: :math:`f_8(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
 .. |trafo-f8-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)(\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1},`
-.. |trafo-f8-2| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+.. |trafo-f8-2| replace:: :math:`\mathbf{x}^{\text{opt}} \in [-3, 3]^n`
 .. |def-f9| replace:: :math:`f_9(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}`
 .. |trafo-f9-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1}`
 .. |trafo-f9-2| replace:: :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},`
-.. |trafo-f9-3| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
+.. |trafo-f9-3| replace:: :math:`\mathbf{x}^{\text{opt}} \in [-3, 3]^n`
 
 .. .. raw:: latex
 
@@ -560,11 +560,11 @@ __ bbobfunctiondoc_
         \caption{Your caption here}
         \scriptsize
 
-.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}| 
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}|
 
 .. table::
     :widths: 20 50 30
-    
+
     +----------------------------------+------------------+------------------+
     | **Group 3: Functions with high conditioning and unimodal**             |
     +----------------------------------+------------------+------------------+
@@ -579,9 +579,9 @@ __ bbobfunctiondoc_
     +----------------------------------+------------------+------------------+
     | Different Powers Function        | |def-f14|        | |trafo-f14|      |
     +----------------------------------+------------------+------------------+
-    
-    
-    
+
+
+
 .. |def-f10| replace:: :math:`f_{10}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2  + \mathbf{f}_{\text{opt}}`
 .. |trafo-f10| replace:: :math:`\mathbf{z} = T_{\text{osz}} (\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}`
 .. |def-f11| replace:: :math:`f_{11}(\mathbf{x}) = \gamma(n) \times\left(10^6\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + \sum_{i=\lceil n/40 \rceil+1}^{n}z_i^2\right) + \mathbf{f}_{\text{opt}}`
@@ -605,11 +605,11 @@ __ bbobfunctiondoc_
         \caption{Function descriptions of the multi-modal function group with adequate global structure of the {\ttfamily bbob-largescale} test suite.}
         \scriptsize
 
-.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}| 
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}|
 
 .. table::
     :widths: 20 50 30
-    
+
     +----------------------------------+------------------+------------------+
     |                                  | Formulation      | Transformations  |
     +==================================+==================+==================+
@@ -636,34 +636,34 @@ __ bbobfunctiondoc_
     |                                  |                  | |trafo-f19-4|    |
     |                                  |                  | |trafo-f19-5|    |
     +----------------------------------+------------------+------------------+
-    
-   
-    
+
+
+
 .. |def-f15| replace:: :math:`f_{15}(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||\mathbf{z}||^2\right) + \mathbf{f}_{\text{opt}}`
-.. |trafo-f15-1| replace:: :math:`\mathbf{z} = \mathbf{R} \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.2} \left(T_{\text{osz}} \left(\mathbf{R}\left(\mathbf{x} - \mathbf{x}^{\text{opt}} \right) \right) \right) \hspace{5cm}` 
+.. |trafo-f15-1| replace:: :math:`\mathbf{z} = \mathbf{R} \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.2} \left(T_{\text{osz}} \left(\mathbf{R}\left(\mathbf{x} - \mathbf{x}^{\text{opt}} \right) \right) \right) \hspace{5cm}`
 .. |trafo-f15-2| replace:: :math:`\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
 .. |def-f16-1| replace:: :math:`f_{16}(\mathbf{x}) = 10\left( \dfrac{1}{n} \sum_{i=1}^{n} \sum_{k=0}^{11} \dfrac{1}{2^k} \cos \left( 2\pi 3^k \left( z_i + 1/2\right) \right) - f_0\right)^3`
 .. |def-f16-2| replace:: :math:`+\dfrac{10}{n}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
 .. |trafo-f16-1| replace:: :math:`\mathbf{z} = \mathbf{R}\mathbf{\Lambda}^{1/100}\mathbf{Q}T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))\hspace{6cm}`
 .. |trafo-f16-2| replace:: :math:`\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{5.8cm}`
 .. |trafo-f16-3| replace:: :math:`f_0= \sum_{k=0}^{11} \dfrac{1}{2^k} \cos(\pi 3^k)`
-.. |def-f17-1| replace:: :math:`f_{17}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2` 
+.. |def-f17-1| replace:: :math:`f_{17}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2`
 .. |def-f17-2| replace:: :math:`+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
 .. |trafo-f17-1| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))`
-.. |trafo-f17-2| replace:: :math:`\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{1cm}` 
+.. |trafo-f17-2| replace:: :math:`\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{1cm}`
 .. |trafo-f17-3| replace:: :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
 .. |def-f18-1| replace:: :math:`f_{18}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2`
 .. |def-f18-2| replace:: :math:`+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-.. |trafo-f18-1| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{1000} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))` 
+.. |trafo-f18-1| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{1000} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))`
 .. |trafo-f18-2| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{0.5cm}`
 .. |trafo-f18-3| replace:: :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
 .. |def-f19| replace:: :math:`f_{19}(\mathbf{x}) = \gamma(n)\times\left(\dfrac{10}{n-1} \sum_{i=1}^{n-1} \left( \dfrac{s_i}{4000} - \cos\left(s_i \right)\right) + 10 \right) + \mathbf{f}_{\text{opt}}`
 .. |trafo-f19-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2}`
-.. |trafo-f19-2| replace:: :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},\hspace{3.4cm}` 
-.. |trafo-f19-3| replace:: :math:`s_i= 100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2,` 
-.. |trafo-f19-4| replace:: :math:`\text{ for } i=1,\dots, n-1,` 
+.. |trafo-f19-2| replace:: :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},\hspace{3.4cm}`
+.. |trafo-f19-3| replace:: :math:`s_i= 100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2,`
+.. |trafo-f19-4| replace:: :math:`\text{ for } i=1,\dots, n-1,`
 .. |trafo-f19-5| replace:: :math:`\mathbf{z}^{\text{opt}} = \mathbf{1}`
-   
+
 
 
 .. raw:: latex
@@ -675,7 +675,7 @@ __ bbobfunctiondoc_
         \caption{Function descriptions of the multi-modal function group with weak global structure of the {\ttfamily bbob-largescale} test suite.}
         \scriptsize
 
-.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}| 
+.. tabularcolumns:: |p{0.18 \textwidth}|p{0.41 \textwidth}|p{0.41 \textwidth}|
 
 .. table::
     :widths: 20 50 30
@@ -726,13 +726,13 @@ __ bbobfunctiondoc_
     |                                  |                  | |trafo-f24-4|    |
     |                                  |                  | |trafo-f24-5|    |
     +----------------------------------+------------------+------------------+
-    
-    
-.. |def-f20-1| replace:: :math:`f_{20}(\mathbf{x}) = -\dfrac{1}{n} \sum_{i=1}^{n} z_i\sin\left(\sqrt{\vert z_i\vert}\right) + 4.189828872724339` 
+
+
+.. |def-f20-1| replace:: :math:`f_{20}(\mathbf{x}) = -\dfrac{1}{n} \sum_{i=1}^{n} z_i\sin\left(\sqrt{\vert z_i\vert}\right) + 4.189828872724339`
 .. |def-f20-2| replace:: :math:`+ 100f_{pen}(\mathbf{z}/100)+\mathbf{f}_{\text{opt}}`
-.. |trafo-f20-1| replace:: :math:`\mathbf{\hat{x}} = 2 \times \mathbf{1}_{-}^{+} \otimes \mathbf{x},` 
+.. |trafo-f20-1| replace:: :math:`\mathbf{\hat{x}} = 2 \times \mathbf{1}_{-}^{+} \otimes \mathbf{x},`
 .. |trafo-f20-2| replace:: :math:`\hat{z}_1 = \hat{x}_1, \hat{z}_{i+1}=\hat{x}_{i+1} + 0.25 \left(\hat{x}_{i} - 2\left|x_i^{\text{opt}}\right|\right),`
-.. |trafo-f20-3| replace:: :math:`\text{ for } i=1, \dots, n-1,` 
+.. |trafo-f20-3| replace:: :math:`\text{ for } i=1, \dots, n-1,`
 .. |trafo-f20-4| replace:: :math:`\mathbf{z} = 100 \left(\mathbf{\Lambda}^{10} \left(\mathbf{\hat{z}} - 2\left|\mathbf{x}^{\text{opt}}\right|\right) + 2\left|\mathbf{x}^{\text{opt}}\right|\right),`
 .. |trafo-f20-5| replace:: :math:`\mathbf{x}^{\text{opt}} = 4.2096874633/2 \mathbf{1}_{-}^{+}`
 .. |def-f21-1| replace:: :math:`f_{21}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{101} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T\mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2`
@@ -740,13 +740,13 @@ __ bbobfunctiondoc_
 .. |trafo-f21-01| replace:: :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{99} & \text{for } 2 \leq i \leq 101\\ 10 & \text{for } i = 1 \end{cases}`
 .. |trafo-f21-02| replace:: :math:`\mathbf{B} \text{ is a block-diagonal matrix without}`
 .. |trafo-f21-03| replace:: :math:`\text{permuations of the variables.}`
-.. |trafo-f21-04| replace:: :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` 
+.. |trafo-f21-04| replace:: :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}`
 .. |trafo-f21-05| replace:: :math:`\text{but with randomly permuted diagonal elements.}`
-.. |trafo-f21-06| replace:: :math:`\text{For } i=1,\dots, 101, \alpha_i \text{ is drawn uniformly}` 
-.. |trafo-f21-07| replace:: :math:`\text{from the set } \left\{1000^{2\frac{j}{99}}, j = 0,\dots, 99 \right\} \text{without}` 
-.. |trafo-f21-08| replace:: :math:`\text{replacement, and } \alpha_i = 1000 \text{ for } i = 1.` 
-.. |trafo-f21-09| replace:: :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` 
-.. |trafo-f21-10| replace:: :math:`\text{from the domain } [-5,5]^n \text{ for }` 
+.. |trafo-f21-06| replace:: :math:`\text{For } i=2,\dots, 101, \alpha_i \text{ is drawn uniformly}`
+.. |trafo-f21-07| replace:: :math:`\text{from the set } \left\{1000^{2\frac{j}{99}}, j = 0,\dots, 99 \right\} \text{without}`
+.. |trafo-f21-08| replace:: :math:`\text{replacement, and } \alpha_i = 1000 \text{ for } i = 1.`
+.. |trafo-f21-09| replace:: :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}`
+.. |trafo-f21-10| replace:: :math:`\text{from the domain } [-5,5]^n \text{ for }`
 .. |trafo-f21-11| replace:: :math:`i = 2,...,101 \text{ and } \mathbf{y}_1 \in [-4,4]^n.`
 .. |trafo-f21-12| replace:: :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
 .. |def-f22-1| replace:: :math:`f_{22}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{21} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T \mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2`
@@ -754,12 +754,12 @@ __ bbobfunctiondoc_
 .. |trafo-f22-01| replace:: :math:`w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{19} & \text{for } 2 \leq i \leq 21\\ 10 & \text{for } i = 1 \end{cases}`
 .. |trafo-f22-02| replace:: :math:`\mathbf{B} \text{ is a block-diagonal matrix without}`
 .. |trafo-f22-03| replace:: :math:`\text{permuations of the variables.}`
-.. |trafo-f22-04| replace:: :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}` 
-.. |trafo-f22-05| replace:: :math:`\text{but with randomly permuted diagonal elements.}` 
-.. |trafo-f22-06| replace:: :math:`\text{For } i=1,\dots, 21, \alpha_i \text{ is drawn uniformly}` 
+.. |trafo-f22-04| replace:: :math:`\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}`
+.. |trafo-f22-05| replace:: :math:`\text{but with randomly permuted diagonal elements.}`
+.. |trafo-f22-06| replace:: :math:`\text{For } i=2,\dots, 21, \alpha_i \text{ is drawn uniformly}`
 .. |trafo-f22-07| replace:: :math:`\text{from the set } \left\{1000^{2\frac{j}{19}}, j = 0,\dots, 19 \right\} \text{without}`
-.. |trafo-f22-08| replace:: :math:`\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1.` 
-.. |trafo-f22-09| replace:: :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}` 
+.. |trafo-f22-08| replace:: :math:`\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1.`
+.. |trafo-f22-09| replace:: :math:`\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}`
 .. |trafo-f22-10| replace:: :math:`\text{from the domain } [-4.9,4.9]^n \text{ for }`
 .. |trafo-f22-11| replace:: :math:`i = 2,...,21 \text{ and } \mathbf{y}_1 \in [-3.92,3.92]^n.`
 .. |trafo-f22-12| replace:: :math:`\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1.`
@@ -774,13 +774,13 @@ __ bbobfunctiondoc_
 .. |trafo-f24-3| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`
 .. |trafo-f24-4| replace:: :math:`\mu_0 = 2.5, \mu_1 = -\sqrt{\dfrac{\mu_0^{2} - 1}{s}},`
 .. |trafo-f24-5| replace:: :math:`s = 1 - \dfrac{1}{2\sqrt{n + 20} - 8.2}`
-      
-    
+
+
 .. raw:: latex
 
     \end{sidewaystable}
-    
-    
+
+
 
 .. _`Coco framework`: https://github.com/numbbo/coco
 
@@ -796,7 +796,7 @@ __ bbobfunctiondoc_
     \section*{Acknowledgments}
 
 This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
-of the French National Research Agency. 
+of the French National Research Agency.
 This work was further supported by a public grant as part of the Investissement d'avenir project, reference ANR-11-LABX-0056-LMH, LabEx LMH, in a joint call with Gaspard Monge Program for optimization, operations research and their interactions with data sciences.
 
 
