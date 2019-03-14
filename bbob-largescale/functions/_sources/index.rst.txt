@@ -657,7 +657,7 @@ __ bbobfunctiondoc_
 .. |trafo-f18-1| replace:: :math:`\mathbf{z} = \mathbf{\Lambda}^{1000} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))`
 .. |trafo-f18-2| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{0.5cm}`
 .. |trafo-f18-3| replace:: :math:`s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1`
-.. |def-f19| replace:: :math:`f_{19}(\mathbf{x}) = \gamma(n)\times\left(\dfrac{10}{n-1} \sum_{i=1}^{n-1} \left( \dfrac{s_i}{4000} - \cos\left(s_i \right)\right) + 10 \right) + \mathbf{f}_{\text{opt}}`
+.. |def-f19| replace:: :math:`f_{19}(\mathbf{x}) = \dfrac{10}{n-1} \sum_{i=1}^{n-1} \left( \dfrac{s_i}{4000} - \cos\left(s_i \right)\right) + 10 + \mathbf{f}_{\text{opt}}`
 .. |trafo-f19-1| replace:: :math:`\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2}`
 .. |trafo-f19-2| replace:: :math:`\text{ with }\mathbf{R} = P_{1}BP_{2},\hspace{3.4cm}`
 .. |trafo-f19-3| replace:: :math:`s_i= 100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2,`
@@ -769,7 +769,7 @@ __ bbobfunctiondoc_
 .. |trafo-f23-2| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}`
 .. |def-f24-1| replace:: :math:`f_{24}(\mathbf{x}) = \gamma(n)\times\Big(\min\big( \sum_{i=1}^{n} (\hat{x}_i - \mu_0)^2, n + s\sum_{i=1}^{n}(\hat{x}_i - \mu_1)^2\big)`
 .. |def-f24-2| replace:: :math:`+ 10 \big(n - \sum_{i=1}^{n}\cos(2\pi z_i) \big)\Big) + 10^{4}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}`
-.. |trafo-f24-1| replace:: :math:`\mathbf{\hat{x}} = 2 \text{sign}(\mathbf{x}^{\text{opt}}) \otimes \mathbf{x}, \mathbf{x}^{\text{opt}} = 0.5 \mu_0 \mathbf{1}_{-}^{+}`
+.. |trafo-f24-1| replace:: :math:`\mathbf{\hat{x}} = 2 \text{sign}(\mathbf{x}^{\text{opt}}) \otimes \mathbf{x}, \mathbf{x}^{\text{opt}} = 0.5 \mu_0 \mathbf{1}_{-}^{+},`
 .. |trafo-f24-2| replace:: :math:`\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100}\mathbf{R}(\mathbf{\hat{x}} - \mu_0\mathbf{1})`
 .. |trafo-f24-3| replace:: :math:`\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},`
 .. |trafo-f24-4| replace:: :math:`\mu_0 = 2.5, \mu_1 = -\sqrt{\dfrac{\mu_0^{2} - 1}{s}},`
