@@ -97,7 +97,7 @@ For the `cocoex` module, you have to copy/rename the
 
 ```
 cd code-experiments/build/python
-cp -rp python cocoex
+cp -rp python cocoex  # precondition: make sure cocoex does not exist
 source activate py27
 pydoctor --docformat=restructuredtext --make-html cocoex
 pydoctor --docformat=restructuredtext --make-html example_experiment2.py
