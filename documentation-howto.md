@@ -89,7 +89,6 @@ cd code-postprocessing
 source activate py27
 pydoctor --docformat=restructuredtext --make-html cocopp
 source deactivate
-rm apidocs/__tmp__*
 rsync -auv apidocs/ scm.gforge.inria.fr:/home/groups/coco/htdocs/apidocs-cocopp
 ```
 For the `cocoex` module, you have to copy/rename the
@@ -102,7 +101,6 @@ source activate py27
 pydoctor --docformat=restructuredtext --make-html cocoex
 pydoctor --docformat=restructuredtext --make-html example_experiment2.py
 source deactivate
-rm apidocs/__tmp__*
 rsync -auv apidocs/ scm.gforge.inria.fr:/home/groups/coco/htdocs/apidocs-cocoex
 rsync -auv apidocs/example_experiment2.html scm.gforge.inria.fr:/home/groups/coco/htdocs/apidocs-example_experiment
 ```
