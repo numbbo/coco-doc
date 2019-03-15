@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b',['b',['../structtransform__vars__affine__data__t.html#a9f92e5582bf339a3c95df78b9c684fe0',1,'transform_vars_affine_data_t::b()'],['../structtransform__vars__permblockdiag__t.html#a538f69b3a2f11852979fe8a7880baa62',1,'transform_vars_permblockdiag_t::B()']]],
+  ['b',['b',['../structtransform__vars__affine__data__t.html#a9f92e5582bf339a3c95df78b9c684fe0',1,'transform_vars_affine_data_t::b()'],['../structtransform__vars__blockrotation__t.html#a538f69b3a2f11852979fe8a7880baa62',1,'transform_vars_blockrotation_t::B()'],['../structf__gallagher__versatile__data__t.html#a538f69b3a2f11852979fe8a7880baa62',1,'f_gallagher_versatile_data_t::B()'],['../structtransform__vars__permblockdiag__t.html#a538f69b3a2f11852979fe8a7880baa62',1,'transform_vars_permblockdiag_t::B()']]],
   ['base_5fcount',['base_count',['../structcoco__observer__evaluations__t.html#acad1f53ea3fa0198ab1a164730872651',1,'coco_observer_evaluations_t']]],
   ['base_5fevaluation_5ftriggers',['base_evaluation_triggers',['../structcoco__observer__s.html#a22b0fcaf2d2e41d55c12929cad26ff65',1,'coco_observer_s']]],
   ['base_5fevaluations',['base_evaluations',['../structcoco__observer__evaluations__t.html#ab56c865d9c9aa3e98c56d4f1d6c7c313',1,'coco_observer_evaluations_t']]],
@@ -18,10 +18,11 @@ var searchData=
   ['best_5fobserved_5ffvalue',['best_observed_fvalue',['../structcoco__problem__s.html#a494098313147a12040a4de8299402c0b',1,'coco_problem_s']]],
   ['best_5fparameter',['best_parameter',['../structcoco__problem__s.html#a734005c92445755d07e1df34e7eaf3a3',1,'coco_problem_s']]],
   ['best_5fsolution',['best_solution',['../structlogger__bbob__data__t.html#af8176ad71b4758812f3c561d362cf41b',1,'logger_bbob_data_t']]],
-  ['best_5fvalue',['best_value',['../structcoco__problem__s.html#a1a07a4305f85eb196c5a389a62eaacdf',1,'coco_problem_s::best_value()'],['../structlogger__biobj__indicator__t.html#af24c8f42a2d3d6b068416bd8f1f81b47',1,'logger_biobj_indicator_t::best_value()']]],
+  ['best_5fvalue',['best_value',['../structcoco__problem__s.html#a1a07a4305f85eb196c5a389a62eaacdf',1,'coco_problem_s::best_value()'],['../structlogger__biobj__indicator__t.html#af24c8f42a2d3d6b068416bd8f1f81b47',1,'logger_biobj_indicator_t::best_value()'],['../structlogger__rw__data__t.html#af24c8f42a2d3d6b068416bd8f1f81b47',1,'logger_rw_data_t::best_value()']]],
   ['beta',['beta',['../structtransform__vars__asymmetric__data__t.html#a9424343761f8c4f4c1afe8f5b6bf471b',1,'transform_vars_asymmetric_data_t']]],
   ['bk',['bk',['../structf__weierstrass__data__t.html#abfa3995b41e12df8198e6d485a4e36be',1,'f_weierstrass_data_t']]],
-  ['block_5fsize_5fmap',['block_size_map',['../structtransform__vars__permblockdiag__t.html#a39dc52213ed2020d5f5e8635b1e822bc',1,'transform_vars_permblockdiag_t']]],
-  ['block_5fsizes',['block_sizes',['../structtransform__vars__permblockdiag__t.html#a8b14af702a13abd246a964baa849e214',1,'transform_vars_permblockdiag_t']]],
-  ['buffer_5ftree',['buffer_tree',['../structlogger__biobj__data__t.html#a49fd1c58a5bc4552e703793e83c33e7b',1,'logger_biobj_data_t']]]
+  ['block_5fsize_5fmap',['block_size_map',['../structtransform__vars__blockrotation__t.html#a39dc52213ed2020d5f5e8635b1e822bc',1,'transform_vars_blockrotation_t::block_size_map()'],['../structf__gallagher__versatile__data__t.html#a0eb9fb686ebaf3301c276a86d39152ea',1,'f_gallagher_versatile_data_t::block_size_map()'],['../structtransform__vars__permblockdiag__t.html#a39dc52213ed2020d5f5e8635b1e822bc',1,'transform_vars_permblockdiag_t::block_size_map()']]],
+  ['block_5fsizes',['block_sizes',['../structtransform__vars__blockrotation__t.html#a8b14af702a13abd246a964baa849e214',1,'transform_vars_blockrotation_t::block_sizes()'],['../structf__gallagher__versatile__data__t.html#ac392140412c7ed6f3099092386a199ee',1,'f_gallagher_versatile_data_t::block_sizes()'],['../structtransform__vars__permblockdiag__t.html#a8b14af702a13abd246a964baa849e214',1,'transform_vars_permblockdiag_t::block_sizes()']]],
+  ['buffer_5ftree',['buffer_tree',['../structlogger__biobj__data__t.html#a49fd1c58a5bc4552e703793e83c33e7b',1,'logger_biobj_data_t']]],
+  ['bx',['Bx',['../structtransform__vars__blockrotation__t.html#a5758b05598edae20e9168ab7e6e06794',1,'transform_vars_blockrotation_t']]]
 ];

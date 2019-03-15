@@ -7,6 +7,6 @@ var searchData=
   ['deallocate',['deallocate',['../structavl__allocator.html#aa8f819d4f42ee42a96f2111c18a866f7',1,'avl_allocator']]],
   ['default_5finstances',['default_instances',['../structcoco__suite__s.html#a56857da959f43d097b1a6507c311a410',1,'coco_suite_s']]],
   ['depth',['depth',['../structavl__node.html#a4446c9c4506cb4a07bc1537fec4ec204',1,'avl_node']]],
-  ['dimension',['dimension',['../structcoco__observer__evaluations__t.html#a389cd93f4e125d4369384464914be61f',1,'coco_observer_evaluations_t']]],
+  ['dimension',['dimension',['../structcoco__observer__evaluations__t.html#a389cd93f4e125d4369384464914be61f',1,'coco_observer_evaluations_t::dimension()'],['../structtransform__vars__blockrotation__t.html#a389cd93f4e125d4369384464914be61f',1,'transform_vars_blockrotation_t::dimension()']]],
   ['dimensions',['dimensions',['../structcoco__suite__s.html#acef3445bc8b435e236782b9e3e81b5a4',1,'coco_suite_s']]]
 ];

@@ -111,6 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="logger__bbob_8c.html">logger_bbob.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger__biobj_8c.html">logger_biobj.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="logger__toy_8c.html">logger_toy.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logger__rw_8c.html">logger_rw.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -129,9 +130,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5f46879276af1233f6008e8332cf8f13"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a5f46879276af1233f6008e8332cf8f13">coco_observer_allocate</a> (const char *result_folder, const char *observer_name, const char *algorithm_name, const char *algorithm_info, const size_t number_target_triggers, const double target_precision, const size_t number_evaluation_triggers, const char *base_evaluation_triggers, const int precision_x, const int precision_f)</td></tr>
-<tr class="memdesc:a5f46879276af1233f6008e8332cf8f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory for a coco_observer_t instance.  <a href="#a5f46879276af1233f6008e8332cf8f13">More...</a><br /></td></tr>
-<tr class="separator:a5f46879276af1233f6008e8332cf8f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a3b3a9e74e8de0c4d1cc5693ba8165c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a9a3b3a9e74e8de0c4d1cc5693ba8165c">coco_observer_allocate</a> (const char *result_folder, const char *observer_name, const char *algorithm_name, const char *algorithm_info, const size_t number_target_triggers, const double target_precision, const size_t number_evaluation_triggers, const char *base_evaluation_triggers, const int precision_x, const int precision_f, const int precision_g, const int log_discrete_as_int)</td></tr>
+<tr class="memdesc:a9a3b3a9e74e8de0c4d1cc5693ba8165c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory for a coco_observer_t instance.  <a href="#a9a3b3a9e74e8de0c4d1cc5693ba8165c">More...</a><br /></td></tr>
+<tr class="separator:a9a3b3a9e74e8de0c4d1cc5693ba8165c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01a11a7c64e03eb432eb8f13fceec0de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__observer_8c.html#a01a11a7c64e03eb432eb8f13fceec0de">coco_observer_free</a> (<a class="el" href="coco_8h.html#a0c54e2a90a2a95a6ce541d66f507cfa5">coco_observer_t</a> *observer)</td></tr>
 <tr class="memdesc:a01a11a7c64e03eb432eb8f13fceec0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the given observer.  <a href="#a01a11a7c64e03eb432eb8f13fceec0de">More...</a><br /></td></tr>
 <tr class="separator:a01a11a7c64e03eb432eb8f13fceec0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,6 +234,8 @@ Functions</h2></td></tr>
 <li>"base_evaluation_triggers: VALUES" defines the base evaluations used to produce an additional evaluation-based logging. The numbers of evaluations that trigger logging are every base_evaluation * dimension * (10**i). For example, if base_evaluation_triggers = "1,2,5", the logger will be triggered by evaluations dim*1, dim*2, dim*5, 10*dim*1, 10*dim*2, 10*dim*5, 100*dim*1, 100*dim*2, 100*dim*5, ... The default value is "1,2,5".</li>
 <li>"precision_x: VALUE" defines the precision used when outputting variables and corresponds to the number of digits to be printed after the decimal point. The default value is 8.</li>
 <li>"precision_f: VALUE" defines the precision used when outputting f values and corresponds to the number of digits to be printed after the decimal point. The default value is 15.</li>
+<li>"precision_g: VALUE" defines the precision used when outputting constraints and corresponds to the number of digits to be printed after the decimal point. The default value is 3.</li>
+<li>"log_discrete_as_int: VALUE" determines whether the values of integer variables (in mixed-integer problems) are logged as integers (1) or not (0 - in this case they are logged as doubles). The default value is 0.</li>
 </ul>
 </td></tr>
   </table>
@@ -242,7 +245,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5f46879276af1233f6008e8332cf8f13"></a>
+<a class="anchor" id="a9a3b3a9e74e8de0c4d1cc5693ba8165c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -307,7 +310,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>precision_f</em>&#160;</td>
+          <td class="paramname"><em>precision_f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>precision_g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>log_discrete_as_int</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

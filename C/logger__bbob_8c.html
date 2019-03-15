@@ -126,8 +126,8 @@ Functions</h2></td></tr>
 <tr class="memitem:afe45f75ed868bcf5d1db82b7dc1e8fc9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#afe45f75ed868bcf5d1db82b7dc1e8fc9">single_digit_constraint_value</a> (const double c)</td></tr>
 <tr class="memdesc:afe45f75ed868bcf5d1db82b7dc1e8fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discretized constraint value, ~8 + log10(c), in a single digit.  <a href="#afe45f75ed868bcf5d1db82b7dc1e8fc9">More...</a><br /></td></tr>
 <tr class="separator:afe45f75ed868bcf5d1db82b7dc1e8fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a131e9d7c760317c731419c3c17a3e67f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a131e9d7c760317c731419c3c17a3e67f">logger_bbob_write_data</a> (FILE *target_file, size_t number_of_f_evaluations, size_t number_of_cons_evaluations, double fvalue, double best_fvalue, double best_value, const double *x, size_t number_of_variables, const double *constraints, size_t number_of_constraints)</td></tr>
-<tr class="separator:a131e9d7c760317c731419c3c17a3e67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e1aa6a70ddbe426e73f61d31905b5eb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a2e1aa6a70ddbe426e73f61d31905b5eb">logger_bbob_write_data</a> (FILE *target_file, size_t number_of_f_evaluations, size_t number_of_cons_evaluations, double fvalue, double best_fvalue, double best_value, const double *x, size_t number_of_variables, size_t number_of_integer_variables, const double *constraints, size_t number_of_constraints, const int log_discrete_as_int)</td></tr>
+<tr class="separator:a2e1aa6a70ddbe426e73f61d31905b5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2fb59dbf4d708d1eab420546378d30f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#ac2fb59dbf4d708d1eab420546378d30f">logger_bbob_error_io</a> (FILE *path, int errnum)</td></tr>
 <tr class="separator:ac2fb59dbf4d708d1eab420546378d30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45b719d37e38be6b89382f77590dd072"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__bbob_8c.html#a45b719d37e38be6b89382f77590dd072">logger_bbob_open_dataFile</a> (FILE **target_file, const char *path, const char *dataFile_path, const char *file_extension)</td></tr>
@@ -458,7 +458,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a131e9d7c760317c731419c3c17a3e67f"></a>
+<a class="anchor" id="a2e1aa6a70ddbe426e73f61d31905b5eb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -516,6 +516,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>number_of_integer_variables</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const double *&#160;</td>
           <td class="paramname"><em>constraints</em>, </td>
         </tr>
@@ -523,7 +529,13 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>number_of_constraints</em>&#160;</td>
+          <td class="paramname"><em>number_of_constraints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>log_discrete_as_int</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

@@ -15,5 +15,5 @@ var searchData=
   ['current_5finstance_5fidx',['current_instance_idx',['../structcoco__suite__s.html#a32ff86b28a2c8ee3afb7fe531f377d79',1,'coco_suite_s']]],
   ['current_5fproblem',['current_problem',['../structcoco__suite__s.html#ae289bf6afb4a91e8d08b949edd7908b5',1,'coco_suite_s']]],
   ['current_5fsolution',['current_solution',['../structcoco__archive__s.html#ab2aea7557f1996e3a3984b19ccb6b634',1,'coco_archive_s']]],
-  ['current_5fvalue',['current_value',['../structlogger__biobj__indicator__t.html#a4cb9ee35c1f0b3ec48b932d2aee073f4',1,'logger_biobj_indicator_t']]]
+  ['current_5fvalue',['current_value',['../structlogger__biobj__indicator__t.html#a4cb9ee35c1f0b3ec48b932d2aee073f4',1,'logger_biobj_indicator_t::current_value()'],['../structlogger__rw__data__t.html#a4cb9ee35c1f0b3ec48b932d2aee073f4',1,'logger_rw_data_t::current_value()']]]
 ];

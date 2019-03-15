@@ -105,6 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -117,6 +118,8 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a54c22f1f2b52e48e0bbfdfaae703a0d8"><td class="memItemLeft" align="right" valign="top">static size_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#a54c22f1f2b52e48e0bbfdfaae703a0d8">coco_allocate_vector_size_t</a> (const size_t number_of_elements)</td></tr>
 <tr class="separator:a54c22f1f2b52e48e0bbfdfaae703a0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d0d5f1cf8e9bfebf107b83d4f0df5d3"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#a2d0d5f1cf8e9bfebf107b83d4f0df5d3">coco_allocate_string</a> (const size_t number_of_elements)</td></tr>
+<tr class="separator:a2d0d5f1cf8e9bfebf107b83d4f0df5d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0c24d4a9eead3517bc1f1ca9be2f6ad"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__string_8c.html#aa0c24d4a9eead3517bc1f1ca9be2f6ad">coco_strdup</a> (const char *string)</td></tr>
 <tr class="memdesc:aa0c24d4a9eead3517bc1f1ca9be2f6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a duplicate copy of string and returns a pointer to it.  <a href="#aa0c24d4a9eead3517bc1f1ca9be2f6ad">More...</a><br /></td></tr>
 <tr class="separator:aa0c24d4a9eead3517bc1f1ca9be2f6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,6 +167,30 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a2d0d5f1cf8e9bfebf107b83d4f0df5d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char* coco_allocate_string </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_of_elements</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a54c22f1f2b52e48e0bbfdfaae703a0d8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -450,7 +477,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Splits a string based on the given delimiter. </p>
-<p>Returns a pointer to the resulting substrings with NULL as the last one. The caller is responsible for freeing the allocated memory using <a class="el" href="coco_8h.html#a8542ff7c23ec7a8e64487a50232db26f" title="Frees the allocated memory. ">coco_free_memory()</a>. </p>
+<p>Returns a pointer to the resulting substrings with NULL as the last one. The caller is responsible for freeing the allocated memory using:</p>
+<p>for (i = 0; *(result + i); i++) coco_free_memory(*(result + i)); coco_free_memory(*(result + i)); &lt;- This is needed! coco_free_memory(result); </p>
 
 </div>
 </div>

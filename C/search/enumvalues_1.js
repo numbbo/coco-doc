@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['log_5falways',['LOG_ALWAYS',['../observer__rw_8c.html#aae2c92a021a9dd9232e96ff948f933b7a67f3e58da16e681e7d7fe88927120998',1,'observer_rw.c']]],
+  ['log_5flow_5fdim',['LOG_LOW_DIM',['../observer__rw_8c.html#aae2c92a021a9dd9232e96ff948f933b7a7e34cea782d9722b3235e03fd3c2eca5',1,'observer_rw.c']]],
+  ['log_5fnever',['LOG_NEVER',['../observer__rw_8c.html#aae2c92a021a9dd9232e96ff948f933b7a023cad89e7e436869022996e04594e9e',1,'observer_rw.c']]],
   ['log_5fnondom_5fall',['LOG_NONDOM_ALL',['../observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bda78c0d9c657bb6249e933950263dd5407',1,'observer_biobj.c']]],
   ['log_5fnondom_5ffinal',['LOG_NONDOM_FINAL',['../observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bdabf0d04baf535f9b4d4aa4c3f2e0fcaff',1,'observer_biobj.c']]],
   ['log_5fnondom_5fnone',['LOG_NONDOM_NONE',['../observer__biobj_8c.html#af7d3edad14e9bc80fda6ec29119888bda5d97229518eadf597f361f33d5748b64',1,'observer_biobj.c']]],

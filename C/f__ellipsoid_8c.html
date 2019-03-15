@@ -110,7 +110,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="transform__vars__affine_8c.html">transform_vars_affine.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="transform__vars__shift_8c.html">transform_vars_shift.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="transform__obj__shift_8c.html">transform_obj_shift.c</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="transform__vars__permblockdiag_8c.html">transform_vars_permblockdiag.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__permutation_8c.html">transform_vars_permutation.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__blockrotation_8c.html">transform_vars_blockrotation.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__obj__norm__by__dim_8c.html">transform_obj_norm_by_dim.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -133,6 +135,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ad98281d1e8b775330741cd73e71c8157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB rotated ellipsoid problem.  <a href="#ad98281d1e8b775330741cd73e71c8157">More...</a><br /></td></tr>
 <tr class="separator:ad98281d1e8b775330741cd73e71c8157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62817f424f0ada8ed6a98a4fe72727cf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__ellipsoid_8c.html#a62817f424f0ada8ed6a98a4fe72727cf">f_ellipsoid_permblockdiag_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:a62817f424f0ada8ed6a98a4fe72727cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB permuted block-rotated ellipsoid problem.  <a href="#a62817f424f0ada8ed6a98a4fe72727cf">More...</a><br /></td></tr>
 <tr class="separator:a62817f424f0ada8ed6a98a4fe72727cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b5a32eea71c0af467842cdb0c03ef4b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__ellipsoid_8c.html#a8b5a32eea71c0af467842cdb0c03ef4b">f_ellipsoid_cons_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="memdesc:a8b5a32eea71c0af467842cdb0c03ef4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the ellipsoid problem for the constrained BBOB suite.  <a href="#a8b5a32eea71c0af467842cdb0c03ef4b">More...</a><br /></td></tr>
@@ -429,6 +432,8 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates the BBOB permuted block-rotated ellipsoid problem. </p>
 
 </div>
 </div>
