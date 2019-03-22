@@ -812,11 +812,6 @@ This work was further supported by a public grant as part of the Investissement 
     United States.
 .. __: https://hal.inria.fr/hal-01308566
 
-.. [BRO2016] D. Brockhoff, T. Tusar, D. Tusar, T. Wagner, N. Hansen, A. Auger, (2016).
-    `Biobjective Performance Assessment with the COCO Platform`__. *ArXiv e-prints*, `arXiv:1605.01746`__.
-..  __: http://numbbo.github.io/coco-doc/bbob-biobj/perf-assessment
-..  __: http://arxiv.org/abs/1605.01746
-
 
 .. [HAN2009] N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
    `Real-parameter black-box optimization benchmarking 2009: Noiseless
