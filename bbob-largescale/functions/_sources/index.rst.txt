@@ -728,7 +728,7 @@ __ bbobfunctiondoc_
     +----------------------------------+------------------+------------------+
 
 
-.. |def-f20-1| replace:: :math:`f_{20}(\mathbf{x}) = -\dfrac{1}{n} \sum_{i=1}^{n} z_i\sin\left(\sqrt{\vert z_i\vert}\right) + 4.189828872724339`
+.. |def-f20-1| replace:: :math:`f_{20}(\mathbf{x}) = -\dfrac{1}{100 n} \sum_{i=1}^{n} z_i\sin\left(\sqrt{\vert z_i\vert}\right) + 4.189828872724339`
 .. |def-f20-2| replace:: :math:`+ 100f_{pen}(\mathbf{z}/100)+\mathbf{f}_{\text{opt}}`
 .. |trafo-f20-1| replace:: :math:`\mathbf{\hat{x}} = 2 \times \mathbf{1}_{-}^{+} \otimes \mathbf{x},`
 .. |trafo-f20-2| replace:: :math:`\hat{z}_1 = \hat{x}_1, \hat{z}_{i+1}=\hat{x}_{i+1} + 0.25 \left(\hat{x}_{i} - 2\left|x_i^{\text{opt}}\right|\right),`
