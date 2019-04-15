@@ -429,9 +429,11 @@ Functions in ``bbob-largescale`` test suite
 The table below presents the definition of all 24 functions of the ``bbob-largescale`` test suite in detail. Beside the important
 modification on rotational transformations, we also make two changes to the raw functions in the ``bbob`` test suite.
 
-- All functions, except for the Schwefel, Schaffer, Weierstrass, Gallagher, and Katsuura functions, are normalized by the parameter :math:`\gamma(n) = \min(1, 40/n)` to have uniform target values that are comparable, in difficulty, over a wide range of dimensions.
+- All functions, except for the Schwefel, Schaffer, Weierstrass, Gallagher, Griewank-Rosenbrock and Katsuura functions which by definition are normalized with dimension, are normalized by the parameter :math:`\gamma(n) = \min(1, 40/n)` to have uniform target values that are comparable, in difficulty, over a wide range of dimensions.
 
 - The Discus, Bent Cigar and Sharp Ridge functions are generalized such that they have a constant proportion of distinct axes that remain consistent with the ``bbob`` test suite.
+
+- For the two Rosenbrock functions and the related Griewank-Rosenbrock function, a different scaling is used than in the original ``bbob`` functions: instead of the factor :math:`\max (1, \frac{\sqrt{n}}{8})` with :math:`n` being the problem dimension, we scale the rotated search vector by the factor :math:`\max (1, \frac{\sqrt{s}}{8})` with :math:`s` being the block size in the matrix :math:`B`. An additional constant is added to the :math:`z` vector to reduce, with high probability, the risk to move important parts of the test function's characteristics out of the domain of interest. Without these adjustments, the original functions become significantly easier in higher dimensions due to the optimum being too close to the origin. For more details, we refer the interested reader to the discussion on the `corresponding github issue <https://github.com/numbbo/coco/issues/1733>`_.
 
 For a better understanding of the properties of these functions and for the definitions
 of the used transformations and abbreviations, we refer the reader to the original
