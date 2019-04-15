@@ -133,6 +133,9 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a821b08daf840db95cd3be6ba31a7a588"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#a821b08daf840db95cd3be6ba31a7a588">largest_values_of_interest</a></td></tr>
 <tr class="memdesc:a821b08daf840db95cd3be6ba31a7a588"><td class="mdescLeft">&#160;</td><td class="mdescRight">The upper bounds of the ROI in the decision space.  <a href="#a821b08daf840db95cd3be6ba31a7a588">More...</a><br /></td></tr>
 <tr class="separator:a821b08daf840db95cd3be6ba31a7a588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad26f9b1bc383589ba239bd0a69c8cf77"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#ad26f9b1bc383589ba239bd0a69c8cf77">number_of_integer_variables</a></td></tr>
+<tr class="memdesc:ad26f9b1bc383589ba239bd0a69c8cf77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of integer variables (if &gt; 0, all integer variables come before any continuous ones).  <a href="#ad26f9b1bc383589ba239bd0a69c8cf77">More...</a><br /></td></tr>
+<tr class="separator:ad26f9b1bc383589ba239bd0a69c8cf77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a784c493e6bc1eea553c6a2a989957280"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#a784c493e6bc1eea553c6a2a989957280">initial_solution</a></td></tr>
 <tr class="memdesc:a784c493e6bc1eea553c6a2a989957280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial feasible solution.  <a href="#a784c493e6bc1eea553c6a2a989957280">More...</a><br /></td></tr>
 <tr class="separator:a784c493e6bc1eea553c6a2a989957280"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,6 +187,8 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a735984d41155bc1032e09bece8f8d66d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#a735984d41155bc1032e09bece8f8d66d">data</a></td></tr>
 <tr class="memdesc:a735984d41155bc1032e09bece8f8d66d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to a data instance.  <a href="#a735984d41155bc1032e09bece8f8d66d">More...</a><br /></td></tr>
 <tr class="separator:a735984d41155bc1032e09bece8f8d66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd8ad863824cb4e88dd55cdd96ec14a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcoco__problem__s.html#aedd8ad863824cb4e88dd55cdd96ec14a">versatile_data</a></td></tr>
+<tr class="separator:aedd8ad863824cb4e88dd55cdd96ec14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The COCO problem structure. </p>
@@ -400,6 +405,20 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad26f9b1bc383589ba239bd0a69c8cf77"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t number_of_integer_variables</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of integer variables (if &gt; 0, all integer variables come before any continuous ones). </p>
+
+</div>
+</div>
 <a class="anchor" id="aa7f5522e84358e9b7a4ab06d60d442db"></a>
 <div class="memitem">
 <div class="memproto">
@@ -565,6 +584,18 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Suite-depending instance. </p>
+
+</div>
+</div>
+<a class="anchor" id="aedd8ad863824cb4e88dd55cdd96ec14a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* versatile_data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

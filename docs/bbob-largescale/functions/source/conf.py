@@ -307,7 +307,7 @@ latex_documents = [
   \\
     $^2$Hanoi National University of Education, Vietnam
   \\
-    $^3$Jozef Stefan Institute (JSI), Slovenia
+    $^3$Jo\v{z}ef Stefan Institute, Ljubljana, Slovenia
     """, 
    'article'  # 'manual'
    ),

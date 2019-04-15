@@ -148,9 +148,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a63e2f011fb586e3d98273bb2bf4a6f9e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a63e2f011fb586e3d98273bb2bf4a6f9e">avl_tree_compare_by_eval_number</a> (const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item1, const <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *item2, void *userdata)</td></tr>
 <tr class="memdesc:a63e2f011fb586e3d98273bb2bf4a6f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the ordering of AVL tree nodes based on the evaluation number (the time when the nodes were created).  <a href="#a63e2f011fb586e3d98273bb2bf4a6f9e">More...</a><br /></td></tr>
 <tr class="separator:a63e2f011fb586e3d98273bb2bf4a6f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1482ab52f6f705fc3d84b3ae2e17c003"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#a1482ab52f6f705fc3d84b3ae2e17c003">logger_biobj_tree_output</a> (FILE *file, const <a class="el" href="mo__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a> *tree, const size_t dim, const size_t num_obj, const int log_vars, const int precision_x, const int precision_f)</td></tr>
-<tr class="memdesc:a1482ab52f6f705fc3d84b3ae2e17c003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the AVL tree to the given file. Returns the number of nodes in the tree.  <a href="#a1482ab52f6f705fc3d84b3ae2e17c003">More...</a><br /></td></tr>
-<tr class="separator:a1482ab52f6f705fc3d84b3ae2e17c003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6daa65268dd4d6be93ed6416d589255"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aa6daa65268dd4d6be93ed6416d589255">logger_biobj_tree_output</a> (FILE *file, const <a class="el" href="mo__avl__tree_8c.html#abe6605518c19c4db0d8728ae482033b4">avl_tree_t</a> *tree, const size_t dim, const size_t num_int_vars, const size_t num_obj, const int log_vars, const int precision_x, const int precision_f, const int log_discrete_as_int)</td></tr>
+<tr class="memdesc:aa6daa65268dd4d6be93ed6416d589255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the AVL tree to the given file. Returns the number of nodes in the tree.  <a href="#aa6daa65268dd4d6be93ed6416d589255">More...</a><br /></td></tr>
+<tr class="separator:aa6daa65268dd4d6be93ed6416d589255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9f28d771d80907687d39592fb974b9b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger__biobj_8c.html#aa9f28d771d80907687d39592fb974b9b">logger_biobj_tree_update</a> (<a class="el" href="structlogger__biobj__data__t.html">logger_biobj_data_t</a> *logger, <a class="el" href="structlogger__biobj__avl__item__t.html">logger_biobj_avl_item_t</a> *node_item)</td></tr>
 <tr class="memdesc:aa9f28d771d80907687d39592fb974b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the archive and buffer trees with the given node.  <a href="#aa9f28d771d80907687d39592fb974b9b">More...</a><br /></td></tr>
 <tr class="separator:aa9f28d771d80907687d39592fb974b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -726,7 +726,7 @@ This logger can handle both the original bbob-biobj test suite with 55 and the e
 
 </div>
 </div>
-<a class="anchor" id="a1482ab52f6f705fc3d84b3ae2e17c003"></a>
+<a class="anchor" id="aa6daa65268dd4d6be93ed6416d589255"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -755,6 +755,12 @@ This logger can handle both the original bbob-biobj test suite with 55 and the e
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>num_int_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>num_obj</em>, </td>
         </tr>
         <tr>
@@ -773,7 +779,13 @@ This logger can handle both the original bbob-biobj test suite with 55 and the e
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>precision_f</em>&#160;</td>
+          <td class="paramname"><em>precision_f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>log_discrete_as_int</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

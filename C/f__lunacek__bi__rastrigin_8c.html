@@ -108,6 +108,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__bbob__legacy__code_8c.html">suite_bbob_legacy_code.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="transform__obj__shift_8c.html">transform_obj_shift.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__sphere_8c.html">f_sphere.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__x__hat__generic_8c.html">transform_vars_x_hat_generic.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__obj__norm__by__dim_8c.html">transform_obj_norm_by_dim.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__obj__scale_8c.html">transform_obj_scale.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -129,6 +133,27 @@ Functions</h2></td></tr>
 <tr class="memitem:a9bd1b7e23338d02e42c6dd1800a901d6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__lunacek__bi__rastrigin_8c.html#a9bd1b7e23338d02e42c6dd1800a901d6">f_lunacek_bi_rastrigin_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="memdesc:a9bd1b7e23338d02e42c6dd1800a901d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB Lunacek bi-Rastrigin problem.  <a href="#a9bd1b7e23338d02e42c6dd1800a901d6">More...</a><br /></td></tr>
 <tr class="separator:a9bd1b7e23338d02e42c6dd1800a901d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5c44f0cab2359872011f3d415f1583"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__lunacek__bi__rastrigin_8c.html#aec5c44f0cab2359872011f3d415f1583">f_lunacek_bi_rastrigin_versatile_data_free</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:aec5c44f0cab2359872011f3d415f1583"><td class="mdescLeft">&#160;</td><td class="mdescRight">allows to free the versatile_data part of the problem.  <a href="#aec5c44f0cab2359872011f3d415f1583">More...</a><br /></td></tr>
+<tr class="separator:aec5c44f0cab2359872011f3d415f1583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8dea549a4cf24f68c3483767866588"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__lunacek__bi__rastrigin_8c.html#afa8dea549a4cf24f68c3483767866588">f_lunacek_bi_rastrigin_sub_evaluate_core</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:afa8dea549a4cf24f68c3483767866588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the core function to evaluate the sub problem.  <a href="#afa8dea549a4cf24f68c3483767866588">More...</a><br /></td></tr>
+<tr class="separator:afa8dea549a4cf24f68c3483767866588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42238d13fff00e551dc529d02b8c0a4c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__lunacek__bi__rastrigin_8c.html#a42238d13fff00e551dc529d02b8c0a4c">f_lunacek_bi_rastrigin_sub_problem_allocate</a> (const size_t number_of_variables)</td></tr>
+<tr class="memdesc:a42238d13fff00e551dc529d02b8c0a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic lunacek_bi_rastrigin sub problem.  <a href="#a42238d13fff00e551dc529d02b8c0a4c">More...</a><br /></td></tr>
+<tr class="separator:a42238d13fff00e551dc529d02b8c0a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a821aa7dab450291ad3c60f50c244cdab"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__lunacek__bi__rastrigin_8c.html#a821aa7dab450291ad3c60f50c244cdab">f_lunacek_bi_rastrigin_core</a> (const double *x, const size_t number_of_variables, <a class="el" href="structf__lunacek__bi__rastrigin__versatile__data__t.html">f_lunacek_bi_rastrigin_versatile_data_t</a> *f_lunacek_bi_rastrigin_versatile_data)</td></tr>
+<tr class="memdesc:a821aa7dab450291ad3c60f50c244cdab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the lunacek_bi_rastrigin function without connections to any COCO structures. Wassim: core to not conflict with raw for now.  <a href="#a821aa7dab450291ad3c60f50c244cdab">More...</a><br /></td></tr>
+<tr class="separator:a821aa7dab450291ad3c60f50c244cdab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1281365191ff9fd26c1d785f01d99777"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__lunacek__bi__rastrigin_8c.html#a1281365191ff9fd26c1d785f01d99777">f_lunacek_bi_rastrigin_evaluate_core</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a1281365191ff9fd26c1d785f01d99777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the core function to evaluate the COCO problem.  <a href="#a1281365191ff9fd26c1d785f01d99777">More...</a><br /></td></tr>
+<tr class="separator:a1281365191ff9fd26c1d785f01d99777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d4e81fd538fb2fa9daf43216538d66"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__lunacek__bi__rastrigin_8c.html#a54d4e81fd538fb2fa9daf43216538d66">f_lunacek_bi_rastrigin_problem_allocate</a> (const size_t number_of_variables)</td></tr>
+<tr class="memdesc:a54d4e81fd538fb2fa9daf43216538d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic lunacek_bi_rastrigin problem.  <a href="#a54d4e81fd538fb2fa9daf43216538d66">More...</a><br /></td></tr>
+<tr class="separator:a54d4e81fd538fb2fa9daf43216538d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28dbe17c118e03ca00445f813a874074"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__lunacek__bi__rastrigin_8c.html#a28dbe17c118e03ca00445f813a874074">f_lunacek_bi_rastrigin_permblockdiag_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:a28dbe17c118e03ca00445f813a874074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB large scale suite Lunacek bi-Rastrigin problem.  <a href="#a28dbe17c118e03ca00445f813a874074">More...</a><br /></td></tr>
+<tr class="separator:a28dbe17c118e03ca00445f813a874074"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the Lunacek bi-Rastrigin function and problem. </p>
@@ -194,6 +219,48 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a821aa7dab450291ad3c60f50c244cdab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double f_lunacek_bi_rastrigin_core </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_of_variables</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structf__lunacek__bi__rastrigin__versatile__data__t.html">f_lunacek_bi_rastrigin_versatile_data_t</a> *&#160;</td>
+          <td class="paramname"><em>f_lunacek_bi_rastrigin_versatile_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements the lunacek_bi_rastrigin function without connections to any COCO structures. Wassim: core to not conflict with raw for now. </p>
+
+</div>
+</div>
 <a class="anchor" id="aa148375c46ae647afbe5a41e799b8f22"></a>
 <div class="memitem">
 <div class="memproto">
@@ -236,6 +303,48 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1281365191ff9fd26c1d785f01d99777"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void f_lunacek_bi_rastrigin_evaluate_core </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uses the core function to evaluate the COCO problem. </p>
+
+</div>
+</div>
 <a class="anchor" id="ad8ebfd1e0ea0d225e626cfb8e67db8da"></a>
 <div class="memitem">
 <div class="memproto">
@@ -259,6 +368,92 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Frees the Lunacek bi-Rastrigin data object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a28dbe17c118e03ca00445f813a874074"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_lunacek_bi_rastrigin_permblockdiag_bbob_problem_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>instance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const long&#160;</td>
+          <td class="paramname"><em>rseed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>problem_id_template</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>problem_name_template</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates the BBOB large scale suite Lunacek bi-Rastrigin problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="a54d4e81fd538fb2fa9daf43216538d66"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_lunacek_bi_rastrigin_problem_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_of_variables</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocates the basic lunacek_bi_rastrigin problem. </p>
 
 </div>
 </div>
@@ -301,6 +496,100 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements the Lunacek bi-Rastrigin function without connections to any COCO structures. </p>
+
+</div>
+</div>
+<a class="anchor" id="afa8dea549a4cf24f68c3483767866588"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void f_lunacek_bi_rastrigin_sub_evaluate_core </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uses the core function to evaluate the sub problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="a42238d13fff00e551dc529d02b8c0a4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_lunacek_bi_rastrigin_sub_problem_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_of_variables</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocates the basic lunacek_bi_rastrigin sub problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="aec5c44f0cab2359872011f3d415f1583"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void f_lunacek_bi_rastrigin_versatile_data_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>allows to free the versatile_data part of the problem. </p>
 
 </div>
 </div>

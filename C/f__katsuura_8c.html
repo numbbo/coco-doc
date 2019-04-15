@@ -112,6 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="transform__vars__affine_8c.html">transform_vars_affine.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="transform__vars__shift_8c.html">transform_vars_shift.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="transform__obj__penalize_8c.html">transform_obj_penalize.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__obj__norm__by__dim_8c.html">transform_obj_norm_by_dim.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -127,6 +128,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad7423b292a47185182f7bd3d779c6811"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__katsuura_8c.html#ad7423b292a47185182f7bd3d779c6811">f_katsuura_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="memdesc:ad7423b292a47185182f7bd3d779c6811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB Katsuura problem.  <a href="#ad7423b292a47185182f7bd3d779c6811">More...</a><br /></td></tr>
 <tr class="separator:ad7423b292a47185182f7bd3d779c6811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bcf9f19f425abe118b424b7a5d38f05"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__katsuura_8c.html#a3bcf9f19f425abe118b424b7a5d38f05">f_katsuura_permblockdiag_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:a3bcf9f19f425abe118b424b7a5d38f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB permuted block-rotated Katsuura problem.  <a href="#a3bcf9f19f425abe118b424b7a5d38f05">More...</a><br /></td></tr>
+<tr class="separator:a3bcf9f19f425abe118b424b7a5d38f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the Katsuura function and problem. </p>
@@ -256,6 +260,66 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Uses the raw function to evaluate the COCO problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3bcf9f19f425abe118b424b7a5d38f05"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_katsuura_permblockdiag_bbob_problem_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>instance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const long&#160;</td>
+          <td class="paramname"><em>rseed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>problem_id_template</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>problem_name_template</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates the BBOB permuted block-rotated Katsuura problem. </p>
 
 </div>
 </div>

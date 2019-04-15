@@ -147,6 +147,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a9e23993ad9b71c438ed1bd5a31afe4af"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__internal_8h.html#a9e23993ad9b71c438ed1bd5a31afe4af">coco_logger_free_function_t</a>) (void *logger)</td></tr>
 <tr class="memdesc:a9e23993ad9b71c438ed1bd5a31afe4af"><td class="mdescLeft">&#160;</td><td class="mdescRight">The free logger function type.  <a href="#a9e23993ad9b71c438ed1bd5a31afe4af">More...</a><br /></td></tr>
 <tr class="separator:a9e23993ad9b71c438ed1bd5a31afe4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8535853741c9b662f139bc0376176c99"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__internal_8h.html#a8535853741c9b662f139bc0376176c99">coco_get_problem_function_t</a>) (const size_t function, const size_t dimension, const size_t instance)</td></tr>
+<tr class="memdesc:a8535853741c9b662f139bc0376176c99"><td class="mdescLeft">&#160;</td><td class="mdescRight">The get problem function type.  <a href="#a8535853741c9b662f139bc0376176c99">More...</a><br /></td></tr>
+<tr class="separator:a8535853741c9b662f139bc0376176c99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -154,6 +157,8 @@ Functions</h2></td></tr>
 <tr class="separator:a084ccbe7be0bbc44dd3e8e430bb70e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60d18631c9ed76c5a09725f0881eb91d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__internal_8h.html#a60d18631c9ed76c5a09725f0881eb91d">bbob_problem_best_parameter_print</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="separator:a60d18631c9ed76c5a09725f0881eb91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb81a39e0ef53c82b0c70226508f1a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__internal_8h.html#a4bb81a39e0ef53c82b0c70226508f1a1">bbob_biobj_problem_best_parameter_print</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="separator:a4bb81a39e0ef53c82b0c70226508f1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definitions of internal COCO structures and typedefs. </p>
@@ -186,6 +191,21 @@ Functions</h2></td></tr>
 
 <p>The evaluate function type. </p>
 <p>This is a template for functions that perform an evaluation of the problem (to evaluate the problem function, the problems constraints etc.). </p>
+
+</div>
+</div>
+<a class="anchor" id="a8535853741c9b662f139bc0376176c99"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>*(* coco_get_problem_function_t) (const size_t function, const size_t dimension, const size_t instance)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The get problem function type. </p>
+<p>This is a template for functions that return a problem based on function, dimension and instance. </p>
 
 </div>
 </div>
@@ -250,6 +270,22 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a4bb81a39e0ef53c82b0c70226508f1a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bbob_biobj_problem_best_parameter_print </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a084ccbe7be0bbc44dd3e8e430bb70e27"></a>
 <div class="memitem">
 <div class="memproto">

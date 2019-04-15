@@ -1,7 +1,7 @@
 var searchData=
 [
   ['m',['M',['../structtransform__vars__affine__data__t.html#af4ef18c0b46094d107c637eb21461bd5',1,'transform_vars_affine_data_t']]],
-  ['max_5fnew_5finstances',['max_new_instances',['../structsuite__biobj__t.html#a3287cc0f1cd46fe5a1a542f98237b51d',1,'suite_biobj_t::max_new_instances()'],['../structsuite__biobj__ext__t.html#a3287cc0f1cd46fe5a1a542f98237b51d',1,'suite_biobj_ext_t::max_new_instances()']]],
+  ['max_5fnew_5finstances',['max_new_instances',['../structsuite__biobj__ext__t.html#a3287cc0f1cd46fe5a1a542f98237b51d',1,'suite_biobj_ext_t::max_new_instances()'],['../structsuite__biobj__new__inst__t.html#a3287cc0f1cd46fe5a1a542f98237b51d',1,'suite_biobj_new_inst_t::max_new_instances()']]],
   ['mo_5favl_5ftree_2ec',['mo_avl_tree.c',['../mo__avl__tree_8c.html',1,'']]],
   ['mo_5fdiscretization',['mo_discretization',['../mo__utilities_8c.html#a54d1a3d1812584e62cf98daaf37ef465',1,'mo_utilities.c']]],
   ['mo_5fget_5fdistance_5fto_5froi',['mo_get_distance_to_ROI',['../mo__utilities_8c.html#acee8efd5226cf6c9e12e811bf782fe18',1,'mo_utilities.c']]],

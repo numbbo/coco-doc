@@ -99,10 +99,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the bbob large-scale suite containing 1 function in 6 large dimensions.  
+<p>Implementation of the bbob large-scale suite containing 24 functions in 6 large dimensions.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__attractive__sector_8c.html">f_attractive_sector.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__bent__cigar__generalized_8c.html">f_bent_cigar_generalized.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__bueche__rastrigin_8c.html">f_bueche_rastrigin.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__different__powers_8c.html">f_different_powers.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__discus__generalized_8c.html">f_discus_generalized.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="f__ellipsoid_8c.html">f_ellipsoid.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__griewank__rosenbrock_8c.html">f_griewank_rosenbrock.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__linear__slope_8c.html">f_linear_slope.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__rastrigin_8c.html">f_rastrigin.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__schaffers_8c.html">f_schaffers.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__schwefel__generalized_8c.html">f_schwefel_generalized.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__sharp__ridge__generalized_8c.html">f_sharp_ridge_generalized.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__sphere_8c.html">f_sphere.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__step__ellipsoid_8c.html">f_step_ellipsoid.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__weierstrass_8c.html">f_weierstrass.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -111,6 +125,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa5b2b9f642da74d2c8e985eaff279f4f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__largescale_8c.html#aa5b2b9f642da74d2c8e985eaff279f4f">suite_largescale_initialize</a> (void)</td></tr>
 <tr class="memdesc:aa5b2b9f642da74d2c8e985eaff279f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dimensions and default instances for the bbob large-scale suite.  <a href="#aa5b2b9f642da74d2c8e985eaff279f4f">More...</a><br /></td></tr>
 <tr class="separator:aa5b2b9f642da74d2c8e985eaff279f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae04827b502c095eb2393f35717eef360"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__largescale_8c.html#ae04827b502c095eb2393f35717eef360">suite_largescale_get_instances_by_year</a> (const int year)</td></tr>
+<tr class="memdesc:ae04827b502c095eb2393f35717eef360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the instances associated with years for the bbob large-scale suite.  <a href="#ae04827b502c095eb2393f35717eef360">More...</a><br /></td></tr>
+<tr class="separator:ae04827b502c095eb2393f35717eef360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fa56f5b1cde0f788d40133a008356b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="suite__largescale_8c.html#a3fa56f5b1cde0f788d40133a008356b5">coco_get_largescale_problem</a> (const size_t function, const size_t dimension, const size_t instance)</td></tr>
 <tr class="memdesc:a3fa56f5b1cde0f788d40133a008356b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns a large-scale problem without needing the actual large-scale suite.  <a href="#a3fa56f5b1cde0f788d40133a008356b5">More...</a><br /></td></tr>
 <tr class="separator:a3fa56f5b1cde0f788d40133a008356b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,7 +136,7 @@ Functions</h2></td></tr>
 <tr class="separator:a7adf45f605dd8dc7591ee45bffabcfe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the bbob large-scale suite containing 1 function in 6 large dimensions. </p>
+<div class="textblock"><p>Implementation of the bbob large-scale suite containing 24 functions in 6 large dimensions. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a3fa56f5b1cde0f788d40133a008356b5"></a>
 <div class="memitem">
@@ -212,6 +229,32 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae04827b502c095eb2393f35717eef360"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char* suite_largescale_get_instances_by_year </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>year</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the instances associated with years for the bbob large-scale suite. </p>
 
 </div>
 </div>

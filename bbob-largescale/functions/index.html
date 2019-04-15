@@ -1,0 +1,731 @@
+
+
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>COCO: The Large Scale Black-Box Optimization Benchmarking (bbob-largescale) Test Suite &#8212; COCO: The Large Scale Black-Box Optimization Benchmarking (bbob-largescale) Test Suite</title>
+    
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">COCO: The Large Scale Black-Box Optimization Benchmarking (bbob-largescale) Test Suite</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">COCO: The Large Scale Black-Box Optimization Benchmarking (<code class="docutils literal"><span class="pre">bbob-largescale</span></code>) Test Suite</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#terminology">Terminology</a></li>
+<li><a class="reference internal" href="#functions-instances-and-problems">Functions, Instances and Problems</a></li>
+<li><a class="reference internal" href="#runtime-and-target-values">Runtime and Target Values</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#overview-of-the-proposed-bbob-largescale-test-suite">Overview of the Proposed <code class="docutils literal"><span class="pre">bbob-largescale</span></code> Test Suite</a><ul>
+<li><a class="reference internal" href="#the-single-objective-bbob-functions">The single-objective <code class="docutils literal"><span class="pre">bbob</span></code> functions</a></li>
+<li><a class="reference internal" href="#extension-to-large-scale-setting">Extension to large scale setting</a></li>
+<li><a class="reference internal" href="#generating-the-orthogonal-block-matrix">Generating the orthogonal block matrix <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/></a></li>
+<li><a class="reference internal" href="#generating-the-permutation-matrices">Generating the permutation matrices <img class="math" src="_images/math/9dcbbef8e0f76051d388013b90a95bec3069e484.png" alt="P"/></a></li>
+<li><a class="reference internal" href="#implementation">Implementation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#functions-in-bbob-largescale-test-suite">Functions in <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="coco-the-large-scale-black-box-optimization-benchmarking-bbob-largescale-test-suite">
+<h1>COCO: The Large Scale Black-Box Optimization Benchmarking (<code class="docutils literal"><span class="pre">bbob-largescale</span></code>) Test Suite<a class="headerlink" href="#coco-the-large-scale-black-box-optimization-benchmarking-bbob-largescale-test-suite" title="Permalink to this headline">¶</a></h1>
+See also: <I>ArXiv e-prints</I>,
+<A HREF="http://arxiv.org/abs/XXXX.XXXXX">arXiv:XXXX.XXXXX</A>, 2019.<p>The <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite, containing 24 single-objective
+functions in continuous domain, extends the well-known
+single-objective noiseless <code class="docutils literal"><span class="pre">bbob</span></code> test suite <a class="reference internal" href="#han2009" id="id1">[HAN2009]</a>, which has been used since 2009 in
+the <a class="reference external" href="http://numbbo.github.io/workshops">BBOB workshop series</a>, to large dimension. The core idea is to make the rotational
+transformations <img class="math" src="_images/math/b8914b9d64224c0093564e0e4e1b480f9b62bbb7.png" alt="\textbf{R}, \textbf{Q}"/> in search space that
+appear in the <code class="docutils literal"><span class="pre">bbob</span></code> test suite computationally cheaper while retaining some desired
+properties. This documentation presents an approach that replaces a full rotational transformation with a combination of a block-diagonal matrix and two permutation matrices in order to construct test functions whose computational and memory costs scale linearly in the dimension of the problem.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In the <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite, we consider single-objective, unconstrained minimization problems
+of the form</p>
+<div class="math">
+<p><img src="_images/math/eea4cdaa3ce4155fd772ac1f8d8f51184af34bb6.png" alt="\min_{x \in \mathbb{R}^n} \ f(x),"/></p>
+</div><p>with problem dimensions <img class="math" src="_images/math/388b49d50189f10dbf8c5b51525b84ea16f25584.png" alt="n \in \{20, 40, 80, 160, 320, 640\}."/></p>
+<p>The objective is to find, as quickly as possible, one or several solutions <img class="math" src="_images/math/a59f68a4202623bb859a7093f0316bf466e6f75d.png" alt="x"/> in the search
+space <img class="math" src="_images/math/9dafe51124304e6cad6f2a5bbd436d549c8da1b8.png" alt="\mathbb{R}^n"/> with <em>small</em> value(s) of <img class="math" src="_images/math/f08b737e055bc9e056214e7ea2d8260253f78c83.png" alt="f(x)\in\mathbb{R}"/>. We
+generally measure the <em>time</em> of an optimization run as the number of calls to (queries of) the objective function <img class="math" src="_images/math/875eb40014526135383caa89fd500ae40a835f56.png" alt="f"/>.</p>
+<p>We remind in the next sections some notations and definitions.</p>
+<div class="section" id="terminology">
+<h3>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><em>function</em></dt>
+<dd>We talk about an objective <em>function</em> <img class="math" src="_images/math/875eb40014526135383caa89fd500ae40a835f56.png" alt="f"/> as a parametrized mapping
+<img class="math" src="_images/math/47c363cec84a3c4c132476a6eca857f39ed821ca.png" alt="\mathbb{R}^n\to\mathbb{R}"/> with scalable input space, that is,
+<img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/> is not (yet) determined. Functions are parametrized such that
+different <em>instances</em> of the &#8220;same&#8221; function are available, e.g. translated
+or rotated versions.</dd>
+<dt><em>problem</em></dt>
+<dd>We talk about a <em>problem</em>, <a class="reference external" href="http://numbbo.github.io/coco-doc/C/coco_8h.html#a408ba01b98c78bf5be3df36562d99478"><code class="docutils literal"><span class="pre">coco_problem_t</span></code></a>, as a specific <em>function
+instance</em> on which an optimization algorithm is run. Specifically, a problem
+can be described as the triple <code class="docutils literal"><span class="pre">(dimension,</span> <span class="pre">function,</span> <span class="pre">instance)</span></code>. A problem
+can be evaluated and returns an <img class="math" src="_images/math/875eb40014526135383caa89fd500ae40a835f56.png" alt="f"/>-value. In the context of performance
+assessment, a target <img class="math" src="_images/math/875eb40014526135383caa89fd500ae40a835f56.png" alt="f"/>- or indicator-value is attached to each problem.
+That is, a target value is added to the above triple to define a single problem
+in this case.</dd>
+<dt><em>runtime</em></dt>
+<dd>We define <em>runtime</em>, or <em>run-length</em> as the <em>number of evaluations</em>
+conducted on a given problem, also referred to as number of <em>function</em> evaluations.
+Our central performance measure is the runtime until a given target value
+is hit.</dd>
+<dt><em>suite</em></dt>
+<dd>A test- or benchmark-suite is a collection of problems, typically between
+twenty and a hundred.</dd>
+</dl>
+</div>
+<div class="section" id="functions-instances-and-problems">
+<h3>Functions, Instances and Problems<a class="headerlink" href="#functions-instances-and-problems" title="Permalink to this headline">¶</a></h3>
+<p>Each function is <em>parametrized</em> by the (input) dimension, <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/>, its identifier <img class="math" src="_images/math/df0deb143e5ac127f00bd248ee8001ecae572adc.png" alt="i"/>, and the instance number, <img class="math" src="_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/>,
+that is:</p>
+<div class="math">
+<p><img src="_images/math/cb3796b53e5fc33ecaffba3acc9e15f88de7bd7a.png" alt="f_i^j \equiv f(n, i, j): \mathbb{R}^n \to \mathbb{R} \quad x \mapsto f_i^j (x) = f(n, i, j)(x)."/></p>
+</div><p>Varying <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/> or <img class="math" src="_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/> leads to a variation of the same function <img class="math" src="_images/math/df0deb143e5ac127f00bd248ee8001ecae572adc.png" alt="i"/> of a given suite.
+By fixing <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/> and <img class="math" src="_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/> for function <img class="math" src="_images/math/32c776976a60205210b12dc2566b5f2b2a81f7bf.png" alt="f_i"/>, we define an optimization <strong>problem</strong>
+<img class="math" src="_images/math/bd95d5a0e8b8ea37b3466b409a67841988c1da00.png" alt="(n, i, j)\equiv(f_i, n, j)"/> that can be presented to the optimization algorithm.
+Each problem receives again an index in the suite, mapping the triple <img class="math" src="_images/math/33445e2ac83cf72818ff43f98799c3541d6db6b4.png" alt="(n, i, j)"/> to a single
+number.</p>
+<p>We can think of <img class="math" src="_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/> as an index to a continuous parameter vector setting,
+as it parametrizes, among others things, translations and rotations. In
+practice, <img class="math" src="_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/> is the discrete identifier for single instantiations of
+these parameters.</p>
+</div>
+<div class="section" id="runtime-and-target-values">
+<h3>Runtime and Target Values<a class="headerlink" href="#runtime-and-target-values" title="Permalink to this headline">¶</a></h3>
+<p>In order to measure the runtime of an algorithm on a problem, we
+establish a hitting time condition.
+For a given problem <img class="math" src="_images/math/398fe9367e59e5c37c0887f46447c49692a23cc7.png" alt="(f_i, n, j)"/>, we prescribe a <strong>target value</strong> <img class="math" src="_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/> as a specific <img class="math" src="_images/math/875eb40014526135383caa89fd500ae40a835f56.png" alt="f"/>-value
+of interest <a class="reference internal" href="#han2016perf" id="id2">[HAN2016perf]</a>.
+For a single run, when an algorithm reaches or surpasses the target value <img class="math" src="_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/>
+on problem <img class="math" src="_images/math/398fe9367e59e5c37c0887f46447c49692a23cc7.png" alt="(f_i, n, j)"/>, we say that it has <em>solved the problem</em> <img class="math" src="_images/math/cae5dfac384697c07c1c0515f26eb18b595d5dd8.png" alt="(f_i, n, j, t)"/> &#8212; it was successful. <a class="footnote-reference" href="#id6" id="id3">[1]</a></p>
+<p>The <strong>runtime</strong> is, then, the evaluation count when the target value <img class="math" src="_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/> was
+reached or surpassed for the first time.
+That is, the runtime is the number of <img class="math" src="_images/math/875eb40014526135383caa89fd500ae40a835f56.png" alt="f"/>-evaluations needed to solve the problem
+<img class="math" src="_images/math/cae5dfac384697c07c1c0515f26eb18b595d5dd8.png" alt="(f_i, n, j, t)"/>. <a class="footnote-reference" href="#id7" id="id4">[2]</a>
+<em>Measured runtimes are the only way how we assess the performance of an
+algorithm.</em>
+Observed success rates are generally translated into runtimes on a subset of
+problems.</p>
+<p>If an algorithm does not hit the target in a single run, its runtime remains
+undefined &#8212; while, then, this runtime is bounded from below by the number of evaluations
+in this unsuccessful run.
+The number of available runtime values depends on the budget the
+algorithm has explored (the larger the budget, the more likely the target-values are reached).
+Therefore, larger budgets are preferable &#8212; however they should not come at
+the expense of abandoning reasonable termination conditions. Instead,
+restarts should be done <a class="reference internal" href="#han2016ex" id="id5">[HAN2016ex]</a>.</p>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td>Note the use of the term <em>problem</em> in two meanings: as the problem the
+algorithm is benchmarked on, <img class="math" src="_images/math/398fe9367e59e5c37c0887f46447c49692a23cc7.png" alt="(f_i, n, j)"/>, and as the problem, <img class="math" src="_images/math/cae5dfac384697c07c1c0515f26eb18b595d5dd8.png" alt="(f_i, n, j, t)"/>, an algorithm can
+solve by hitting the target <img class="math" src="_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/> with the runtime, <img class="math" src="_images/math/714a97049b1ae0f3e3d2ecd27c8b38bcae74bac6.png" alt="\mathrm{RT}(f_i, n, j, t)"/>, or may fail to solve.
+Each problem <img class="math" src="_images/math/398fe9367e59e5c37c0887f46447c49692a23cc7.png" alt="(f_i, n, j)"/> gives raise to a collection of dependent problems <img class="math" src="_images/math/cae5dfac384697c07c1c0515f26eb18b595d5dd8.png" alt="(f_i, n, j, t)"/>.
+Viewed as random variables, the events <img class="math" src="_images/math/714a97049b1ae0f3e3d2ecd27c8b38bcae74bac6.png" alt="\mathrm{RT}(f_i, n, j, t)"/> given <img class="math" src="_images/math/398fe9367e59e5c37c0887f46447c49692a23cc7.png" alt="(f_i, n, j)"/> are not
+independent events for different values of <img class="math" src="_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td>Target values are directly linked to a problem, leaving the burden to
+properly define the targets with the designer of the benchmark suite.
+The alternative is to present final <img class="math" src="_images/math/875eb40014526135383caa89fd500ae40a835f56.png" alt="f"/>-values as results,
+leaving the (rather unsurmountable) burden to interpret these values to the
+reader.
+Fortunately, there is an automatized generic way to generate target values
+from observed runtimes, the so-called run-length based target values
+<a class="reference internal" href="#han2016perf" id="id8">[HAN2016perf]</a>.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="overview-of-the-proposed-bbob-largescale-test-suite">
+<h2>Overview of the Proposed <code class="docutils literal"><span class="pre">bbob-largescale</span></code> Test Suite<a class="headerlink" href="#overview-of-the-proposed-bbob-largescale-test-suite" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite provides 24 functions in six dimensions (20, 40, 80, 160, 320 and 640) within
+the <a class="reference external" href="https://github.com/numbbo/coco">COCO</a> framework <a class="reference internal" href="#han2016co" id="id9">[HAN2016co]</a>. It is derived from the existing single-objective, unconstrained <code class="docutils literal"><span class="pre">bbob</span></code> test suite with
+modifications that allow the user to benchmark algorithms on high dimensional problems efficiently.
+We will explain in this section how the <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite is built.</p>
+<div class="section" id="the-single-objective-bbob-functions">
+<h3>The single-objective <code class="docutils literal"><span class="pre">bbob</span></code> functions<a class="headerlink" href="#the-single-objective-bbob-functions" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">bbob</span></code> test suite relies on the use of a number of raw functions from
+which 24 <code class="docutils literal"><span class="pre">bbob</span></code> functions are generated. Initially, so-called <em>raw</em> functions
+are designed. Then, a series of transformations on these raw functions, such as
+linear transformations (e.g., translation, rotation, scaling) and/or non-linear
+transformations (e.g., <img class="math" src="_images/math/c8046c08263e455c0a41ceec5fe8b0e6572c12ed.png" alt="T_{\text{osz}}, T_{\text{asy}}"/>)
+will be applied to obtain the actual <code class="docutils literal"><span class="pre">bbob</span></code> test functions. For example, the test function
+<img class="math" src="_images/math/269d02914ef19d4cf488c78e1be1e55abc446a97.png" alt="f_{13}(\mathbf{x})"/> (<a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf#page=65">Sharp Ridge function</a>) with (vector) variable <img class="math" src="_images/math/8cea9f6053c66e0078625d15b2b70d858ca7f1db.png" alt="\mathbf{x}"/>
+is derived from a raw function defined as follows:</p>
+<div class="math">
+<p><img src="_images/math/28ea002fc90f063ff45c52298a62a752ab2643ca.png" alt="f_{\text{raw}}^{\text{Sharp Ridge}}(\mathbf{z}) = z_1^2 + 100\sqrt{\sum_{i=2}^{n}z_i^2}."/></p>
+</div><p>Then one applies a sequence of transformations:
+a translation by using the vector <img class="math" src="_images/math/ab727d40d0e98275d581a5419b15f5234bfc1275.png" alt="\mathbf{x}^{\text{opt}}"/>;
+then a rotational transformation <img class="math" src="_images/math/41e1f27bd689b391a4833f34f85537ee4e688778.png" alt="\mathbf{R}"/>; then a scaling transformation
+<img class="math" src="_images/math/d238f1cd9c99571c0eefbf1a3a674ca0de64f356.png" alt="\mathbf{\Lambda}^{10}"/>; then another rotational transformation <img class="math" src="_images/math/82b8a847f2ecccf6a2841d5d1fa107d57d3bfcfc.png" alt="\mathbf{Q}"/>
+to get the relationship
+<img class="math" src="_images/math/f4cdbc4a5ac7266b57be03ec54db05d3905cc979.png" alt="\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{10}\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})"/>; and finally
+a translation in objective space by using <img class="math" src="_images/math/74abdefd49eb31196d7f89465abb1750a9253378.png" alt="\mathbf{f}_{\text{opt}}"/> to obtain the final
+function in the testbed:</p>
+<div class="math">
+<p><img src="_images/math/86112cdfa3661adf5ca502dc44972e59aeda7b12.png" alt="f_{13}(\mathbf{x}) = f_{\text{raw}}^{\text{Sharp Ridge}}(\mathbf{z}) + \mathbf{f}_{\text{opt}}."/></p>
+</div><p>There are two main reasons behind the use of transformations here:</p>
+<ol class="lowerroman simple">
+<li>provide non-trivial problems that cannot be solved by simply exploiting some of their properties (separability, optimum at fixed position, ...) and</li>
+<li>allow to generate different instances, ideally of similar difficulty, of the same problem by using different (pseudo-)random transformations.</li>
+</ol>
+<p>Rotational transformations are used to avoid separability and thus coordinate system dependence in the test functions.
+The rotational transformations consist in applying
+an orthogonal matrix to the search space: <img class="math" src="_images/math/63dfda0ae2239008b5628f457abd538bf24ca51c.png" alt="x \rightarrow z = \textbf{R}x"/>, where <img class="math" src="_images/math/b4994577ba732b273dbb1e3d4db8d8f1c18f0c13.png" alt="\textbf{R}"/> is the
+orthogonal matrix.
+While the other transformations used in the <code class="docutils literal"><span class="pre">bbob</span></code> test suite could be naturally extended to
+the large scale setting due to their linear complexity, rotational transformations have quadratic time and
+space complexities. Thus, we need to reduce the complexity of these transformations in order for them to be usable, in practice, in the large scale setting.</p>
+</div>
+<div class="section" id="extension-to-large-scale-setting">
+<h3>Extension to large scale setting<a class="headerlink" href="#extension-to-large-scale-setting" title="Permalink to this headline">¶</a></h3>
+<p>Our objective is to construct a large scale test suite where the cost of a function call is
+acceptable in higher dimensions while preserving the main characteristics of the original functions in the <code class="docutils literal"><span class="pre">bbob</span></code>
+test suite.
+To this end, we will replace the full orthogonal matrices of the rotational transformations,
+which would be too expensive in our large scale setting, with orthogonal transformations
+that have linear complexity in the problem dimension: <em>permuted orthogonal block-diagonal matrices</em> (<a class="reference internal" href="#ait2016" id="id10">[AIT2016]</a>).</p>
+<p>Specifically, the matrix of a rotational transformation <img class="math" src="_images/math/b4994577ba732b273dbb1e3d4db8d8f1c18f0c13.png" alt="\textbf{R}"/>
+will be represented as:</p>
+<div class="math">
+<p><img src="_images/math/dac69b3dfac4287177a6780ca5ec1cd6fbfc9643.png" alt="\textbf{R} = P_{\text{left}}BP_{\text{right}}."/></p>
+</div><p>Here, <img class="math" src="_images/math/25d6f681ffb7219a966b7ba926c5377f5937b156.png" alt="P_{\text{left}} \text{ and } P_{\text{right}}"/> are two permutation matrices <a class="footnote-reference" href="#id12" id="id11">[3]</a> and <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/> is a
+block-diagonal matrix of the form:</p>
+<div class="math">
+<p><img src="_images/math/47e45c3c636b10ecb517ad5852880170c74eb567.png" alt="B = \left(\begin{matrix}
+B_1 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; B_2 &amp; \dots &amp; 0 \\
+0 &amp; 0 &amp; \ddots &amp; 0 \\
+0 &amp; 0 &amp; \dots &amp; B_{n_b}
+\end{matrix}
+\right),"/></p>
+</div><p>where <img class="math" src="_images/math/0346ce8d046f31336bb48a8ae28c8dd8b80a5b36.png" alt="n_b"/> is the number of blocks and <img class="math" src="_images/math/9fbd6fa1003ccaf0ac836bf07e2d44824278827c.png" alt="B_i, 1 \leq i \leq n_b"/>
+are square matrices of sizes <img class="math" src="_images/math/534c4fd178d46d0c5105889487f0cbe3864d29dc.png" alt="s_i \times s_i"/> satisfying <img class="math" src="_images/math/3ed7d26760afc3b6a2c2226edb402e985ffd4f3e.png" alt="s_i \geq 1"/>
+and <img class="math" src="_images/math/d2fb7f4393f77b1ef489484cc4ce485f882bacee.png" alt="\sum_{i=1}^{n_b}s_i = n"/>. In this case, the matrices
+<img class="math" src="_images/math/9fbd6fa1003ccaf0ac836bf07e2d44824278827c.png" alt="B_i, 1 \leq i \leq n_b"/> are all orthogonal. Thus, the matrix <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/>
+is also an orthogonal matrix.</p>
+<p>This representation allows the rotational transformation <img class="math" src="_images/math/b4994577ba732b273dbb1e3d4db8d8f1c18f0c13.png" alt="\textbf{R}"/> to satisfy three
+desired properties:</p>
+<ol class="arabic simple">
+<li>Have (almost) linear cost (due to the block structure of <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/>).</li>
+<li>Introduce non-separability.</li>
+<li>Preserve the eigenvalues and therefore the condition number of the original function when it is convex quadratic (since <img class="math" src="_images/math/b4994577ba732b273dbb1e3d4db8d8f1c18f0c13.png" alt="\textbf{R}"/> is orthogonal).</li>
+</ol>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[3]</a></td><td>A <em>permutation matrix</em> is a square binary matrix that has exactly one entry of
+1 in each row and each column and 0s elsewhere.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="generating-the-orthogonal-block-matrix">
+<h3>Generating the orthogonal block matrix <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/><a class="headerlink" href="#generating-the-orthogonal-block-matrix" title="Permalink to this headline">¶</a></h3>
+<p>The block-matrices <img class="math" src="_images/math/1b12a0568b50287850689d8f8dbb4164e32eaa23.png" alt="B_i, i=1,2,...,n_b"/> will be uniformly distributed in the set of
+orthogonal matrices of the same size. To this end, we first generate square matrices with
+sizes <img class="math" src="_images/math/3707286326c05ad688e6ebcc3ce93269b7f2e099.png" alt="s_i"/> (<cite>i=1,2,...,n_b</cite>) whose entries are i.i.d. standard normally distributed.
+Then we apply the Gram-Schmidt process to orthogonalize these matrices.</p>
+<p>The parameters of this procedure include:</p>
+<ul class="simple">
+<li>the dimension of the problem <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/>,</li>
+<li>the block sizes <img class="math" src="_images/math/14214599e6e43ac8b593c824a2587c787715fcc3.png" alt="s_1, \dots, s_{n_b}"/>, where <img class="math" src="_images/math/0346ce8d046f31336bb48a8ae28c8dd8b80a5b36.png" alt="n_b"/> is the number of blocks. In this test suite, we set <img class="math" src="_images/math/cb14d5c8a81f7d0f801bd3503e38d0a8cffe3e59.png" alt="s_i = s := \min\{n, 40\} \forall i=1,2,...,n_b"/> (except, maybe, for the last block which can be smaller) <a class="footnote-reference" href="#id14" id="id13">[4]</a> and thus <img class="math" src="_images/math/ee15d2d60197857876d06a80ceeeb59377529e0d.png" alt="n_b = \lceil n/s \rceil"/>.</li>
+</ul>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id13">[4]</a></td><td>This setting allows to have the problems in dimensions 20 and 40 overlap between the <code class="docutils literal"><span class="pre">bbob</span></code> test suite and its large-scale extension since in these dimensions, the block sizes coincide with the problem dimensions.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="generating-the-permutation-matrices">
+<h3>Generating the permutation matrices <img class="math" src="_images/math/9dcbbef8e0f76051d388013b90a95bec3069e484.png" alt="P"/><a class="headerlink" href="#generating-the-permutation-matrices" title="Permalink to this headline">¶</a></h3>
+<p>In order to generate the permutation matrix <img class="math" src="_images/math/9dcbbef8e0f76051d388013b90a95bec3069e484.png" alt="P"/>, we start from the identity matrix and apply, successively, a set of so-called <em>truncated uniform swaps</em>.
+Each row/column (up to a maximum number of swaps) is swapped with a row/column chosen uniformly from the set of rows/columns within a fixed range <img class="math" src="_images/math/5d2889caedfac2c827219e1791a12fc3dc938213.png" alt="r_s"/>.
+A random order of the rows/columns is generated to avoid biases towards the first rows/columns.</p>
+<p>Let <img class="math" src="_images/math/df0deb143e5ac127f00bd248ee8001ecae572adc.png" alt="i"/> be the index of the first
+variable/row/column to be swapped and <img class="math" src="_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/> be the index of the second swap variable. Then</p>
+<div class="math">
+<p><img src="_images/math/d372b644bd7c002dac7a47110056858c2479c8da.png" alt="j \sim U(\{l_b(i), l_b(i) + 1, \dots, u_b(i)\} \backslash \{i\}),"/></p>
+</div><p>where <img class="math" src="_images/math/9230ec18e85a14fa99a944675317f7fb59a0101f.png" alt="U(S)"/> is the uniform distribution over the set <img class="math" src="_images/math/1dbc400fcc213305415872f9f625cd2828f97a00.png" alt="S"/> and <img class="math" src="_images/math/f7c1d7f120e0753af3a54783935b16b116feed18.png" alt="l_b(i) = \max(1,i-r_s)"/>
+and <img class="math" src="_images/math/fd754f55e486f8a87cb99bf36447e61bc40744fd.png" alt="l_b(i) = \min(n,i+r_s)"/> with <img class="math" src="_images/math/5d2889caedfac2c827219e1791a12fc3dc938213.png" alt="r_s"/> a parameter of the approach.
+If <img class="math" src="_images/math/ba342423ff5b25e62b5508386e86c0fa539ee2ec.png" alt="r_s \leq (n-1)/2"/>, the average distance between
+the first and the second swap variable ranges from <img class="math" src="_images/math/91b21b7ab152ec525182f48a4ded3f3e09661a4a.png" alt="(\sqrt{2}-1)r_s + 1/2"/> (in the case of an
+asymmetric choice for <img class="math" src="_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/>, i.e. when <img class="math" src="_images/math/df0deb143e5ac127f00bd248ee8001ecae572adc.png" alt="i"/> is chosen closer to <img class="math" src="_images/math/d839e144267ecbb8a87acbc8a7dfda7824a1693e.png" alt="1"/> or <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/> than <img class="math" src="_images/math/5d2889caedfac2c827219e1791a12fc3dc938213.png" alt="r_s"/>) to
+<img class="math" src="_images/math/bf31b70cf79288ea8abf449bbe4bb06fdef80521.png" alt="r_s/2 + 1/2"/> (in the case of a symmetric choice for <img class="math" src="_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/>). It is maximal when the first swap variable is at least <img class="math" src="_images/math/5d2889caedfac2c827219e1791a12fc3dc938213.png" alt="r_s"/>
+away from both extremes or is one of them.</p>
+<p><strong>Algorithm 1</strong> below describes the process of generating a permutation using a
+series of truncated uniform swaps with the following parameters:</p>
+<ul class="simple">
+<li><img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/>, the number of variables,</li>
+<li><img class="math" src="_images/math/d199132dcb19f0f36399dc29e10254152ab2ebbb.png" alt="n_s"/>, the number of swaps.</li>
+<li><img class="math" src="_images/math/5d2889caedfac2c827219e1791a12fc3dc938213.png" alt="r_s"/>, the swap range.</li>
+</ul>
+<p>Starting with the identity permutation <img class="math" src="_images/math/27d463da4622be5b3ef1d4176ced7d7a323c6425.png" alt="p"/> and another permuation <img class="math" src="_images/math/b7793e4f08d00aca47e272dcdfeb70f933dac222.png" alt="\pi"/>, drawn uniform
+at random, we apply the swaps defined above
+by taking <img class="math" src="_images/math/0380ea85af5967b0ff28b4889b2af57dc036cf5c.png" alt="p_{\pi}(1), p_{\pi}(2), \dots, p_{\pi}(n_s)"/>, successively, as
+first swap variable. The resulting vector <img class="math" src="_images/math/27d463da4622be5b3ef1d4176ced7d7a323c6425.png" alt="p"/> will be the desired permutation.</p>
+<p><em>Algorithm 1: Truncated Uniform Permutations</em></p>
+<ul class="simple">
+<li>Inputs: problem dimension <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/>, number of swaps <img class="math" src="_images/math/d199132dcb19f0f36399dc29e10254152ab2ebbb.png" alt="n_s"/>, swap range <img class="math" src="_images/math/373f8ad4d400ec409288877ef5c0791e593842fc.png" alt="r_s."/></li>
+<li>Output: a vector <img class="math" src="_images/math/29639fb803910e7db8a13bc033799d4c0b8e8d02.png" alt="\textbf{p} \in \mathbb{N}^n"/>, defining a permutation.</li>
+</ul>
+<ol class="arabic simple">
+<li><img class="math" src="_images/math/4776948af7201afd091bda5bf89af824d719e4de.png" alt="\textbf{p} \leftarrow (1, \dots, n)"/></li>
+<li>Generate a permutation <img class="math" src="_images/math/b7793e4f08d00aca47e272dcdfeb70f933dac222.png" alt="\pi"/> uniformly at random</li>
+<li><img class="math" src="_images/math/4648d8e3fec564d0042528ec5281ef53b1e42dce.png" alt="\textbf{for } 1 \leq k \leq n_s \textbf{ do}"/></li>
+<li><ul class="first">
+<li><img class="math" src="_images/math/af4545b75d633072d92a60c6e01c47440304e513.png" alt="i \leftarrow \pi(k)"/>, i.e., <img class="math" src="_images/math/47eb152a2da09654f8f00822963275d12b8a00d7.png" alt="\textbf{p}_{\pi(k)}"/> is the first swap variable</li>
+</ul>
+</li>
+<li><ul class="first">
+<li><img class="math" src="_images/math/7c23ee2d58d4f1786335ecb7db3b9e782d6d839c.png" alt="l_b \leftarrow \max(1, i-r_s)"/></li>
+</ul>
+</li>
+<li><ul class="first">
+<li><img class="math" src="_images/math/5d724d655e73319debfc66a06c2e72163ebfdf80.png" alt="u_b \leftarrow \min(n, i+r_s)"/></li>
+</ul>
+</li>
+<li><ul class="first">
+<li><img class="math" src="_images/math/b17547e37e0e87f870f8aaabfe15a90e6deb3a28.png" alt="S \leftarrow \{l_b, l_b + 1, \dots, u_b\} \backslash \{i\}"/></li>
+</ul>
+</li>
+<li><ul class="first">
+<li>Sample <img class="math" src="_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/> uniformly at random in <img class="math" src="_images/math/1dbc400fcc213305415872f9f625cd2828f97a00.png" alt="S"/></li>
+</ul>
+</li>
+<li><ul class="first">
+<li>Swap <img class="math" src="_images/math/a6ac38e46c0a2ca8c169db96b742b6e1ecc135d7.png" alt="\textbf{p}_i"/> and <img class="math" src="_images/math/a322a9a4e139a5f691ce96fbccd2cebd6f3edc29.png" alt="\textbf{p}_j"/></li>
+</ul>
+</li>
+<li><img class="math" src="_images/math/970da851752d929a8f0aeb5de7d8005aaf115813.png" alt="\textbf{end for}"/></li>
+<li><img class="math" src="_images/math/b339b2f68ea0c8f5051fa741246da06ffb532009.png" alt="\textbf{return p}"/></li>
+</ol>
+<p>In this test suite, we set <img class="math" src="_images/math/a078deb1ba25b855be56f7dcf51304fdfd85af1c.png" alt="n_s = n \text{ and } r_s = \lfloor n/3 \rfloor"/>. Some numerical
+results in <a class="reference internal" href="#ait2016" id="id15">[AIT2016]</a> show that with such parameters, the proportion of variables that are
+moved from their original position when applying Algorithm 1 is approximately 100% for all
+dimensions 20, 40, 80, 160, 320, and 640 of the <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite.</p>
+</div>
+<div class="section" id="implementation">
+<h3>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h3>
+<p>Now, we describe how these changes to the rotational transformations are implemented
+with the realizations of <img class="math" src="_images/math/384cec3fb2b74a7e64660eaf80a80fd4fdcc9451.png" alt="P_{\text{left}}BP_{\text{right}}"/>.
+This will be illustrated through an example
+on the Ellipsoidal function (rotated) <img class="math" src="_images/math/395506a57c0cc953833fa31bc1ad240bc5f76167.png" alt="f_{10}(\mathbf{x})"/> (see the table in the next section), which is defined by</p>
+<div class="math">
+<p><img src="_images/math/3beb798014aa85998a296d60577b5f6ed7ca0269.png" alt="f_{10}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2  + \mathbf{f}_{\text{opt}}, \text{with } \mathbf{z} = T_{\text{osz}} (\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})), \mathbf{R} = P_{1}BP_{2},"/></p>
+</div><p>as follows:</p>
+<p>(i) First, we obtain the three matrices needed for the transformation, <img class="math" src="_images/math/eb15edbb5be1fa8d1b70de1e677082ce9f975ef2.png" alt="B, P_1, P_2"/>,
+as follows:</p>
+<blockquote>
+<div><div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">coco_compute_blockrotation</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">seed1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_b</span><span class="p">);</span>
+<span class="n">coco_compute_truncated_uniform_swap_permutation</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span> <span class="n">seed2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n_s</span><span class="p">,</span> <span class="n">r_s</span><span class="p">);</span>
+<span class="n">coco_compute_truncated_uniform_swap_permutation</span><span class="p">(</span><span class="n">P2</span><span class="p">,</span> <span class="n">seed3</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">n_s</span><span class="p">,</span> <span class="n">r_s</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="lowerroman simple" start="2">
+<li>Then, whereever in the <code class="docutils literal"><span class="pre">bbob</span></code> test suite, we use the following</li>
+</ol>
+<blockquote>
+<div><div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">problem</span> <span class="o">=</span> <span class="n">transform_vars_affine</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>to make a rotational transformation, then in the <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite, we replace it with the three transformations</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">problem</span> <span class="o">=</span> <span class="n">transform_vars_permutation</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">P2</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">transform_vars_blockrotation</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n_b</span><span class="p">);</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">transform_vars_permutation</span><span class="p">(</span><span class="n">problem</span><span class="p">,</span> <span class="n">P1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Here, <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/> is again the problem dimension, <img class="math" src="_images/math/63751cb2e98ba393b0f22e45ca127c3cebb61487.png" alt="s"/> the size of the blocks in <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/>, <img class="math" src="_images/math/276098114890427c3bdd328904ca0383a517e5f6.png" alt="n_b:"/>
+the number of blocks, <img class="math" src="_images/math/a31afe17ae94a4872b09ef80eb13c8d856a61412.png" alt="n_s:"/> the number of swaps, and <img class="math" src="_images/math/5c0dea3ad8cb64786b0b74408c15c31df847aa3f.png" alt="r_s:"/> the swap range as presented previously.</p>
+<p><strong>Important remark:</strong> Although the complexity of <code class="docutils literal"><span class="pre">bbob</span></code> test suite is reduced considerably by the above replacement of
+rotational transformations, we recommend running the experiment on the <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite in parallel.</p>
+</div>
+</div>
+<div class="section" id="functions-in-bbob-largescale-test-suite">
+<h2>Functions in <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite<a class="headerlink" href="#functions-in-bbob-largescale-test-suite" title="Permalink to this headline">¶</a></h2>
+<p>The table below presents the definition of all 24 functions of the <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite in detail. Beside the important
+modification on rotational transformations, we also make two changes to the raw functions in the <code class="docutils literal"><span class="pre">bbob</span></code> test suite.</p>
+<ul class="simple">
+<li>All functions, except for the Schwefel, Schaffer, Weierstrass, Gallagher, and Katsuura functions, are normalized by the parameter <img class="math" src="_images/math/50c2815b79a2f3c72a6d4e858120ea7d66ec340a.png" alt="\gamma(n) = \min(1, 40/n)"/> to have uniform target values that are comparable, in difficulty, over a wide range of dimensions.</li>
+<li>The Discus, Bent Cigar and Sharp Ridge functions are generalized such that they have a constant proportion of distinct axes that remain consistent with the <code class="docutils literal"><span class="pre">bbob</span></code> test suite.</li>
+</ul>
+<p>For a better understanding of the properties of these functions and for the definitions
+of the used transformations and abbreviations, we refer the reader to the original
+<code class="docutils literal"><span class="pre">bbob</span></code> <a class="reference external" href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">function documention</a> for details.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="50%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Formulation</th>
+<th class="head">Transformations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td colspan="3"><strong>Group 1: Separable functions</strong></td>
+</tr>
+<tr class="row-odd"><td>Sphere Function</td>
+<td><img class="math" src="_images/math/bd523141f86ea7e526120b43377b0d55d586a258.png" alt="f_1(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} z_i^2 + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/6140ac875cf9399e803f9595a3b972c9b578a8d2.png" alt="\mathbf{z} = \mathbf{x} - \mathbf{x}^{\text{opt}}"/></td>
+</tr>
+<tr class="row-even"><td>Ellipsoidal Function</td>
+<td><img class="math" src="_images/math/30428036bdab72de788d6f95d4ea2f8ee708db16.png" alt="f_2(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2+ \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/d250f53f16d19fd68c60226b27dcd30c219e43e7.png" alt="\mathbf{z} = T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right)"/></td>
+</tr>
+<tr class="row-odd"><td>Rastrigin Function</td>
+<td><img class="math" src="_images/math/c03e0c1716a46319811bb9ffb846271787ff35c9.png" alt="f_3(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/8f6c4a01051c2165307e0de6d4b5c66d1633469b.png" alt="\mathbf{z} = \mathbf{\Lambda}^{10} T_{\text{asy}}^{0.2} \left( T_{\text{osz}}\left(\mathbf{x} - \mathbf{x}^{\text{opt}}\right) \right)"/></td>
+</tr>
+<tr class="row-even"><td>Bueche-Rastrigin Function</td>
+<td><img class="math" src="_images/math/cfd3599db633ee483f5279a1c3b6e610146e60e8.png" alt="f_4(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||z||^2\right)"/>
+<img class="math" src="_images/math/2fd3b1f5b1e210cebc17c92b55721af690e01ae0.png" alt="+ 100f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/4bbe8a57706dac00e5d1ce171ffcefcac46f4876.png" alt="z_i = s_i T_{\text{osz}}\left(x_i - x_i^{\text{opt}}\right) \text{for } i = 1,\dots, n\hspace{6cm}"/>
+<img class="math" src="_images/math/92892c50c47c0837835675f55d4d772ba2b874f4.png" alt="s_i = \begin{cases} 10 \times 10^{\frac{1}{2} \frac{i-1}{n-1}} &amp; \text{if } z_i &gt;0 \text{ and } i \text{ odd} \\ 10^{\frac{1}{2} \frac{i-1}{n-1}} &amp; \text{otherwise} \end{cases}"/>
+<img class="math" src="_images/math/15dbdb6a8a1c8e2d4fb62d6d1c432db78efc0029.png" alt="\text{ for } i = 1,\dots, n"/></td>
+</tr>
+<tr class="row-odd"><td>Linear Slope</td>
+<td><img class="math" src="_images/math/989cee5e01804c8bb523bb2af242aba65097477a.png" alt="f_5(\mathbf{x}) = \gamma(n)\times \sum_{i=1}^{n}\left( 5 \vert s_i \vert - s_i z_i \right) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/9a782d2dc449fa5d8d1312e9c5d62332989c7713.png" alt="z_i = \begin{cases} x_i &amp; \text{if } x_i^{\mathrm{opt}}x_i &lt; 5^2 \\ x_i^{\mathrm{opt}} &amp; \text{otherwise} \end{cases}"/>
+<img class="math" src="_images/math/f833e1262aa43c3bcb5e99190061bb81bb488f0d.png" alt="\text{ for } i=1, \dots, n,\hspace{3.5cm}"/>
+<img class="math" src="_images/math/3163259540cbe794ee58000ed1b2119b30b22f14.png" alt="s_i = \text{sign} \left(x_i^{\text{opt}}\right) 10^{\frac{i-1}{n-1}} \text{ for } i=1, \dots, n,\hspace{4cm}"/>
+<img class="math" src="_images/math/a68e6655706dedbc4d8241be99ed073ddf5aa972.png" alt="\mathbf{x}^{\text{opt}} = \mathbf{z}^{\text{opt}} = 5\times \mathbf{1}_{-}^+"/></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="50%" />
+<col width="30%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td colspan="3"><strong>Group 2: Functions with low or moderate conditioning</strong></td>
+</tr>
+<tr class="row-even"><td>Attractive Sector Function</td>
+<td><img class="math" src="_images/math/2f66c06728699936cddd74e5c09accff18560061.png" alt="f_6(\mathbf{x}) = T_{\text{osz}}\left(\gamma(n) \times \sum_{i=1}^{n}\left( s_i z_i\right)^2 \right)^{0.9} + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/8da8f817dfe39a870998c674169a48f41ae61533.png" alt="\mathbf{z} = \mathbf{Q} \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})"/>
+<img class="math" src="_images/math/9c463da49d05e12512dd3ee2fe640d4f2d1a6bec.png" alt="\hspace{0.2cm} \text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{1.5cm}"/>
+<img class="math" src="_images/math/d79c4fc01b2286f6e444281ffebd9676092f5927.png" alt="s_i = \begin{cases} 10^2 &amp; \text{if } z_i \times x_i^{\mathrm{opt}} &gt; 0\\ 1 &amp; \text{otherwise}\end{cases}"/>
+<img class="math" src="_images/math/1b6b62d9dfe555c277df0ae2308e16004bd122fd.png" alt="\text{ for } i=1,\dots, n"/></td>
+</tr>
+<tr class="row-odd"><td>Step Ellipsoidal Function</td>
+<td><img class="math" src="_images/math/62e6da3d7487dbba1820a398e94d127525b09c48.png" alt="f_7(\mathbf{x}) = \gamma(n) \times 0.1 \max\left(\vert \hat{z}_1\vert/10^4, \sum_{i=1}^{n}10^{2\frac{i - 1}{n - 1}}z_i^2\right) + f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/10bb8f8b246644642c50dbd4f8149dc873e1d6fc.png" alt="\mathbf{\hat{z}} = \mathbf{\Lambda}^{10} \mathbf{R}(\mathbf{x}-\mathbf{x}^{\text{opt}})  \text{ with }\mathbf{R} = P_{11}B_1P_{12},\hspace{4.5cm}"/>
+<img class="math" src="_images/math/6030acd1c711511ba00bcb537c3a18d81119a2d1.png" alt="\tilde{z}_i= \begin{cases} \lfloor 0.5 + \hat{z}_i \rfloor &amp; \text{if }  |\hat{z}_i| &gt; 0.5 \\ \lfloor 0.5 + 10 \hat{z}_i \rfloor /10 &amp; \text{otherwise} \end{cases}"/>
+<img class="math" src="_images/math/17e001ab567548172878150c4e56671f0081cf63.png" alt="\text{ for } i=1,\dots, n,\hspace{1.5cm}"/>
+<img class="math" src="_images/math/ae997c3017bc91203cf9e495b35004c8c3687544.png" alt="\mathbf{z} = \mathbf{Q} \mathbf{\tilde{z}} \text{ with } \mathbf{Q} = P_{21}B_2P_{22}"/></td>
+</tr>
+<tr class="row-even"><td>Rosenbrock Function, original</td>
+<td><img class="math" src="_images/math/1bf55d0d4b9f2da482835e3116f9f642dc74fab1.png" alt="f_8(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/2d0595922ba9d67e6f4fb18cf80a7f7bda6de663.png" alt="\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)(\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1},"/>
+<img class="math" src="_images/math/625a1269294fb949703f6b042058833d965347d5.png" alt="\mathbf{x}^{\text{opt}} \in [-3, 3]^n"/></td>
+</tr>
+<tr class="row-odd"><td>Rosenbrock Function, rotated</td>
+<td><img class="math" src="_images/math/c12f774fce5848bc8864a5da235aa83bd1aac65a.png" alt="f_9(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \left(100 \left(z_{i}^2 - z_{i+1}\right)^2 + \left(z_{i} - 1\right)^2\right) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/337412850de9cf5f97574b2cdef75d57e5ce4ffb.png" alt="\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})+ \mathbf{1}"/>
+<img class="math" src="_images/math/8568435aec0a6625f3c7d27868c3514a9298ff82.png" alt="\text{ with }\mathbf{R} = P_{1}BP_{2},"/>
+<img class="math" src="_images/math/625a1269294fb949703f6b042058833d965347d5.png" alt="\mathbf{x}^{\text{opt}} \in [-3, 3]^n"/></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="50%" />
+<col width="30%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td colspan="3"><strong>Group 3: Functions with high conditioning and unimodal</strong></td>
+</tr>
+<tr class="row-even"><td>Ellipsoidal Function</td>
+<td><img class="math" src="_images/math/8a3dedd9d84cd2916fc876b39da50e761758f1b6.png" alt="f_{10}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n}10^{6\frac{i - 1}{n - 1}} z_i^2  + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/8d3524f6cffcaf5684854f5c5ba6ebba5f2301cb.png" alt="\mathbf{z} = T_{\text{osz}} (\mathbf{R} (\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}"/></td>
+</tr>
+<tr class="row-odd"><td>Discus Function</td>
+<td><img class="math" src="_images/math/3d570294328f6a85dcd9c8040e18ba9b7ee9e651.png" alt="f_{11}(\mathbf{x}) = \gamma(n) \times\left(10^6\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + \sum_{i=\lceil n/40 \rceil+1}^{n}z_i^2\right) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/50b8e1d569a67746b809fc7134c7dc83c40c3378.png" alt="\mathbf{z} = T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}"/></td>
+</tr>
+<tr class="row-even"><td>Bent Cigar Function</td>
+<td><img class="math" src="_images/math/90b08f0a78b9e3d20bdc31c9d6b64a26e324509b.png" alt="f_{12}(\mathbf{x}) = \gamma(n) \times\left(\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + 10^6\sum_{i=\lceil n/40 \rceil + 1}^{n}z_i^2 \right) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/6d8b83815df9aacb59a3216269d4430c19ffadbf.png" alt="\mathbf{z} = \mathbf{R} T_{\text{asy}}^{0.5}(\mathbf{R}((\mathbf{x} - \mathbf{x}^{\text{opt}})) \text{ with }\mathbf{R} = P_{1}BP_{2}"/></td>
+</tr>
+<tr class="row-odd"><td>Sharp Ridge Function</td>
+<td><img class="math" src="_images/math/3de995d6220266324daa1ad0f163ce4d53eae3b3.png" alt="f_{13}(\mathbf{x}) = \gamma(n) \times\left(\sum_{i=1}^{\lceil n/40 \rceil}z_i^2 + 100\sqrt{\sum_{i=\lceil n/40 \rceil + 1}^{n}z_i^2} \right) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/f4cdbc4a5ac7266b57be03ec54db05d3905cc979.png" alt="\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{10}\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})"/>
+<img class="math" src="_images/math/6cc3170ea3bff5e7d719f9d98aa7cfdae3a41222.png" alt="\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}"/></td>
+</tr>
+<tr class="row-even"><td>Different Powers Function</td>
+<td><img class="math" src="_images/math/de7b62c53247581eedd2781b082e7138e1bcc256.png" alt="f_{14}(\mathbf{x}) = \gamma(n) \times\sum_{i=1}^{n} \vert z_i\vert ^{\left(2 + 4 \times \frac{i-1}{n- 1}\right)} + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/993d27151ffc79f71b113fc4a2cd78ba37150d83.png" alt="\mathbf{z} = \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}) \text{ with }\mathbf{R} = P_{1}BP_{2}"/></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="50%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Formulation</th>
+<th class="head">Transformations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td colspan="3"><strong>Group 4: Multi-modal functions with adequate global structure</strong></td>
+</tr>
+<tr class="row-odd"><td>Rastrigin Function</td>
+<td><img class="math" src="_images/math/eb5f5cff3d94754631708cdc47f43f7d92a14686.png" alt="f_{15}(\mathbf{x}) = \gamma(n) \times\left(10n - 10\sum_{i=1}^{n}\cos\left(2\pi z_i \right) + ||\mathbf{z}||^2\right) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/d6673f3b3926f3670bb97bc5e208d07521f1ee1e.png" alt="\mathbf{z} = \mathbf{R} \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.2} \left(T_{\text{osz}} \left(\mathbf{R}\left(\mathbf{x} - \mathbf{x}^{\text{opt}} \right) \right) \right) \hspace{5cm}"/>
+<img class="math" src="_images/math/cae0a2675616a03a1458f944123e72caccab7d54.png" alt="\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}"/></td>
+</tr>
+<tr class="row-even"><td>Weierstrass Function</td>
+<td><img class="math" src="_images/math/4754199e5cacfcb1ed5a8edbf1c3d7b03619705a.png" alt="f_{16}(\mathbf{x}) = 10\left( \dfrac{1}{n} \sum_{i=1}^{n} \sum_{k=0}^{11} \dfrac{1}{2^k} \cos \left( 2\pi 3^k \left( z_i + 1/2\right) \right) - f_0\right)^3"/>
+<img class="math" src="_images/math/dc67c83bef3832d9d805a9f2b6083bf956e5b6e0.png" alt="+\dfrac{10}{n}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/d6254980681f583c07c4d30fdfb916e6e1b9836a.png" alt="\mathbf{z} = \mathbf{R}\mathbf{\Lambda}^{1/100}\mathbf{Q}T_{\text{osz}}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))\hspace{6cm}"/>
+<img class="math" src="_images/math/3382f9ddca06aa2a454b6d67eaa3794917c94cea.png" alt="\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{5.8cm}"/>
+<img class="math" src="_images/math/b1e9525de8af921f392bdc70d432588d3a4dc424.png" alt="f_0= \sum_{k=0}^{11} \dfrac{1}{2^k} \cos(\pi 3^k)"/></td>
+</tr>
+<tr class="row-odd"><td>Schaffers F7 Function</td>
+<td><img class="math" src="_images/math/29865b97111c8e779dd24770aae29f5cd59f01ca.png" alt="f_{17}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2"/>
+<img class="math" src="_images/math/a3b32a65dd1e8efce9cf6a9cf40d87182f94b8f4.png" alt="+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/f7178f258631ed78fbf97feed9bfe680c2e1e445.png" alt="\mathbf{z} = \mathbf{\Lambda}^{10} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))"/>
+<img class="math" src="_images/math/86f60100550d57bbb100be6ef8a104d291564575.png" alt="\text{with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{1cm}"/>
+<img class="math" src="_images/math/b83ceb8bff53facbc965a1b85f7c94f226c057df.png" alt="s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1"/></td>
+</tr>
+<tr class="row-even"><td>Schaffers F7 Function,
+moderately ill-conditioned</td>
+<td><img class="math" src="_images/math/7720f28657839b460d4523ce3ed541eebe0eeda2.png" alt="f_{18}(\mathbf{x}) = \left(\dfrac{1}{n-1} \sum_{i=1}^{n-1} \left(\sqrt{s_i} + \sqrt{s_i}\sin^2\left( 50 (s_i)^{1/5}\right)\right)\right)^2"/>
+<img class="math" src="_images/math/a3b32a65dd1e8efce9cf6a9cf40d87182f94b8f4.png" alt="+ 10 f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/d9aa4897a3231144d3852bebc9c33e0a46df08cf.png" alt="\mathbf{z} = \mathbf{\Lambda}^{1000} \mathbf{Q} T_{\text{asy}}^{0.5}(\mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}}))"/>
+<img class="math" src="_images/math/b9bea5718a04e052a0f43b52b66c84c77e1db8a1.png" alt="\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},\hspace{0.5cm}"/>
+<img class="math" src="_images/math/b83ceb8bff53facbc965a1b85f7c94f226c057df.png" alt="s_i= \sqrt{z_i^2 + z_{i+1}^2}, i=1,\dots, n-1"/></td>
+</tr>
+<tr class="row-odd"><td>Composite Griewank-Rosenbrock
+Function F8F2</td>
+<td><img class="math" src="_images/math/86f9d934bbe0e445e53633085a972df24849aace.png" alt="f_{19}(\mathbf{x}) = \dfrac{10}{n-1} \sum_{i=1}^{n-1} \left( \dfrac{s_i}{4000} - \cos\left(s_i \right)\right) + 10 + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/7b1119d928181dd4e68e8c08bd824306cc46c038.png" alt="\mathbf{z} = \max\left(1, \dfrac{\sqrt{s}}{8}\right)\mathbf{R} \mathbf{x} + \dfrac{\mathbf{1}}{2}"/>
+<img class="math" src="_images/math/ab3d91d59da84c26ade691dd96e86f6beae22369.png" alt="\text{ with }\mathbf{R} = P_{1}BP_{2},\hspace{3.4cm}"/>
+<img class="math" src="_images/math/3efb6d0cd31a230002f3e85864ff649d396109b9.png" alt="s_i= 100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2,"/>
+<img class="math" src="_images/math/6566775ad5cb8d60e10042efda1ec9555bb3dec3.png" alt="\text{ for } i=1,\dots, n-1,"/>
+<img class="math" src="_images/math/8c03fbded7cb4996d6b9932d539540521d32e260.png" alt="\mathbf{z}^{\text{opt}} = \mathbf{1}"/></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="50%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Formulation</th>
+<th class="head">Transformations</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td colspan="3"><strong>Group 5: Multi-modal functions with weak global structure</strong></td>
+</tr>
+<tr class="row-odd"><td>Schwefel Function</td>
+<td><img class="math" src="_images/math/d97f1a0f1c55f0e98aaada7fc1c4d59618734b23.png" alt="f_{20}(\mathbf{x}) = -\dfrac{1}{100 n} \sum_{i=1}^{n} z_i\sin\left(\sqrt{\vert z_i\vert}\right) + 4.189828872724339"/>
+<img class="math" src="_images/math/01cfe6cd8c8c61fc27d0e57341bd5c6eb268442d.png" alt="+ 100f_{pen}(\mathbf{z}/100)+\mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/fddcd7e223e1606660669bf1f27a76fb21a1f1ea.png" alt="\mathbf{\hat{x}} = 2 \times \mathbf{1}_{-}^{+} \otimes \mathbf{x},"/>
+<img class="math" src="_images/math/4b7e4fe674f374c0f188b04db57c2f3fe882f2e4.png" alt="\hat{z}_1 = \hat{x}_1, \hat{z}_{i+1}=\hat{x}_{i+1} + 0.25 \left(\hat{x}_{i} - 2\left|x_i^{\text{opt}}\right|\right),"/>
+<img class="math" src="_images/math/50b2b454a2bfabb7a96a7d1e2a8da98e678af9ac.png" alt="\text{ for } i=1, \dots, n-1,"/>
+<img class="math" src="_images/math/c981bb0b66fcbf2509fd13a4c5f74ed4118a7c6b.png" alt="\mathbf{z} = 100 \left(\mathbf{\Lambda}^{10} \left(\mathbf{\hat{z}} - 2\left|\mathbf{x}^{\text{opt}}\right|\right) + 2\left|\mathbf{x}^{\text{opt}}\right|\right),"/>
+<img class="math" src="_images/math/0d83bd6878a6ec1f39d0936d4331cd75ab5461e1.png" alt="\mathbf{x}^{\text{opt}} = 4.2096874633/2 \mathbf{1}_{-}^{+}"/></td>
+</tr>
+<tr class="row-even"><td>Gallagher&#8217;s Gaussian
+101-me Peaks Function</td>
+<td><img class="math" src="_images/math/fce831f8c4cf0ae9aef992b74af32f081bc0b275.png" alt="f_{21}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{101} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T\mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2"/>
+<img class="math" src="_images/math/6743bcbf2d0a8a6c2ce8e9a1022e95f9eecb7b1d.png" alt="+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/a42c69ddc24ec05865caf915157c05a08b179b1a.png" alt="w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{99} &amp; \text{for } 2 \leq i \leq 101\\ 10 &amp; \text{for } i = 1 \end{cases}"/>
+<img class="math" src="_images/math/634f029c6dc0454a2ea245420bc1154ce2878ad6.png" alt="\mathbf{B} \text{ is a block-diagonal matrix without}"/>
+<img class="math" src="_images/math/1ea8bfd948b33f222f30733ec7f87e8fa0926331.png" alt="\text{permuations of the variables.}"/>
+<img class="math" src="_images/math/ec83ebdcffa2a0013c172d75626bd9983f60aee5.png" alt="\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}"/>
+<img class="math" src="_images/math/a6789f56273e07fbfa2768ab522ad748ac4c1305.png" alt="\text{but with randomly permuted diagonal elements.}"/>
+<img class="math" src="_images/math/643dd451638210e80d43d7cee070facd5da3c3bf.png" alt="\text{For } i=2,\dots, 101, \alpha_i \text{ is drawn uniformly}"/>
+<img class="math" src="_images/math/d1369fb52cb1bd04fc99f8216178eed2c0a0ca2f.png" alt="\text{from the set } \left\{1000^{2\frac{j}{99}}, j = 0,\dots, 99 \right\} \text{without}"/>
+<img class="math" src="_images/math/5f7b2c2f7b0ce468d7c2e388411a80098edb43de.png" alt="\text{replacement, and } \alpha_i = 1000 \text{ for } i = 1."/>
+<img class="math" src="_images/math/0aa15ae230a6a2125dc8a56dd92fbb30f83fc5b3.png" alt="\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}"/>
+<img class="math" src="_images/math/506928260b26fafa27862597531166b3c13c4c29.png" alt="\text{from the domain } [-5,5]^n \text{ for }"/>
+<img class="math" src="_images/math/a1edcf36a3eaad5c69466c9f55c40aaff4451c43.png" alt="i = 2,...,101 \text{ and } \mathbf{y}_1 \in [-4,4]^n."/>
+<img class="math" src="_images/math/f7bbbb10322bb91f5d8a8975765725f35002f8be.png" alt="\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1."/></td>
+</tr>
+<tr class="row-odd"><td>Gallagher&#8217;s Gaussian
+21-hi Peaks Function</td>
+<td><img class="math" src="_images/math/d274649eb939a30ad0d64fa52d9c852f4f20dd4a.png" alt="f_{22}(\mathbf{x}) = T_{\text{osz}}\left(10 - \max_{i=1}^{21} w_i \exp\left(- \dfrac{1}{2n} (\mathbf{z} - \mathbf{y}_i)^T \mathbf{B}^T\mathbf{C_i}\mathbf{B} (\mathbf{z} - \mathbf{y}_i) \right) \right)^2"/>
+<img class="math" src="_images/math/6743bcbf2d0a8a6c2ce8e9a1022e95f9eecb7b1d.png" alt="+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/fbbf29ede8cbde4a483df4c13f1660f4bf04b783.png" alt="w_i = \begin{cases} 1.1 + 8 \times \dfrac{i-2}{19} &amp; \text{for } 2 \leq i \leq 21\\ 10 &amp; \text{for } i = 1 \end{cases}"/>
+<img class="math" src="_images/math/634f029c6dc0454a2ea245420bc1154ce2878ad6.png" alt="\mathbf{B} \text{ is a block-diagonal matrix without}"/>
+<img class="math" src="_images/math/1ea8bfd948b33f222f30733ec7f87e8fa0926331.png" alt="\text{permuations of the variables.}"/>
+<img class="math" src="_images/math/ec83ebdcffa2a0013c172d75626bd9983f60aee5.png" alt="\mathbf{C_i} = \Lambda^{\alpha_i}/\alpha_i^{1/4} \text{where } \Lambda^{\alpha_i} \text{ is defined as usual,}"/>
+<img class="math" src="_images/math/a6789f56273e07fbfa2768ab522ad748ac4c1305.png" alt="\text{but with randomly permuted diagonal elements.}"/>
+<img class="math" src="_images/math/d0a2234d68e58a80b8280e1a160d00919ad2326d.png" alt="\text{For } i=2,\dots, 21, \alpha_i \text{ is drawn uniformly}"/>
+<img class="math" src="_images/math/dd5a0de5b0755b99c53b344bf19dfb6b761d3dfa.png" alt="\text{from the set } \left\{1000^{2\frac{j}{19}}, j = 0,\dots, 19 \right\} \text{without}"/>
+<img class="math" src="_images/math/29878b15b94a0a4a11e020f4b261fb8e543125fe.png" alt="\text{replacement, and } \alpha_i = 1000^2 \text{ for } i = 1."/>
+<img class="math" src="_images/math/0aa15ae230a6a2125dc8a56dd92fbb30f83fc5b3.png" alt="\text{The local optima } \mathbf{y}_i \text{ are uniformly drawn}"/>
+<img class="math" src="_images/math/555af693cc619e8ea83fd6dff2b4a5d1d3a737eb.png" alt="\text{from the domain } [-4.9,4.9]^n \text{ for }"/>
+<img class="math" src="_images/math/4788a98b36afcd9bf3a848a524819da295b2ce6b.png" alt="i = 2,...,21 \text{ and } \mathbf{y}_1 \in [-3.92,3.92]^n."/>
+<img class="math" src="_images/math/f7bbbb10322bb91f5d8a8975765725f35002f8be.png" alt="\text{The global optimum is at } \mathbf{x}^{\text{opt}} = \mathbf{y}_1."/></td>
+</tr>
+<tr class="row-even"><td>Katsuura Function</td>
+<td><img class="math" src="_images/math/1cdea2004cd6754810340329d90ef1094105e272.png" alt="f_{23}(\mathbf{x}) = \left(\dfrac{10}{n^2} \prod_{i=1}^{n} \left( 1 + i \sum_{j=1}^{32} \dfrac{\vert 2^j z_i - [2^j z_i]\vert}{2^j}\right)^{10/n^{1.2}} - \dfrac{10}{n^2}\right)"/>
+<img class="math" src="_images/math/6743bcbf2d0a8a6c2ce8e9a1022e95f9eecb7b1d.png" alt="+ f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/8b8a9f3e1aaec130042a10da1064287235a4aca9.png" alt="\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100} \mathbf{R}(\mathbf{x} - \mathbf{x}^{\text{opt}})"/>
+<img class="math" src="_images/math/6cc3170ea3bff5e7d719f9d98aa7cfdae3a41222.png" alt="\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22}"/></td>
+</tr>
+<tr class="row-odd"><td>Lunacek bi-Rastrigin Function</td>
+<td><img class="math" src="_images/math/5c672a6cb682d529bd29bd468da12181833e7f19.png" alt="f_{24}(\mathbf{x}) = \gamma(n)\times\Big(\min\big( \sum_{i=1}^{n} (\hat{x}_i - \mu_0)^2, n + s\sum_{i=1}^{n}(\hat{x}_i - \mu_1)^2\big)"/>
+<img class="math" src="_images/math/b30a234b5f5f1f2b92a9fff43f298b5b3308a017.png" alt="+ 10 \big(n - \sum_{i=1}^{n}\cos(2\pi z_i) \big)\Big) + 10^{4}f_{pen}(\mathbf{x}) + \mathbf{f}_{\text{opt}}"/></td>
+<td><img class="math" src="_images/math/5263a0d98ed291bf2ccd0da9355088b448a82934.png" alt="\mathbf{\hat{x}} = 2 \text{sign}(\mathbf{x}^{\text{opt}}) \otimes \mathbf{x}, \mathbf{x}^{\text{opt}} = 0.5 \mu_0 \mathbf{1}_{-}^{+},"/>
+<img class="math" src="_images/math/11a061aa0231cc81e2823dd1a0d329cbd365a103.png" alt="\mathbf{z} = \mathbf{Q}\mathbf{\Lambda}^{100}\mathbf{R}(\mathbf{\hat{x}} - \mu_0\mathbf{1})"/>
+<img class="math" src="_images/math/a8d029972c08a76010e76bccd80f3f0df716a4d0.png" alt="\text{ with } \mathbf{R} = P_{11}B_1P_{12}, \mathbf{Q} = P_{21}B_2P_{22},"/>
+<img class="math" src="_images/math/0b2f5fe196298cdd696c07043f277e3914932b3a.png" alt="\mu_0 = 2.5, \mu_1 = -\sqrt{\dfrac{\mu_0^{2} - 1}{s}},"/>
+<img class="math" src="_images/math/c865107baf7810a77233191e7a4c60c4f3112613.png" alt="s = 1 - \dfrac{1}{2\sqrt{n + 20} - 8.2}"/></td>
+</tr>
+</tbody>
+</table>
+<H2>Acknowledgments</H2><p>This work was supported by the grant ANR-12-MONU-0009 (NumBBO)
+of the French National Research Agency.
+This work was further supported by a public grant as part of the Investissement d&#8217;avenir project, reference ANR-11-LABX-0056-LMH, LabEx LMH, in a joint call with Gaspard Monge Program for optimization, operations research and their interactions with data sciences.</p>
+<H2>References</H2><table class="docutils citation" frame="void" id="ait2016" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[AIT2016]</td><td><em>(<a class="fn-backref" href="#id10">1</a>, <a class="fn-backref" href="#id15">2</a>)</em> O. Ait Elhara, A. Auger, N. Hansen (2016). <a class="reference external" href="https://hal.inria.fr/hal-01308566">Permuted Orthogonal Block-Diagonal
+Transformation Matrices for Large Scale Optimization Benchmarking</a>. GECCO 2016, Jul 2016, Denver,
+United States.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="han2009" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[HAN2009]</a></td><td>N. Hansen, S. Finck, R. Ros, and A. Auger (2009).
+<a class="reference external" href="http://coco.gforge.inria.fr/">Real-parameter black-box optimization benchmarking 2009: Noiseless
+functions definitions</a>. <a class="reference external" href="https://hal.inria.fr/inria-00362633">Research Report RR-6829</a>, Inria, updated
+February 2010.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="han2016ex" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[HAN2016ex]</a></td><td>N. Hansen, T. Tusar, A. Auger, D. Brockhoff, O. Mersmann (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/experimental-setup/">COCO: The Experimental Procedure</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1603.08776">arXiv:1603.08776</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="han2016perf" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[HAN2016perf]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id8">2</a>)</em> N. Hansen, A. Auger, D. Brockhoff, D. Tusar, T. Tusar (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/perf-assessment">COCO: Performance Assessment</a>. <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1605.03560">arXiv:1605.03560</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="han2016co" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[HAN2016co]</a></td><td>Nikolaus Hansen, Anne Auger, Olaf Mersmann, Tea Tušar, and Dimo Brockhoff (2016).
+<a class="reference external" href="http://numbbo.github.io/coco-doc/">COCO: A Platform for Comparing Continuous Optimizers in a Black-Box
+Setting</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http://arxiv.org/abs/1603.08785">arXiv:1603.08785</a>.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">COCO: The Large Scale Black-Box Optimization Benchmarking (bbob-largescale) Test Suite</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+      Last updated on Mar 26, 2019.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

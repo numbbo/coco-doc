@@ -2,9 +2,11 @@ var searchData=
 [
   ['f_5fattractive_5fsector_2ec',['f_attractive_sector.c',['../f__attractive__sector_8c.html',1,'']]],
   ['f_5fbent_5fcigar_2ec',['f_bent_cigar.c',['../f__bent__cigar_8c.html',1,'']]],
+  ['f_5fbent_5fcigar_5fgeneralized_2ec',['f_bent_cigar_generalized.c',['../f__bent__cigar__generalized_8c.html',1,'']]],
   ['f_5fbueche_5frastrigin_2ec',['f_bueche_rastrigin.c',['../f__bueche__rastrigin_8c.html',1,'']]],
   ['f_5fdifferent_5fpowers_2ec',['f_different_powers.c',['../f__different__powers_8c.html',1,'']]],
   ['f_5fdiscus_2ec',['f_discus.c',['../f__discus_8c.html',1,'']]],
+  ['f_5fdiscus_5fgeneralized_2ec',['f_discus_generalized.c',['../f__discus__generalized_8c.html',1,'']]],
   ['f_5fellipsoid_2ec',['f_ellipsoid.c',['../f__ellipsoid_8c.html',1,'']]],
   ['f_5fgallagher_2ec',['f_gallagher.c',['../f__gallagher_8c.html',1,'']]],
   ['f_5fgriewank_5frosenbrock_2ec',['f_griewank_rosenbrock.c',['../f__griewank__rosenbrock_8c.html',1,'']]],
@@ -15,7 +17,9 @@ var searchData=
   ['f_5frosenbrock_2ec',['f_rosenbrock.c',['../f__rosenbrock_8c.html',1,'']]],
   ['f_5fschaffers_2ec',['f_schaffers.c',['../f__schaffers_8c.html',1,'']]],
   ['f_5fschwefel_2ec',['f_schwefel.c',['../f__schwefel_8c.html',1,'']]],
+  ['f_5fschwefel_5fgeneralized_2ec',['f_schwefel_generalized.c',['../f__schwefel__generalized_8c.html',1,'']]],
   ['f_5fsharp_5fridge_2ec',['f_sharp_ridge.c',['../f__sharp__ridge_8c.html',1,'']]],
+  ['f_5fsharp_5fridge_5fgeneralized_2ec',['f_sharp_ridge_generalized.c',['../f__sharp__ridge__generalized_8c.html',1,'']]],
   ['f_5fsphere_2ec',['f_sphere.c',['../f__sphere_8c.html',1,'']]],
   ['f_5fstep_5fellipsoid_2ec',['f_step_ellipsoid.c',['../f__step__ellipsoid_8c.html',1,'']]],
   ['f_5fweierstrass_2ec',['f_weierstrass.c',['../f__weierstrass_8c.html',1,'']]]

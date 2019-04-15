@@ -8,6 +8,6 @@ var searchData=
   ['default_5finstances',['default_instances',['../structcoco__suite__s.html#a56857da959f43d097b1a6507c311a410',1,'coco_suite_s']]],
   ['depreciated_5fcoco_5fproblem_5fget_5ffinal_5ftarget_5ffvalue1',['depreciated_coco_problem_get_final_target_fvalue1',['../coco_8h.html#af2be61eb801d900b9ba1cf45a79ea236',1,'coco.h']]],
   ['depth',['depth',['../structavl__node.html#a4446c9c4506cb4a07bc1537fec4ec204',1,'avl_node']]],
-  ['dimension',['dimension',['../structcoco__observer__evaluations__t.html#a389cd93f4e125d4369384464914be61f',1,'coco_observer_evaluations_t']]],
+  ['dimension',['dimension',['../structcoco__observer__evaluations__t.html#a389cd93f4e125d4369384464914be61f',1,'coco_observer_evaluations_t::dimension()'],['../structtransform__vars__blockrotation__t.html#a389cd93f4e125d4369384464914be61f',1,'transform_vars_blockrotation_t::dimension()']]],
   ['dimensions',['dimensions',['../structcoco__suite__s.html#acef3445bc8b435e236782b9e3e81b5a4',1,'coco_suite_s']]]
 ];

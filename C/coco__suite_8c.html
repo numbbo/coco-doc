@@ -107,8 +107,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="coco__internal_8h_source.html">coco_internal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__utilities_8c.html">coco_utilities.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__bbob_8c.html">suite_bbob.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="suite__bbob__mixint_8c.html">suite_bbob_mixint.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__biobj_8c.html">suite_biobj.c</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="suite__biobj__ext_8c.html">suite_biobj_ext.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="suite__biobj__mixint_8c.html">suite_biobj_mixint.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__toy_8c.html">suite_toy.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__largescale_8c.html">suite_largescale.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__cons__bbob_8c.html">suite_cons_bbob.c</a>&quot;</code><br />
@@ -130,6 +131,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8ba35533f22304d27fc88925d12e44b8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a8ba35533f22304d27fc88925d12e44b8">coco_suite_get_problem_from_indices</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t function_idx, const size_t dimension_idx, const size_t instance_idx)</td></tr>
 <tr class="memdesc:a8ba35533f22304d27fc88925d12e44b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the function that returns the problem corresponding to the given suite, function index, dimension index and instance index. If the indices don't correspond to a problem because of suite filtering, it returns NULL.  <a href="#a8ba35533f22304d27fc88925d12e44b8">More...</a><br /></td></tr>
 <tr class="separator:a8ba35533f22304d27fc88925d12e44b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38e8edd6dedb9bb963f79e4649c7913"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#af38e8edd6dedb9bb963f79e4649c7913">coco_suite_get_best_indicator_value</a> (const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const char *indicator_name)</td></tr>
+<tr class="memdesc:af38e8edd6dedb9bb963f79e4649c7913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the best indicator value for the given problem.  <a href="#af38e8edd6dedb9bb963f79e4649c7913">More...</a><br /></td></tr>
+<tr class="separator:af38e8edd6dedb9bb963f79e4649c7913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dc45ab5f19defa0b1498eac64714a02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__suite_8c.html#a4dc45ab5f19defa0b1498eac64714a02">coco_suite_get_problem_by_function_dimension_instance</a> (<a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *suite, const size_t function, const size_t dimension, const size_t instance)</td></tr>
 <tr class="memdesc:a4dc45ab5f19defa0b1498eac64714a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first problem of the suite defined by function, dimension and instance numbers.  <a href="#a4dc45ab5f19defa0b1498eac64714a02">More...</a><br /></td></tr>
 <tr class="separator:a4dc45ab5f19defa0b1498eac64714a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,12 +246,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a COCO suite. </p>
-<p>Currently, six suites are supported:</p><ul>
+<p>Currently, seven suites are supported:</p><ul>
 <li>"bbob" contains 24 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
 <li>"bbob-biobj" contains 55 <a href="http://numbbo.github.io/coco-doc/bbob-biobj/functions">bi-objective functions</a> in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
 <li>"bbob-biobj-ext" as an extension of "bbob-biobj" contains 92 <a href="http://numbbo.github.io/coco-doc/bbob-biobj/functions">bi-objective functions</a> in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
 <li>"bbob-largescale" contains 24 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 6 large dimensions (40, 80, 160, 320, 640, 1280)</li>
 <li>"bbob-constrained" contains 48 linearly-constrained problems, which are combinations of 8 single objective functions with 6 different numbers of linear constraints (1, 2, 10, dimension/2, dimension-1, dimension+1), in 6 dimensions (2, 3, 5, 10, 20, 40).</li>
+<li>"bbob-mixint" contains mixed-integer single-objective functions in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
+<li>"bbob-biobj-mixint" contains 92 mixed-integer bi-objective functions in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
 <li>"toy" contains 6 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 5 dimensions (2, 3, 5, 10, 20)</li>
 </ul>
 <p>Only the suite_name parameter needs to be non-empty. The suite_instance and suite_options can be "" or NULL. In this case, default values are taken (default instances of a suite are those used in the last year and the suite is not filtered by default).</p>
@@ -426,7 +432,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">suite</td><td>The suite. </td></tr>
     <tr><td class="paramname">function_idx</td><td>Index of the function (starting with 0). </td></tr>
     <tr><td class="paramname">dimension_idx</td><td>Index of the dimension (starting with 0). </td></tr>
-    <tr><td class="paramname">instance_idx</td><td>Index of the insatnce (starting with 0).</td></tr>
+    <tr><td class="paramname">instance_idx</td><td>Index of the instance (starting with 0).</td></tr>
   </table>
   </dd>
 </dl>
@@ -535,6 +541,48 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Frees the given suite. </p>
+
+</div>
+</div>
+<a class="anchor" id="af38e8edd6dedb9bb963f79e4649c7913"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double coco_suite_get_best_indicator_value </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#aa66be09e930304a945a3ff7dd06977f8">coco_suite_t</a> *&#160;</td>
+          <td class="paramname"><em>suite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>indicator_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the best indicator value for the given problem. </p>
 
 </div>
 </div>

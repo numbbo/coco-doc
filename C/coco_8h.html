@@ -306,6 +306,9 @@ index | instance_idx | function_idx | dimension_idx
 <tr class="memitem:a29c89e039494ae8b4f8e520cba1eb154"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#a29c89e039494ae8b4f8e520cba1eb154">coco_problem_get_largest_values_of_interest</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:a29c89e039494ae8b4f8e520cba1eb154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector of size 'dimension' with upper bounds of the region of interest in the decision space.  <a href="#a29c89e039494ae8b4f8e520cba1eb154">More...</a><br /></td></tr>
 <tr class="separator:a29c89e039494ae8b4f8e520cba1eb154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1bae305bfb0cf987a2c857c0a61cedb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ab1bae305bfb0cf987a2c857c0a61cedb">coco_problem_get_number_of_integer_variables</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:ab1bae305bfb0cf987a2c857c0a61cedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of integer variables. If &gt; 0, all integer variables come before any continuous ones.  <a href="#ab1bae305bfb0cf987a2c857c0a61cedb">More...</a><br /></td></tr>
+<tr class="separator:ab1bae305bfb0cf987a2c857c0a61cedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab63d4ff2d2318f34575fbb9ace9c7d64"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco_8h.html#ab63d4ff2d2318f34575fbb9ace9c7d64">coco_problem_get_largest_fvalues_of_interest</a> (const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
 <tr class="memdesc:ab63d4ff2d2318f34575fbb9ace9c7d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">For multi-objective problems, returns a vector of largest values of interest in each objective. Currently, this equals the nadir point. For single-objective problems it raises an error.  <a href="#ab63d4ff2d2318f34575fbb9ace9c7d64">More...</a><br /></td></tr>
 <tr class="separator:ab63d4ff2d2318f34575fbb9ace9c7d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1073,6 +1076,8 @@ Variables</h2></td></tr>
 <li>"base_evaluation_triggers: VALUES" defines the base evaluations used to produce an additional evaluation-based logging. The numbers of evaluations that trigger logging are every base_evaluation * dimension * (10**i). For example, if base_evaluation_triggers = "1,2,5", the logger will be triggered by evaluations dim*1, dim*2, dim*5, 10*dim*1, 10*dim*2, 10*dim*5, 100*dim*1, 100*dim*2, 100*dim*5, ... The default value is "1,2,5".</li>
 <li>"precision_x: VALUE" defines the precision used when outputting variables and corresponds to the number of digits to be printed after the decimal point. The default value is 8.</li>
 <li>"precision_f: VALUE" defines the precision used when outputting f values and corresponds to the number of digits to be printed after the decimal point. The default value is 15.</li>
+<li>"precision_g: VALUE" defines the precision used when outputting constraints and corresponds to the number of digits to be printed after the decimal point. The default value is 3.</li>
+<li>"log_discrete_as_int: VALUE" determines whether the values of integer variables (in mixed-integer problems) are logged as integers (1) or not (0 - in this case they are logged as doubles). The default value is 0.</li>
 </ul>
 </td></tr>
   </table>
@@ -1319,7 +1324,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns an initial solution, i.e. a feasible variable setting, to the problem. </p>
-<p>Copies problem-&gt;initial_solution into initial_solution if not null, otherwise the center of the problem's region of interest is the initial solution.</p>
+<p>Copies problem-&gt;initial_solution into initial_solution if not null, otherwise the center of the problem's region of interest is the initial solution. Takes care of rounding the solution in case of integer variables.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">problem</td><td>The given COCO problem. </td></tr>
@@ -1400,6 +1405,24 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the number of constraints of the problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab1bae305bfb0cf987a2c857c0a61cedb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t coco_problem_get_number_of_integer_variables </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of integer variables. If &gt; 0, all integer variables come before any continuous ones. </p>
 
 </div>
 </div>
@@ -1737,12 +1760,14 @@ x must point to a correctly sized allocated memory region.</dd></dl>
 </div><div class="memdoc">
 
 <p>Constructs a COCO suite. </p>
-<p>Currently, six suites are supported:</p><ul>
+<p>Currently, seven suites are supported:</p><ul>
 <li>"bbob" contains 24 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
 <li>"bbob-biobj" contains 55 <a href="http://numbbo.github.io/coco-doc/bbob-biobj/functions">bi-objective functions</a> in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
 <li>"bbob-biobj-ext" as an extension of "bbob-biobj" contains 92 <a href="http://numbbo.github.io/coco-doc/bbob-biobj/functions">bi-objective functions</a> in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
 <li>"bbob-largescale" contains 24 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 6 large dimensions (40, 80, 160, 320, 640, 1280)</li>
 <li>"bbob-constrained" contains 48 linearly-constrained problems, which are combinations of 8 single objective functions with 6 different numbers of linear constraints (1, 2, 10, dimension/2, dimension-1, dimension+1), in 6 dimensions (2, 3, 5, 10, 20, 40).</li>
+<li>"bbob-mixint" contains mixed-integer single-objective functions in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
+<li>"bbob-biobj-mixint" contains 92 mixed-integer bi-objective functions in 6 dimensions (2, 3, 5, 10, 20, 40)</li>
 <li>"toy" contains 6 <a href="http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf">single-objective functions</a> in 5 dimensions (2, 3, 5, 10, 20)</li>
 </ul>
 <p>Only the suite_name parameter needs to be non-empty. The suite_instance and suite_options can be "" or NULL. In this case, default values are taken (default instances of a suite are those used in the last year and the suite is not filtered by default).</p>
@@ -1866,7 +1891,7 @@ x must point to a correctly sized allocated memory region.</dd></dl>
     <tr><td class="paramname">suite</td><td>The suite. </td></tr>
     <tr><td class="paramname">function_idx</td><td>Index of the function (starting with 0). </td></tr>
     <tr><td class="paramname">dimension_idx</td><td>Index of the dimension (starting with 0). </td></tr>
-    <tr><td class="paramname">instance_idx</td><td>Index of the insatnce (starting with 0).</td></tr>
+    <tr><td class="paramname">instance_idx</td><td>Index of the instance (starting with 0).</td></tr>
   </table>
   </dd>
 </dl>

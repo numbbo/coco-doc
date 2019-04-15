@@ -107,6 +107,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="coco__problem_8c.html">coco_problem.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__utilities_8c.html">coco_utilities.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__bbob__legacy__code_8c.html">suite_bbob_legacy_code.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__obj__penalize_8c.html">transform_obj_penalize.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__obj__shift_8c.html">transform_obj_shift.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__shift_8c.html">transform_vars_shift.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__permutation_8c.html">transform_vars_permutation.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__blockrotation_8c.html">transform_vars_blockrotation.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__round__step_8c.html">transform_vars_round_step.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__obj__norm__by__dim_8c.html">transform_obj_norm_by_dim.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -128,12 +135,53 @@ Functions</h2></td></tr>
 <tr class="memitem:a97bda698706442034825b2c65f8a8675"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#a97bda698706442034825b2c65f8a8675">f_step_ellipsoid_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="memdesc:a97bda698706442034825b2c65f8a8675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB step ellipsoid problem.  <a href="#a97bda698706442034825b2c65f8a8675">More...</a><br /></td></tr>
 <tr class="separator:a97bda698706442034825b2c65f8a8675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbcb1b6226f53c297c36b0af6b8c6898"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#abbcb1b6226f53c297c36b0af6b8c6898">f_step_ellipsoid_core</a> (const double *x, const size_t number_of_variables, <a class="el" href="structf__step__ellipsoid__versatile__data__t.html">f_step_ellipsoid_versatile_data_t</a> *f_step_ellipsoid_versatile_data)</td></tr>
+<tr class="memdesc:abbcb1b6226f53c297c36b0af6b8c6898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the step ellipsoid function without connections to any COCO structures.  <a href="#abbcb1b6226f53c297c36b0af6b8c6898">More...</a><br /></td></tr>
+<tr class="separator:abbcb1b6226f53c297c36b0af6b8c6898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd27720f4d1b6c3e55e9b753f600a886"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#afd27720f4d1b6c3e55e9b753f600a886">f_step_ellipsoid_permblock_evaluate</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:afd27720f4d1b6c3e55e9b753f600a886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the raw function to evaluate the ls COCO problem.  <a href="#afd27720f4d1b6c3e55e9b753f600a886">More...</a><br /></td></tr>
+<tr class="separator:afd27720f4d1b6c3e55e9b753f600a886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e933bc38435ba0f58d5ba4ef6d83e33"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#a2e933bc38435ba0f58d5ba4ef6d83e33">f_step_ellipsoid_versatile_data_free</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem)</td></tr>
+<tr class="memdesc:a2e933bc38435ba0f58d5ba4ef6d83e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">allows to free the versatile_data part of the problem.  <a href="#a2e933bc38435ba0f58d5ba4ef6d83e33">More...</a><br /></td></tr>
+<tr class="separator:a2e933bc38435ba0f58d5ba4ef6d83e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa26cc998d1e70da8a549cef2880a04f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#aa26cc998d1e70da8a549cef2880a04f8">f_step_ellipsoid_allocate</a> (const size_t number_of_variables)</td></tr>
+<tr class="memdesc:aa26cc998d1e70da8a549cef2880a04f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic step ellipsoid problem. an additional coordinate is added that will contain the value of {z}_1 but that is ignored by functions other that f_step_ellipsoid_core and transform_vars_round_step. The latter sets it.  <a href="#aa26cc998d1e70da8a549cef2880a04f8">More...</a><br /></td></tr>
+<tr class="separator:aa26cc998d1e70da8a549cef2880a04f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a216d9d8d78b145da3ef91824c50fda04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__step__ellipsoid_8c.html#a216d9d8d78b145da3ef91824c50fda04">f_step_ellipsoid_permblockdiag_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="memdesc:a216d9d8d78b145da3ef91824c50fda04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB permuted block-rotated step ellipsoid problem.  <a href="#a216d9d8d78b145da3ef91824c50fda04">More...</a><br /></td></tr>
+<tr class="separator:a216d9d8d78b145da3ef91824c50fda04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the step ellipsoid function and problem. </p>
 <p>The BBOB step ellipsoid function intertwines the variable and objective transformations in such a way that it is hard to devise a composition of generic transformations to implement it. In the end one would have to implement several custom transformations which would be used solely by this problem. Therefore we opt to implement it as a monolithic function instead.</p>
 <p>TODO: It would be nice to have a generic step ellipsoid function to complement this one. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="aa26cc998d1e70da8a549cef2880a04f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_step_ellipsoid_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_of_variables</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocates the basic step ellipsoid problem. an additional coordinate is added that will contain the value of {z}_1 but that is ignored by functions other that f_step_ellipsoid_core and transform_vars_round_step. The latter sets it. </p>
+
+</div>
+</div>
 <a class="anchor" id="a97bda698706442034825b2c65f8a8675"></a>
 <div class="memitem">
 <div class="memproto">
@@ -192,6 +240,48 @@ Functions</h2></td></tr>
 
 <p>Creates the BBOB step ellipsoid problem. </p>
 <dl class="section note"><dt>Note</dt><dd>There is no separate basic allocate function. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abbcb1b6226f53c297c36b0af6b8c6898"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double f_step_ellipsoid_core </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_of_variables</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structf__step__ellipsoid__versatile__data__t.html">f_step_ellipsoid_versatile_data_t</a> *&#160;</td>
+          <td class="paramname"><em>f_step_ellipsoid_versatile_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements the step ellipsoid function without connections to any COCO structures. </p>
 
 </div>
 </div>
@@ -263,6 +353,109 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="afd27720f4d1b6c3e55e9b753f600a886"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void f_step_ellipsoid_permblock_evaluate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uses the raw function to evaluate the ls COCO problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="a216d9d8d78b145da3ef91824c50fda04"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_step_ellipsoid_permblockdiag_bbob_problem_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>instance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const long&#160;</td>
+          <td class="paramname"><em>rseed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>problem_id_template</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>problem_name_template</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates the BBOB permuted block-rotated step ellipsoid problem. </p>
+<p>Wassim: TODO: consider implementing it sub-problem style Wassim: TODO: make the zhat1 value default to x1 when no transformation is applied and the data type defined here </p>
+
+</div>
+</div>
 <a class="anchor" id="ab0949754b1d06e9e7bc2ea8ce406230a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -302,6 +495,32 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements the step ellipsoid function without connections to any COCO structures. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2e933bc38435ba0f58d5ba4ef6d83e33"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void f_step_ellipsoid_versatile_data_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>allows to free the versatile_data part of the problem. </p>
 
 </div>
 </div>

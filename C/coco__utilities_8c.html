@@ -110,6 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="coco_8h_source.html">coco.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__internal_8h_source.html">coco_internal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="coco__string_8c.html">coco_string.c</a>&quot;</code><br />
@@ -141,6 +142,8 @@ Functions</h2></td></tr>
 <tr class="memitem:af079b44546733c5be1cd68e38a2b06fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#af079b44546733c5be1cd68e38a2b06fc">coco_remove_directory</a> (const char *path)</td></tr>
 <tr class="memdesc:af079b44546733c5be1cd68e38a2b06fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the given directory and all its contents.  <a href="#af079b44546733c5be1cd68e38a2b06fc">More...</a><br /></td></tr>
 <tr class="separator:af079b44546733c5be1cd68e38a2b06fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7df77bfb8614b3b44358e078f67455cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a7df77bfb8614b3b44358e078f67455cb">coco_remove_file</a> (const char *file_name)</td></tr>
+<tr class="separator:a7df77bfb8614b3b44358e078f67455cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Methods regarding memory allocations</div></td></tr>
 <tr class="memitem:a592cd868f1b3e76b75d52d67afcbbe71"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#a592cd868f1b3e76b75d52d67afcbbe71">coco_allocate_vector</a> (const size_t number_of_elements)</td></tr>
 <tr class="memdesc:a592cd868f1b3e76b75d52d67afcbbe71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe memory allocation for a vector of doubles that either succeeds or triggers a coco_error.  <a href="#a592cd868f1b3e76b75d52d67afcbbe71">More...</a><br /></td></tr>
@@ -207,6 +210,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aca24d7fbafb048c2cabd542242c792e8"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#aca24d7fbafb048c2cabd542242c792e8">coco_double_to_size_t</a> (const double number)</td></tr>
 <tr class="memdesc:aca24d7fbafb048c2cabd542242c792e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a "safer" double to size_t conversion.  <a href="#aca24d7fbafb048c2cabd542242c792e8">More...</a><br /></td></tr>
 <tr class="separator:aca24d7fbafb048c2cabd542242c792e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac0b0ba4ce087916a90e31c6908d33cf"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#aac0b0ba4ce087916a90e31c6908d33cf">coco_double_to_int</a> (const double number)</td></tr>
+<tr class="memdesc:aac0b0ba4ce087916a90e31c6908d33cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounds the given double to the nearest integer (returns the number in int type)  <a href="#aac0b0ba4ce087916a90e31c6908d33cf">More...</a><br /></td></tr>
+<tr class="separator:aac0b0ba4ce087916a90e31c6908d33cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7fe3edf52188f5ee106201656870326"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coco__utilities_8c.html#ac7fe3edf52188f5ee106201656870326">coco_double_almost_equal</a> (const double a, const double b, const double precision)</td></tr>
 <tr class="memdesc:ac7fe3edf52188f5ee106201656870326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if |a - b| &lt; precision and 0 otherwise.  <a href="#ac7fe3edf52188f5ee106201656870326">More...</a><br /></td></tr>
 <tr class="separator:ac7fe3edf52188f5ee106201656870326"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -671,6 +677,32 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aac0b0ba4ce087916a90e31c6908d33cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int coco_double_to_int </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rounds the given double to the nearest integer (returns the number in int type) </p>
+
+</div>
+</div>
 <a class="anchor" id="aca24d7fbafb048c2cabd542242c792e8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -694,6 +726,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Performs a "safer" double to size_t conversion. </p>
+<p>TODO: This method could (should?) check for overflow when casting (similarly as is done in <a class="el" href="coco__utilities_8c.html#aac0b0ba4ce087916a90e31c6908d33cf" title="Rounds the given double to the nearest integer (returns the number in int type) ">coco_double_to_int()</a>). </p>
 
 </div>
 </div>
@@ -1510,6 +1543,25 @@ Should work cross-platform.</dd></dl>
 <p>Removes the given directory and all its contents. </p>
 <p>The method should work across different platforms/compilers.</p>
 <p>The path to the directory</p>
+<dl class="section return"><dt>Returns</dt><dd>0 on successful completion, and -1 on error. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7df77bfb8614b3b44358e078f67455cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int coco_remove_file </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The method should work across different platforms/compilers.</p>
+<p>The path to the file</p>
 <dl class="section return"><dt>Returns</dt><dd>0 on successful completion, and -1 on error. </dd></dl>
 
 </div>

@@ -109,6 +109,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="coco__utilities_8c.html">coco_utilities.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="suite__bbob__legacy__code_8c.html">suite_bbob_legacy_code.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="transform__obj__shift_8c.html">transform_obj_shift.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__permutation_8c.html">transform_vars_permutation.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__blockrotation_8c.html">transform_vars_blockrotation.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__permutation__helpers_8c.html">transform_vars_permutation_helpers.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__scale_8c.html">transform_vars_scale.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__obj__norm__by__dim_8c.html">transform_obj_norm_by_dim.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="f__sphere_8c.html">f_sphere.c</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="transform__vars__gallagher__blockrotation_8c.html">transform_vars_gallagher_blockrotation.c</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -135,6 +142,23 @@ Functions</h2></td></tr>
 <tr class="memitem:a713c7c3efbe8fbd7c7f9a471d5ab851f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__gallagher_8c.html#a713c7c3efbe8fbd7c7f9a471d5ab851f">f_gallagher_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, const size_t number_of_peaks, const char *problem_id_template, const char *problem_name_template)</td></tr>
 <tr class="memdesc:a713c7c3efbe8fbd7c7f9a471d5ab851f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the BBOB Gallagher problem.  <a href="#a713c7c3efbe8fbd7c7f9a471d5ab851f">More...</a><br /></td></tr>
 <tr class="separator:a713c7c3efbe8fbd7c7f9a471d5ab851f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bba263492332a91563e2a742ad93f61"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__gallagher_8c.html#a5bba263492332a91563e2a742ad93f61">f_gallagher_sub_evaluate_core</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem_i, const double *x, double *y)</td></tr>
+<tr class="memdesc:a5bba263492332a91563e2a742ad93f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the core function to evaluate the sub problem.  <a href="#a5bba263492332a91563e2a742ad93f61">More...</a><br /></td></tr>
+<tr class="separator:a5bba263492332a91563e2a742ad93f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3c91b6934b8ff64b42d5d20a0117e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__gallagher_8c.html#aad3c91b6934b8ff64b42d5d20a0117e3">f_gallagher_sub_problem_allocate</a> (const size_t number_of_variables)</td></tr>
+<tr class="memdesc:aad3c91b6934b8ff64b42d5d20a0117e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic gallagher sub problem.  <a href="#aad3c91b6934b8ff64b42d5d20a0117e3">More...</a><br /></td></tr>
+<tr class="separator:aad3c91b6934b8ff64b42d5d20a0117e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c689515d60e8e60d595205187b92063"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__gallagher_8c.html#a3c689515d60e8e60d595205187b92063">f_gallagher_core</a> (const double *x, size_t number_of_variables, <a class="el" href="structf__gallagher__versatile__data__t.html">f_gallagher_versatile_data_t</a> *versatile_data)</td></tr>
+<tr class="memdesc:a3c689515d60e8e60d595205187b92063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the gallagher function without connections to any COCO structures. Wassim: core to not conflict with raw for now.  <a href="#a3c689515d60e8e60d595205187b92063">More...</a><br /></td></tr>
+<tr class="separator:a3c689515d60e8e60d595205187b92063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d2338a008892567fe0ae1f89f9d938"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__gallagher_8c.html#a46d2338a008892567fe0ae1f89f9d938">f_gallagher_evaluate_core</a> (<a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *problem, const double *x, double *y)</td></tr>
+<tr class="memdesc:a46d2338a008892567fe0ae1f89f9d938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the core function to evaluate the COCO problem.  <a href="#a46d2338a008892567fe0ae1f89f9d938">More...</a><br /></td></tr>
+<tr class="separator:a46d2338a008892567fe0ae1f89f9d938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d5b764dc22f5b1e66432d5be14078c3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__gallagher_8c.html#a5d5b764dc22f5b1e66432d5be14078c3">f_gallagher_problem_allocate</a> (const size_t number_of_variables, size_t number_of_peaks)</td></tr>
+<tr class="memdesc:a5d5b764dc22f5b1e66432d5be14078c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the basic gallagher problem.  <a href="#a5d5b764dc22f5b1e66432d5be14078c3">More...</a><br /></td></tr>
+<tr class="separator:a5d5b764dc22f5b1e66432d5be14078c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad228c5332615808992d41751eee21bbd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="f__gallagher_8c.html#ad228c5332615808992d41751eee21bbd">f_gallagher_permblockdiag_bbob_problem_allocate</a> (const size_t function, const size_t dimension, const size_t instance, const long rseed, size_t number_of_peaks, const char *problem_id_template, const char *problem_name_template)</td></tr>
+<tr class="separator:ad228c5332615808992d41751eee21bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation of the Gallagher function and problem. </p>
@@ -241,6 +265,48 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3c689515d60e8e60d595205187b92063"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double f_gallagher_core </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>number_of_variables</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structf__gallagher__versatile__data__t.html">f_gallagher_versatile_data_t</a> *&#160;</td>
+          <td class="paramname"><em>versatile_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements the gallagher function without connections to any COCO structures. Wassim: core to not conflict with raw for now. </p>
+
+</div>
+</div>
 <a class="anchor" id="a8d2f1a3e2a77b331a4c7298643255e31"></a>
 <div class="memitem">
 <div class="memproto">
@@ -283,6 +349,48 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a46d2338a008892567fe0ae1f89f9d938"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void f_gallagher_evaluate_core </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uses the core function to evaluate the COCO problem. </p>
+
+</div>
+</div>
 <a class="anchor" id="a599976a4ae6073ff18cbc30730f1af38"></a>
 <div class="memitem">
 <div class="memproto">
@@ -306,6 +414,107 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Frees the Gallagher data object. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad228c5332615808992d41751eee21bbd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_gallagher_permblockdiag_bbob_problem_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dimension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>instance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const long&#160;</td>
+          <td class="paramname"><em>rseed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>number_of_peaks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>problem_id_template</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>problem_name_template</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>problem_i = transform_vars_blockrotation(*problem_i, B_const, dimension, block_sizes, nb_blocks); </p>
+
+</div>
+</div>
+<a class="anchor" id="a5d5b764dc22f5b1e66432d5be14078c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_gallagher_problem_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_of_variables</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>number_of_peaks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocates the basic gallagher problem. </p>
 
 </div>
 </div>
@@ -348,6 +557,74 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements the Gallagher function without connections to any COCO structures. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5bba263492332a91563e2a742ad93f61"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void f_gallagher_sub_evaluate_core </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a> *&#160;</td>
+          <td class="paramname"><em>problem_i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uses the core function to evaluate the sub problem. </p>
+
+</div>
+</div>
+<a class="anchor" id="aad3c91b6934b8ff64b42d5d20a0117e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="coco_8h.html#a408ba01b98c78bf5be3df36562d99478">coco_problem_t</a>* f_gallagher_sub_problem_allocate </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_of_variables</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocates the basic gallagher sub problem. </p>
 
 </div>
 </div>
