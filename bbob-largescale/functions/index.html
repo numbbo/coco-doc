@@ -418,8 +418,9 @@ rotational transformations, we recommend running the experiment on the <code cla
 <p>The table below presents the definition of all 24 functions of the <code class="docutils literal"><span class="pre">bbob-largescale</span></code> test suite in detail. Beside the important
 modification on rotational transformations, we also make two changes to the raw functions in the <code class="docutils literal"><span class="pre">bbob</span></code> test suite.</p>
 <ul class="simple">
-<li>All functions, except for the Schwefel, Schaffer, Weierstrass, Gallagher, and Katsuura functions, are normalized by the parameter <img class="math" src="_images/math/50c2815b79a2f3c72a6d4e858120ea7d66ec340a.png" alt="\gamma(n) = \min(1, 40/n)"/> to have uniform target values that are comparable, in difficulty, over a wide range of dimensions.</li>
+<li>All functions, except for the Schwefel, Schaffer, Weierstrass, Gallagher, Griewank-Rosenbrock and Katsuura functions which by definition are normalized with dimension, are normalized by the parameter <img class="math" src="_images/math/50c2815b79a2f3c72a6d4e858120ea7d66ec340a.png" alt="\gamma(n) = \min(1, 40/n)"/> to have uniform target values that are comparable, in difficulty, over a wide range of dimensions.</li>
 <li>The Discus, Bent Cigar and Sharp Ridge functions are generalized such that they have a constant proportion of distinct axes that remain consistent with the <code class="docutils literal"><span class="pre">bbob</span></code> test suite.</li>
+<li>For the two Rosenbrock functions and the related Griewank-Rosenbrock function, a different scaling is used than in the original <code class="docutils literal"><span class="pre">bbob</span></code> functions: instead of the factor <img class="math" src="_images/math/192569ddd61ff8bb03153aa80775fe4219b0c324.png" alt="\max (1, \frac{\sqrt{n}}{8})"/> with <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/> being the problem dimension, we scale the rotated search vector by the factor <img class="math" src="_images/math/272d583a383ab70cf0adb802bd887f212eaa1fd2.png" alt="\max (1, \frac{\sqrt{s}}{8})"/> with <img class="math" src="_images/math/63751cb2e98ba393b0f22e45ca127c3cebb61487.png" alt="s"/> being the block size in the matrix <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/>. An additional constant is added to the <img class="math" src="_images/math/683f2dd9129a91d21aaf1c04afa6f78b39d4cb0a.png" alt="z"/> vector to reduce, with high probability, the risk to move important parts of the test function&#8217;s characteristics out of the domain of interest. Without these adjustments, the original functions become significantly easier in higher dimensions due to the optimum being too close to the origin. For more details, we refer the interested reader to the discussion on the <a class="reference external" href="https://github.com/numbbo/coco/issues/1733">corresponding github issue</a>.</li>
 </ul>
 <p>For a better understanding of the properties of these functions and for the definitions
 of the used transformations and abbreviations, we refer the reader to the original
@@ -724,7 +725,7 @@ Setting</a>, <em>ArXiv e-prints</em>, <a class="reference external" href="http:/
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Mar 26, 2019.
+      Last updated on Apr 19, 2019.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>
