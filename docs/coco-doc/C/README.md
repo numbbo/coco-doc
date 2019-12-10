@@ -18,6 +18,7 @@ as the basic reference for:
 - [How to conduct benchmarking experiments in C](#benchmarking)
 - [How to write new test problems and combine them into test suites](#new-suites)
 - [How to write additional performance indicators and logging functionality](#new-indicators)
+- [How to write an interface to another language](#new-language)
 
 __Pointers to the source code and other documentation__
 
@@ -393,3 +394,13 @@ The ``bbob-biobj`` logger keeps an archive of all nondominated solutions in the 
 When the archive changes, the overall indicator values are further updated in the ``logger_biobj_output`` method just before being output. An update of the overall green indicator value is required at this point.
 
 Other functionalities, such as initializing, freeing and outputting to the indicator-specific files should 'work out of the box' without requiring additional tweaking for individual indicators. 
+
+## How to write an interface to another language<a name="new-language"></a>
+
+COCO's experiments module, written in C, can be interfaced to support running benchmarking experiments in other programming languages. Such an interface already exists for <a href="https://github.com/numbbo/coco/tree/master/code-experiments/build/c">C/C++</a>, <a href="https://github.com/numbbo/coco/tree/master/code-experiments/build/python">Python</a>, <a href="https://github.com/numbbo/coco/tree/master/code-experiments/build/java">Java</a> and <a href="https://github.com/numbbo/coco/tree/master/code-experiments/build/matlab">Matlab/Octave</a>. Adding an interface to another language comprises providing:
+
+- wrappers in that language that expose all methods listed in <code><a href="coco_8h.html">coco.h</a></code>,
+- an example experiment that showcases the use of these methods, and
+- a (short) documentation on using the interface containing sections about 'Prerequisites', 'Getting Started', and 'Details and Known Issues'.
+
+See the already supported languages for examples of each of these points.
