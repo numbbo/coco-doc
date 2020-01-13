@@ -1,5 +1,0 @@
-\form#0:\[y = \sum_{i=1}^D (x_i-x_i^{\mathrm{opt}})^2 + f^{\mathrm{opt}},\]
-\form#1:\[y = \sum_{i=1}^D x_i^2,\]
-\form#2:$x^{\mathrm{opt}}$
-\form#3:$f^{\mathrm{opt}}$
-\form#4:\[y = 10 \left( D - \sum_{i=1}^D \cos{(2 \pi z_i)} \right) + ||z||^2 + f^{\mathrm{opt}}, \quad \mathrm{where} \quad \mathbf{z} = \Delta^{10}T^{0.2}_{\mathrm{asy}}(T_{\mathrm{osz}}(\mathbf{x} - \mathbf{x}^{\mathrm{opt}}))\]

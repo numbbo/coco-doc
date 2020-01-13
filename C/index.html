@@ -93,6 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><a href="#benchmarking">How to conduct benchmarking experiments in C</a></li>
 <li><a href="#new-suites">How to write new test problems and combine them into test suites</a></li>
 <li><a href="#new-indicators">How to write additional performance indicators and logging functionality</a></li>
+<li><a href="#new-language">How to write an interface to another language</a></li>
 </ul>
 <p><b>Pointers to the source code and other documentation</b></p>
 <p>The actual source code of COCO can be found at <a href="http://github.com/numbbo/coco">http://github.com/numbbo/coco</a></p>
@@ -301,7 +302,15 @@ static void logger_biobj_output(logger_biobj_data_t *logger,
                                 const logger_biobj_avl_item_t *node_item)
 </pre><p>The <code>bbob-biobj</code> logger keeps an archive of all nondominated solutions in the form of an AVL tree. The <code>logger_biobj_tree_update</code> method checks for domination of the given solution (<code>node_item</code>) and updates the archive and the values of the indicators if the given node is not weakly dominated by existing nodes in the archive. Here the green indicator value needs to be updated any time a solution is added to or removed from the archive.</p>
 <p>When the archive changes, the overall indicator values are further updated in the <code>logger_biobj_output</code> method just before being output. An update of the overall green indicator value is required at this point.</p>
-<p>Other functionalities, such as initializing, freeing and outputting to the indicator-specific files should 'work out of the box' without requiring additional tweaking for individual indicators. </p>
+<p>Other functionalities, such as initializing, freeing and outputting to the indicator-specific files should 'work out of the box' without requiring additional tweaking for individual indicators.</p>
+<h2>How to write an interface to another language<a class="anchor" id="new-language"></a></h2>
+<p>COCO's experiments module, written in C, can be interfaced to support running benchmarking experiments in other programming languages. Such an interface already exists for <a href="https://github.com/numbbo/coco/tree/master/code-experiments/build/c">C/C++</a>, <a href="https://github.com/numbbo/coco/tree/master/code-experiments/build/python">Python</a>, <a href="https://github.com/numbbo/coco/tree/master/code-experiments/build/java">Java</a> and <a href="https://github.com/numbbo/coco/tree/master/code-experiments/build/matlab">Matlab/Octave</a>. Adding an interface to another language comprises providing:</p>
+<ul>
+<li>wrappers in that language that expose all methods listed in <code><a href="coco_8h.html">coco.h</a></code>,</li>
+<li>an example experiment that showcases the use of these methods, and</li>
+<li>a (short) documentation on using the interface containing sections about 'Prerequisites', 'Getting Started', and 'Details and Known Issues'.</li>
+</ul>
+<p>See the already supported languages for examples of each of these points. </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
