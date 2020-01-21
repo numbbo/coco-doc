@@ -86,7 +86,9 @@ use pydoctor and copy the resulting files to the coco GForge repository at
 respectively. For the `cocopp` module:
 ```
 cd code-postprocessing
-source activate py27
+conda activate py27  # was: source activate py27
+# pip install pydoctor    # needed to create the docs
+# conda install docutils  # needed to parse restructed text
 pydoctor --docformat=restructuredtext --make-html cocopp
 source deactivate
 rsync -auv apidocs/ scm.gforge.inria.fr:/home/groups/coco/htdocs/apidocs-cocopp
@@ -97,7 +99,7 @@ For the `cocoex` module, you have to copy/rename the
 ```
 cd code-experiments/build/python
 cp -rp python cocoex  # precondition: make sure cocoex does not exist
-source activate py27
+conda activate py27  # was: source activate py27
 pydoctor --docformat=restructuredtext --make-html cocoex
 pydoctor --docformat=restructuredtext --make-html example_experiment2.py
 source deactivate
