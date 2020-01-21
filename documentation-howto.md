@@ -88,7 +88,7 @@ respectively. For the `cocopp` module:
 cd code-postprocessing
 conda activate py27  # was: source activate py27
 # pip install pydoctor    # needed to create the docs
-# conda install docutils  # needed to parse restructed text
+# conda install docutils  # needed to parse restructed text in pydoctor
 pydoctor --docformat=restructuredtext --make-html cocopp
 source deactivate
 rsync -auv apidocs/ scm.gforge.inria.fr:/home/groups/coco/htdocs/apidocs-cocopp
