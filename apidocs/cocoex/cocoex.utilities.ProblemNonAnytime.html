@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocoex.utilities.ProblemNonAnytime</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocoex <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocoex</a></code><wbr></wbr>.<code><a href="cocoex.utilities.html" class="internal-link" title="cocoex.utilities">utilities</a></code><wbr></wbr>.<code><a href="cocoex.utilities.ProblemNonAnytime.html" class="internal-link" title="cocoex.utilities.ProblemNonAnytime">ProblemNonAnytime</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ProblemNonAnytime</span>(object):</code></p>
+        <p><a href="classIndex.html#cocoex.utilities.ProblemNonAnytime">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>The non-anytime problem class.</p>
+<p>Serves to benchmark a "budgeted" algorithm whose behavior decisively
+depends on a budget input parameter.</p>
+<p>Usage:</p>
+<pre class="rst-literal-block">
+# given: suite and observer instances, budget_list, fmin
+for index in range(len(suite)):
+    with ProblemNonAnytime(suite, observer, index) as problem:
+        x0 = problem.initial_solution  # or whatever fmin needs as input
+        for budget in sorted(budget_list):
+            x = fmin(problem, x0, budget)  # minimize
+            problem.delivered(x)  # prepares for next budget also
+            if problem.final_target_hit:
+                break
+</pre>
+<p>Details: This class maintains two problems - one observed and the
+other unobserved. It switches from unobserved to observed when
+<tt class="rst-docutils literal">p_unobserved.evaluations &gt;= p_observed.evaluations</tt>.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id9">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__call__" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.__call__">__call__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__enter__" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.__enter__">__enter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__exit__" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.__exit__">__exit__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#delivered" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.delivered">delivered</a></code></td>
+    <td>to be called with the solution returned by the solver.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#free" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.free">free</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#print_progress" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.print_progress">print​_progress</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reset" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.reset">reset</a></code></td>
+    <td>prepare the problem to be run on the next budget</td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#inherited_constant_attributes" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.inherited_constant_attributes">inherited​_constant​_attributes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#evaluations" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.evaluations">evaluations</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#p_observed" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.p_observed">p​_observed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#p_unobserved" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.p_unobserved">p​_unobserved</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#suite" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.suite">suite</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#best_observed_fvalue1" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.best_observed_fvalue1">best​_observed​_fvalue1</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#final_target_hit" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.final_target_hit">final​_target​_hit</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#random_solution" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.random_solution">random​_solution</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_number_of_delivery_evaluations" class="internal-link" title="cocoex.utilities.ProblemNonAnytime._number_of_delivery_evaluations">​_number​_of​_delivery​_evaluations</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_p" class="internal-link" title="cocoex.utilities.ProblemNonAnytime._p">​_p</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.__call__">
+    
+  </a>
+  <a name="__call__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__call__</span>(self, x, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.__enter__">
+    
+  </a>
+  <a name="__enter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__enter__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.__exit__">
+    
+  </a>
+  <a name="__exit__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__exit__</span>(self, *args):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, suite, observer, index):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.delivered">
+    
+  </a>
+  <a name="delivered">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">delivered</span>(self, x, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>to be called with the solution returned by the solver.</p>
+<p>The method records the delivered solution (if necessary) and
+prepares the problem to be run on the next budget by calling
+<code><a href="#reset" class="internal-link" title="cocoex.utilities.ProblemNonAnytime.reset">reset</a></code>.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.free">
+    
+  </a>
+  <a name="free">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">free</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.print_progress">
+    
+  </a>
+  <a name="print_progress">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">print_progress</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.reset">
+    
+  </a>
+  <a name="reset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reset</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>prepare the problem to be run on the next budget</div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.inherited_constant_attributes">
+    
+  </a>
+  <a name="inherited_constant_attributes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">inherited_constant_attributes</span>: <code>list[<wbr></wbr>str]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.evaluations">
+    
+  </a>
+  <a name="evaluations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">evaluations</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.p_observed">
+    
+  </a>
+  <a name="p_observed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">p_observed</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.p_unobserved">
+    
+  </a>
+  <a name="p_unobserved">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">p_unobserved</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.suite">
+    
+  </a>
+  <a name="suite">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">suite</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.best_observed_fvalue1">
+    
+  </a>
+  <a name="best_observed_fvalue1">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">best_observed_fvalue1</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.final_target_hit">
+    
+  </a>
+  <a name="final_target_hit">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">final_target_hit</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime.random_solution">
+    
+  </a>
+  <a name="random_solution">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">random_solution</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime._number_of_delivery_evaluations">
+    
+  </a>
+  <a name="_number_of_delivery_evaluations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_number_of_delivery_evaluations</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocoex.utilities.ProblemNonAnytime._p">
+    
+  </a>
+  <a name="_p">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_p</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocoex,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:44:24.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

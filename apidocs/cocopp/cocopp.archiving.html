@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.archiving</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.archiving.html" class="internal-link" title="cocopp.archiving">archiving</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Online and offline archiving of COCO data.</p>
+<p><code><a href="#create" class="internal-link" title="cocopp.archiving.create">create</a></code> and <code><a href="#get" class="internal-link" title="cocopp.archiving.get">get</a></code> are the main functions to create and retrieve online and
+local offline archives. Local archives can be listed via <code><a href="cocopp.archiving.ArchivesLocal.html" class="internal-link" title="cocopp.archiving.ArchivesLocal">ArchivesLocal</a></code>
+(experimental/beta), already used online archives are listed in <code><a href="cocopp.archiving.ArchivesKnown.html" class="internal-link" title="cocopp.archiving.ArchivesKnown">ArchivesKnown</a></code>.</p>
+<p>An online archive class defines, and is defined by, a source URL containing
+an archive definition file and the archived data.</p>
+<p><tt class="rst-docutils literal"><span class="pre">get('all')</span></tt> returns all "officially" archived data as given in a folder
+hierarchy (this may be abondoned in future). Derived classes "point" to
+subfolders in the folder tree and "contain" all archived data from a single
+test suites. For example, <tt class="rst-docutils literal"><span class="pre">get('bbob')</span></tt> returns the archived data list
+for the <code>bbob</code> testbed.</p>
+<div class="rst-section" id="rst-how-to-create-an-online-archive">
+<h2 class="heading">How to Create an Online Archive</h2>
+<p>First, we prepare the datasets. A dataset is a (tar-)zipped file containing
+a full experiment from a single algorithm. The first ten-or-so characters
+of the filename should be readible and informative. Datasets can reside in
+an arbitrary subfolder structure, but the folders should contain no further
+(ambiguous) files in order to create an archive from the archive root folder.</p>
+<p>Second, we create the new archive with <code><a href="#create" class="internal-link" title="cocopp.archiving.create">create</a></code>,</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp <span class="py-keyword">import</span> archiving
+<span class="py-prompt">&gt;&gt;&gt; </span>local_path = <span class="py-string">'./my-archive-root-folder'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>archiving.create(local_path)  <span class="py-comment"># doctest:+SKIP</span></pre><p>thereby creating an archive definition file in the given folder. The
+created archive can be re-instantiated with <code><a href="#get" class="internal-link">cocopp.archiving.get</a></code> and
+all data can be processed with <code><a href="cocopp.rungeneric.html#main" class="internal-link" title="cocopp.rungeneric.main">cocopp.main</a></code>, like</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>my_archive = archiving.get(local_path)  <span class="py-comment"># doctest:+SKIP</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(my_archive.get_all(<span class="py-string">''</span>))  <span class="py-comment"># doctest:+SKIP</span></pre><p>We may want to check beforehand the archive size like</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(my_archive)  <span class="py-comment"># doctest:+SKIP</span></pre><p>as an archive may contain hundreds of data sets. In case, we can choose a
+subset to process (see help of <code><a href="cocopp.rungeneric.html#main" class="internal-link" title="cocopp.rungeneric.main">main</a></code> and/or of the archive instance).</p>
+<p>Third, we put a mirror of the archive online, like:</p>
+<pre class="rst-literal-block">
+rsync -zauv my-archives/unique-name/ http://my-coco-online-archives/a-name
+</pre>
+<p>Now, everyone can use the archive on the fly like</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>remote_def = <span class="py-string">'http://my-coco-online-archives/a-name'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>remote_archive = cocopp.archiving.get(remote_def)  <span class="py-comment"># doctest:+SKIP</span></pre><p>just as a local archive. Archive data are downloaded only on demand.
+All data can be made available offline (which might take long) with:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>remote_archive.get_all(<span class="py-string">''</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>Remote archives that have been used once can be listed via <code><a href="cocopp.archiving.ArchivesKnown.html" class="internal-link" title="cocopp.archiving.ArchivesKnown">ArchivesKnown</a></code>
+(experimental/beta).</p>
+<p>Details: a definition file contains a list of all contained datasets by
+path/filename, a sha256 hash and optionally their approximate size. Datasets
+are (tar-)zipped files containing a full experiment from a single algorithm.</p>
+</div>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id8">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.archiving.ArchivesKnown.html" class="internal-link" title="cocopp.archiving.ArchivesKnown">​Archives​Known</a></code></td>
+    <td>Known (and already used) remote COCO data archives.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.archiving.ArchivesLocal.html" class="internal-link" title="cocopp.archiving.ArchivesLocal">​Archives​Local</a></code></td>
+    <td>COCO data archives somewhere local on this machine.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.archiving.COCOBBOBBiobjDataArchive.html" class="internal-link" title="cocopp.archiving.COCOBBOBBiobjDataArchive">​COCOBBOBBiobj​Data​Archive</a></code></td>
+    <td>This class "contains" archived data for the 'bbob-biobj' suite.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.archiving.COCOBBOBDataArchive.html" class="internal-link" title="cocopp.archiving.COCOBBOBDataArchive">​COCOBBOBData​Archive</a></code></td>
+    <td><code>list</code> of archived data for the 'bbob' test suite.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.archiving.COCOBBOBNoisyDataArchive.html" class="internal-link" title="cocopp.archiving.COCOBBOBNoisyDataArchive">​COCOBBOBNoisy​Data​Archive</a></code></td>
+    <td>This class "contains" archived data for the 'bbob-noisy' suite.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">​COCOData​Archive</a></code></td>
+    <td>Data archive based on an archive definition file.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html" class="internal-link" title="cocopp.archiving.ListOfArchives">​List​Of​Archives</a></code></td>
+    <td>List of URLs or path names to COCO data archives available to this user.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.archiving.OfficialArchives.html" class="internal-link" title="cocopp.archiving.OfficialArchives">​Official​Archives</a></code></td>
+    <td>overdesigned class to connect URLs, names, and classes of "official" archives.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.archiving.RemoteListOfArchives.html" class="internal-link" title="cocopp.archiving.RemoteListOfArchives">​Remote​List​Of​Archives</a></code></td>
+    <td>Elements of this list can be used directly with <code><a href="cocopp.archiving.html#get" class="internal-link">cocopp.archiving.get</a></code>.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#create" class="internal-link" title="cocopp.archiving.create">create</a></code></td>
+    <td>create a definition file for an existing local "archive" of data.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get" class="internal-link" title="cocopp.archiving.get">get</a></code></td>
+    <td>return a data archive <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">COCODataArchive</a></code>.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#read_definition_file" class="internal-link" title="cocopp.archiving.read_definition_file">read​_definition​_file</a></code></td>
+    <td>return definition triple <code>list</code></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#__author__" class="internal-link" title="cocopp.archiving.__author__">__author__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#backup_last_filename" class="internal-link" title="cocopp.archiving.backup_last_filename">backup​_last​_filename</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#coco_url" class="internal-link" title="cocopp.archiving.coco_url">coco​_url</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#coco_urls" class="internal-link" title="cocopp.archiving.coco_urls">coco​_urls</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#cocopp_home" class="internal-link" title="cocopp.archiving.cocopp_home">cocopp​_home</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#default_archive_location" class="internal-link" title="cocopp.archiving.default_archive_location">default​_archive​_location</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#default_definition_filename" class="internal-link" title="cocopp.archiving.default_definition_filename">default​_definition​_filename</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#listing_file_extension" class="internal-link" title="cocopp.archiving.listing_file_extension">listing​_file​_extension</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#listing_file_start" class="internal-link" title="cocopp.archiving.listing_file_start">listing​_file​_start</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#official_archives" class="internal-link" title="cocopp.archiving.official_archives">official​_archives</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class private">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.archiving._old_ArchivesOfficial.html" class="internal-link" title="cocopp.archiving._old_ArchivesOfficial">_old_​Archives​Official</a></code></td>
+    <td>superseded by <code><a href="cocopp.archiving.OfficialArchives.html" class="internal-link" title="cocopp.archiving.OfficialArchives">OfficialArchives</a></code></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_abs_path" class="internal-link" title="cocopp.archiving._abs_path">​_abs​_path</a></code></td>
+    <td>return a (OS-dependent) user-expanded path.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_definition_file_to_read" class="internal-link" title="cocopp.archiving._definition_file_to_read">​_definition​_file​_to​_read</a></code></td>
+    <td>return absolute path for sound definition file name.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_definition_file_to_write" class="internal-link" title="cocopp.archiving._definition_file_to_write">​_definition​_file​_to​_write</a></code></td>
+    <td>return absolute path to a possibly non-exisiting definition file name.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_definitions" class="internal-link" title="cocopp.archiving._download_definitions">​_download​_definitions</a></code></td>
+    <td>download definition file and sync url into it</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_remote" class="internal-link" title="cocopp.archiving._get_remote">​_get​_remote</a></code></td>
+    <td>return remote data archive as <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">COCODataArchive</a></code> instance.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_hash" class="internal-link" title="cocopp.archiving._hash">​_hash</a></code></td>
+    <td>compute hash of file <code>file_name</code></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_is_url" class="internal-link" title="cocopp.archiving._is_url">​_is​_url</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_backup" class="internal-link" title="cocopp.archiving._make_backup">​_make​_backup</a></code></td>
+    <td>backup file with added time stamp if it exists, otherwise do nothing.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_makedirs" class="internal-link" title="cocopp.archiving._makedirs">​_makedirs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_old_move_official_local_data" class="internal-link" title="cocopp.archiving._old_move_official_local_data">​_old​_move​_official​_local​_data</a></code></td>
+    <td>move "official" archives folder to the generic standardized location once and for all</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_repr_definitions" class="internal-link" title="cocopp.archiving._repr_definitions">​_repr​_definitions</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_str_to_list" class="internal-link" title="cocopp.archiving._str_to_list">​_str​_to​_list</a></code></td>
+    <td>try to return a non-string iterable in either case</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_url_add" class="internal-link" title="cocopp.archiving._url_add">​_url​_add</a></code></td>
+    <td>add <tt class="rst-docutils literal">('_url_', url),</tt> to the definition file in <code>folder</code>.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_url_to_folder_name" class="internal-link" title="cocopp.archiving._url_to_folder_name">​_url​_to​_folder​_name</a></code></td>
+    <td>return a path within the default archive location</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.archiving.create">
+    
+  </a>
+  <a name="create">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">create</span>(local_path):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>create a definition file for an existing local "archive" of data.</p>
+<p>The archive in <code>local_path</code> must have been prepared such that it
+contains only (tar-g-)zipped data set files, one file for each data
+set / algorithm, within an otherwise arbitrary folder structure (it is
+possible and for large archives often desirable to create and maintain
+sub-archives within folders of an archive). Choose the name of the zip
+files carefully as they become the displayed algorithm names.</p>
+<p>If a definition file already exists it is backed up and replaced.</p>
+<p>The "created" archive is registered with <code><a href="cocopp.archiving.ArchivesLocal.html" class="internal-link" title="cocopp.archiving.ArchivesLocal">ArchivesLocal</a></code> serving as a
+user-owned machine-wide memory. <tt class="rst-docutils literal">cocopp.archiving.ArchivesLocal()</tt>
+shows the list.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp <span class="py-keyword">import</span> archiving
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># folder containing the data we want to become known in the archive:</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>local_path = <span class="py-string">'my-archives/my-first-archive'</span>
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>my_archive = archiving.create(local_path)  <span class="py-comment"># doctest:+SKIP</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>same_archive = archiving.get(local_path)  <span class="py-comment"># doctest:+SKIP</span></pre><p>An archive definition file is a list of (relative file name,
+hash and (optionally) filesize) triplets.</p>
+<p>Assumes that <code>local_path</code> points to a complete and sane archive or
+a definition file to be generated at the root of this archive.</p>
+<p>In itself this is not particularly useful, because we can also
+directly load or use the zip files instead of archiving them first and
+accessing the data then from the archive class within Python.</p>
+<p>However, if the data are put online together with the definition file,
+everyone can locally re-create this archive via <code><a href="#get" class="internal-link" title="cocopp.archiving.get">get</a></code> and use the
+returned <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">COCODataArchive</a></code> without downloading any data
+immediately, but only "on demand".</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.archiving.get">
+    
+  </a>
+  <a name="get">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get</span>(url_or_folder=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a data archive <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">COCODataArchive</a></code>.</p>
+<p><code>url_or_folder</code> must be an URL or a folder, any of which must contain
+an archive definition file of name <code>coco_archive_definition.txt</code>. Use
+<code><a href="#create" class="internal-link" title="cocopp.archiving.create">create</a></code> to create this file if necessary.</p>
+<p>When an URL is given the archive may already exist locally from
+previous calls of <code><a href="#get" class="internal-link" title="cocopp.archiving.get">get</a></code>. Then, <tt class="rst-docutils literal"><span class="pre">get(url).update()</span></tt> updates the
+definition file and returns the updated archive. Only the definition
+file is updated, no data are downloaded before they are requested. The
+updated class instance re-downloads requested data when the saved hash
+disagrees with the computed hash. With new instances of the archive, if
+<code><a href="cocopp.archiving.COCODataArchive.html#update" class="internal-link" title="cocopp.archiving.COCODataArchive.update">COCODataArchive.update</a></code> is not called on them, an error message
+may be shown when they try to use outdated local data and the data can
+be deleted manually as specified in the shown message.</p>
+<p>Remotely retrieved archive definitions are registered with <code><a href="cocopp.archiving.ArchivesKnown.html" class="internal-link" title="cocopp.archiving.ArchivesKnown">ArchivesKnown</a></code>
+and <tt class="rst-docutils literal">cocopp.archiving.ArchivesKnown()</tt> will show a list.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>url = <span class="py-string">'https://cma-es.github.io/lq-cma/data-archives/lq-gecco2019'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>arch = cocopp.archiving.get(url).update()  <span class="py-comment"># downloads a 0.4KB definition file</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(arch)
+<span class="py-output">4</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> arch.remote_data_path.split(<span class="py-string">'//'</span>, 1)[1] == url.split(<span class="py-string">'//'</span>, 1)[1], (arch.remote_data_path, url)</pre><p>See <code><a href="index.html#archives" class="internal-link">cocopp.archives</a></code> for "officially" available archives.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.archiving.read_definition_file">
+    
+  </a>
+  <a name="read_definition_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_definition_file</span>(local_path_or_definition_file):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return definition triple <code>list</code></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.archiving.__author__">
+    
+  </a>
+  <a name="__author__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__author__</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.archiving.backup_last_filename">
+    
+  </a>
+  <a name="backup_last_filename">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">backup_last_filename</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.archiving.coco_url">
+    
+  </a>
+  <a name="coco_url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">coco_url</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.archiving.coco_urls">
+    
+  </a>
+  <a name="coco_urls">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">coco_urls</span>: <code>list[<wbr></wbr>str]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.archiving.cocopp_home">
+    
+  </a>
+  <a name="cocopp_home">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">cocopp_home</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.archiving.default_archive_location">
+    
+  </a>
+  <a name="default_archive_location">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">default_archive_location</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.archiving.default_definition_filename">
+    
+  </a>
+  <a name="default_definition_filename">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">default_definition_filename</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.archiving.listing_file_extension">
+    
+  </a>
+  <a name="listing_file_extension">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">listing_file_extension</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.archiving.listing_file_start">
+    
+  </a>
+  <a name="listing_file_start">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">listing_file_start</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.archiving.official_archives">
+    
+  </a>
+  <a name="official_archives">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">official_archives</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._abs_path">
+    
+  </a>
+  <a name="_abs_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_abs_path</span>(path, *args):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a (OS-dependent) user-expanded path.</p>
+<p><code>os.path.abspath</code> takes care of using the right <code>os.path.sep</code>.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._definition_file_to_read">
+    
+  </a>
+  <a name="_definition_file_to_read">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_definition_file_to_read</span>(local_path_or_definition_file):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return absolute path for sound definition file name.</p>
+<p>The file or path may or may not exist.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._definition_file_to_write">
+    
+  </a>
+  <a name="_definition_file_to_write">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_definition_file_to_write</span>(local_path_or_filename, filename=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return absolute path to a possibly non-exisiting definition file name.</p>
+<p>Creates a backup if the file exists. Does not create the file or folders
+when they do not exist.</p>
+<p>Details: if <tt class="rst-docutils literal">filename is None</tt>, tries to guess whether the first
+argument already includes the filename. If it seems necessary,
+<code><a href="#default_definition_filename" class="internal-link" title="cocopp.archiving.default_definition_filename">default_definition_filename</a></code> is appended.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._download_definitions">
+    
+  </a>
+  <a name="_download_definitions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_definitions</span>(url, target_folder):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>download definition file and sync url into it</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._get_remote">
+    
+  </a>
+  <a name="_get_remote">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_remote</span>(url, target_folder=None, redownload=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return remote data archive as <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">COCODataArchive</a></code> instance.</p>
+<p>If necessary, the archive is "created" by downloading the definition file
+from <code><a href="cocopp.archiving.OfficialArchives.html#url" class="internal-link" title="cocopp.archiving.OfficialArchives.url">url</a></code> to <code>target_folder</code> which doesn't need to exist.</p>
+<p>Details: The target folder name is by default derived from the <code><a href="cocopp.archiving.OfficialArchives.html#url" class="internal-link" title="cocopp.archiving.OfficialArchives.url">url</a></code> and
+created within <tt class="rst-docutils literal">default_archive_location == <span class="pre">~/.cocopp/data-archives</span></tt>.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._hash">
+    
+  </a>
+  <a name="_hash">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_hash</span>(file_name, hash_function=hashlib.sha256):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>compute hash of file <code>file_name</code></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._is_url">
+    
+  </a>
+  <a name="_is_url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_is_url</span>(s):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._make_backup">
+    
+  </a>
+  <a name="_make_backup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_backup</span>(fullname):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>backup file with added time stamp if it exists, otherwise do nothing.</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._makedirs">
+    
+  </a>
+  <a name="_makedirs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_makedirs</span>(path, error_ok=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._old_move_official_local_data">
+    
+  </a>
+  <a name="_old_move_official_local_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_old_move_official_local_data</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>move "official" archives folder to the generic standardized location once and for all</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._repr_definitions">
+    
+  </a>
+  <a name="_repr_definitions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_repr_definitions</span>(list_):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._str_to_list">
+    
+  </a>
+  <a name="_str_to_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_str_to_list</span>(str_or_list):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>try to return a non-string iterable in either case</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._url_add">
+    
+  </a>
+  <a name="_url_add">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_url_add</span>(folder, url):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>add <tt class="rst-docutils literal">('_url_', url),</tt> to the definition file in <code>folder</code>.</p>
+<p>This function is idempotent, however different urls may be in the list.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.archiving._url_to_folder_name">
+    
+  </a>
+  <a name="_url_to_folder_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_url_to_folder_name</span>(url):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return a path within the default archive location</div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

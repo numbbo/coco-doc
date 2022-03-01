@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.pptable</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.pptable.html" class="internal-link" title="cocopp.pptable">pptable</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Module for generating tables used by rungeneric1.py.</p>
+<p>The generated tables give the ERT and in brackets the 10th to 90th
+percentile range divided by two of 100 simulated runs divided by the
+ERT of a reference algorithm (given in the respective first row and as
+indicated in testbedsettings.py)
+for different target precisions for different functions. If the reference
+algorithm did not reach the target precision, the absolute values are
+given.</p>
+<p>The median number of conducted function evaluations is given in
+<em>italics</em>, if no run reached 1e-7.
+#succ is the number of trials that reached the target precision 1e-8
+<strong>Bold</strong> entries are statistically significantly better (according to
+the rank-sum test) compared to the given reference algorithm, with
+p = 0.05 or p = 1e-k where k &gt; 1 is the number following the
+downarrow symbol, with Bonferroni correction by the number of
+functions.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id99">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_table_caption" class="internal-link" title="cocopp.pptable.get_table_caption">get​_table​_caption</a></code></td>
+    <td>Sets table caption, based on the testbedsettings.current_testbed and genericsettings.runlength_based_targets.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#main" class="internal-link" title="cocopp.pptable.main">main</a></code></td>
+    <td>Generate a table of ratio ERT/ERTref vs target precision.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.pptable.get_table_caption">
+    
+  </a>
+  <a name="get_table_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_table_caption</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Sets table caption, based on the testbedsettings.current_testbed
+and genericsettings.runlength_based_targets.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pptable.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span>(dsList, dims_of_interest, outputdir, latex_commands_file):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generate a table of ratio ERT/ERTref vs target precision.</p>
+<p>1 table per dimension will be generated.</p>
+<p>Rank-sum tests table on "Final Data Points" for only one algorithm.
+that is, for example, using 1/#fevals(ftarget) if ftarget was
+reached and -f_final otherwise as input for the rank-sum test, where
+obviously the larger the better.</p>
+</div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocoex.utilities.ShortInfo</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocoex <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocoex</a></code><wbr></wbr>.<code><a href="cocoex.utilities.html" class="internal-link" title="cocoex.utilities">utilities</a></code><wbr></wbr>.<code><a href="cocoex.utilities.ShortInfo.html" class="internal-link" title="cocoex.utilities.ShortInfo">ShortInfo</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ShortInfo</span>(object):</code></p>
+        <p><a href="classIndex.html#cocoex.utilities.ShortInfo">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>print minimal info during benchmarking.</p>
+<p>After initialization, to be called right before the solver is called with
+the respective problem. Prints nothing if only the instance id changed.</p>
+<p>Example output:</p>
+<blockquote>
+<p>Jan20 18h27:56, d=2, running: f01f02f03f04f05f06f07f08f09f10f11f12f13f14f15f16f17f18f19f20f21f22f23f24f25f26f27f28f29f30f31f32f33f34f35f36f37f38f39f40f41f42f43f44f45f46f47f48f49f50f51f52f53f54f55 done</p>
+<p>Jan20 18h27:56, d=3, running: f01f02f03f04f05f06f07f08f09f10f11f12f13f14f15f16f17f18f19f20f21f22f23f24f25f26f27f28f29f30f31f32f33f34f35f36f37f38f39f40f41f42f43f44f45f46f47f48f49f50f51f52f53f54f55 done</p>
+<p>Jan20 18h27:57, d=5, running: f01f02f03f04f05f06f07f08f09f10f11f12f13f14f15f16f17f18f19f20f21f22f23f24f25f26f27f28f29f30f31f32f33f34f35f36f37f38f39f40f41f42f43f44f45f46f47f48f49f50f51f52f53f54f55 done</p>
+</blockquote>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id12">
+  
+  
+  <tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#short_time_stap" class="internal-link" title="cocoex.utilities.ShortInfo.short_time_stap">short​_time​_stap</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__call__" class="internal-link" title="cocoex.utilities.ShortInfo.__call__">__call__</a></code></td>
+    <td>uses <code>problem.id</code> and <code>problem.dimension</code> to decide what to print.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocoex.utilities.ShortInfo.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_evals" class="internal-link" title="cocoex.utilities.ShortInfo.add_evals">add​_evals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dimension_done" class="internal-link" title="cocoex.utilities.ShortInfo.dimension_done">dimension​_done</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#function_done" class="internal-link" title="cocoex.utilities.ShortInfo.function_done">function​_done</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#print" class="internal-link" title="cocoex.utilities.ShortInfo.print">print</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#print_timings" class="internal-link" title="cocoex.utilities.ShortInfo.print_timings">print​_timings</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#d_current" class="internal-link" title="cocoex.utilities.ShortInfo.d_current">d​_current</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#evals_by_dimension" class="internal-link" title="cocoex.utilities.ShortInfo.evals_by_dimension">evals​_by​_dimension</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#evals_dimension" class="internal-link" title="cocoex.utilities.ShortInfo.evals_dimension">evals​_dimension</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#f_current" class="internal-link" title="cocoex.utilities.ShortInfo.f_current">f​_current</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#runs_function" class="internal-link" title="cocoex.utilities.ShortInfo.runs_function">runs​_function</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#t0_dimension" class="internal-link" title="cocoex.utilities.ShortInfo.t0_dimension">t0​_dimension</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basestaticmethod">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.short_time_stap">
+    
+  </a>
+  <a name="short_time_stap">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">short_time_stap</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.__call__">
+    
+  </a>
+  <a name="__call__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__call__</span>(self, problem):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>uses <code>problem.id</code> and <code>problem.dimension</code> to decide what to print.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.add_evals">
+    
+  </a>
+  <a name="add_evals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_evals</span>(self, evals, runs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.dimension_done">
+    
+  </a>
+  <a name="dimension_done">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dimension_done</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.function_done">
+    
+  </a>
+  <a name="function_done">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">function_done</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.print">
+    
+  </a>
+  <a name="print">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">print</span>(self, problem, end=<span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.print_timings">
+    
+  </a>
+  <a name="print_timings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">print_timings</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.d_current">
+    
+  </a>
+  <a name="d_current">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">d_current</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.evals_by_dimension">
+    
+  </a>
+  <a name="evals_by_dimension">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">evals_by_dimension</span>: <code>dict</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.evals_dimension">
+    
+  </a>
+  <a name="evals_dimension">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">evals_dimension</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.f_current">
+    
+  </a>
+  <a name="f_current">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">f_current</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.runs_function">
+    
+  </a>
+  <a name="runs_function">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">runs_function</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.ShortInfo.t0_dimension">
+    
+  </a>
+  <a name="t0_dimension">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">t0_dimension</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocoex,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:44:24.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

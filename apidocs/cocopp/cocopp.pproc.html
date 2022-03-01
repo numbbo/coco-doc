@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.pproc</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.pproc.html" class="internal-link" title="cocopp.pproc">pproc</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Raw post-processing routines.</p>
+<p>This module implements class <code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code>, unit element in the
+post-processing and class <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code>, sequence of instances
+of <code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code>.</p>
+<p>Futhermore it implements methods for dealing with a third data structure
+which is a dictionary of <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> which is handy when
+dealing with <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> instances from multiple algorithms
+for comparisons.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id72">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">​Data​Set</a></code></td>
+    <td>Unit element for the COCO post-processing.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">​Data​Set​List</a></code></td>
+    <td>List of instances of <code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code>.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.pproc.DictAlg.html" class="internal-link" title="cocopp.pproc.DictAlg">​Dict​Alg</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link" title="cocopp.pproc.RunlengthBasedTargetValues">​Runlength​Based​Target​Values</a></code></td>
+    <td>a class instance call returns f-target values based on reference runlengths:</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.pproc.TargetValues.html" class="internal-link" title="cocopp.pproc.TargetValues">​Target​Values</a></code></td>
+    <td>store and retrieve a list of target function values:</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#align_list" class="internal-link" title="cocopp.pproc.align_list">align​_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#asTargetValues" class="internal-link" title="cocopp.pproc.asTargetValues">as​Target​Values</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#cocofy" class="internal-link" title="cocopp.pproc.cocofy">cocofy</a></code></td>
+    <td>Replaces cocopp references in pickles files with coco_pproc This could become necessary for future backwards compatibility, however rather should become a class method.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#dictAlgByDim" class="internal-link" title="cocopp.pproc.dictAlgByDim">dict​Alg​By​Dim</a></code></td>
+    <td>Returns a dictionary with problem dimension as key from a dictionary of DataSet lists.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#dictAlgByDim2" class="internal-link" title="cocopp.pproc.dictAlgByDim2">dict​Alg​By​Dim2</a></code></td>
+    <td>Returns a dictionary with problem dimension as key.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#dictAlgByFun" class="internal-link" title="cocopp.pproc.dictAlgByFun">dict​Alg​By​Fun</a></code></td>
+    <td>Returns a dictionary with function id as key.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#dictAlgByFuncGroup" class="internal-link" title="cocopp.pproc.dictAlgByFuncGroup">dict​Alg​By​Func​Group</a></code></td>
+    <td>Returns a dictionary with function group as key.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#dictAlgByNoi" class="internal-link" title="cocopp.pproc.dictAlgByNoi">dict​Alg​By​Noi</a></code></td>
+    <td>Returns a dictionary with noise group as key.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parseinfo" class="internal-link" title="cocopp.pproc.parseinfo">parseinfo</a></code></td>
+    <td>Extract data from a header line in an index entry.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parseinfoold" class="internal-link" title="cocopp.pproc.parseinfoold">parseinfoold</a></code></td>
+    <td>Deprecated: Extract data from a header line in an index entry.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#process_arguments" class="internal-link" title="cocopp.pproc.process_arguments">process​_arguments</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#processInputArgs" class="internal-link" title="cocopp.pproc.processInputArgs">process​Input​Args</a></code></td>
+    <td>Process command line arguments.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_unique_algId" class="internal-link" title="cocopp.pproc.set_unique_algId">set_unique_alg​Id</a></code></td>
+    <td>on return, elements in <tt class="rst-docutils literal">ds_list</tt> do not have an <tt class="rst-docutils literal">algId</tt> attribute value from <tt class="rst-docutils literal">taken_ids</tt> or from <tt class="rst-docutils literal">ds_list_reference</tt> <tt class="rst-docutils literal">if taken_ids is None</tt>.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#store_reference_values" class="internal-link" title="cocopp.pproc.store_reference_values">store​_reference​_values</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#maximal_evaluations_only_to_last_target" class="internal-link" title="cocopp.pproc.maximal_evaluations_only_to_last_target">maximal​_evaluations​_only​_to​_last​_target</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#targets_displayed_for_info" class="internal-link" title="cocopp.pproc.targets_displayed_for_info">targets​_displayed​_for​_info</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_DataSet_complement_data" class="internal-link" title="cocopp.pproc._DataSet_complement_data">_​Data​Set_complement_data</a></code></td>
+    <td>insert a line for each target value, never used (detEvals(targets) does the job on the fly).</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.align_list">
+    
+  </a>
+  <a name="align_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">align_list</span>(list_to_process, evals):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.asTargetValues">
+    
+  </a>
+  <a name="asTargetValues">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">asTargetValues</span>(target_values):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.cocofy">
+    
+  </a>
+  <a name="cocofy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">cocofy</span>(filename):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Replaces cocopp references in pickles files with coco_pproc
+This could become necessary for future backwards compatibility,
+however rather should become a class method.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.dictAlgByDim">
+    
+  </a>
+  <a name="dictAlgByDim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictAlgByDim</span>(dictAlg):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary with problem dimension as key from
+a dictionary of DataSet lists.</p>
+<p>The input argument is a dictionary with algorithm names as
+keys and a list of <code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code> instances as values.
+The resulting dictionary will have dimension as key and as values
+dictionaries with algorithm names as keys.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.dictAlgByDim2">
+    
+  </a>
+  <a name="dictAlgByDim2">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictAlgByDim2</span>(dictAlg, remove_empty=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary with problem dimension as key.</p>
+<p>The difference with <code><a href="#dictAlgByDim" class="internal-link" title="cocopp.pproc.dictAlgByDim">dictAlgByDim</a></code> is that there is an
+entry for each algorithm even if the resulting
+<code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> is empty.</p>
+<p>This function is meant to be used with an input argument which is a
+dictionary with algorithm names as keys and which has list of
+<code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code> instances as values.
+The resulting dictionary will have dimension as key and as values
+dictionaries with algorithm names as keys.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.dictAlgByFun">
+    
+  </a>
+  <a name="dictAlgByFun">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictAlgByFun</span>(dictAlg, agg_cons=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary with function id as key.</p>
+<p>This method is meant to be used with an input argument which is a
+dictionary with algorithm names as keys and which has list of
+<code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code> instances as values.
+The resulting dictionary will have function id as key and as values
+dictionaries with algorithm names as keys.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.dictAlgByFuncGroup">
+    
+  </a>
+  <a name="dictAlgByFuncGroup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictAlgByFuncGroup</span>(dictAlg):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary with function group as key.</p>
+<p>This method is meant to be used with an input argument which is a
+dictionary with algorithm names as keys and which has list of
+<code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code> instances as values.
+The resulting dictionary will have a string denoting the function
+group and as values dictionaries with algorithm names as keys.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.dictAlgByNoi">
+    
+  </a>
+  <a name="dictAlgByNoi">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictAlgByNoi</span>(dictAlg):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary with noise group as key.</p>
+<p>This method is meant to be used with an input argument which is a
+dictionary with algorithm names as keys and which has list of
+<code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code> instances as values.
+The resulting dictionary will have a string denoting the noise group
+('noiselessall' or 'nzall') and as values dictionaries with
+algorithm names as keys.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.parseinfo">
+    
+  </a>
+  <a name="parseinfo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parseinfo</span>(s):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Extract data from a header line in an index entry.</p>
+<p>Use a 'smarter' regular expression than <code><a href="#parseinfoold" class="internal-link" title="cocopp.pproc.parseinfoold">parseinfoold</a></code>.
+The header line should be a string of comma-separated pairs of
+key=value, for instance: key = value, key = 'value'</p>
+<p>Keys should not use comma or quote characters.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.parseinfoold">
+    
+  </a>
+  <a name="parseinfoold">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parseinfoold</span>(s):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Deprecated: Extract data from a header line in an index entry.</p>
+<p>Older but verified version of <code><a href="#parseinfo" class="internal-link" title="cocopp.pproc.parseinfo">parseinfo</a></code></p>
+<p>The header line should be a string of comma-separated pairs of
+key=value, for instance: key = value, key = 'value'</p>
+<p>Keys should not use comma or quote characters.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.process_arguments">
+    
+  </a>
+  <a name="process_arguments">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">process_arguments</span>(args, current_hash, dictAlg, dsList, sortedAlgs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.processInputArgs">
+    
+  </a>
+  <a name="processInputArgs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">processInputArgs</span>(args, process_background_algorithms=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Process command line arguments.</p>
+<p>Returns several instances of <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code>, and a list of
+algorithms from a list of strings representing file and folder names,
+see below for details. This command operates folder-wise: one folder
+corresponds to one algorithm.</p>
+<p>It is recommended that if a folder listed in args contain both
+<a href="#system-message-1"><span class="rst-problematic" id="rst-problematic-1">:file:`info`</span></a> files and the associated <a href="#system-message-2"><span class="rst-problematic" id="rst-problematic-2">:file:`pickle`</span></a> files, they be
+kept in different locations for efficiency reasons.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">process​_background​_algorithms</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list args</span></td><td class="fieldArgDesc">string arguments for folder names</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bool process​_background​_algorithms</span></td><td class="fieldArgDesc">option to process also background algorithms</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><dl class="rst-docutils">
+<dt>all_datasets</dt>
+<dd>a list containing all DataSet instances, this is to
+prevent the regrouping done in instances of DataSetList.
+Caveat: algorithms with the same name are overwritten!?</dd>
+<dt>pathnames</dt>
+<dd>a list of keys of datasetlists_per_alg with the ordering as
+given by the input argument args</dd>
+<dt>datasetlists_by_alg</dt>
+<dd>a dictionary which associates each algorithm via its input path
+name to a DataSetList</dd>
+</dl>
+</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.set_unique_algId">
+    
+  </a>
+  <a name="set_unique_algId">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_unique_algId</span>(ds_list, ds_list_reference, taken_ids=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>on return, elements in <tt class="rst-docutils literal">ds_list</tt> do not have an <tt class="rst-docutils literal">algId</tt>
+attribute value from <tt class="rst-docutils literal">taken_ids</tt> or from
+<tt class="rst-docutils literal">ds_list_reference</tt> <tt class="rst-docutils literal">if taken_ids is None</tt>.</p>
+<p>In case, <tt class="rst-docutils literal">BFGS</tt> becomes <tt class="rst-docutils literal">BFGS 2</tt> etc.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pproc.store_reference_values">
+    
+  </a>
+  <a name="store_reference_values">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">store_reference_values</span>(ds_list):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.pproc.maximal_evaluations_only_to_last_target">
+    
+  </a>
+  <a name="maximal_evaluations_only_to_last_target">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">maximal_evaluations_only_to_last_target</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.pproc.targets_displayed_for_info">
+    
+  </a>
+  <a name="targets_displayed_for_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">targets_displayed_for_info</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.pproc._DataSet_complement_data">
+    
+  </a>
+  <a name="_DataSet_complement_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_DataSet_complement_data</span>(self, step=10**0.2, final_target=1e-08):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>insert a line for each target value, never used (detEvals(targets) does the job on the fly).</p>
+<p>To be resolved: old data sets don't have this method,
+therefore it must be global in the module</p>
+</div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

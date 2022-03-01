@@ -1,0 +1,2383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.pproc.DataSet</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.pproc.html" class="internal-link" title="cocopp.pproc">pproc</a></code><wbr></wbr>.<code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DataSet</span>(object):</code></p><p>Known subclasses: <code><a href="cocopp.algportfolio.DataSet.html" class="internal-link">cocopp.algportfolio.DataSet</a></code>, <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></p>
+        <p><a href="classIndex.html#cocopp.pproc.DataSet">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Unit element for the COCO post-processing.</p>
+<p>An instance of this class is created from one unit element of
+experimental data. One unit element would correspond to data for a
+given algorithm (a given <code>algId</code> and a <code><a href="#comment" class="internal-link" title="cocopp.pproc.DataSet.comment">comment</a></code>
+line) and a given function and dimension (<code>funcId</code> and
+<code>dim</code>).</p>
+<p>Class attributes:</p>
+<blockquote>
+<ul class="rst-simple">
+<li><em>funcId</em> -- function Id (integer)</li>
+<li><em>dim</em> -- dimension (integer)</li>
+<li><em>indexFiles</em> -- associated index files (list of strings)</li>
+<li><em>dataFiles</em> -- associated data files (list of strings)</li>
+<li><em>comment</em> -- comment for the setting (string)</li>
+<li><em>targetFuncValue</em> -- final target function value (float), might be missing</li>
+<li><dl class="rst-first rst-docutils">
+<dt><em>precision</em> -- final ftarget - fopt (float), data with</dt>
+<dd>target[idat] &lt; precision are optional and not relevant.</dd>
+</dl>
+</li>
+<li><em>algId</em> -- algorithm name (string)</li>
+<li><em>evals</em> -- data aligned by function values (2xarray, list of data rows [f_val, eval_run1, eval_run2,...]); caveat: in a portfolio, data rows can have different lengths</li>
+<li><em>funvals</em> -- data aligned by function evaluations (2xarray)</li>
+<li><em>maxevals</em> -- maximum number of function evaluations (array)</li>
+<li><em>maxfgevals</em> -- maximum (i.e. last) weighted sum of evaluations+constraints_evals per instance (array)</li>
+<li><em>finalfunvals</em> -- final function values (array)</li>
+<li><dl class="rst-first rst-docutils">
+<dt><em>readmaxevals</em> -- maximum number of function evaluations read</dt>
+<dd>from index file (array)</dd>
+</dl>
+</li>
+<li><dl class="rst-first rst-docutils">
+<dt><em>readfinalFminusFtarget</em> -- final function values - ftarget read</dt>
+<dd>from index file (array)</dd>
+</dl>
+</li>
+<li><em>pickleFile</em> -- associated pickle file name (string)</li>
+<li><em>target</em> -- <tt class="rst-docutils literal">== <span class="pre">evals[:,</span> 0]</tt>, target function values attained (array)</li>
+<li><em>suite_name</em> -- name of the test suite like "bbob" or "bbob-biobj"</li>
+<li><em>ert</em> -- ert for reaching the target values in target (array)</li>
+<li><dl class="rst-first rst-docutils">
+<dt><em>instancenumbers</em> -- list of numbers corresponding to the instances of</dt>
+<dd>the test function considered (list of int)</dd>
+</dl>
+</li>
+<li><em>isFinalized</em> -- list of bool for if runs were properly finalized</li>
+</ul>
+</blockquote>
+<p><code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> and <code><a href="#funvals" class="internal-link" title="cocopp.pproc.DataSet.funvals">funvals</a></code> are arrays of data collected
+from <code>N</code> data sets.</p>
+<p>Both have the same format: zero-th column is the value on which the
+data of a row is aligned, the <code>N</code> subsequent columns are
+either the numbers of function evaluations for <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> or
+function values for <code><a href="#funvals" class="internal-link" title="cocopp.pproc.DataSet.funvals">funvals</a></code>.</p>
+<p>A short example:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> __future__ <span class="py-keyword">import</span> print_function
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> sys
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> os
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> urllib
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> tarfile
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.genericsettings.verbose = <span class="py-builtin">False</span> <span class="py-comment"># ensure to make doctests work</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">def</span> <span class="py-defname">setup</span>(infoFile):
+<span class="py-more">... </span>    <span class="py-keyword">if</span> <span class="py-keyword">not</span> os.path.exists(infoFile):
+<span class="py-more">... </span>        filename = cocopp.archives.bbob.get_one(<span class="py-string">'2009/BIPOP-CMA-ES_hansen'</span>)
+<span class="py-more">... </span>        tarfile.open(filename).extractall(cocopp.archives.bbob.local_data_path)
+<span class="py-prompt">&gt;&gt;&gt; </span>infoFile = os.path.join(cocopp.archives.bbob.local_data_path, <span class="py-string">'BIPOP-CMA-ES'</span>, <span class="py-string">'bbobexp_f2.info'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">'get'</span>); setup(infoFile) <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">get...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>dslist = cocopp.load(infoFile)
+<span class="py-output">  Data consistent according to consistency_check() in pproc.DataSet</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(dslist)  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">[DataSet(BIPOP-CMA-ES on f2 2-D), ..., DataSet(BIPOP-CMA-ES on f2 40-D)]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">type</span>(dslist)
+<span class="py-output">&lt;class 'cocopp.pproc.DataSetList'&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(dslist)
+<span class="py-output">6</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ds = dslist[3]  <span class="py-comment"># a single data set of type DataSet</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ds
+<span class="py-output">DataSet(BIPOP-CMA-ES on f2 10-D)</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> d <span class="py-keyword">in</span> <span class="py-builtin">dir</span>(ds): <span class="py-builtin">print</span>(d)  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">_DataSet__parseHeader</span>
+<span class="py-output">...</span>
+<span class="py-output">algId</span>
+<span class="py-output">algs</span>
+<span class="py-output">bootstrap_sample_size</span>
+<span class="py-output">comment</span>
+<span class="py-output">...</span>
+<span class="py-output">dim</span>
+<span class="py-output">ert</span>
+<span class="py-output">evals</span>
+<span class="py-output">evals_appended</span>
+<span class="py-output">evals_are_appended</span>
+<span class="py-output">evals_with_simulated_restarts</span>
+<span class="py-output">finalfunvals</span>
+<span class="py-output">funcId</span>
+<span class="py-output">funvals</span>
+<span class="py-output">...</span>
+<span class="py-output">info</span>
+<span class="py-output">instance_multipliers</span>
+<span class="py-output">instancenumbers</span>
+<span class="py-output">isBiobjective</span>
+<span class="py-output">isFinalized</span>
+<span class="py-output">mMaxEvals</span>
+<span class="py-output">max_eval</span>
+<span class="py-output">maxevals</span>
+<span class="py-output">maxfgevals</span>
+<span class="py-output">median_evals</span>
+<span class="py-output">nbRuns</span>
+<span class="py-output">nbRuns_raw</span>
+<span class="py-output">number_of_constraints</span>
+<span class="py-output">pickle</span>
+<span class="py-output">plot</span>
+<span class="py-output">plot_funvals</span>
+<span class="py-output">precision</span>
+<span class="py-output">readfinalFminusFtarget</span>
+<span class="py-output">readmaxevals</span>
+<span class="py-output">reference_values</span>
+<span class="py-output">splitByTrials</span>
+<span class="py-output">success_ratio</span>
+<span class="py-output">suite_name</span>
+<span class="py-output">target</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">all</span>(ds.evals[:, 0] == ds.target)  <span class="py-comment"># first column of ds.evals is the "target" f-value</span>
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># investigate row 0,10,20,... and of the result columns 0,5,6, index 0 is ftarget</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ev = ds.evals[0::10, (0,5,6)]  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> 3.98107170e+07 &lt;= ev[0][0] &lt;= 3.98107171e+07
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> ev[0][1] == 1
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> ev[0][2] == 1
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> 6.07000000e+03 &lt;= ev[-1][-1] &lt;= 6.07000001e+03
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># show last row, same columns</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ev = ds.evals[-1,(0,5,6)]  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> ev[0] == 1e-8
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> 5.67600000e+03 &lt;= ev[1] &lt;= 5.67600001e+03
+<span class="py-prompt">&gt;&gt;&gt; </span>ds.info()  <span class="py-comment"># prints similar data more nicely formated</span>
+<span class="py-output">Algorithm: BIPOP-CMA-ES</span>
+<span class="py-output">Function ID: 2</span>
+<span class="py-output">Dimension DIM = 10</span>
+<span class="py-output">Number of trials: 15</span>
+<span class="py-output">Final target Df: 1e-08</span>
+<span class="py-output">min / max number of evals per trial: 5676 / 6346</span>
+<span class="py-output">   evals/DIM:  best     15%     50%     85%     max |  ERT/DIM  nsucc</span>
+<span class="py-output">  ---Df---|-----------------------------------------|----------------</span>
+<span class="py-output">  1.0e+03 |     102     126     170     205     235 |    164.2  15</span>
+<span class="py-output">  1.0e+01 |     278     306     364     457     480 |    374.5  15</span>
+<span class="py-output">  1.0e-01 |     402     445     497     522     536 |    490.8  15</span>
+<span class="py-output">  1.0e-03 |     480     516     529     554     567 |    532.8  15</span>
+<span class="py-output">  1.0e-05 |     513     546     563     584     593 |    562.5  15</span>
+<span class="py-output">  1.0e-08 |     568     594     611     628     635 |    609.6  15</span>
+</pre><pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> numpy <span class="py-keyword">as</span> np
+<span class="py-prompt">&gt;&gt;&gt; </span>idx = <span class="py-builtin">list</span>(<span class="py-builtin">range</span>(0, 50, 10)) + [-1]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># get ERT (expected running time) for some targets</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>t = np.array([idx, ds.target[idx], ds.ert[idx]]).T  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> t[0][0] == 0
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> t[0][2] == 1
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> t[-1][-2] == 1e-8
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> 6.09626666e+03 &lt;= t[-1][-1] &lt;= 6.09626667e+03</pre><p>Note that the load of a data set depends on the set of instances
+specified in testbedsettings' TestBed class (or its children)
+(None means all instances are read in):
+&gt;&gt;&gt; import sys
+&gt;&gt;&gt; import os
+&gt;&gt;&gt; import urllib
+&gt;&gt;&gt; import tarfile
+&gt;&gt;&gt; import cocopp
+&gt;&gt;&gt; cocopp.genericsettings.verbose = False # ensure to make doctests work
+&gt;&gt;&gt; infoFile = os.path.join(cocopp.archives.bbob.local_data_path, 'BIPOP-CMA-ES', 'bbobexp_f2.info')
+&gt;&gt;&gt; if not os.path.exists(infoFile):
+...   filename = cocopp.archives.bbob.get_one('bbob/2009/BIPOP-CMA-ES_hansen')
+...   tarfile.open(filename).extractall(cocopp.archives.bbob.local_data_path)
+&gt;&gt;&gt; dslist = cocopp.load(infoFile)</p>
+<blockquote>
+Data consistent according to consistency_check() in pproc.DataSet</blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>dslist[2].instancenumbers
+<span class="py-output">[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>dslist[2].evals[-1]  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">array([...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> (dslist[2].evals[-1])[0] == 1.0e-8
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> 2.01200000e+03 &lt;= (dslist[2].evals[-1])[-1] &lt;= 2.01200001e+03
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># because testbedsettings.GECCOBBOBTestbed.settings['instancesOfInterest'] was None</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.testbedsettings.GECCOBBOBTestbed.settings[<span class="py-string">'instancesOfInterest'</span>] = [1, 3]
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.config.config(<span class="py-string">'bbob'</span>) <span class="py-comment"># make sure that settings are used</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>dslist2 = cocopp.load(infoFile)
+<span class="py-output">  Data consistent according to consistency_check() in pproc.DataSet</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>dslist2[2].instancenumbers
+<span class="py-output">[1, 1, 1, 3, 3, 3]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>dslist2[2].evals[-1]  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">array([...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> (dslist2[2].evals[-1])[0] == 1.0e-8
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> 2.20700000e+03 &lt;= (dslist2[2].evals[-1])[-1] &lt;= 2.20700001e+03
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># set things back to cause no troubles elsewhere:</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.testbedsettings.GECCOBBOBTestbed.settings[<span class="py-string">'instancesOfInterest'</span>] = <span class="py-builtin">None</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.config.config(<span class="py-string">'bbob'</span>) <span class="py-comment"># make sure that settings are used</span></pre></blockquote>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id76">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__eq__" class="internal-link" title="cocopp.pproc.DataSet.__eq__">__eq__</a></code></td>
+    <td>Compare indexEntry instances.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocopp.pproc.DataSet.__init__">__init__</a></code></td>
+    <td>Instantiate a DataSet.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__ne__" class="internal-link" title="cocopp.pproc.DataSet.__ne__">__ne__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__" class="internal-link" title="cocopp.pproc.DataSet.__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#bootstrap_sample_size" class="internal-link" title="cocopp.pproc.DataSet.bootstrap_sample_size">bootstrap​_sample​_size</a></code></td>
+    <td>return minimum size not smaller than <code>sample_size</code> such that modulo self.nbRuns() == 0</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#computeERTfromEvals" class="internal-link" title="cocopp.pproc.DataSet.computeERTfromEvals">compute​ERTfrom​Evals</a></code></td>
+    <td>Sets the attributes ert and target from the attribute evals.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#consistency_check" class="internal-link" title="cocopp.pproc.DataSet.consistency_check">consistency​_check</a></code></td>
+    <td>checks consistency of data set according to - number of instances - instances used</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#createDictInstance" class="internal-link" title="cocopp.pproc.DataSet.createDictInstance">create​Dict​Instance</a></code></td>
+    <td>Returns a dictionary of the instances.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#createDictInstanceCount" class="internal-link" title="cocopp.pproc.DataSet.createDictInstanceCount">create​Dict​Instance​Count</a></code></td>
+    <td>Returns a dictionary of the instances and their count.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#detAverageEvals" class="internal-link" title="cocopp.pproc.DataSet.detAverageEvals">det​Average​Evals</a></code></td>
+    <td>Determine the average number of f-evals for each target in <tt class="rst-docutils literal">targets</tt> list.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#detERT" class="internal-link" title="cocopp.pproc.DataSet.detERT">det​ERT</a></code></td>
+    <td>Determine the expected running time (ERT) to reach target values. The value is numpy.inf, if the target was never reached.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">det​Evals</a></code></td>
+    <td>return <tt class="rst-docutils literal">len(targets)</tt> data rows <tt class="rst-docutils literal">self.evals[i, 1:]</tt>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#detSuccesses" class="internal-link" title="cocopp.pproc.DataSet.detSuccesses">det​Successes</a></code></td>
+    <td>return the number of successful runs for each target.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#detSuccessRates" class="internal-link" title="cocopp.pproc.DataSet.detSuccessRates">det​Success​Rates</a></code></td>
+    <td>return a np.array with the success rate for each target in targets, easiest target first.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">evals​_with​_simulated​_restarts</a></code></td>
+    <td>Return a len(targets) list of <tt class="rst-docutils literal">samplesize</tt> "simulated" run lengths (#evaluations, sorted) with a similar interface as <code><a href="#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">detEvals</a></code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#generateRLData" class="internal-link" title="cocopp.pproc.DataSet.generateRLData">generate​RLData</a></code></td>
+    <td>Determine the running lengths for reaching the target values.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_data_format" class="internal-link" title="cocopp.pproc.DataSet.get_data_format">get​_data​_format</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#info" class="internal-link" title="cocopp.pproc.DataSet.info">info</a></code></td>
+    <td>print text info to stdout</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#isBiobjective" class="internal-link" title="cocopp.pproc.DataSet.isBiobjective">is​Biobjective</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#median_evals" class="internal-link" title="cocopp.pproc.DataSet.median_evals">median​_evals</a></code></td>
+    <td>return median for each row in <code>self.evals</code>, unsuccessful runs count.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mMaxEvals" class="internal-link" title="cocopp.pproc.DataSet.mMaxEvals">m​Max​Evals</a></code></td>
+    <td>Returns the maximum number of function evaluations over all runs (trials), obsolete and replaced by attribute <code><a href="#max_eval" class="internal-link" title="cocopp.pproc.DataSet.max_eval">max_eval</a></code></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#nbRuns" class="internal-link" title="cocopp.pproc.DataSet.nbRuns">nb​Runs</a></code></td>
+    <td>Returns the number of runs depending on <code><a href="cocopp.genericsettings.html#balance_instances" class="internal-link" title="cocopp.genericsettings.balance_instances">genericsettings.balance_instances</a></code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#pickle" class="internal-link" title="cocopp.pproc.DataSet.pickle">pickle</a></code></td>
+    <td>Save this instance to a pickle file.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#plot" class="internal-link" title="cocopp.pproc.DataSet.plot">plot</a></code></td>
+    <td>plot all data from <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> attribute and the median.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#plot_funvals" class="internal-link" title="cocopp.pproc.DataSet.plot_funvals">plot​_funvals</a></code></td>
+    <td>plot data of <code><a href="#funvals" class="internal-link" title="cocopp.pproc.DataSet.funvals">funvals</a></code> attribute, versatile</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#splitByTrials" class="internal-link" title="cocopp.pproc.DataSet.splitByTrials">split​By​Trials</a></code></td>
+    <td>Splits the post-processed data arrays by trials.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#algs" class="internal-link" title="cocopp.pproc.DataSet.algs">algs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#comment" class="internal-link" title="cocopp.pproc.DataSet.comment">comment</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#dataFiles" class="internal-link" title="cocopp.pproc.DataSet.dataFiles">data​Files</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#finalfunvals" class="internal-link" title="cocopp.pproc.DataSet.finalfunvals">finalfunvals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#funvals" class="internal-link" title="cocopp.pproc.DataSet.funvals">funvals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#indexFiles" class="internal-link" title="cocopp.pproc.DataSet.indexFiles">index​Files</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#instancenumbers" class="internal-link" title="cocopp.pproc.DataSet.instancenumbers">instancenumbers</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#isFinalized" class="internal-link" title="cocopp.pproc.DataSet.isFinalized">is​Finalized</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pickleFile" class="internal-link" title="cocopp.pproc.DataSet.pickleFile">pickle​File</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#readfinalFminusFtarget" class="internal-link" title="cocopp.pproc.DataSet.readfinalFminusFtarget">readfinal​Fminus​Ftarget</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#readmaxevals" class="internal-link" title="cocopp.pproc.DataSet.readmaxevals">readmaxevals</a></code></td>
+    <td>maxevals as read from the info files</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#reference_values" class="internal-link" title="cocopp.pproc.DataSet.reference_values">reference​_values</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#success_ratio" class="internal-link" title="cocopp.pproc.DataSet.success_ratio">success​_ratio</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#target" class="internal-link" title="cocopp.pproc.DataSet.target">target</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#ert" class="internal-link" title="cocopp.pproc.DataSet.ert">ert</a></code></td>
+    <td>expected runtimes for the targets in <code><a href="#target" class="internal-link" title="cocopp.pproc.DataSet.target">target</a></code>.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code></td>
+    <td><tt class="rst-docutils literal">evals</tt> contains the central data, number of evaluations.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#evals_appended" class="internal-link" title="cocopp.pproc.DataSet.evals_appended">evals​_appended</a></code></td>
+    <td>like the <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> property-attribute but here instances with the same ID are aggregated (appended).</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#evals_are_appended" class="internal-link" title="cocopp.pproc.DataSet.evals_are_appended">evals​_are​_appended</a></code></td>
+    <td>return <code>True</code> if <code>self.evals_appended</code> consist of appended trials (same instances are appended)</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#instance_multipliers" class="internal-link" title="cocopp.pproc.DataSet.instance_multipliers">instance​_multipliers</a></code></td>
+    <td>number of repetitions per instance to balance a skewed instance distribution.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#max_eval" class="internal-link" title="cocopp.pproc.DataSet.max_eval">max​_eval</a></code></td>
+    <td>maximum number of function evaluations over all runs (trials),</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#maxevals" class="internal-link" title="cocopp.pproc.DataSet.maxevals">maxevals</a></code></td>
+    <td>maxevals per instance data, i.e. the columns of <tt class="rst-docutils literal"><span class="pre">evals[:,</span> 1:]</tt>.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#maxfgevals" class="internal-link" title="cocopp.pproc.DataSet.maxfgevals">maxfgevals</a></code></td>
+    <td>maximum of the weighted f+g sum per instance.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#nbRuns_raw" class="internal-link" title="cocopp.pproc.DataSet.nbRuns_raw">nb​Runs_raw</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#number_of_constraints" class="internal-link" title="cocopp.pproc.DataSet.number_of_constraints">number​_of​_constraints</a></code></td>
+    <td>number of constraints of the function/problem the <code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code> is based upon.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#suite_name" class="internal-link" title="cocopp.pproc.DataSet.suite_name">suite​_name</a></code></td>
+    <td>Returns a string, with the name of the DataSet's underlying test suite.</td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="#_largest_finite_index" class="internal-link" title="cocopp.pproc.DataSet._largest_finite_index">​_largest​_finite​_index</a></code></td>
+    <td>return <code>i</code> such that <tt class="rst-docutils literal">isfinite(ar[i]) and not isfinite(ar[i+1])</tt>,</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#__parseHeader" class="internal-link" title="cocopp.pproc.DataSet.__parseHeader">__parse​Header</a></code></td>
+    <td>Extract data from a header line in an index entry.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_argsort" class="internal-link" title="cocopp.pproc.DataSet._argsort">​_argsort</a></code></td>
+    <td>return index array for a sorted order of trials.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_balanced_evals_row" class="internal-link" title="cocopp.pproc.DataSet._balanced_evals_row">​_balanced​_evals​_row</a></code></td>
+    <td>append evaluations to <code>evals_row</code> to achieve a balanced instance distribution.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_complement_data" class="internal-link" title="cocopp.pproc.DataSet._complement_data">​_complement​_data</a></code></td>
+    <td>insert a line for each target value, never used (detEvals(targets) does the job on the fly)</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_cut_data" class="internal-link" title="cocopp.pproc.DataSet._cut_data">​_cut​_data</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_detEvals2" class="internal-link" title="cocopp.pproc.DataSet._detEvals2">_det​Evals2</a></code></td>
+    <td>Determine the number of evaluations to reach target values.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_detMaxEvals" class="internal-link" title="cocopp.pproc.DataSet._detMaxEvals">_det​Max​Evals</a></code></td>
+    <td>computes for each data column of _evals the (maximal) evaluation until final_target was reached, or <tt class="rst-docutils literal">self.maxevals</tt> otherwise.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_evals_appended_compute" class="internal-link" title="cocopp.pproc.DataSet._evals_appended_compute">​_evals​_appended​_compute</a></code></td>
+    <td>create evals-array with appended instances.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_old_plot" class="internal-link" title="cocopp.pproc.DataSet._old_plot">​_old​_plot</a></code></td>
+    <td>plot data from <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> attribute.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_evals_balanced" class="internal-link" title="cocopp.pproc.DataSet._update_evals_balanced">​_update​_evals​_balanced</a></code></td>
+    <td>update attribute <code><a href="#_evals_balanced" class="internal-link" title="cocopp.pproc.DataSet._evals_balanced">_evals_balanced</a></code> if necessary.</td>
+  </tr><tr class="classvariable private">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#_attributes" class="internal-link" title="cocopp.pproc.DataSet._attributes">​_attributes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_ert" class="internal-link" title="cocopp.pproc.DataSet._ert">​_ert</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_ert_nb_of_data" class="internal-link" title="cocopp.pproc.DataSet._ert_nb_of_data">​_ert​_nb​_of​_data</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_evals" class="internal-link" title="cocopp.pproc.DataSet._evals">​_evals</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_evals_appended" class="internal-link" title="cocopp.pproc.DataSet._evals_appended">​_evals​_appended</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_evals_balanced" class="internal-link" title="cocopp.pproc.DataSet._evals_balanced">​_evals​_balanced</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_evals_balanced_raw_data_columns" class="internal-link" title="cocopp.pproc.DataSet._evals_balanced_raw_data_columns">​_evals​_balanced​_raw​_data​_columns</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_extra_attr" class="internal-link" title="cocopp.pproc.DataSet._extra_attr">​_extra​_attr</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_lasttdatfilelines" class="internal-link" title="cocopp.pproc.DataSet._lasttdatfilelines">​_lasttdatfilelines</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_maxevals" class="internal-link" title="cocopp.pproc.DataSet._maxevals">​_maxevals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_maxevals_appended" class="internal-link" title="cocopp.pproc.DataSet._maxevals_appended">​_maxevals​_appended</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property private">
+    
+    <td>Property</td>
+    <td><code><a href="#_instance_repetitions" class="internal-link" title="cocopp.pproc.DataSet._instance_repetitions">​_instance​_repetitions</a></code></td>
+    <td>return the number of runs that repeated a previous instance.</td>
+  </tr><tr class="property private">
+    
+    <td>Property</td>
+    <td><code><a href="#_need_balancing" class="internal-link" title="cocopp.pproc.DataSet._need_balancing">​_need​_balancing</a></code></td>
+    <td>return True of gs.balance_instances and self.instance_multipliers are &gt;1</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.__eq__">
+    
+  </a>
+  <a name="__eq__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__eq__</span>(self, other):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div>Compare indexEntry instances.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, header, comment, data, indexfile):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.algportfolio.DataSet.html" class="internal-link">cocopp.algportfolio.DataSet</a></code>, <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p>Instantiate a DataSet.</p>
+<p>The first three input arguments correspond to three consecutive
+lines of an index file (.info extension).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">header</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">comment</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">indexfile</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string header</span></td><td class="fieldArgDesc">information of the experiment</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string comment</span></td><td class="fieldArgDesc">more information on the experiment</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string data</span></td><td class="fieldArgDesc">information on the runs of the experiment</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string indexfile</span></td><td class="fieldArgDesc">string for the file name from where
+the information come</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.__ne__">
+    
+  </a>
+  <a name="__ne__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__ne__</span>(self, other):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.bootstrap_sample_size">
+    
+  </a>
+  <a name="bootstrap_sample_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">bootstrap_sample_size</span>(self, sample_size=<a href="cocopp.genericsettings.html#simulated_runlength_bootstrap_sample_size" class="internal-link" title="cocopp.genericsettings.simulated_runlength_bootstrap_sample_size">genericsettings.simulated_runlength_bootstrap_sample_size</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return minimum size not smaller than <code>sample_size</code> such that modulo self.nbRuns() == 0</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.computeERTfromEvals">
+    
+  </a>
+  <a name="computeERTfromEvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">computeERTfromEvals</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Sets the attributes ert and target from the attribute evals.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.consistency_check">
+    
+  </a>
+  <a name="consistency_check">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">consistency_check</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>checks consistency of data set according to
+- number of instances
+- instances used</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.createDictInstance">
+    
+  </a>
+  <a name="createDictInstance">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">createDictInstance</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p>Returns a dictionary of the instances.</p>
+<p>The key is the instance Id, the value is a list of index.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.createDictInstanceCount">
+    
+  </a>
+  <a name="createDictInstanceCount">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">createDictInstanceCount</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of the instances and their count.</p>
+<p>The keys are instance id and the values are the number of
+repetitions of such instance.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.detAverageEvals">
+    
+  </a>
+  <a name="detAverageEvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">detAverageEvals</span>(self, targets):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Determine the average number of f-evals for each target
+in <tt class="rst-docutils literal">targets</tt> list.</p>
+<p>The average is weighted correcting for imbalanced trial instances.</p>
+<p>If a target is not reached within trial itrail,
+self.maxevals[itrial] contributes to the average.</p>
+<p>Equals to sum(evals(target)) / nbruns. If ERT is finite
+this equals to ERT * psucc == (sum(evals) / ntrials / psucc) * psucc,
+where ERT, psucc, and evals are a function of target.</p>
+<p>Details: this should be the same as the precomputed <code><a href="#ert" class="internal-link" title="cocopp.pproc.DataSet.ert">ert</a></code> property.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.detERT">
+    
+  </a>
+  <a name="detERT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">detERT</span>(self, targets):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p>Determine the expected running time (ERT) to reach target values.
+The value is numpy.inf, if the target was never reached.</p>
+<p>Details: uses attribute <tt class="rst-docutils literal">self.ert</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">targets</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list targets</span></td><td class="fieldArgDesc">target function values of interest</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">list of expected running times (# f-evals) for the
+respective targets.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.detEvals">
+    
+  </a>
+  <a name="detEvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">detEvals</span>(self, targets, copy=True, bootstrap=False, append_instances=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p>return <tt class="rst-docutils literal">len(targets)</tt> data rows <tt class="rst-docutils literal">self.evals[i, 1:]</tt>.</p>
+<p>Rows have the closest but not larger target such that
+<tt class="rst-docutils literal">self.evals[i, 0] &lt;= target and self.evals[i - 1, 0] &gt; target</tt>,
+or in the "limit" cases the first data line or a line
+<tt class="rst-docutils literal">np.array(self.nbRuns() * [np.nan])</tt>.</p>
+<p>Makes by default a copy of the data, however this might change in
+future.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.detSuccesses">
+    
+  </a>
+  <a name="detSuccesses">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">detSuccesses</span>(self, targets):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return the number of successful runs for each target.</p>
+<p>The number of runs are for each instance expanded to their least
+common multiplier if <code><a href="cocopp.genericsettings.html#balance_instances" class="internal-link" title="cocopp.genericsettings.balance_instances">genericsettings.balance_instances</a></code>, hence the
+success events are not necessarily independent in this case.</p>
+<p>See also <code><a href="#detSuccessRates" class="internal-link" title="cocopp.pproc.DataSet.detSuccessRates">detSuccessRates</a></code>.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.detSuccessRates">
+    
+  </a>
+  <a name="detSuccessRates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">detSuccessRates</span>(self, targets):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a np.array with the success rate for each target
+in targets, easiest target first.</p>
+<p>If <code>genericsetting.balance_instances</code>, the rate is weighted such
+that each instance has the same weight independently of how often
+it was repeated.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.evals_with_simulated_restarts">
+    
+  </a>
+  <a name="evals_with_simulated_restarts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">evals_with_simulated_restarts</span>(self, targets, samplesize=None, randintfirst=<a href="cocopp.toolsstats.html#randint_derandomized" class="internal-link" title="cocopp.toolsstats.randint_derandomized">toolsstats.randint_derandomized</a>, randintrest=<a href="cocopp.toolsstats.html#randint_derandomized" class="internal-link" title="cocopp.toolsstats.randint_derandomized">toolsstats.randint_derandomized</a>, bootstrap=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return a len(targets) list of <tt class="rst-docutils literal">samplesize</tt> "simulated" run
+lengths (#evaluations, sorted) with a similar interface as <code><a href="#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">detEvals</a></code>.</p>
+<p><code>samplesize</code> is by default the smallest multiple of <code><a href="#nbRuns" class="internal-link" title="cocopp.pproc.DataSet.nbRuns">nbRuns</a></code> that
+is larger than 14.</p>
+<p><tt class="rst-docutils literal">np.sort(np.concatenate(return_value))</tt> provides the combined
+sorted ECDF data over all targets which may be plotted with
+<code>pyplot.step</code> (missing the last step).</p>
+<p>Unsuccessful data are represented as <code>np.nan</code>.</p>
+<p>Simulated restarts are used for unsuccessful runs. The usage of
+<code><a href="#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">detEvals</a></code> or <code><a href="#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">evals_with_simulated_restarts</a></code> should be largely
+interchangeable, while the latter has a "success" rate of either
+0 or 1.</p>
+<p>TODO: change this: To get a bootstrap sample for estimating dispersion use
+<tt class="rst-docutils literal">min_samplesize=0, randint=np.random.randint</tt>.</p>
+<p>TODO: how is the sample size propagated to the bootstrapping?</p>
+<p>Details:</p>
+<ul class="rst-simple">
+<li>For targets where all runs were successful, samplesize=nbRuns()
+is sufficient (and preferable) if <code><a href="cocopp.toolsstats.html#randint" class="internal-link" title="cocopp.toolsstats.randint">randint</a></code> is derandomized.</li>
+<li>A single successful running length is computed by adding
+uniformly randomly chosen running lengths until the first time a
+successful one is chosen. In case of no successful run the
+result is <code>None</code>.</li>
+</ul>
+<p>TODO: if <code>samplesize</code> &gt;&gt; <code><a href="#nbRuns" class="internal-link" title="cocopp.pproc.DataSet.nbRuns">nbRuns</a></code> and nsuccesses is large,
+the data representation becomes somewhat inefficient.</p>
+<p>TODO: it may be useful to make the samplesize dependent on the
+number of successes and supply the multipliers
+max(samplesizes) / samplesizes.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.generateRLData">
+    
+  </a>
+  <a name="generateRLData">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generateRLData</span>(self, targets):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Determine the running lengths for reaching the target values.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">targets</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list targets</span></td><td class="fieldArgDesc">target function values of interest</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">dict of arrays, one array for each target. Each array
+are copied from attribute <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> of
+<code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code>: first element is a target
+function value smaller or equal to the element of
+targets considered and has for other consecutive
+elements the corresponding number of function
+evaluations.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.get_data_format">
+    
+  </a>
+  <a name="get_data_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_data_format</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.info">
+    
+  </a>
+  <a name="info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">info</span>(self, targets=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>print text info to stdout</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.isBiobjective">
+    
+  </a>
+  <a name="isBiobjective">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">isBiobjective</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.median_evals">
+    
+  </a>
+  <a name="median_evals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">median_evals</span>(self, target_values=None, append_instances=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return median for each row in <code>self.evals</code>, unsuccessful runs count.</p>
+<p>If <tt class="rst-docutils literal">target_values is not None</tt> compute the median evaluations to
+reach the given target values.</p>
+<p>Return <code>np.nan</code> if the median run was unsuccessful.</p>
+<p>If <tt class="rst-docutils literal">append_instances and self.evals_are_appended</tt>, append all
+instances from the same instance numbers as if the algorithm was
+restarted. <tt class="rst-docutils literal">self.evals_are_appended is True</tt> if the resulting
+number of (unique) instances is at least
+<code><a href="cocopp.genericsettings.html#appended_evals_minimal_trials" class="internal-link" title="cocopp.genericsettings.appended_evals_minimal_trials">genericsettings.appended_evals_minimal_trials</a></code> and if
+<code>testbedsettings.current_testbed.instances_are_uniform</code>.</p>
+<p>Details: copies the evals attribute and sets <code>nan</code> to <code>inf</code> in
+order to get the median with <code>nan</code> values in the sorting.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.mMaxEvals">
+    
+  </a>
+  <a name="mMaxEvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mMaxEvals</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns the maximum number of function evaluations over all runs (trials),
+obsolete and replaced by attribute <code><a href="#max_eval" class="internal-link" title="cocopp.pproc.DataSet.max_eval">max_eval</a></code></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.nbRuns">
+    
+  </a>
+  <a name="nbRuns">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">nbRuns</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns the number of runs depending on <code><a href="cocopp.genericsettings.html#balance_instances" class="internal-link" title="cocopp.genericsettings.balance_instances">genericsettings.balance_instances</a></code>.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.pickle">
+    
+  </a>
+  <a name="pickle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pickle</span>(self, outputdir=None, gzipped=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p>Save this instance to a pickle file.</p>
+<p>Saves this instance to a (by default gzipped) pickle file. If not
+specified by argument outputdir, the location of the pickle is
+given by the location of the first index file associated to this
+instance.</p>
+<p>This method will overwrite existing files.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plot</span>(self, plot_function=plt.semilogy, smallest_target=8e-09, median_format=<span class="rst-variable-quote">'</span><span class="rst-variable-string">k--</span><span class="rst-variable-quote">'</span>, color_map=None, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>plot all data from <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> attribute and the median.</p>
+<p>Plotted are Delta f-value vs evaluations. The sort for the color
+heatmap is based on the final performance.</p>
+<p><code>color_map</code> is a <code>list</code> or <code>generator</code> with <code>self.nbRuns()</code> colors
+and used as <tt class="rst-docutils literal">iter(color_map)</tt>. The maps can be generated with the
+<code>matplotlib.colors.LinearSegmentedColormap</code> attributes of module
+<code>matplotlib.cm</code>. Default is <code>brg</code> between 0 and 0.5, like
+<tt class="rst-docutils literal">plt.cm.brg(np.linspace(0, 0.5, <span class="pre">self.nbRuns()))</span></tt>.</p>
+<p><code>**kwargs</code> is passed to <code>plot_function</code>.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.plot_funvals">
+    
+  </a>
+  <a name="plot_funvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plot_funvals</span>(self, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>plot data of <code><a href="#funvals" class="internal-link" title="cocopp.pproc.DataSet.funvals">funvals</a></code> attribute, versatile</p>
+<dl class="rst-docutils">
+<dt>TODO: seems outdated on 19/8/2016 and 05/2019 (would fail as it was</dt>
+<dd>using "isfinite" instead of "np.isfinite" and is not called
+from anywhere)</dd>
+</dl>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSet.splitByTrials">
+    
+  </a>
+  <a name="splitByTrials">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">splitByTrials</span>(self, whichdata=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Splits the post-processed data arrays by trials.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">whichdata</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string whichdata</span></td><td class="fieldArgDesc">either 'evals' or 'funvals'
+determines the output</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">this method returns dictionaries of arrays,
+the key of the dictionaries being the instance id, the
+value being a smaller post-processed data array
+corresponding to the instance Id.
+If whichdata is 'evals' then the array contains
+function evaluations (1st column is alignment
+targets).
+Else if whichdata is 'funvals' then the output data
+contains function values (1st column is alignment
+budgets).
+Otherwise this method returns a tuple of these two
+arrays in this order.</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.algs">
+    
+  </a>
+  <a name="algs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">algs</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.comment">
+    
+  </a>
+  <a name="comment">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">comment</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.algportfolio.DataSet.html" class="internal-link">cocopp.algportfolio.DataSet</a></code>, <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.dataFiles">
+    
+  </a>
+  <a name="dataFiles">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dataFiles</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.finalfunvals">
+    
+  </a>
+  <a name="finalfunvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">finalfunvals</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.algportfolio.DataSet.html" class="internal-link">cocopp.algportfolio.DataSet</a></code>, <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.funvals">
+    
+  </a>
+  <a name="funvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">funvals</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.algportfolio.DataSet.html" class="internal-link">cocopp.algportfolio.DataSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.indexFiles">
+    
+  </a>
+  <a name="indexFiles">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">indexFiles</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.instancenumbers">
+    
+  </a>
+  <a name="instancenumbers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">instancenumbers</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.algportfolio.DataSet.html" class="internal-link">cocopp.algportfolio.DataSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.isFinalized">
+    
+  </a>
+  <a name="isFinalized">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">isFinalized</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.pickleFile">
+    
+  </a>
+  <a name="pickleFile">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pickleFile</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.readfinalFminusFtarget">
+    
+  </a>
+  <a name="readfinalFminusFtarget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">readfinalFminusFtarget</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.readmaxevals">
+    
+  </a>
+  <a name="readmaxevals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">readmaxevals</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>maxevals as read from the info files</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.reference_values">
+    
+  </a>
+  <a name="reference_values">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">reference_values</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.success_ratio">
+    
+  </a>
+  <a name="success_ratio">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">success_ratio</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSet.target">
+    
+  </a>
+  <a name="target">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">target</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.ert">
+    
+  </a>
+  <a name="ert">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">ert</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>expected runtimes for the targets in <code><a href="#target" class="internal-link" title="cocopp.pproc.DataSet.target">target</a></code>.</p>
+<p>"Expected runtime" here means the average number of function
+evaluations to reach or surpass the given target for the
+first time.</p>
+<p>Details: The values are precomputed using <code><a href="#computeERTfromEvals" class="internal-link" title="cocopp.pproc.DataSet.computeERTfromEvals">computeERTfromEvals</a></code>.
+Depending on <code><a href="cocopp.genericsettings.html#balance_instances" class="internal-link" title="cocopp.genericsettings.balance_instances">genericsettings.balance_instances</a></code>, the average is
+weighted to make up for unbalanced problem instance occurances.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.evals">
+    
+  </a>
+  <a name="evals">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">evals</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p><tt class="rst-docutils literal">evals</tt> contains the central data, number of evaluations.</p>
+<p><code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> is a 2D <code>numpy.array</code> or a list of 1D <code>numpy.array</code> s.
+Each row i, <tt class="rst-docutils literal">evals[i]</tt>, provides a (target) function value in
+<tt class="rst-docutils literal"><span class="pre">evals[i][0]</span></tt> and the function evaluations at which this target
+was reached for the first time in trial j=1,2,... in
+<tt class="rst-docutils literal"><span class="pre">evals[i][j]</span></tt>. The corresponding maximum number of evaluations
+for trial j can be accessed via attribute <tt class="rst-docutils literal"><span class="pre">maxevals[j-1]</span></tt>. A
+practical (and numerically efficient) assignment is <tt class="rst-docutils literal">current_evals
+= <span class="pre">evals[i][1:]</span></tt> which makes <code><a href="#maxevals" class="internal-link" title="cocopp.pproc.DataSet.maxevals">maxevals</a></code> structural identical.</p>
+<p>Details: portfolio datasets can have rows with different lengths.
+Otherwise, the number of columns in <tt class="rst-docutils literal">evals</tt> depends on
+<code><a href="cocopp.genericsettings.html#balance_instances" class="internal-link" title="cocopp.genericsettings.balance_instances">genericsettings.balance_instances</a></code>. The instance number on which
+the first <tt class="rst-docutils literal">len(instancenumbers)</tt> trials were conducted are given
+in the <code><a href="#instancenumbers" class="internal-link" title="cocopp.pproc.DataSet.instancenumbers">instancenumbers</a></code> array. Further columns of <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> are
+generated according to <code><a href="#instance_multipliers" class="internal-link" title="cocopp.pproc.DataSet.instance_multipliers">instance_multipliers</a></code>.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.evals_appended">
+    
+  </a>
+  <a name="evals_appended">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">evals_appended</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>like the <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> property-attribute but here instances with the same ID
+are aggregated (appended).</p>
+<p>The aggregation appends trials with the same instance ID in the
+order of their appearance.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> warnings
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>_wl, cocopp.genericsettings.warning_level = cocopp.genericsettings.warning_level, 0
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">'load data set'</span>); dsl = cocopp.load(<span class="py-string">'b/2009/bay'</span>)  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">load data set...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.genericsettings.warning_level = _wl
+<span class="py-prompt">&gt;&gt;&gt; </span>ds = dsl[99]
+<span class="py-prompt">&gt;&gt;&gt; </span>warnings.filterwarnings(<span class="py-string">'ignore'</span>, message=<span class="py-string">'evals_appended is only recently implemented'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>ds.evals_are_appended
+<span class="py-output">False</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ds.evals <span class="py-keyword">is</span> ds.evals_appended
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.genericsettings.appended_evals_minimal_trials = 5  <span class="py-comment"># was 6</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ds.evals_are_appended
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ds.evals <span class="py-keyword">is</span> ds.evals_appended
+<span class="py-output">False</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ds.evals.shape
+<span class="py-output">(14, 16)</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>ds.evals_appended.shape
+<span class="py-output">(14, 6)</span>
+</pre></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.evals_are_appended">
+    
+  </a>
+  <a name="evals_are_appended">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">evals_are_appended</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>return <code>True</code> if <code>self.evals_appended</code> consist of appended trials (same instances are appended)</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.instance_multipliers">
+    
+  </a>
+  <a name="instance_multipliers">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">instance_multipliers</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>number of repetitions per instance to balance a skewed instance distribution.</p>
+<p>The purpose is to give the same weight to all instances irrespectively of
+their repetitions.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.max_eval">
+    
+  </a>
+  <a name="max_eval">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">max_eval</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>maximum number of function evaluations over all runs (trials),</p>
+<p>return max(self.maxevals)</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.maxevals">
+    
+  </a>
+  <a name="maxevals">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">maxevals</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>maxevals per instance data, i.e. the columns of <tt class="rst-docutils literal"><span class="pre">evals[:,</span> 1:]</tt>.</p>
+<p>For class instances of <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link" title="cocopp.bestalg.BestAlgSet">bestalg.BestAlgSet</a></code> or <code><a href="cocopp.algportfolio.DataSet.html" class="internal-link" title="cocopp.algportfolio.DataSet">algportfolio.DataSet</a></code>,
+<code><a href="#maxevals" class="internal-link" title="cocopp.pproc.DataSet.maxevals">maxevals</a></code> is a dictionary with maxevals as values and the source
+file or folder as key.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.maxfgevals">
+    
+  </a>
+  <a name="maxfgevals">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">maxfgevals</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>maximum of the weighted f+g sum per instance.</p>
+<p>These weighted evaluation numbers are consistent with the
+numbers in the <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> class attribute, unless the weights
+have been changed after setting <code><a href="#_evals" class="internal-link" title="cocopp.pproc.DataSet._evals">_evals</a></code>.</p>
+<p>The values are based on the last entry of the <code>.tdat</code> files, hence
+they reflect the very last evaluation by the algorithm if
+<code><a href="#isFinalized" class="internal-link" title="cocopp.pproc.DataSet.isFinalized">isFinalized</a></code>, and they are computed using the current
+<tt class="rst-docutils literal">genericsettings.weight_evaluations_constraints</tt>.</p>
+<p>Yet to be implemented: for class instances of <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link" title="cocopp.bestalg.BestAlgSet">bestalg.BestAlgSet</a></code>
+or <code><a href="cocopp.algportfolio.DataSet.html" class="internal-link" title="cocopp.algportfolio.DataSet">algportfolio.DataSet</a></code>, <code><a href="#maxevals" class="internal-link" title="cocopp.pproc.DataSet.maxevals">maxevals</a></code> is a dictionary with maxevals
+as values and the source file or folder as key.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.nbRuns_raw">
+    
+  </a>
+  <a name="nbRuns_raw">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">nbRuns_raw</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.number_of_constraints">
+    
+  </a>
+  <a name="number_of_constraints">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">number_of_constraints</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>number of constraints of the function/problem the <code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code> is based upon.</p>
+<p>Remark: this is never used so far and needs to be implemented in
+the class <tt class="rst-docutils literal">testbedsettings.SuiteClass(self.suite_name)</tt>.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.suite_name">
+    
+  </a>
+  <a name="suite_name">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">suite_name</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Returns a string, with the name of the DataSet's underlying test suite.</div>
+    
+  </div>
+</div><div class="basestaticmethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet._largest_finite_index">
+    
+  </a>
+  <a name="_largest_finite_index">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_largest_finite_index</span>(ar):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return <code>i</code> such that <tt class="rst-docutils literal">isfinite(ar[i]) and not isfinite(ar[i+1])</tt>,</p>
+<p>or <tt class="rst-docutils literal">i == <span class="pre">-1</span></tt> if <tt class="rst-docutils literal">not isfinite(ar[0])</tt>.</p>
+<p>Somewhat tested, but not in use.</p>
+<p>The computation takes O(log(<tt class="rst-docutils literal">len(ar)</tt>) time and starts to become
+faster than <tt class="rst-docutils literal"><span class="pre">where(isfinited(ar))[0][-1]</span></tt> only for <tt class="rst-docutils literal">len(ar) &gt; 100</tt>.</p>
+</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet.__parseHeader">
+    
+  </a>
+  <a name="__parseHeader">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__parseHeader</span>(self, header):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Extract data from a header line in an index entry.</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet._argsort">
+    
+  </a>
+  <a name="_argsort">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_argsort</span>(self, smallest_target_value=-np.inf):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return index array for a sorted order of trials.</p>
+<p>Sorted from best to worst, for unsuccessful runs successively
+larger target values are queried to determine which is better.</p>
+<p>Returned indices range from 1 to <tt class="rst-docutils literal">self.nbRuns()</tt> referring to
+columns in <tt class="rst-docutils literal">self.evals</tt>.</p>
+<p>Target values smaller than <tt class="rst-docutils literal">smallest_target_value</tt> are not considered.</p>
+<p>Details: if two runs have the exact same evaluation profile, they
+are sorted identically, however we could account for final f-values
+which seems only to make sense for <tt class="rst-docutils literal"><span class="pre">smallest_target_value&lt;=final_target_value</span></tt>.</p>
+</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet._balanced_evals_row">
+    
+  </a>
+  <a name="_balanced_evals_row">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_balanced_evals_row</span>(self, evals_row, first_index=0, instance_multipliers=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>append evaluations to <code>evals_row</code> to achieve a balanced instance distribution.</p>
+<p><code>evals_row</code> can be an integer or must be commensurable to
+<tt class="rst-docutils literal"><span class="pre">self._evals[i][1:]</span></tt>. <code>first_index</code> is the first index to
+consider as data in <code>evals_row</code> (like in <tt class="rst-docutils literal">evals_row =
+self._evals[i]</tt>, the first index must be 1).</p>
+<p>If <tt class="rst-docutils literal">self.instance_multipliers is None</tt> the return value is
+<code>evals_row</code> or the numpy view <tt class="rst-docutils literal">self._evals[evals_row, 1:]</tt>.
+Parameter <code><a href="#instance_multipliers" class="internal-link" title="cocopp.pproc.DataSet.instance_multipliers">instance_multipliers</a></code> only serves to avoid performance
+side effects from property repeated invokation.</p>
+</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet._complement_data">
+    
+  </a>
+  <a name="_complement_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_complement_data</span>(self, step=10**0.2, final_target=1e-08):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>insert a line for each target value, never used (detEvals(targets) does the job on the fly)</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet._cut_data">
+    
+  </a>
+  <a name="_cut_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_cut_data</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>attributes <code><a href="#target" class="internal-link" title="cocopp.pproc.DataSet.target">target</a></code>, <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code>, and <code><a href="#ert" class="internal-link" title="cocopp.pproc.DataSet.ert">ert</a></code> are truncated to target values not
+much smaller than defined in attribute <code>precision</code> (typically <tt class="rst-docutils literal"><span class="pre">1e-8</span></tt>).
+Attribute <code><a href="#maxevals" class="internal-link" title="cocopp.pproc.DataSet.maxevals">maxevals</a></code> is recomputed for columns that reach the final target
+precision. Note that in the bi-objective case the attribute <code>precision</code>
+does not exist.</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet._detEvals2">
+    
+  </a>
+  <a name="_detEvals2">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_detEvals2</span>(self, targets):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Determine the number of evaluations to reach target values.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">targets</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seq or float targets</span></td><td class="fieldArgDesc">target precisions</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">list of len(targets) values, each being an array of nbRuns FEs values</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet._detMaxEvals">
+    
+  </a>
+  <a name="_detMaxEvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_detMaxEvals</span>(self, final_target=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>computes for each data column of _evals the (maximal) evaluation
+until final_target was reached, or <tt class="rst-docutils literal">self.maxevals</tt> otherwise.</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet._evals_appended_compute">
+    
+  </a>
+  <a name="_evals_appended_compute">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_evals_appended_compute</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>create evals-array with appended instances.</p>
+<p>The <code><a href="#evals_appended" class="internal-link" title="cocopp.pproc.DataSet.evals_appended">evals_appended</a></code> array mimics independent restarts.</p>
+<p>Only append if the number of remaining trials is at least
+<code><a href="cocopp.genericsettings.html#appended_evals_minimal_trials" class="internal-link" title="cocopp.genericsettings.appended_evals_minimal_trials">genericsettings.appended_evals_minimal_trials</a></code>. Hence a standard
+2009 dataset which has the instances <tt class="rst-docutils literal">3 * [1,2,3,4,5]</tt> remains
+unchanged by default.</p>
+<p>Only append if <tt class="rst-docutils literal">bool(testbedsettings.current_testbed.instances_are_uniform)
+is True</tt>.</p>
+</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet._old_plot">
+    
+  </a>
+  <a name="_old_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_old_plot</span>(self, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>plot data from <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> attribute.</p>
+<p><code>**kwargs</code> is passed to <code>matplolib.loglog</code>.</p>
+<p>TODO: seems outdated on 19/8/2016
+("np.isfinite" was "isfinite" hence raising an error)</p>
+</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.pproc.DataSet._update_evals_balanced">
+    
+  </a>
+  <a name="_update_evals_balanced">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_evals_balanced</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>update attribute <code><a href="#_evals_balanced" class="internal-link" title="cocopp.pproc.DataSet._evals_balanced">_evals_balanced</a></code> if necessary.</p>
+<p>The first columns of <code><a href="#_evals_balanced" class="internal-link" title="cocopp.pproc.DataSet._evals_balanced">_evals_balanced</a></code> equal to those of <code><a href="#_evals" class="internal-link" title="cocopp.pproc.DataSet._evals">_evals</a></code>
+and further columns are added according to <code><a href="#instance_multipliers" class="internal-link" title="cocopp.pproc.DataSet.instance_multipliers">instance_multipliers</a></code> to
+balance uneven repetitions over different instances.</p>
+</div>
+  </div>
+</div><div class="baseclassvariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._attributes">
+    
+  </a>
+  <a name="_attributes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_attributes</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._ert">
+    
+  </a>
+  <a name="_ert">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ert</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._ert_nb_of_data">
+    
+  </a>
+  <a name="_ert_nb_of_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ert_nb_of_data</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._evals">
+    
+  </a>
+  <a name="_evals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_evals</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.algportfolio.DataSet.html" class="internal-link">cocopp.algportfolio.DataSet</a></code>, <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><tt class="rst-docutils literal">_evals</tt> are the central data and later accessed via the <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code>
+property. Each line <tt class="rst-docutils literal">_evals[i]</tt> has a (target) function value
+in <tt class="rst-docutils literal"><span class="pre">_evals[i][0]</span></tt> and the function evaluation for which this
+target was reached the first time in trials 1,... in
+<tt class="rst-docutils literal"><span class="pre">_evals[i][1:]</span></tt>.</div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._evals_appended">
+    
+  </a>
+  <a name="_evals_appended">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_evals_appended</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._evals_balanced">
+    
+  </a>
+  <a name="_evals_balanced">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_evals_balanced</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._evals_balanced_raw_data_columns">
+    
+  </a>
+  <a name="_evals_balanced_raw_data_columns">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_evals_balanced_raw_data_columns</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._extra_attr">
+    
+  </a>
+  <a name="_extra_attr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_extra_attr</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._lasttdatfilelines">
+    
+  </a>
+  <a name="_lasttdatfilelines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_lasttdatfilelines</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._maxevals">
+    
+  </a>
+  <a name="_maxevals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_maxevals</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.algportfolio.DataSet.html" class="internal-link">cocopp.algportfolio.DataSet</a></code>, <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link">cocopp.bestalg.BestAlgSet</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.DataSet._maxevals_appended">
+    
+  </a>
+  <a name="_maxevals_appended">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_maxevals_appended</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty private">
+  
+  
+  <a name="cocopp.pproc.DataSet._instance_repetitions">
+    
+  </a>
+  <a name="_instance_repetitions">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">_instance_repetitions</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>return the number of runs that repeated a previous instance.</p>
+<p>That is, 0 if all instance number ids are unique, and &gt;= 1 otherwise.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty private">
+  
+  
+  <a name="cocopp.pproc.DataSet._need_balancing">
+    
+  </a>
+  <a name="_need_balancing">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">_need_balancing</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>return True of gs.balance_instances and self.instance_multipliers are &gt;1</div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

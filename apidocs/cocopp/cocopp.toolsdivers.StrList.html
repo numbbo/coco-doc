@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.toolsdivers.StrList</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.toolsdivers.html" class="internal-link" title="cocopp.toolsdivers">toolsdivers</a></code><wbr></wbr>.<code><a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">StrList</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">StrList</span>(list):</code></p><p>Known subclasses: <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link">cocopp.archiving.COCODataArchive</a></code>, <code><a href="cocopp.archiving.ListOfArchives.html" class="internal-link">cocopp.archiving.ListOfArchives</a></code>, <code><a href="cocopp.archiving.RemoteListOfArchives.html" class="internal-link">cocopp.archiving.RemoteListOfArchives</a></code></p>
+        <p><a href="classIndex.html#cocopp.toolsdivers.StrList">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>A list of <code>str</code> with search/find functionality.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id166">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__call__" class="internal-link" title="cocopp.toolsdivers.StrList.__call__">__call__</a></code></td>
+    <td>alias to <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocopp.toolsdivers.StrList.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code></td>
+    <td>return entries that match all <code>substrs</code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find_indices" class="internal-link" title="cocopp.toolsdivers.StrList.find_indices">find​_indices</a></code></td>
+    <td>same as <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code> but returns indices instead of names</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#print" class="internal-link" title="cocopp.toolsdivers.StrList.print">print</a></code></td>
+    <td>print the result of <tt class="rst-docutils literal"><span class="pre">find(*substrs)</span></tt> with indices.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#as_string" class="internal-link" title="cocopp.toolsdivers.StrList.as_string">as​_string</a></code></td>
+    <td>return space separated string concatenation surrounded by spaces.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#found" class="internal-link" title="cocopp.toolsdivers.StrList.found">found</a></code></td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">StrList</a></code> of elements found during the last call to <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code>.</td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_names_found" class="internal-link" title="cocopp.toolsdivers.StrList._names_found">​_names​_found</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="cocopp.toolsdivers.StrList.__call__">
+    
+  </a>
+  <a name="__call__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__call__</span>(self, *substrs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>alias to <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.toolsdivers.StrList.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, list_or_str):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link">cocopp.archiving.COCODataArchive</a></code>, <code><a href="cocopp.archiving.ListOfArchives.html" class="internal-link">cocopp.archiving.ListOfArchives</a></code>, <code><a href="cocopp.archiving.RemoteListOfArchives.html" class="internal-link">cocopp.archiving.RemoteListOfArchives</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.toolsdivers.StrList.find">
+    
+  </a>
+  <a name="find">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find</span>(self, *substrs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return entries that match all <code>substrs</code>.</p>
+<p>This method serves for interactive exploration of available entries
+and may be aliased to the shortcut of calling the instance itself.</p>
+<p>When given several <code>substrs</code> arguments the results match each
+substring (AND search, an OR can be simply achieved by appending
+the result of two finds). Upper/lower case is ignored.</p>
+<p>When given a single <code>substrs</code> argument, it may be</p>
+<ul class="rst-simple">
+<li>a list of matching substrings, used as several substrings as above</li>
+<li>an index of <code>type</code> <code>int</code></li>
+<li>a list of indices</li>
+</ul>
+<p>A single substring matches either if an entry contains the
+substring or if the substring matches as regular expression, where
+"." matches any single character and ".*" matches any number &gt;= 0
+of characters.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp.toolsdivers <span class="py-keyword">import</span> StrList
+<span class="py-prompt">&gt;&gt;&gt; </span>s = StrList([<span class="py-string">'abc'</span>, <span class="py-string">'bcd'</span>, <span class="py-string">'cde'</span>, <span class="py-string">' cde'</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span>s(<span class="py-string">'bc'</span>)  <span class="py-comment"># all strings with a 'bc'</span>
+<span class="py-output">['abc', 'bcd']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s(<span class="py-string">'a'</span>, <span class="py-string">'b'</span>)  <span class="py-comment"># all strings with an 'a' AND 'b'</span>
+<span class="py-output">['abc']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s([<span class="py-string">'a'</span>, <span class="py-string">'b'</span>])  <span class="py-comment"># the same</span>
+<span class="py-output">['abc']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s(<span class="py-string">'.c'</span>)  <span class="py-comment"># regex 'c' as second char</span>
+<span class="py-output">['bcd', ' cde']</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>s(<span class="py-string">'.*c'</span>)  <span class="py-comment"># regex 'c' preceded with any sequence</span>
+<span class="py-output">['abc', 'bcd', 'cde', ' cde']</span>
+</pre><p>Details: The list of matching names is stored in <code><a href="#found" class="internal-link" title="cocopp.toolsdivers.StrList.found">found</a></code>.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.toolsdivers.StrList.find_indices">
+    
+  </a>
+  <a name="find_indices">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find_indices</span>(self, *substrs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>same as <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code> but returns indices instead of names</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.toolsdivers.StrList.print">
+    
+  </a>
+  <a name="print">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">print</span>(self, *substrs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>print the result of <tt class="rst-docutils literal"><span class="pre">find(*substrs)</span></tt> with indices.</p>
+<p>Details: does not change <code><a href="#found" class="internal-link" title="cocopp.toolsdivers.StrList.found">found</a></code> and returns <code>None</code>.</p>
+</div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.toolsdivers.StrList.as_string">
+    
+  </a>
+  <a name="as_string">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">as_string</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>return space separated string concatenation surrounded by spaces.</p>
+<p>To get only the recently found items use <tt class="rst-docutils literal">found.as_string</tt>
+instead of <tt class="rst-docutils literal">as_string</tt>.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.toolsdivers.StrList.found">
+    
+  </a>
+  <a name="found">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">found</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><code><a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">StrList</a></code> of elements found during the last call to <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code>.</div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.toolsdivers.StrList._names_found">
+    
+  </a>
+  <a name="_names_found">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_names_found</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link">cocopp.archiving.COCODataArchive</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

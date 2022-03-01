@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.archiving.RemoteListOfArchives</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.archiving.html" class="internal-link" title="cocopp.archiving">archiving</a></code><wbr></wbr>.<code><a href="cocopp.archiving.RemoteListOfArchives.html" class="internal-link" title="cocopp.archiving.RemoteListOfArchives">RemoteListOfArchives</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">RemoteListOfArchives</span>(<a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">_td.StrList</a>):</code></p>
+        <p><a href="classIndex.html#cocopp.archiving.RemoteListOfArchives">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Elements of this list can be used directly with <code><a href="cocopp.archiving.html#get" class="internal-link">cocopp.archiving.get</a></code>.</p>
+<p>The only purpose of this list is to propose (or remind) known archive
+remote locations to the user. For this purpose, the current listing file is
+downloaded.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id29">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocopp.archiving.RemoteListOfArchives.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#save" class="internal-link" title="cocopp.archiving.RemoteListOfArchives.save">save</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#location" class="internal-link" title="cocopp.archiving.RemoteListOfArchives.location">location</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_download" class="internal-link" title="cocopp.archiving.RemoteListOfArchives._download">​_download</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">StrList</a></code>:
+          </p>
+          <table class="children sortable" id="id30">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#__call__" class="internal-link" title="cocopp.toolsdivers.StrList.__call__">__call__</a></code></td>
+    <td>alias to <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code></td>
+    <td>return entries that match all <code>substrs</code>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#find_indices" class="internal-link" title="cocopp.toolsdivers.StrList.find_indices">find​_indices</a></code></td>
+    <td>same as <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code> but returns indices instead of names</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#print" class="internal-link" title="cocopp.toolsdivers.StrList.print">print</a></code></td>
+    <td>print the result of <tt class="rst-docutils literal"><span class="pre">find(*substrs)</span></tt> with indices.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#as_string" class="internal-link" title="cocopp.toolsdivers.StrList.as_string">as​_string</a></code></td>
+    <td>return space separated string concatenation surrounded by spaces.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#found" class="internal-link" title="cocopp.toolsdivers.StrList.found">found</a></code></td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">StrList</a></code> of elements found during the last call to <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code>.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#_names_found" class="internal-link" title="cocopp.toolsdivers.StrList._names_found">​_names​_found</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="cocopp.archiving.RemoteListOfArchives.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, name=<span class="rst-variable-quote">'</span><span class="rst-variable-string">known_archives</span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="cocopp.toolsdivers.StrList.html#__init__" class="internal-link">cocopp.toolsdivers.StrList.__init__</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.archiving.RemoteListOfArchives.save">
+    
+  </a>
+  <a name="save">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">save</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="cocopp.archiving.RemoteListOfArchives.location">
+    
+  </a>
+  <a name="location">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">location</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="cocopp.archiving.RemoteListOfArchives._download">
+    
+  </a>
+  <a name="_download">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download</span>(self, name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocoex</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocoex <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="package"><code><code><a href="index.html" class="internal-link">cocoex</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        package documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Experimentation module of the COCO - COmparing Continuous Optimizers -
+framework.</p>
+<p>The module provides benchmark test beds in the <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code> class
+and output data facilities in the <code><a href="cocoex.Observer.html" class="internal-link" title="cocoex.Observer">Observer</a></code> class.</p>
+<p>See the documentation of the <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code> class:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">help</span>(ex.Suite)  <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">Help on class Suite...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(ex.known_suite_names)  <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">[...</span>
+</pre><p>A more complete example use case can be found in the <code>example_experiment.py</code>
+file.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1">
+  
+  
+  <tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="cocoex.exceptions.html" class="internal-link" title="cocoex.exceptions">exceptions</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="cocoex.solvers.html" class="internal-link" title="cocoex.solvers">solvers</a></code></td>
+    <td><span class="undocumented">No module docstring; 1/1 function documented</span></td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
+    <td><code><a href="cocoex.utilities.html" class="internal-link" title="cocoex.utilities">utilities</a></code></td>
+    <td><span class="undocumented">No module docstring; 4/4 functions, 5/5 classes documented</span></td>
+  </tr>
+</table>
+        
+
+          <p class="fromInitPy">From <code>__init__.py</code>:</p><table class="children sortable" id="id2">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocoex.Observer.html" class="internal-link" title="cocoex.Observer">​Observer</a></code></td>
+    <td>Observer which can be "attached to" one or several problems, however not necessarily at the same time.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocoex.Problem.html" class="internal-link" title="cocoex.Problem">​Problem</a></code></td>
+    <td><code><a href="cocoex.Problem.html" class="internal-link" title="cocoex.Problem">Problem</a></code> instances are usually generated using class <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code>.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">​Suite</a></code></td>
+    <td>Suite of benchmark problems.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#default_observers" class="internal-link" title="cocoex.default_observers">default​_observers</a></code></td>
+    <td>return a map from suite names to default observer names.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#log_level" class="internal-link" title="cocoex.log_level">log​_level</a></code></td>
+    <td><tt class="rst-docutils literal">log_level(level=None)</tt> return current log level and set new log level if <tt class="rst-docutils literal">level is not None and level</tt>.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#__version__" class="internal-link" title="cocoex.__version__">__version__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_default_observers" class="internal-link" title="cocoex._default_observers">​_default​_observers</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  
+  <a name="cocoex.__version__">
+    
+  </a>
+  <a name="__version__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__version__</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocoex.default_observers">
+    
+  </a>
+  <a name="default_observers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">default_observers</span>(update=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a map from suite names to default observer names.</p>
+<p>This function can also be used to update this map using
+a <code>dict</code> or a <code>list</code> of key-value pairs.</p>
+</div>
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="cocoex._default_observers">
+    
+  </a>
+  <a name="_default_observers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_default_observers</span>: <code>dict[<wbr></wbr>str, <wbr></wbr>str]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocoex.log_level">
+    
+  </a>
+  <a name="log_level">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">log_level</span>(level=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><tt class="rst-docutils literal">log_level(level=None)</tt> return current log level and
+set new log level if <tt class="rst-docutils literal">level is not None and level</tt>.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">level</span></td><td class="fieldArgDesc">must be 'error' or 'warning' or 'info' or 'debug', listed
+with increasing verbosity, or '' which doesn't change anything.</td></tr></table></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocoex,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:44:24.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.cococommands</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.cococommands.html" class="internal-link" title="cocopp.cococommands">cococommands</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Depreciated (<code><a href="index.html" class="internal-link">cocopp</a></code> itself is to be used from Jupyter or IPython):
+Module for using COCO from the (i)Python interpreter.</p>
+<p>The main data structures used in COCO are <code>DataSet</code>, which
+corresponds to data of one algorithm on one problem, and
+<code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code>, which is for collections of <code>DataSet</code>
+instances. Both classes are implemented in <code><a href="cocopp.pproc.html" class="internal-link">cocopp.pproc</a></code>.</p>
+<p>Examples:</p>
+<ul>
+<li><p class="rst-first">Start by importing <code><a href="index.html" class="internal-link">cocopp</a></code>:</p>
+<pre class="rst-literal-block">
+&gt;&gt;&gt; import cocopp
+&gt;&gt;&gt; cocopp.genericsettings.verbose = False # ensure to make below doctests work
+&gt;&gt;&gt; def print_(*args, **kwargs): pass
+&gt;&gt;&gt; cocopp.archives.bbob._print = print_  # avoid download notification
+</pre>
+</li>
+<li><p class="rst-first">Load a data set, assign to variable <code><a href="cocopp.firstsession.html#ds" class="internal-link" title="cocopp.firstsession.ds">ds</a></code>:</p>
+<pre class="rst-literal-block">
+&gt;&gt;&gt; path = cocopp.archives.bbob.get(4)
+&gt;&gt;&gt; print('ESC'); dsl = cocopp.load(path)  # a dataset list  # doctest:+ELLIPSIS
+ESC...
+&gt;&gt;&gt; ds = dsl[0]
+</pre>
+</li>
+<li><p class="rst-first">Get some information on a <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> instance:</p>
+<pre class="rst-literal-block">
+&gt;&gt;&gt; print(dsl)  # doctest:+ELLIPSIS
+[DataSet(BIPOP-CMA-ES_hansen on f1 2-D), DataSet(BIPOP-CMA-ES...
+&gt;&gt;&gt; dsl.info()
+144 data set(s)
+Algorithm(s): BIPOP-CMA-ES_hansen
+24 Functions with IDs 1-24
+Dimension(s): 2, 3, 5, 10, 20, 40
+Max evals: [1625595, 2349823, 3114271, 5884514, 12102699, 36849608]
+</pre>
+</li>
+<li><p class="rst-first">Get some information on a <code>DataSet</code> instance:</p>
+<pre class="rst-literal-block">
+&gt;&gt;&gt; print(ds)
+DataSet(BIPOP-CMA-ES_hansen on f1 2-D)
+&gt;&gt;&gt; ds.info()
+Algorithm: BIPOP-CMA-ES_hansen
+Function ID: 1
+Dimension DIM = 2
+Number of trials: 15
+Final target Df: 1e-08
+min / max number of evals per trial: 224 / 333
+   evals/DIM:  best     15%     50%     85%     max |  ERT/DIM  nsucc
+  ---Df---|-----------------------------------------|----------------
+  1.0e+03 |       0       0       0       0       0 |      0.5  15
+  1.0e+01 |       0       0       2       8      10 |      2.9  15
+  1.0e-01 |       8      13      22      38      52 |     24.2  15
+  1.0e-03 |      34      48      56      74      77 |     58.2  15
+  1.0e-05 |      64      70      89     100     102 |     86.1  15
+  1.0e-08 |     112     116     128     150     166 |    130.9  15
+</pre>
+</li>
+</ul>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id36">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#info" class="internal-link" title="cocopp.cococommands.info">info</a></code></td>
+    <td>Display more info on an instance of DatasetList.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#load" class="internal-link" title="cocopp.cococommands.load">load</a></code></td>
+    <td>Create a <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> instance from a file or folder.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#pickle" class="internal-link" title="cocopp.cococommands.pickle">pickle</a></code></td>
+    <td>Pickle a DataSetList.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#systeminfo" class="internal-link" title="cocopp.cococommands.systeminfo">systeminfo</a></code></td>
+    <td>Display information on the system.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.cococommands.info">
+    
+  </a>
+  <a name="info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">info</span>(dsList):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Display more info on an instance of DatasetList.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.cococommands.load">
+    
+  </a>
+  <a name="load">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">load</span>(filename):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Create a <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> instance from a file or folder.</p>
+<p>Input argument filename can be a single <a href="#system-message-1"><span class="rst-problematic" id="rst-problematic-1">:file:`info`</span></a> file name, a
+single pickle filename or a folder name. In the latter case, the
+folder is browsed recursively for <a href="#system-message-2"><span class="rst-problematic" id="rst-problematic-2">:file:`info`</span></a> or <a href="#system-message-3"><span class="rst-problematic" id="rst-problematic-3">:file:`pickle`</span></a>
+files.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.cococommands.pickle">
+    
+  </a>
+  <a name="pickle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pickle</span>(dsList):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Pickle a DataSetList.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.cococommands.systeminfo">
+    
+  </a>
+  <a name="systeminfo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">systeminfo</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Display information on the system.</div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

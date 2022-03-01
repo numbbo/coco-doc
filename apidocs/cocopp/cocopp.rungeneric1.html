@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.rungeneric1</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.rungeneric1.html" class="internal-link" title="cocopp.rungeneric1">rungeneric1</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Module for post-processing the data of one algorithm.</p>
+<p>Calls the function main with arguments from the command line. Executes
+the postprocessing on the given files and folders arguments, using the
+<a href="#system-message-1"><span class="rst-problematic" id="rst-problematic-1">:file:`.info`</span></a> files found recursively.</p>
+<dl class="rst-docutils">
+<dt>Synopsis:</dt>
+<dd><tt class="rst-docutils literal">python <span class="pre">-m</span> cocopp.rungeneric1 [OPTIONS] FOLDER</tt></dd>
+<dt>Help:</dt>
+<dd><tt class="rst-docutils literal">python <span class="pre">-m</span> cocopp.rungeneric1 <span class="pre">--help</span></tt></dd>
+</dl>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id129">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#main" class="internal-link" title="cocopp.rungeneric1.main">main</a></code></td>
+    <td>Post-processing COCO data of a single algorithm.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#usage" class="internal-link" title="cocopp.rungeneric1.usage">usage</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.rungeneric1.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span>(alg, outputdir, argv=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Post-processing COCO data of a single algorithm.</p>
+<p>Provided with some data for an algorithm alg, this routine outputs
+figure and TeX files
+in a folder needed for the compilation of the provided LaTeX templates
+for one algorithm (<tt class="rst-docutils literal">*article.tex</tt> or <tt class="rst-docutils literal"><span class="pre">*1*.tex</span></tt>).
+The used template file needs to be edited so that the commands
+<tt class="rst-docutils literal">\bbobdatapath</tt> and <tt class="rst-docutils literal">\algfolder</tt> point to the output folder created
+by this routine.</p>
+<p>These output files will contain performance tables, performance
+scaling figures and empirical cumulative distribution figures. On
+subsequent executions, new files will be added to the output folder,
+overwriting existing older files in the process.</p>
+<p>Previously possible to be called from the system shell, this
+routine is called via rungeneric.py only and hence any
+system shell arguments are handled there.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.rungeneric1.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">usage</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

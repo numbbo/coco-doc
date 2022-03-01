@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.pproc.TargetValues</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.pproc.html" class="internal-link" title="cocopp.pproc">pproc</a></code><wbr></wbr>.<code><a href="cocopp.pproc.TargetValues.html" class="internal-link" title="cocopp.pproc.TargetValues">TargetValues</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TargetValues</span>(object):</code></p><p>Known subclasses: <code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link">cocopp.pproc.RunlengthBasedTargetValues</a></code></p>
+        <p><a href="classIndex.html#cocopp.pproc.TargetValues">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>store and retrieve a list of target function values:</p>
+<blockquote>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> numpy <span class="py-keyword">as</span> np
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp.pproc <span class="py-keyword">as</span> pp
+<span class="py-prompt">&gt;&gt;&gt; </span>targets = [10**i <span class="py-keyword">for</span> i <span class="py-keyword">in</span> np.arange(2, -8.1, -0.2)]
+<span class="py-prompt">&gt;&gt;&gt; </span>targets_as_class = pp.TargetValues(targets)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> targets_as_class() == targets</pre></blockquote>
+<p>In itself this class is useless, as it does not more than a simple list
+could do, but it serves as interface for derived classes, where <tt class="rst-docutils literal">targets()</tt>
+requires an actual argument <tt class="rst-docutils literal">targets(fun_dim)</tt>.</p>
+<p>Details: The optional argument for calling the class instance is needed to
+be consistent with the derived <tt class="rst-docutils literal">class RunlengthBasedTargetValues</tt>.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id73">
+  
+  
+  <tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#cast" class="internal-link" title="cocopp.pproc.TargetValues.cast">cast</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__call__" class="internal-link" title="cocopp.pproc.TargetValues.__call__">__call__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocopp.pproc.TargetValues.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__len__" class="internal-link" title="cocopp.pproc.TargetValues.__len__">__len__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#label" class="internal-link" title="cocopp.pproc.TargetValues.label">label</a></code></td>
+    <td>return the <tt class="rst-docutils literal">i</tt>-th target value as <tt class="rst-docutils literal">str</tt>, to be overwritten by a derived class</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#label_name" class="internal-link" title="cocopp.pproc.TargetValues.label_name">label​_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#labels" class="internal-link" title="cocopp.pproc.TargetValues.labels">labels</a></code></td>
+    <td>target values as a list of <tt class="rst-docutils literal">str</tt></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#loglabel" class="internal-link" title="cocopp.pproc.TargetValues.loglabel">loglabel</a></code></td>
+    <td>return <tt class="rst-docutils literal">log10</tt> of the <tt class="rst-docutils literal">i</tt>-th target value as <tt class="rst-docutils literal">str</tt>, to be overwritten by a derived class</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#loglabels" class="internal-link" title="cocopp.pproc.TargetValues.loglabels">loglabels</a></code></td>
+    <td><tt class="rst-docutils literal">log10</tt> of the target values as a list of <tt class="rst-docutils literal">str</tt></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#__dict__" class="internal-link" title="cocopp.pproc.TargetValues.__dict__">__dict__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#target_values" class="internal-link" title="cocopp.pproc.TargetValues.target_values">target​_values</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#short_info" class="internal-link" title="cocopp.pproc.TargetValues.short_info">short​_info</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="staticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="#_discretize" class="internal-link" title="cocopp.pproc.TargetValues._discretize">​_discretize</a></code></td>
+    <td>return a "similar" list with targets in [10**i/5]</td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_short_info" class="internal-link" title="cocopp.pproc.TargetValues._short_info">​_short​_info</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basestaticmethod">
+  
+  
+  <a name="cocopp.pproc.TargetValues.cast">
+    
+  </a>
+  <a name="cast">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">cast</span>(target_values_or_class_instance, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link">cocopp.pproc.RunlengthBasedTargetValues</a></code></div>
+    
+    <div><p>idempotent cast to <tt class="rst-docutils literal">TargetValues</tt> class type, specifically
+<a href="#system-message-1"><span class="rst-problematic" id="rst-problematic-1">``</span></a>return TargetValues(target_values_or_class_instance)</p>
+<blockquote>
+if not isinstance(target_values_or_class_instance, TargetValues)
+else target_values_or_class_instance``</blockquote>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.TargetValues.__call__">
+    
+  </a>
+  <a name="__call__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__call__</span>(self, fun_dim_but_not_use=None, discretize=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link">cocopp.pproc.RunlengthBasedTargetValues</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.TargetValues.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, target_values, discretize=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link">cocopp.pproc.RunlengthBasedTargetValues</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.TargetValues.__len__">
+    
+  </a>
+  <a name="__len__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__len__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link">cocopp.pproc.RunlengthBasedTargetValues</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.TargetValues.label">
+    
+  </a>
+  <a name="label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">label</span>(self, i):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link">cocopp.pproc.RunlengthBasedTargetValues</a></code></div>
+    
+    <div>return the <tt class="rst-docutils literal">i</tt>-th target value as <tt class="rst-docutils literal">str</tt>, to be overwritten by a derived class</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.TargetValues.label_name">
+    
+  </a>
+  <a name="label_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">label_name</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link">cocopp.pproc.RunlengthBasedTargetValues</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.TargetValues.labels">
+    
+  </a>
+  <a name="labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">labels</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link">cocopp.pproc.RunlengthBasedTargetValues</a></code></div>
+    
+    <div>target values as a list of <tt class="rst-docutils literal">str</tt></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.TargetValues.loglabel">
+    
+  </a>
+  <a name="loglabel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">loglabel</span>(self, i, decimals=0):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link">cocopp.pproc.RunlengthBasedTargetValues</a></code></div>
+    
+    <div>return <tt class="rst-docutils literal">log10</tt> of the <tt class="rst-docutils literal">i</tt>-th target value as <tt class="rst-docutils literal">str</tt>, to be overwritten by a derived class</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.TargetValues.loglabels">
+    
+  </a>
+  <a name="loglabels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">loglabels</span>(self, decimals=0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><tt class="rst-docutils literal">log10</tt> of the target values as a list of <tt class="rst-docutils literal">str</tt></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.TargetValues.__dict__">
+    
+  </a>
+  <a name="__dict__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__dict__</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.TargetValues.target_values">
+    
+  </a>
+  <a name="target_values">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">target_values</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.TargetValues.short_info">
+    
+  </a>
+  <a name="short_info">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">short_info</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basestaticmethod private">
+  
+  
+  <a name="cocopp.pproc.TargetValues._discretize">
+    
+  </a>
+  <a name="_discretize">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">_discretize</span>(target_list):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return a "similar" list with targets in [10**i/5]</div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="cocopp.pproc.TargetValues._short_info">
+    
+  </a>
+  <a name="_short_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_short_info</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.pproc.RunlengthBasedTargetValues.html" class="internal-link">cocopp.pproc.RunlengthBasedTargetValues</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

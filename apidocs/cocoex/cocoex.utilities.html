@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocoex.utilities</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocoex <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocoex</a></code><wbr></wbr>.<code><a href="cocoex.utilities.html" class="internal-link" title="cocoex.utilities">utilities</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id7">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocoex.utilities.MiniPrint.html" class="internal-link" title="cocoex.utilities.MiniPrint">​Mini​Print</a></code></td>
+    <td>print dimension when changed and a single symbol for each call.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocoex.utilities.ObserverOptions.html" class="internal-link" title="cocoex.utilities.ObserverOptions">​Observer​Options</a></code></td>
+    <td>a <code>dict</code> with observer options which can be passed to the (C-based) <code><a href="cocoex.Observer.html" class="internal-link" title="cocoex.Observer">Observer</a></code> via the <code><a href="#as_string" class="internal-link" title="cocoex.utilities.ObserverOptions.as_string">as_string</a></code> property.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocoex.utilities.ProblemNonAnytime.html" class="internal-link" title="cocoex.utilities.ProblemNonAnytime">​Problem​Non​Anytime</a></code></td>
+    <td>The non-anytime problem class.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocoex.utilities.SameFunction.html" class="internal-link" title="cocoex.utilities.SameFunction">​Same​Function</a></code></td>
+    <td>Count the number of consecutive instances of the same function.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocoex.utilities.ShortInfo.html" class="internal-link" title="cocoex.utilities.ShortInfo">​Short​Info</a></code></td>
+    <td>print minimal info during benchmarking.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#about_equal" class="internal-link" title="cocoex.utilities.about_equal">about​_equal</a></code></td>
+    <td>Return True if the floating point number ${a} and ${b} are about equal.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#args_to_dict" class="internal-link" title="cocoex.utilities.args_to_dict">args​_to​_dict</a></code></td>
+    <td>return a <code>dict</code> from a list of <tt class="rst-docutils literal">"name=value"</tt> strings.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ascetime" class="internal-link" title="cocoex.utilities.ascetime">ascetime</a></code></td>
+    <td>return elapsed time as str.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#print_flush" class="internal-link" title="cocoex.utilities.print_flush">print​_flush</a></code></td>
+    <td>print without newline but with flush</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocoex.utilities.about_equal">
+    
+  </a>
+  <a name="about_equal">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">about_equal</span>(a, b, precision=1e-06):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Return True if the floating point number ${a} and ${b} are about equal.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocoex.utilities.args_to_dict">
+    
+  </a>
+  <a name="args_to_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">args_to_dict</span>(args, known_names, specials=None, split=<span class="rst-variable-quote">'</span><span class="rst-variable-string">=</span><span class="rst-variable-quote">'</span>, print=(lambda *args, **kwargs: None)):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a <code>dict</code> from a list of <tt class="rst-docutils literal">"name=value"</tt> strings.</p>
+<p><code>args</code> come in the form of a <code>list</code> of <tt class="rst-docutils literal">"name=value"</tt> strings
+without spaces, like <tt class="rst-docutils literal">["budget_multiplier=100"]</tt>.</p>
+<p>Return <tt class="rst-docutils literal">dict(arg.split(split) for arg in args)</tt> in the most
+basic case, but additionally (i) checks that the keys of this
+<code>dict</code> are known names, (ii) evaluates the values in some cases
+and (iii) handles <code>specials</code>.</p>
+<p><code>know_names</code> is an iterable (<code>dict</code> or <code>list</code> or <code>tuple</code>) of strings.
+If <tt class="rst-docutils literal">know_names is None</tt>, all args are processed, otherwise a
+<code>ValueError</code> is raised for unknown names. This is useful if we
+want to re-assign variables (overwrite default values) and avoid
+spelling mistakes pass silently.</p>
+<p>The value is processed as a Python literal with <code>ast.literal_eval</code>
+or remains a <code>str</code> when this is unsuccessful.</p>
+<p><code>specials</code> is a <code>dict</code> and can currently only contain <tt class="rst-docutils literal">'batch'</tt>,
+followed by <tt class="rst-docutils literal">"name1/name2"</tt> as value. <tt class="rst-docutils literal">name1</tt> and <tt class="rst-docutils literal">name2</tt> are
+then assigned from the values in <code>arg</code>, for example to 2 and 4 with
+<tt class="rst-docutils literal">batch=2/4</tt>.</p>
+<p>A main usecase is to process <tt class="rst-docutils literal">sys.argv[1:]</tt> into a <code>dict</code> in a
+python script, like:</p>
+<pre class="rst-literal-block">
+command_line_dict = args_to_dict(sys.argv[1:], globals())
+globals().update(command_line_dict)
+</pre>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex
+<span class="py-prompt">&gt;&gt;&gt; </span>d = cocoex.utilities.args_to_dict([<span class="py-string">"budget=2.3"</span>, <span class="py-string">"bed=bed-name"</span>, <span class="py-string">"number=4"</span>],
+<span class="py-more">... </span>                                  [<span class="py-string">"budget"</span>, <span class="py-string">"bed"</span>, <span class="py-string">"number"</span>, <span class="py-string">"whatever"</span>])
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(d)
+<span class="py-output">3</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> d[<span class="py-string">'bed'</span>] == <span class="py-string">'bed-name'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> <span class="py-builtin">isinstance</span>(d[<span class="py-string">"budget"</span>], <span class="py-builtin">float</span>)</pre></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocoex.utilities.ascetime">
+    
+  </a>
+  <a name="ascetime">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ascetime</span>(sec):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return elapsed time as str.</p>
+<p>Example: return <code>"0h33:21"</code> if <code>sec == 33*60 + 21</code>.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocoex.utilities.print_flush">
+    
+  </a>
+  <a name="print_flush">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">print_flush</span>(*args):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>print without newline but with flush</div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocoex,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:44:24.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

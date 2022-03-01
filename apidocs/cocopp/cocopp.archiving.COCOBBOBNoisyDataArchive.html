@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.archiving.COCOBBOBNoisyDataArchive</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.archiving.html" class="internal-link" title="cocopp.archiving">archiving</a></code><wbr></wbr>.<code><a href="cocopp.archiving.COCOBBOBNoisyDataArchive.html" class="internal-link" title="cocopp.archiving.COCOBBOBNoisyDataArchive">COCOBBOBNoisyDataArchive</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">COCOBBOBNoisyDataArchive</span>(<a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">COCODataArchive</a>):</code></p>
+        <p><a href="classIndex.html#cocopp.archiving.COCOBBOBNoisyDataArchive">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>This class "contains" archived data for the 'bbob-noisy' suite.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob_noisy  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
+<span class="py-output">['2009/ALPS_hornby_noisy.tgz',...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">isinstance</span>(cocopp.archives.bbob_noisy, cocopp.archiving.COCOBBOBNoisyDataArchive)
+<span class="py-output">True</span>
+</pre><p>While the data are specific to <code><a href="cocopp.archiving.COCOBBOBNoisyDataArchive.html" class="internal-link" title="cocopp.archiving.COCOBBOBNoisyDataArchive">COCOBBOBNoisyDataArchive</a></code>, all the
+functionality is inherited from the parent <code>class</code> <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">COCODataArchive</a></code>:</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">COCODataArchive</a></code>:
+          </p>
+          <table class="children sortable" id="id13">
+  
+  
+  <tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#is_archive" class="internal-link" title="cocopp.archiving.COCODataArchive.is_archive">is​_archive</a></code></td>
+    <td>return <code>True</code> if <code>folder</code> contains a COCO archive definition file</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#__init__" class="internal-link" title="cocopp.archiving.COCODataArchive.__init__">__init__</a></code></td>
+    <td>Argument is a local path to the archive.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#check_hash" class="internal-link" title="cocopp.archiving.COCODataArchive.check_hash">check​_hash</a></code></td>
+    <td>raise Exception when hashes disagree or file is missing.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#consistency_check_data" class="internal-link" title="cocopp.archiving.COCODataArchive.consistency_check_data">consistency​_check​_data</a></code></td>
+    <td>basic quick consistency check of downloaded data.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#consistency_check_read" class="internal-link" title="cocopp.archiving.COCODataArchive.consistency_check_read">consistency​_check​_read</a></code></td>
+    <td>check/compare against definition file on disk</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#contains" class="internal-link" title="cocopp.archiving.COCODataArchive.contains">contains</a></code></td>
+    <td>return <code>True</code> if (the exact) name or path is in the archive</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#full_path" class="internal-link" title="cocopp.archiving.COCODataArchive.full_path">full​_path</a></code></td>
+    <td>return full local path of <code><a href="cocopp.archiving.ListOfArchives.html#name" class="internal-link" title="cocopp.archiving.ListOfArchives.name">name</a></code> or any path, idempotent</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#get" class="internal-link" title="cocopp.archiving.COCODataArchive.get">get</a></code></td>
+    <td>return the full data pathname of <code>substr</code> in the archived data.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#get_all" class="internal-link" title="cocopp.archiving.COCODataArchive.get_all">get​_all</a></code></td>
+    <td>Return a <code>list</code> (<code><a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">StrList</a></code>) of absolute pathnames,</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#get_extended" class="internal-link" title="cocopp.archiving.COCODataArchive.get_extended">get​_extended</a></code></td>
+    <td>return a list of valid paths.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#get_first" class="internal-link" title="cocopp.archiving.COCODataArchive.get_first">get​_first</a></code></td>
+    <td>get the first archived data matching all of <code>substrs</code>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#get_found" class="internal-link" title="cocopp.archiving.COCODataArchive.get_found">get​_found</a></code></td>
+    <td>get full entries of the last <code>find</code></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#get_one" class="internal-link" title="cocopp.archiving.COCODataArchive.get_one">get​_one</a></code></td>
+    <td>deprecated, for backwards compatibility only, use <code><a href="#get" class="internal-link" title="cocopp.archiving.COCODataArchive.get">get</a></code> instead</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#read_definition_file" class="internal-link" title="cocopp.archiving.COCODataArchive.read_definition_file">read​_definition​_file</a></code></td>
+    <td>return definition triple <code>list</code></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#update" class="internal-link" title="cocopp.archiving.COCODataArchive.update">update</a></code></td>
+    <td>update definition file, either from remote location or from local data.</td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#local_data_path" class="internal-link" title="cocopp.archiving.COCODataArchive.local_data_path">local​_data​_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#remote_data_path" class="internal-link" title="cocopp.archiving.COCODataArchive.remote_data_path">remote​_data​_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#downloaded" class="internal-link" title="cocopp.archiving.COCODataArchive.downloaded">downloaded</a></code></td>
+    <td>return <code>list</code> of data set names of locally available data.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_download" class="internal-link" title="cocopp.archiving.COCODataArchive._download">​_download</a></code></td>
+    <td>create full local path and download single dataset</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_hash" class="internal-link" title="cocopp.archiving.COCODataArchive._hash">​_hash</a></code></td>
+    <td>compute hash of <code><a href="cocopp.archiving.ListOfArchives.html#name" class="internal-link" title="cocopp.archiving.ListOfArchives.name">name</a></code> or path</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_known_hash" class="internal-link" title="cocopp.archiving.COCODataArchive._known_hash">​_known​_hash</a></code></td>
+    <td>return known hash or <code>None</code></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_name" class="internal-link" title="cocopp.archiving.COCODataArchive._name">​_name</a></code></td>
+    <td>return supposed name of full_path or name without any checks</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_name_with_check" class="internal-link" title="cocopp.archiving.COCODataArchive._name_with_check">​_name​_with​_check</a></code></td>
+    <td>return name of <code><a href="#full_path" class="internal-link" title="cocopp.archiving.COCODataArchive.full_path">full_path</a></code>, idempotent.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_url_" class="internal-link" title="cocopp.archiving.COCODataArchive._url_">​_url​_</a></code></td>
+    <td>return value of _url_ entry in <code>definition_list</code> file or <code>None</code>.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_all" class="internal-link" title="cocopp.archiving.COCODataArchive._all">​_all</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_all_dict" class="internal-link" title="cocopp.archiving.COCODataArchive._all_dict">​_all​_dict</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_checked_consistency" class="internal-link" title="cocopp.archiving.COCODataArchive._checked_consistency">​_checked​_consistency</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_names_found" class="internal-link" title="cocopp.archiving.COCODataArchive._names_found">​_names​_found</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_print" class="internal-link" title="cocopp.archiving.COCODataArchive._print">​_print</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.archiving.COCODataArchive.html#_redownload_if_changed" class="internal-link" title="cocopp.archiving.COCODataArchive._redownload_if_changed">​_redownload​_if​_changed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">StrList</a></code> (via <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">COCODataArchive</a></code>):
+          </p>
+          <table class="children sortable" id="id14">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#__call__" class="internal-link" title="cocopp.toolsdivers.StrList.__call__">__call__</a></code></td>
+    <td>alias to <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code></td>
+    <td>return entries that match all <code>substrs</code>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#find_indices" class="internal-link" title="cocopp.toolsdivers.StrList.find_indices">find​_indices</a></code></td>
+    <td>same as <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code> but returns indices instead of names</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#print" class="internal-link" title="cocopp.toolsdivers.StrList.print">print</a></code></td>
+    <td>print the result of <tt class="rst-docutils literal"><span class="pre">find(*substrs)</span></tt> with indices.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#as_string" class="internal-link" title="cocopp.toolsdivers.StrList.as_string">as​_string</a></code></td>
+    <td>return space separated string concatenation surrounded by spaces.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#found" class="internal-link" title="cocopp.toolsdivers.StrList.found">found</a></code></td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">StrList</a></code> of elements found during the last call to <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code>.</td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

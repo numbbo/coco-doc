@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.bestalg</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.bestalg.html" class="internal-link" title="cocopp.bestalg">bestalg</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Best algorithm dataset module</p>
+<p>This module implements <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link" title="cocopp.bestalg.BestAlgSet">BestAlgSet</a></code> class which is used as
+data structure for the data set of the virtual best algorithm.
+Therefore this module will be imported by other modules which need
+to access best algorithm data set.</p>
+<p>The best algorithm data set can be accessed by the
+<code><a href="#bestAlgorithmEntries" class="internal-link" title="cocopp.bestalg.bestAlgorithmEntries">bestAlgorithmEntries</a></code> variable. This variable needs to be
+initialized by executing functions <code>load_reference_algorithm(...)</code></p>
+<p>This module can also be used generate the best algorithm data set
+with its generate method.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id31">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link" title="cocopp.bestalg.BestAlgSet">​Best​Alg​Set</a></code></td>
+    <td>Unit element of best algorithm data set.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#create_data_files" class="internal-link" title="cocopp.bestalg.create_data_files">create​_data​_files</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#custom_generate" class="internal-link" title="cocopp.bestalg.custom_generate">custom​_generate</a></code></td>
+    <td>Generates best algorithm data set from a given set of algorithms.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#deprecated_customgenerate" class="internal-link" title="cocopp.bestalg.deprecated_customgenerate">deprecated​_customgenerate</a></code></td>
+    <td>Generates best algorithm data set.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#extractBestAlgorithms" class="internal-link" title="cocopp.bestalg.extractBestAlgorithms">extract​Best​Algorithms</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#generate" class="internal-link" title="cocopp.bestalg.generate">generate</a></code></td>
+    <td>Generates dictionary of best algorithm data set.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_used_instance_list" class="internal-link" title="cocopp.bestalg.get_used_instance_list">get​_used​_instance​_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#getAllContributingAlgorithmsToBest" class="internal-link" title="cocopp.bestalg.getAllContributingAlgorithmsToBest">get​All​Contributing​Algorithms​To​Best</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#load_reference_algorithm" class="internal-link" title="cocopp.bestalg.load_reference_algorithm">load​_reference​_algorithm</a></code></td>
+    <td>Assigns <code><a href="#bestAlgorithmEntries" class="internal-link" title="cocopp.bestalg.bestAlgorithmEntries">bestAlgorithmEntries</a></code>.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#reset_reference_algorithm" class="internal-link" title="cocopp.bestalg.reset_reference_algorithm">reset​_reference​_algorithm</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#usage" class="internal-link" title="cocopp.bestalg.usage">usage</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#write_to_file" class="internal-link" title="cocopp.bestalg.write_to_file">write​_to​_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#algs2009" class="internal-link" title="cocopp.bestalg.algs2009">algs2009</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#algs2010" class="internal-link" title="cocopp.bestalg.algs2010">algs2010</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#algs2012" class="internal-link" title="cocopp.bestalg.algs2012">algs2012</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#bestAlgorithmEntries" class="internal-link" title="cocopp.bestalg.bestAlgorithmEntries">best​Algorithm​Entries</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.create_data_files">
+    
+  </a>
+  <a name="create_data_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">create_data_files</span>(output_dir, result, suite):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.custom_generate">
+    
+  </a>
+  <a name="custom_generate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">custom_generate</span>(args=<a href="#algs2009" class="internal-link" title="cocopp.bestalg.algs2009">algs2009</a>, algId=<span class="rst-variable-quote">'</span><span class="rst-variable-string">bestCustomAlg</span><span class="rst-variable-quote">'</span>, suite=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generates best algorithm data set from a given set of algorithms.</p>
+<p>It will create a folder named as algId in the current working directory
+corresponding to the bestalg dataSet of the algorithms listed in
+variable args. This folder is furthermore added to a <code>.tar.gz</code> file
+of the same name.</p>
+<p>This method is called from the python command line from a directory
+containing all necessary data folders:</p>
+<pre class="rst-literal-block">
+&gt;&gt;&gt; import cocopp
+&gt;&gt;&gt; def print_(*args, **kwargs): pass
+&gt;&gt;&gt; cocopp.archives.bbob._print = print_  # prevent download message
+&gt;&gt;&gt; filename = cocopp.archives.bbob.get('2009/ALPS_hornby_noiseless')
+&gt;&gt;&gt; with cocopp.toolsdivers.InfolderGoneWithTheWind(cocopp.archives.bbob.local_data_path):
+</pre>
+<p>...     print('ESC'); cocopp.bestalg.custom_generate((filename, ),
+...                           '_doctest_refAlgFromALPS') # doctest: +ELLIPSIS
+ESC...</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.deprecated_customgenerate">
+    
+  </a>
+  <a name="deprecated_customgenerate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">deprecated_customgenerate</span>(args=<a href="#algs2009" class="internal-link" title="cocopp.bestalg.algs2009">algs2009</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generates best algorithm data set.</p>
+<p>This functionality is deprecated because it writes
+unsupported pickle files.</p>
+<p>It will create a folder bestAlg in the current working directory
+with a pickle file corresponding to the bestalg dataSet of the
+algorithms listed in variable args.</p>
+<p>This method is called from the python command line from a directory
+containing all necessary data folders.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.extractBestAlgorithms">
+    
+  </a>
+  <a name="extractBestAlgorithms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">extractBestAlgorithms</span>(args=<a href="#algs2009" class="internal-link" title="cocopp.bestalg.algs2009">algs2009</a>, f_factor=2, target_lb=1e-08, target_ub=1e+22):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns (and prints) per dimension a list of algorithms within
+algorithm list args that contains an algorithm if for any</p>
+<blockquote>
+<p>dimension/target/function pair this algorithm:
+- is the best algorithm wrt ERT
+- its own ERT lies within a factor f_factor of the best ERT
+- there is no algorithm within a factor of f_factor of the best ERT</p>
+<blockquote>
+and the current algorithm is the second best.</blockquote>
+</blockquote>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.generate">
+    
+  </a>
+  <a name="generate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generate</span>(dict_alg, algId):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates dictionary of best algorithm data set.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.get_used_instance_list">
+    
+  </a>
+  <a name="get_used_instance_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_used_instance_list</span>(instance_number_list):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.getAllContributingAlgorithmsToBest">
+    
+  </a>
+  <a name="getAllContributingAlgorithmsToBest">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">getAllContributingAlgorithmsToBest</span>(algnamelist, target_lb=1e-08, target_ub=100.0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Computes first the artificial best algorithm from given algorithm list
+algnamelist, constructed by extracting for each target/function pair
+thalgorithm with best ERT among the given ones. Returns then the list
+of algorithms that are contributing to the definition of the best
+algorithm, separated by dimension, and sorted by importance (i.e. with
+respect to the number of target/function pairs where each algorithm is
+best). Only target/function pairs are taken into account where the target
+is in between target_lb and target_ub.
+This method should be called from the python command line from a directory
+containing all necessary data folders:</p>
+<pre class="rst-literal-block">
+&gt;&gt;&gt; import os, cocopp
+&gt;&gt;&gt; import cocopp.toolsdivers
+&gt;&gt;&gt; def print_(*args, **kwargs): pass
+&gt;&gt;&gt; cocopp.archives.bbob._print = print_  # prevent downloading... message
+&gt;&gt;&gt; filenames = (cocopp.archives.bbob.get('2009/BIPOP-CMA-ES'),  # first match will stay the same forever
+...              cocopp.archives.bbob.get('2009/MCS_huyer_noiseless'))
+&gt;&gt;&gt; with cocopp.toolsdivers.InfolderGoneWithTheWind(cocopp.archives.bbob.local_data_path):
+...     cocopp.bestalg.getAllContributingAlgorithmsToBest(filenames)
+...     assert os.path.exists('bestCustomAlg.tar.gz')  # doctest:+ELLIPSIS
+Generating best algorithm data...
+</pre>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.load_reference_algorithm">
+    
+  </a>
+  <a name="load_reference_algorithm">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">load_reference_algorithm</span>(best_algo_filename, force=False, relative_load=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Assigns <code><a href="#bestAlgorithmEntries" class="internal-link" title="cocopp.bestalg.bestAlgorithmEntries">bestAlgorithmEntries</a></code>.</p>
+<p>This function is needed to set the global variable
+<code><a href="#bestAlgorithmEntries" class="internal-link" title="cocopp.bestalg.bestAlgorithmEntries">bestAlgorithmEntries</a></code>. It reads in the data, specified by
+the string best_algo_filename which can
+either be a pickled file (deprecated), generated by
+deprecated_customgenerate or any standard data set (i.e. a zipped or
+unzipped folder with .info, .dat, and .tdat files such as the ones
+generated by custom_generate). This function will also set
+the testbedsettings.current_testbed.reference_algorithm_displayname
+according to the read data if not already present.</p>
+<p><code><a href="#bestAlgorithmEntries" class="internal-link" title="cocopp.bestalg.bestAlgorithmEntries">bestAlgorithmEntries</a></code> is a dictionary accessed by providing
+a tuple <code>(dimension, function)</code>. This returns an instance
+of <code><a href="cocopp.bestalg.BestAlgSet.html" class="internal-link" title="cocopp.bestalg.BestAlgSet">BestAlgSet</a></code>.
+The data is that of specific algorithms (depending on the Testbed used).</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.reset_reference_algorithm">
+    
+  </a>
+  <a name="reset_reference_algorithm">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reset_reference_algorithm</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">usage</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.bestalg.write_to_file">
+    
+  </a>
+  <a name="write_to_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">write_to_file</span>(filename, lines):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.bestalg.algs2009">
+    
+  </a>
+  <a name="algs2009">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">algs2009</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.bestalg.algs2010">
+    
+  </a>
+  <a name="algs2010">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">algs2010</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.bestalg.algs2012">
+    
+  </a>
+  <a name="algs2012">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">algs2012</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.bestalg.bestAlgorithmEntries">
+    
+  </a>
+  <a name="bestAlgorithmEntries">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">bestAlgorithmEntries</span>: <code>dict</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

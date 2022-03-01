@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.compall.ppfigcons</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.compall.html" class="internal-link" title="cocopp.compall">compall</a></code><wbr></wbr>.<code><a href="cocopp.compall.ppfigcons.html" class="internal-link" title="cocopp.compall.ppfigcons">ppfigcons</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Generate performance scaling figures for the constrained testbed.</p>
+<p>The figures show the scaling of the performance in terms of ERT w.r.t.
+number of constraints on a log-log scale.</p>
+<p>TODO:
+- docstring
+- example</p>
+<p>Comments:
+(Paul) for now the strategy is to keep the same interface as in ppfigdim.py
+and implement an additional call to ppfigcons if data is from the constrained test suite</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id43">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#beautify" class="internal-link" title="cocopp.compall.ppfigcons.beautify">beautify</a></code></td>
+    <td>Customize figure format.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ecdfs_figure_caption" class="internal-link" title="cocopp.compall.ppfigcons.ecdfs_figure_caption">ecdfs​_figure​_caption</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#fix_styles" class="internal-link" title="cocopp.compall.ppfigcons.fix_styles">fix​_styles</a></code></td>
+    <td>a short hack to fix length of styles</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_ecdfs_all_groups_caption" class="internal-link" title="cocopp.compall.ppfigcons.get_ecdfs_all_groups_caption">get​_ecdfs​_all​_groups​_caption</a></code></td>
+    <td>Returns figure caption for ECDF plots aggregating over function groups.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_ecdfs_single_fcts_caption" class="internal-link" title="cocopp.compall.ppfigcons.get_ecdfs_single_fcts_caption">get​_ecdfs​_single​_fcts​_caption</a></code></td>
+    <td>Returns figure caption for single function ECDF plots.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_ecdfs_single_functions_single_dim_caption" class="internal-link" title="cocopp.compall.ppfigcons.get_ecdfs_single_functions_single_dim_caption">get​_ecdfs​_single​_functions​_single​_dim​_caption</a></code></td>
+    <td>Returns figure caption for single function ECDF plots showing the results of 2+ algorithms in a single dimension.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#legend_fontsize_scaler" class="internal-link" title="cocopp.compall.ppfigcons.legend_fontsize_scaler">legend​_fontsize​_scaler</a></code></td>
+    <td>return a fontsize scaling factor depending on the number of entries in the legend.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#main" class="internal-link" title="cocopp.compall.ppfigcons.main">main</a></code></td>
+    <td>From a DataSetList, returns figures showing the scaling: ERT/dim vs dim.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#plotLegend" class="internal-link" title="cocopp.compall.ppfigcons.plotLegend">plot​Legend</a></code></td>
+    <td>Display right-side legend.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#prepare_ecdfs_figure_caption" class="internal-link" title="cocopp.compall.ppfigcons.prepare_ecdfs_figure_caption">prepare​_ecdfs​_figure​_caption</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#prepare_scaling_figure_caption" class="internal-link" title="cocopp.compall.ppfigcons.prepare_scaling_figure_caption">prepare​_scaling​_figure​_caption</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#providecolorsforlatex" class="internal-link" title="cocopp.compall.ppfigcons.providecolorsforlatex">providecolorsforlatex</a></code></td>
+    <td>Provides the dvipsnames colors in pure LaTeX.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#scaling_figure_caption" class="internal-link" title="cocopp.compall.ppfigcons.scaling_figure_caption">scaling​_figure​_caption</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ylim_upperbound" class="internal-link" title="cocopp.compall.ppfigcons.ylim_upperbound">ylim​_upperbound</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#fontsize" class="internal-link" title="cocopp.compall.ppfigcons.fontsize">fontsize</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#legend" class="internal-link" title="cocopp.compall.ppfigcons.legend">legend</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#legend_text_max_len" class="internal-link" title="cocopp.compall.ppfigcons.legend_text_max_len">legend​_text​_max​_len</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ratio_nbsucc_to_display" class="internal-link" title="cocopp.compall.ppfigcons.ratio_nbsucc_to_display">ratio​_nbsucc​_to​_display</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#refcolor" class="internal-link" title="cocopp.compall.ppfigcons.refcolor">refcolor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#show_algorithms" class="internal-link" title="cocopp.compall.ppfigcons.show_algorithms">show​_algorithms</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#show_significance" class="internal-link" title="cocopp.compall.ppfigcons.show_significance">show​_significance</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">beautify</span>(dim, legend=False, rightlegend=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Customize figure format.</p>
+<p>adding a legend, axis label, etc</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dim</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">legend</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rightlegend</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bool legend</span></td><td class="fieldArgDesc">if True, display a box legend</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bool rightlegend</span></td><td class="fieldArgDesc">if True, makes some space on the right for
+legend</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.ecdfs_figure_caption">
+    
+  </a>
+  <a name="ecdfs_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ecdfs_figure_caption</span>(for_html=False, dimension=0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.fix_styles">
+    
+  </a>
+  <a name="fix_styles">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fix_styles</span>(plotting_styles, line_styles):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>a short hack to fix length of styles</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.get_ecdfs_all_groups_caption">
+    
+  </a>
+  <a name="get_ecdfs_all_groups_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_ecdfs_all_groups_caption</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns figure caption for ECDF plots aggregating over function groups.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.get_ecdfs_single_fcts_caption">
+    
+  </a>
+  <a name="get_ecdfs_single_fcts_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_ecdfs_single_fcts_caption</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns figure caption for single function ECDF plots.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.get_ecdfs_single_functions_single_dim_caption">
+    
+  </a>
+  <a name="get_ecdfs_single_functions_single_dim_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_ecdfs_single_functions_single_dim_caption</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns figure caption for single function ECDF plots
+showing the results of 2+ algorithms in a single dimension.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.legend_fontsize_scaler">
+    
+  </a>
+  <a name="legend_fontsize_scaler">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">legend_fontsize_scaler</span>(number_of_entries=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a fontsize scaling factor depending on the number of entries
+in the legend.</p>
+<p>Works currently well with fontsize 14, where a legend with up to ~30
+entries will still fit into the figure.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span>(dictAlg, html_file_prefix, sorted_algorithms=None, output_dir=<span class="rst-variable-quote">'</span><span class="rst-variable-string">ppdata</span><span class="rst-variable-quote">'</span>, latex_commands_file=<span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>From a DataSetList, returns figures showing the scaling: ERT/dim vs dim.</p>
+<p>One function and one target per figure.</p>
+<p><tt class="rst-docutils literal">target</tt> can be a scalar, a list with one element or a
+<tt class="rst-docutils literal">pproc.TargetValues</tt> instance with one target.</p>
+<p><tt class="rst-docutils literal">sortedAlgs</tt> is a list of string-identifies (folder names)</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.plotLegend">
+    
+  </a>
+  <a name="plotLegend">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plotLegend</span>(handles, maxval=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Display right-side legend.</p>
+<p>Sorted from smaller to larger y-coordinate values.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.prepare_ecdfs_figure_caption">
+    
+  </a>
+  <a name="prepare_ecdfs_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prepare_ecdfs_figure_caption</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.prepare_scaling_figure_caption">
+    
+  </a>
+  <a name="prepare_scaling_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prepare_scaling_figure_caption</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.providecolorsforlatex">
+    
+  </a>
+  <a name="providecolorsforlatex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">providecolorsforlatex</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Provides the dvipsnames colors in pure LaTeX.</p>
+<p>Used when the xcolor option of the same name is not available, e.g.
+within the new ACM LaTeX templates.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.scaling_figure_caption">
+    
+  </a>
+  <a name="scaling_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">scaling_figure_caption</span>(for_html=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.ppfigcons.ylim_upperbound">
+    
+  </a>
+  <a name="ylim_upperbound">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ylim_upperbound</span>(ymax):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.ppfigcons.fontsize">
+    
+  </a>
+  <a name="fontsize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">fontsize</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.ppfigcons.legend">
+    
+  </a>
+  <a name="legend">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">legend</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.ppfigcons.legend_text_max_len">
+    
+  </a>
+  <a name="legend_text_max_len">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">legend_text_max_len</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.ppfigcons.ratio_nbsucc_to_display">
+    
+  </a>
+  <a name="ratio_nbsucc_to_display">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ratio_nbsucc_to_display</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.ppfigcons.refcolor">
+    
+  </a>
+  <a name="refcolor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">refcolor</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.ppfigcons.show_algorithms">
+    
+  </a>
+  <a name="show_algorithms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">show_algorithms</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.ppfigcons.show_significance">
+    
+  </a>
+  <a name="show_significance">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">show_significance</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

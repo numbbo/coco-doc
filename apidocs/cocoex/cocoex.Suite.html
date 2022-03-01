@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocoex.Suite</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocoex <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocoex</a></code><wbr></wbr>.<code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Suite</span>(_Suite):</code></p>
+        <p><a href="classIndex.html#cocoex.Suite">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Suite of benchmark problems.</p>
+<p>Input arguments to <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code> are <code>name: str</code>, <code>instance: str</code>, <code>options: str</code>,
+and passed to the respective C code (see <code>coco.h</code>).</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>suite = ex.Suite(<span class="py-string">"bbob"</span>, <span class="py-string">""</span>, <span class="py-string">""</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>f = suite.next_problem()
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> f.number_of_objectives == 1
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> f.evaluations == 0
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">"f([1,2]) = %.11f"</span> % f([1,2]))
+<span class="py-output">f([1,2]) = 90.00369408000</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> f.evaluations == 1</pre><p>Sweeping through all problems is as simple as:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>suite = ex.Suite(<span class="py-string">"bbob-biobj"</span>, <span class="py-string">""</span>, <span class="py-string">""</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>observer = ex.Observer(<span class="py-string">"bbob-biobj"</span>, <span class="py-string">"result_folder:doctest"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> fun <span class="py-keyword">in</span> suite:
+<span class="py-more">... </span>    <span class="py-keyword">if</span> fun.index == 0:
+<span class="py-more">... </span>        <span class="py-builtin">print</span>(<span class="py-string">"Number of objectives %d, %d, %d"</span> %
+<span class="py-more">... </span>                (fun.number_of_objectives,
+<span class="py-more">... </span>                 suite.number_of_objectives[0],
+<span class="py-more">... </span>                 suite.number_of_objectives[-1]))
+<span class="py-more">... </span>    fun.observe_with(observer)
+<span class="py-more">... </span>    <span class="py-keyword">assert</span> fun.evaluations == 0
+<span class="py-more">... </span>    <span class="py-keyword">assert</span> fun.number_of_objectives == suite.number_of_objectives[0]
+<span class="py-more">... </span>    <span class="py-comment"># run run run using fun  # doctest: +ELLIPSIS</span>
+<span class="py-output">Number of objectives 2, 2, 2...</span>
+</pre><p>In the example, an observer was added to produce output data for the
+COCO post-processing.</p>
+<p>The following example runs the entire bbob2009 benchmark suite
+on random search:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> numpy <span class="py-keyword">as</span> np
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocoex <span class="py-keyword">import</span> Suite, Observer
+<span class="py-more">...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>MAX_FE = 22  <span class="py-comment"># max f-evaluations</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">def</span> <span class="py-defname">random_search</span>(f, lb, ub, m):  <span class="py-comment"># don't use m &gt;&gt; 1e5 with this implementation</span>
+<span class="py-more">... </span>    candidates = lb + (ub - lb) * np.random.rand(m, <span class="py-builtin">len</span>(lb))
+<span class="py-more">... </span>    <span class="py-keyword">return</span> candidates[np.argmin([f(x) <span class="py-keyword">for</span> x <span class="py-keyword">in</span> candidates])]
+<span class="py-more">...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>solver = random_search
+<span class="py-prompt">&gt;&gt;&gt; </span>suite = Suite(<span class="py-string">"bbob"</span>, <span class="py-string">"year:2009"</span>, <span class="py-string">""</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>observer = Observer(<span class="py-string">"bbob"</span>,
+<span class="py-more">... </span>             <span class="py-string">"result_folder: %s_on_%s"</span> % (solver.__name__, <span class="py-string">"bbob2009"</span>))
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> fun <span class="py-keyword">in</span> suite:
+<span class="py-more">... </span>    <span class="py-keyword">assert</span> fun.evaluations == 0
+<span class="py-more">... </span>    <span class="py-keyword">if</span> fun.dimension &gt;= 10:
+<span class="py-more">... </span>        <span class="py-keyword">break</span>
+<span class="py-more">... </span>    <span class="py-builtin">print</span>(<span class="py-string">'Current problem index = %d'</span> % fun.index)
+<span class="py-more">... </span>    fun.observe_with(observer)
+<span class="py-more">... </span>    <span class="py-keyword">assert</span> fun.evaluations == 0
+<span class="py-more">... </span>    solver(fun, fun.lower_bounds, fun.upper_bounds, MAX_FE)
+<span class="py-more">... </span>    <span class="py-comment"># data should be now in the "exdata/random_search_on_bbob2009" folder</span>
+<span class="py-more">... </span>    <span class="py-keyword">assert</span> fun.evaluations == MAX_FE  <span class="py-comment"># depends on the solver</span>
+<span class="py-more">... </span>    <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">Current problem index = 0...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment">#</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># Exactly the same using another looping technique:</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> <span class="py-builtin">id</span> <span class="py-keyword">in</span> suite.ids():
+<span class="py-more">... </span>    fun = suite.get_problem(<span class="py-builtin">id</span>, observer)
+<span class="py-more">... </span>    _ = solver(fun, fun.lower_bounds, fun.upper_bounds, MAX_FE)
+<span class="py-more">... </span>    <span class="py-builtin">print</span>(<span class="py-string">"Evaluations on %s: %d"</span> % (fun.name, fun.evaluations))
+<span class="py-more">... </span>    fun.free()  <span class="py-comment"># this is absolutely necessary here</span>
+<span class="py-more">... </span>    <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">Evaluations on ...</span>
+</pre><p>We can select a single function, say BBOB f9 in 20D, of a given suite like:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>suite = ex.Suite(<span class="py-string">"bbob"</span>, <span class="py-string">""</span>, <span class="py-string">"dimensions:20 instance_indices:1"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">len</span>(suite)
+<span class="py-output">24</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>f9 = suite.get_problem(8)
+<span class="py-prompt">&gt;&gt;&gt; </span>x = f9.initial_solution  <span class="py-comment"># a copy of a feasible point</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">all</span>(x == 0)
+<span class="py-output">True</span>
+</pre><p>See module attribute <code>cocoex.known_suite_names</code> for known suite names:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> suite_name <span class="py-keyword">in</span> ex.known_suite_names:
+<span class="py-more">... </span>    suite = ex.Suite(suite_name, <span class="py-string">""</span>, <span class="py-string">""</span>)
+<span class="py-more">... </span>    <span class="py-builtin">print</span>(suite.dimensions)
+<span class="py-more">... </span>    <span class="py-keyword">for</span> f <span class="py-keyword">in</span> suite:
+<span class="py-more">... </span>        <span class="py-keyword">assert</span> f.dimension <span class="py-keyword">in</span> suite.dimensions
+<span class="py-more">... </span>        <span class="py-keyword">assert</span> f.evaluations == 0
+<span class="py-more">... </span>        <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">[2, 3, 5, 10, 20, 40]...</span>
+</pre><p>See file <code>example_experiment.py</code> for a full example use case.</p>
+<p>Details: depending on the benchmark suite and observer, only one problem can
+be open at a time. Using <code><a href="#get_problem" class="internal-link" title="cocoex.Suite.get_problem">get_problem</a></code> without <code><a href="#free" class="internal-link" title="cocoex.Suite.free">free</a></code> or mixing the use of
+<code><a href="#next_problem" class="internal-link" title="cocoex.Suite.next_problem">next_problem</a></code> and <code><a href="#get_problem" class="internal-link" title="cocoex.Suite.get_problem">get_problem</a></code> may not be possible. For example, in this
+case the "bbob" observer is known to lead to a crash of the Python
+interpreter.</p>
+<p>See also <code><a href="cocoex.Observer.html" class="internal-link" title="cocoex.Observer">Observer</a></code> and <code>example_experiment.py</code>.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id13">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__getitem__" class="internal-link" title="cocoex.Suite.__getitem__">__getitem__</a></code></td>
+    <td><code>self[i]</code> is a synonym for <code>self.get_problem(i)</code>, see <code><a href="#get_problem" class="internal-link" title="cocoex.Suite.get_problem">get_problem</a></code></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocoex.Suite.__init__">__init__</a></code></td>
+    <td><tt class="rst-docutils literal">suite_instance</tt> and <tt class="rst-docutils literal">suite_options</tt> can be empty strings.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#find_problem_ids" class="internal-link" title="cocoex.Suite.find_problem_ids">find​_problem​_ids</a></code></td>
+    <td>has been renamed to <code><a href="#ids" class="internal-link" title="cocoex.Suite.ids">ids</a></code></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#free" class="internal-link" title="cocoex.Suite.free">free</a></code></td>
+    <td>free underlying C structures</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_problem" class="internal-link" title="cocoex.Suite.get_problem">get​_problem</a></code></td>
+    <td>return a <code><a href="cocoex.Problem.html" class="internal-link" title="cocoex.Problem">Problem</a></code> instance, by default unobserved, using <tt class="rst-docutils literal">id: str</tt> or index (where <tt class="rst-docutils literal">id: int</tt>) to identify the desired problem.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_problem_by_function_dimension_instance" class="internal-link" title="cocoex.Suite.get_problem_by_function_dimension_instance">get​_problem​_by​_function​_dimension​_instance</a></code></td>
+    <td>return a <code><a href="cocoex.Problem.html" class="internal-link" title="cocoex.Problem">Problem</a></code> instance, by default unobserved, using function, dimension and instance to identify the desired problem.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#ids" class="internal-link" title="cocoex.Suite.ids">ids</a></code></td>
+    <td><code>ids(*id_snippets, get_problem=False, verbose=False)</code> return all problem IDs that contain all of the <code>id_snippets</code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#next_problem" class="internal-link" title="cocoex.Suite.next_problem">next​_problem</a></code></td>
+    <td>return the "next" problem in this <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reset" class="internal-link" title="cocoex.Suite.reset">reset</a></code></td>
+    <td>reset to original state, affecting <code><a href="#next_problem" class="internal-link" title="cocoex.Suite.next_problem">next_problem()</a></code>, <code><a href="#current_problem" class="internal-link" title="cocoex.Suite.current_problem">current_problem</a></code>, <code><a href="#current_index" class="internal-link" title="cocoex.Suite.current_index">current_index</a></code></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#current_index" class="internal-link" title="cocoex.Suite.current_index">current​_index</a></code></td>
+    <td>index in the enumerator of all problems in this suite.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#current_problem" class="internal-link" title="cocoex.Suite.current_problem">current​_problem</a></code></td>
+    <td>current "open/active" problem to be benchmarked</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#dimensions" class="internal-link" title="cocoex.Suite.dimensions">dimensions</a></code></td>
+    <td>list of problem dimensions occuring at least once in this <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#indices" class="internal-link" title="cocoex.Suite.indices">indices</a></code></td>
+    <td>list of all problem indices, deprecated.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#info" class="internal-link" title="cocoex.Suite.info">info</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#instance" class="internal-link" title="cocoex.Suite.instance">instance</a></code></td>
+    <td>instance of this suite as used to instantiate the suite via <code>Suite(name, instance, ...)</code></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#name" class="internal-link" title="cocoex.Suite.name">name</a></code></td>
+    <td>name of this suite as used to instantiate the suite via <code>Suite(name, ...)</code></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#number_of_objectives" class="internal-link" title="cocoex.Suite.number_of_objectives">number​_of​_objectives</a></code></td>
+    <td>list of number of objectives occuring in this <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#options" class="internal-link" title="cocoex.Suite.options">options</a></code></td>
+    <td>options for this suite as used to instantiate the suite via <code>Suite(name, instance, options)</code></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#problem_names" class="internal-link" title="cocoex.Suite.problem_names">problem​_names</a></code></td>
+    <td>list of problem names in this <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code>, see also <code><a href="#ids" class="internal-link" title="cocoex.Suite.ids">ids</a></code></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="cocoex.Suite.__getitem__">
+    
+  </a>
+  <a name="__getitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span>(self, key):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><code>self[i]</code> is a synonym for <code>self.get_problem(i)</code>, see <code><a href="#get_problem" class="internal-link" title="cocoex.Suite.get_problem">get_problem</a></code></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.Suite.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, suite_name, suite_instance, suite_options):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><tt class="rst-docutils literal">suite_instance</tt> and <tt class="rst-docutils literal">suite_options</tt> can be empty strings.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.Suite.find_problem_ids">
+    
+  </a>
+  <a name="find_problem_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find_problem_ids</span>(self, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>has been renamed to <code><a href="#ids" class="internal-link" title="cocoex.Suite.ids">ids</a></code></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.Suite.free">
+    
+  </a>
+  <a name="free">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">free</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>free underlying C structures</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.Suite.get_problem">
+    
+  </a>
+  <a name="get_problem">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_problem</span>(self, id, observer=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a <code><a href="cocoex.Problem.html" class="internal-link" title="cocoex.Problem">Problem</a></code> instance, by default unobserved, using <tt class="rst-docutils literal">id: str</tt>
+or index (where <tt class="rst-docutils literal">id: int</tt>) to identify the desired problem.</p>
+<p>All values between zero and <code>len(self) - 1</code> are valid index values:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>suite = ex.Suite(<span class="py-string">"bbob-biobj"</span>, <span class="py-string">""</span>, <span class="py-string">""</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> index <span class="py-keyword">in</span> <span class="py-builtin">range</span>(<span class="py-builtin">len</span>(suite)):
+<span class="py-more">... </span>    problem = suite.get_problem(index)
+<span class="py-more">... </span>    <span class="py-comment"># work work work using problem</span>
+<span class="py-more">... </span>    problem.free()</pre><p>A shortcut for <code>suite.get_problem(index)</code> is <code>suite[index]</code>, they are
+synonym.</p>
+<dl class="rst-docutils">
+<dt>Details:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>Here an <code><a href="cocoex.Problem.html#index" class="internal-link" title="cocoex.Problem.index">index</a></code> takes values between 0 and <code>len(self) - 1</code> and can in
+principle be different from the problem index in the benchmark suite.</li>
+<li>This call does not affect the state of the <code><a href="#current_problem" class="internal-link" title="cocoex.Suite.current_problem">current_problem</a></code> and
+<code><a href="#current_index" class="internal-link" title="cocoex.Suite.current_index">current_index</a></code> attributes.</li>
+<li>For some suites and/or observers, the <code><a href="#free" class="internal-link" title="cocoex.Suite.free">free()</a></code> method of the problem
+must be called before the next call of <code><a href="#get_problem" class="internal-link" title="cocoex.Suite.get_problem">get_problem</a></code>. Otherwise Python
+might just silently die, which is e.g. a known issue of the "bbob"
+observer.</li>
+</ul>
+</dd>
+</dl>
+<p>See also <code><a href="#ids" class="internal-link" title="cocoex.Suite.ids">ids</a></code>.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.Suite.get_problem_by_function_dimension_instance">
+    
+  </a>
+  <a name="get_problem_by_function_dimension_instance">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_problem_by_function_dimension_instance</span>(self, function, dimension, instance, observer=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a <code><a href="cocoex.Problem.html" class="internal-link" title="cocoex.Problem">Problem</a></code> instance, by default unobserved, using function,
+dimension and instance to identify the desired problem.</p>
+<p>If a suite contains multiple problems with the same function, dimension
+and instance, the first corresponding problem is returned.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>suite = ex.Suite(<span class="py-string">"bbob-biobj"</span>, <span class="py-string">""</span>, <span class="py-string">""</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>problem = suite.get_problem_by_function_dimension_instance(1, 2, 3)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># work work work using problem</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>problem.free()</pre><dl class="rst-docutils">
+<dt>Details:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>Function, dimension and instance are integer values from 1 on.</li>
+<li>This call does not affect the state of the <code><a href="#current_problem" class="internal-link" title="cocoex.Suite.current_problem">current_problem</a></code> and
+<code><a href="#current_index" class="internal-link" title="cocoex.Suite.current_index">current_index</a></code> attributes.</li>
+<li>For some suites and/or observers, the <code><a href="#free" class="internal-link" title="cocoex.Suite.free">free()</a></code> method of the problem
+must be called before the next call of
+<code><a href="#get_problem_by_function_dimension_instance" class="internal-link" title="cocoex.Suite.get_problem_by_function_dimension_instance">get_problem_by_function_dimension_instance</a></code>. Otherwise Python might
+just silently die, which is e.g. a known issue of the "bbob" observer.</li>
+</ul>
+</dd>
+</dl>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.Suite.ids">
+    
+  </a>
+  <a name="ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ids</span>(self, *id_snippets, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p><code>ids(*id_snippets, get_problem=False, verbose=False)</code>
+return all problem IDs that contain all of the <code>id_snippets</code>.</p>
+<p>An ID can be used for indexing, that is, when calling the method
+<code>get_problem(id)</code>.</p>
+<p>If <code>get_problem is True</code>, the problem for the first matching ID is
+returned.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>s = ex.Suite(<span class="py-string">"bbob"</span>, <span class="py-string">""</span>, <span class="py-string">""</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>s.ids(<span class="py-string">"f001"</span>, <span class="py-string">"d10"</span>, <span class="py-string">"i01"</span>)
+<span class="py-output">['bbob_f001_i01_d10']</span>
+</pre><p>We can sweep through all instances of the ellipsoidal function f10
+in 20-D of the BBOB suite like this:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>suite = ex.Suite(<span class="py-string">"bbob"</span>, <span class="py-string">""</span>, <span class="py-string">""</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>ids = suite.ids(<span class="py-string">"f010"</span>, <span class="py-string">"d20"</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>used_indices = []
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> p <span class="py-keyword">in</span> suite:
+<span class="py-more">... </span>    <span class="py-keyword">if</span> p.id <span class="py-keyword">in</span> ids:
+<span class="py-more">... </span>        <span class="py-comment"># work work work with problem `p`</span>
+<span class="py-more">... </span>        used_indices.append(p.index)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(used_indices)
+<span class="py-output">[1575, 1576, 1577, 1578, 1579, 1580, 1581, 1582, 1583, 1584, 1585, 1586, 1587, 1588, 1589]</span>
+</pre><p>A desired problem can also be filtered out during creation:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>f9 = ex.Suite(<span class="py-string">"bbob"</span>, <span class="py-string">""</span>,
+<span class="py-more">... </span>              <span class="py-string">"function_indices:9 dimensions:20 instance_indices:1-5"</span>)[0]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(f9.id)
+<span class="py-output">bbob_f009_i01_d20</span>
+</pre></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.Suite.next_problem">
+    
+  </a>
+  <a name="next_problem">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">next_problem</span>(self, observer=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return the "next" problem in this <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code>.</p>
+<p>return the first problem on the first call or after
+<code><a href="#reset" class="internal-link" title="cocoex.Suite.reset">reset</a></code> ().</p>
+<p><code><a href="#next_problem" class="internal-link" title="cocoex.Suite.next_problem">next_problem</a></code> serves to sweep through the <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code> smoothly.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.Suite.reset">
+    
+  </a>
+  <a name="reset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reset</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>reset to original state, affecting <code><a href="#next_problem" class="internal-link" title="cocoex.Suite.next_problem">next_problem()</a></code>,
+<code><a href="#current_problem" class="internal-link" title="cocoex.Suite.current_problem">current_problem</a></code>, <code><a href="#current_index" class="internal-link" title="cocoex.Suite.current_index">current_index</a></code></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.Suite.current_index">
+    
+  </a>
+  <a name="current_index">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">current_index</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>index in the enumerator of all problems in this suite.</p>
+<p>Details: To get the index in the underlying C implementation, which
+usually matches <code><a href="#current_index" class="internal-link" title="cocoex.Suite.current_index">current_index</a></code> one-to-one, use:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex <span class="py-keyword">as</span> ex
+<span class="py-prompt">&gt;&gt;&gt; </span>suite = ex.Suite(<span class="py-string">"bbob"</span>, <span class="py-string">""</span>, <span class="py-string">""</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>suite.current_index <span class="py-keyword">is</span> <span class="py-builtin">None</span>
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>suite.next_problem().id[-17:].lower()
+<span class="py-output">'bbob_f001_i01_d02'</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>suite.current_index, suite.indices[suite.current_index]
+<span class="py-output">(0, 0)</span>
+</pre></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.Suite.current_problem">
+    
+  </a>
+  <a name="current_problem">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">current_problem</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>current "open/active" problem to be benchmarked</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.Suite.dimensions">
+    
+  </a>
+  <a name="dimensions">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">dimensions</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>list of problem dimensions occuring at least once in this <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.Suite.indices">
+    
+  </a>
+  <a name="indices">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">indices</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p>list of all problem indices, deprecated.</p>
+<p>These values are (only) used to call the underlying C structures.
+Indices used in the Python interface run between 0 and <code>len(self)</code>.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.Suite.info">
+    
+  </a>
+  <a name="info">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">info</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.Suite.instance">
+    
+  </a>
+  <a name="instance">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">instance</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>instance of this suite as used to instantiate the suite via
+<code>Suite(name, instance, ...)</code></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.Suite.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">name</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>name of this suite as used to instantiate the suite via <code>Suite(name, ...)</code></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.Suite.number_of_objectives">
+    
+  </a>
+  <a name="number_of_objectives">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">number_of_objectives</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>list of number of objectives occuring in this <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.Suite.options">
+    
+  </a>
+  <a name="options">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">options</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>options for this suite as used to instantiate the suite via
+<code>Suite(name, instance, options)</code></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocoex.Suite.problem_names">
+    
+  </a>
+  <a name="problem_names">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">problem_names</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>list of problem names in this <code><a href="cocoex.Suite.html" class="internal-link" title="cocoex.Suite">Suite</a></code>, see also <code><a href="#ids" class="internal-link" title="cocoex.Suite.ids">ids</a></code></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocoex,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:44:24.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

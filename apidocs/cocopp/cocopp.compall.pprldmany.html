@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.compall.pprldmany</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.compall.html" class="internal-link" title="cocopp.compall">compall</a></code><wbr></wbr>.<code><a href="cocopp.compall.pprldmany.html" class="internal-link" title="cocopp.compall.pprldmany">pprldmany</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Generates figure of the bootstrap distribution of ERT.</p>
+<p>The main method in this module generates figures of Empirical
+Cumulative Distribution Functions of the bootstrap distribution of
+the Expected Running Time (ERT) divided by the dimension for many
+algorithms.</p>
+<p>The outputs show the ECDFs of the running times of the simulated runs
+divided by dimension for 50 different targets logarithmically uniformly
+distributed in [1e−8, 1e2]. The crosses (×) give the median number of
+function evaluations of unsuccessful runs divided by dimension.</p>
+<p><strong>Example</strong></p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id46">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#all_single_functions" class="internal-link" title="cocopp.compall.pprldmany.all_single_functions">all​_single​_functions</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#beautify" class="internal-link" title="cocopp.compall.pprldmany.beautify">beautify</a></code></td>
+    <td>Customize figure presentation.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#main" class="internal-link" title="cocopp.compall.pprldmany.main">main</a></code></td>
+    <td>Generates a figure showing the performance of algorithms.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#plot" class="internal-link" title="cocopp.compall.pprldmany.plot">plot</a></code></td>
+    <td>This function is obsolete? Generates a graph of the run length distribution of an algorithm.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#plotdata" class="internal-link" title="cocopp.compall.pprldmany.plotdata">plotdata</a></code></td>
+    <td>Draw a normalized ECDF. What means normalized?</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#plotLegend" class="internal-link" title="cocopp.compall.pprldmany.plotLegend">plot​Legend</a></code></td>
+    <td>Display right-side legend.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#plt_plot" class="internal-link" title="cocopp.compall.pprldmany.plt_plot">plt​_plot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#text_infigure_if_constraints" class="internal-link" title="cocopp.compall.pprldmany.text_infigure_if_constraints">text​_infigure​_if​_constraints</a></code></td>
+    <td>to be displayed in the figure corner</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#EDA" class="internal-link" title="cocopp.compall.pprldmany.EDA">EDA</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#GA" class="internal-link" title="cocopp.compall.pprldmany.GA">GA</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#MC" class="internal-link" title="cocopp.compall.pprldmany.MC">MC</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#TAO" class="internal-link" title="cocopp.compall.pprldmany.TAO">TAO</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#annotation_line_end_relative" class="internal-link" title="cocopp.compall.pprldmany.annotation_line_end_relative">annotation​_line​_end​_relative</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#annotation_space_end_relative" class="internal-link" title="cocopp.compall.pprldmany.annotation_space_end_relative">annotation​_space​_end​_relative</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#best" class="internal-link" title="cocopp.compall.pprldmany.best">best</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#best2" class="internal-link" title="cocopp.compall.pprldmany.best2">best2</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#bestbest" class="internal-link" title="cocopp.compall.pprldmany.bestbest">bestbest</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#bestnoisy" class="internal-link" title="cocopp.compall.pprldmany.bestnoisy">bestnoisy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#classics" class="internal-link" title="cocopp.compall.pprldmany.classics">classics</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#close_figure" class="internal-link" title="cocopp.compall.pprldmany.close_figure">close​_figure</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#displaybest" class="internal-link" title="cocopp.compall.pprldmany.displaybest">displaybest</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#divide_by_dimension" class="internal-link" title="cocopp.compall.pprldmany.divide_by_dimension">divide​_by​_dimension</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#eseda" class="internal-link" title="cocopp.compall.pprldmany.eseda">eseda</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ESs" class="internal-link" title="cocopp.compall.pprldmany.ESs">​ESs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#fmulti" class="internal-link" title="cocopp.compall.pprldmany.fmulti">fmulti</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#funi" class="internal-link" title="cocopp.compall.pprldmany.funi">funi</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#funilipschitz" class="internal-link" title="cocopp.compall.pprldmany.funilipschitz">funilipschitz</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#funisep" class="internal-link" title="cocopp.compall.pprldmany.funisep">funisep</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#label_fontsize" class="internal-link" title="cocopp.compall.pprldmany.label_fontsize">label​_fontsize</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#median_max_evals_marker_format" class="internal-link" title="cocopp.compall.pprldmany.median_max_evals_marker_format">median​_max​_evals​_marker​_format</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#nbperdecade" class="internal-link" title="cocopp.compall.pprldmany.nbperdecade">nbperdecade</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#nikos" class="internal-link" title="cocopp.compall.pprldmany.nikos">nikos</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#nikos40D" class="internal-link" title="cocopp.compall.pprldmany.nikos40D">nikos40​D</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#petr" class="internal-link" title="cocopp.compall.pprldmany.petr">petr</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#PlotType" class="internal-link" title="cocopp.compall.pprldmany.PlotType">​Plot​Type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#refcolor" class="internal-link" title="cocopp.compall.pprldmany.refcolor">refcolor</a></code></td>
+    <td>color of reference (best) algorithm</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#save_figure" class="internal-link" title="cocopp.compall.pprldmany.save_figure">save​_figure</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#save_zoom" class="internal-link" title="cocopp.compall.pprldmany.save_zoom">save​_zoom</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#show_algorithms" class="internal-link" title="cocopp.compall.pprldmany.show_algorithms">show​_algorithms</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#styles" class="internal-link" title="cocopp.compall.pprldmany.styles">styles</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#TAOp" class="internal-link" title="cocopp.compall.pprldmany.TAOp">​TAOp</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#third" class="internal-link" title="cocopp.compall.pprldmany.third">third</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#title_fontsize" class="internal-link" title="cocopp.compall.pprldmany.title_fontsize">title​_fontsize</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.compall.pprldmany.all_single_functions">
+    
+  </a>
+  <a name="all_single_functions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">all_single_functions</span>(dict_alg, is_single_algorithm, sorted_algs=None, output_dir=<span class="rst-variable-quote">'</span><span class="rst-variable-string">.</span><span class="rst-variable-quote">'</span>, parent_html_file_name=None, settings=<a href="cocopp.genericsettings.html" class="internal-link" title="cocopp.genericsettings">genericsettings</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.pprldmany.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">beautify</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Customize figure presentation.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.pprldmany.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span>(dictAlg, order=None, outputdir=<span class="rst-variable-quote">'</span><span class="rst-variable-string">.</span><span class="rst-variable-quote">'</span>, info=<span class="rst-variable-quote">'</span><span class="rst-variable-string">default</span><span class="rst-variable-quote">'</span>, dimension=None, parentHtmlFileName=None, plotType=PlotType.ALG, settings=<a href="cocopp.genericsettings.html" class="internal-link" title="cocopp.genericsettings">genericsettings</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generates a figure showing the performance of algorithms.</p>
+<p>From a dictionary of <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> sorted by algorithms,
+generates the cumulative distribution function of the bootstrap
+distribution of ERT for algorithms on multiple functions for
+multiple targets altogether.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dict​Alg</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">order</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outputdir</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">info</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dimension</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">parent​Html​File​Name</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">plot​Type</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">settings</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dict dict​Alg</span></td><td class="fieldArgDesc">dictionary of <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> instances
+one instance is equivalent to one algorithm,</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list targets</span></td><td class="fieldArgDesc">target function values</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list order</span></td><td class="fieldArgDesc">sorted list of keys to dictAlg for plotting order</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str outputdir</span></td><td class="fieldArgDesc">output directory</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str info</span></td><td class="fieldArgDesc">output file name suffix</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str parent​Html​File​Name</span></td><td class="fieldArgDesc">defines the parent html page</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.pprldmany.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plot</span>(dsList, targets=None, craftingeffort=0.0, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>This function is obsolete?
+Generates a graph of the run length distribution of an algorithm.</p>
+<p>We display the empirical cumulative distribution function ECDF of
+the bootstrapped distribution of the runlength for an algorithm
+(in number of function evaluations) to reach the target functions
+value <code>targets</code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ds​List</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">targets</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">craftingeffort</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Data​Set​List ds​List</span></td><td class="fieldArgDesc">data set for one algorithm</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seq targets</span></td><td class="fieldArgDesc">target function values</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">float crafting effort</span></td><td class="fieldArgDesc">the data will be multiplied by the
+exponential of this value</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dict kwargs</span></td><td class="fieldArgDesc">additional parameters provided to plot function.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">handles</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.pprldmany.plotdata">
+    
+  </a>
+  <a name="plotdata">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plotdata</span>(data, maxval=None, maxevals=None, CrE=0.0, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Draw a normalized ECDF. What means normalized?<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">maxval</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">maxevals</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Cr​E</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">optional arguments provided to plot function.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seq data</span></td><td class="fieldArgDesc">data set, a 1-D ndarray of runlengths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">float maxval</span></td><td class="fieldArgDesc">right-most value to be displayed, will use the
+largest non-inf, non-nan value in data if not
+provided</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seq maxevals</span></td><td class="fieldArgDesc">if provided, will plot the median of this
+sequence as a single cross marker</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">float ​Cr​E</span></td><td class="fieldArgDesc">Crafting effort the data will be multiplied by
+the exponential of this value.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.pprldmany.plotLegend">
+    
+  </a>
+  <a name="plotLegend">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plotLegend</span>(handles, maxval):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Display right-side legend.</p>
+<p>The figure is stopped at maxval (upper x-bound), and the graphs in
+the figure are prolonged with straight lines to the right to connect
+with labels of the graphs (uniformly spread out vertically). The
+order of the graphs at the upper x-bound line give the order of the
+labels, in case of ties, the best is the graph for which the x-value
+of the first step (from the right) is smallest.</p>
+<p>The annotation string is stripped from preceeding pathnames.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">handles</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">maxval</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">float maxval</span></td><td class="fieldArgDesc">rightmost x boundary</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">list of (ordered) labels and handles.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.pprldmany.plt_plot">
+    
+  </a>
+  <a name="plt_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plt_plot</span>(*args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.compall.pprldmany.text_infigure_if_constraints">
+    
+  </a>
+  <a name="text_infigure_if_constraints">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">text_infigure_if_constraints</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>to be displayed in the figure corner</p>
+<p>TODO: is a method with no arguments
+because if made a variable, an error is raised
+as it is computed before testbedsettings.current_testbed is instantiated
+in some import</p>
+</div>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="cocopp.compall.pprldmany.EDA">
+    
+  </a>
+  <a name="EDA">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">EDA</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">BIPOP-CMA-ES</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">(1+1)-CMA-ES</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">VNS (Garcia)</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">EDA-PSO</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">IPOP-SEP-CMA-ES</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">AMaLGaM IDEA</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">iAMaLGaM IDEA</span><span class="rst-variable-quote">'</span>,
+<span class="rst-variable-ellipsis">...</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="cocopp.compall.pprldmany.GA">
+    
+  </a>
+  <a name="GA">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">GA</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">DE-PSO</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">(1+1)-ES</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">PSO_Bounds</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">DASA</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">G3-PCX</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">simple GA</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">POEMS</span><span class="rst-variable-quote">'</span>,
+<span class="rst-variable-ellipsis">...</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="cocopp.compall.pprldmany.MC">
+    
+  </a>
+  <a name="MC">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MC</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">Monte Carlo</span><span class="rst-variable-quote">'</span>)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="cocopp.compall.pprldmany.TAO">
+    
+  </a>
+  <a name="TAO">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TAO</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">BFGS</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">NELDER (Han)</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">NEWUOA</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">full NEWUOA</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">BIPOP-CMA-ES</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">IPOP-SEP-CMA-ES</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">(1+1)-CMA-ES</span><span class="rst-variable-quote">'</span>,
+<span class="rst-variable-ellipsis">...</span></code></pre></td></tr></table>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.annotation_line_end_relative">
+    
+  </a>
+  <a name="annotation_line_end_relative">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">annotation_line_end_relative</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.annotation_space_end_relative">
+    
+  </a>
+  <a name="annotation_space_end_relative">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">annotation_space_end_relative</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.best">
+    
+  </a>
+  <a name="best">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">best</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.best2">
+    
+  </a>
+  <a name="best2">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">best2</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.bestbest">
+    
+  </a>
+  <a name="bestbest">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">bestbest</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.bestnoisy">
+    
+  </a>
+  <a name="bestnoisy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">bestnoisy</span>: <code>tuple</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.classics">
+    
+  </a>
+  <a name="classics">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">classics</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.close_figure">
+    
+  </a>
+  <a name="close_figure">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">close_figure</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.displaybest">
+    
+  </a>
+  <a name="displaybest">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">displaybest</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.divide_by_dimension">
+    
+  </a>
+  <a name="divide_by_dimension">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">divide_by_dimension</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.eseda">
+    
+  </a>
+  <a name="eseda">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">eseda</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.ESs">
+    
+  </a>
+  <a name="ESs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ESs</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.fmulti">
+    
+  </a>
+  <a name="fmulti">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">fmulti</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.funi">
+    
+  </a>
+  <a name="funi">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">funi</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.funilipschitz">
+    
+  </a>
+  <a name="funilipschitz">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">funilipschitz</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.funisep">
+    
+  </a>
+  <a name="funisep">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">funisep</span>: <code>list[<wbr></wbr>int]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.label_fontsize">
+    
+  </a>
+  <a name="label_fontsize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">label_fontsize</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.median_max_evals_marker_format">
+    
+  </a>
+  <a name="median_max_evals_marker_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">median_max_evals_marker_format</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.nbperdecade">
+    
+  </a>
+  <a name="nbperdecade">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nbperdecade</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.nikos">
+    
+  </a>
+  <a name="nikos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nikos</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.nikos40D">
+    
+  </a>
+  <a name="nikos40D">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nikos40D</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.petr">
+    
+  </a>
+  <a name="petr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">petr</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.PlotType">
+    
+  </a>
+  <a name="PlotType">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">PlotType</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.refcolor">
+    
+  </a>
+  <a name="refcolor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">refcolor</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>color of reference (best) algorithm</div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.save_figure">
+    
+  </a>
+  <a name="save_figure">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">save_figure</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.save_zoom">
+    
+  </a>
+  <a name="save_zoom">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">save_zoom</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.show_algorithms">
+    
+  </a>
+  <a name="show_algorithms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">show_algorithms</span>: <code>tuple</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.styles">
+    
+  </a>
+  <a name="styles">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">styles</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.TAOp">
+    
+  </a>
+  <a name="TAOp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">TAOp</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.third">
+    
+  </a>
+  <a name="third">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">third</span>: <code>tuple[<wbr></wbr>str, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.compall.pprldmany.title_fontsize">
+    
+  </a>
+  <a name="title_fontsize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">title_fontsize</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.toolsstats</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.toolsstats.html" class="internal-link" title="cocopp.toolsstats">toolsstats</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Bootstrapping and statistics routines.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id168">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.toolsstats.Evals.html" class="internal-link" title="cocopp.toolsstats.Evals">​Evals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#draw" class="internal-link" title="cocopp.toolsstats.draw">draw</a></code></td>
+    <td>Generates the empirical bootstrap distribution from a sample.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#drawSP" class="internal-link" title="cocopp.toolsstats.drawSP">draw​SP</a></code></td>
+    <td>Returns the percentiles of the bootstrapped distribution of 'simulated' running lengths of successful runs.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#drawSP_from_dataset" class="internal-link" title="cocopp.toolsstats.drawSP_from_dataset">draw​SP_from_dataset</a></code></td>
+    <td>returns <tt class="rst-docutils literal">(percentiles, all_sampled_values_sorted)</tt> of simulated runlengths to reach <tt class="rst-docutils literal">ftarget</tt> based on a <tt class="rst-docutils literal">DataSet</tt> class instance, specifically:</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#drawSP_from_dataset_new" class="internal-link" title="cocopp.toolsstats.drawSP_from_dataset_new">draw​SP_from_dataset_new</a></code></td>
+    <td>new implementation, old interface (which should also change at some point)</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#equals_approximately" class="internal-link" title="cocopp.toolsstats.equals_approximately">equals​_approximately</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#fastsort" class="internal-link" title="cocopp.toolsstats.fastsort">fastsort</a></code></td>
+    <td>Sort an array and provide the argsort.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#fix_data_number" class="internal-link" title="cocopp.toolsstats.fix_data_number">fix​_data​_number</a></code></td>
+    <td>Obsolete and subject to removal. Use instead <tt class="rst-docutils literal"><span class="pre">np.asarray(data)[randint_derandomized(0,</span> len(data), ndata)]</tt> or <tt class="rst-docutils literal">[data[i] for i in randint_derandomized(0, len(data), ndata)]</tt>.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#in_approximately" class="internal-link" title="cocopp.toolsstats.in_approximately">in​_approximately</a></code></td>
+    <td>return True if <tt class="rst-docutils literal">a</tt> equals approximately any of the elements in <tt class="rst-docutils literal">list_</tt>, in short</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#prctile" class="internal-link" title="cocopp.toolsstats.prctile">prctile</a></code></td>
+    <td>Computes percentile based on data with linear interpolation</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#randint" class="internal-link" title="cocopp.toolsstats.randint">randint</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#randint_derandomized" class="internal-link" title="cocopp.toolsstats.randint_derandomized">randint​_derandomized</a></code></td>
+    <td>return a <code>numpy</code> array of derandomized random integers.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#rankdata" class="internal-link" title="cocopp.toolsstats.rankdata">rankdata</a></code></td>
+    <td>Ranks the data in a, dealing with ties appropriately.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ranksum_statistic" class="internal-link" title="cocopp.toolsstats.ranksum_statistic">ranksum​_statistic</a></code></td>
+    <td>Returns the U test statistic of the rank-sum (Mann-Whitney-Wilcoxon) test.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ranksumtest" class="internal-link" title="cocopp.toolsstats.ranksumtest">ranksumtest</a></code></td>
+    <td>Calculates the rank sum statistics for the two input data sets <tt class="rst-docutils literal">x</tt> and <tt class="rst-docutils literal">y</tt> and returns z and p.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#significance_all_best_vs_other" class="internal-link" title="cocopp.toolsstats.significance_all_best_vs_other">significance​_all​_best​_vs​_other</a></code></td>
+    <td></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#significancetest" class="internal-link" title="cocopp.toolsstats.significancetest">significancetest</a></code></td>
+    <td>Compute the rank-sum test between two data sets.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#simulated_evals" class="internal-link" title="cocopp.toolsstats.simulated_evals">simulated​_evals</a></code></td>
+    <td>Obsolete: see <code><a href="cocopp.pproc.DataSet.html#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">DataSet.evals_with_simulated_restarts</a></code> instead.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#sliding_window_data" class="internal-link" title="cocopp.toolsstats.sliding_window_data">sliding​_window​_data</a></code></td>
+    <td>width is an absolute number, the resulting data has the same length as the original data and the window width is between width/2 at the border and width in the middle.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#sp" class="internal-link" title="cocopp.toolsstats.sp">sp</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#sp1" class="internal-link" title="cocopp.toolsstats.sp1">sp1</a></code></td>
+    <td>sp1(data, maxvalue=Inf, issuccessful=None) computes a mean value over successful entries in data divided by success rate, the so-called SP1</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#zprob" class="internal-link" title="cocopp.toolsstats.zprob">zprob</a></code></td>
+    <td>Returns the area under the normal curve 'to the left of' the given z value.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_has_len" class="internal-link" title="cocopp.toolsstats._has_len">​_has​_len</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_randint_derandomized_generator" class="internal-link" title="cocopp.toolsstats._randint_derandomized_generator">​_randint​_derandomized​_generator</a></code></td>
+    <td>the generator for <code><a href="#randint_derandomized" class="internal-link" title="cocopp.toolsstats.randint_derandomized">randint_derandomized</a></code></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.draw">
+    
+  </a>
+  <a name="draw">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">draw</span>(data, percentiles, samplesize=1000.0, func=<a href="#sp1" class="internal-link" title="cocopp.toolsstats.sp1">sp1</a>, args=()):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generates the empirical bootstrap distribution from a sample.</p>
+<dl class="rst-docutils">
+<dt>Input:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li><em>data</em> -- a sequence of data values</li>
+<li><em>percentiles</em> -- a single scalar value or a sequence of
+percentiles to be computed from the bootstrapped distribution.</li>
+<li><em>func</em> -- function that computes the statistics as
+func(data,*args) or func(data,*args)[0], by default toolsstats.sp1</li>
+<li><em>args</em> -- arguments to func, the zero-th element of args is
+expected to be a sequence of boolean giving the success status
+of the associated data value. This specialization of the draw
+procedure is due to the interface of the performance computation
+methods sp1 and sp.</li>
+<li><em>samplesize</em> -- number of bootstraps drawn, default is 1e3,
+for more reliable values choose rather 1e4.
+performance is linear in samplesize, 0.2s for samplesize=1000.</li>
+</ul>
+</dd>
+<dt>Return:</dt>
+<dd>(prctiles, all_samplesize_bootstrapped_values_sorted)</dd>
+<dt>Example:</dt>
+<dd>&gt;&gt; import toolsstats
+&gt;&gt; data = np.random.randn(22)
+&gt;&gt; res = toolsstats.draw(data, (10,50,90), samplesize=1e4)
+&gt;&gt; print(res[0])</dd>
+</dl>
+<div class="rst-admonition note">
+<p class="rst-first rst-admonition-title">Note</p>
+<p class="rst-last">NaN-values are also bootstrapped, but disregarded for the
+calculation of percentiles which can lead to somewhat
+unexpected results.</p>
+</div>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.drawSP">
+    
+  </a>
+  <a name="drawSP">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">drawSP</span>(runlengths_succ, runlengths_unsucc, percentiles, samplesize=<a href="cocopp.genericsettings.html#simulated_runlength_bootstrap_sample_size" class="internal-link" title="cocopp.genericsettings.simulated_runlength_bootstrap_sample_size">genericsettings.simulated_runlength_bootstrap_sample_size</a>, derandomized=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns the percentiles of the bootstrapped distribution of
+'simulated' running lengths of successful runs.</p>
+<dl class="rst-docutils">
+<dt>Input:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li><em>runlengths_succ</em> -- array of running lengths of successful runs</li>
+<li><dl class="rst-first rst-docutils">
+<dt><em>runlengths_unsucc</em> -- array of running lengths of unsuccessful</dt>
+<dd>runs</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Return:</dt>
+<dd>(percentiles, all_sampled_values_sorted)</dd>
+<dt>Details:</dt>
+<dd>A single successful running length is computed by adding
+uniformly randomly chosen running lengths until the first time a
+successful one is chosen. In case of no successful run an
+exception is raised.</dd>
+</dl>
+<p>This implementation is depreciated and replaced by <code><a href="#simulated_evals" class="internal-link" title="cocopp.toolsstats.simulated_evals">simulated_evals</a></code>.
+The latter is also depreciated, see
+<code><a href="cocopp.pproc.DataSet.html#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">DataSet.evals_with_simulated_restarts</a></code> instead.</p>
+<p>See also: <code><a href="#simulated_evals" class="internal-link" title="cocopp.toolsstats.simulated_evals">simulated_evals</a></code>.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.drawSP_from_dataset">
+    
+  </a>
+  <a name="drawSP_from_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">drawSP_from_dataset</span>(data_set, ftarget, percentiles, samplesize=<a href="cocopp.genericsettings.html#simulated_runlength_bootstrap_sample_size" class="internal-link" title="cocopp.genericsettings.simulated_runlength_bootstrap_sample_size">genericsettings.simulated_runlength_bootstrap_sample_size</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>returns <tt class="rst-docutils literal">(percentiles, all_sampled_values_sorted)</tt> of simulated
+runlengths to reach <tt class="rst-docutils literal">ftarget</tt> based on a <tt class="rst-docutils literal">DataSet</tt> class instance,
+specifically:</p>
+<pre class="rst-literal-block">
+evals = data_set.detEvals([ftarget])[0] # likely to be 15 "data points"
+idx_nan = np.isnan(evals)  # nan == did not reach ftarget
+return drawSP(evals[~idx_nan], data_set.maxevals[idx_nan], percentiles, samplesize)
+</pre>
+<p>The expected value of <tt class="rst-docutils literal">all_sampled_values_sorted</tt> is the expected
+runtime ERT, as obtained by <tt class="rst-docutils literal"><span class="pre">data_set.detERT([ftarget])[0]</span></tt>.</p>
+<p>Details: <code>samplesize</code> is adjusted (increased) such that it is zero when taken
+modulo <code>data_set.nbRuns()</code>.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.drawSP_from_dataset_new">
+    
+  </a>
+  <a name="drawSP_from_dataset_new">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">drawSP_from_dataset_new</span>(data_set, ftarget, dummy, samplesize=<a href="cocopp.genericsettings.html#simulated_runlength_bootstrap_sample_size" class="internal-link" title="cocopp.genericsettings.simulated_runlength_bootstrap_sample_size">genericsettings.simulated_runlength_bootstrap_sample_size</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>new implementation, old interface (which should also change at some point)</p>
+<p>returns (None, evals), that is, no percentiles, only the data=runtimes=evals</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.equals_approximately">
+    
+  </a>
+  <a name="equals_approximately">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">equals_approximately</span>(a, b, abs=1e-11, rel=1e-11):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.fastsort">
+    
+  </a>
+  <a name="fastsort">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fastsort</span>(a):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Sort an array and provide the argsort.</p>
+<dl class="rst-docutils">
+<dt>Parameters:</dt>
+<dd><em>a</em> : array</dd>
+<dt>Returns:</dt>
+<dd>(sorted array, indices into the original array)</dd>
+</dl>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.fix_data_number">
+    
+  </a>
+  <a name="fix_data_number">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fix_data_number</span>(data, ndata=15, last_elements_randomized=True, warn=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Obsolete and subject to removal. Use instead
+<tt class="rst-docutils literal"><span class="pre">np.asarray(data)[randint_derandomized(0,</span> len(data), ndata)]</tt> or
+<tt class="rst-docutils literal">[data[i] for i in randint_derandomized(0, len(data), ndata)]</tt>.</p>
+<p>return copy of data vector modified to length <tt class="rst-docutils literal">ndata</tt>
+or <tt class="rst-docutils literal">data</tt> itself.</p>
+<p>Assures <tt class="rst-docutils literal">len(data) == ndata</tt>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp.toolsstats <span class="py-keyword">import</span> fix_data_number
+<span class="py-prompt">&gt;&gt;&gt; </span>data = [1,2,4]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> <span class="py-builtin">len</span>(fix_data_number(data, 1)) == 1
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> <span class="py-builtin">len</span>(fix_data_number(data, 3)) == 3
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> <span class="py-builtin">len</span>(fix_data_number(data, 4)) == 4
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> <span class="py-builtin">len</span>(fix_data_number(data, 14)) == 14
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> fix_data_number(data, 14)[2] == data[2]</pre><p>See also <tt class="rst-docutils literal">data[randint_derandomized(0, len(data), ndata)]</tt>, which
+should do pretty much the same, a little more randomized.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data</span></td><td class="fieldArgDesc">is a (row)-vector</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ndata</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">last​_elements​_randomized</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">warn</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.in_approximately">
+    
+  </a>
+  <a name="in_approximately">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">in_approximately</span>(a, list_, abs=1e-11, rel=1e-11):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return True if <tt class="rst-docutils literal">a</tt> equals approximately any of the elements
+in <tt class="rst-docutils literal">list_</tt>, in short</p>
+<blockquote>
+return any([equals_approximately(a, b) for b in <a href="#system-message-1"><span class="rst-problematic" id="rst-problematic-1">list_</span></a>])</blockquote>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.prctile">
+    
+  </a>
+  <a name="prctile">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prctile</span>(x, arrprctiles, issorted=False, ignore_nan=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Computes percentile based on data with linear interpolation</p>
+<div class="rst-admonition note">
+<p class="rst-first rst-admonition-title">Note</p>
+<p class="rst-last">treats np.Inf and -np.Inf, np.NaN and None, the latter are
+simply disregarded</p>
+</div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">arrprctiles</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">issorted</span></td><td class="fieldArgDesc">indicate if data is sorted</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ignore​_nan</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prctiles:</span>scalar or sequence</td><td class="fieldArgDesc">percentiles to be calculated. Values beyond the
+interval [0,100] also return the respective
+extreme value in data.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sequence data</span></td><td class="fieldArgDesc">(list, array) of data values</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">sequence of percentile values in data according to argument
+prctiles</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.randint">
+    
+  </a>
+  <a name="randint">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">randint</span>(upper, n):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.randint_derandomized">
+    
+  </a>
+  <a name="randint_derandomized">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">randint_derandomized</span>(low, high=None, size=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a <code>numpy</code> array of derandomized random integers.</p>
+<p>The interface is the same as for <code>numpy.randint</code>, however the
+default value for <code>size</code> is <tt class="rst-docutils literal"><span class="pre">high-low</span></tt> and each "random" integer
+is guarantied to appear exactly once in each chunk of size
+<tt class="rst-docutils literal"><span class="pre">high-low</span></tt>. (That is, by default a permutation is returned.)</p>
+<p>As for <code>numpy.randint</code>, the value range is [low, high-1] or [0, low-1]
+if <tt class="rst-docutils literal">high is None</tt>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> numpy <span class="py-keyword">as</span> np
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp.toolsstats <span class="py-keyword">import</span> randint_derandomized
+<span class="py-prompt">&gt;&gt;&gt; </span>np.random.seed(1)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(randint_derandomized(0, 4, 6))
+<span class="py-output">[3, 2, 0, 1, 0, 2]</span>
+</pre><p>A typical usecase is indexing of <tt class="rst-docutils literal">data</tt> like:</p>
+<pre class="rst-literal-block">
+[data[i] for i in randint_derandomized(0, len(data), ndata)]
+# or almost equivalently
+np.asarray(data)[randint_derandomized(0, len(data), ndata)]
+</pre>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.rankdata">
+    
+  </a>
+  <a name="rankdata">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rankdata</span>(a):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Ranks the data in a, dealing with ties appropriately.</p>
+<p>Equal values are assigned a rank that is the average of the ranks that
+would have been otherwise assigned to all of the values within that set.
+Ranks begin at 1, not 0.</p>
+<dl class="rst-docutils">
+<dt>Example:</dt>
+<dd>In [15]: stats.rankdata([0, 2, 2, 3])
+Out[15]: array([ 1. ,  2.5,  2.5,  4. ])</dd>
+<dt>Parameters:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li><em>a</em> : array
+This array is first flattened.</li>
+</ul>
+</dd>
+<dt>Returns:</dt>
+<dd>An array of length equal to the size of a, containing rank scores.</dd>
+</dl>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.ranksum_statistic">
+    
+  </a>
+  <a name="ranksum_statistic">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ranksum_statistic</span>(N1, N2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns the U test statistic of the rank-sum (Mann-Whitney-Wilcoxon) test.</p>
+<p><a class="rst-reference external" href="http://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U" target="_top">http://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U</a>
+Small sample sizes (direct method).</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.ranksumtest">
+    
+  </a>
+  <a name="ranksumtest">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ranksumtest</span>(x, y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Calculates the rank sum statistics for the two input data sets
+<tt class="rst-docutils literal">x</tt> and <tt class="rst-docutils literal">y</tt> and returns z and p.</p>
+<p>This method returns a slight difference compared to scipy.stats.ranksumtest
+in the two-tailed p-value. Should be test drived...</p>
+<p>Returns: z-value for first data set <tt class="rst-docutils literal">x</tt> and two-tailed p-value</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.significance_all_best_vs_other">
+    
+  </a>
+  <a name="significance_all_best_vs_other">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">significance_all_best_vs_other</span>(datasets, targets, best_alg_idx=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>returns a list of <tt class="rst-docutils literal">(z, p)</tt> tuples, each is the result for the ranksumtest
+for the respective target value in targets and the index list of best algorithm.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">datasets</span></td><td class="fieldArgDesc">is a list of DataSet from different algorithms, otherwise on the same function and dimension (which is not necessarily checked)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">targets</span></td><td class="fieldArgDesc">is a list of target values,</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">best​_alg​_idx</span></td><td class="fieldArgDesc">for each target the best algorithm to be tested against the others</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.significancetest">
+    
+  </a>
+  <a name="significancetest">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">significancetest</span>(entry0, entry1, targets):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Compute the rank-sum test between two data sets.</p>
+<p>For a given target function value, the performances of two
+algorithms are compared. The result of a significance test is
+computed on the number of function evaluations for reaching the
+target or, if not available, the function values for the smallest
+budget in an unsuccessful trial.</p>
+<p>Known bugs: this is not a fair comparison, because the successful
+trials could be very long.</p>
+<p>TODO: we would want to correct for imbalanced instances if the more
+frequent instances are more different than the less frequent instances.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">entry0</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">entry1</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">targets</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Data​Set entry0</span></td><td class="fieldArgDesc">-- data set 0</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Data​Set entry1</span></td><td class="fieldArgDesc">-- data set 1</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list targets</span></td><td class="fieldArgDesc">-- list of target function values</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">list of (z, p) for each target function values in
+input argument targets. z and p are values returned by the
+ranksumtest method.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.simulated_evals">
+    
+  </a>
+  <a name="simulated_evals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">simulated_evals</span>(evals, nfails, samplesize=<a href="cocopp.genericsettings.html#simulated_runlength_bootstrap_sample_size" class="internal-link" title="cocopp.genericsettings.simulated_runlength_bootstrap_sample_size">genericsettings.simulated_runlength_bootstrap_sample_size</a>, randint=<a href="#randint_derandomized" class="internal-link" title="cocopp.toolsstats.randint_derandomized">randint_derandomized</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Obsolete: see <code><a href="cocopp.pproc.DataSet.html#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">DataSet.evals_with_simulated_restarts</a></code> instead.</p>
+<p>Return <code>samplesize</code> "simulated" run lengths (#evaluations), sorted.</p>
+<dl class="rst-docutils">
+<dt>Input:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li><em>evals</em> -- array of evaluations</li>
+<li><dl class="rst-first rst-docutils">
+<dt><em>nfail</em> -- only the last <code>nfail</code> evaluations come from</dt>
+<dd>unsuccessful runs</dd>
+</dl>
+</li>
+<li><em>randint</em> -- random integer index function of the first simulated run</li>
+</ul>
+</dd>
+<dt>Return:</dt>
+<dd>all_sampled_runlengths_sorted</dd>
+</dl>
+<p>Example:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp <span class="py-keyword">import</span> set_seed
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocopp.toolsstats <span class="py-keyword">import</span> simulated_evals
+<span class="py-prompt">&gt;&gt;&gt; </span>set_seed(4)
+<span class="py-prompt">&gt;&gt;&gt; </span>evals_succ = [1]  <span class="py-comment"># only one evaluation in the successful trial</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>evals_unsucc = [2, 4, 2, 6, 100]
+<span class="py-prompt">&gt;&gt;&gt; </span>simulated_evals(np.hstack([evals_succ, evals_unsucc]),
+<span class="py-more">... </span>                <span class="py-builtin">len</span>(evals_unsucc), 13)  <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">[1, 1, 3, ...</span>
+</pre><dl class="rst-docutils">
+<dt>Details:</dt>
+<dd>A single successful running length is computed by adding
+uniformly randomly chosen running lengths until the first time a
+successful one is chosen. In case of no successful run an
+exception is raised.</dd>
+</dl>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.sliding_window_data">
+    
+  </a>
+  <a name="sliding_window_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sliding_window_data</span>(data, width=2, operator=np.median, number_of_stats=0, only_finite_data=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>width is an absolute number, the resulting data has
+the same length as the original data and the window width
+is between width/2 at the border and width in the middle.</p>
+<p>Return (smoothed_data, stats), where stats is a list with elements
+[index_in_data, 2_10_25_50_75_90_98_percentile_of_window_at_i]</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.sp">
+    
+  </a>
+  <a name="sp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sp</span>(data, maxvalue=np.Inf, issuccessful=None, allowinf=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>sp(data, issuccessful=None) computes the sum of the function
+evaluations over all runs divided by the number of success,
+the so-called success performance which estimates the expected
+runtime ERT.</p>
+<dl class="rst-docutils">
+<dt>Input:</dt>
+<dd><dl class="rst-first rst-last rst-docutils">
+<dt>data -- array contains, e.g., number of function</dt>
+<dd>evaluations to reach the target value</dd>
+<dt>maxvalue -- number, if issuccessful is not provided, data[i]</dt>
+<dd>is defined successful if it is truly smaller than maxvalue</dd>
+<dt>issuccessful -- None or array of same length as data. Entry</dt>
+<dd>i in data is defined successful, if issuccessful[i] is
+True or non-zero</dd>
+<dt>allowinf -- If False, replace inf output (in case of no success)</dt>
+<dd>with the sum of function evaluations.</dd>
+</dl>
+</dd>
+<dt>Returns: (SP, success_rate, nb_of_successful_entries), where SP is the sum</dt>
+<dd>of successful entries in data divided by the number of success.</dd>
+</dl>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.sp1">
+    
+  </a>
+  <a name="sp1">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sp1</span>(data, maxvalue=np.Inf, issuccessful=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>sp1(data, maxvalue=Inf, issuccessful=None) computes a
+mean value over successful entries in data divided by
+success rate, the so-called SP1</p>
+<dl class="rst-docutils">
+<dt>Input:</dt>
+<dd><dl class="rst-first rst-last rst-docutils">
+<dt>data -- array contains, e.g., number of function</dt>
+<dd>evaluations to reach the target value</dd>
+<dt>maxvalue -- number, if issuccessful is not provided, data[i]</dt>
+<dd>is defined successful if it is truly smaller than maxvalue</dd>
+<dt>issuccessful -- None or array of same length as data. Entry</dt>
+<dd>i in data is defined successful, if issuccessful[i] is
+True or non-zero</dd>
+</dl>
+</dd>
+<dt>Returns: (SP1, success_rate, nb_of_successful_entries), where</dt>
+<dd>SP1 is the mean over successful entries in data divided
+by the success rate. SP1 equals np.Inf when the success
+rate is zero.</dd>
+</dl>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.toolsstats.zprob">
+    
+  </a>
+  <a name="zprob">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">zprob</span>(z):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns the area under the normal curve 'to the left of' the given z value.</p>
+<p><a class="rst-reference external" href="http://www.nmr.mgh.harvard.edu/Neural_Systems_Group/gary/python.html" target="_top">http://www.nmr.mgh.harvard.edu/Neural_Systems_Group/gary/python.html</a></p>
+<p>Thus:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>for z&lt;0, zprob(z) = 1-tail probability</li>
+<li>for z&gt;0, 1.0-zprob(z) = 1-tail probability</li>
+<li>for any z, 2.0*(1.0-zprob(abs(z))) = 2-tail probability</li>
+</ul>
+</blockquote>
+<p>Adapted from z.c in Gary Perlman's |Stat.  Can handle multiple dimensions.</p>
+<p>Usage:   azprob(z)    where z is a z-value</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.toolsstats._has_len">
+    
+  </a>
+  <a name="_has_len">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_has_len</span>(thing):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.toolsstats._randint_derandomized_generator">
+    
+  </a>
+  <a name="_randint_derandomized_generator">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_randint_derandomized_generator</span>(low, high=None, size=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>the generator for <code><a href="#randint_derandomized" class="internal-link" title="cocopp.toolsstats.randint_derandomized">randint_derandomized</a></code></div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

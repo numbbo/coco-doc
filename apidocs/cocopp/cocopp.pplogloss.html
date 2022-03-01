@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.pplogloss</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.pplogloss.html" class="internal-link" title="cocopp.pplogloss">pplogloss</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Module for computing ERT loss ratio</p>
+<p>This module outputs figures and tables showing ERT loss ratios.
+Comparisons are based on computing the ratio between an ERT value and a
+reference (best) ERT value (or the inverse)</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id69">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#beautify" class="internal-link" title="cocopp.pplogloss.beautify">beautify</a></code></td>
+    <td>Format the figure.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#boxplot" class="internal-link" title="cocopp.pplogloss.boxplot">boxplot</a></code></td>
+    <td>Makes a box and whisker plot.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#detERT" class="internal-link" title="cocopp.pplogloss.detERT">det​ERT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#detf" class="internal-link" title="cocopp.pplogloss.detf">detf</a></code></td>
+    <td>Determines a function value given a number of evaluations.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#figure_caption" class="internal-link" title="cocopp.pplogloss.figure_caption">figure​_caption</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#generateData" class="internal-link" title="cocopp.pplogloss.generateData">generate​Data</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#generateFigure" class="internal-link" title="cocopp.pplogloss.generateFigure">generate​Figure</a></code></td>
+    <td>Generates ERT loss ratio figures.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#generateSingleTableHtml" class="internal-link" title="cocopp.pplogloss.generateSingleTableHtml">generate​Single​Table​Html</a></code></td>
+    <td>Generates single ERT loss ratio table.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#generateSingleTableTex" class="internal-link" title="cocopp.pplogloss.generateSingleTableTex">generate​Single​Table​Tex</a></code></td>
+    <td>Generates single ERT loss ratio table.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#generateTable" class="internal-link" title="cocopp.pplogloss.generateTable">generate​Table</a></code></td>
+    <td>Generates ERT loss ratio tables.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#main" class="internal-link" title="cocopp.pplogloss.main">main</a></code></td>
+    <td>Generates ERT loss ratio boxplot figures.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#plot" class="internal-link" title="cocopp.pplogloss.plot">plot</a></code></td>
+    <td>Plot the ERT log loss figures.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#table_caption" class="internal-link" title="cocopp.pplogloss.table_caption">table​_caption</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#boxescolor" class="internal-link" title="cocopp.pplogloss.boxescolor">boxescolor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#capscolor" class="internal-link" title="cocopp.pplogloss.capscolor">capscolor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#evalf" class="internal-link" title="cocopp.pplogloss.evalf">evalf</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#f_thresh" class="internal-link" title="cocopp.pplogloss.f_thresh">f​_thresh</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#flierscolor" class="internal-link" title="cocopp.pplogloss.flierscolor">flierscolor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#medianscolor" class="internal-link" title="cocopp.pplogloss.medianscolor">medianscolor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#whiskerscolor" class="internal-link" title="cocopp.pplogloss.whiskerscolor">whiskerscolor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">beautify</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Format the figure.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.boxplot">
+    
+  </a>
+  <a name="boxplot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">boxplot</span>(x, notch=0, sym=<span class="rst-variable-quote">'</span><span class="rst-variable-string">b+</span><span class="rst-variable-quote">'</span>, positions=None, widths=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Makes a box and whisker plot.</p>
+<p>Adapted from matplotlib.axes 0.98.5.2
+Modified such that the caps are set to the 10th and 90th
+percentiles, and to have some control on the colors.</p>
+<p>call signature:</p>
+<pre class="rst-literal-block">
+boxplot(x, notch=0, sym='+', positions=None, widths=None)
+</pre>
+<p>Make a box and whisker plot for each column of <em>x</em> or each
+vector in sequence <em>x</em>.  The box extends from the lower to
+upper quartile values of the data, with a line at the median.
+The whiskers extend from the box to show the range of the
+data.  Flier points are those past the end of the whiskers.</p>
+<ul class="rst-simple">
+<li><em>notch</em> = 0 (default) produces a rectangular box plot.</li>
+<li><em>notch</em> = 1 will produce a notched box plot</li>
+</ul>
+<p><em>sym</em> (default 'b+') is the default symbol for flier points.
+Enter an empty string ('') if you don't want to show fliers.</p>
+<p><em>whis</em> (default 1.5) defines the length of the whiskers as
+a function of the inner quartile range.  They extend to the
+most extreme data point within ( <tt class="rst-docutils literal"><span class="pre">whis*(75%-25%)</span></tt> ) data range.</p>
+<p><em>positions</em> (default 1,2,...,n) sets the horizontal positions of
+the boxes. The ticks and limits are automatically set to match
+the positions.</p>
+<p><em>widths</em> is either a scalar or a vector and sets the width of
+each box. The default is 0.5, or <tt class="rst-docutils literal"><span class="pre">0.15*(distance</span> between extreme
+positions)</tt> if that is smaller.</p>
+<p><em>x</em> is an array or a sequence of vectors.</p>
+<p>Returns a dictionary mapping each component of the boxplot
+to a list of the <code>matplotlib.lines.Line2D</code>
+instances created.</p>
+<p>Copyright (c) 2002-2009 John D. Hunter; All Rights Reserved</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.detERT">
+    
+  </a>
+  <a name="detERT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">detERT</span>(entry, funvals):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.detf">
+    
+  </a>
+  <a name="detf">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">detf</span>(entry, evals):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Determines a function value given a number of evaluations.</p>
+<p>Let A be the algorithm considered. Let f=f_A(evals) be the smallest
+target value such that the expected running time of algorithm A was
+smaller than or equal to evals.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">entry</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">evals</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Data​Set entry</span></td><td class="fieldArgDesc">data set</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list evals</span></td><td class="fieldArgDesc">numbers of function evaluations considered</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">list of the target function values</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.figure_caption">
+    
+  </a>
+  <a name="figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">figure_caption</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.generateData">
+    
+  </a>
+  <a name="generateData">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generateData</span>(dsList, evals, CrE_A):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.generateFigure">
+    
+  </a>
+  <a name="generateFigure">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generateFigure</span>(dsList, CrE=0.0, isStoringXRange=True, outputdir=<span class="rst-variable-quote">'</span><span class="rst-variable-string">.</span><span class="rst-variable-quote">'</span>, info=<span class="rst-variable-quote">'</span><span class="rst-variable-string">default</span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates ERT loss ratio figures.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ds​List</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Cr​E</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">is​Storing​XRange</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outputdir</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">info</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Data​Set​List ds​List</span></td><td class="fieldArgDesc">input data set</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">float ​Cr​E</span></td><td class="fieldArgDesc">crafting effort (see COCO documentation)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bool is​Storing​XRange</span></td><td class="fieldArgDesc">if set to True, the first call to this
+function sets the global
+<code><a href="#evalf" class="internal-link" title="cocopp.pplogloss.evalf">evalf</a></code> and all subsequent
+calls will use this value as boundaries
+in the generated figures.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string outputdir</span></td><td class="fieldArgDesc">output folder (must exist)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string info</span></td><td class="fieldArgDesc">string suffix for output file names</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.generateSingleTableHtml">
+    
+  </a>
+  <a name="generateSingleTableHtml">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generateSingleTableHtml</span>(dsList, funcs, mFE, d, prcOfInterest, EVALS, data, outputdir=<span class="rst-variable-quote">'</span><span class="rst-variable-string">.</span><span class="rst-variable-quote">'</span>, info=<span class="rst-variable-quote">'</span><span class="rst-variable-string">default</span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates single ERT loss ratio table.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ds​List</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">funcs</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">m​FE</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">d</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prc​Of​Interest</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">EVALS</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outputdir</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">info</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Data​Set​List ds​List</span></td><td class="fieldArgDesc">input data set</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string outputdir</span></td><td class="fieldArgDesc">output folder (must exist)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string info</span></td><td class="fieldArgDesc">string suffix for output file names</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.generateSingleTableTex">
+    
+  </a>
+  <a name="generateSingleTableTex">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generateSingleTableTex</span>(dsList, funcs, mFE, d, prcOfInterest, EVALS, data, outputdir=<span class="rst-variable-quote">'</span><span class="rst-variable-string">.</span><span class="rst-variable-quote">'</span>, info=<span class="rst-variable-quote">'</span><span class="rst-variable-string">default</span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates single ERT loss ratio table.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ds​List</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">funcs</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">m​FE</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">d</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prc​Of​Interest</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">EVALS</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data</span></td><td class="fieldArgDesc"></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outputdir</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">info</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Data​Set​List ds​List</span></td><td class="fieldArgDesc">input data set</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string outputdir</span></td><td class="fieldArgDesc">output folder (must exist)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string info</span></td><td class="fieldArgDesc">string suffix for output file names</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.generateTable">
+    
+  </a>
+  <a name="generateTable">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generateTable</span>(dsList, CrE=0.0, outputdir=<span class="rst-variable-quote">'</span><span class="rst-variable-string">.</span><span class="rst-variable-quote">'</span>, info=<span class="rst-variable-quote">'</span><span class="rst-variable-string">default</span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generates ERT loss ratio tables.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ds​List</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Cr​E</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outputdir</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">info</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Data​Set​List ds​List</span></td><td class="fieldArgDesc">input data set</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">float ​Cr​E</span></td><td class="fieldArgDesc">crafting effort (see COCO documentation)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string outputdir</span></td><td class="fieldArgDesc">output folder (must exist)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string info</span></td><td class="fieldArgDesc">string suffix for output file names</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span>(dsList, CrE=0.0, isStoringXRange=True, outputdir=<span class="rst-variable-quote">'</span><span class="rst-variable-string">.</span><span class="rst-variable-quote">'</span>, info=<span class="rst-variable-quote">'</span><span class="rst-variable-string">default</span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generates ERT loss ratio boxplot figures.</p>
+<p>Calls method generateFigure.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plot</span>(xdata, ydata):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Plot the ERT log loss figures.</p>
+<p>Two cases: box-whisker plot is used for representing the data of all
+functions, otherwise all data is represented using crosses.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.pplogloss.table_caption">
+    
+  </a>
+  <a name="table_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">table_caption</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.pplogloss.boxescolor">
+    
+  </a>
+  <a name="boxescolor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">boxescolor</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.pplogloss.capscolor">
+    
+  </a>
+  <a name="capscolor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">capscolor</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.pplogloss.evalf">
+    
+  </a>
+  <a name="evalf">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">evalf</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.pplogloss.f_thresh">
+    
+  </a>
+  <a name="f_thresh">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">f_thresh</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.pplogloss.flierscolor">
+    
+  </a>
+  <a name="flierscolor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">flierscolor</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.pplogloss.medianscolor">
+    
+  </a>
+  <a name="medianscolor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">medianscolor</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.pplogloss.whiskerscolor">
+    
+  </a>
+  <a name="whiskerscolor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">whiskerscolor</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

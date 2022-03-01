@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.ppfigcons1</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.ppfigcons1.html" class="internal-link" title="cocopp.ppfigcons1">ppfigcons1</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Generate performance scaling figures wrt constraints.
+See also:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>ppfigdim for the unconstrained case</li>
+<li>compall/ppfigcons for the same plot but with a single target and 2 or more algorithms</li>
+</ul>
+</blockquote>
+<dl class="rst-docutils">
+<dt>TODOs:</dt>
+<dd><ul class="rst-first rst-last rst-simple">
+<li>add legend: on first figure ?</li>
+<li>review the caption and html caption</li>
+</ul>
+</dd>
+</dl>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id66">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#beautify" class="internal-link" title="cocopp.ppfigcons1.beautify">beautify</a></code></td>
+    <td>Customize figure presentation.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#generateData" class="internal-link" title="cocopp.ppfigcons1.generateData">generate​Data</a></code></td>
+    <td>Computes an array of results to be plotted.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#main" class="internal-link" title="cocopp.ppfigcons1.main">main</a></code></td>
+    <td>From a DataSetList, returns a convergence and ERT/dim figure vs dim.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#plot" class="internal-link" title="cocopp.ppfigcons1.plot">plot</a></code></td>
+    <td>From a DataSetList, plot a figure of ERT/dim vs number of constraints.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#plot_a_bar" class="internal-link" title="cocopp.ppfigcons1.plot_a_bar">plot​_a​_bar</a></code></td>
+    <td>plot/draw a notched error bar, x is the x-position, y[0,1,2] are lower, median and upper percentile respectively.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#plot_previous_algorithms" class="internal-link" title="cocopp.ppfigcons1.plot_previous_algorithms">plot​_previous​_algorithms</a></code></td>
+    <td>Add graph of the reference algorithm, specified in testbedsettings.current_testbed using the last, most difficult target in <tt class="rst-docutils literal">target</tt>.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#scaling_figure_caption" class="internal-link" title="cocopp.ppfigcons1.scaling_figure_caption">scaling​_figure​_caption</a></code></td>
+    <td>Provides a figure caption with the help of captions.py for replacing common texts, abbreviations, etc.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#refcolor" class="internal-link" title="cocopp.ppfigcons1.refcolor">refcolor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#styles" class="internal-link" title="cocopp.ppfigcons1.styles">styles</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#xlim_max" class="internal-link" title="cocopp.ppfigcons1.xlim_max">xlim​_max</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ynormalize_by_dimension" class="internal-link" title="cocopp.ppfigcons1.ynormalize_by_dimension">ynormalize​_by​_dimension</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.ppfigcons1.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">beautify</span>(dim, axesLabel=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Customize figure presentation.</p>
+<p>Uses information from the appropriate benchmark short infos file
+for figure title.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.ppfigcons1.generateData">
+    
+  </a>
+  <a name="generateData">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">generateData</span>(dataSet, targetFuncValue):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Computes an array of results to be plotted.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">(ert, success rate, number of success, total number of
+function evaluations, median of successful runs).</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.ppfigcons1.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span>(dsList, _valuesOfInterest, outputdir):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>From a DataSetList, returns a convergence and ERT/dim figure vs dim.</p>
+<p>If available, uses data of a reference algorithm as specified in
+<tt class="rst-docutils literal">:py:genericsettings.py</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ds​List</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">_values​Of​Interest</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outputdir</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Data​Set​List ds​List</span></td><td class="fieldArgDesc">data sets</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seq _values​Of​Interest</span></td><td class="fieldArgDesc">target precisions, either as list or as
+<tt class="rst-docutils literal">pproc.TargetValues</tt> class instance.
+There will be as many graphs as there are
+elements in this input.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string outputdir</span></td><td class="fieldArgDesc">output directory</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.ppfigcons1.plot">
+    
+  </a>
+  <a name="plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plot</span>(dsList, valuesOfInterest=None, styles=<a href="#styles" class="internal-link" title="cocopp.ppfigcons1.styles">styles</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>From a DataSetList, plot a figure of ERT/dim vs number of constraints.</p>
+<p>There will be one set of graphs per function represented in the
+input data sets. Most usually the data sets of different functions
+will be represented separately.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ds​List</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">values​Of​Interest</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">styles</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">​Data​Set​List ds​List</span></td><td class="fieldArgDesc">data sets</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seq values​Of​Interest</span></td><td class="fieldArgDesc">target precisions via class TargetValues, there might
+be as many graphs as there are elements in
+this input. Can be different for each
+function (a dictionary indexed by ifun).</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">handles</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.ppfigcons1.plot_a_bar">
+    
+  </a>
+  <a name="plot_a_bar">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plot_a_bar</span>(x, y, plot_cmd=plt.loglog, rec_width=0.1, rec_taille_fac=0.3, styles={<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">color</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">b</span><span class="rst-variable-quote">'</span>}, linewidth=1, fill_color=None, fill_transparency=0.7):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>plot/draw a notched error bar, x is the x-position,
+y[0,1,2] are lower, median and upper percentile respectively.</p>
+<p>hold(True) to see everything.</p>
+<p>TODO: with linewidth=0, inf is not visible</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.ppfigcons1.plot_previous_algorithms">
+    
+  </a>
+  <a name="plot_previous_algorithms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plot_previous_algorithms</span>(func, target=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Add graph of the reference algorithm, specified in
+testbedsettings.current_testbed using the
+last, most difficult target in <tt class="rst-docutils literal">target</tt>.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.ppfigcons1.scaling_figure_caption">
+    
+  </a>
+  <a name="scaling_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">scaling_figure_caption</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Provides a figure caption with the help of captions.py for
+replacing common texts, abbreviations, etc.</div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.ppfigcons1.refcolor">
+    
+  </a>
+  <a name="refcolor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">refcolor</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.ppfigcons1.styles">
+    
+  </a>
+  <a name="styles">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">styles</span>: <code>list[<wbr></wbr>dict]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.ppfigcons1.xlim_max">
+    
+  </a>
+  <a name="xlim_max">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">xlim_max</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.ppfigcons1.ynormalize_by_dimension">
+    
+  </a>
+  <a name="ynormalize_by_dimension">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ynormalize_by_dimension</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

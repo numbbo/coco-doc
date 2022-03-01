@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.pproc.DataSetList</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.pproc.html" class="internal-link" title="cocopp.pproc">pproc</a></code><wbr></wbr>.<code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">DataSetList</span>(list):</code></p>
+        <p><a href="classIndex.html#cocopp.pproc.DataSetList">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>List of instances of <code><a href="cocopp.pproc.DataSet.html" class="internal-link" title="cocopp.pproc.DataSet">DataSet</a></code>.</p>
+<p>This class implements some useful slicing functions.</p>
+<p>Also it will merge data of DataSet instances that are identical
+(according to function __eq__ of DataSet).</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id77">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocopp.pproc.DataSetList.__init__">__init__</a></code></td>
+    <td>Instantiate self from a list of folder- or filenames or <tt class="rst-docutils literal">DataSet</tt> instances.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#append" class="internal-link" title="cocopp.pproc.DataSetList.append">append</a></code></td>
+    <td>Redefines the append method to check for unicity.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#by" class="internal-link" title="cocopp.pproc.DataSetList.by">by</a></code></td>
+    <td>Returns a dictionary of <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> instances by <code>attr_name</code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#det_best_data" class="internal-link" title="cocopp.pproc.DataSetList.det_best_data">det​_best​_data</a></code></td>
+    <td>return a list of the <tt class="rst-docutils literal">number</tt> smallest evaluations over all data sets in <tt class="rst-docutils literal">self</tt> for each <tt class="rst-docutils literal">target in target_values</tt>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#det_best_data_lines" class="internal-link" title="cocopp.pproc.DataSetList.det_best_data_lines">det​_best​_data​_lines</a></code></td>
+    <td>return a list of the respective best data lines over all data sets in <tt class="rst-docutils literal">self</tt> for each <tt class="rst-docutils literal">target in target_values</tt> and an array of the computed scores (ERT <tt class="rst-docutils literal">if scoring_function == 'ERT'</tt>).</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByAlg" class="internal-link" title="cocopp.pproc.DataSetList.dictByAlg">dict​By​Alg</a></code></td>
+    <td>Returns a dictionary of instances of this class by algorithm.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByAlgName" class="internal-link" title="cocopp.pproc.DataSetList.dictByAlgName">dict​By​Alg​Name</a></code></td>
+    <td>Returns a dictionary of instances of this class by algorithm.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByDim" class="internal-link" title="cocopp.pproc.DataSetList.dictByDim">dict​By​Dim</a></code></td>
+    <td>Returns a dictionary of instances of this class by dimensions.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByDimFunc" class="internal-link" title="cocopp.pproc.DataSetList.dictByDimFunc">dict​By​Dim​Func</a></code></td>
+    <td>Returns a dictionary of instances of this class by dimensions and for each dimension by function.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByFunc" class="internal-link" title="cocopp.pproc.DataSetList.dictByFunc">dict​By​Func</a></code></td>
+    <td>Returns a dictionary of instances of this class by functions.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByFuncCons" class="internal-link" title="cocopp.pproc.DataSetList.dictByFuncCons">dict​By​Func​Cons</a></code></td>
+    <td>Returns a dictionary of instances of this class by objective functions (grouping over constraints).</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByFuncGroup" class="internal-link" title="cocopp.pproc.DataSetList.dictByFuncGroup">dict​By​Func​Group</a></code></td>
+    <td>Returns a dictionary of instances of this class by function groups.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByFuncGroupBiobjective" class="internal-link" title="cocopp.pproc.DataSetList.dictByFuncGroupBiobjective">dict​By​Func​Group​Biobjective</a></code></td>
+    <td>Returns a dictionary of instances of this class by function groups for bi-objective case.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByFuncGroupSingleObjective" class="internal-link" title="cocopp.pproc.DataSetList.dictByFuncGroupSingleObjective">dict​By​Func​Group​Single​Objective</a></code></td>
+    <td>Returns a dictionary of instances of this class by function groups for single objective case.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByNoise" class="internal-link" title="cocopp.pproc.DataSetList.dictByNoise">dict​By​Noise</a></code></td>
+    <td>Returns a dictionary splitting noisy and non-noisy entries.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dictByParam" class="internal-link" title="cocopp.pproc.DataSetList.dictByParam">dict​By​Param</a></code></td>
+    <td>Returns a dictionary of DataSetList by parameter values.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#extend" class="internal-link" title="cocopp.pproc.DataSetList.extend">extend</a></code></td>
+    <td>Extend with elements.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_all_data_lines" class="internal-link" title="cocopp.pproc.DataSetList.get_all_data_lines">get​_all​_data​_lines</a></code></td>
+    <td>return a list of all data lines in <tt class="rst-docutils literal">self</tt> for each algorithm and a list of the respective computed ERTs.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_reference_values_hash" class="internal-link" title="cocopp.pproc.DataSetList.get_reference_values_hash">get​_reference​_values​_hash</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_sorted_algorithms" class="internal-link" title="cocopp.pproc.DataSetList.get_sorted_algorithms">get​_sorted​_algorithms</a></code></td>
+    <td>return list of the algorithms from <tt class="rst-docutils literal">self</tt>, sorted by minimum loss factor in the ECDF.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#getFuncGroups" class="internal-link" title="cocopp.pproc.DataSetList.getFuncGroups">get​Func​Groups</a></code></td>
+    <td>Returns a dictionary of function groups.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#info" class="internal-link" title="cocopp.pproc.DataSetList.info">info</a></code></td>
+    <td>Display some information onscreen.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#isBiobjective" class="internal-link" title="cocopp.pproc.DataSetList.isBiobjective">is​Biobjective</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#pickle" class="internal-link" title="cocopp.pproc.DataSetList.pickle">pickle</a></code></td>
+    <td>Loop over self to pickle each element.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#processIndexFile" class="internal-link" title="cocopp.pproc.DataSetList.processIndexFile">process​Index​File</a></code></td>
+    <td>Reads in an index (.info?) file information on the different runs.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#run_length_distributions" class="internal-link" title="cocopp.pproc.DataSetList.run_length_distributions">run​_length​_distributions</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#sort" class="internal-link" title="cocopp.pproc.DataSetList.sort">sort</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#current_testbed" class="internal-link" title="cocopp.pproc.DataSetList.current_testbed">current​_testbed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, args=[], check_data_type=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Instantiate self from a list of folder- or filenames or
+<tt class="rst-docutils literal">DataSet</tt> instances.</p>
+<p>Exceptions:
+Warning -- Unexpected user input.
+pickle.UnpicklingError</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">check​_data​_type</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list args</span></td><td class="fieldArgDesc">strings being either info file names, folder
+containing info files or pickled data files,
+or a list of DataSets.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.append">
+    
+  </a>
+  <a name="append">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">append</span>(self, o, check_data_type=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Redefines the append method to check for unicity.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.by">
+    
+  </a>
+  <a name="by">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">by</span>(self, attr_name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> instances by <code>attr_name</code>.</p>
+<p><code>attr_name</code> values are the dictionary keys and the corresponding
+slices (partial lists) are the values.</p>
+<p>May in future replace some of the specific methods, for example,
+<tt class="rst-docutils literal">dsl.dictByDim() == <span class="pre">dsl.by('dim')</span></tt>.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.det_best_data">
+    
+  </a>
+  <a name="det_best_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">det_best_data</span>(self, target_values, fct, dim, number=15):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a list of the <tt class="rst-docutils literal">number</tt> smallest evaluations over all
+data sets in <tt class="rst-docutils literal">self</tt> for each <tt class="rst-docutils literal">target in target_values</tt>.</p>
+<p>Detail: currently, the minimal observed evaluation is computed
+instance-wise and the <tt class="rst-docutils literal">number</tt> "easiest" instances are returned.
+That is, if <code>number</code> is the number of instances, the best eval
+for each instance is returned.
+Also the smallest <tt class="rst-docutils literal">number</tt> evaluations regardless of instance
+are computed, but not returned.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.det_best_data_lines">
+    
+  </a>
+  <a name="det_best_data_lines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">det_best_data_lines</span>(self, target_values, fct, dim, scoring_function=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a list of the respective best data lines over all data
+sets in <tt class="rst-docutils literal">self</tt> for each <tt class="rst-docutils literal">target in target_values</tt> and an
+array of the computed scores (ERT <tt class="rst-docutils literal">if scoring_function == 'ERT'</tt>).</p>
+<p>A data line is the set of evaluations from all (usually 15) runs
+for a given target value. The score determines which data line is
+"best".</p>
+<p>If <tt class="rst-docutils literal">scoring_function is None</tt>, the best is determined with method
+<tt class="rst-docutils literal">detERT</tt>. Using <tt class="rst-docutils literal">scoring_function=lambda x:
+toolsstat.prctile(x, [5], ignore_nan=False)</tt> is another useful
+alternative.</p>
+<p>TODO: do we want to append equal-instance lines for detEvals?</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByAlg">
+    
+  </a>
+  <a name="dictByAlg">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByAlg</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of instances of this class by algorithm.</p>
+<p>The resulting dict uses algId and comment as keys and the
+corresponding slices as values.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByAlgName">
+    
+  </a>
+  <a name="dictByAlgName">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByAlgName</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of instances of this class by algorithm.</p>
+<p>Compared to dictByAlg, this method uses only the data folder
+as key and the corresponding slices as values.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByDim">
+    
+  </a>
+  <a name="dictByDim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByDim</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of instances of this class by dimensions.</p>
+<p>Returns a dictionary with dimension as keys and the
+corresponding slices as values.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByDimFunc">
+    
+  </a>
+  <a name="dictByDimFunc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByDimFunc</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of instances of this class
+by dimensions and for each dimension by function.</p>
+<p>Returns a dictionary with dimension as keys and the
+corresponding slices as values.</p>
+<blockquote>
+ds = dsl.dictByDimFunc[40][2]  # DataSet dimension 40 on F2</blockquote>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByFunc">
+    
+  </a>
+  <a name="dictByFunc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByFunc</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of instances of this class by functions.</p>
+<p>Returns a dictionary with the function id as keys and the
+corresponding slices as values.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByFuncCons">
+    
+  </a>
+  <a name="dictByFuncCons">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByFuncCons</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of instances of this class
+by objective functions (grouping over constraints).</p>
+<p>Should be used only with the constrained test bed.</p>
+<p>Returns a dictionary with the function string identifiers as keys and the
+corresponding slices as values.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByFuncGroup">
+    
+  </a>
+  <a name="dictByFuncGroup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByFuncGroup</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of instances of this class by function groups.</p>
+<p>The output dictionary has function group names as keys and the
+corresponding slices as values.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByFuncGroupBiobjective">
+    
+  </a>
+  <a name="dictByFuncGroupBiobjective">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByFuncGroupBiobjective</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of instances of this class by function groups
+for bi-objective case.</p>
+<p>The output dictionary has function group names as keys and the
+corresponding slices as values.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByFuncGroupSingleObjective">
+    
+  </a>
+  <a name="dictByFuncGroupSingleObjective">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByFuncGroupSingleObjective</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of instances of this class by function groups
+for single objective case.</p>
+<p>The output dictionary has function group names as keys and the
+corresponding slices as values. Current groups are based on the
+GECCO-BBOB 2009-2013 function testbeds.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByNoise">
+    
+  </a>
+  <a name="dictByNoise">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByNoise</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns a dictionary splitting noisy and non-noisy entries.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.dictByParam">
+    
+  </a>
+  <a name="dictByParam">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dictByParam</span>(self, param):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns a dictionary of DataSetList by parameter values.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a dictionary with values of parameter param as keys and
+the corresponding slices of DataSetList as values.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.extend">
+    
+  </a>
+  <a name="extend">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">extend</span>(self, o):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Extend with elements.</p>
+<p>This method is implemented to prevent problems since append was
+superseded. This method could be the origin of efficiency issue.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.get_all_data_lines">
+    
+  </a>
+  <a name="get_all_data_lines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_all_data_lines</span>(self, target_value, fct, dim):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a list of all data lines in <tt class="rst-docutils literal">self</tt> for each
+algorithm and a list of the respective
+computed ERTs.</p>
+<div class="rst-section" id="rst-example">
+<h2 class="heading">Example</h2>
+<p>Get all run lengths of all trials on f1 in 20-D to reach
+target 1e-7:</p>
+<pre class="rst-literal-block">
+data = dsl.get_all_data_lines(1e-7, 1, 20)[0]
+flat_data = np.hstack(data)
+plot(np.arange(1, 1+len(flat_data)) / len(flat_data),
+     sort(flat_data))  # sorted fails on nan
+</pre>
+</div>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.get_reference_values_hash">
+    
+  </a>
+  <a name="get_reference_values_hash">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_reference_values_hash</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.get_sorted_algorithms">
+    
+  </a>
+  <a name="get_sorted_algorithms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_sorted_algorithms</span>(self, dimension, target_values, fun_list=None, reference_dataset_list=None, smallest_evaluation_to_use=3):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return list of the algorithms from <tt class="rst-docutils literal">self</tt>, sorted by
+minimum loss factor in the ECDF.</p>
+<p>Best means to be within <code>loss</code> of the best algorithm at
+at least one point of the ECDF from the functions <code>fun_list</code>,
+i.e. minimal distance to the left envelope in the semilogx plot.</p>
+<p><tt class="rst-docutils literal">target_values</tt> gives for each function-dimension pair a list of
+target values.</p>
+<p>TODO: data generation via run_length_distributions and sorting
+should probably be separated.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.getFuncGroups">
+    
+  </a>
+  <a name="getFuncGroups">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">getFuncGroups</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns a dictionary of function groups.</p>
+<p>The output dictionary has functions group names as keys
+and function group descriptions as values.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.info">
+    
+  </a>
+  <a name="info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">info</span>(self, opt=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Display some information onscreen.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">opt</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">string opt</span></td><td class="fieldArgDesc">changes size of output, can be 'all'
+(default), 'short'</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.isBiobjective">
+    
+  </a>
+  <a name="isBiobjective">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">isBiobjective</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.pickle">
+    
+  </a>
+  <a name="pickle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pickle</span>(self, *args, **kwargs):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Loop over self to pickle each element.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.processIndexFile">
+    
+  </a>
+  <a name="processIndexFile">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">processIndexFile</span>(self, indexFile, alg_name=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Reads in an index (.info?) file information on the different runs.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.run_length_distributions">
+    
+  </a>
+  <a name="run_length_distributions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run_length_distributions</span>(self, dimension, target_values, fun_list=None, reference_data_set_list=None, reference_scoring_function=(lambda x: toolsstats.prctile(x, [5])[0]), data_per_target=15, flatten_output_dict=True, simulated_restarts=False, bootstrap=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>return a dictionary with an entry for each algorithm, or for
+only one algorithm the dictionary value if
+<tt class="rst-docutils literal">flatten_output_dict is True</tt>, and the left envelope
+rld-array.</p>
+<p>For each algorithm the entry contains a sorted rld-array of
+evaluations to reach the targets on all functions in
+<tt class="rst-docutils literal">func_list</tt> or all functions in <code>self</code>, the list of solved
+functions, the list of processed functions. If the sorted
+rld-array is normalized by the reference score (after sorting),
+the last entry is the original rld.</p>
+<p>Example:</p>
+<pre class="rst-literal-block">
+%pylab
+dsl = cocopp.load(...)  # a single algorithm
+rld = dsl.run_length_distributions(10, [1e-1, 1e-3, 1e-5])
+step(rld[0][0], np.linspace(0, 1, len(rld[0][0]),
+     endpoint=True)
+</pre>
+<p>TODO: change interface to return always rld_original and optional
+the scores to compare with such that we need to compute
+<tt class="rst-docutils literal"><span class="pre">rld[0][0]</span> / <span class="pre">rld[0][-1]</span></tt> to get the current output?</p>
+<p>If <tt class="rst-docutils literal">reference_data_set_list is not None</tt> evaluations
+are normalized by the reference data, however
+the data remain to be sorted without normalization.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dimension</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target​_values</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fun​_list</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference​_data​_set​_list</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">reference​_scoring​_function</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data​_per​_target</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">flatten​_output​_dict</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">simulated​_restarts</span></td><td class="fieldArgDesc">use simulated trials instead of
+"raw" evaluations from calling <code><a href="cocopp.pproc.DataSet.html#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">DataSet.detEvals</a></code>.
+<code>simulated_restarts</code> may be a <code>bool</code>, or a kwargs <code>dict</code>
+passed like <tt class="rst-docutils literal">**simulated_restarts</tt> to the method
+<code><a href="cocopp.pproc.DataSet.html#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">DataSet.evals_with_simulated_restarts</a></code>, or it may indicate
+the number of simulated trials. By default, the first trial
+is chosen without replacement. That means, if the number of
+simulated trials equals to <tt class="rst-docutils literal">nbRuns()</tt>, the result is the
+same as from <code><a href="cocopp.pproc.DataSet.html#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">DataSet.detEvals</a></code>, bar the ordering of the
+data. If <code>bootstrap</code> is active, the number is set to
+<tt class="rst-docutils literal">nbRuns()</tt> and the first trial is chosen <em>with</em> replacement.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bootstrap</span></td><td class="fieldArgDesc"><tt class="rst-docutils literal">if bootstrap</tt>, the number of evaluations is
+bootstrapped within the instances/trials or via simulated
+restarts.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pproc.DataSetList.sort">
+    
+  </a>
+  <a name="sort">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sort</span>(self, key1=<span class="rst-variable-quote">'</span><span class="rst-variable-string">dim</span><span class="rst-variable-quote">'</span>, key2=<span class="rst-variable-quote">'</span><span class="rst-variable-string">funcId</span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pproc.DataSetList.current_testbed">
+    
+  </a>
+  <a name="current_testbed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">current_testbed</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

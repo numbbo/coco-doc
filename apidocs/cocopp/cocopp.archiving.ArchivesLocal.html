@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.archiving.ArchivesLocal</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.archiving.html" class="internal-link" title="cocopp.archiving">archiving</a></code><wbr></wbr>.<code><a href="cocopp.archiving.ArchivesLocal.html" class="internal-link" title="cocopp.archiving.ArchivesLocal">ArchivesLocal</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">ArchivesLocal</span>(<a href="cocopp.archiving.ListOfArchives.html" class="internal-link" title="cocopp.archiving.ListOfArchives">ListOfArchives</a>):</code></p>
+        <p><a href="classIndex.html#cocopp.archiving.ArchivesLocal">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>COCO data archives somewhere local on this machine.</p>
+<p>The archives need to be gathered with <code><a href="cocopp.archiving.ListOfArchives.html#_walk" class="internal-link" title="cocopp.archiving.ListOfArchives._walk">_walk</a></code>.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id23">
+  
+  
+  <tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#listing_file" class="internal-link" title="cocopp.archiving.ArchivesLocal.listing_file">listing​_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#search_folder" class="internal-link" title="cocopp.archiving.ArchivesLocal.search_folder">search​_folder</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="cocopp.archiving.ListOfArchives.html" class="internal-link" title="cocopp.archiving.ListOfArchives">ListOfArchives</a></code>:
+          </p>
+          <table class="children sortable" id="id24">
+  
+  
+  <tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#register" class="internal-link" title="cocopp.archiving.ListOfArchives.register">register</a></code></td>
+    <td>add folder path or url to list of archives.</td>
+  </tr><tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#lists" class="internal-link" title="cocopp.archiving.ListOfArchives.lists">lists</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#__init__" class="internal-link" title="cocopp.archiving.ListOfArchives.__init__">__init__</a></code></td>
+    <td>print available archive lists if no listing file is given</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#remote_update" class="internal-link" title="cocopp.archiving.ListOfArchives.remote_update">remote​_update</a></code></td>
+    <td>join in the respective list from <tt class="rst-docutils literal"><span class="pre">coco_url.rsplit('/')[0]</span> + <span class="pre">'/data-archives'</span></tt>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#save" class="internal-link" title="cocopp.archiving.ListOfArchives.save">save</a></code></td>
+    <td>save current list making changes permanent</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#update" class="internal-link" title="cocopp.archiving.ListOfArchives.update">update</a></code></td>
+    <td>update self from the listing file that may have changed</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#name" class="internal-link" title="cocopp.archiving.ListOfArchives.name">name</a></code></td>
+    <td>name of this list</td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#_file" class="internal-link" title="cocopp.archiving.ListOfArchives._file">​_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#_fullfile" class="internal-link" title="cocopp.archiving.ListOfArchives._fullfile">​_fullfile</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#_name" class="internal-link" title="cocopp.archiving.ListOfArchives._name">​_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#_makepathsabsolute" class="internal-link" title="cocopp.archiving.ListOfArchives._makepathsabsolute">​_makepathsabsolute</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#_remove_double_entries" class="internal-link" title="cocopp.archiving.ListOfArchives._remove_double_entries">​_remove​_double​_entries</a></code></td>
+    <td>keep the first of duplicated entries</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#_save_walk" class="internal-link" title="cocopp.archiving.ListOfArchives._save_walk">​_save​_walk</a></code></td>
+    <td>extend <code>self</code> by elements of <code><a href="#_last_walk" class="internal-link" title="cocopp.archiving.ListOfArchives._last_walk">_last_walk</a></code> not in <code>self</code> and <code><a href="#save" class="internal-link" title="cocopp.archiving.ListOfArchives.save">save</a></code></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#_walk" class="internal-link" title="cocopp.archiving.ListOfArchives._walk">​_walk</a></code></td>
+    <td>recursive search for COCO data archives in <code>folder</code> on disk.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.archiving.ListOfArchives.html#_last_walk" class="internal-link" title="cocopp.archiving.ListOfArchives._last_walk">​_last​_walk</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+          <p class="inheritedFrom">
+            Inherited from <code><a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">StrList</a></code> (via <code><a href="cocopp.archiving.ListOfArchives.html" class="internal-link" title="cocopp.archiving.ListOfArchives">ListOfArchives</a></code>):
+          </p>
+          <table class="children sortable" id="id25">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#__call__" class="internal-link" title="cocopp.toolsdivers.StrList.__call__">__call__</a></code></td>
+    <td>alias to <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code></td>
+    <td>return entries that match all <code>substrs</code>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#find_indices" class="internal-link" title="cocopp.toolsdivers.StrList.find_indices">find​_indices</a></code></td>
+    <td>same as <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code> but returns indices instead of names</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#print" class="internal-link" title="cocopp.toolsdivers.StrList.print">print</a></code></td>
+    <td>print the result of <tt class="rst-docutils literal"><span class="pre">find(*substrs)</span></tt> with indices.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#as_string" class="internal-link" title="cocopp.toolsdivers.StrList.as_string">as​_string</a></code></td>
+    <td>return space separated string concatenation surrounded by spaces.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#found" class="internal-link" title="cocopp.toolsdivers.StrList.found">found</a></code></td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html" class="internal-link" title="cocopp.toolsdivers.StrList">StrList</a></code> of elements found during the last call to <code><a href="#find" class="internal-link" title="cocopp.toolsdivers.StrList.find">find</a></code>.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="cocopp.toolsdivers.StrList.html#_names_found" class="internal-link" title="cocopp.toolsdivers.StrList._names_found">​_names​_found</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="baseclassvariable">
+  
+  
+  <a name="cocopp.archiving.ArchivesLocal.listing_file">
+    
+  </a>
+  <a name="listing_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">listing_file</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="cocopp.archiving.ListOfArchives.html#listing_file" class="internal-link">cocopp.archiving.ListOfArchives.listing_file</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="cocopp.archiving.ArchivesLocal.search_folder">
+    
+  </a>
+  <a name="search_folder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">search_folder</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="cocopp.archiving.ListOfArchives.html#search_folder" class="internal-link">cocopp.archiving.ListOfArchives.search_folder</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.pprocold.HMultiReader</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.pprocold.html" class="internal-link" title="cocopp.pprocold">pprocold</a></code><wbr></wbr>.<code><a href="cocopp.pprocold.HMultiReader.html" class="internal-link" title="cocopp.pprocold.HMultiReader">HMultiReader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">HMultiReader</span>(<a href="cocopp.pprocold.MultiReader.html" class="internal-link" title="cocopp.pprocold.MultiReader">MultiReader</a>):</code></p><p>Known subclasses: <code><a href="cocopp.pprocold.HArrayMultiReader.html" class="internal-link">cocopp.pprocold.HArrayMultiReader</a></code></p>
+        <p><a href="classIndex.html#cocopp.pprocold.HMultiReader">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Wrapper class of data arrays to be aligned vertically.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id84">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocopp.pprocold.HMultiReader.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#align" class="internal-link" title="cocopp.pprocold.HMultiReader.align">align</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#getInitialValue" class="internal-link" title="cocopp.pprocold.HMultiReader.getInitialValue">get​Initial​Value</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#isFinished" class="internal-link" title="cocopp.pprocold.HMultiReader.isFinished">is​Finished</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#newCurrentValue" class="internal-link" title="cocopp.pprocold.HMultiReader.newCurrentValue">new​Current​Value</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#idxCurrentF" class="internal-link" title="cocopp.pprocold.HMultiReader.idxCurrentF">idx​Current​F</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+          <p class="inheritedFrom">
+            Inherited from <code><a href="cocopp.pprocold.MultiReader.html" class="internal-link" title="cocopp.pprocold.MultiReader">MultiReader</a></code>:
+          </p>
+          <table class="children sortable" id="id85">
+  
+  
+  <tr class="baseclass">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.pprocold.MultiReader.SingleReader.html" class="internal-link" title="cocopp.pprocold.MultiReader.SingleReader">​Single​Reader</a></code></td>
+    <td>Single data array reader class.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.pprocold.MultiReader.html#currentLine" class="internal-link" title="cocopp.pprocold.MultiReader.currentLine">current​Line</a></code></td>
+    <td>Aggregates currentLines information.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.pprocold.MultiReader.html#currentValues" class="internal-link" title="cocopp.pprocold.MultiReader.currentValues">current​Values</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.pprocold.MultiReader.html#nextValues" class="internal-link" title="cocopp.pprocold.MultiReader.nextValues">next​Values</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="cocopp.pprocold.HMultiReader.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, data):
+    
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="cocopp.pprocold.MultiReader.html#__init__" class="internal-link">cocopp.pprocold.MultiReader.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="cocopp.pprocold.HArrayMultiReader.html" class="internal-link">cocopp.pprocold.HArrayMultiReader</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pprocold.HMultiReader.align">
+    
+  </a>
+  <a name="align">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">align</span>(self, currentValue):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pprocold.HMultiReader.getInitialValue">
+    
+  </a>
+  <a name="getInitialValue">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">getInitialValue</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pprocold.HMultiReader.isFinished">
+    
+  </a>
+  <a name="isFinished">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">isFinished</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.pprocold.HMultiReader.newCurrentValue">
+    
+  </a>
+  <a name="newCurrentValue">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">newCurrentValue</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.pprocold.HMultiReader.idxCurrentF">
+    
+  </a>
+  <a name="idxCurrentF">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">idxCurrentF</span> =
+    
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="cocopp.pprocold.HArrayMultiReader.html" class="internal-link">cocopp.pprocold.HArrayMultiReader</a></code></div>
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

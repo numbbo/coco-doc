@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocoex.utilities.SameFunction</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocoex <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocoex</a></code><wbr></wbr>.<code><a href="cocoex.utilities.html" class="internal-link" title="cocoex.utilities">utilities</a></code><wbr></wbr>.<code><a href="cocoex.utilities.SameFunction.html" class="internal-link" title="cocoex.utilities.SameFunction">SameFunction</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SameFunction</span>:</code></p>
+        <p><a href="classIndex.html#cocoex.utilities.SameFunction">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Count the number of consecutive instances of the same function.</p>
+<p>Useful to limit the number of repetitions on the same function.</p>
+<p>Example:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> cocoex.utilities <span class="py-keyword">import</span> SameFunction
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>suite = cocoex.Suite(<span class="py-string">'bbob'</span>, <span class="py-string">''</span>, <span class="py-string">''</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>already_seen = SameFunction()
+<span class="py-prompt">&gt;&gt;&gt; </span>processed = 0
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> problem <span class="py-keyword">in</span> suite:
+<span class="py-more">... </span>    <span class="py-keyword">if</span> already_seen(problem.id) &gt; 5:
+<span class="py-more">... </span>        <span class="py-keyword">continue</span>
+<span class="py-more">... </span>    <span class="py-comment"># do something here only with the first five instances</span>
+<span class="py-more">... </span>    processed += 1
+<span class="py-prompt">&gt;&gt;&gt; </span>processed, <span class="py-builtin">len</span>(suite), already_seen.count
+<span class="py-output">(864, 2160, 15)</span>
+</pre><p>More arbitrary tests:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> i <span class="py-keyword">in</span> <span class="py-builtin">range</span>(4):
+<span class="py-more">... </span>    <span class="py-keyword">if</span> seen(<span class="py-string">'f001_i%d'</span> % i) &gt; 2:
+<span class="py-more">... </span>        <span class="py-keyword">continue</span>
+<span class="py-more">... </span>    <span class="py-comment"># do something here only the first two instances</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>seen.count
+<span class="py-output">4</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>seen(<span class="py-string">'f_d03_i001'</span>)
+<span class="py-output">0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>seen(<span class="py-string">'f_d03_i02'</span>)
+<span class="py-output">1</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> i <span class="py-keyword">in</span> <span class="py-builtin">range</span>(4):
+<span class="py-more">... </span>    <span class="py-keyword">if</span> seen(<span class="py-string">'f%d_i%d'</span> % (i, i)):
+<span class="py-more">... </span>        <span class="py-keyword">break</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>i, seen.count
+<span class="py-output">(3, 1)</span>
+</pre></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id10">
+  
+  
+  <tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#filter" class="internal-link" title="cocoex.utilities.SameFunction.filter">filter</a></code></td>
+    <td>remove instance information and return a <code>tuple</code></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__call__" class="internal-link" title="cocoex.utilities.SameFunction.__call__">__call__</a></code></td>
+    <td>return number of directly preceding calls with similar <code><a href="cocoex.Problem.html#id" class="internal-link" title="cocoex.Problem.id">id</a></code></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocoex.utilities.SameFunction.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#count" class="internal-link" title="cocoex.utilities.SameFunction.count">count</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#last" class="internal-link" title="cocoex.utilities.SameFunction.last">last</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basestaticmethod">
+  
+  
+  <a name="cocoex.utilities.SameFunction.filter">
+    
+  </a>
+  <a name="filter">
+    
+  </a>
+  <div class="functionHeader">
+    @staticmethod<br />
+    <span class="py-keyword">def</span> <span class="py-defname">filter</span>(id):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>remove instance information and return a <code>tuple</code></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.SameFunction.__call__">
+    
+  </a>
+  <a name="__call__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__call__</span>(self, id):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>return number of directly preceding calls with similar <code><a href="cocoex.Problem.html#id" class="internal-link" title="cocoex.Problem.id">id</a></code></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocoex.utilities.SameFunction.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.SameFunction.count">
+    
+  </a>
+  <a name="count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">count</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocoex.utilities.SameFunction.last">
+    
+  </a>
+  <a name="last">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">last</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocoex,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:44:24.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

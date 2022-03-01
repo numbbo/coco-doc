@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.readalign.MultiReader.SingleReader</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.readalign.html" class="internal-link" title="cocopp.readalign">readalign</a></code><wbr></wbr>.<code><a href="cocopp.readalign.MultiReader.html" class="internal-link" title="cocopp.readalign.MultiReader">MultiReader</a></code><wbr></wbr>.<code><a href="cocopp.readalign.MultiReader.SingleReader.html" class="internal-link" title="cocopp.readalign.MultiReader.SingleReader">SingleReader</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">SingleReader</span>:</code></p>
+        <p><a href="classIndex.html#cocopp.readalign.MultiReader.SingleReader">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Single data array reader class.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id106">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="cocopp.readalign.MultiReader.SingleReader.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#next" class="internal-link" title="cocopp.readalign.MultiReader.SingleReader.next">next</a></code></td>
+    <td>Returns the next (last if undefined) line of the array data.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#currentLine" class="internal-link" title="cocopp.readalign.MultiReader.SingleReader.currentLine">current​Line</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#data" class="internal-link" title="cocopp.readalign.MultiReader.SingleReader.data">data</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#idxEvals" class="internal-link" title="cocopp.readalign.MultiReader.SingleReader.idxEvals">idx​Evals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#isFinished" class="internal-link" title="cocopp.readalign.MultiReader.SingleReader.isFinished">is​Finished</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#isNearlyFinished" class="internal-link" title="cocopp.readalign.MultiReader.SingleReader.isNearlyFinished">is​Nearly​Finished</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#it" class="internal-link" title="cocopp.readalign.MultiReader.SingleReader.it">it</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#nextLine" class="internal-link" title="cocopp.readalign.MultiReader.SingleReader.nextLine">next​Line</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="cocopp.readalign.MultiReader.SingleReader.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, data, isHArray=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="cocopp.readalign.MultiReader.SingleReader.next">
+    
+  </a>
+  <a name="next">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">next</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns the next (last if undefined) line of the array data.</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.readalign.MultiReader.SingleReader.currentLine">
+    
+  </a>
+  <a name="currentLine">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">currentLine</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.readalign.MultiReader.SingleReader.data">
+    
+  </a>
+  <a name="data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">data</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.readalign.MultiReader.SingleReader.idxEvals">
+    
+  </a>
+  <a name="idxEvals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">idxEvals</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.readalign.MultiReader.SingleReader.isFinished">
+    
+  </a>
+  <a name="isFinished">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">isFinished</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.readalign.MultiReader.SingleReader.isNearlyFinished">
+    
+  </a>
+  <a name="isNearlyFinished">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">isNearlyFinished</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.readalign.MultiReader.SingleReader.it">
+    
+  </a>
+  <a name="it">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">it</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="cocopp.readalign.MultiReader.SingleReader.nextLine">
+    
+  </a>
+  <a name="nextLine">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nextLine</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

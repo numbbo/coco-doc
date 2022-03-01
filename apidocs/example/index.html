@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>example_experiment2</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            example_experiment2 <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">example_experiment2</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>A short and simple example experiment with restarts.</p>
+<p>The script is fully functional but also emphasises on readability. It
+features restarts, timings and recording termination conditions.</p>
+<p>To benchmark a different solver, <code>fmin</code> must be re-assigned and another
+<code>elif</code> block added around line 119 to account for the solver-specific
+call.</p>
+<p>When calling the script, previously assigned variables can be re-assigned
+via a <tt class="rst-docutils literal">name=value</tt> argument without white spaces, where <tt class="rst-docutils literal">value</tt> is
+interpreted as a single python literal. Additionally, <tt class="rst-docutils literal">batch</tt> is recognized
+as argument defining the <code><a href="#current_batch" class="internal-link" title="example_experiment2.current_batch">current_batch</a></code> number and the number of <code><a href="#batches" class="internal-link" title="example_experiment2.batches">batches</a></code>,
+like <tt class="rst-docutils literal">batch=2/8</tt> runs batch 2 of 8.</p>
+<p>Examples, preceeded by "python" in an OS shell and by "run" in an IPython
+shell:</p>
+<pre class="rst-literal-block">
+example_experiment2.py budget_multiplier=3  # times dimension
+
+example_experiment2.py budget_multiplier=1e4 cocopp=None  # omit post-processing
+
+example_experiment2.py budget_multiplier=1e4 suite_name=bbob-biobj
+
+example_experiment2.py budget_multiplier=1000 batch=1/16
+</pre>
+<p>Post-processing with <code>cocopp</code> is only invoked in the single-batch case.</p>
+<p>Details: <tt class="rst-docutils literal">batch=9/8</tt> is equivalent to <tt class="rst-docutils literal">batch=1/8</tt>. The first number
+is taken modulo to the second.</p>
+<p>See the code: <a class="rst-reference external" href="https://github.com/numbbo/coco/blob/master/code-experiments/build/python/example_experiment2.py" target="_top">https://github.com/numbbo/coco/blob/master/code-experiments/build/python/example_experiment2.py</a></p>
+<p>See a beginners example experiment: <a class="rst-reference external" href="https://github.com/numbbo/coco/blob/master/code-experiments/build/python/example_experiment_for_beginners.py" target="_top">https://github.com/numbbo/coco/blob/master/code-experiments/build/python/example_experiment_for_beginners.py</a></p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id1">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#random_search" class="internal-link" title="example_experiment2.random_search">random​_search</a></code></td>
+    <td>Won't work (well or at all) for <code>evals</code> much larger than 1e5</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_num_threads" class="internal-link" title="example_experiment2.set_num_threads">set​_num​_threads</a></code></td>
+    <td>see <a class="rst-reference external" href="https://github.com/numbbo/coco/issues/1919" target="_top">https://github.com/numbbo/coco/issues/1919</a> and <a class="rst-reference external" href="https://twitter.com/jeremyphoward/status/1185044752753815552" target="_top">https://twitter.com/jeremyphoward/status/1185044752753815552</a></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#__author__" class="internal-link" title="example_experiment2.__author__">__author__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#batches" class="internal-link" title="example_experiment2.batches">batches</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#budget_multiplier" class="internal-link" title="example_experiment2.budget_multiplier">budget​_multiplier</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#current_batch" class="internal-link" title="example_experiment2.current_batch">current​_batch</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#evalsleft" class="internal-link" title="example_experiment2.evalsleft">evalsleft</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#irestart" class="internal-link" title="example_experiment2.irestart">irestart</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#minimal_print" class="internal-link" title="example_experiment2.minimal_print">minimal​_print</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#observer" class="internal-link" title="example_experiment2.observer">observer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#output_folder" class="internal-link" title="example_experiment2.output_folder">output​_folder</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#stoppings" class="internal-link" title="example_experiment2.stoppings">stoppings</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#suite" class="internal-link" title="example_experiment2.suite">suite</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#suite_filter_options" class="internal-link" title="example_experiment2.suite_filter_options">suite​_filter​_options</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#suite_name" class="internal-link" title="example_experiment2.suite_name">suite​_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#time0" class="internal-link" title="example_experiment2.time0">time0</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#time1" class="internal-link" title="example_experiment2.time1">time1</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#timings" class="internal-link" title="example_experiment2.timings">timings</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="example_experiment2.random_search">
+    
+  </a>
+  <a name="random_search">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">random_search</span>(f, lbounds, ubounds, evals):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Won't work (well or at all) for <code>evals</code> much larger than 1e5</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="example_experiment2.set_num_threads">
+    
+  </a>
+  <a name="set_num_threads">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_num_threads</span>(nt=1, disp=1):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>see <a class="rst-reference external" href="https://github.com/numbbo/coco/issues/1919" target="_top">https://github.com/numbbo/coco/issues/1919</a>
+and <a class="rst-reference external" href="https://twitter.com/jeremyphoward/status/1185044752753815552" target="_top">https://twitter.com/jeremyphoward/status/1185044752753815552</a></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.__author__">
+    
+  </a>
+  <a name="__author__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">__author__</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.batches">
+    
+  </a>
+  <a name="batches">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">batches</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.budget_multiplier">
+    
+  </a>
+  <a name="budget_multiplier">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">budget_multiplier</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.current_batch">
+    
+  </a>
+  <a name="current_batch">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">current_batch</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.evalsleft">
+    
+  </a>
+  <a name="evalsleft">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">evalsleft</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.irestart">
+    
+  </a>
+  <a name="irestart">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">irestart</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.minimal_print">
+    
+  </a>
+  <a name="minimal_print">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">minimal_print</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.observer">
+    
+  </a>
+  <a name="observer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">observer</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.output_folder">
+    
+  </a>
+  <a name="output_folder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">output_folder</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.stoppings">
+    
+  </a>
+  <a name="stoppings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">stoppings</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.suite">
+    
+  </a>
+  <a name="suite">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">suite</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.suite_filter_options">
+    
+  </a>
+  <a name="suite_filter_options">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">suite_filter_options</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.suite_name">
+    
+  </a>
+  <a name="suite_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">suite_name</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.time0">
+    
+  </a>
+  <a name="time0">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">time0</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.time1">
+    
+  </a>
+  <a name="time1">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">time1</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="example_experiment2.timings">
+    
+  </a>
+  <a name="timings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">timings</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for example_experiment2,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:46:38.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

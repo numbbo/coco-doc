@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.comp2.ppscatter</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.comp2.html" class="internal-link" title="cocopp.comp2">comp2</a></code><wbr></wbr>.<code><a href="cocopp.comp2.ppscatter.html" class="internal-link" title="cocopp.comp2.ppscatter">ppscatter</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Scatter Plots.</p>
+<p>For two algorithms, this generates the scatter plot of log(ERT1(df)) vs.
+log(ERT0(df)), where ERT0(df) is the ERT of the reference algorithm,
+ERT1(df) is the ERT of the algorithm of concern, both for target
+precision df.</p>
+<p>Different symbols are used for different dimension (see
+<code>markers</code> for the order of the markers, <code><a href="cocopp.ppfigparam.html#colors" class="internal-link" title="cocopp.ppfigparam.colors">colors</a></code> for
+the corresponding colors).
+The target precisions considered are in <code>targets</code>: by
+default 46 targets are uniformly spread on the log-scale in
+10**[-8:2].</p>
+<p>Boxes correspond to the maximum numbers of function evaluations for
+each algorithm in each dimension.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id40">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#beautify" class="internal-link" title="cocopp.comp2.ppscatter.beautify">beautify</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#figure_caption" class="internal-link" title="cocopp.comp2.ppscatter.figure_caption">figure​_caption</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#main" class="internal-link" title="cocopp.comp2.ppscatter.main">main</a></code></td>
+    <td>Generate a scatter plot figure.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#prepare_figure_caption" class="internal-link" title="cocopp.comp2.ppscatter.prepare_figure_caption">prepare​_figure​_caption</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#linewidth_default" class="internal-link" title="cocopp.comp2.ppscatter.linewidth_default">linewidth​_default</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#linewidth_rld_based" class="internal-link" title="cocopp.comp2.ppscatter.linewidth_rld_based">linewidth​_rld​_based</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#markersize" class="internal-link" title="cocopp.comp2.ppscatter.markersize">markersize</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#markersize_addon_beyond_maxevals" class="internal-link" title="cocopp.comp2.ppscatter.markersize_addon_beyond_maxevals">markersize​_addon​_beyond​_maxevals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#max_evals_line_length" class="internal-link" title="cocopp.comp2.ppscatter.max_evals_line_length">max​_evals​_line​_length</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#offset" class="internal-link" title="cocopp.comp2.ppscatter.offset">offset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.comp2.ppscatter.beautify">
+    
+  </a>
+  <a name="beautify">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">beautify</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.comp2.ppscatter.figure_caption">
+    
+  </a>
+  <a name="figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">figure_caption</span>(for_html=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.comp2.ppscatter.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span>(dsList0, dsList1, outputdir, settings):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Generate a scatter plot figure.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.comp2.ppscatter.prepare_figure_caption">
+    
+  </a>
+  <a name="prepare_figure_caption">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">prepare_figure_caption</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.comp2.ppscatter.linewidth_default">
+    
+  </a>
+  <a name="linewidth_default">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">linewidth_default</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.comp2.ppscatter.linewidth_rld_based">
+    
+  </a>
+  <a name="linewidth_rld_based">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">linewidth_rld_based</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.comp2.ppscatter.markersize">
+    
+  </a>
+  <a name="markersize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">markersize</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.comp2.ppscatter.markersize_addon_beyond_maxevals">
+    
+  </a>
+  <a name="markersize_addon_beyond_maxevals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">markersize_addon_beyond_maxevals</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.comp2.ppscatter.max_evals_line_length">
+    
+  </a>
+  <a name="max_evals_line_length">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">max_evals_line_length</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.comp2.ppscatter.offset">
+    
+  </a>
+  <a name="offset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">offset</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

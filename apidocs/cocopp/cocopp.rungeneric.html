@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.rungeneric</title>
+    <meta name="generator" content="pydoctor 22.2.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            cocopp <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.rungeneric.html" class="internal-link" title="cocopp.rungeneric">rungeneric</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Process data to be included in a latex template. Called via</p>
+<p>python -m cocopp [OPTIONS] DATAFOLDER1 DATAFOLDER2 ...</p>
+<p>For a detailed help, simply type</p>
+<p>python -m cocopp</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id128">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#main" class="internal-link" title="cocopp.rungeneric.main">main</a></code></td>
+    <td>Main routine for post-processing data from COCO.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#update_background_algorithms" class="internal-link" title="cocopp.rungeneric.update_background_algorithms">update​_background​_algorithms</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#usage" class="internal-link" title="cocopp.rungeneric.usage">usage</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#long_options" class="internal-link" title="cocopp.rungeneric.long_options">long​_options</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#short_options" class="internal-link" title="cocopp.rungeneric.short_options">short​_options</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_split_short_opt_list" class="internal-link" title="cocopp.rungeneric._split_short_opt_list">​_split​_short​_opt​_list</a></code></td>
+    <td>Split short options list used by getopt.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="cocopp.rungeneric.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span>(argv=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="pre">Main routine for post-processing data from COCO.
+
+Synopsis::
+
+    python -m cocopp [data_folder [more_data_folders]]
+
+or::
+
+    python -c "import cocopp; cocopp.main('data_folder [more_data_folders]')"
+
+For this call to work, the path to this package must be in python
+search path, that is,
+
+* it can be in the current working directory, or
+* the path to the package was appended to the Python path, or
+* the package was installed (which essentially copies the package
+  to a location which is in the path)
+
+``data_folder`` may be a name from the known data archive, see e.g.
+`cocopp.bbob`, or a uniquely matching substring of such a name, or a
+matching substring with added "!" in which case the first match is taken, or
+a matching substring with added "*" in which case all matches are taken, or
+a regular expression containing a '*' before the last character, in which
+case, for example, "bbob/.*7.*cma"  matches "bbob/2017/DTS-CMA-ES-Pitra.tgz"
+(among others).
+
+This routine will:
+
+* call sub-routine :py:func:`cocopp.rungeneric1.main` for one
+  input argument (see also --include-single option); the input
+  argument will be used as output sub-folder relative to the main
+  output folder,
+* call sub-routine :py:func:`cocopp.rungenericmany.main`
+  (2 or more input arguments) for the input arguments altogether.
+* alternatively call sub-routine :py:func:`cocopp.__main__.main` if option
+  flag --test is used. In this case it will run through the
+  post-processing tests.
+
+Usecase from a Python shell
+---------------------------
+To fine-control the behavior of the module, it is highly recommended
+to work from an (I)Python shell. For example::
+
+    import cocopp
+    cocopp.genericsettings.background = {None: cocopp.bbob.get_all("2009/")}
+    cocopp.main("data_folder " + cocopp.data_archive.get("2009/BFGS_ros_noiseless"))
+
+compares an experiment given in `"data_folder"` with BFGS and displays
+all archived results from 2009 in the background. `cocopp.bbob` is a
+`cocopp.archiving.COCODataArchive` class.
+
+This may take 5-15 minutes to complete, because more than 30 algorithm
+datasets are processed.
+
+Output
+------
+
+The output figures and tables written by default to the output folder
+:file:`ppdata` are used in the provided LaTeX templates:
+
+* :file:`*article.tex` and :file:`*1*.tex`
+  for results with a **single** algorithm
+* :file:`*cmp.tex` and :file:`*2*.tex`
+  for showing the comparison of **2** algorithms
+* :file:`*many.tex` and :file:`*3*.tex`
+  for showing the comparison of **more than 2** algorithms.
+The templates with `noisy` mentioned in the filename have to be used
+for the noisy testbed, the others for the noise-less one.
+
+These latex templates need to be copied in the current working directory
+and possibly edited so that the LaTeX commands ``\bbobdatapath`` and
+``\algfolder`` point to the correct output folders of the post-processing.
+Compiling the template file with LaTeX should then produce a document.
+
+Keyword arguments:
+
+*argv* -- list of strings containing options and arguments. If not
+   provided, sys.argv is accessed.
+
+*argv* must list folders containing COCO data files. Each of these
+folders should correspond to the data of ONE algorithm.
+
+Furthermore, argv can begin with facultative option flags.
+
+    -h, --help
+
+        displays this message.
+
+    -v, --verbose
+
+        verbose mode, prints out operations.
+
+    -o, --output-dir=OUTPUTDIR
+
+        changes the default output directory (:file:`ppdata`) to
+        :file:`OUTPUTDIR`.
+
+    --include-single
+
+        calls the postprocessing and in particular
+        :py:func:`cocopp.rungeneric1.main` on each of the
+        single input arguments separately.
+
+    --no-rld-single-fcts
+
+        do not generate runlength distribution figures for each
+        single function.
+
+    --input-path=INPUTPATH
+
+        all folder/file arguments are prepended with the given value
+        which must be a valid path.
+
+    --in-a-hurry
+
+        takes values between 0 (default) and 1000, fast processing that
+        does not write eps files and uses a small number of bootstrap samples
+
+    --no-svg
+
+        do not generate the svg figures which are used in html files
+
+    --conv
+
+        prepares also convergence plots with median function values over time
+
+    --include-fonts
+
+        generated pdfs will have the fonts included (important for ACM style
+        LaTeX submissions)
+
+
+Exceptions raised:
+
+*Usage* -- Gives back a usage message.
+
+Examples:
+
+Printing out this help message::
+
+    $ python -m cocopp.rungeneric -h
+
+Post-processing two algorithms in verbose mode::
+
+    $ python -m cocopp -v AMALGAM BIPOP-CMA-ES
+
+From the python interpreter::
+
+    &gt;&gt; import cocopp
+    &gt;&gt; cocopp.main('-o outputfolder folder1 folder2')
+
+This will execute the post-processing on the data found in
+:file:`folder1` and :file:`folder2` and return the respective
+`DataSetList`. The ``-o`` option changes the output folder from the
+default :file:`ppdata` to :file:`outputfolder`. The arguments can
+also be presented as a list of strings.</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.rungeneric.update_background_algorithms">
+    
+  </a>
+  <a name="update_background_algorithms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update_background_algorithms</span>(input_dir):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.rungeneric.usage">
+    
+  </a>
+  <a name="usage">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">usage</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.rungeneric.long_options">
+    
+  </a>
+  <a name="long_options">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">long_options</span>: <code>list[<wbr></wbr>str]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.rungeneric.short_options">
+    
+  </a>
+  <a name="short_options">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">short_options</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.rungeneric._split_short_opt_list">
+    
+  </a>
+  <a name="_split_short_opt_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_split_short_opt_list</span>(short_opt_list):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Split short options list used by getopt.</p>
+<p>Returns a set of the options.</p>
+</div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.2.1 at 2022-03-01 09:40:36.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
