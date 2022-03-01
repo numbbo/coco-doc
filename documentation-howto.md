@@ -24,8 +24,8 @@ For the moment, we have the following documentations:
   https://numbbo.github.io/coco-doc/bbob-biobj/functions)
 * bbob-largescale/functions (source in ../docs/bbob-largescale/functions/source and then published via Sphinx to 
   https://numbbo.github.io/coco-doc/bbob-largescale/functions)
-* bbob-constrained/functions (source in ../docs/bbob-constrained/functions/source and then published via Sphinx to 
-  https://numbbo.github.io/coco-doc/bbob-constrained/functions)
+* bbob-constrained/functions (contours plots (source in ../docs/bbob-constrained/functions/source) and short PDF documentation at 
+  https://numbbo.github.io/coco-doc/bbob-constrained)
 * bbob-experiments (old documentation available at http://coco.lri.fr/downloads/download15.03/bbobdocfunctions.pdf)
 * bbob-functions (old documentation available at http://coco.lri.fr/downloads/download15.03/bbobdocexperiment.pdf)
 * bbob-noisy-functions (old documentation available at http://coco.lri.fr/downloads/download15.03/bbobdocnoisyfunctions.pdf)
