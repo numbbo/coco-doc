@@ -71,6 +71,9 @@ In addition to the reStructuredText which explains the general functioning of th
 ../docs/coco-doc/ (which is translated into html via Sphinx as described above), parts of the COCO 
 documentation are automatically extracted from the source code.
 
+
+#### C documentation
+
 The C code in the code-experiments/src/ folder of the numbbo/coco repository for example is translated into html
 in the C/ subfolder of this `gh-pages` branch of the numbbo/coco-doc repository with the help of the doxygen tool
 (www.doxygen.org/). After installing doxygen, and having a clone of the `master` or `development` branch of the
@@ -78,32 +81,15 @@ numbbo/coco github repository in the same folder than your numbbo/coco-doc check
 in this directory by simply typing `doxygen` in the docs/coco-doc/C/ folder. Afterwards, commit and push
 of this repository will again update the web page directly as described above. Note that we have tried a few versions of doxygen back in January 2020 and not all were producing the output we wanted. Hence, we suggest to use Doxygen version 1.8.11.
 
-To create and publish the documentation of the cocoex and cocopp modules as well as the example_experiment.py,
-use pydoctor and copy the resulting files to the coco GForge repository at 
-`/home/groups/coco/htdocs/apidocs-cocoex/`, 
-`/home/groups/coco/htdocs/apidocs-cocopp/`, and 
-`/home/groups/coco/htdocs/apidocs-example_experiment/`
-respectively. For the `cocopp` module:
-```
-cd code-postprocessing
-conda activate py27  # was: source activate py27
-# pip install pydoctor    # needed to create the docs
-# conda install docutils  # needed to parse restructed text in pydoctor
-pydoctor --docformat=restructuredtext --make-html cocopp
-source deactivate
-rsync -auv apidocs/ scm.gforge.inria.fr:/home/groups/coco/htdocs/apidocs-cocopp
-```
-For the `cocoex` module, you have to copy/rename the
-`code-experiments/build/python/python/` folder to `cocoex`:
+#### Python documentation
 
+To create and publish the documentation of the cocoex and cocopp modules as well as the `example_experiment2.py`,
+use pydoctor via the script `run_pydoctor.sh` at the root. Then add and commit the changes to the `apidocs` folder.
+
+```bash
+cd coco-doc
+./run_pydoctor.sh
+git add apidocs/*
+git commit -m "update documentation for release X.X"
+git push  # to the gh-pages branch
 ```
-cd code-experiments/build/python
-cp -rp python cocoex  # precondition: make sure cocoex does not exist
-conda activate py27  # was: source activate py27
-pydoctor --docformat=restructuredtext --make-html cocoex
-pydoctor --docformat=restructuredtext --make-html example_experiment2.py
-source deactivate
-rsync -auv apidocs/ scm.gforge.inria.fr:/home/groups/coco/htdocs/apidocs-cocoex
-rsync -auv apidocs/example_experiment2.html scm.gforge.inria.fr:/home/groups/coco/htdocs/apidocs-example_experiment
-```
-which also creates the `example_experiment2.py` documentation.
