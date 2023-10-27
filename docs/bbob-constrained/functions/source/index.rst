@@ -40,7 +40,7 @@ The ``bbob-constrained`` test suite contains 48 constrained functions in continu
 
 
 .. _COCO: https://github.com/numbbo/coco
-.. _COCOold: http://coco.gforge.inria.fr
+.. _COCOold: https://web.archive.org/web/20200812230823/https://coco.gforge.inria.fr/
 .. |coco_problem_t| replace:: 
   ``coco_problem_t``
 .. _coco_problem_t: http://numbbo.github.io/coco-doc/C/coco_8h.html#a408ba01b98c78bf5be3df36562d99478
@@ -708,7 +708,7 @@ of the French National Research Agency.
    `Real-parameter black-box optimization benchmarking 2009: Noiseless
    functions definitions`__. `Research Report RR-6829`__, Inria, updated
    February 2010.
-.. __: http://coco.gforge.inria.fr/
+.. __: https://numbbo.github.io/gforge/downloads/download16.00/bbobdocfunctions.pdf
 .. __: https://hal.inria.fr/inria-00362633
 
 

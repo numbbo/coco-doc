@@ -16,12 +16,11 @@ COCO: Performance Assessment
 .. _2009: http://www.sigevo.org/gecco-2009/workshops.html#bbob
 .. _2010: http://www.sigevo.org/gecco-2010/workshops.html#bbob
 .. _2012: http://www.sigevo.org/gecco-2012/workshops.html#bbob
-.. _BBOB-2009: http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results
-.. _BBOB-2010: http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results
-.. _BBOB-2012: http://coco.gforge.inria.fr/doku.php?id=bbob-2012
+.. _BBOB-2009: https://numbbo.github.io/ppdata-archive/bbob/2009/
+.. _BBOB-2010: https://numbbo.github.io/ppdata-archive/bbob/2010/
+.. _BBOB-2012: https://numbbo.github.io/ppdata-archive/bbob/2012/
 .. _GECCO: http://www.sigevo.org/gecco-2012/
 .. _COCO: https://github.com/numbbo/coco
-.. .. _COCO: http://coco.gforge.inria.fr
 .. |ERT| replace:: :math:`\mathrm{ERT}`
 .. |aRT| replace:: :math:`\mathrm{aRT}`
 .. |dim| replace:: :math:`\mathrm{dim}`
@@ -734,7 +733,7 @@ The algorithm is artificial because we may use even for different target values 
 
 We observe that the artificial best 2009 algorithm is about two to three time faster than the left envelope of all single algorithms and solves all problems in about :math:`10^7\, n` function evaluations.  
 
-.. __: http://coco.gforge.inria.fr/doku.php?id=bbob-2009
+.. __: https://numbbo.github.io/data-archive/bbob/
  
 .. [#] The best 2009 curve is not guaranteed to be an upper
        left envelope of the ECDF of all algorithms from which it is

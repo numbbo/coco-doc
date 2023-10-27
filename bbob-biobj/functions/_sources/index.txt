@@ -80,7 +80,7 @@ of function groups, instances, and potential objective space normalization.
 
 
 .. _COCO: https://github.com/numbbo/coco
-.. _COCOold: http://coco.gforge.inria.fr
+.. _COCOold: https://web.archive.org/web/20200812230823/https://coco.gforge.inria.fr/
 .. |coco_problem_t| replace:: 
   ``coco_problem_t``
 .. _coco_problem_t: http://numbbo.github.io/coco-doc/C/coco_8h.html#a408ba01b98c78bf5be3df36562d99478
@@ -3956,7 +3956,7 @@ initial suggestions on how to extend the ``bbob-biobj`` test suite.
    `Real-parameter black-box optimization benchmarking 2009: Noiseless
    functions definitions`__. `Research Report RR-6829`__, Inria, updated
    February 2010.
-.. __: http://coco.gforge.inria.fr/
+.. __: https://numbbo.github.io/gforge/downloads/download16.00/bbobdocfunctions.pdf
 .. __: https://hal.inria.fr/inria-00362633
 
 .. [HAN2011] N. Hansen, R. Ros, N. Mauny, M. Schoenauer, and A. Auger (2011). Impacts

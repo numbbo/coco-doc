@@ -6,18 +6,18 @@
 .. _2009: http://www.sigevo.org/gecco-2009/workshops.html#bbob
 .. _2010: http://www.sigevo.org/gecco-2010/workshops.html#bbob
 .. _2012: http://www.sigevo.org/gecco-2012/workshops.html#bbob
-.. _BBOB-2009: http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results
-.. _BBOB-2010: http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results
-.. _BBOB-2012: http://coco.gforge.inria.fr/doku.php?id=bbob-2012
+.. _BBOB-2009: https://numbbo.github.io/ppdata-archive/bbob/2009/
+.. _BBOB-2010: https://numbbo.github.io/ppdata-archive/bbob/2010/
+.. _BBOB-2012: https://numbbo.github.io/ppdata-archive/bbob/2012/
 .. _GECCO: http://www.sigevo.org/gecco-2012/
 .. _COCO: https://github.com/numbbo/coco
-.. _COCOold: http://coco.gforge.inria.fr
+.. _COCOold: https://web.archive.org/web/20200812230823/https://coco.gforge.inria.fr/
 
 The ``bbob`` Suite
 ===================
 
 This section describes the specific setup and rationales for the BBOB benchmark suite.
-The descriptions of the functions can be found at http://coco.gforge.inria.fr/doku.php?id=downloads
+The descriptions of the functions can be found at https://numbbo.github.io/coco/testsuites/bbob
 
 Symbols, Constants, and Parameters
 ----------------------------------

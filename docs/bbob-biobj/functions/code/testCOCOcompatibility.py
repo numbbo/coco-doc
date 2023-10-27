@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 #
-# Checks whether the old COCO code, written in python (from coco.gforge.inria.fr)
+# Checks whether the old COCO code, written in python
+# (from https://numbbo.github.io/coco/oldcode/bboball15.03.tar.gz)
 # does the same than the new COCO code from github.com/numbbo/coco.
 #
 # written by Dimo Brockhoff in 2016

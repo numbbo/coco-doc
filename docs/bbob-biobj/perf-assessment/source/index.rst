@@ -469,7 +469,7 @@ __ http://arxiv.org/abs/1605.03560
 
 .. [HAN2009fun] N. Hansen, S. Finck, R. Ros, and A. Auger (2009). 
   `Real-parameter black-box optimization benchmarking 2009: Noiseless functions definitions`__. `Technical Report RR-6829`__, Inria, updated February 2010.
-.. __: http://coco.gforge.inria.fr/
+.. __: https://numbbo.github.io/gforge/downloads/download16.00/bbobdocfunctions.pdf
 .. __: https://hal.inria.fr/inria-00362633
 
 .. [HAN2016ex] N. Hansen, T. Tušar, A. Auger, D. Brockhoff, O. Mersmann (2016). 

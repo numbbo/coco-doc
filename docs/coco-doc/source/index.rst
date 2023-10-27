@@ -56,12 +56,12 @@ code structure and the currently available test suites.
 .. _2009: http://www.sigevo.org/gecco-2009/workshops.html#bbob
 .. _2010: http://www.sigevo.org/gecco-2010/workshops.html#bbob
 .. _2012: http://www.sigevo.org/gecco-2012/workshops.html#bbob
-.. _BBOB-2009: http://coco.gforge.inria.fr/doku.php?id=bbob-2009-results
-.. _BBOB-2010: http://coco.gforge.inria.fr/doku.php?id=bbob-2010-results
-.. _BBOB-2012: http://coco.gforge.inria.fr/doku.php?id=bbob-2012
+.. _BBOB-2009: https://numbbo.github.io/ppdata-archive/bbob/2009/
+.. _BBOB-2010: https://numbbo.github.io/ppdata-archive/bbob/2010/
+.. _BBOB-2012: https://numbbo.github.io/ppdata-archive/bbob/2012/
 .. _GECCO-2012: http://www.sigevo.org/gecco-2012/
 .. _COCO: https://github.com/numbbo/coco
-.. _COCOold: http://coco.gforge.inria.fr
+.. _COCOold: https://web.archive.org/web/20200812230823/https://coco.gforge.inria.fr/
 
 .. |example_experiment.py| replace:: ``example_experiment.py``
 .. _example_experiment.py: https://github.com/numbbo/coco/blob/master/code-experiments/build/python/example_experiment.py
@@ -299,12 +299,11 @@ __ http://numbbo.github.io/coco-doc/C/
 .. [#] See also |example_experiment.py|_ which runs
    out-of-the-box as a benchmarking Python script.  
 
-.. [#] For example, see here__ or here__ to access all data submitted 
-   to the `BBOB 2009 GECCO workshop`__. 
+.. [#] For example, see here__ to access all data submitted 
+   to the `BBOB workshops`__. 
 
-__ http://coco.gforge.inria.fr/doku.php?id=bbob-2009-algorithms
-__ http://coco.gforge.inria.fr/data-archive
-__ http://coco.gforge.inria.fr/doku.php?id=bbob-2009
+__ https://numbbo.github.io/data-archive/
+__ https://numbbo.github.io/workshops/
 
 .. left to the reader to
    scan and compare to each other, possibly across different articles. 
@@ -687,7 +686,7 @@ Currently, the COCO_ framework provides three different test suites.
 ``bbob-biobj``
   contains 55 bi-objective (:math:`m=2`) functions in 15 subgroups [TUS2016]_. 
   
-.. _`old code basis`: http://coco.gforge.inria.fr/doku.php?id=downloads
+.. _`old code basis`: https://numbbo.github.io/coco/oldcode/bboball15.03.tar.gz
 
 
 .. raw:: html
@@ -738,12 +737,12 @@ __ http://arxiv.org/abs/1605.03560
 
 .. [HAN2009fun] N. Hansen, S. Finck, R. Ros, and A. Auger (2009). 
   `Real-parameter black-box optimization benchmarking 2009: Noiseless functions definitions`__. `Research Report RR-6829`__, Inria, updated February 2010.
-.. __: http://coco.gforge.inria.fr/
+.. __: https://numbbo.github.io/gforge/downloads/download16.00/bbobdocfunctions.pdf
 .. __: https://hal.inria.fr/inria-00362633
 
 .. [HAN2009noi] N. Hansen, S. Finck, R. Ros, and A. Auger (2009). 
   `Real-Parameter Black-Box Optimization Benchmarking 2009: Noisy Functions Definitions`__. `Research Report RR-6869`__, Inria, updated February 2010.
-.. __: http://coco.gforge.inria.fr/
+.. __: https://numbbo.github.io/coco/oldcode/bbobdocnoisyfunctions.pdf
 .. __: https://hal.inria.fr/inria-00369466
 
 .. [HAN2016ex] N. Hansen, T. Tušar, A. Auger, D. Brockhoff, O. Mersmann (2016). 
