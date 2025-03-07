@@ -426,6 +426,26 @@
         
 
         
+            <div class="itemName"><code><a href="#max_sweeps_default" class="internal-link" title="cocoex.ExperimentRepeater.max_sweeps_default">max<wbr></wbr>_sweeps<wbr></wbr>_default</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#min_successes_default" class="internal-link" title="cocoex.ExperimentRepeater.min_successes_default">min<wbr></wbr>_successes<wbr></wbr>_default</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#max_sweeps" class="internal-link" title="cocoex.ExperimentRepeater.max_sweeps">max<wbr></wbr>_sweeps</a></code>
             </div>
         
@@ -697,7 +717,7 @@
         </div>
 
         <div class="extrasDocstring">
-          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">ExperimentRepeater</span>:</code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="cocoex.ExperimentRepeater.__init__">ExperimentRepeater(budget_multiplier, min_successes)</a></code></p>
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">ExperimentRepeater</span>:</code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="cocoex.ExperimentRepeater.__init__">ExperimentRepeater(budget_multiplier, min_successes, max_sweeps)</a></code></p>
           <p><a href="classIndex.html#cocoex.ExperimentRepeater">View In Hierarchy</a></p>
         </div>
 
@@ -753,8 +773,9 @@ implements safe access to this dictionary.</p>
 <p>When problem instances are repeated in a single suite, they may be
 <em>partially</em> skipped <em>after</em> the first full sweep. That is, the
 configuration <tt class="rst-docutils literal"><span class="pre">1-5,1-5,1-5</span></tt> can also lead to four trials of each
-instance 1-5, because all instances have been repeated the same number
-of times.</p>
+instance 1-5 of some problems when all instances have been repeated the
+same number of times and have enough successes or the budget is
+exhaused.</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocoex  <span class="py-comment"># some not very meaningful testing</span>
 <span class="py-prompt">&gt;&gt;&gt; </span>repeater = cocoex.ExperimentRepeater(2)
@@ -773,7 +794,7 @@ of times.</p>
     
     <td>Method</td>
     <td><code><a href="#__init__" class="internal-link" title="cocoex.ExperimentRepeater.__init__">__init__</a></code></td>
-    <td><tt class="rst-docutils literal">min_successes=11</tt> is default and provokes at least three</td>
+    <td>constructor for <code><a href="cocoex.ExperimentRepeater.html" class="internal-link" title="cocoex.ExperimentRepeater">ExperimentRepeater</a></code>.</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -869,6 +890,16 @@ of times.</p>
     <td>Method</td>
     <td><code><a href="#trials" class="internal-link" title="cocoex.ExperimentRepeater.trials">trials</a></code></td>
     <td>return <code>list</code> of number of recorded trials for each instance</td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#max_sweeps_default" class="internal-link" title="cocoex.ExperimentRepeater.max_sweeps_default">max<wbr></wbr>_sweeps<wbr></wbr>_default</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#min_successes_default" class="internal-link" title="cocoex.ExperimentRepeater.min_successes_default">min<wbr></wbr>_successes<wbr></wbr>_default</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -954,7 +985,7 @@ of times.</p>
   <div class="functionHeader">
     
     
-    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, budget_multiplier, min_successes=None)</span>:
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, budget_multiplier, min_successes=None, max_sweeps=None)</span>:
     
     <a class="headerLink" href="#__init__" title="cocoex.ExperimentRepeater.__init__">
       
@@ -964,12 +995,19 @@ of times.</p>
   </div>
   <div class="docstring functionBody">
     
-    <div><p><tt class="rst-docutils literal">min_successes=11</tt> is default and provokes at least three</p>
-<p>sweeps when the suite has (only) 5 instance and the
-<code>budget_multiplier</code> is large enough such that the algorithm
-terminates the second sweep before the overall budget is exhausted.
-This would emulate the 3 x 1-5 instance-setup from BBOB 2009,
-however the choice of the initial solution still slightly differs.</p>
+    <div><p>constructor for <code><a href="cocoex.ExperimentRepeater.html" class="internal-link" title="cocoex.ExperimentRepeater">ExperimentRepeater</a></code>.</p>
+<p>The "timeout" budget is computed as <tt class="rst-docutils literal">budget_multiplier</tt> times
+problem dimension.</p>
+<p><tt class="rst-docutils literal">min_successes=11</tt> is default and provokes at least three sweeps
+when the suite has (only) 5 instance and the <code>budget_multiplier</code> is
+large enough such that the algorithm terminates the second sweep
+before the overall budget is exhausted. This would emulate the 3 x
+1-5 instance-setup from BBOB 2009, however the choice of the
+initial solution still slightly differs.</p>
+<p><tt class="rst-docutils literal">max_sweeps</tt> is the limit number of repititions for each
+instance, by default 20. To have a limit is in particular useful
+when the budget is large but an algorithm terminates very quickly
+and invariably unsuccessfully.</p>
 </div>
   </div>
 </div><div class="basemethod">
@@ -1140,7 +1178,7 @@ second sweep when the first sweep is finished.</p>
 after a <em>full</em> first sweep. In particular, <em>during</em> the first sweep
 it cannot account for problems that have not yet been run once.</p>
 <p>Calling <tt class="rst-docutils literal">done()</tt> increments the sweep counter iff it returns
-<code>False</code>, the default for <tt class="rst-docutils literal">max_sweeps</tt> is <tt class="rst-docutils literal">1e4</tt>. The attribute
+<code>False</code>, the default for <tt class="rst-docutils literal">max_sweeps</tt> is <tt class="rst-docutils literal">20</tt>. The attribute
 can be directly reassigned at any time.</p>
 <p>See also: <code><a href="#remaining_problems" class="internal-link" title="cocoex.ExperimentRepeater.remaining_problems">remaining_problems</a></code></p>
 </div>
@@ -1475,6 +1513,54 @@ e.g., in parallel.</p>
 <p>if <tt class="rst-docutils literal">instance is None</tt>, otherwise for the given <code><a href="cocoex.Suite.html#instance" class="internal-link" title="cocoex.Suite.instance">instance</a></code> only.</p>
 </div>
   </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="cocoex.ExperimentRepeater.max_sweeps_default">
+    
+  </a>
+  <a name="max_sweeps_default">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">max_sweeps_default</span>: <code>int</code> =
+    
+    <a class="headerLink" href="#max_sweeps_default" title="cocoex.ExperimentRepeater.max_sweeps_default">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="cocoex.ExperimentRepeater.min_successes_default">
+    
+  </a>
+  <a name="min_successes_default">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">min_successes_default</span>: <code>int</code> =
+    
+    <a class="headerLink" href="#min_successes_default" title="cocoex.ExperimentRepeater.min_successes_default">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
 </div><div class="baseinstancevariable">
   
   
@@ -1486,7 +1572,7 @@ e.g., in parallel.</p>
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">max_sweeps</span>: <code>float</code> =
+    <span class="py-defname">max_sweeps</span> =
     
     <a class="headerLink" href="#max_sweeps" title="cocoex.ExperimentRepeater.max_sweeps">
       
@@ -1800,7 +1886,7 @@ e.g., in parallel.</p>
   <div class="container">
     <a href="index.html">API Documentation</a> for cocoex,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-12 12:24:19.
+    23.9.1 at 2025-03-07 23:33:23.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

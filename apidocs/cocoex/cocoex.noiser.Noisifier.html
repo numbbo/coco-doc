@@ -213,6 +213,16 @@
         
 
         
+            <div class="itemName"><code><a href="#rand0" class="internal-link" title="cocoex.noiser.Noisifier.rand0">rand0</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#rand1" class="internal-link" title="cocoex.noiser.Noisifier.rand1">rand1</a></code>
             </div>
         
@@ -224,16 +234,6 @@
 
         
             <div class="itemName"><code><a href="#rand2" class="internal-link" title="cocoex.noiser.Noisifier.rand2">rand2</a></code>
-            </div>
-        
-
-    </li><li class="">
-        
-        
-        
-
-        
-            <div class="itemName"><code><a href="#rand3" class="internal-link" title="cocoex.noiser.Noisifier.rand3">rand3</a></code>
             </div>
         
 
@@ -532,11 +532,11 @@
 <li>adding a value (leading to bad outliers)</li>
 <li>adding a small <code>epsilon</code> normally distributed noise</li>
 </ul>
-<p>The noise is frozen in x and y: whether it's applied and its
-sampled value depend deterministically on the input x and i.</p>
-<p>The outlier noise distribution is a Cauchy distribution multiplied by
-pi/2, which generates values larger than k with a probability awfully
-close to k**-1 when k &gt;= 10.</p>
+<p>The noise is frozen in x and y: whether the noise is applied to y and
+its value depend both _deterministically_ on the input x.</p>
+<p>The outlier noise distribution is a half Cauchy distribution multiplied
+by pi/2, which generates values larger than k with a probability
+awfully close to 1/k when k &gt;= 10.</p>
 <p>Example:</p>
 <pre class="rst-literal-block">
 import cocoex  # experimentation module
@@ -559,13 +559,13 @@ for problem in suite:  # this loop may take several minutes or more
 <p>The <code>problem</code> is now a <code><a href="cocoex.noiser.Noisifier.html" class="internal-link" title="cocoex.noiser.Noisifier">Noisifier</a></code> but it still abides by the interface
 of the original problem.</p>
 <p>Details: the random number generators can be passed as argument and
-need to obey the interface of <code><a href="cocoex.noiser.html#rand" class="internal-link" title="cocoex.noiser.rand">noiser.rand</a></code>. <tt class="rst-docutils literal">rands[0]</tt> is assumed to
-be uniform in [0,1], <tt class="rst-docutils literal">rands[1]</tt> is used to sample the Gaussian noise,
-<tt class="rst-docutils literal">abs(rands[2])</tt> is used to sample added noise and <tt class="rst-docutils literal"><span class="pre">abs(rands[-1])</span></tt>
-is used to sample subtracted noise, both of which are assumed to be
-absolute Cauchy numbers scaled by pi/2 such that P(number &gt; a) equals
-about 1/a when a &gt;= 5.</p>
-<p>See <a class="rst-reference external" href="https://github.com/numbbo/coco-experiment/blob/main/build/python/example/example_experiment_complete.py" target="_top">https://github.com/numbbo/coco-experiment/blob/main/build/python/example/example_experiment_complete.py</a></p>
+need to obey the interface of <code><a href="cocoex.noiser.html#rand" class="internal-link" title="cocoex.noiser.rand">noiser.rand</a></code>. By default, <tt class="rst-docutils literal">rands[0]</tt>
+is uniform in [0,1] and <tt class="rst-docutils literal">rands[1]</tt> is Gaussian noise,
+<tt class="rst-docutils literal">abs(rands[2])</tt> and <tt class="rst-docutils literal"><span class="pre">abs(rands[-1])</span></tt> are used to sample added and
+subtracted noise, respectively. Both are by default the same Cauchy
+noise generator and the numbers scaled by pi/2 such that P(number &gt; k)
+equals about 1/k when k &gt;= 5.</p>
+<p>See also <a class="rst-reference external" href="https://github.com/numbbo/coco-experiment/blob/main/build/python/example/example_experiment_complete.py" target="_top">https://github.com/numbbo/coco-experiment/blob/main/build/python/example/example_experiment_complete.py</a></p>
 </div>
         </div>
 
@@ -601,18 +601,18 @@ about 1/a when a &gt;= 5.</p>
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#rand0" class="internal-link" title="cocoex.noiser.Noisifier.rand0">rand0</a></code></td>
+    <td>uniform by default</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#rand1" class="internal-link" title="cocoex.noiser.Noisifier.rand1">rand1</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Gaussian by default</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#rand2" class="internal-link" title="cocoex.noiser.Noisifier.rand2">rand2</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#rand3" class="internal-link" title="cocoex.noiser.Noisifier.rand3">rand3</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Cauchy by default</td>
   </tr><tr class="property">
     
     <td>Property</td>
@@ -732,8 +732,10 @@ about 1/a when a &gt;= 5.</p>
   <div class="docstring functionBody">
     
     <div><p>constructor with 4 optional parameters for the noise model,</p>
-<p><code>p_add</code>: probability for adding a positive heavy tail random value</p>
-<p><code>p_subtract</code>: probability for subtracting a positive heavy tail random value</p>
+<p><code>p_add</code>: probability for adding a positive heavy tail random value
+making the solution look worse than it is.</p>
+<p><code>p_subtract</code>: probability for subtracting a positive heavy tail
+random value making the solution look better than it is.</p>
 <p><code>p_epsilon</code>: probability for adding a Gaussian random value</p>
 <p><code>epsilon</code>: standard deviation of the Gaussian random value</p>
 </div>
@@ -789,6 +791,30 @@ about 1/a when a &gt;= 5.</p>
 </div><div class="basemethod">
   
   
+  <a name="cocoex.noiser.Noisifier.rand0">
+    
+  </a>
+  <a name="rand0">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rand0</span><span class="function-signature">(self, x, fac=1)</span>:
+    
+    <a class="headerLink" href="#rand0" title="cocoex.noiser.Noisifier.rand0">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>uniform by default</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="cocoex.noiser.Noisifier.rand1">
     
   </a>
@@ -808,7 +834,7 @@ about 1/a when a &gt;= 5.</p>
   </div>
   <div class="docstring functionBody">
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p>Gaussian by default</p></div>
   </div>
 </div><div class="basemethod">
   
@@ -832,31 +858,7 @@ about 1/a when a &gt;= 5.</p>
   </div>
   <div class="docstring functionBody">
     
-    <div><p class="undocumented">Undocumented</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  
-  <a name="cocoex.noiser.Noisifier.rand3">
-    
-  </a>
-  <a name="rand3">
-    
-  </a>
-  <div class="functionHeader">
-    
-    
-    <span class="py-keyword">def</span> <span class="py-defname">rand3</span><span class="function-signature">(self, x, fac=1)</span>:
-    
-    <a class="headerLink" href="#rand3" title="cocoex.noiser.Noisifier.rand3">
-      
-      
-      ¶
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p>Cauchy by default</p></div>
   </div>
 </div><div class="baseproperty">
   
@@ -1062,7 +1064,7 @@ about 1/a when a &gt;= 5.</p>
   <div class="container">
     <a href="index.html">API Documentation</a> for cocoex,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-12 12:24:19.
+    23.9.1 at 2025-03-07 23:33:23.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 
