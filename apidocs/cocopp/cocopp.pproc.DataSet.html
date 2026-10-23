@@ -253,6 +253,16 @@
         
 
         
+            <div class="itemName"><code><a href="#delete_instance" class="internal-link" title="cocopp.pproc.DataSet.delete_instance">delete<wbr></wbr>_instance</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#detAverageEvals" class="internal-link" title="cocopp.pproc.DataSet.detAverageEvals">det<wbr></wbr>Average<wbr></wbr>Evals</a></code>
             </div>
         
@@ -383,6 +393,16 @@
         
 
         
+            <div class="itemName"><code><a href="#keep_instances" class="internal-link" title="cocopp.pproc.DataSet.keep_instances">keep<wbr></wbr>_instances</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#median_evals" class="internal-link" title="cocopp.pproc.DataSet.median_evals">median<wbr></wbr>_evals</a></code>
             </div>
         
@@ -404,6 +424,16 @@
 
         
             <div class="itemName"><code><a href="#nbRuns" class="internal-link" title="cocopp.pproc.DataSet.nbRuns">nb<wbr></wbr>Runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#percentiles" class="internal-link" title="cocopp.pproc.DataSet.percentiles">percentiles</a></code>
             </div>
         
 
@@ -783,6 +813,16 @@
 
         
             <div class="itemName"><code><a href="#evals_are_appended" class="internal-link" title="cocopp.pproc.DataSet.evals_are_appended">evals<wbr></wbr>_are<wbr></wbr>_appended</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_constraints" class="internal-link" title="cocopp.pproc.DataSet.has_constraints">has<wbr></wbr>_constraints</a></code>
             </div>
         
 
@@ -1330,6 +1370,26 @@
         
 
         
+            <div class="itemName"><code><a href="cocopp.pproc.html#_ignore_pickle_files" class="internal-link" title="cocopp.pproc._ignore_pickle_files">_ignore<wbr></wbr>_pickle<wbr></wbr>_files</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.pproc.html#_pickle_file_read" class="internal-link" title="cocopp.pproc._pickle_file_read">_pickle<wbr></wbr>_file<wbr></wbr>_read</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="cocopp.pproc.html#_using_recommendations" class="internal-link" title="cocopp.pproc._using_recommendations">_using<wbr></wbr>_recommendations</a></code>
             </div>
         
@@ -1484,6 +1544,7 @@ function values for <code><a href="#funvals" class="internal-link" title="cocopp
 <span class="py-output">instancenumbers_balanced</span>
 <span class="py-output">isBiobjective</span>
 <span class="py-output">isFinalized</span>
+<span class="py-output">keep_instances</span>
 <span class="py-output">mMaxEvals</span>
 <span class="py-output">max_eval</span>
 <span class="py-output">maxevals</span>
@@ -1492,6 +1553,7 @@ function values for <code><a href="#funvals" class="internal-link" title="cocopp
 <span class="py-output">nbRuns</span>
 <span class="py-output">nbRuns_raw</span>
 <span class="py-output">number_of_constraints</span>
+<span class="py-output">percentiles</span>
 <span class="py-output">pickle</span>
 <span class="py-output">plot</span>
 <span class="py-output">plot_funvals</span>
@@ -1542,21 +1604,20 @@ function values for <code><a href="#funvals" class="internal-link" title="cocopp
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> t[-1][-2] == 1e-8
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> 6.09626666e+03 &lt;= t[-1][-1] &lt;= 6.09626667e+03</pre><p>Note that the load of a data set depends on the set of instances
 specified in testbedsettings' TestBed class (or its children)
-(None means all instances are read in):
-&gt;&gt;&gt; import sys
-&gt;&gt;&gt; import os
-&gt;&gt;&gt; import urllib
-&gt;&gt;&gt; import tarfile
-&gt;&gt;&gt; import cocopp
-&gt;&gt;&gt; cocopp.genericsettings.verbose = False # ensure to make doctests work
-&gt;&gt;&gt; infoFile = os.path.join(cocopp.archives.bbob.local_data_path, 'BIPOP-CMA-ES', 'bbobexp_f2.info')
-&gt;&gt;&gt; if not os.path.exists(infoFile):
-...   filename = cocopp.archives.bbob.get_one('bbob/2009/BIPOP-CMA-ES_hansen')
-...   tarfile.open(filename).extractall(cocopp.archives.bbob.local_data_path)
-&gt;&gt;&gt; dslist = cocopp.load(infoFile)</p>
-<blockquote>
-Data consistent according to consistency_check() in pproc.DataSet</blockquote>
+(None means all instances are read in):</p>
 <pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> sys
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> os
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> urllib
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> tarfile
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.genericsettings.verbose = <span class="py-builtin">False</span> <span class="py-comment"># ensure to make doctests work</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>infoFile = os.path.join(cocopp.archives.bbob.local_data_path, <span class="py-string">'BIPOP-CMA-ES'</span>, <span class="py-string">'bbobexp_f2.info'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">if</span> <span class="py-keyword">not</span> os.path.exists(infoFile):
+<span class="py-more">... </span>  filename = cocopp.archives.bbob.get_one(<span class="py-string">'bbob/2009/BIPOP-CMA-ES_hansen'</span>)
+<span class="py-more">... </span>  tarfile.open(filename).extractall(cocopp.archives.bbob.local_data_path)
+<span class="py-prompt">&gt;&gt;&gt; </span>dslist = cocopp.load(infoFile)
+<span class="py-output">  Data consistent according to consistency_check() in pproc.DataSet</span>
 <span class="py-prompt">&gt;&gt;&gt; </span>dslist[2].instancenumbers
 <span class="py-output">[1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5]</span>
 <span class="py-prompt">&gt;&gt;&gt; </span>dslist[2].evals[-1]  <span class="py-comment"># doctest:+ELLIPSIS</span>
@@ -1632,6 +1693,11 @@ Data consistent according to consistency_check() in pproc.DataSet</blockquote>
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#delete_instance" class="internal-link" title="cocopp.pproc.DataSet.delete_instance">delete<wbr></wbr>_instance</a></code></td>
+    <td>Remove all runs with id <code>instance_number</code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#detAverageEvals" class="internal-link" title="cocopp.pproc.DataSet.detAverageEvals">det<wbr></wbr>Average<wbr></wbr>Evals</a></code></td>
     <td>Determine the average number of f-evals for each target in <tt class="rst-docutils literal">targets</tt> list.</td>
   </tr><tr class="method">
@@ -1663,7 +1729,7 @@ Data consistent according to consistency_check() in pproc.DataSet</blockquote>
     
     <td>Method</td>
     <td><code><a href="#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">evals<wbr></wbr>_with<wbr></wbr>_simulated<wbr></wbr>_restarts</a></code></td>
-    <td>Return a <tt class="rst-docutils literal">len(targets)</tt> <code>list</code> of <tt class="rst-docutils literal">samplesize</tt> "simulated runtimes"</td>
+    <td>Return a <code>list</code> of arrays of "simulated runtimes"</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -1697,8 +1763,13 @@ Data consistent according to consistency_check() in pproc.DataSet</blockquote>
   </tr><tr class="method">
     
     <td>Method</td>
+    <td><code><a href="#keep_instances" class="internal-link" title="cocopp.pproc.DataSet.keep_instances">keep<wbr></wbr>_instances</a></code></td>
+    <td>keep only instances with id in <code>instance_ids</code>,</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
     <td><code><a href="#median_evals" class="internal-link" title="cocopp.pproc.DataSet.median_evals">median<wbr></wbr>_evals</a></code></td>
-    <td>return median for each row in <code>self.evals</code>, unsuccessful runs count.</td>
+    <td>DEPRECATED: use rather <tt class="rst-docutils literal">.percentiles(targets, 50)</tt> or</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -1709,6 +1780,11 @@ Data consistent according to consistency_check() in pproc.DataSet</blockquote>
     <td>Method</td>
     <td><code><a href="#nbRuns" class="internal-link" title="cocopp.pproc.DataSet.nbRuns">nb<wbr></wbr>Runs</a></code></td>
     <td>Returns the number of runs depending on <code><a href="cocopp.genericsettings.html#balance_instances" class="internal-link" title="cocopp.genericsettings.balance_instances">genericsettings.balance_instances</a></code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#percentiles" class="internal-link" title="cocopp.pproc.DataSet.percentiles">percentiles</a></code></td>
+    <td>return the evaluations percentiles for each target in <code><a href="cocopp.pproc.TargetValues.html#target_values" class="internal-link" title="cocopp.pproc.TargetValues.target_values">target_values</a></code>.</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -1822,6 +1898,11 @@ Data consistent according to consistency_check() in pproc.DataSet</blockquote>
   </tr><tr class="property">
     
     <td>Property</td>
+    <td><code><a href="#has_constraints" class="internal-link" title="cocopp.pproc.DataSet.has_constraints">has<wbr></wbr>_constraints</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
     <td><code><a href="#instance_multipliers" class="internal-link" title="cocopp.pproc.DataSet.instance_multipliers">instance<wbr></wbr>_multipliers</a></code></td>
     <td>number of repetitions per instance to balance a skewed instance distribution.</td>
   </tr><tr class="property">
@@ -1923,7 +2004,7 @@ Data consistent according to consistency_check() in pproc.DataSet</blockquote>
     
     <td>Method</td>
     <td><code><a href="#_evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet._evals_with_simulated_restarts">_evals<wbr></wbr>_with<wbr></wbr>_simulated<wbr></wbr>_restarts</a></code></td>
-    <td>return simulated runtimes for each 1D-array in <code>evals_list</code>.</td>
+    <td>OBSOLETE (never used?), rather use toolsstats.simulated_evals. return simulated runtimes for each 1D-array in <code>evals_list</code>.</td>
   </tr><tr class="method private">
     
     <td>Method</td>
@@ -2257,6 +2338,33 @@ repetitions of such instance.</p>
 </div><div class="basemethod">
   
   
+  <a name="cocopp.pproc.DataSet.delete_instance">
+    
+  </a>
+  <a name="delete_instance">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">delete_instance</span><span class="function-signature">(self, instance_number)</span>:
+    
+    <a class="headerLink" href="#delete_instance" title="cocopp.pproc.DataSet.delete_instance">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Remove all runs with id <code>instance_number</code>.</p>
+<p>Fix (hopefully) all related attributes, that is, drop the respective
+values in lists or arrays.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="cocopp.pproc.DataSet.detAverageEvals">
     
   </a>
@@ -2327,7 +2435,7 @@ respective targets.</td></tr></table></div>
   <div class="functionHeader">
     
     
-    <span class="py-keyword">def</span> <span class="py-defname">detEvals</span><span class="function-signature">(self, targets, copy=True, bootstrap=False, append_instances=False)</span>:
+    <span class="py-keyword">def</span> <span class="py-defname">detEvals</span><span class="function-signature">(self, targets, copy=True, bootstrap=False, append_instances=False, complement_unsuccessful=False, instance=None)</span>:
     
     <a class="headerLink" href="#detEvals" title="cocopp.pproc.DataSet.detEvals">
       
@@ -2341,12 +2449,27 @@ respective targets.</td></tr></table></div>
 <p>If <code>bootstrap</code>, the "data rows" are <tt class="rst-docutils literal">len(self.evals[i, <span class="pre">1:])</span></tt>
 values drawn with replacement from <tt class="rst-docutils literal">self.evals[i, 1:]</tt>. This may
 be useful to estimate variances (at some point).</p>
-<p>Rows have the closest but not a larger target such that
-<tt class="rst-docutils literal">self.evals[i, 0] &lt;= target and self.evals[i - 1, 0] &gt; target</tt>,
-or in the "limit" cases the first data line or a line
-<tt class="rst-docutils literal">np.array(self.nbRuns() * [np.nan])</tt>.</p>
+<p>If <code>complement_unsuccessful</code> (given <tt class="rst-docutils literal">append_instances is False</tt>),
+replace nonfinite values (namely <code>nan</code>) either with the respective
+<tt class="rst-docutils literal">maxevals * complement_unsuccessful</tt> or with
+<tt class="rst-docutils literal">complement_unsucccessful(maxevals)</tt> if
+<tt class="rst-docutils literal">complement_unsucccessful is callable</tt>. This allows, for example,
+to return unsuccessful "runtimes" as their negative values by
+passing <tt class="rst-docutils literal"><span class="pre">complement_unsucccessful=-1</span></tt> which can then be used with
+<code><a href="cocopp.toolsstats.html#simulated_evals" class="internal-link" title="cocopp.toolsstats.simulated_evals">toolsstats.simulated_evals</a></code>.</p>
+<p>Returned rows are those with the closest target that is not larger
+than the given target so that <tt class="rst-docutils literal">self.evals[i, 0] &lt;= target</tt> and,
+if <tt class="rst-docutils literal">i &gt; 0</tt>, <tt class="rst-docutils literal">self.evals[i - 1, 0] &gt; target</tt>. When the target
+was never reached the row is <tt class="rst-docutils literal">np.array(self.nbRuns() * [np.nan])</tt>.</p>
 <p>Makes by default a copy of the data, however this might change in
 future.</p>
+<p>Details:</p>
+<p><code><a href="#maxevals" class="internal-link" title="cocopp.pproc.DataSet.maxevals">maxevals</a></code> are usually read from the .info files, however with
+constraints they are read from the .tdat files as the .info files
+do not contain g-evaluations.</p>
+<p>If <code>instances_are_appended</code>, the <code><a href="#maxevals" class="internal-link" title="cocopp.pproc.DataSet.maxevals">maxevals</a></code> attribute is not
+consistent with <code><a href="#evals_appended" class="internal-link" title="cocopp.pproc.DataSet.evals_appended">evals_appended</a></code>. The latter is abandoned anyways
+and superseded by evals_balanced (which is more or less automatic)!?</p>
 </div>
   </div>
 </div><div class="basemethod">
@@ -2451,7 +2574,7 @@ it was repeated.</p>
   <div class="functionHeader">
     
     
-    <span class="py-keyword">def</span> <span class="py-defname">evals_with_simulated_restarts</span><span class="function-signature">(self, targets, samplesize=None, randintfirst=<a href="cocopp.toolsstats.html#randint_derandomized" class="internal-link" title="cocopp.toolsstats.randint_derandomized">toolsstats.randint_derandomized</a>, randintrest=np.random.randint, bootstrap=False, instance=None)</span>:
+    <span class="py-keyword">def</span> <span class="py-defname">evals_with_simulated_restarts</span><span class="function-signature">(self, targets, samplesize=None, randintfirst=<a href="cocopp.toolsstats.html#randint_derandomized" class="internal-link" title="cocopp.toolsstats.randint_derandomized">toolsstats.randint_derandomized</a>, randintrest=np.random.randint, bootstrap=False, instance=None, instances_are_uniform=None)</span>:
     
     <a class="headerLink" href="#evals_with_simulated_restarts" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">
       
@@ -2461,38 +2584,77 @@ it was repeated.</p>
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Return a <tt class="rst-docutils literal">len(targets)</tt> <code>list</code> of <tt class="rst-docutils literal">samplesize</tt> "simulated runtimes"</p>
-<p>with an interface similar to <code><a href="#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">detEvals</a></code>.</p>
+    <div><p>Return a <code>list</code> of arrays of "simulated runtimes"</p>
+<p>with an interface analogous to <code><a href="#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">detEvals</a></code>. Elements of the returned
+list correspond to the elements of <code>targets</code>.</p>
+<p>TODO: return unsuccessful optionally as negative numbers instead of nan?</p>
 <p><code>samplesize</code> is by default the smallest multiple of <tt class="rst-docutils literal">nbRuns()</tt>
-that is not smaller than 15.</p>
+that is not smaller than 45 and it remains the same even when
+instances are not uniform and hence simulated separately. If
+<tt class="rst-docutils literal">samplesize == 'individual'</tt> and instances are uniform, an adhoc
+sample size is computed for each target separately based on the
+data.</p>
 <p><code>bootstrap</code> is passed to <code><a href="#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">detEvals</a></code> such that the simulated runs
 use a bootstrapped subset. This will increase the variance from
 repeated <code><a href="#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">evals_with_simulated_restarts</a></code> calls. This may become
 useful to measure dispersion of runtime profiles.</p>
-<p><code>instance</code>, when given, uses only the data from this instance. The
-default <code>samplesize</code> may not be appropriate in this case.</p>
+<p><code>instance</code>, when given, returns only the simulated runtimes from
+this instance. The default <code>samplesize</code> remains the same based on
+the overall <tt class="rst-docutils literal">.nbRuns()</tt>.</p>
 <p><tt class="rst-docutils literal">np.sort(np.concatenate(return_value))</tt> provides the combined
-sorted ECDF data over all targets which may be plotted with
-<code>pyplot.step</code> (missing the last step).</p>
+sorted ECDF data over all targets which can be plotted with
+<code>pyplot.step</code> like:</p>
+<pre class="rst-literal-block">
+x = np.sort(np.concatenate(return_value))
+pyplot.step(np.concatenate([x, [x[-1]]]), np.linspace(0, 1, len(x) + 1))
+</pre>
+<p>Don't use <code>'individual'</code> sample sizes when the data are meant to be
+combined.</p>
 <p>Unsuccessful data are represented as <code>np.nan</code>.</p>
 <p>Simulated restarts are used for unsuccessful runs. The usage of
 <code><a href="#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">detEvals</a></code> or <code><a href="#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">evals_with_simulated_restarts</a></code> should be largely
 interchangeable, while the latter has a "success" rate of either
-0 or 1.</p>
-<p>Details:</p>
+0 or 1 when <code>instances_are_uniform</code>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> numpy <span class="py-keyword">as</span> np
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp  <span class="py-comment"># candidate data sets: 13/cma (fast) or 13/ipop (more diverse)</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">'load data set'</span>); dsl = cocopp.load2(<span class="py-string">'b/2009/bay'</span>)  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">load data set...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> t <span class="py-keyword">in</span> [1, 0.1, 1e-8]:
+<span class="py-more">... </span>    evals = ds.detEvals([t], instance=<span class="py-builtin">None</span>)[0]
+<span class="py-more">... </span>    evals.sort()  <span class="py-comment"># sort nan to the end</span>
+<span class="py-more">... </span>    simevals = ds.evals_with_simulated_restarts([t],
+<span class="py-more">... </span>                            samplesize=ds.nbRuns())[0]
+<span class="py-more">... </span>    simevals.sort()
+<span class="py-more">... </span>    nans = <span class="py-builtin">sum</span>(np.isnan(evals))
+<span class="py-more">... </span>    <span class="py-keyword">if</span> nans:
+<span class="py-more">... </span>        evals, simevals = evals[:-nans], simevals[:-nans]
+<span class="py-more">... </span>    <span class="py-comment"># works only when the unsuccessful are the longest</span>
+<span class="py-more">... </span>    <span class="py-keyword">assert</span> <span class="py-builtin">all</span>(evals == simevals), (evals, simevals)
+<span class="py-prompt">&gt;&gt;&gt; </span>instance = np.random.randint(5) + 1
+<span class="py-prompt">&gt;&gt;&gt; </span>target = 10**(10 * np.random.rand() - 8)
+<span class="py-prompt">&gt;&gt;&gt; </span>d = ds.detEvals([target], instance=instance)[0]
+<span class="py-prompt">&gt;&gt;&gt; </span>simevals = ds.evals_with_simulated_restarts([target],
+<span class="py-more">... </span>                samplesize=5, instance=instance)[0]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">if</span> <span class="py-builtin">all</span>(np.isfinite(d)):  <span class="py-comment"># check that exactly one value is not repeated</span>
+<span class="py-more">... </span>    <span class="py-keyword">assert</span> <span class="py-builtin">sum</span>(simevals) <span class="py-keyword">in</span> [2 * <span class="py-builtin">sum</span>(d) - di <span class="py-keyword">for</span> di <span class="py-keyword">in</span> d], (simevals, d)</pre><p>Details:</p>
 <ul class="rst-simple">
 <li>For targets where all runs were successful, samplesize=nbRuns()
 is sufficient (and preferable) if <code><a href="cocopp.toolsstats.html#randint" class="internal-link" title="cocopp.toolsstats.randint">randint</a></code> is derandomized.</li>
 <li>A single successful running length is computed by adding
 uniformly randomly chosen running lengths until the first time a
-successful one is chosen. In case of no successful run the
-result is <code>None</code>.</li>
+successful one is chosen.</li>
+<li>if <code>samplesize</code> &gt;&gt; <code><a href="#nbRuns" class="internal-link" title="cocopp.pproc.DataSet.nbRuns">nbRuns</a></code> and nsuccesses is large,
+the data representation becomes somewhat inefficient.
+Similarly, for nsuccesses==0 it is <tt class="rst-docutils literal">samplesize * [np.nan]</tt>.</li>
+<li>When not <code>instances_are_uniform</code>, simulated restarts are taken
+from the same instance only and the <code>samplesize</code> is (almost)
+the same for all instances.</li>
 </ul>
-<p>TODO: if <code>samplesize</code> &gt;&gt; <code><a href="#nbRuns" class="internal-link" title="cocopp.pproc.DataSet.nbRuns">nbRuns</a></code> and nsuccesses is large,
-the data representation becomes somewhat inefficient.</p>
-<p>TODO: it may be useful to make the samplesize dependent on the
-number of successes and supply the multipliers
-max(samplesizes) / samplesizes.</p>
+<dl class="rst-docutils">
+<dt>TODO: revisit the adhoc <code>best_samplesize</code> and</dt>
+<dd><code>_byinstance_samplesize</code> computations</dd>
+</dl>
 </div>
   </div>
 </div><div class="basemethod">
@@ -2623,6 +2785,9 @@ evaluations.</td></tr></table></div>
 <p><code>raw_values</code> means no instance balancing, otherwise the indices
 refer to <code><a href="#instancenumbers_balanced" class="internal-link" title="cocopp.pproc.DataSet.instancenumbers_balanced">instancenumbers_balanced</a></code> whos first indices are the same
 as in <code><a href="#instancenumbers" class="internal-link" title="cocopp.pproc.DataSet.instancenumbers">instancenumbers</a></code>.</p>
+<p>The default for <code>raw_values</code> seems more appropriate for internal
+usage, in particular as <code>.instancenumbers_balanced</code> equals
+<code>.instancenumbers</code> when <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> were not balanced?</p>
 <p>The index starts with 0 conforming with <code><a href="#instancenumbers" class="internal-link" title="cocopp.pproc.DataSet.instancenumbers">instancenumbers</a></code>,
 <code><a href="#maxevals" class="internal-link" title="cocopp.pproc.DataSet.maxevals">maxevals</a></code>, <code><a href="#detEvals" class="internal-link" title="cocopp.pproc.DataSet.detEvals">detEvals</a></code> and others. However in the <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code>
 array, column 0 contains f-values and the instance indices start
@@ -2656,6 +2821,32 @@ with 1.</p>
 </div><div class="basemethod">
   
   
+  <a name="cocopp.pproc.DataSet.keep_instances">
+    
+  </a>
+  <a name="keep_instances">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">keep_instances</span><span class="function-signature">(self, instance_ids)</span>:
+    
+    <a class="headerLink" href="#keep_instances" title="cocopp.pproc.DataSet.keep_instances">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>keep only instances with id in <code>instance_ids</code>,</p>
+<p>return list of deleted instance ids.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="cocopp.pproc.DataSet.median_evals">
     
   </a>
@@ -2675,7 +2866,13 @@ with 1.</p>
   </div>
   <div class="docstring functionBody">
     
-    <div><p>return median for each row in <code>self.evals</code>, unsuccessful runs count.</p>
+    <div><p>DEPRECATED: use rather <tt class="rst-docutils literal">.percentiles(targets, 50)</tt> or</p>
+<p><tt class="rst-docutils literal">np.median(ds.detEvals(targets, complement_unsuccessful=np.inf), 1)</tt>
+instead of <tt class="rst-docutils literal">ds.median_evals(targets, append_instances=False)</tt>.
+<code>.percentiles</code> applies simulated restarts, within-instance only when
+instances are not uniform, instead of appending runs with the same
+instance number.</p>
+<p>return median for each row in <code>self.evals</code>, unsuccessful runs count.</p>
 <p>If <tt class="rst-docutils literal">target_values is not None</tt> compute the median evaluations to
 reach the given target values.</p>
 <p>Return <code>np.nan</code> if the median run was unsuccessful.</p>
@@ -2685,6 +2882,9 @@ restarted. <tt class="rst-docutils literal">self.evals_are_appended is True</tt>
 number of (unique) instances is at least
 <code><a href="cocopp.genericsettings.html#appended_evals_minimal_trials" class="internal-link" title="cocopp.genericsettings.appended_evals_minimal_trials">genericsettings.appended_evals_minimal_trials</a></code> and if
 <code>testbedsettings.current_testbed.instances_are_uniform</code>.</p>
+<p>CAVEAT: instance appending is not fully consistent with the <code><a href="#ert" class="internal-link" title="cocopp.pproc.DataSet.ert">ert</a></code>
+attribute and with simulated restarts, both of which are computed
+over all instance.</p>
 <p>Details: copies the evals attribute and sets <code>nan</code> to <code>inf</code> in
 order to get the median with <code>nan</code> values in the sorting.</p>
 </div>
@@ -2741,6 +2941,66 @@ obsolete and replaced by attribute <code><a href="#max_eval" class="internal-lin
 </div><div class="basemethod">
   
   
+  <a name="cocopp.pproc.DataSet.percentiles">
+    
+  </a>
+  <a name="percentiles">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">percentiles</span><span class="function-signature">(self, target_values, prctiles=(<wbr></wbr>5, <wbr></wbr>25, <wbr></wbr>50, <wbr></wbr>75, <wbr></wbr>95), instances_are_uniform=None)</span>:
+    
+    <a class="headerLink" href="#percentiles" title="cocopp.pproc.DataSet.percentiles">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>return the evaluations percentiles for each target in <code><a href="cocopp.pproc.TargetValues.html#target_values" class="internal-link" title="cocopp.pproc.TargetValues.target_values">target_values</a></code>.</p>
+<p>Unsuccessful runs are indicated with <code>np.nan</code> and always sorted to
+the end (largest values and/or large percentiles).</p>
+<p>If and only if <code>prctiles</code> is a scalar, the resulting type for each
+target is a scalar, otherwise it is a <code>list</code>.</p>
+<p>The evaluations (runtimes) are measured with simulated restarts.
+The specific behavior depends on <code>instances_are_uniform</code>. If
+<tt class="rst-docutils literal">instances_are_uniform is None</tt> its value is inferred from
+<code>cocopp.testbedsettings.current_testbed.instances_are_uniform</code>.
+Then, if <code>instances_are_uniform</code>, runtimes (evaluations) are
+determined with simulated restarts from all instances. Otherwise,
+simulated restarts come only from the same instance, akin to
+within-experiment restarts. In the former case, _all_ percentiles
+are either finite or <code>np.nan</code>. In the latter case, any number of
+the larger percentiles may be <code>np.nan</code>.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> numpy <span class="py-keyword">as</span> np
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp  <span class="py-comment"># candidate data sets: 13/cma (fast) or 13/ipop (more diverse)</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">print</span>(<span class="py-string">'load data set'</span>); dsl = cocopp.load2(<span class="py-string">'b/2009/bay'</span>)  <span class="py-comment"># doctest:+ELLIPSIS</span>
+<span class="py-output">load data set...</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>pp0 = dsl[0].percentiles
+<span class="py-prompt">&gt;&gt;&gt; </span>pt = pp0([1, 0.1, 0.01], 50)  <span class="py-comment"># median evals of three targets</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>[<span class="py-builtin">float</span>(p) <span class="py-keyword">for</span> p <span class="py-keyword">in</span> pt]
+<span class="py-output">[16.0, 105.0, 200.0]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>pt = pp0([1e0])  <span class="py-comment"># default percentiles (5, 25, 50,...) of target 1e0</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>[<span class="py-builtin">float</span>(p) <span class="py-keyword">for</span> p <span class="py-keyword">in</span> pt[0]]
+<span class="py-output">[3.0, 10.25, 16.0, 38.5, 53.75]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>pt = pp0([1], instances_are_uniform=<span class="py-builtin">False</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>[<span class="py-builtin">float</span>(p) <span class="py-keyword">for</span> p <span class="py-keyword">in</span> pt[0]]
+<span class="py-output">[3.0, 10.0, 16.0, 39.0, 55.0]</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> np.isfinite(pp0([1e-2], 100)[0])  <span class="py-comment"># with simulated restarts</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># within instance restarts: each instance has a succesful trial, hence</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">bool</span>(np.isfinite(pp0([1e-2], 100, <span class="py-builtin">False</span>)[0]))
+<span class="py-output">True</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> np.isnan(pp0([1e-9], 50)[0])</pre><p>Details: data to determine the percentiles are generated by the
+<tt class="rst-docutils literal">.evals_with_simulated_restarts</tt> method.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="cocopp.pproc.DataSet.pickle">
     
   </a>
@@ -2781,7 +3041,7 @@ instance.</p>
   <div class="functionHeader">
     
     
-    <span class="py-keyword">def</span> <span class="py-defname">plot</span><span class="function-signature">(self, plot_function=plt.semilogy, smallest_target=8e-09, median_formats=(<wbr></wbr>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">linestyle</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">--</span><span class="rst-variable-quote">'</span>)), color_map=None, plot_formats=(), **kwargs)</span>:
+    <span class="py-keyword">def</span> <span class="py-defname">plot</span><span class="function-signature">(self, plot_function=plt.semilogy, smallest_target=8e-09, median_formats=(<wbr></wbr>(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">linestyle</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">--</span><span class="rst-variable-quote">'</span>)), color_map=None, plot_formats=(), **plot_kwargs)</span>:
     
     <a class="headerLink" href="#plot" title="cocopp.pproc.DataSet.plot">
       
@@ -2799,8 +3059,10 @@ and used as <tt class="rst-docutils literal">iter(color_map)</tt>. The maps can 
 <code>matplotlib.colors.LinearSegmentedColormap</code> attributes of module
 <code>matplotlib.cm</code>. Default is <code>brg</code> between 0 and 0.5, like
 <tt class="rst-docutils literal">plt.cm.brg(np.linspace(0, 0.5, <span class="pre">self.nbRuns()))</span></tt>.</p>
-<p><code>**kwargs</code> is updated with <code>plot_formats</code> and passed to
+<p><code>**plot_kwargs</code> is updated with <code>plot_formats</code> and passed to
 <code>plot_function</code> (for convenience).</p>
+<p>Small dots indicate the last evaluation for runs that did no reach
+the final/smallest target.</p>
 </div>
   </div>
 </div><div class="basemethod">
@@ -3273,10 +3535,12 @@ practical (and numerically efficient) assignment is <tt class="rst-docutils lite
 = <span class="pre">evals[i][1:]</span></tt> which makes <code><a href="#maxevals" class="internal-link" title="cocopp.pproc.DataSet.maxevals">maxevals</a></code> structural identical.</p>
 <p>Details: portfolio datasets can have rows with different lengths.
 Otherwise, the number of columns in <tt class="rst-docutils literal">evals</tt> depends on
-<code><a href="cocopp.genericsettings.html#balance_instances" class="internal-link" title="cocopp.genericsettings.balance_instances">genericsettings.balance_instances</a></code>. The instance number on which
-the first <tt class="rst-docutils literal">len(instancenumbers)</tt> trials were conducted are given
-in the <code><a href="#instancenumbers" class="internal-link" title="cocopp.pproc.DataSet.instancenumbers">instancenumbers</a></code> array. Further columns of <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> are
-generated according to <code><a href="#instance_multipliers" class="internal-link" title="cocopp.pproc.DataSet.instance_multipliers">instance_multipliers</a></code>.</p>
+<code><a href="cocopp.genericsettings.html#balance_instances" class="internal-link" title="cocopp.genericsettings.balance_instances">genericsettings.balance_instances</a></code>. The instance number on which the
+first <tt class="rst-docutils literal">len(instancenumbers)</tt> trials were conducted are given in the
+<code><a href="#instancenumbers" class="internal-link" title="cocopp.pproc.DataSet.instancenumbers">instancenumbers</a></code> array. Further columns of <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> are generated
+according to <code><a href="#instance_multipliers" class="internal-link" title="cocopp.pproc.DataSet.instance_multipliers">instance_multipliers</a></code>. How experiments are conducted as of
+2024, a DataSet has the same number of repetitions per instance, hence
+balancing is not needed (anymore).</p>
 </div>
     
   </div>
@@ -3305,7 +3569,11 @@ generated according to <code><a href="#instance_multipliers" class="internal-lin
 <p>like the <code><a href="#evals" class="internal-link" title="cocopp.pproc.DataSet.evals">evals</a></code> property-attribute but here instances with the same ID
 are aggregated (appended).</p>
 <p>The aggregation appends trials with the same instance ID in the
-order of their appearance.</p>
+order of their appearance. This can be useful when computing
+statistics over the evals, like the median runtime, however using
+simulated runtimes seems better for this?</p>
+<p>CAVEAT: if instances are uniform, only within-instance appending
+seems not logical.</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> warnings
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
@@ -3353,6 +3621,30 @@ order of their appearance.</p>
   <div class="functionBody">
     
     <div><p>return <code>True</code> if <code>self.evals_appended</code> consist of appended trials (same instances are appended)</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="cocopp.pproc.DataSet.has_constraints">
+    
+  </a>
+  <a name="has_constraints">
+    
+  </a>
+  <div class="functionHeader">
+    @property<br />
+    <span class="py-defname">has_constraints</span> =
+    
+    <a class="headerLink" href="#has_constraints" title="cocopp.pproc.DataSet.has_constraints">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div></div>
     
   </div>
 </div><div class="baseproperty">
@@ -3908,7 +4200,7 @@ is True</tt>.</p>
   <div class="functionHeader">
     
     
-    <span class="py-keyword">def</span> <span class="py-defname">_evals_with_simulated_restarts</span><span class="function-signature">(self, evals_list, samplesize, randintfirst, randintrest, bootstrap)</span>:
+    <span class="py-keyword">def</span> <span class="py-defname">_evals_with_simulated_restarts</span><span class="function-signature">(self, evals_list, samplesize, randintfirst, randintrest)</span>:
     
     <a class="headerLink" href="#_evals_with_simulated_restarts" title="cocopp.pproc.DataSet._evals_with_simulated_restarts">
       
@@ -3918,7 +4210,8 @@ is True</tt>.</p>
   </div>
   <div class="docstring functionBody">
     
-    <div><p>return simulated runtimes for each 1D-array in <code>evals_list</code>.</p>
+    <div><p>OBSOLETE (never used?), rather use toolsstats.simulated_evals. return simulated runtimes for each 1D-array in <code>evals_list</code>.</p>
+<p>Change elements of <code>evals_list</code> in place.</p>
 <p>See <code><a href="#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">evals_with_simulated_restarts</a></code></p>
 </div>
   </div>
@@ -4413,7 +4706,7 @@ target was reached the first time in trials 1,... in
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

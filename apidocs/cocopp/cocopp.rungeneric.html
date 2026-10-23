@@ -546,6 +546,16 @@
             </div>
         
 
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce<wbr></wbr>_size</a></code>
+            </div>
+        
+
     </li><li class=" thisobject">
         
         
@@ -665,8 +675,31 @@
     </li>
 </ul>
 
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
         
-         
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#main" class="internal-link" title="cocopp.main">main</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#remote_archives" class="internal-link" title="cocopp.remote_archives">remote<wbr></wbr>_archives</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
 
         
          
@@ -720,14 +753,14 @@
         </div>
 
         <div id="splitTables">
-          <table class="children sortable" id="id108">
+          <table class="children sortable" id="id110">
   
   
   <tr class="function">
     
     <td>Function</td>
     <td><code><a href="#main" class="internal-link" title="cocopp.rungeneric.main">main</a></code></td>
-    <td>Main routine for post-processing data from COCO.</td>
+    <td>see <code><a href="index.html#main" class="internal-link">cocopp.main</a></code>.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -783,173 +816,10 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p class="pre">Main routine for post-processing data from COCO.
-
-Synopsis::
-
-    python -m cocopp [data_folder [more_data_folders]]
-
-or::
-
-    python -c "import cocopp; cocopp.main('data_folder [more_data_folders]')"
-
-For this call to work, the path to this package must be in python
-search path, that is,
-
-* it can be in the current working directory, or
-* the path to the package was appended to the Python path, or
-* the package was installed (which essentially copies the package
-  to a location which is in the path)
-
-``data_folder`` may be a name from the known data archive, see e.g.
-`cocopp.bbob`, or a uniquely matching substring of such a name, or a
-matching substring with added "!" in which case the first match is taken, or
-a matching substring with added "*" in which case all matches are taken, or
-a regular expression containing a '*' before the last character, in which
-case, for example, "bbob/.*7.*cma"  matches "bbob/2017/DTS-CMA-ES-Pitra.tgz"
-(among others).
-
-This routine will:
-
-* call sub-routine :py:func:`cocopp.rungeneric1.main` for one
-  input argument (see also --include-single option); the input
-  argument will be used as output sub-folder relative to the main
-  output folder,
-* call sub-routine :py:func:`cocopp.rungenericmany.main`
-  (2 or more input arguments) for the input arguments altogether.
-* alternatively call sub-routine :py:func:`cocopp.__main__.main` if option
-  flag --test is used. In this case it will run through the
-  post-processing tests.
-
-Usecase from a Python shell
----------------------------
-To fine-control the behavior of the module, it is highly recommended
-to work from an (I)Python shell. For example::
-
-    import cocopp
-    cocopp.genericsettings.background = {None: cocopp.bbob.get_all("2009/")}
-    cocopp.main("data_folder " + cocopp.data_archive.get("2009/BFGS_ros_noiseless"))
-
-compares an experiment given in `"data_folder"` with BFGS and displays
-all archived results from 2009 in the background. `cocopp.bbob` is a
-`cocopp.archiving.COCODataArchive` class.
-
-This may take 5-15 minutes to complete, because more than 30 algorithm
-datasets are processed.
-
-Output
-------
-
-The output figures and tables written by default to the output folder
-:file:`ppdata` are used in the provided LaTeX templates:
-
-* :file:`*article.tex` and :file:`*1*.tex`
-  for results with a **single** algorithm
-* :file:`*cmp.tex` and :file:`*2*.tex`
-  for showing the comparison of **2** algorithms
-* :file:`*many.tex` and :file:`*3*.tex`
-  for showing the comparison of **more than 2** algorithms.
-The templates with `noisy` mentioned in the filename have to be used
-for the noisy testbed, the others for the noise-less one.
-
-These latex templates need to be copied in the current working directory
-and possibly edited so that the LaTeX commands ``\bbobdatapath`` and
-``\algfolder`` point to the correct output folders of the post-processing.
-Compiling the template file with LaTeX should then produce a document.
-
-Keyword arguments:
-
-*argv* -- list of strings containing options and arguments. If not
-   provided, sys.argv is accessed.
-
-*argv* must list folders containing COCO data files. Each of these
-folders should correspond to the data of ONE algorithm.
-
-Furthermore, argv can begin with facultative option flags.
-
-    -h, --help
-
-        displays this message.
-
-    -v, --verbose
-
-        verbose mode, prints out operations.
-
-    -o, --output-dir=OUTPUTDIR
-
-        changes the default output directory (:file:`ppdata`) to
-        :file:`OUTPUTDIR`.
-
-    --include-single
-
-        calls the postprocessing and in particular
-        :py:func:`cocopp.rungeneric1.main` on each of the
-        single input arguments separately.
-
-    --no-rld-single-fcts
-
-        do not generate runlength distribution figures for each
-        single function.
-
-    --input-path=INPUTPATH
-
-        all folder/file arguments are prepended with the given value
-        which must be a valid path.
-
-    --parameter-sweep
-
-        if given, parse the algorithm name for a float and use the
-        value to determine the color order in a colormap.
-
-    --parameter-sweep-colormaps=colormaps
-
-        `colormaps` can, for example, be ``plasma.0.9,viridis``
-        indicating (here two) map names separated by commata and
-        optionally the range for each map.
-
-    --in-a-hurry
-
-        takes values between 0 (default) and 1000, fast processing that
-        does not write eps files and uses a small number of bootstrap samples
-
-    --no-svg
-
-        do not generate the svg figures which are used in html files
-
-    --conv
-
-        prepares also convergence plots with median function values over time
-
-    --include-fonts
-
-        generated pdfs will have the fonts included (important for ACM style
-        LaTeX submissions)
-
-
-Exceptions raised:
-
-*Usage* -- Gives back a usage message.
-
-Examples:
-
-Printing out this help message::
-
-    $ python -m cocopp.rungeneric -h
-
-Post-processing two algorithms in verbose mode::
-
-    $ python -m cocopp -v AMALGAM BIPOP-CMA-ES
-
-From the python interpreter::
-
-    &gt;&gt; import cocopp
-    &gt;&gt; cocopp.main('-o outputfolder folder1 folder2')
-
-This will execute the post-processing on the data found in
-:file:`folder1` and :file:`folder2` and return the respective
-`DataSetList`. The ``-o`` option changes the output folder from the
-default :file:`ppdata` to :file:`outputfolder`. The arguments can
-also be presented as a list of strings.</p></div>
+    <div><p>see <code><a href="index.html#main" class="internal-link">cocopp.main</a></code>.</p>
+<p>A comprensive package documentation can be found at
+<a class="rst-reference external" href="https://coco-platform.org" target="_top">https://coco-platform.org</a></p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -1085,7 +955,7 @@ also be presented as a list of strings.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

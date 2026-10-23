@@ -223,7 +223,7 @@
         
 
         
-            <div class="itemName"><code><a href="#_index_after_parameter" class="internal-link" title="cocopp.config._index_after_parameter">_index<wbr></wbr>_after<wbr></wbr>_parameter</a></code>
+            <div class="itemName"><code><a href="#_index_after_float" class="internal-link" title="cocopp.config._index_after_float">_index<wbr></wbr>_after<wbr></wbr>_float</a></code>
             </div>
         
 
@@ -592,6 +592,16 @@
         
 
         
+            <div class="itemName"><code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="cocopp.rungeneric.html" class="internal-link" title="cocopp.rungeneric">rungeneric</a></code>
             </div>
         
@@ -705,8 +715,31 @@
     </li>
 </ul>
 
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
         
-         
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#main" class="internal-link" title="cocopp.main">main</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#remote_archives" class="internal-link" title="cocopp.remote_archives">remote<wbr></wbr>_archives</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
 
         
          
@@ -810,8 +843,8 @@ used by other modules, but does not modify settings of other modules.</p>
   </tr><tr class="function private">
     
     <td>Function</td>
-    <td><code><a href="#_index_after_parameter" class="internal-link" title="cocopp.config._index_after_parameter">_index<wbr></wbr>_after<wbr></wbr>_parameter</a></code></td>
-    <td>return the first index after a sequence indicating a positive float.</td>
+    <td><code><a href="#_index_after_float" class="internal-link" title="cocopp.config._index_after_float">_index<wbr></wbr>_after<wbr></wbr>_float</a></code></td>
+    <td>return the first index after the first subsequence indicating a <code>float</code></td>
   </tr><tr class="function private">
     
     <td>Function</td>
@@ -886,6 +919,9 @@ position_in_original_line_styles}</tt>. When <tt class="rst-docutils literal">in
 present, the usual marker line style combination is used matching
 <tt class="rst-docutils literal">input_position</tt>.</p>
 <p>TODO: we may want to keep the original symbol colors?</p>
+<p>TODO: <code><a href="#config_line_styles" class="internal-link" title="cocopp.config.config_line_styles">config_line_styles</a></code> fails when filenames do not contain a float,
+probably due to the <code><a href="#_index_after_float" class="internal-link" title="cocopp.config._index_after_float">_index_after_float</a></code> computation in
+<code><a href="#map_indices_to_line_styles" class="internal-link" title="cocopp.config.map_indices_to_line_styles">map_indices_to_line_styles</a></code> or <code><a href="#sorted_line_styles" class="internal-link" title="cocopp.config.sorted_line_styles">sorted_line_styles</a></code>.</p>
 </div>
   </div>
 </div><div class="basefunction">
@@ -959,10 +995,9 @@ present, the usual marker line style combination is used matching
   <div class="docstring functionBody">
     
     <div><p>helper function for <code><a href="#config_line_styles" class="internal-link" title="cocopp.config.config_line_styles">config_line_styles</a></code>.</p>
-<p>Map each index of names to the index of the first appearence of the
+<p>Map each index of names to the index of the first appearance of the
 name, where equality of names is determined starting from after a float
-number (which represents a parameter value) using
-<code><a href="#_index_after_parameter" class="internal-link" title="cocopp.config._index_after_parameter">_index_after_parameter</a></code>.</p>
+number (which represents a parameter value) using <code><a href="#_index_after_float" class="internal-link" title="cocopp.config._index_after_float">_index_after_float</a></code>.</p>
 </div>
   </div>
 </div><div class="basefunction">
@@ -1045,18 +1080,18 @@ increasing order w.r.t. the sorting of <tt class="rst-docutils literal">names[in
 </div><div class="basefunction private">
   
   
-  <a name="cocopp.config._index_after_parameter">
+  <a name="cocopp.config._index_after_float">
     
   </a>
-  <a name="_index_after_parameter">
+  <a name="_index_after_float">
     
   </a>
   <div class="functionHeader">
     
     
-    <span class="py-keyword">def</span> <span class="py-defname">_index_after_parameter</span><span class="function-signature">(name, return_first_digit_index=False)</span>:
+    <span class="py-keyword">def</span> <span class="py-defname">_index_after_float</span><span class="function-signature">(name, return_first_digit_index=False)</span>:
     
-    <a class="headerLink" href="#_index_after_parameter" title="cocopp.config._index_after_parameter">
+    <a class="headerLink" href="#_index_after_float" title="cocopp.config._index_after_float">
       
       
       ¶
@@ -1064,11 +1099,26 @@ increasing order w.r.t. the sorting of <tt class="rst-docutils literal">names[in
   </div>
   <div class="docstring functionBody">
     
-    <div><p>return the first index after a sequence indicating a positive float.</p>
-<p>In particular, <code>1.23</code> or <code>1.2e-3</code> are correctly identified as a float.</p>
+    <div><p>return the first index after the first subsequence indicating a <code>float</code></p>
+<p>in <code>name</code>. The subsequence must contain either <code>'.'</code> or <code>e</code> (the latter
+cannot be trailing as part of the float). In particular, <code>.1</code>, <code>-.2</code>,
+<code>1.23</code>, <code>-2e0</code> or <code>1.2e-3</code> are identified as a float.</p>
 <p>If <code>return_first_digit_index</code>, the index of the first digit is returned
 instead of the first index after the float.</p>
-</div>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>floats = [<span class="py-string">'.1'</span>, <span class="py-string">'-.2'</span>, <span class="py-string">'1.23'</span>, <span class="py-string">'-2e0'</span>, <span class="py-string">'1.2e-3'</span>, <span class="py-string">'a'</span>, <span class="py-string">'bb'</span>]
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">for</span> i, f <span class="py-keyword">in</span> <span class="py-builtin">enumerate</span>(floats):
+<span class="py-more">... </span>    <span class="py-builtin">print</span>(cocopp.config._index_after_float(i * <span class="py-string">'s'</span> + f + (i + 2) * <span class="py-string">'b'</span>, <span class="py-builtin">True</span>),
+<span class="py-more">... </span>          cocopp.config._index_after_float(i * <span class="py-string">'s'</span> + f + 1 * i * <span class="py-string">'b'</span>))
+<span class="py-output">0 2</span>
+<span class="py-output">1 4</span>
+<span class="py-output">2 6</span>
+<span class="py-output">3 7</span>
+<span class="py-output">4 10</span>
+<span class="py-output">-1 0</span>
+<span class="py-output">-1 0</span>
+</pre></div>
   </div>
 </div><div class="basefunction private">
   
@@ -1106,7 +1156,7 @@ instead of the first index after the float.</p>
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

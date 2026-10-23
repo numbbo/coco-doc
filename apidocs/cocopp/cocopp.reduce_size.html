@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>cocopp.reduce_size</title>
+    <meta name="generator" content="pydoctor 23.9.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          cocopp <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="search-help-button" title="Help" onclick="toggleSearchHelpText()"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div class="hint" id="search-help-box">
+          <p class="rst-last">
+      
+            Search bar offers the following options:
+            <ul>   
+                <li>
+                  <strong>Term presence.</strong> The below example searches for documents that 
+                    must contain “foo”, might contain “bar” and must not contain “baz”: <code>+foo bar -baz</code>
+                </li> 
+
+                <li>
+                  <strong>Wildcards.</strong> The below example searches for documents with words beginning with “foo”: <code>foo*</code>
+                </li> 
+
+                <li>
+                  <strong>Search in specific fields.</strong> The following search matches all objects 
+                  in "twisted.mail" that matches “search”: <code>+qname:twisted.mail.* +search</code>
+
+                  <p>
+                    Possible fields: 'name', 'qname' (fully qualified name), 'docstring', and 'kind'.
+                    Last two fields are only applicable if "search in docstrings" is enabled.
+                  </p>
+                </li>
+
+                <li>
+                  <strong>Fuzzy matches.</strong> The following search matches all documents 
+                  that have a word within 1 edit distance of “foo”: <code>foo~1</code>
+                </li>
+            </ul>
+
+          </p>
+        </div>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 8px;">
+          <p>Results provided by <a href="https://lunrjs.com">Lunr.js</a></p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="cocopp.reduce_size.html" class="internal-link" title="This module">reduce<wbr></wbr>_size</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.reduce_size.TargetHit.html" class="internal-link" title="cocopp.reduce_size.TargetHit"><wbr></wbr>Target<wbr></wbr>Hit</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#is_comment" class="internal-link" title="cocopp.reduce_size.is_comment">is<wbr></wbr>_comment</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#is_empty" class="internal-link" title="cocopp.reduce_size.is_empty">is<wbr></wbr>_empty</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#main" class="internal-link" title="cocopp.reduce_size.main">main</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#reduce_dat" class="internal-link" title="cocopp.reduce_size.reduce_dat">reduce<wbr></wbr>_dat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#reduce_dat_condition" class="internal-link" title="cocopp.reduce_size.reduce_dat_condition">reduce<wbr></wbr>_dat<wbr></wbr>_condition</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#reduce_tdat" class="internal-link" title="cocopp.reduce_size.reduce_tdat">reduce<wbr></wbr>_tdat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#reduce_tdat_condition" class="internal-link" title="cocopp.reduce_size.reduce_tdat_condition">reduce<wbr></wbr>_tdat<wbr></wbr>_condition</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#remove_x" class="internal-link" title="cocopp.reduce_size.remove_x">remove<wbr></wbr>_x</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#remove_x_condition" class="internal-link" title="cocopp.reduce_size.remove_x_condition">remove<wbr></wbr>_x<wbr></wbr>_condition</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_condition" class="internal-link" title="cocopp.reduce_size._condition">_condition</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_rewrite" class="internal-link" title="cocopp.reduce_size._rewrite">_rewrite</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#allowed_x_names" class="internal-link" title="cocopp.reduce_size.allowed_x_names">allowed<wbr></wbr>_x<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#final_ftarget" class="internal-link" title="cocopp.reduce_size.final_ftarget">final<wbr></wbr>_ftarget</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#number_of_ftargets" class="internal-link" title="cocopp.reduce_size.number_of_ftargets">number<wbr></wbr>_of<wbr></wbr>_ftargets</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="index.html" class="internal-link" title="The parent of this module">cocopp</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.comp2.html" class="internal-link" title="cocopp.comp2">comp2</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.compall.html" class="internal-link" title="cocopp.compall">compall</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.algportfolio.html" class="internal-link" title="cocopp.algportfolio">algportfolio</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.archiving.html" class="internal-link" title="cocopp.archiving">archiving</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.bestalg.html" class="internal-link" title="cocopp.bestalg">bestalg</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.bwsettings.html" class="internal-link" title="cocopp.bwsettings">bwsettings</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.captions.html" class="internal-link" title="cocopp.captions">captions</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.cococommands.html" class="internal-link" title="cocopp.cococommands">cococommands</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.config.html" class="internal-link" title="cocopp.config">config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.dataformatsettings.html" class="internal-link" title="cocopp.dataformatsettings">dataformatsettings</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.findfiles.html" class="internal-link" title="cocopp.findfiles">findfiles</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.firstsession.html" class="internal-link" title="cocopp.firstsession">firstsession</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.genericsettings.html" class="internal-link" title="cocopp.genericsettings">genericsettings</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.grayscalesettings.html" class="internal-link" title="cocopp.grayscalesettings">grayscalesettings</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.htmldesc.html" class="internal-link" title="cocopp.htmldesc">htmldesc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.old_line_styles.html" class="internal-link" title="cocopp.old_line_styles">old<wbr></wbr>_line<wbr></wbr>_styles</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.ppconverrorbars.html" class="internal-link" title="cocopp.ppconverrorbars">ppconverrorbars</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.ppfig.html" class="internal-link" title="cocopp.ppfig">ppfig</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.ppfigcons1.html" class="internal-link" title="cocopp.ppfigcons1">ppfigcons1</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.ppfigdim.html" class="internal-link" title="cocopp.ppfigdim">ppfigdim</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.ppfigparam.html" class="internal-link" title="cocopp.ppfigparam">ppfigparam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.pplogloss.html" class="internal-link" title="cocopp.pplogloss">pplogloss</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.pprldistr.html" class="internal-link" title="cocopp.pprldistr">pprldistr</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.pprldistr2009_hardestRLB.html" class="internal-link" title="cocopp.pprldistr2009_hardestRLB">pprldistr2009_hardest<wbr></wbr>RLB</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.pproc.html" class="internal-link" title="cocopp.pproc">pproc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.ppsingle.html" class="internal-link" title="cocopp.ppsingle">ppsingle</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.pptable.html" class="internal-link" title="cocopp.pptable">pptable</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.pptex.html" class="internal-link" title="cocopp.pptex">pptex</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.preparetexforhtml.html" class="internal-link" title="cocopp.preparetexforhtml">preparetexforhtml</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.readalign.html" class="internal-link" title="cocopp.readalign">readalign</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.rungeneric.html" class="internal-link" title="cocopp.rungeneric">rungeneric</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.rungeneric1.html" class="internal-link" title="cocopp.rungeneric1">rungeneric1</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.rungenericmany.html" class="internal-link" title="cocopp.rungenericmany">rungenericmany</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.sanitycheck.html" class="internal-link" title="cocopp.sanitycheck">sanitycheck</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.test.html" class="internal-link" title="cocopp.test">test</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.testbedsettings.html" class="internal-link" title="cocopp.testbedsettings">testbedsettings</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.toolsdivers.html" class="internal-link" title="cocopp.toolsdivers">toolsdivers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.toolsstats.html" class="internal-link" title="cocopp.toolsstats">toolsstats</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.__main__.html" class="internal-link" title="cocopp.__main__">__main__</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp._version.html" class="internal-link" title="cocopp._version">_version</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.Interface.html" class="internal-link" title="cocopp.Interface"><wbr></wbr>Interface</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#main" class="internal-link" title="cocopp.main">main</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#remote_archives" class="internal-link" title="cocopp.remote_archives">remote<wbr></wbr>_archives</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">cocopp</a></code><wbr></wbr>.<code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce_size</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Reduce the data size of COCO experiment folder(s) from the default logger.</p>
+<p>Data are copied into a new folder and then reduced in place.</p>
+<p>Usage on a system shell:</p>
+<pre class="rst-literal-block">
+python -m cocopp.reduce_size folder_name
+</pre>
+<p><code>folder_name</code> may be a single experiment folder or may contain several full
+experiment folders. In either case, the reduction is applied to all
+admissible single data files found anywhere under <code>folder_name</code>.</p>
+<p>Further arguments denote the functions applied to the files, by default
+<tt class="rst-docutils literal">reduce_dat reduce_tdat remove_x</tt>.</p>
+<p>Usage in an IPython/Python shell:</p>
+<pre class="rst-literal-block">
+import cocopp
+cocopp.reduce_size.main(folder_name)
+</pre>
+<p>A second argument may contain a <code>tuple</code> or <code>list</code> of the functions names
+applied to the files, by default <tt class="rst-docutils literal">("reduce_dat", "reduce_tdat",
+"remove_x")</tt>.</p>
+<p>Under a <tt class="rst-docutils literal">*nix</tt> shell, the result can then be check with <tt class="rst-docutils literal">du <span class="pre">-sh</span> *</tt>.</p>
+<p>Details: this script removes lines in the data files which are not needed
+with <code><a href="index.html#main" class="internal-link">cocopp.main</a></code>. Comment lines starting with <tt class="rst-docutils literal">#</tt> or <tt class="rst-docutils literal">%</tt> are
+unchanged. The first and third columns are considered as evaluations
+(costs) and f-values (quality indicator to be minimized) respectively.</p>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id108">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="cocopp.reduce_size.TargetHit.html" class="internal-link" title="cocopp.reduce_size.TargetHit"><wbr></wbr>Target<wbr></wbr>Hit</a></code></td>
+    <td>mininal class to indicate target hits based on file lines.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#is_comment" class="internal-link" title="cocopp.reduce_size.is_comment">is<wbr></wbr>_comment</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#is_empty" class="internal-link" title="cocopp.reduce_size.is_empty">is<wbr></wbr>_empty</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#main" class="internal-link" title="cocopp.reduce_size.main">main</a></code></td>
+    <td><code>folder_name</code> contains output of a single COCO experiment, usually a folder in <tt class="rst-docutils literal">exdata</tt></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#reduce_dat" class="internal-link" title="cocopp.reduce_size.reduce_dat">reduce<wbr></wbr>_dat</a></code></td>
+    <td>return a new list with fewer lines, remove everything after a negative target was hit too</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#reduce_dat_condition" class="internal-link" title="cocopp.reduce_size.reduce_dat_condition">reduce<wbr></wbr>_dat<wbr></wbr>_condition</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#reduce_tdat" class="internal-link" title="cocopp.reduce_size.reduce_tdat">reduce<wbr></wbr>_tdat</a></code></td>
+    <td>return a new list with first and last data lines only.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#reduce_tdat_condition" class="internal-link" title="cocopp.reduce_size.reduce_tdat_condition">reduce<wbr></wbr>_tdat<wbr></wbr>_condition</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#remove_x" class="internal-link" title="cocopp.reduce_size.remove_x">remove<wbr></wbr>_x</a></code></td>
+    <td>change lines in place, keep only first 5 entries of data lines</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#remove_x_condition" class="internal-link" title="cocopp.reduce_size.remove_x_condition">remove<wbr></wbr>_x<wbr></wbr>_condition</a></code></td>
+    <td>define on which files to apply <code><a href="cocopp.reduce_size.html#remove_x" class="internal-link" title="cocopp.reduce_size.remove_x">remove_x</a></code></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#allowed_x_names" class="internal-link" title="cocopp.reduce_size.allowed_x_names">allowed<wbr></wbr>_x<wbr></wbr>_names</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#final_ftarget" class="internal-link" title="cocopp.reduce_size.final_ftarget">final<wbr></wbr>_ftarget</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#number_of_ftargets" class="internal-link" title="cocopp.reduce_size.number_of_ftargets">number<wbr></wbr>_of<wbr></wbr>_ftargets</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_condition" class="internal-link" title="cocopp.reduce_size._condition">_condition</a></code></td>
+    <td>should <code>transform</code> be applied to <code><a href="cocopp.firstsession.html#filename" class="internal-link" title="cocopp.firstsession.filename">filename</a></code>?</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_rewrite" class="internal-link" title="cocopp.reduce_size._rewrite">_rewrite</a></code></td>
+    <td>read in <code>file_path</code>, apply <code>transform</code> to its lines, and rewrite it</td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="cocopp.reduce_size.is_comment">
+    
+  </a>
+  <a name="is_comment">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_comment</span><span class="function-signature">(s)</span>:
+    
+    <a class="headerLink" href="#is_comment" title="cocopp.reduce_size.is_comment">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.reduce_size.is_empty">
+    
+  </a>
+  <a name="is_empty">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_empty</span><span class="function-signature">(s)</span>:
+    
+    <a class="headerLink" href="#is_empty" title="cocopp.reduce_size.is_empty">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.reduce_size.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span><span class="function-signature">(folder_name, apply=(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">reduce_dat</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">reduce_tdat</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">remove_x</span><span class="rst-variable-quote">'</span>))</span>:
+    
+    <a class="headerLink" href="#main" title="cocopp.reduce_size.main">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p><code>folder_name</code> contains output of a single COCO experiment, usually a folder in <tt class="rst-docutils literal">exdata</tt></p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.reduce_size.reduce_dat">
+    
+  </a>
+  <a name="reduce_dat">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reduce_dat</span><span class="function-signature">(lines)</span>:
+    
+    <a class="headerLink" href="#reduce_dat" title="cocopp.reduce_size.reduce_dat">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>return a new list with fewer lines, remove everything after a negative target was hit too</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.reduce_size.reduce_dat_condition">
+    
+  </a>
+  <a name="reduce_dat_condition">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reduce_dat_condition</span><span class="function-signature">(filename)</span>:
+    
+    <a class="headerLink" href="#reduce_dat_condition" title="cocopp.reduce_size.reduce_dat_condition">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.reduce_size.reduce_tdat">
+    
+  </a>
+  <a name="reduce_tdat">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reduce_tdat</span><span class="function-signature">(lines)</span>:
+    
+    <a class="headerLink" href="#reduce_tdat" title="cocopp.reduce_size.reduce_tdat">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>return a new list with first and last data lines only.</p>
+<p>Evaluations are assumed to be in the first column.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.reduce_size.reduce_tdat_condition">
+    
+  </a>
+  <a name="reduce_tdat_condition">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reduce_tdat_condition</span><span class="function-signature">(filename)</span>:
+    
+    <a class="headerLink" href="#reduce_tdat_condition" title="cocopp.reduce_size.reduce_tdat_condition">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.reduce_size.remove_x">
+    
+  </a>
+  <a name="remove_x">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove_x</span><span class="function-signature">(lines)</span>:
+    
+    <a class="headerLink" href="#remove_x" title="cocopp.reduce_size.remove_x">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>change lines in place, keep only first 5 entries of data lines</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.reduce_size.remove_x_condition">
+    
+  </a>
+  <a name="remove_x_condition">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove_x_condition</span><span class="function-signature">(filename)</span>:
+    
+    <a class="headerLink" href="#remove_x_condition" title="cocopp.reduce_size.remove_x_condition">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>define on which files to apply <code><a href="#remove_x" class="internal-link" title="cocopp.reduce_size.remove_x">remove_x</a></code></p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.reduce_size.allowed_x_names">
+    
+  </a>
+  <a name="allowed_x_names">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">allowed_x_names</span>: <code>list[<wbr></wbr>str]</code> =
+    
+    <a class="headerLink" href="#allowed_x_names" title="cocopp.reduce_size.allowed_x_names">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.reduce_size.final_ftarget">
+    
+  </a>
+  <a name="final_ftarget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">final_ftarget</span>: <code>float</code> =
+    
+    <a class="headerLink" href="#final_ftarget" title="cocopp.reduce_size.final_ftarget">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.reduce_size.number_of_ftargets">
+    
+  </a>
+  <a name="number_of_ftargets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">number_of_ftargets</span>: <code>int</code> =
+    
+    <a class="headerLink" href="#number_of_ftargets" title="cocopp.reduce_size.number_of_ftargets">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.reduce_size._condition">
+    
+  </a>
+  <a name="_condition">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_condition</span><span class="function-signature">(filename, transform)</span>:
+    
+    <a class="headerLink" href="#_condition" title="cocopp.reduce_size._condition">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>should <code>transform</code> be applied to <code><a href="cocopp.firstsession.html#filename" class="internal-link" title="cocopp.firstsession.filename">filename</a></code>?</p>
+<p>Call the condition function for this <code>transform</code> on <code><a href="cocopp.firstsession.html#filename" class="internal-link" title="cocopp.firstsession.filename">filename</a></code>.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="cocopp.reduce_size._rewrite">
+    
+  </a>
+  <a name="_rewrite">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_rewrite</span><span class="function-signature">(file_path, transform)</span>:
+    
+    <a class="headerLink" href="#_rewrite" title="cocopp.reduce_size._rewrite">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>read in <code>file_path</code>, apply <code>transform</code> to its lines, and rewrite it</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for cocopp,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    23.9.1 at 2026-10-24 01:09:15.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

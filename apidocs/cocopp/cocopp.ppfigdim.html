@@ -242,6 +242,26 @@
         
 
         
+            <div class="itemName"><code><a href="#instance_text_fontsize" class="internal-link" title="cocopp.ppfigdim.instance_text_fontsize">instance<wbr></wbr>_text<wbr></wbr>_fontsize</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#instance_text_max_len" class="internal-link" title="cocopp.ppfigdim.instance_text_max_len">instance<wbr></wbr>_text<wbr></wbr>_max<wbr></wbr>_len</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#refcolor" class="internal-link" title="cocopp.ppfigdim.refcolor">refcolor</a></code>
             </div>
         
@@ -602,6 +622,16 @@
         
 
         
+            <div class="itemName"><code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="cocopp.rungeneric.html" class="internal-link" title="cocopp.rungeneric">rungeneric</a></code>
             </div>
         
@@ -715,8 +745,31 @@
     </li>
 </ul>
 
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
         
-         
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#main" class="internal-link" title="cocopp.main">main</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#remote_archives" class="internal-link" title="cocopp.remote_archives">remote<wbr></wbr>_archives</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
 
         
          
@@ -783,6 +836,27 @@ The thick light line with diamond markers shows the results of the
 specified reference algorithm for df = 1e-8 or a runlength-based
 target (if in the expensive/runlength-based targets setting).</p>
 <p><strong>Example</strong></p>
+<pre class="rst-literal-block">
+import urllib
+import tarfile
+import glob
+from pylab import *
+
+import cocopp
+
+# Collect and unarchive data (3.4MB)
+dataurl = 'http://coco.lri.fr/BBOB2009/pythondata/BIPOP-CMA-ES.tar.gz'
+filename, headers = urllib.urlretrieve(dataurl)
+archivefile = tarfile.open(filename)
+archivefile.extractall()
+
+# Scaling figure
+ds = cocopp.load(glob.glob('BBOB2009pythondata/BIPOP-CMA-ES/ppdata_f002_*.pickle'))
+figure()
+cocopp.ppfigdim.plot(ds)
+cocopp.ppfigdim.beautify()
+cocopp.ppfigdim.plot_previous_algorithms(2, False) # plot BBOB 2009 best algorithm on fun 2
+</pre>
 </div>
         </div>
 
@@ -825,6 +899,16 @@ target (if in the expensive/runlength-based targets setting).</p>
     <td>Function</td>
     <td><code><a href="#scaling_figure_caption" class="internal-link" title="cocopp.ppfigdim.scaling_figure_caption">scaling<wbr></wbr>_figure<wbr></wbr>_caption</a></code></td>
     <td>Provides a figure caption with the help of captions.py for replacing common texts, abbreviations, etc.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#instance_text_fontsize" class="internal-link" title="cocopp.ppfigdim.instance_text_fontsize">instance<wbr></wbr>_text<wbr></wbr>_fontsize</a></code></td>
+    <td>font size of instance number text in the scaling figure</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#instance_text_max_len" class="internal-link" title="cocopp.ppfigdim.instance_text_max_len">instance<wbr></wbr>_text<wbr></wbr>_max<wbr></wbr>_len</a></code></td>
+    <td>for longer text the <code><a href="cocopp.ppfigdim.html#instance_text_fontsize" class="internal-link" title="cocopp.ppfigdim.instance_text_fontsize">instance_text_fontsize</a></code> is decreased</td>
   </tr><tr class="variable">
     
     <td>Variable</td>
@@ -1048,6 +1132,54 @@ replacing common texts, abbreviations, etc.</p></div>
 </div><div class="basevariable">
   
   
+  <a name="cocopp.ppfigdim.instance_text_fontsize">
+    
+  </a>
+  <a name="instance_text_fontsize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">instance_text_fontsize</span>: <code>int</code> =
+    
+    <a class="headerLink" href="#instance_text_fontsize" title="cocopp.ppfigdim.instance_text_fontsize">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>font size of instance number text in the scaling figure</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="cocopp.ppfigdim.instance_text_max_len">
+    
+  </a>
+  <a name="instance_text_max_len">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">instance_text_max_len</span>: <code>int</code> =
+    
+    <a class="headerLink" href="#instance_text_max_len" title="cocopp.ppfigdim.instance_text_max_len">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>for longer text the <code><a href="#instance_text_fontsize" class="internal-link" title="cocopp.ppfigdim.instance_text_fontsize">instance_text_fontsize</a></code> is decreased</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
   <a name="cocopp.ppfigdim.refcolor">
     
   </a>
@@ -1153,7 +1285,7 @@ replacing common texts, abbreviations, etc.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

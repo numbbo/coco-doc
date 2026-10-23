@@ -562,6 +562,16 @@
         
 
         
+            <div class="itemName"><code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="cocopp.rungeneric.html" class="internal-link" title="cocopp.rungeneric">rungeneric</a></code>
             </div>
         
@@ -675,8 +685,31 @@
     </li>
 </ul>
 
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
         
-         
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#main" class="internal-link" title="cocopp.main">main</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#remote_archives" class="internal-link" title="cocopp.remote_archives">remote<wbr></wbr>_archives</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
 
         
          
@@ -790,7 +823,7 @@ min / max number of evals per trial: 224 / 333
     
     <td>Class</td>
     <td><code><a href="cocopp.cococommands.DataWithFewSuccesses.html" class="internal-link" title="cocopp.cococommands.DataWithFewSuccesses"><wbr></wbr>Data<wbr></wbr>With<wbr></wbr>Few<wbr></wbr>Successes</a></code></td>
-    <td>The <code><a href="cocopp.cococommands.DataWithFewSuccesses.html#all" class="internal-link" title="cocopp.cococommands.DataWithFewSuccesses.all">all</a></code> property is an <code>OrderedDict</code> with all <tt class="rst-docutils literal">(dimension, funcId)</tt>-</td>
+    <td>This class is superseded by <code>cocoex.ExperimentRepeater</code> for its main usecase,</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -805,7 +838,7 @@ min / max number of evals per trial: 224 / 333
     
     <td>Function</td>
     <td><code><a href="#load2" class="internal-link" title="cocopp.cococommands.load2">load2</a></code></td>
-    <td>[WIP] return a <code>dict</code> of <code>dict</code> of <code>DataSetLists</code> with dimension and pathname as keys.</td>
+    <td>[WIP] return a <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> or a <code>dict</code> of <code>dict</code> of <code>DataSetLists</code>.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -876,9 +909,9 @@ min / max number of evals per trial: 224 / 333
   <div class="docstring functionBody">
     
     <div><p>[currently broken when further used within <code><a href="index.html" class="internal-link">cocopp</a></code>, see <code><a href="#load2" class="internal-link" title="cocopp.cococommands.load2">load2</a></code>] Create a <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> instance from a file or folder.</p>
-<p>Input argument filename can be a single <a href="#system-message-1"><span class="rst-problematic" id="rst-problematic-1">:file:`info`</span></a> file name, a
+<p>Input argument filename can be a single <tt class="rst-docutils literal">info</tt> file name, a
 single pickle filename or a folder name. In the latter case, the
-folder is browsed recursively for <a href="#system-message-2"><span class="rst-problematic" id="rst-problematic-2">:file:`info`</span></a> or <a href="#system-message-3"><span class="rst-problematic" id="rst-problematic-3">:file:`pickle`</span></a>
+folder is browsed recursively for <tt class="rst-docutils literal">info</tt> or <tt class="rst-docutils literal">pickle</tt>
 files.</p>
 <p>Details: due to newly implemented side effects when data are read in,
 the returned data set list may not work anymore when used with plotting
@@ -897,7 +930,7 @@ functions of the <code><a href="index.html" class="internal-link">cocopp</a></co
   <div class="functionHeader">
     
     
-    <span class="py-keyword">def</span> <span class="py-defname">load2</span><span class="function-signature">(args, keep=None, remove=None)</span>:
+    <span class="py-keyword">def</span> <span class="py-defname">load2</span><span class="function-signature">(args, keep=None, remove=None, flat_list=None)</span>:
     
     <a class="headerLink" href="#load2" title="cocopp.cococommands.load2">
       
@@ -907,7 +940,7 @@ functions of the <code><a href="index.html" class="internal-link">cocopp</a></co
   </div>
   <div class="docstring functionBody">
     
-    <div><p>[WIP] return a <code>dict</code> of <code>dict</code> of <code>DataSetLists</code> with dimension and pathname as keys.</p>
+    <div><p>[WIP] return a <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> or a <code>dict</code> of <code>dict</code> of <code>DataSetLists</code>.</p>
 <p><code>args</code> is a string or a list of strings passed to
 <code>cocopp.official_archives.all.get_extended</code> to determine the desired
 data sets which can also come from a local folder or a zip-file.</p>
@@ -916,7 +949,19 @@ instance as argument and return a <code>bool</code> according to which data sets
 are filtered (usually based on the <tt class="rst-docutils literal">funcId</tt> attribute, see below
 example). In case, <code>remove</code> takes precedent. When <tt class="rst-docutils literal">keep is None</tt> all
 elements are kept unless removed.</p>
+<p>return a <code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code> if either <code>flat_list</code> or <tt class="rst-docutils literal">flat_list is None</tt>
+and <code>args</code> describes a single algorithm/experiment, return otherwise a
+<code>dict</code> of <code>dict</code> with dimension and pathname as keys, respectively.</p>
 <p>Examples:</p>
+<pre class="rst-literal-block">
+# Get a single `DataSet`, here for F1 in 20-D
+&gt;&gt; ds = cocopp.load2('nelder!').by('dim')[20].by('funcId')[1][0]
+
+# get 31 data sets, takes ~3 minutes at first ever loading
+&gt;&gt; ddsl31 = load('bbob/2009/*')
+&gt;&gt; assert sorted(ddsl31) == [2, 3, 5, 10, 20, 40], ddsl
+&gt;&gt; assert len(ddsl31[3]) == 31, ddsl
+</pre>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">def</span> <span class="py-defname">pprldmany</span>(dsl):
@@ -933,12 +978,7 @@ elements are kept unless removed.</p>
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">assert</span> <span class="py-builtin">len</span>(<span class="py-builtin">list</span>(ddsl[3].values())[0]) == 22, <span class="py-builtin">list</span>(ddsl[3].values())[0]
 <span class="py-prompt">&gt;&gt;&gt; </span>pprldmany(ddsl[2])  <span class="py-comment"># doctest:+ELLIPSIS</span>
 <span class="py-output">OK...</span>
-</pre><pre class="rst-literal-block">
-&gt;&gt; ddsl31 = load('bbob/2009/*')  # 31 data sets, takes ~3 minutes at first ever loading
-&gt;&gt; assert sorted(ddsl31) == [2, 3, 5, 10, 20, 40], ddsl
-&gt;&gt; assert len(ddsl31[3]) == 31, ddsl
-</pre>
-</div>
+</pre></div>
   </div>
 </div><div class="basefunction">
   
@@ -1024,7 +1064,7 @@ elements are kept unless removed.</p>
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

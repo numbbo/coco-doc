@@ -299,6 +299,16 @@
         
 
         
+            <div class="itemName"><code><a href="cocopp.pproc.DataSet.html#delete_instance" class="internal-link" title="cocopp.pproc.DataSet.delete_instance">delete<wbr></wbr>_instance</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="cocopp.pproc.DataSet.html#detAverageEvals" class="internal-link" title="cocopp.pproc.DataSet.detAverageEvals">det<wbr></wbr>Average<wbr></wbr>Evals</a></code>
             </div>
         
@@ -409,6 +419,16 @@
         
 
         
+            <div class="itemName"><code><a href="cocopp.pproc.DataSet.html#keep_instances" class="internal-link" title="cocopp.pproc.DataSet.keep_instances">keep<wbr></wbr>_instances</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="cocopp.pproc.DataSet.html#median_evals" class="internal-link" title="cocopp.pproc.DataSet.median_evals">median<wbr></wbr>_evals</a></code>
             </div>
         
@@ -430,6 +450,16 @@
 
         
             <div class="itemName"><code><a href="cocopp.pproc.DataSet.html#nbRuns" class="internal-link" title="cocopp.pproc.DataSet.nbRuns">nb<wbr></wbr>Runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.pproc.DataSet.html#percentiles" class="internal-link" title="cocopp.pproc.DataSet.percentiles">percentiles</a></code>
             </div>
         
 
@@ -972,6 +1002,16 @@
 
         
             <div class="itemName"><code><a href="cocopp.pproc.DataSet.html#evals_are_appended" class="internal-link" title="cocopp.pproc.DataSet.evals_are_appended">evals<wbr></wbr>_are<wbr></wbr>_appended</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="cocopp.pproc.DataSet.html#has_constraints" class="internal-link" title="cocopp.pproc.DataSet.has_constraints">has<wbr></wbr>_constraints</a></code>
             </div>
         
 
@@ -1633,6 +1673,11 @@ account!?</p>
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="cocopp.pproc.DataSet.html#delete_instance" class="internal-link" title="cocopp.pproc.DataSet.delete_instance">delete<wbr></wbr>_instance</a></code></td>
+    <td>Remove all runs with id <code>instance_number</code>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="cocopp.pproc.DataSet.html#detAverageEvals" class="internal-link" title="cocopp.pproc.DataSet.detAverageEvals">det<wbr></wbr>Average<wbr></wbr>Evals</a></code></td>
     <td>Determine the average number of f-evals for each target in <tt class="rst-docutils literal">targets</tt> list.</td>
   </tr><tr class="basemethod">
@@ -1654,7 +1699,7 @@ account!?</p>
     
     <td>Method</td>
     <td><code><a href="cocopp.pproc.DataSet.html#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">evals<wbr></wbr>_with<wbr></wbr>_simulated<wbr></wbr>_restarts</a></code></td>
-    <td>Return a <tt class="rst-docutils literal">len(targets)</tt> <code>list</code> of <tt class="rst-docutils literal">samplesize</tt> "simulated runtimes"</td>
+    <td>Return a <code>list</code> of arrays of "simulated runtimes"</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -1688,8 +1733,13 @@ account!?</p>
   </tr><tr class="basemethod">
     
     <td>Method</td>
+    <td><code><a href="cocopp.pproc.DataSet.html#keep_instances" class="internal-link" title="cocopp.pproc.DataSet.keep_instances">keep<wbr></wbr>_instances</a></code></td>
+    <td>keep only instances with id in <code>instance_ids</code>,</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
     <td><code><a href="cocopp.pproc.DataSet.html#median_evals" class="internal-link" title="cocopp.pproc.DataSet.median_evals">median<wbr></wbr>_evals</a></code></td>
-    <td>return median for each row in <code>self.evals</code>, unsuccessful runs count.</td>
+    <td>DEPRECATED: use rather <tt class="rst-docutils literal">.percentiles(targets, 50)</tt> or</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -1700,6 +1750,11 @@ account!?</p>
     <td>Method</td>
     <td><code><a href="cocopp.pproc.DataSet.html#nbRuns" class="internal-link" title="cocopp.pproc.DataSet.nbRuns">nb<wbr></wbr>Runs</a></code></td>
     <td>Returns the number of runs depending on <code><a href="cocopp.genericsettings.html#balance_instances" class="internal-link" title="cocopp.genericsettings.balance_instances">genericsettings.balance_instances</a></code>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="cocopp.pproc.DataSet.html#percentiles" class="internal-link" title="cocopp.pproc.DataSet.percentiles">percentiles</a></code></td>
+    <td>return the evaluations percentiles for each target in <code><a href="cocopp.pproc.TargetValues.html#target_values" class="internal-link" title="cocopp.pproc.TargetValues.target_values">target_values</a></code>.</td>
   </tr><tr class="basemethod">
     
     <td>Method</td>
@@ -1785,6 +1840,11 @@ account!?</p>
     <td>Property</td>
     <td><code><a href="cocopp.pproc.DataSet.html#evals_are_appended" class="internal-link" title="cocopp.pproc.DataSet.evals_are_appended">evals<wbr></wbr>_are<wbr></wbr>_appended</a></code></td>
     <td>return <code>True</code> if <code>self.evals_appended</code> consist of appended trials (same instances are appended)</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="cocopp.pproc.DataSet.html#has_constraints" class="internal-link" title="cocopp.pproc.DataSet.has_constraints">has<wbr></wbr>_constraints</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
   </tr><tr class="baseproperty">
     
     <td>Property</td>
@@ -1889,7 +1949,7 @@ account!?</p>
     
     <td>Method</td>
     <td><code><a href="cocopp.pproc.DataSet.html#_evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet._evals_with_simulated_restarts">_evals<wbr></wbr>_with<wbr></wbr>_simulated<wbr></wbr>_restarts</a></code></td>
-    <td>return simulated runtimes for each 1D-array in <code>evals_list</code>.</td>
+    <td>OBSOLETE (never used?), rather use toolsstats.simulated_evals. return simulated runtimes for each 1D-array in <code>evals_list</code>.</td>
   </tr><tr class="basemethod private">
     
     <td>Method</td>
@@ -2719,7 +2779,7 @@ target was reached the first time in trials 1,... in
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

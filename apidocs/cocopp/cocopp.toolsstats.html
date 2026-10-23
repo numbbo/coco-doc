@@ -742,6 +742,16 @@
         
 
         
+            <div class="itemName"><code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="cocopp.rungeneric.html" class="internal-link" title="cocopp.rungeneric">rungeneric</a></code>
             </div>
         
@@ -855,8 +865,31 @@
     </li>
 </ul>
 
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
         
-         
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#main" class="internal-link" title="cocopp.main">main</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#remote_archives" class="internal-link" title="cocopp.remote_archives">remote<wbr></wbr>_archives</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
 
         
          
@@ -906,7 +939,7 @@
         </div>
 
         <div id="splitTables">
-          <table class="children sortable" id="id155">
+          <table class="children sortable" id="id157">
   
   
   <tr class="class">
@@ -958,7 +991,7 @@
     
     <td>Function</td>
     <td><code><a href="#in_approximately" class="internal-link" title="cocopp.toolsstats.in_approximately">in<wbr></wbr>_approximately</a></code></td>
-    <td>return True if <tt class="rst-docutils literal">a</tt> equals approximately any of the elements in <tt class="rst-docutils literal">list_</tt>, in short</td>
+    <td>return True if <tt class="rst-docutils literal">a</tt> equals approximately any of the elements in <tt class="rst-docutils literal">list_</tt>, in short:</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1003,7 +1036,7 @@
     
     <td>Function</td>
     <td><code><a href="#simulated_evals" class="internal-link" title="cocopp.toolsstats.simulated_evals">simulated<wbr></wbr>_evals</a></code></td>
-    <td>Obsolete: see <code><a href="cocopp.pproc.DataSet.html#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">DataSet.evals_with_simulated_restarts</a></code> instead.</td>
+    <td>Return <code>samplesize</code> "simulated" run lengths (#evaluations).</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1364,9 +1397,10 @@ should do pretty much the same, a little more randomized.</p>
   <div class="docstring functionBody">
     
     <div><p>return True if <tt class="rst-docutils literal">a</tt> equals approximately any of the elements
-in <tt class="rst-docutils literal">list_</tt>, in short</p>
-<blockquote>
-return any([equals_approximately(a, b) for b in <a href="#system-message-1"><span class="rst-problematic" id="rst-problematic-1">list_</span></a>])</blockquote>
+in <tt class="rst-docutils literal">list_</tt>, in short:</p>
+<pre class="rst-literal-block">
+return any([equals_approximately(a, b) for b in list_])
+</pre>
 </div>
   </div>
 </div><div class="basefunction">
@@ -1394,10 +1428,17 @@ return any([equals_approximately(a, b) for b in <a href="#system-message-1"><spa
     <div><p>Computes percentile based on data with linear interpolation</p>
 <div class="rst-admonition note">
 <p class="rst-first rst-admonition-title">Note</p>
-<p class="rst-last">treats np.inf and -np.inf, np.nan and None, the latter are
+<p class="rst-last">treats np.inf and -np.inf, np.nan and None, the latter is
 simply disregarded</p>
 </div>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">arrprctiles</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">issorted</span></td><td class="fieldArgDesc">indicate if data is sorted</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ignore<wbr></wbr>_nan</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prctiles:</span>scalar or sequence</td><td class="fieldArgDesc">percentiles to be calculated. Values beyond the
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>pc = cocopp.toolsstats.prctile
+<span class="py-prompt">&gt;&gt;&gt; </span>l = [2, 3, np.nan, 1]
+<span class="py-prompt">&gt;&gt;&gt; </span>pp = pc(l, [5, 25, 50, 75, 95], ignore_nan=<span class="py-builtin">False</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>[<span class="py-builtin">float</span>(p) <span class="py-keyword">for</span> p <span class="py-keyword">in</span> pp]
+<span class="py-output">[1.0, 1.5, 2.5, nan, nan]</span>
+</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">arrprctiles</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">issorted</span></td><td class="fieldArgDesc">indicate if data is sorted</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ignore<wbr></wbr>_nan</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prctiles:</span>scalar or sequence</td><td class="fieldArgDesc">percentiles to be calculated. Values beyond the
 interval [0,100] also return the respective
 extreme value in data.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sequence data</span></td><td class="fieldArgDesc">(list, array) of data values</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">sequence of percentile values in data according to argument
 prctiles</td></tr></table></div>
@@ -1451,8 +1492,8 @@ prctiles</td></tr></table></div>
     <div><p>return a <code>numpy</code> array of derandomized random integers.</p>
 <p>The interface is the same as for <code>numpy.randint</code>, however the
 default value for <code>size</code> is <tt class="rst-docutils literal">high - low</tt> and each "random" integer
-is guarantied to appear exactly once in each chunk of size
-<tt class="rst-docutils literal">high - low</tt>. (That is, by default a permutation is returned.)</p>
+is guarantied to appear at least once in each chunk of size
+<tt class="rst-docutils literal">2 * (high - low)</tt>. (That is, by default a permutation is returned.)</p>
 <p>As for <code>numpy.randint</code>, the value range is [low, high-1] or [0, low-1]
 if <tt class="rst-docutils literal">high is None</tt>.</p>
 <pre class="py-doctest">
@@ -1644,7 +1685,7 @@ larger value is better, because the test data are [-Df, 1/evals].</td></tr></tab
   <div class="functionHeader">
     
     
-    <span class="py-keyword">def</span> <span class="py-defname">simulated_evals</span><span class="function-signature">(evals, nfails, samplesize=<a href="cocopp.genericsettings.html#simulated_runlength_bootstrap_sample_size" class="internal-link" title="cocopp.genericsettings.simulated_runlength_bootstrap_sample_size">genericsettings.simulated_runlength_bootstrap_sample_size</a>, randint=<a href="#randint_derandomized" class="internal-link" title="cocopp.toolsstats.randint_derandomized">randint_derandomized</a>)</span>:
+    <span class="py-keyword">def</span> <span class="py-defname">simulated_evals</span><span class="function-signature">(evals, nfails, samplesize=<a href="cocopp.genericsettings.html#simulated_runlength_bootstrap_sample_size" class="internal-link" title="cocopp.genericsettings.simulated_runlength_bootstrap_sample_size">genericsettings.simulated_runlength_bootstrap_sample_size</a>, randint=<a href="#randint_derandomized" class="internal-link" title="cocopp.toolsstats.randint_derandomized">randint_derandomized</a>, randintrest=np.random.randint, return_as=sorted)</span>:
     
     <a class="headerLink" href="#simulated_evals" title="cocopp.toolsstats.simulated_evals">
       
@@ -1654,22 +1695,30 @@ larger value is better, because the test data are [-Df, 1/evals].</td></tr></tab
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Obsolete: see <code><a href="cocopp.pproc.DataSet.html#evals_with_simulated_restarts" class="internal-link" title="cocopp.pproc.DataSet.evals_with_simulated_restarts">DataSet.evals_with_simulated_restarts</a></code> instead.</p>
-<p>Return <code>samplesize</code> "simulated" run lengths (#evaluations), sorted.</p>
+    <div><p>Return <code>samplesize</code> "simulated" run lengths (#evaluations).</p>
 <dl class="rst-docutils">
 <dt>Input:</dt>
 <dd><ul class="rst-first rst-last rst-simple">
 <li><em>evals</em> -- array of evaluations</li>
 <li><dl class="rst-first rst-docutils">
-<dt><em>nfail</em> -- only the last <code>nfail</code> evaluations come from</dt>
-<dd>unsuccessful runs</dd>
+<dt><em>nfails</em> -- the last <code>nfails</code> evaluations come from unsuccessful</dt>
+<dd>runs; -1 indicates that unsuccessful runs have negative
+runtime values regardless of their position</dd>
 </dl>
 </li>
 <li><em>randint</em> -- random integer index function of the first simulated run</li>
+<li><em>randintrest</em> -- random integer index function for the added runtimes</li>
+<li><dl class="rst-first rst-docutils">
+<dt><em>return_as</em> -- called on the np.array result before return,</dt>
+<dd><code>np.asarray</code> or the identity should be faster than the
+default <code>sorted</code>.
+Introduced to remain backwards compatible.</dd>
+</dl>
+</li>
 </ul>
 </dd>
 <dt>Return:</dt>
-<dd>all_sampled_runlengths_sorted</dd>
+<dd>all_sampled_runlengths, by default as a sorted <code>list</code></dd>
 </dl>
 <p>Example:</p>
 <pre class="py-doctest">
@@ -1685,8 +1734,7 @@ larger value is better, because the test data are [-Df, 1/evals].</td></tr></tab
 <dt>Details:</dt>
 <dd>A single successful running length is computed by adding
 uniformly randomly chosen running lengths until the first time a
-successful one is chosen. In case of no successful run an
-exception is raised.</dd>
+successful one is chosen.</dd>
 </dl>
 </div>
   </div>
@@ -1840,7 +1888,7 @@ rate is zero.</dd>
 <li>for any z, 2.0*(1.0-zprob(abs(z))) = 2-tail probability</li>
 </ul>
 </blockquote>
-<p>Adapted from z.c in Gary Perlman's <a href="#system-message-1"><span class="rst-problematic" id="rst-problematic-1">|</span></a>Stat.  Can handle multiple dimensions.</p>
+<p>Adapted from z.c in Gary Perlman's <tt class="rst-docutils literal">|Stat</tt>.  Can handle multiple dimensions.</p>
 <p>Usage:   azprob(z)    where z is a z-value</p>
 </div>
   </div>
@@ -1904,7 +1952,7 @@ rate is zero.</dd>
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

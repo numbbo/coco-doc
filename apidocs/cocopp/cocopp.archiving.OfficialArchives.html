@@ -771,7 +771,7 @@
         <div class="moduleDocstring">
           <div><p>overdesigned class to connect URLs, names, and classes of "official" archives.</p>
 <p>The <code><a href="#all" class="internal-link" title="cocopp.archiving.OfficialArchives.all">all</a></code> archive name gets special treatment. The 'all'-archive is
-currently needed in <code><a href="cocopp.rungeneric.html#main" class="internal-link" title="cocopp.rungeneric.main">cocopp.main</a></code> but could be dropped otherwise.</p>
+currently needed in <code><a href="index.html#main" class="internal-link">cocopp.main</a></code> but could be dropped otherwise.</p>
 <p>The class collects the "official" online data archives as attributes.
 Each suite is also a different class inheriting from <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link" title="cocopp.archiving.COCODataArchive">COCODataArchive</a></code>.
 The class may become the same for some or all suites in future.</p>
@@ -787,12 +787,25 @@ test suite.</p>
 <p>The <code><a href="#names" class="internal-link" title="cocopp.archiving.OfficialArchives.names">names</a></code> property is a list of all "official" archive names available.</p>
 <div class="rst-section" id="rst-a-quick-guide">
 <h2 class="heading">A Quick Guide</h2>
-<p><strong>1) To list all available data</strong>:</p>
+<p><strong>0) List all suites from the official archive</strong>:</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">list</span>(<span class="py-builtin">vars</span>(cocopp.archives))  <span class="py-comment"># doctest:+SKIP</span>
+<span class="py-output">['all',</span>
+<span class="py-output">'_base',</span>
+<span class="py-output">'_list',</span>
+<span class="py-output">'bbob',</span>
+<span class="py-output">'bbob_noisy',</span>
+<span class="py-output">'bbob_biobj',</span>
+<span class="py-output">'bbob_largescale',</span>
+<span class="py-output">'bbob_mixint',</span>
+<span class="py-output">'bbob_constrained',</span>
+<span class="py-output">'bbob_boxed']</span>
+</pre><p><strong>1) List all available data</strong>:</p>
+<pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.all  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
 <span class="py-output">['bbob/2009/AL...</span>
-</pre><p><strong>2) To see all available data from a given test suite</strong>:</p>
+</pre><p><strong>2) See all available data from a given test suite</strong>:</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
 <span class="py-output">['2009/ALPS...</span>
@@ -825,7 +838,7 @@ archive by sub-string matching:</p>
 </pre><p>The <code>find</code> method will not download data and is only for inspecting the
 archives. If we want to actually process the data we need to use <code><a href="cocopp.archiving.html#get" class="internal-link" title="cocopp.archiving.get">get</a></code>,
 <code><a href="cocopp.archiving.COCODataArchive.html#get_all" class="internal-link" title="cocopp.archiving.COCODataArchive.get_all">get_all</a></code>, <code><a href="cocopp.archiving.COCODataArchive.html#get_extended" class="internal-link" title="cocopp.archiving.COCODataArchive.get_extended">get_extended</a></code> or <code><a href="cocopp.archiving.COCODataArchive.html#get_found" class="internal-link" title="cocopp.archiving.COCODataArchive.get_found">get_found</a></code>, or use the same search string
-in <code><a href="cocopp.rungeneric.html#main" class="internal-link" title="cocopp.rungeneric.main">cocopp.main</a></code> appending a <code>*</code> if more than one algorithm should be
+in <code><a href="index.html#main" class="internal-link">cocopp.main</a></code> appending a <code>*</code> if more than one algorithm should be
 processed:</p>
 <p><strong>4) When postprocessing data via `cocopp.main`</strong>, we can use the archive
 like</p>
@@ -834,7 +847,7 @@ like</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bfgs*'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>using the special meaning of the trailing <code>*</code> in this case (see below).
 The <code><a href="cocopp.archiving.html#get" class="internal-link" title="cocopp.archiving.get">get</a></code> and <code><a href="cocopp.archiving.COCODataArchive.html#get_extended" class="internal-link" title="cocopp.archiving.COCODataArchive.get_extended">get_extended</a></code> methods are called on each argument given in a
-string to <code><a href="cocopp.rungeneric.html#main" class="internal-link" title="cocopp.rungeneric.main">main</a></code>. We can do things like</p>
+string to <code><a href="index.html#main" class="internal-link" title="cocopp.main">main</a></code>. We can do things like</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bbob/2009/BIPOP DE-BFGS'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>When a string has multiple matches, the postprocessing bails out. For
 such cases, we can use the trailing symbols <code>*</code> (AKA take all matches)
@@ -1325,7 +1338,7 @@ data.</p>
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

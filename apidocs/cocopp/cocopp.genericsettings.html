@@ -1029,6 +1029,16 @@
         
 
         
+            <div class="itemName"><code><a href="#use_only_common_instances" class="internal-link" title="cocopp.genericsettings.use_only_common_instances">use<wbr></wbr>_only<wbr></wbr>_common<wbr></wbr>_instances</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#use_recommendations" class="internal-link" title="cocopp.genericsettings.use_recommendations">use<wbr></wbr>_recommendations</a></code>
             </div>
         
@@ -1429,6 +1439,16 @@
         
 
         
+            <div class="itemName"><code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="cocopp.rungeneric.html" class="internal-link" title="cocopp.rungeneric">rungeneric</a></code>
             </div>
         
@@ -1542,8 +1562,31 @@
     </li>
 </ul>
 
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
         
-         
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#main" class="internal-link" title="cocopp.main">main</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#remote_archives" class="internal-link" title="cocopp.remote_archives">remote<wbr></wbr>_archives</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
 
         
          
@@ -1590,10 +1633,10 @@
 
         <div class="moduleDocstring">
           <div><p>This module contains some global variables settings for COCO.</p>
-<p>These variables may be modified (in particular in rungeneric1, -2, and
+<p>These variables may be modified (in particular in rungeneric1, 2, and
 -many) and are used for producing figures and tables.</p>
 <p>For setting variables dynamically or changing other module settings
-here see <code>config.py</code>.</p>
+here see <code><a href="cocopp.config.html" class="internal-link">cocopp.config</a></code>.</p>
 </div>
         </div>
 
@@ -1610,7 +1653,7 @@ here see <code>config.py</code>.</p>
     
     <td>Variable</td>
     <td><code><a href="#background" class="internal-link" title="cocopp.genericsettings.background">background</a></code></td>
-    <td>algorithms to shown for comparison "in the background". Usage: `` background = {(color, linestyle): [path_to_data1, path_to_data2, ...], }`` Examples: <tt class="rst-docutils literal">background = {None: <span class="pre">cocopp.archives.bbob.get_all('2009/')}</span></tt>...</td>
+    <td>algorithms to shown for comparison "in the background". Usage: <tt class="rst-docutils literal">background = {(color, linestyle): [path_to_data1, path_to_data2, <span class="pre">...],</span> }</tt> Examples: <tt class="rst-docutils literal">background = {None: <span class="pre">cocopp.archives.bbob.get_all('2009/')}</span></tt>...</td>
   </tr><tr class="variable">
     
     <td>Variable</td>
@@ -2035,6 +2078,12 @@ ds: ds.funcId in [1, 2,] + list(range(5, 15))</tt>...</td>
   </tr><tr class="variable">
     
     <td>Variable</td>
+    <td><code><a href="#use_only_common_instances" class="internal-link" title="cocopp.genericsettings.use_only_common_instances">use<wbr></wbr>_only<wbr></wbr>_common<wbr></wbr>_instances</a></code></td>
+    <td>If <code>True</code>, not-common instances are removed such that the set of instance ids is the same for all data sets. By default, when <tt class="rst-docutils literal">use_only_common_instances
+is None</tt>, this is the case iff <code>current_testbed.instances_are_uniform</code>...</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
     <td><code><a href="#use_recommendations" class="internal-link" title="cocopp.genericsettings.use_recommendations">use<wbr></wbr>_recommendations</a></code></td>
     <td>use only recommendations data (.mdat files) for the respective algorithm where the last element is recycled for the remaining algorithms</td>
   </tr><tr class="variable">
@@ -2127,7 +2176,7 @@ that <code>DataSet.appended_evals</code> is created to be different from <code><
   <div class="functionBody">
     
     <div><p>algorithms to shown for comparison "in the background".
-Usage: `` background = {(color, linestyle): [path_to_data1, path_to_data2, ...], }``
+Usage: <tt class="rst-docutils literal">background = {(color, linestyle): [path_to_data1, path_to_data2, <span class="pre">...],</span> }</tt>
 Examples: <tt class="rst-docutils literal">background = {None: <span class="pre">cocopp.archives.bbob.get_all('2009/')}</span></tt> for all algorithms benchmarked in 2009 on the bbob test suite show with default line style, or
 <tt class="rst-docutils literal">background = {None: <span class="pre">cocopp.archives.bbob_mixint.get_all('')}</span></tt> for all algorithms
 benchmarked on the bbob-mixint test suite.</p></div>
@@ -4164,6 +4213,32 @@ for a final camera-ready paper version.</p></div>
 </div><div class="basevariable">
   
   
+  <a name="cocopp.genericsettings.use_only_common_instances">
+    
+  </a>
+  <a name="use_only_common_instances">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">use_only_common_instances</span> =
+    
+    <a class="headerLink" href="#use_only_common_instances" title="cocopp.genericsettings.use_only_common_instances">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>If <code>True</code>, not-common instances are removed such that the set of instance ids
+is the same for all data sets. By default, when <tt class="rst-docutils literal">use_only_common_instances
+is None</tt>, this is the case iff <code>current_testbed.instances_are_uniform</code></p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
   <a name="cocopp.genericsettings.use_recommendations">
     
   </a>
@@ -4374,7 +4449,7 @@ returned by <code><a href="cocopp.archiving.COCODataArchive.html#get_extended" c
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

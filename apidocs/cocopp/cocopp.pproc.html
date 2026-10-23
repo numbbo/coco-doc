@@ -425,6 +425,26 @@
         
 
         
+            <div class="itemName"><code><a href="#_ignore_pickle_files" class="internal-link" title="cocopp.pproc._ignore_pickle_files">_ignore<wbr></wbr>_pickle<wbr></wbr>_files</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_pickle_file_read" class="internal-link" title="cocopp.pproc._pickle_file_read">_pickle<wbr></wbr>_file<wbr></wbr>_read</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#_using_recommendations" class="internal-link" title="cocopp.pproc._using_recommendations">_using<wbr></wbr>_recommendations</a></code>
             </div>
         
@@ -755,6 +775,16 @@
         
 
         
+            <div class="itemName"><code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="cocopp.rungeneric.html" class="internal-link" title="cocopp.rungeneric">rungeneric</a></code>
             </div>
         
@@ -868,8 +898,31 @@
     </li>
 </ul>
 
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
         
-         
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#main" class="internal-link" title="cocopp.main">main</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="index.html#remote_archives" class="internal-link" title="cocopp.remote_archives">remote<wbr></wbr>_archives</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
 
         
          
@@ -1014,7 +1067,7 @@ for comparisons.</p>
     
     <td>Function</td>
     <td><code><a href="#process_arguments" class="internal-link" title="cocopp.pproc.process_arguments">process<wbr></wbr>_arguments</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>call <tt class="rst-docutils literal">get_DataSetList(arg)</tt> on each <tt class="rst-docutils literal">arg in args</tt> and feed results into <code>dsList</code>.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1055,6 +1108,16 @@ for comparisons.</p>
     <td>Variable</td>
     <td><code><a href="#_block_using_recommendations" class="internal-link" title="cocopp.pproc._block_using_recommendations">_block<wbr></wbr>_using<wbr></wbr>_recommendations</a></code></td>
     <td>meta flag to control setting and changing of _using_recommendations.</td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_ignore_pickle_files" class="internal-link" title="cocopp.pproc._ignore_pickle_files">_ignore<wbr></wbr>_pickle<wbr></wbr>_files</a></code></td>
+    <td>if <code>True</code>, do not try to read data from pickle files. This is useful for regression testing.</td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_pickle_file_read" class="internal-link" title="cocopp.pproc._pickle_file_read">_pickle<wbr></wbr>_file<wbr></wbr>_read</a></code></td>
+    <td>record the name of last read pickle file or "" when file was not found or not read</td>
   </tr><tr class="variable private">
     
     <td>Variable</td>
@@ -1407,7 +1470,10 @@ key=value, for instance: key = value, key = 'value'</p>
   </div>
   <div class="docstring functionBody">
     
-    <div><p class="undocumented">Undocumented</p></div>
+    <div><p>call <tt class="rst-docutils literal">get_DataSetList(arg)</tt> on each <tt class="rst-docutils literal">arg in args</tt> and feed results into <code>dsList</code>.</p>
+<p>Output <code>sortedAlgs</code> is the list of algorithm names.
+Output <code>dictAlg</code> is the <code>dsList</code> reorganized by algorithm name.</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -1437,7 +1503,7 @@ algorithms from a list of strings representing file and folder names,
 see below for details. This command operates folder-wise: one folder
 corresponds to one algorithm.</p>
 <p>It is recommended that if a folder listed in args contain both
-<a href="#system-message-1"><span class="rst-problematic" id="rst-problematic-1">:file:`info`</span></a> files and the associated <a href="#system-message-2"><span class="rst-problematic" id="rst-problematic-2">:file:`pickle`</span></a> files, they be
+<tt class="rst-docutils literal">info</tt> files and the associated <tt class="rst-docutils literal">pickle</tt> files, they be
 kept in different locations for efficiency reasons.</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">process<wbr></wbr>_background<wbr></wbr>_algorithms</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">list args</span></td><td class="fieldArgDesc">string arguments for folder names</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bool process<wbr></wbr>_background<wbr></wbr>_algorithms</span></td><td class="fieldArgDesc">option to process also background algorithms</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><dl class="rst-docutils">
 <dt>all_datasets</dt>
@@ -1641,6 +1707,55 @@ is blocked to <code>False</code> as postcondition.</p>
 </div><div class="basevariable private">
   
   
+  <a name="cocopp.pproc._ignore_pickle_files">
+    
+  </a>
+  <a name="_ignore_pickle_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ignore_pickle_files</span>: <code>bool</code> =
+    
+    <a class="headerLink" href="#_ignore_pickle_files" title="cocopp.pproc._ignore_pickle_files">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>if <code>True</code>, do not try to read data from pickle files.
+This is useful for regression testing.</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="cocopp.pproc._pickle_file_read">
+    
+  </a>
+  <a name="_pickle_file_read">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pickle_file_read</span>: <code>str</code> =
+    
+    <a class="headerLink" href="#_pickle_file_read" title="cocopp.pproc._pickle_file_read">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>record the name of last read pickle file or "" when file was not found or not read</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
   <a name="cocopp.pproc._using_recommendations">
     
   </a>
@@ -1674,7 +1789,7 @@ is blocked to <code>False</code> as postcondition.</p>
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

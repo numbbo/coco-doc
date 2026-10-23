@@ -457,6 +457,16 @@
         
 
         
+            <div class="itemName"><code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="cocopp.rungeneric.html" class="internal-link" title="cocopp.rungeneric">rungeneric</a></code>
             </div>
         
@@ -570,8 +580,31 @@
     </li>
 </ul>
 
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
         
-         
+        
+        
+
+        
+            <div class="itemName"><code><a href="#main" class="internal-link" title="cocopp.main">main</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#remote_archives" class="internal-link" title="cocopp.remote_archives">remote<wbr></wbr>_archives</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
 
         
          
@@ -620,66 +653,18 @@
           <div><p>COmparing Continuous Optimisers (COCO) post-processing package</p>
 <p>This package (<code><a href="index.html" class="internal-link">cocopp</a></code>) generates output figures and tables in html format
 and for including into LaTeX-documents.</p>
+<p>A comprensive package documentation can be found at <a class="rst-reference external" href="https://coco-platform.org" target="_top">https://coco-platform.org</a></p>
 <p>The <code><a href="cocopp.Interface.html" class="internal-link">cocopp.Interface</a></code> class contains the most basic commands and data of
 the package, sufficient for most use cases.</p>
+<p>A comprensive package documentation can be found at
+<a class="rst-reference external" href="https://coco-platform.org" target="_top">https://coco-platform.org</a></p>
+<p><code><a href="#main" class="internal-link">cocopp.main</a></code> is the main method of the <code><a href="index.html" class="internal-link">cocopp</a></code> package.</p>
+<p>Further relevant entry points are</p>
 <pre class="py-doctest">
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
 <span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">sorted</span>(cocopp.Interface.dir())
-<span class="py-output">['archives', 'config', 'genericsettings', 'load', 'main']</span>
-<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-builtin">all</span>(<span class="py-builtin">hasattr</span>(cocopp, name) <span class="py-keyword">for</span> name <span class="py-keyword">in</span> cocopp.Interface.dir())
-<span class="py-output">True</span>
-</pre><p>The main method of the <code><a href="index.html" class="internal-link">cocopp</a></code> package is <code><a href="cocopp.rungeneric.html#main" class="internal-link" title="cocopp.rungeneric.main">main</a></code> (currently aliased to
-<code><a href="cocopp.rungeneric.html#main" class="internal-link">cocopp.rungeneric.main</a></code>). The <code><a href="cocopp.rungeneric.html#main" class="internal-link" title="cocopp.rungeneric.main">main</a></code> method also allows basic use of the
-post-processing through a command-line interface. The recommended use
-is however from an IPython/Jupyter shell:</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
-<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'exdata/my_output another_folder yet_another_or_not'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>postprocesses data from one or several folders, for example data
-generated with the help from the <code>cocoex</code> module. Each folder should
-contain data of a full experiment with a single algorithm. (Within the
-folder the data can be distributed over subfolders).</p>
-<p>Results can be explored from the <tt class="rst-docutils literal">ppdata/index.html</tt> file, unless a
-a different output folder is specified with the <tt class="rst-docutils literal"><span class="pre">-o</span></tt> option.</p>
-<p><strong>Comparative data</strong> from over 200 full experiments are archived online and
-can be listed, filtered, and retrieved from <code><a href="cocopp.archiving.html#official_archives" class="internal-link" title="cocopp.archiving.official_archives">cocopp.archives</a></code> (of type
-<code><a href="cocopp.archiving.OfficialArchives.html" class="internal-link" title="cocopp.archiving.OfficialArchives">OfficialArchives</a></code>) and processed alone or together with local data.</p>
-<p>For example</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob(<span class="py-string">'bfgs'</span>)  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
-<span class="py-output">['2009/BFGS_...</span>
-</pre><p>lists all data sets containing <tt class="rst-docutils literal">'bfgs'</tt> in their name. The search can
-also use regular expressions where '.' matches any single
-character and '*' means one or more repetitions:</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob(<span class="py-string">'.*bfgs'</span>)  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
-<span class="py-output">['2009/BFGS_...</span>
-</pre><p>gives the same data sets as above and</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.all(<span class="py-string">'bbob/.*bfgs'</span>)  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
-<span class="py-output">['bbob/2009/BFGS_...</span>
-</pre><p>gives also the same data sets, however extracted from the archive of all
-suites, which is the search domain when using <code><a href="cocopp.rungeneric.html#main" class="internal-link" title="cocopp.rungeneric.main">cocopp.main</a></code>.</p>
-<p>When calling the <code><a href="cocopp.rungeneric.html#main" class="internal-link" title="cocopp.rungeneric.main">cocopp.main</a></code> routine, a single trailing '!' or '*'
-have the special meaning of take-the-first-only and take-all, respectively.
-Hence, the first entry of the above selecting list can be postprocessed with</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bfgs!'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>All <code>'bfgs'</code> matches from the <code>'bbob'</code> suite can be processed like</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bbob/.*bfgs'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>(<tt class="rst-docutils literal"><span class="pre">cocopp.main('bfgs*')</span></tt> raises an error as data from incompatible suites
-cannot be processed together.)</p>
-<p>The postprocessing result of</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bbob/2009/*'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>can be browsed at <a class="rst-reference external" href="http://numbbo.github.io/ppdata-archive/bbob/2009" target="_top">http://numbbo.github.io/ppdata-archive/bbob/2009</a> (or 2009-all).</p>
-<p>To display algorithms in the background, the <tt class="rst-docutils literal">genericsettings.background</tt>
-variable needs to be set:</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.genericsettings.background = {<span class="py-builtin">None</span>: cocopp.archives.bbob.get_all(<span class="py-string">'bfgs'</span>)}  <span class="py-comment"># doctest:+SKIP</span></pre><p>where <code>None</code> invokes the default color (gray) and line style (solid)
-<tt class="rst-docutils literal">genericsettings.background_default_style</tt>.</p>
-<p>Now we could compare our own data with the first <tt class="rst-docutils literal">'bfgs'</tt>-matching
-archived algorithm where all other archived BFGS data are shown in the
-background with</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'exdata/my_output bfgs!'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre></div>
+<span class="py-output">['archives', 'config', 'genericsettings', 'load', 'main', 'remote_archives']</span>
+</pre></div>
         </div>
 
         <div id="splitTables">
@@ -740,7 +725,7 @@ background with</p>
     
     <td>Module</td>
     <td><code><a href="cocopp.findfiles.html" class="internal-link" title="cocopp.findfiles">findfiles</a></code></td>
-    <td>Recursively find <a href="#system-message-1"><span class="rst-problematic" id="rst-problematic-1">:file:`info`</span></a> and zipped files within a directory and administer archives.</td>
+    <td>Recursively find <tt class="rst-docutils literal">info</tt> and zipped files within a directory and administer archives.</td>
   </tr><tr class="module">
     
     <td>Module</td>
@@ -780,7 +765,7 @@ background with</p>
     
     <td>Module</td>
     <td><code><a href="cocopp.ppfigcons1.html" class="internal-link" title="cocopp.ppfigcons1">ppfigcons1</a></code></td>
-    <td>Generate performance scaling figures wrt constraints. See also:</td>
+    <td>Generate performance scaling figures wrt constraints.</td>
   </tr><tr class="module">
     
     <td>Module</td>
@@ -839,6 +824,11 @@ background with</p>
   </tr><tr class="module">
     
     <td>Module</td>
+    <td><code><a href="cocopp.reduce_size.html" class="internal-link" title="cocopp.reduce_size">reduce<wbr></wbr>_size</a></code></td>
+    <td>Reduce the data size of COCO experiment folder(s) from the default logger.</td>
+  </tr><tr class="module">
+    
+    <td>Module</td>
     <td><code><a href="cocopp.rungeneric.html" class="internal-link" title="cocopp.rungeneric">rungeneric</a></code></td>
     <td>Process data to be included in a latex template. Called via</td>
   </tr><tr class="module">
@@ -860,7 +850,7 @@ background with</p>
     
     <td>Module</td>
     <td><code><a href="cocopp.test.html" class="internal-link" title="cocopp.test">test</a></code></td>
-    <td>Tests the cocopp module.</td>
+    <td>Tests the <code><a href="index.html" class="internal-link">cocopp</a></code> module.</td>
   </tr><tr class="module">
     
     <td>Module</td>
@@ -898,12 +888,263 @@ background with</p>
     <td>Class</td>
     <td><code><a href="cocopp.Interface.html" class="internal-link" title="cocopp.Interface"><wbr></wbr>Interface</a></code></td>
     <td>collection of the most user-relevant modules, methods and data.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#main" class="internal-link" title="cocopp.main">main</a></code></td>
+    <td>Main routine for post-processing data from COCO.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#remote_archives" class="internal-link" title="cocopp.remote_archives">remote<wbr></wbr>_archives</a></code></td>
+    <td>return a list of URLs containing COCO archives.</td>
   </tr>
 </table>
         </div>
 
         <div id="childList">
-          
+          <div class="basefunction">
+  
+  
+  <a name="cocopp.remote_archives">
+    
+  </a>
+  <a name="remote_archives">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remote_archives</span><span class="function-signature">()</span>:
+    
+    <a class="headerLink" href="#remote_archives" title="cocopp.remote_archives">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>return a list of URLs containing COCO archives.</p>
+<p>Elements of this list can be used directly with <code><a href="cocopp.archiving.html#get" class="internal-link">cocopp.archiving.get</a></code>, see
+<a class="rst-reference external" href="https://coco-platform.org/howto-publish.html#using-an-archive-by-url" target="_top">https://coco-platform.org/howto-publish.html#using-an-archive-by-url</a></p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="cocopp.main">
+    
+  </a>
+  <a name="main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">main</span><span class="function-signature">(argv=None)</span>:
+    
+    <a class="headerLink" href="#main" title="cocopp.main">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Main routine for post-processing data from COCO.</p>
+<p>A comprensive package documentation can be found at
+<a class="rst-reference external" href="https://coco-platform.org" target="_top">https://coco-platform.org</a></p>
+<p>The package can be used either directly from a system shell, like:</p>
+<pre class="rst-literal-block">
+python -m cocopp [data_folder [more_data_folders]]
+</pre>
+<p>and:</p>
+<pre class="rst-literal-block">
+python -c "import cocopp; cocopp.main('data_folder [more_data_folders]')"
+</pre>
+<p>or, as recommended, from an IPython/Jupyter notebook shell, like</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> cocopp
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'exdata/my_output another_folder yet_another_or_not'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>which allows to better fine control settings and further investigate the
+returned data list, see also below.</p>
+<p>Here <tt class="rst-docutils literal">data_folder</tt> is either a folder name containing experiment data,
+for example data generated with the <code>cocoex</code> module, usually into the
+<code>exdata</code> folder. Each folder should contain data of a single full experiment
+with a single algorithm. Within this folder, the data can be distributed
+over any number and depths of subfolders. <code>.info</code> files are the entry points
+for reading data.</p>
+<p>Or, <tt class="rst-docutils literal">data_folder</tt> is a name from the known data archive, see e.g.
+<tt class="rst-docutils literal">cocopp.bbob</tt> and <tt class="rst-docutils literal">cocopp.archives</tt>, or a uniquely matching substring of
+such a name, or a matching substring with added "!" in which case the first
+match is taken, or a matching substring with added "*" in which case all
+matches are taken, or a regular expression containing a '*' before the last
+character, in which case, for example, "bbob/.*7.*cma"  matches
+"bbob/2017/DTS-CMA-ES-Pitra.tgz" (among others). For example:</p>
+<pre class="rst-literal-block">
+$ python -m cocopp 'bbob/.*/direct! ' 'bbob/.*/mcs! ' 'bbob/.*/fminunc! '
+</pre>
+<p>processes three known algorithms run on the <code>bbob</code> testbed.</p>
+<p>Results can be explored from the <tt class="rst-docutils literal">ppdata/index.html</tt> file, unless a
+different output folder was specified with the <tt class="rst-docutils literal"><span class="pre">-o</span></tt> option. By default, a
+browser opens to navigate the results.</p>
+<p>CAVEAT: when running <code><a href="#main" class="internal-link" title="cocopp.main">main</a></code> or <code><a href="cocopp.cococommands.html#load" class="internal-link" title="cocopp.cococommands.load">load</a></code> repeatedly on data sets <em>from
+different suites</em>, the routine may bail out. Running
+<tt class="rst-docutils literal">cocopp.config.config()</tt> may solve the problem, however sometimes a
+restart of Python is necessary.</p>
+<div class="rst-section" id="rst-options">
+<h2 class="heading">Options</h2>
+<p>In both usecases the following options can be passed to <code><a href="#main" class="internal-link" title="cocopp.main">main</a></code>.</p>
+<dl class="rst-docutils">
+<dt><tt class="rst-docutils literal"><span class="pre">-h,</span> <span class="pre">--help</span></tt></dt>
+<dd>displays this message.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">-v,</span> <span class="pre">--verbose</span></tt></dt>
+<dd>verbose mode, prints out operations.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">-o,</span> <span class="pre">--output-dir=OUTPUTDIR</span></tt></dt>
+<dd>changes the default output directory (<tt class="rst-docutils literal">ppdata</tt>) to
+<tt class="rst-docutils literal">OUTPUTDIR</tt>.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--input-path=INPUTPATH</span></tt></dt>
+<dd>all folder/file arguments are prepended with the given value
+which must be a valid path.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--budget-based</span></tt> or <tt class="rst-docutils literal"><span class="pre">--runlength-based</span></tt></dt>
+<dd>Use budget-based target values for budgets between D/2 and 50xD
+evaluations (see <tt class="rst-docutils literal">genericsettings.target_runlength*</tt>) and based on a
+reference algorithm, by default <tt class="rst-docutils literal"><span class="pre">best2009-bbob,</span> <span class="pre">best2009bbob-noisy,</span>
+<span class="pre">best2016-bbob-biobj,</span> <span class="pre">best2019-bbob-largescale</span></tt>.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--expensive</span></tt></dt>
+<dd>Use budget-based targets and adapt xlim to data with low budgets.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--parameter-sweep</span></tt></dt>
+<dd>if given, parse the algorithm name for a float and use the
+value to determine the color order in a colormap.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--parameter-sweep-colormaps=colormaps</span></tt></dt>
+<dd><tt class="rst-docutils literal">colormaps</tt> can, for example, be <tt class="rst-docutils literal">plasma.0.9,viridis</tt>
+indicating (here two) map names separated by commata and
+optionally the range for each map.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--in-a-hurry</span></tt></dt>
+<dd>overwriting <code><a href="cocopp.genericsettings.html#in_a_hurry" class="internal-link" title="cocopp.genericsettings.in_a_hurry">genericsettings.in_a_hurry</a></code>, takes values between 0 and
+1000 (default) for faster processing that does not write eps files and
+uses a small number of bootstrap samples</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--include-single</span></tt></dt>
+<dd>calls the postprocessing and in particular
+<code><a href="cocopp.rungeneric1.html#main" class="internal-link">cocopp.rungeneric1.main</a></code> on each of the
+single input arguments separately.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--conv</span></tt></dt>
+<dd>prepares also convergence plots with median function values over time when single processing is active</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--no-rld-single-fcts</span></tt></dt>
+<dd>do not generate runlength distribution figures for each
+single function.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--no-svg</span></tt></dt>
+<dd>do not generate the svg figures which are used in html files</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--include-fonts</span></tt></dt>
+<dd>generated pdfs will have the fonts included (important for ACM style
+LaTeX submissions)</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--tab-only</span></tt></dt>
+<dd>Only generates tables which is fast.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--fig-only</span></tt>, <tt class="rst-docutils literal"><span class="pre">--los-only</span></tt>, <tt class="rst-docutils literal"><span class="pre">--rld-only</span></tt>, <tt class="rst-docutils literal"><span class="pre">--sca-only</span></tt></dt>
+<dd>Only show some figures or runtime distributions.</dd>
+<dt><tt class="rst-docutils literal"><span class="pre">--no-interactive</span></tt></dt>
+<dd>Do not open browser at the end.</dd>
+</dl>
+<p>Deprecated or inactive options are "noisy", "noise-free", "pickle",
+"crafting-effort=", "settings".</p>
+<p>Post-processing two algorithms in verbose mode:</p>
+<pre class="rst-literal-block">
+$ python -m cocopp -v AMALGAM BIPOP-CMA-ES
+</pre>
+<p>From the python interpreter:</p>
+<pre class="rst-literal-block">
+&gt;&gt; import cocopp
+&gt;&gt; cocopp.main('-o outputfolder folder1 folder2')
+</pre>
+<p>This will execute the post-processing on the data found in
+<tt class="rst-docutils literal">folder1</tt> and <tt class="rst-docutils literal">folder2</tt> and return the respective
+<code><a href="cocopp.pproc.DataSetList.html" class="internal-link" title="cocopp.pproc.DataSetList">DataSetList</a></code>. The <tt class="rst-docutils literal"><span class="pre">-o</span></tt> option changes the output folder from the
+default <tt class="rst-docutils literal">ppdata</tt> to <tt class="rst-docutils literal">outputfolder</tt>. The arguments can
+also be presented as a list of strings.</p>
+</div>
+<div class="rst-section" id="rst-usecases-from-a-python-shell-or-notebook">
+<h2 class="heading">Usecases from a Python shell or notebook</h2>
+<p>To fine-control the behavior of the module, it is useful to work from an
+(I)Python shell or notebook. For example, to display algorithms in the
+background, the <tt class="rst-docutils literal">genericsettings.background</tt> variable can be set:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.genericsettings.background = {<span class="py-builtin">None</span>:  <span class="py-comment"># doctest:+SKIP</span>
+<span class="py-more">... </span>             cocopp.bbob.get_all(<span class="py-string">"2009/"</span>)}</pre><p>where <code>None</code> invokes the default color (gray) and line style (solid)
+<tt class="rst-docutils literal">genericsettings.background_default_style</tt>.</p>
+<p>Now we could compare our own data with the first <tt class="rst-docutils literal">'bfgs'</tt>-matching
+archived algorithm</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">"exdata/my_output "</span> + cocopp.bbob.get(<span class="py-string">"bfgs!"</span>))  <span class="py-comment"># doctest:+SKIP</span></pre><p>displaying all archived results from 2009 in the background. <tt class="rst-docutils literal">cocopp.bbob</tt>
+is a <code><a href="cocopp.archiving.COCODataArchive.html" class="internal-link">cocopp.archiving.COCODataArchive</a></code> class.</p>
+<p>With the background algorithms, this may take 5-15 minutes to complete,
+because more than 30 algorithm datasets are processed.</p>
+<p><strong>Comparative data</strong> from over 390 full experiments are archived online and
+can be listed, filtered, and retrieved from <code><a href="cocopp.archiving.html#official_archives" class="internal-link" title="cocopp.archiving.official_archives">cocopp.archives</a></code> (of type
+<code><a href="cocopp.archiving.OfficialArchives.html" class="internal-link" title="cocopp.archiving.OfficialArchives">OfficialArchives</a></code>) and processed alone or together with local data.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob(<span class="py-string">'bfgs'</span>)  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
+<span class="py-output">['2009/BFGS_...</span>
+</pre><p>lists all data sets containing <tt class="rst-docutils literal">'bfgs'</tt> in their name. The search can
+also use regular expressions where '.' matches any single
+character and '*' means one or more repetitions:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.bbob(<span class="py-string">'.*bfgs'</span>)  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
+<span class="py-output">['2009/BFGS_...</span>
+</pre><p>gives the same data sets as above and</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.archives.all(<span class="py-string">'bbob/.*bfgs'</span>)  <span class="py-comment"># doctest:+ELLIPSIS,+SKIP,</span>
+<span class="py-output">['bbob/2009/BFGS_...</span>
+</pre><p>gives also the same data sets, however extracted from the archive of all
+suites, which is the search domain when using <code><a href="#main" class="internal-link">cocopp.main</a></code>.</p>
+<p>When calling the <code><a href="#main" class="internal-link">cocopp.main</a></code> routine, a single trailing '!' or '*'
+have the special meaning of take-the-first-only and take-all, respectively.
+Hence, the first entry of the above selecting list can be postprocessed with</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bfgs!'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>All <code>'bfgs'</code> matches from the <code>'bbob'</code> suite can be processed like</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bbob/.*bfgs'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>(<tt class="rst-docutils literal"><span class="pre">cocopp.main('bfgs*')</span></tt> raises an error as data from incompatible suites
+cannot be processed together.)</p>
+<p>The postprocessing result of</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>cocopp.main(<span class="py-string">'bbob/2009/*'</span>)  <span class="py-comment"># doctest:+SKIP</span></pre><p>can be browsed at <a class="rst-reference external" href="http://numbbo.github.io/ppdata-archive/bbob/2009" target="_top">http://numbbo.github.io/ppdata-archive/bbob/2009</a> (or 2009-all).</p>
+</div>
+<div class="rst-section" id="rst-output">
+<h2 class="heading">Output</h2>
+<p>The output figures and tables written by default to the output folder
+<tt class="rst-docutils literal">ppdata</tt> can be browsed from <code>index.html</code> and are used in the provided
+LaTeX templates:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">*article.tex</tt> and <tt class="rst-docutils literal"><span class="pre">*1*.tex</span></tt>
+for results with a <strong>single</strong> algorithm</li>
+<li><tt class="rst-docutils literal">*cmp.tex</tt> and <tt class="rst-docutils literal"><span class="pre">*2*.tex</span></tt>
+for showing the comparison of <strong>2</strong> algorithms</li>
+<li><tt class="rst-docutils literal">*many.tex</tt> and <tt class="rst-docutils literal"><span class="pre">*3*.tex</span></tt>
+for showing the comparison of <strong>more than 2</strong> algorithms.</li>
+</ul>
+<p>The templates with <tt class="rst-docutils literal">noisy</tt> mentioned in the filename have to be used
+for the noisy testbed.</p>
+<p>These latex templates need to be copied in the current working directory
+and possibly edited so that the LaTeX commands <tt class="rst-docutils literal">\bbobdatapath</tt> and
+<tt class="rst-docutils literal">\algfolder</tt> point to the correct output folders of the post-processing.
+Compiling the template file with LaTeX should then produce a document.</p>
+</div>
+<div class="rst-section" id="rst-details">
+<h2 class="heading">Details</h2>
+<p>Exceptions raised:</p>
+<p><em>Usage</em> -- Gives back a usage message.</p>
+<p>This routine will</p>
+<ul class="rst-simple">
+<li>call sub-routine <code><a href="cocopp.rungeneric1.html#main" class="internal-link">cocopp.rungeneric1.main</a></code> for one
+input argument (see also --include-single option); the input
+argument will be used as output sub-folder relative to the main
+output folder,</li>
+<li>call sub-routine <code><a href="cocopp.rungenericmany.html#main" class="internal-link">cocopp.rungenericmany.main</a></code>
+(2 or more input arguments) for the input arguments altogether.</li>
+</ul>
+</div>
+</div>
+  </div>
+</div>
         </div>
       
       </div>
@@ -915,7 +1156,7 @@ background with</p>
   <div class="container">
     <a href="index.html">API Documentation</a> for cocopp,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2025-02-06 19:31:19.
+    23.9.1 at 2026-10-24 01:09:15.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 
